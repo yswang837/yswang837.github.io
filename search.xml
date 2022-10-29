@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/10/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>一文读懂切片slice</title>
     <url>/2022/10/18/golang%E7%AC%94%E8%AE%B0%20-%20%E4%B8%80%E6%96%87%E8%AF%BB%E6%87%82%E5%88%87%E7%89%87slice/</url>
     <content><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><span id="more"></span>
@@ -40,6 +22,81 @@
 <hr>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.baidu.com/">www.baidu.com</a></p>
 <hr>
+]]></content>
+      <categories>
+        <category>golang笔记</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+        <tag>一文读懂系列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/10/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>golang笔记 - 一文读懂字典map</title>
+    <url>/2022/10/29/golang%E7%AC%94%E8%AE%B0-%E4%B8%80%E6%96%87%E8%AF%BB%E6%87%82%E5%AD%97%E5%85%B8map/</url>
+    <content><![CDATA[<h1 id="一、字典-Map"><a href="#一、字典-Map" class="headerlink" title="一、字典(Map)"></a>一、字典(Map)</h1><blockquote>
+<p>@author：小钻风</p>
+<p>版权所有：小钻风</p>
+</blockquote>
+<h2 id="1-1-什么是Map"><a href="#1-1-什么是Map" class="headerlink" title="1.1 什么是Map"></a>1.1 什么是Map</h2><p>map是Go中的内置引用类型，它是一种无序的键值对的集合，它将一个值与一个键关联起来。可以使用相应的键快速检索值。</p>
+<p>使用map过程中需要注意的几点：</p>
+<ul>
+<li>map是无序的，每次打印出来的map都会不一样，它不能通过index获取，而必须通过key获取。</li>
+<li>map和slice一样，支持扩容。</li>
+<li>内置的len函数同样适用于map，返回map拥有的key的数量 。</li>
+<li>map的key可以是所有可比较的类型，除切片，映射，函数，以及包含这三类的容器类型外，都是可比较类型，由于精度问题，不建议使用浮点数作为map的key。</li>
+<li>内置的map不是并发安全的，标准库sync.Map可解决此问题，关于并发可在 “一文读懂golang并发”。</li>
+</ul>
+<h2 id="1-2-快速开始"><a href="#1-2-快速开始" class="headerlink" title="1.2  快速开始"></a>1.2  快速开始</h2><h3 id="1-2-1-创建map"><a href="#1-2-1-创建map" class="headerlink" title="1.2.1 创建map"></a>1.2.1 创建map</h3><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 声明一个key value都是string类型的map m1，现在m1是nil（未初始化，未分配内存，或者说分配了指向nil的指针，不能存放键值对，很少用这种方式）</span></span><br><span class="line"><span class="keyword">var</span> m1 <span class="keyword">map</span>[<span class="type">string</span>]<span class="type">string</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//声明一个key value都是string类型的map m2,现在m2不是nil（已初始化，已分配内存，推荐方式）</span></span><br><span class="line">m2 = <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">string</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//同m2，不同点在于短声明:=只能用于函数内部（常用方式）</span></span><br><span class="line">m3 := <span class="keyword">map</span>[<span class="type">string</span>]<span class="type">string</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-2-map的增删改查"><a href="#1-2-2-map的增删改查" class="headerlink" title="1.2.2 map的增删改查"></a>1.2.2 map的增删改查</h3><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// map的增删改查</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test32</span><span class="params">()</span></span> &#123;</span><br><span class="line">    m := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">string</span>)</span><br><span class="line">    <span class="comment">// 增</span></span><br><span class="line">    m[<span class="string">&quot;key1&quot;</span>] = <span class="string">&quot;value1&quot;</span></span><br><span class="line">    m[<span class="string">&quot;key2&quot;</span>] = <span class="string">&quot;value2&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 删</span></span><br><span class="line">    <span class="built_in">delete</span>(m, <span class="string">&quot;key1&quot;</span>)</span><br><span class="line">    <span class="built_in">delete</span>(m,<span class="string">&quot;我是一个不存在的key&quot;</span>) <span class="comment">//静默处理，不会报错</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 改</span></span><br><span class="line">    m[<span class="string">&quot;key2&quot;</span>] = <span class="string">&quot;value22&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 查</span></span><br><span class="line">    <span class="keyword">if</span> val, ok := m[<span class="string">&quot;key2&quot;</span>]; ok &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;key2在字典m中,值是&quot;</span>,val)</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;key2不在字典m中,值是&quot;</span>,val) <span class="comment">//如果不在，val是对应类型的零值</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fmt.Println(m[<span class="string">&quot;key2&quot;</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-3-map的长度"><a href="#1-2-3-map的长度" class="headerlink" title="1.2.3 map的长度"></a>1.2.3 map的长度</h3><p>使用len函数可以确定map的长度。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="built_in">len</span>(<span class="keyword">map</span>)  <span class="comment">// 可以得到map的长度</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="二、底层原理"><a href="#二、底层原理" class="headerlink" title="二、底层原理"></a>二、底层原理</h1><p>我们都知道go中的map是用hash表（数组+链表）来实现的，那具体是怎样的呢？</p>
+<p>明确一点：物理内存始终是这样，是线性的，之后所画的逻辑内存都是为了理解，不是真正的物理内存</p>
+<img src="https://pic1.imgdb.cn/item/635c77e016f2c2beb11362a1.png" style="zoom:100%;" />
+
+<ul>
+<li>谈到底层的话，先说明一下SDK版本吧，我的sdk是1.16.8，不同版本的sdk可能有细小的差异</li>
+</ul>
+<p>干货来了，当真很干，别慌，听我慢慢道来</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> hmap <span class="keyword">struct</span> &#123;</span><br><span class="line">	count     <span class="type">int</span> <span class="comment">// map中的键值对个数，使用len()可以获取</span></span><br><span class="line">	flags     <span class="type">uint8</span> <span class="comment">//表示是否正在写，如果是，则进行panic，内置的map并发不安全</span></span><br><span class="line">	B         <span class="type">uint8</span>  <span class="comment">// 用于确定通的数量和选桶，桶的个数为2^B次方个，哈希过后，取哈希值的后B位，定位桶的位置</span></span><br><span class="line">	noverflow <span class="type">uint16</span> <span class="comment">// 溢出桶的数量，溢出桶也是桶，也是bmap结构</span></span><br><span class="line">	hash0     <span class="type">uint32</span> <span class="comment">// hash种子</span></span><br><span class="line">	buckets    unsafe.Pointer <span class="comment">// 指向哈希桶数组的指针，数量为 2^B次方</span></span><br><span class="line">	oldbuckets unsafe.Pointer <span class="comment">// 扩容时指向旧桶的指针，当扩容时不为nil</span></span><br><span class="line">	nevacuate  <span class="type">uintptr</span>        <span class="comment">// 渐进式迁移进度，保证扩容迁移时map服务稳定</span></span><br><span class="line">	extra *mapextra <span class="comment">// 用于记录溢出桶的信息</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> bmap <span class="keyword">struct</span> &#123;</span><br><span class="line">  <span class="comment">// map 的一个哈希桶，一个桶最多存放8个键值对，tophash存放了哈希值的最高8位</span></span><br><span class="line">	tophash [bucketCnt]<span class="type">uint8</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 在这里有几个其它的字段没有显示出来，因为k-v的数量类型是不确定的，编译的时候才会确定</span></span><br><span class="line">  <span class="comment">// keys: 是一个数组，大小为bucketCnt=8，存放Key</span></span><br><span class="line">  <span class="comment">// elems: 是一个数组，大小为bucketCnt=8，存放Value</span></span><br><span class="line">  <span class="comment">// 注意：之所以将所有key存放在一个数组，将value存放在一个数组，而不是键值对的形式，是为了消除例如map[int64]所需的填充整数8（内存对齐）</span></span><br><span class="line">  <span class="comment">// overflow: 是一个指针，指向溢出桶，当该桶不够用时，就会使用溢出桶</span></span><br><span class="line">  <span class="comment">// pad: 对齐内存使用的，不是每个bmap都有会这个字段，需要满足一定条件</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> mapextra <span class="keyword">struct</span> &#123;</span><br><span class="line">	overflow    *[]*bmap</span><br><span class="line">	oldoverflow *[]*bma</span><br><span class="line">	nextOverflow *bmap</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在go中，map的实现主要就依靠于hmap和bmap还有mapextra结构体，重点来了，map的本质是一个指向hmap的指针，底层定义为：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> _map *hmap</span><br></pre></td></tr></table></figure>
+
+<p>所以在64位(32位)机器上，一个map或者说一个指针始终是8字节(4字节)大小，所以会有这样的看似反人类的现象。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> m1 <span class="keyword">map</span>[<span class="type">string</span>]<span class="type">string</span>   <span class="comment">//指向nil的指针</span></span><br><span class="line">fmt.Println(<span class="string">&quot;m1 size=&quot;</span>, unsafe.Sizeof(m1))       <span class="comment">//size= 8</span></span><br><span class="line">m2 := <span class="keyword">map</span>[<span class="type">string</span>]<span class="type">string</span>&#123;<span class="string">&quot;AA&quot;</span>: <span class="string">&quot;aa&quot;</span>, <span class="string">&quot;BB&quot;</span>: <span class="string">&quot;bb&quot;</span>&#125;</span><br><span class="line">fmt.Println(<span class="string">&quot;m2 size=&quot;</span>, unsafe.Sizeof(m2))       <span class="comment">//size= 8</span></span><br><span class="line">m3 := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">string</span>, <span class="number">10</span>)</span><br><span class="line">fmt.Println(<span class="string">&quot;m3 size=&quot;</span>, unsafe.Sizeof(m3))       <span class="comment">//size= 8</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-整体流程"><a href="#2-1-整体流程" class="headerlink" title="2.1 整体流程"></a>2.1 整体流程</h3><p>一个k1:v1键值对来了，golang底层会先把k1进行hash，在64位机器上，得到一个64bit的二进制表示。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="number">10010111</span> | <span class="number">000011110110110010001111001010100010010110010101010</span> │ <span class="number">01010</span></span><br><span class="line"><span class="comment">//选择桶                                                    确定k1在桶的具体位置</span></span><br></pre></td></tr></table></figure>
+
+<p>该二进制表示的低B位部分用作选择某个桶buckets，一个桶最多可以存放8个键值对，高8位部分用于确定当前k1应该存放在桶的哪个位置。</p>
+<p>如hmap、bmap和mapextra的注释所示，map的底层为hmap结构体，其中包含了很多字段，buckets是一个数组，大小是2的B次方个。数组中的每一个元素都是一个bmap结构体的哈希桶，bmap包含了5个字段，后面4个字段在编译时才能确定。tophash、keys、elems都是大小为8的数组，它们每个元素一一对应。</p>
+<p>tophash存放哈希值的最高字节，keys存放了键，elems存放数据。<br>    每个桶只能存放最多8个键值对，因此当某个桶不够用时，就会使用溢出桶，溢出桶是和普通桶在一起的，都是在buckets指向的bmap数组中，(实际上，当B &gt; 4时，才会创建溢出桶，溢出桶的数量为 1 &lt;&lt; (B - 4) )。overflow指向下一个溢出桶。下面为了画图方便，在B &lt; 4时，也画了溢出桶，实际上是没有溢出桶的。</p>
+<p>​    Go语言的map并没有将键值对一起存放，而是将键值分开存放。是因为如果存放在一起可能需要内存对齐，会导致空间的浪费，存放在一起会使内存更紧凑，也不会损失什么性能。</p>
+<h3 id="2-2-bmap详解"><a href="#2-2-bmap详解" class="headerlink" title="2.2 bmap详解"></a>2.2 bmap详解</h3><p>一个bmap就是map的一个”桶“</p>
+<p>首先将hash函数作用于key上，在64位机器上，得到一个64bit的二进制表示，低位部分作为选择桶的依据，高8位作为在桶内选择存储位置的依据</p>
 ]]></content>
       <categories>
         <category>golang笔记</category>
