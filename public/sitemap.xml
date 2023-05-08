@@ -2,11 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/</loc>
-    <priority>0</priority>
+    <loc>https://yswang837.github.io/docs/example/</loc>
   </url><url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://yswang837.github.io/docs/example/golang/</loc>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://yswang837.github.io/docs/example/gin/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/architect-exam/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/algorthem/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/leetcode/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/algorthem/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/algorthem/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/architect-exam/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/architect-exam/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/gin/aaa/4th-level/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/gin/aaa/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/golang/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/golang/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/hidden/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/leetcode/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/example/leetcode/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/categories/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/docs/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/tags/</loc>
+  </url><url>
+    <loc>https://yswang837.github.io/</loc>
   </url>
 </urlset>
