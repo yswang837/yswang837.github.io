@@ -3,39 +3,20 @@ title: Introduction
 type: docs
 ---
 
-# Acerbo datus maxime
+### 关于博客
+&emsp;&emsp;这个博客是我个人开设的第二个博客，主要用于记录作者在计算机行业摸爬滚打10余年的经历、各类资料干货以及学习心得等。
 
-{{< columns >}}
-## Astris ipse furtiva
+&emsp;&emsp;本项目的所有资源均免费挂载在github，地址为：https://github.com/yswang837，同时欢迎热爱开源的朋友给我提供你认为有用的资源，让我们一起完善这个项目吧。
 
-Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut
-olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere aliis,
-modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
+&emsp;&emsp;请你在阅读本站内容时，时刻持有一种质疑的态度，这样不仅能够帮助自己思考，也能发现我文章的不足之处；如果文章中有什么错漏的地方请大家见谅，也欢迎大家随时加我微信**wys837**帮我指正，希望与大家一起进步。感谢！
 
-<--->
+---
 
-## Suis quot vota
+### 关于作者
+&emsp;&emsp;笔名：小钻风
 
-Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
-miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
-nunc! Fragosis suae dextra geruntur functus vulgata.
-{{< /columns >}}
+&emsp;&emsp;微信：wys837
 
+&emsp;&emsp;github: https://github.com/yswang837
 
-## Tempora nisi nunc
-
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
-
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
-
-## Locis suis novi cum suoque decidit eadem
-
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab?
+---

@@ -1,71 +1,23 @@
 ---
 weight: 1
 bookFlatSection: true
-title: "Example Site"
+title: "介绍"
 ---
 
-# Introduction
+### 关于博客
+&emsp;&emsp;这个博客是我个人开设的第二个博客，主要用于记录作者在计算机行业摸爬滚打10余年的经历、各类资料干货以及学习心得等。
 
-## Ferre hinnitibus erat accipitrem dixi Troiae tollens
+&emsp;&emsp;本项目的所有资源均免费挂载在github，地址为：https://github.com/yswang837，同时欢迎热爱开源的朋友给我提供你认为有用的资源，让我们一起完善这个项目吧。
 
-Lorem markdownum, a quoque nutu est *quodcumque mandasset* veluti. Passim
-inportuna totidemque nympha fert; repetens pendent, poenarum guttura sed vacet
-non, mortali undas. Omnis pharetramque gramen portentificisque membris servatum
-novabis fallit de nubibus atque silvas mihi. **Dixit repetitaque Quid**; verrit
-longa; sententia [mandat](http://pastor-ad.io/questussilvas) quascumque nescio
-solebat [litore](http://lacrimas-ab.net/); noctes. *Hostem haerentem* circuit
-[plenaque tamen](http://www.sine.io/in).
+&emsp;&emsp;请你在阅读本站内容时，时刻持有一种质疑的态度，这样不仅能够帮助自己思考，也能发现我文章的不足之处；如果文章中有什么错漏的地方请大家见谅，也欢迎大家随时加我微信**wys837**帮我指正，希望与大家一起进步。感谢！
 
-- Pedum ne indigenae finire invergens carpebat
-- Velit posses summoque
-- De fumos illa foret
+---
 
-## Est simul fameque tauri qua ad
+### 关于作者
+&emsp;&emsp;笔名：小钻风
 
-Locum nullus nisi vomentes. Ab Persea sermone vela, miratur aratro; eandem
-Argolicas gener.
+&emsp;&emsp;微信：wys837
 
-## Me sol
+&emsp;&emsp;github: https://github.com/yswang837
 
-Nec dis certa fuit socer, Nonacria **dies** manet tacitaque sibi? Sucis est
-iactata Castrumque iudex, et iactato quoque terraeque es tandem et maternos
-vittis. Lumina litus bene poenamque animos callem ne tuas in leones illam dea
-cadunt genus, et pleno nunc in quod. Anumque crescentesque sanguinis
-[progenies](http://www.late.net/alimentavirides) nuribus rustica tinguet. Pater
-omnes liquido creditis noctem.
-
-    if (mirrored(icmp_dvd_pim, 3, smbMirroredHard) != lion(clickImportQueue,
-            viralItunesBalancing, bankruptcy_file_pptp)) {
-        file += ip_cybercrime_suffix;
-    }
-    if (runtimeSmartRom == netMarketingWord) {
-        virusBalancingWin *= scriptPromptBespoke + raster(post_drive,
-                windowsSli);
-        cd = address_hertz_trojan;
-        soap_ccd.pcbServerGigahertz(asp_hardware_isa, offlinePeopleware, nui);
-    } else {
-        megabyte.api = modem_flowchart - web + syntaxHalftoneAddress;
-    }
-    if (3 < mebibyteNetworkAnimated) {
-        pharming_regular_error *= jsp_ribbon + algorithm * recycleMediaKindle(
-                dvrSyntax, cdma);
-        adf_sla *= hoverCropDrive;
-        templateNtfs = -1 - vertical;
-    } else {
-        expressionCompressionVariable.bootMulti = white_eup_javascript(
-                table_suffix);
-        guidPpiPram.tracerouteLinux += rtfTerabyteQuicktime(1,
-                managementRosetta(webcamActivex), 740874);
-    }
-    var virusTweetSsl = nullGigo;
-
-## Trepident sitimque
-
-Sentiet et ferali errorem fessam, coercet superbus, Ascaniumque in pennis
-mediis; dolor? Vidit imi **Aeacon** perfida propositos adde, tua Somni Fluctibus
-errante lustrat non.
-
-Tamen inde, vos videt e flammis Scythica parantem rupisque pectora umbras. Haec
-ficta canistris repercusso simul ego aris Dixit! Esse Fama trepidare hunc
-crescendo vigor ululasse vertice *exspatiantur* celer tepidique petita aversata
-oculis iussa est me ferro.
+---
