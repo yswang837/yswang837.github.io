@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 课程内容提要 # 1.计算机结构 ✅ 2.存储系统 ✅✅✅✅ 3.数据传输控制方式 ✅ 4.总线 ✅✅ 5.CISC与RISC ✅✅ 6.流水线 ✅✅ 7.校验码 ✅ 8.嵌入式 ✅ 1.计算机存储结构 # 2.存储系统 # 3.数据传输控制方式 # 4.总线 # 5.CISC与RISC # 6.流水线 # 7.校验码 # 8.嵌入式 # ">
+<meta name="description" content=" 课程内容提要 # 1.计算机结构 ✅ 2.存储系统 ✅✅✅✅ 3.数据传输控制方式 ✅ 4.总线 ✅✅ 5.CISC与RISC ✅✅ 6.流水线 ✅✅ 7.校验码 ✅ 8.嵌入式 ✅ 1.计算机结构 # 计算机的硬件包含5大组成：控制器、运算器、存储器、输入设备和输出设备。这也是著名的冯诺依曼结构，它们之间的交互如下图： 别的部件会在后面的章节详细讲解，这里是说运算器和控制器。
+运算器 算术逻辑单元ALU：数据的算术运算和逻辑运算。
+累加寄存器AC：通用寄存器，为ALU提供一个工作区，用于暂存数据。
+数据缓冲寄存器DR：写内存时，暂存指令或数据。
+状态条件寄存器PSW：存状态标志与控制标志(争议:也有将其归为控制器的)。
+控制器 程序计数器PC：存储下一条要执行指令的地址。
+指令寄存器IR：存储即将执行的指令。
+指令译码器ID：对指令中的操作码字段进行分析解释。
+时序部件：提供时序控制信号。
+例题 答案：A
+2.存储系统 # 3.数据传输控制方式 # 4.总线 # 5.CISC与RISC # 6.流水线 # 7.校验码 # 8.嵌入式a # ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -15,7 +25,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f5d193b3b841ba794fb35c53a33fd3e8fb533be8f806585f9760c11ebabf9813.js" integrity="sha256-9dGTs7hBunlPs1xToz/T6PtTO&#43;j4Blhfl2DBHrq/mBM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1ef38250dfd5a244a6403b2378b6bd997da4937d8d850c875648eaf14c1bc030.js" integrity="sha256-HvOCUN/VokSmQDsjeLa9mX2kk32NhQyHVkjq8UwbwDA=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -447,14 +457,14 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#课程内容提要">课程内容提要</a>
       <ul>
-        <li><a href="#1计算机存储结构">1.计算机存储结构</a></li>
+        <li><a href="#1计算机结构">1.计算机结构</a></li>
         <li><a href="#2存储系统">2.存储系统</a></li>
         <li><a href="#3数据传输控制方式">3.数据传输控制方式</a></li>
         <li><a href="#4总线">4.总线</a></li>
         <li><a href="#5cisc与risc">5.CISC与RISC</a></li>
         <li><a href="#6流水线">6.流水线</a></li>
         <li><a href="#7校验码">7.校验码</a></li>
-        <li><a href="#8嵌入式">8.嵌入式</a></li>
+        <li><a href="#8嵌入式a">8.嵌入式a</a></li>
       </ul>
     </li>
   </ul>
@@ -483,10 +493,32 @@ https://github.com/alex-shpak/hugo-book
 <li>7.校验码      ✅</li>
 <li>8.嵌入式      ✅</li>
 </ul>
-<h3 id="1计算机存储结构">
-  1.计算机存储结构
-  <a class="anchor" href="#1%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%ad%98%e5%82%a8%e7%bb%93%e6%9e%84">#</a>
+<h3 id="1计算机结构">
+  1.计算机结构
+  <a class="anchor" href="#1%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bb%93%e6%9e%84">#</a>
 </h3>
+<p>  计算机的硬件包含5大组成：<strong>控制器</strong>、<strong>运算器</strong>、<strong>存储器</strong>、<strong>输入设备</strong>和<strong>输出设备</strong>。这也是著名的<strong>冯诺依曼</strong>结构，它们之间的交互如下图：
+<a href="https://imgse.com/i/p9DeARs"><img src="https://s1.ax1x.com/2023/05/10/p9DeARs.md.png" alt="p9DeARs.md.png" /></a><br>
+  别的部件会在后面的章节详细讲解，这里是说运算器和控制器。</p>
+<ul>
+<li>运算器</li>
+</ul>
+<p>  算术逻辑单元ALU：数据的算术运算和逻辑运算。<br>
+  累加寄存器AC：通用寄存器，为ALU提供一个工作区，用于暂存数据。<br>
+  数据缓冲寄存器DR：写内存时，暂存指令或数据。<br>
+  状态条件寄存器PSW：存状态标志与控制标志(争议:也有将其归为控制器的)。</p>
+<ul>
+<li>控制器</li>
+</ul>
+<p>  <strong>程序计数器PC</strong>：存储下一条要执行指令的地址。<br>
+  指令寄存器IR：存储即将执行的指令。<br>
+  指令译码器ID：对指令中的操作码字段进行分析解释。<br>
+  时序部件：提供时序控制信号。</p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9DnRPg"><img src="https://s1.ax1x.com/2023/05/10/p9DnRPg.md.png" alt="p9DnRPg.md.png" /></a><br>
+答案：A</p>
+</blockquote>
 <h3 id="2存储系统">
   2.存储系统
   <a class="anchor" href="#2%e5%ad%98%e5%82%a8%e7%b3%bb%e7%bb%9f">#</a>
@@ -511,9 +543,9 @@ https://github.com/alex-shpak/hugo-book
   7.校验码
   <a class="anchor" href="#7%e6%a0%a1%e9%aa%8c%e7%a0%81">#</a>
 </h3>
-<h3 id="8嵌入式">
-  8.嵌入式
-  <a class="anchor" href="#8%e5%b5%8c%e5%85%a5%e5%bc%8f">#</a>
+<h3 id="8嵌入式a">
+  8.嵌入式a
+  <a class="anchor" href="#8%e5%b5%8c%e5%85%a5%e5%bc%8fa">#</a>
 </h3>
 </article>
  
@@ -558,14 +590,14 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#课程内容提要">课程内容提要</a>
       <ul>
-        <li><a href="#1计算机存储结构">1.计算机存储结构</a></li>
+        <li><a href="#1计算机结构">1.计算机结构</a></li>
         <li><a href="#2存储系统">2.存储系统</a></li>
         <li><a href="#3数据传输控制方式">3.数据传输控制方式</a></li>
         <li><a href="#4总线">4.总线</a></li>
         <li><a href="#5cisc与risc">5.CISC与RISC</a></li>
         <li><a href="#6流水线">6.流水线</a></li>
         <li><a href="#7校验码">7.校验码</a></li>
-        <li><a href="#8嵌入式">8.嵌入式</a></li>
+        <li><a href="#8嵌入式a">8.嵌入式a</a></li>
       </ul>
     </li>
   </ul>
