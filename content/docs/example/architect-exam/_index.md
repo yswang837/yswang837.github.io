@@ -8,10 +8,10 @@ title: 3. 高级软考系统架构师考试
 
 ### 一、考试介绍
 &emsp;&emsp;系统架构师考试包含：3个科目，满分均为75分，45分为过线，需三科同时过线才算考过。
-[![p9w6ogs.md.png](https://s1.ax1x.com/2023/05/08/p9w6ogs.md.png)](https://imgse.com/i/p9w6ogs)
+[![p9BxotK.md.png](https://s1.ax1x.com/2023/05/10/p9BxotK.md.png)](https://imgse.com/i/p9BxotK)
 
 ### 二、考试时间
-每年具体那天考试不太确定，大概都是11月份。
+每年具体那天考试不太确定，大概都是11月份。科目一全为选择题、科目二为案例分析题(第1道必答，后4道题选答2道，总共做3个题)、科目三论文作(四选一，不排除之后会变成二选一)
 [![p9wRLQJ.md.png](https://s1.ax1x.com/2023/05/08/p9wRLQJ.md.png)](https://imgse.com/i/p9wRLQJ)
 
 ### 三、报名地址
@@ -19,7 +19,7 @@ title: 3. 高级软考系统架构师考试
 
 ### 四、考试内容
 &emsp;&emsp;架构师考试内容太宽泛了，如果你和我一样是工作了才准备考的话，建议复习重点，45分和75分没啥区别
-[![p9wfMAx.md.png](https://s1.ax1x.com/2023/05/08/p9wfMAx.md.png)](https://imgse.com/i/p9wfMAx)
+[![p9BzIDs.md.png](https://s1.ax1x.com/2023/05/10/p9BzIDs.md.png)](https://imgse.com/i/p9BzIDs)
 
 ### 五、笔者过没过
 &emsp;&emsp;算是比较幸运，我是一把过。希望学弟学妹们都能一把过。
