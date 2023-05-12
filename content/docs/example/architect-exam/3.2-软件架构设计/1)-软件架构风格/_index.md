@@ -51,7 +51,21 @@
 [![p9rOyqI.md.png](https://s1.ax1x.com/2023/05/11/p9rOyqI.md.png)](https://imgse.com/i/p9rOyqI)\
 答案：
 ## 2.8 架构风格具体实例
+&emsp;&emsp;没有最好的架构，只有更适合具体业务场景的架构。
 ### 2.8.1 从 C/S -> B/S -> 混合架构
+- 双层C/S架构\
+&emsp;&emsp;通过图示可以看出非常明显的缺点：将业务逻辑的代码嵌入进客户端，在早期互联网并不普及的情况下，频繁变更的业务逻辑代码和难以推广升级的客户端存在巨大矛盾。
+[![p9sqZv9.md.png](https://s1.ax1x.com/2023/05/12/p9sqZv9.md.png)](https://imgse.com/i/p9sqZv9)
+- 三层C/S架构\
+&emsp;&emsp;相比于双层C/S架构，三层C/S架构的优势在于：将业务逻辑层单独拆分出来(独立于数据库服务器、用户客户端)放在单独的服务器上，经常变更的业务逻辑代码并不会直接影响到客户端的使用。其劣势依然需要用户安装客户端(你可以认为就是手机中的APP)
+[![p9sqDPS.md.png](https://s1.ax1x.com/2023/05/12/p9sqDPS.md.png)](https://imgse.com/i/p9sqDPS)
+[![p9sLpxH.md.png](https://s1.ax1x.com/2023/05/12/p9sLpxH.md.png)](https://imgse.com/i/p9sLpxH)
+- B/S架构\
+&emsp;&emsp;相比于C/S架构，B/S架构也有自己的优缺点\
+优势：推广容易，不需要用户下载什么客户端之类的，只需要浏览器访问对应地址即可，这也就是早期各大厂都是从门户网站起家的。
+劣势：响应速度较慢，早期只能整个提交页面数据(不能局部刷新)、其安全性较低等。
+[![p9sLRQH.png](https://s1.ax1x.com/2023/05/12/p9sLRQH.png)](https://imgse.com/i/p9sLRQH)
+- 混合架构
 
 ### 2.8.2 MVC架构风格
 
