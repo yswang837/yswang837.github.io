@@ -62,19 +62,26 @@
 [![p9sLpxH.md.png](https://s1.ax1x.com/2023/05/12/p9sLpxH.md.png)](https://imgse.com/i/p9sLpxH)
 - B/S架构\
 &emsp;&emsp;相比于C/S架构，B/S架构也有自己的优缺点\
-优势：推广容易，不需要用户下载什么客户端之类的，只需要浏览器访问对应地址即可，这也就是早期各大厂都是从门户网站起家的。
+优势：推广容易，不需要用户下载什么客户端之类的，只需要浏览器访问对应地址即可，这也就是早期各大厂都是从门户网站起家的。\
 劣势：响应速度较慢，早期只能整个提交页面数据(不能局部刷新)、其安全性较低等。
 [![p9sLRQH.png](https://s1.ax1x.com/2023/05/12/p9sLRQH.png)](https://imgse.com/i/p9sLRQH)
-- 混合架构
-
+- 混合架构\
+&emsp;&emsp;结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。
+[![p9sxzJP.md.png](https://s1.ax1x.com/2023/05/12/p9sxzJP.md.png)](https://imgse.com/i/p9sxzJP)
 ### 2.8.2 MVC架构风格
-
+&emsp;&emsp;MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数
+据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。\
+&emsp;&emsp;MVC分为主动MVC和被动MVC(具体不用了解)，MVC架构的缺点在于MV之间没有解耦，不是严格的分层架构(严格的分层架构：当前层之和上下层之间有联系)
+[![p9ym5FK.md.png](https://s1.ax1x.com/2023/05/12/p9ym5FK.md.png)](https://imgse.com/i/p9ym5FK)\
+&emsp;&emsp;在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是Entity Bean/Session Bean，View是JSP，Controller是Servlet。
 ### 2.8.3 MVP架构风格
-
+&emsp;&emsp;MVP(Model-View-Presenter)，~~注意：它不是LOL中的MVP~~，它是MVC的变种，它实现了MV之间的解耦。
+[![p9ynxBR.md.png](https://s1.ax1x.com/2023/05/12/p9ynxBR.md.png)](https://imgse.com/i/p9ynxBR)
 ### 2.8.4 MVVM架构风格
-
+&emsp;&emsp;MVVM(Model-ViewModel-View),类似于vue中的双向数据绑定，View改变则ViewModel也改变，反之亦然。
+[![p9ynzH1.md.png](https://s1.ax1x.com/2023/05/12/p9ynzH1.md.png)](https://imgse.com/i/p9ynzH1)
 ### 2.8.5 RIA架构风格
-
+&emsp;&emsp;RIA(富互联网架构)类似于综合了C/S和B/S架构的优点(C/S反应快，交互强，B/S易传播)，它在首次加载初期比较慢，一旦加载完成使用就快多了。典型的例子就是在线网游。
 ### 2.8.6 基于服务的架构(SOA)
 
 ### 2.8.7 微服务

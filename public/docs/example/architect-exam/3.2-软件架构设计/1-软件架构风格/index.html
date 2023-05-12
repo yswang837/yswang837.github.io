@@ -25,7 +25,9 @@
 通过图示可以看出非常明显的缺点：将业务逻辑的代码嵌入进客户端，在早期互联网并不普及的情况下，频繁变更的业务逻辑代码和难以推广升级的客户端存在巨大矛盾。 三层C/S架构
 相比于双层C/S架构，三层C/S架构的优势在于：将业务逻辑层单独拆分出来(独立于数据库服务器、用户客户端)放在单独的服务器上，经常变更的业务逻辑代码并不会直接影响到客户端的使用。其劣势依然需要用户安装客户端(你可以认为就是手机中的APP) B/S架构
 相比于C/S架构，B/S架构也有自己的优缺点
-优势：推广容易，不需要用户下载什么客户端之类的，只需要浏览器访问对应地址即可，这也就是早期各大厂都是从门户网站起家的。 劣势：响应速度较慢，早期只能整个提交页面数据(不能局部刷新)、其安全性较低等。 混合架构 2.8.2 MVC架构风格 # 2.">
+优势：推广容易，不需要用户下载什么客户端之类的，只需要浏览器访问对应地址即可，这也就是早期各大厂都是从门户网站起家的。
+劣势：响应速度较慢，早期只能整个提交页面数据(不能局部刷新)、其安全性较低等。 混合架构
+结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。 2.8.2 MVC架构风格 # MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数 据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -37,7 +39,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.bf45765444b2f4f7df09cdf0086c636bbf37a9e6e6589bdf7e7f78a70575a3f2.js" integrity="sha256-v0V2VESy9PffCc3wCGxja783qebmWJvffn94pwV1o/I=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.079948236ee8dd488b83ab3ee621c09d4893e925610848c4ae264cfa8ad43fd0.js" integrity="sha256-B5lII27o3UiLg6s&#43;5iHAnUiT6SVhCEjEriZM&#43;orUP9A=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/1-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -209,7 +211,7 @@ https://github.com/alex-shpak/hugo-book
   
     <input type="checkbox" id="section-6c4eae7067e5dfff5c2e4406248debee" class="toggle" checked />
     <label for="section-6c4eae7067e5dfff5c2e4406248debee" class="flex justify-between">
-      <a href="/docs/example/architect-exam/" class="">3. 高级软考系统架构师考试</a>
+      <a href="/docs/example/architect-exam/" class="">3. 高级软考 - 系统架构师</a>
     </label>
   
 
@@ -739,27 +741,39 @@ https://github.com/alex-shpak/hugo-book
 <a href="https://imgse.com/i/p9sLpxH"><img src="https://s1.ax1x.com/2023/05/12/p9sLpxH.md.png" alt="p9sLpxH.md.png" /></a></li>
 <li>B/S架构<br>
   相比于C/S架构，B/S架构也有自己的优缺点<br>
-优势：推广容易，不需要用户下载什么客户端之类的，只需要浏览器访问对应地址即可，这也就是早期各大厂都是从门户网站起家的。
+优势：推广容易，不需要用户下载什么客户端之类的，只需要浏览器访问对应地址即可，这也就是早期各大厂都是从门户网站起家的。<br>
 劣势：响应速度较慢，早期只能整个提交页面数据(不能局部刷新)、其安全性较低等。
 <a href="https://imgse.com/i/p9sLRQH"><img src="https://s1.ax1x.com/2023/05/12/p9sLRQH.png" alt="p9sLRQH.png" /></a></li>
-<li>混合架构</li>
+<li>混合架构<br>
+  结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。
+<a href="https://imgse.com/i/p9sxzJP"><img src="https://s1.ax1x.com/2023/05/12/p9sxzJP.md.png" alt="p9sxzJP.md.png" /></a></li>
 </ul>
 <h3 id="282-mvc架构风格">
   2.8.2 MVC架构风格
   <a class="anchor" href="#282-mvc%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h3>
+<p>  MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数
+据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。<br>
+  MVC分为主动MVC和被动MVC(具体不用了解)，MVC架构的缺点在于MV之间没有解耦，不是严格的分层架构(严格的分层架构：当前层之和上下层之间有联系)
+<a href="https://imgse.com/i/p9ym5FK"><img src="https://s1.ax1x.com/2023/05/12/p9ym5FK.md.png" alt="p9ym5FK.md.png" /></a><br>
+  在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是Entity Bean/Session Bean，View是JSP，Controller是Servlet。</p>
 <h3 id="283-mvp架构风格">
   2.8.3 MVP架构风格
   <a class="anchor" href="#283-mvp%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h3>
+<p>  MVP(Model-View-Presenter)，<del>注意：它不是LOL中的MVP</del>，它是MVC的变种，它实现了MV之间的解耦。
+<a href="https://imgse.com/i/p9ynxBR"><img src="https://s1.ax1x.com/2023/05/12/p9ynxBR.md.png" alt="p9ynxBR.md.png" /></a></p>
 <h3 id="284-mvvm架构风格">
   2.8.4 MVVM架构风格
   <a class="anchor" href="#284-mvvm%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h3>
+<p>  MVVM(Model-ViewModel-View),类似于vue中的双向数据绑定，View改变则ViewModel也改变，反之亦然。
+<a href="https://imgse.com/i/p9ynzH1"><img src="https://s1.ax1x.com/2023/05/12/p9ynzH1.md.png" alt="p9ynzH1.md.png" /></a></p>
 <h3 id="285-ria架构风格">
   2.8.5 RIA架构风格
   <a class="anchor" href="#285-ria%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h3>
+<p>  RIA(富互联网架构)类似于综合了C/S和B/S架构的优点(C/S反应快，交互强，B/S易传播)，它在首次加载初期比较慢，一旦加载完成使用就快多了。典型的例子就是在线网游。</p>
 <h3 id="286-基于服务的架构soa">
   2.8.6 基于服务的架构(SOA)
   <a class="anchor" href="#286-%e5%9f%ba%e4%ba%8e%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%9e%b6%e6%9e%84soa">#</a>
