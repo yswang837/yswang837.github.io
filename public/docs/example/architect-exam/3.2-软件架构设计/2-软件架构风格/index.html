@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" 2.软件架构风格 # 架构风格反映了领域中众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。 2.1 数据流风格 # 数据流风格以数据驱动的方式推进项目，其的典型应用有传统编译器、网络报文处理，它包含2个子风格：
+1、批处理。做题要点：大量整体数据、无需用户交互
+2、管道过滤器。做题要点：流式数据、弱用户交互
+具体如下图： 2.2 调用/返回风格 # 调用/返回风格包含3个子风格：
+1、主程序/子程序风格
+2、面向对象风格
+3、分层风格，其具体实例见2.8
+2.3 独立构建风格 # 独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：
+1、进程通信
+2、事件驱动系统（隐式调用）
+2.4 虚拟机风格 # 虚拟机风格包含2个子风格：
+1、解释器风格，做题关键字：需要自定义规则的场景
+2、规则系统，做题关键字：在解释器的基础上增加经验规则
+2.5 仓库风格 # 仓库风格包含2个子风格：
+1、数据库系统
+2、黑板系统 2.6 闭环控制风格(过程风格) # 2.7 C2架构风格 # \
+例题 答案： 答案： 答案：
+2.8 调用返回风格 - 分层风格的具体实例 # ">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/" />
+
+<title>2) 软件架构风格 | 小钻风</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.552321219f5b2f8293bb614a83f6c119a9712a094814a9e0952ded4a61bf63c7.js" integrity="sha256-VSMhIZ9bL4KTu2FKg/bBGalxKglIFKnglS3tSmG/Y8c=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="小钻风" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>小钻风</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">介绍</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0172079bf31c2e1230a2ba418e74787a" class="toggle"  />
+    <label for="section-0172079bf31c2e1230a2ba418e74787a" class="flex justify-between">
+      <a role="button" class="">1. golang语言教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/golang/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="">1.1 Golang基本数据类型</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/golang/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-777a1736a727cd6e825002af5c691cae" class="toggle"  />
+    <label for="section-777a1736a727cd6e825002af5c691cae" class="flex justify-between">
+      <a role="button" class="">2. gin杂谈</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/gin/aaa/" class="">Aaa</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/gin/aaa/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6c4eae7067e5dfff5c2e4406248debee" class="toggle" checked />
+    <label for="section-6c4eae7067e5dfff5c2e4406248debee" class="flex justify-between">
+      <a href="/docs/example/architect-exam/" class="">3. 高级软考系统架构师考试</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="">3.1 计算机组成与体系结构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">3.2 软件架构设计</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/1-%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E8%BF%B0/" class="">1) 架构的概述</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/" class="active">2) 软件架构风格</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c5af2a1cf2778ff160886bf03e434863" class="toggle"  />
+    <label for="section-c5af2a1cf2778ff160886bf03e434863" class="flex justify-between">
+      <a role="button" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/algorthem/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="">1.1 Golang基本数据类型</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/algorthem/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-931d8f340adf73346e40d4b227426621" class="toggle"  />
+    <label for="section-931d8f340adf73346e40d4b227426621" class="flex justify-between">
+      <a role="button" class="">5. leetcode</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/leetcode/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="">1.1 Golang基本数据类型</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/leetcode/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>2) 软件架构风格</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#21-数据流风格">2.1 数据流风格</a></li>
+    <li><a href="#22-调用返回风格">2.2 调用/返回风格</a></li>
+    <li><a href="#23-独立构建风格">2.3 独立构建风格</a></li>
+    <li><a href="#24-虚拟机风格">2.4 虚拟机风格</a></li>
+    <li><a href="#25-仓库风格">2.5 仓库风格</a></li>
+    <li><a href="#26-闭环控制风格过程风格">2.6 闭环控制风格(过程风格)</a></li>
+    <li><a href="#27-c2架构风格">2.7 C2架构风格</a></li>
+    <li><a href="#28-调用返回风格---分层风格的具体实例">2.8 调用返回风格 - 分层风格的具体实例</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="2软件架构风格">
+  2.软件架构风格
+  <a class="anchor" href="#2%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
+</h1>
+<p>  架构风格反映了领域中众多系统所共有的<strong>结构</strong>和<strong>语义</strong>特性，并指导如何将各个<strong>构件</strong>有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。
+<a href="https://imgse.com/i/p9rTTqf"><img src="https://s1.ax1x.com/2023/05/11/p9rTTqf.md.png" alt="p9rTTqf.md.png" /></a></p>
+<h2 id="21-数据流风格">
+  2.1 数据流风格
+  <a class="anchor" href="#21-%e6%95%b0%e6%8d%ae%e6%b5%81%e9%a3%8e%e6%a0%bc">#</a>
+</h2>
+<p>  数据流风格以数据驱动的方式推进项目，其的典型应用有<strong>传统编译器</strong>、<strong>网络报文处理</strong>，它包含2个子风格：<br>
+1、批处理。做题要点：<strong>大量整体数据</strong>、<strong>无需用户交互</strong><br>
+2、管道过滤器。做题要点：<strong>流式数据</strong>、<strong>弱用户交互</strong><br>
+具体如下图：
+<a href="https://imgse.com/i/p9rIyS1"><img src="https://s1.ax1x.com/2023/05/11/p9rIyS1.md.png" alt="p9rIyS1.md.png" /></a>
+<a href="https://imgse.com/i/p9rI6Qx"><img src="https://s1.ax1x.com/2023/05/11/p9rI6Qx.md.png" alt="p9rI6Qx.md.png" /></a></p>
+<h2 id="22-调用返回风格">
+  2.2 调用/返回风格
+  <a class="anchor" href="#22-%e8%b0%83%e7%94%a8%e8%bf%94%e5%9b%9e%e9%a3%8e%e6%a0%bc">#</a>
+</h2>
+<p>  调用/返回风格包含3个子风格：<br>
+1、主程序/子程序风格<br>
+2、面向对象风格<br>
+3、分层风格，其具体实例见2.8<br>
+<a href="https://imgse.com/i/p9rIfTe"><img src="https://s1.ax1x.com/2023/05/11/p9rIfTe.md.png" alt="p9rIfTe.md.png" /></a>
+<a href="https://imgse.com/i/p9rI5Yd"><img src="https://s1.ax1x.com/2023/05/11/p9rI5Yd.md.png" alt="p9rI5Yd.md.png" /></a></p>
+<h2 id="23-独立构建风格">
+  2.3 独立构建风格
+  <a class="anchor" href="#23-%e7%8b%ac%e7%ab%8b%e6%9e%84%e5%bb%ba%e9%a3%8e%e6%a0%bc">#</a>
+</h2>
+<p>  独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：<br>
+1、进程通信<br>
+2、事件驱动系统（隐式调用）<br>
+<a href="https://imgse.com/i/p9rIIfA"><img src="https://s1.ax1x.com/2023/05/11/p9rIIfA.md.png" alt="p9rIIfA.md.png" /></a>
+<a href="https://imgse.com/i/p9rIH6P"><img src="https://s1.ax1x.com/2023/05/11/p9rIH6P.md.png" alt="p9rIH6P.md.png" /></a></p>
+<h2 id="24-虚拟机风格">
+  2.4 虚拟机风格
+  <a class="anchor" href="#24-%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%a3%8e%e6%a0%bc">#</a>
+</h2>
+<p>  虚拟机风格包含2个子风格：<br>
+1、解释器风格，做题关键字：需要自定义规则的场景<br>
+2、规则系统，做题关键字：在解释器的基础上增加经验规则</p>
+<p><a href="https://imgse.com/i/p9rILm8"><img src="https://s1.ax1x.com/2023/05/11/p9rILm8.md.png" alt="p9rILm8.md.png" /></a>
+<a href="https://imgse.com/i/p9rIO0S"><img src="https://s1.ax1x.com/2023/05/11/p9rIO0S.md.png" alt="p9rIO0S.md.png" /></a></p>
+<h2 id="25-仓库风格">
+  2.5 仓库风格
+  <a class="anchor" href="#25-%e4%bb%93%e5%ba%93%e9%a3%8e%e6%a0%bc">#</a>
+</h2>
+<p>  仓库风格包含2个子风格：<br>
+1、数据库系统<br>
+2、黑板系统
+<a href="https://imgse.com/i/p9r7PdU"><img src="https://s1.ax1x.com/2023/05/11/p9r7PdU.md.png" alt="p9r7PdU.md.png" /></a>
+<a href="https://imgse.com/i/p9rIzfs"><img src="https://s1.ax1x.com/2023/05/11/p9rIzfs.md.png" alt="p9rIzfs.md.png" /></a>
+<a href="https://imgse.com/i/p9roppn"><img src="https://s1.ax1x.com/2023/05/11/p9roppn.md.png" alt="p9roppn.md.png" /></a></p>
+<h2 id="26-闭环控制风格过程风格">
+  2.6 闭环控制风格(过程风格)
+  <a class="anchor" href="#26-%e9%97%ad%e7%8e%af%e6%8e%a7%e5%88%b6%e9%a3%8e%e6%a0%bc%e8%bf%87%e7%a8%8b%e9%a3%8e%e6%a0%bc">#</a>
+</h2>
+<p><a href="https://imgse.com/i/p9ro9lq"><img src="https://s1.ax1x.com/2023/05/11/p9ro9lq.md.png" alt="p9ro9lq.md.png" /></a></p>
+<h2 id="27-c2架构风格">
+  2.7 C2架构风格
+  <a class="anchor" href="#27-c2%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
+</h2>
+<p><a href="https://imgse.com/i/p9roC60"><img src="https://s1.ax1x.com/2023/05/11/p9roC60.md.png" alt="p9roC60.md.png" /></a>\</p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9r7KeK"><img src="https://s1.ax1x.com/2023/05/11/p9r7KeK.md.png" alt="p9r7KeK.md.png" /></a><br>
+答案：
+<a href="https://imgse.com/i/p9rq1FU"><img src="https://s1.ax1x.com/2023/05/11/p9rq1FU.md.png" alt="p9rq1FU.md.png" /></a><br>
+答案：
+<a href="https://imgse.com/i/p9rOyqI"><img src="https://s1.ax1x.com/2023/05/11/p9rOyqI.md.png" alt="p9rOyqI.md.png" /></a><br>
+答案：</p>
+</blockquote>
+<h2 id="28-调用返回风格---分层风格的具体实例">
+  2.8 调用返回风格 - 分层风格的具体实例
+  <a class="anchor" href="#28-%e8%b0%83%e7%94%a8%e8%bf%94%e5%9b%9e%e9%a3%8e%e6%a0%bc---%e5%88%86%e5%b1%82%e9%a3%8e%e6%a0%bc%e7%9a%84%e5%85%b7%e4%bd%93%e5%ae%9e%e4%be%8b">#</a>
+</h2>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#21-数据流风格">2.1 数据流风格</a></li>
+    <li><a href="#22-调用返回风格">2.2 调用/返回风格</a></li>
+    <li><a href="#23-独立构建风格">2.3 独立构建风格</a></li>
+    <li><a href="#24-虚拟机风格">2.4 虚拟机风格</a></li>
+    <li><a href="#25-仓库风格">2.5 仓库风格</a></li>
+    <li><a href="#26-闭环控制风格过程风格">2.6 闭环控制风格(过程风格)</a></li>
+    <li><a href="#27-c2架构风格">2.7 C2架构风格</a></li>
+    <li><a href="#28-调用返回风格---分层风格的具体实例">2.8 调用返回风格 - 分层风格的具体实例</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
