@@ -83,7 +83,36 @@
 ### 2.8.5 RIA架构风格
 &emsp;&emsp;RIA(富互联网架构)类似于综合了C/S和B/S架构的优点(C/S反应快，交互强，B/S易传播)，它在首次加载初期比较慢，一旦加载完成使用就快多了。典型的例子就是在线网游。
 ### 2.8.6 基于服务的架构(SOA)
-
+1、服务构件粗粒度，传统构件细粒度居多。\
+2、服务构件的接口是标准的，主要是WSDL接口，传统构件常以具体API形式出现。\
+3、服务构件的实现与语言无关，传统构件绑定某种特定语言。\
+4、服务构件可以通过构件容器提供OoS的服务，传统构件完全由程序代码直接控制。
+[![p9glNbF.md.png](https://s1.ax1x.com/2023/05/15/p9glNbF.md.png)](https://imgse.com/i/p9glNbF)\
+SOA的实现方式：WebService；WSDL就是WebService接口对应的WSDL文件，该文件通过xml格式说明如何调用可以看作WebService的接口文档 (使用说明书)。
+[![p9gsw36.md.png](https://s1.ax1x.com/2023/05/15/p9gsw36.md.png)](https://imgse.com/i/p9gsw36)\
+SOA的实现方式：ESB
+[![p9gssDe.md.png](https://s1.ax1x.com/2023/05/15/p9gssDe.md.png)](https://imgse.com/i/p9gssDe)
 ### 2.8.7 微服务
-
+&emsp;&emsp;微服务顾名思义，就是很小的服务，所以它属于面向服务架构的一种。
+&emsp;&emsp;微服务架构是一种架构模式，它提倡将单一应用程序划分成一组小的服务，服务之间互相协调、互相配合，为用户提供最终价值。每个服务运行在其独立的进程中，服务与服务间采用轻量级的通信机制互相沟通 (通常是基于HTTP协议的RESTfulAPI)。每个服务都围绕着具体业务进行构建，并且能够被独立的部署到生产环境、类生产环境等。另外，应当尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建。
+&emsp;&emsp;其特点有：\
+1、小,且专注于做一件事情。\
+2、轻量级的通信机制。\
+3、松耦合、独立部署。\
+[![p9gsj2V.md.png](https://s1.ax1x.com/2023/05/15/p9gsj2V.md.png)](https://imgse.com/i/p9gsj2V)
+微服务的优势：\
+1、技术异构\
+2、弹性扩展\
+3、在自动化部署情况下，能简化部署\
+4、可组织性\
+微服务的挑战：\
+1、分布式系统的复杂度\
+2、运维成本\
+3、服务间的依赖管理和测试\
+4、部署自动化\
+- SOA与微服务的对比
+[![p9gyVxK.md.png](https://s1.ax1x.com/2023/05/15/p9gyVxK.md.png)](https://imgse.com/i/p9gyVxK)
+[![p9gyMad.md.png](https://s1.ax1x.com/2023/05/15/p9gyMad.md.png)](https://imgse.com/i/p9gyMad)
 ### 2.8.8 MDA
+[![p9gq4xO.md.png](https://s1.ax1x.com/2023/05/15/p9gq4xO.md.png)](https://imgse.com/i/p9gq4xO)
+[![p9gqOit.md.png](https://s1.ax1x.com/2023/05/15/p9gqOit.md.png)](https://imgse.com/i/p9gqOit)

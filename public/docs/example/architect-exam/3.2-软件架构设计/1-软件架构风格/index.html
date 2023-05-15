@@ -39,7 +39,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.922f3e52dcceb4529f1133faa9b9cf7d0b7810e2608dc387af5ccf3869519a5a.js" integrity="sha256-ki8&#43;UtzOtFKfETP6qbnPfQt4EOJgjcOHr1zPOGlRmlo=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.6fbcbc72085031351641f10ccaae93d771b2929187e49c039f1643cb1a5e4997.js" integrity="sha256-b7y8cghQMTUWQfEMyq6T13GykpGH5JwDnxZDyxpeSZc=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/1-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -778,14 +778,47 @@ https://github.com/alex-shpak/hugo-book
   2.8.6 基于服务的架构(SOA)
   <a class="anchor" href="#286-%e5%9f%ba%e4%ba%8e%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%9e%b6%e6%9e%84soa">#</a>
 </h3>
+<p>1、服务构件粗粒度，传统构件细粒度居多。<br>
+2、服务构件的接口是标准的，主要是WSDL接口，传统构件常以具体API形式出现。<br>
+3、服务构件的实现与语言无关，传统构件绑定某种特定语言。<br>
+4、服务构件可以通过构件容器提供OoS的服务，传统构件完全由程序代码直接控制。
+<a href="https://imgse.com/i/p9glNbF"><img src="https://s1.ax1x.com/2023/05/15/p9glNbF.md.png" alt="p9glNbF.md.png" /></a><br>
+SOA的实现方式：WebService；WSDL就是WebService接口对应的WSDL文件，该文件通过xml格式说明如何调用可以看作WebService的接口文档 (使用说明书)。
+<a href="https://imgse.com/i/p9gsw36"><img src="https://s1.ax1x.com/2023/05/15/p9gsw36.md.png" alt="p9gsw36.md.png" /></a><br>
+SOA的实现方式：ESB
+<a href="https://imgse.com/i/p9gssDe"><img src="https://s1.ax1x.com/2023/05/15/p9gssDe.md.png" alt="p9gssDe.md.png" /></a></p>
 <h3 id="287-微服务">
   2.8.7 微服务
   <a class="anchor" href="#287-%e5%be%ae%e6%9c%8d%e5%8a%a1">#</a>
 </h3>
+<p>  微服务顾名思义，就是很小的服务，所以它属于面向服务架构的一种。
+  微服务架构是一种架构模式，它提倡将单一应用程序划分成一组小的服务，服务之间互相协调、互相配合，为用户提供最终价值。每个服务运行在其独立的进程中，服务与服务间采用轻量级的通信机制互相沟通 (通常是基于HTTP协议的RESTfulAPI)。每个服务都围绕着具体业务进行构建，并且能够被独立的部署到生产环境、类生产环境等。另外，应当尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建。
+  其特点有：<br>
+1、小,且专注于做一件事情。<br>
+2、轻量级的通信机制。<br>
+3、松耦合、独立部署。<br>
+<a href="https://imgse.com/i/p9gsj2V"><img src="https://s1.ax1x.com/2023/05/15/p9gsj2V.md.png" alt="p9gsj2V.md.png" /></a>
+微服务的优势：<br>
+1、技术异构<br>
+2、弹性扩展<br>
+3、在自动化部署情况下，能简化部署<br>
+4、可组织性<br>
+微服务的挑战：<br>
+1、分布式系统的复杂度<br>
+2、运维成本<br>
+3、服务间的依赖管理和测试<br>
+4、部署自动化\</p>
+<ul>
+<li>SOA与微服务的对比
+<a href="https://imgse.com/i/p9gyVxK"><img src="https://s1.ax1x.com/2023/05/15/p9gyVxK.md.png" alt="p9gyVxK.md.png" /></a>
+<a href="https://imgse.com/i/p9gyMad"><img src="https://s1.ax1x.com/2023/05/15/p9gyMad.md.png" alt="p9gyMad.md.png" /></a></li>
+</ul>
 <h3 id="288-mda">
   2.8.8 MDA
   <a class="anchor" href="#288-mda">#</a>
 </h3>
+<p><a href="https://imgse.com/i/p9gq4xO"><img src="https://s1.ax1x.com/2023/05/15/p9gq4xO.md.png" alt="p9gq4xO.md.png" /></a>
+<a href="https://imgse.com/i/p9gqOit"><img src="https://s1.ax1x.com/2023/05/15/p9gqOit.md.png" alt="p9gqOit.md.png" /></a></p>
 </article>
  
       
