@@ -8,8 +8,27 @@
 
 [![p9gxrM6.png](https://s1.ax1x.com/2023/05/15/p9gxrM6.png)](https://imgse.com/i/p9gxrM6)
 ### 4.1.1 架构需求
+[![p9RTuX4.png](https://s1.ax1x.com/2023/05/17/p9RTuX4.png)](https://imgse.com/i/p9RTuX4)
 ### 4.1.2 架构设计
+[![p9RTl7R.png](https://s1.ax1x.com/2023/05/17/p9RTl7R.png)](https://imgse.com/i/p9RTl7R)
 ### 4.1.3 架构文档化
+[![p9RTwBd.md.png](https://s1.ax1x.com/2023/05/17/p9RTwBd.md.png)](https://imgse.com/i/p9RTwBd)
 ### 4.1.4 架构复审
+&emsp;&emsp;架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误。
 ### 4.1.5 架构实现
-### 4.1.6 架构烟花
+[![p9RT8tx.md.png](https://s1.ax1x.com/2023/05/17/p9RT8tx.md.png)](https://imgse.com/i/p9RT8tx)
+### 4.1.6 架构演化
+[![p9RTGh6.png](https://s1.ax1x.com/2023/05/17/p9RTGh6.png)](https://imgse.com/i/p9RTGh6)
+>例题
+[![p9RTDAI.md.png](https://s1.ax1x.com/2023/05/17/p9RTDAI.md.png)](https://imgse.com/i/p9RTDAI)\
+学霸做对了没
+[![p9RT2jg.md.png](https://s1.ax1x.com/2023/05/17/p9RT2jg.md.png)](https://imgse.com/i/p9RT2jg)\
+学霸做对了没
+
+
+
+
+
+
+
+

@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 基于架构的软件开发ABSD # 基于架构的软件开发ABSD(Architecture-Based Software Design)。它能很好地支持重用。
+<meta name="description" content="基于架构的软件开发ABSD # 基于架构的软件开发ABSD(Architecture-Based Software Design)。它能很好地支持重用。
 1、ABSD方法是架构驱动，即强调由业务、质量和功能需求的组合驱动架构设计。
 2、ABSD方法有三个基础。第一个基础是功能的分解。在功能分解中，ABSD方法使用已有的基于模块的内聚和耦合技术，第二个基础是通过选择架构风格来实现质量和业务需求，第三个基础是软件模板的使用。
 3、视角与视图:从不同的视角来检查，所以会有不同的视图。
 4、用例用来捕获功能需求、特定场景用来捕获质量需求。
-4.1 开发过程 # 4.1.1 架构需求 # 4.1.2 架构设计 # 4.1.3 架构文档化 # 4.1.4 架构复审 # 4.1.5 架构实现 # 4.1.6 架构烟花 # ">
+4.1 开发过程 # 4.1.1 架构需求 # 4.1.2 架构设计 # 4.1.3 架构文档化 # 4.1.4 架构复审 # 架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误。
+4.1.5 架构实现 # 4.1.6 架构演化 # 例题 学霸做对了没 学霸做对了没">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -20,7 +21,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.7067e814a92afc594e253d485c29bf1379eb9cb0904612385bb8776de73c6c84.js" integrity="sha256-cGfoFKkq/FlOJT1IXCm/E3nrnLCQRhI4W7h3bec8bIQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.54ca15829813703a07ef34a184dccc6230b2cd0be77914003b6ae7c9f4181cd4.js" integrity="sha256-VMoVgpgTcDoH7zShhNzMYjCyzQvneRQAO2rnyfQYHNQ=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/4-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -606,7 +607,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#413-架构文档化">4.1.3 架构文档化</a></li>
         <li><a href="#414-架构复审">4.1.4 架构复审</a></li>
         <li><a href="#415-架构实现">4.1.5 架构实现</a></li>
-        <li><a href="#416-架构烟花">4.1.6 架构烟花</a></li>
+        <li><a href="#416-架构演化">4.1.6 架构演化</a></li>
       </ul>
     </li>
   </ul>
@@ -639,26 +640,39 @@ https://github.com/alex-shpak/hugo-book
   4.1.1 架构需求
   <a class="anchor" href="#411-%e6%9e%b6%e6%9e%84%e9%9c%80%e6%b1%82">#</a>
 </h3>
+<p><a href="https://imgse.com/i/p9RTuX4"><img src="https://s1.ax1x.com/2023/05/17/p9RTuX4.png" alt="p9RTuX4.png" /></a></p>
 <h3 id="412-架构设计">
   4.1.2 架构设计
   <a class="anchor" href="#412-%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1">#</a>
 </h3>
+<p><a href="https://imgse.com/i/p9RTl7R"><img src="https://s1.ax1x.com/2023/05/17/p9RTl7R.png" alt="p9RTl7R.png" /></a></p>
 <h3 id="413-架构文档化">
   4.1.3 架构文档化
   <a class="anchor" href="#413-%e6%9e%b6%e6%9e%84%e6%96%87%e6%a1%a3%e5%8c%96">#</a>
 </h3>
+<p><a href="https://imgse.com/i/p9RTwBd"><img src="https://s1.ax1x.com/2023/05/17/p9RTwBd.md.png" alt="p9RTwBd.md.png" /></a></p>
 <h3 id="414-架构复审">
   4.1.4 架构复审
   <a class="anchor" href="#414-%e6%9e%b6%e6%9e%84%e5%a4%8d%e5%ae%a1">#</a>
 </h3>
+<p>  架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误。</p>
 <h3 id="415-架构实现">
   4.1.5 架构实现
   <a class="anchor" href="#415-%e6%9e%b6%e6%9e%84%e5%ae%9e%e7%8e%b0">#</a>
 </h3>
-<h3 id="416-架构烟花">
-  4.1.6 架构烟花
-  <a class="anchor" href="#416-%e6%9e%b6%e6%9e%84%e7%83%9f%e8%8a%b1">#</a>
+<p><a href="https://imgse.com/i/p9RT8tx"><img src="https://s1.ax1x.com/2023/05/17/p9RT8tx.md.png" alt="p9RT8tx.md.png" /></a></p>
+<h3 id="416-架构演化">
+  4.1.6 架构演化
+  <a class="anchor" href="#416-%e6%9e%b6%e6%9e%84%e6%bc%94%e5%8c%96">#</a>
 </h3>
+<p><a href="https://imgse.com/i/p9RTGh6"><img src="https://s1.ax1x.com/2023/05/17/p9RTGh6.png" alt="p9RTGh6.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9RTDAI"><img src="https://s1.ax1x.com/2023/05/17/p9RTDAI.md.png" alt="p9RTDAI.md.png" /></a><br>
+学霸做对了没
+<a href="https://imgse.com/i/p9RT2jg"><img src="https://s1.ax1x.com/2023/05/17/p9RT2jg.md.png" alt="p9RT2jg.md.png" /></a><br>
+学霸做对了没</p>
+</blockquote>
 </article>
  
       
@@ -707,7 +721,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#413-架构文档化">4.1.3 架构文档化</a></li>
         <li><a href="#414-架构复审">4.1.4 架构复审</a></li>
         <li><a href="#415-架构实现">4.1.5 架构实现</a></li>
-        <li><a href="#416-架构烟花">4.1.6 架构烟花</a></li>
+        <li><a href="#416-架构演化">4.1.6 架构演化</a></li>
       </ul>
     </li>
   </ul>
