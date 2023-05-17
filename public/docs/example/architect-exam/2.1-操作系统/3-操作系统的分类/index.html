@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="操作系统的分类 # 1.批处理操作系统 # 单道批处理系统 单道批处理操作系统是一种早期的操作系统，用户可以向系统提交多个作业，“单道”的含义是指一次只有一个作业装入内存执行。作业由用户程序、数据和作业说明书(作业控制语言)3个部分组成。当一个作业运行结束后，随即自动调入同批的下一个作业，从而节省了作业之间的人工干预时间，提高了资源的利用率。\ 多道批处理操作系统 允许多个作业装入内存执行，在任意一个时刻，作业都处于开始点和终止点之间。每当运行中的一个作业由于输入/输出操作需要调用外部设备时，就把 CPU 交给另一个等待运行的作业，从而将主机与外部设备的工作由串行改变为并行，进一步避免了因主机等待外设完成任务而浪费宝贵的 CPU 时间。多道批处理系统主要有3 个特点:多道、宏观上并行运行和微观上串行运行。 2.分时操作系统 # 在分时操作系统中，一个计算机系统与多个终端设备连接。分时操作系统是将 CPU 的工作时间划分为许多很短的时间片，轮流为各个终端的用户服务。例如，一个带 20 个终端的分时系统，若每个用户每次分配一个 50ms 的时间片，则每隔 1s 即可为所有的用户服务一遍。因此,尽管各个终端上的作业是断续运行的，但由于操作系统每次对用户程序都能做出及时响应，因此用户感觉整个系统均归其一人占用。
+3.实时操作系统 # 实时是指计算机对于外来信息能够以足够快的速度进行处理，并在被控对象允许的时间范围内做出快速反应。实时系统对交互能力要求不高，但要求可靠性有保障。
+实时系统分为实时控制系统和实时信息处理系统。实时控制系统主要用于生产过程的自动控制，例如数据自动采集、武器控制、火炮自动控制、飞机自动驾驶和导弹的制导系统等。实时信息处理系统主要用于实时信息处理，例如飞机订票系统、情报检索系统等。
+4.网络操作系统 # 网络操作系统是使联网计算机能方便而有效地共享网络资源，为网络用户提供各种服务的软件和有关协议的集合。
+5.分布式操作系统 # 分布式计算机系统是由多个分散的计算机经连接而成的计算机系统，系统中的计算机无主次之分，任意两台计算机可以通过通信交换信息。通常，为分布式计算机系统配置的操作系统称为分布式操作系统。分布式操作系统能直接对系统中的各类资源进行动态分配和调度、任务划分、信息传输协调工作，并为用户提供一个统一的界面与标准的接口，用户通过这一界面实现所需要的操作和使用系统资源，使系统中若干台计算机相互协作完成共同的任务，有效地控制和协调诸任务的并行执行。分布式操作系统是网络操作系统的更高级形式，它保持网络系统所拥有的全部功能，同时又有透明性、可靠性和高性能等特性。
+6.微型计算机操作系统 # 微型计算机操作系统简称微机操作系统，常用的有 Windows、Mac OS、Linux。
+7.嵌入式操作系统 # 嵌入式操作系统运行在嵌入式智能设备环境中微型化，其主要特点如下：微型化、可定制、实时性、可靠性、易移植性">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%88%86%E7%B1%BB/" />
+
+<title>3) 操作系统的分类 | 小钻风</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.444f034f718eb3091e7f18d94248a6d4aed6afb1969e897d7600502e239d815c.js" integrity="sha256-RE8DT3GOswkefxjZQkim1K7Wr7GWnol9dgBQLiOdgVw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%88%86%E7%B1%BB/index.xml" title="小钻风" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>小钻风</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">介绍</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0172079bf31c2e1230a2ba418e74787a" class="toggle"  />
+    <label for="section-0172079bf31c2e1230a2ba418e74787a" class="flex justify-between">
+      <a role="button" class="">0. golang语言教程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/golang/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="">1.1 Golang基本数据类型</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/golang/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-777a1736a727cd6e825002af5c691cae" class="toggle"  />
+    <label for="section-777a1736a727cd6e825002af5c691cae" class="flex justify-between">
+      <a role="button" class="">1. gin杂谈</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/gin/aaa/" class="">Aaa</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/gin/aaa/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6c4eae7067e5dfff5c2e4406248debee" class="toggle" checked />
+    <label for="section-6c4eae7067e5dfff5c2e4406248debee" class="flex justify-between">
+      <a href="/docs/example/architect-exam/" class="">2. 高级软考 - 系统架构师</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/2.0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="">2.0 计算机组成与体系结构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="">2.1 操作系统</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90%E5%8F%8A%E4%BD%9C%E7%94%A8/" class="">1) 操作系统的组成及作用</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E6%80%A7/" class="">2) 操作系统的特性</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%88%86%E7%B1%BB/" class="active">3) 操作系统的分类</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="">4) 进程管理</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">3.2 软件架构设计</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/0-%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E8%BF%B0/" class="">0) 架构的概述</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/1-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/" class="">1) 软件架构风格</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E6%9E%B6%E6%9E%84%E6%8F%8F%E8%BF%B0%E8%AF%AD%E8%A8%80/" class="">2) 架构描述语言</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="">3) 特定领域软件架构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/4-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="">4) 基于架构的软件开发</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/5-%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7/" class="">5) 软件质量属性</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/6-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">6) 软件架构评估</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E4%BA%A7%E5%93%81%E7%BA%BF/" class="">7) 软件产品线</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/8-%E6%9E%84%E5%BB%BA%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/" class="">8) 构建与中间件技术</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-web%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">9) Web架构设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.3-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="">3.3 软件工程</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c5af2a1cf2778ff160886bf03e434863" class="toggle"  />
+    <label for="section-c5af2a1cf2778ff160886bf03e434863" class="flex justify-between">
+      <a role="button" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/algorthem/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="">1.1 Golang基本数据类型</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/algorthem/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-931d8f340adf73346e40d4b227426621" class="toggle"  />
+    <label for="section-931d8f340adf73346e40d4b227426621" class="flex justify-between">
+      <a role="button" class="">5. leetcode</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/leetcode/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="">1.1 Golang基本数据类型</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/leetcode/1.1-golang%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>3) 操作系统的分类</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1批处理操作系统">1.批处理操作系统</a></li>
+    <li><a href="#2分时操作系统">2.分时操作系统</a></li>
+    <li><a href="#3实时操作系统">3.实时操作系统</a></li>
+    <li><a href="#4网络操作系统">4.网络操作系统</a></li>
+    <li><a href="#5分布式操作系统">5.分布式操作系统</a></li>
+    <li><a href="#6微型计算机操作系统">6.微型计算机操作系统</a></li>
+    <li><a href="#7嵌入式操作系统">7.嵌入式操作系统</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="操作系统的分类">
+  操作系统的分类
+  <a class="anchor" href="#%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e7%9a%84%e5%88%86%e7%b1%bb">#</a>
+</h1>
+<h2 id="1批处理操作系统">
+  1.批处理操作系统
+  <a class="anchor" href="#1%e6%89%b9%e5%a4%84%e7%90%86%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<ul>
+<li>单道批处理系统
+  单道批处理操作系统是一种早期的操作系统，用户可以向系统提交多个作业，“单道”的含义是指一次只有一个作业装入内存执行。作业由用户程序、数据和作业说明书(作业控制语言)3个部分组成。当一个作业运行结束后，随即自动调入同批的下一个作业，从而节省了作业之间的人工干预时间，提高了资源的利用率。\</li>
+<li>多道批处理操作系统
+  允许多个作业装入内存执行，在任意一个时刻，作业都处于开始点和终止点之间。每当运行中的一个作业由于输入/输出操作需要调用外部设备时，就把 CPU 交给另一个等待运行的作业，从而将主机与外部设备的工作由串行改变为并行，进一步避免了因主机等待外设完成任务而浪费宝贵的 CPU 时间。多道批处理系统主要有3 个特点:多道、宏观上并行运行和微观上串行运行。</li>
+</ul>
+<h2 id="2分时操作系统">
+  2.分时操作系统
+  <a class="anchor" href="#2%e5%88%86%e6%97%b6%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<p>  在分时操作系统中，一个计算机系统与多个终端设备连接。分时操作系统是将 CPU 的工作时间划分为许多很短的时间片，轮流为各个终端的用户服务。例如，一个带 20 个终端的分时系统，若每个用户每次分配一个 50ms 的时间片，则每隔 1s 即可为所有的用户服务一遍。因此,尽管各个终端上的作业是断续运行的，但由于操作系统每次对用户程序都能做出及时响应，因此用户感觉整个系统均归其一人占用。</p>
+<h2 id="3实时操作系统">
+  3.实时操作系统
+  <a class="anchor" href="#3%e5%ae%9e%e6%97%b6%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<p>  实时是指计算机对于外来信息能够以足够快的速度进行处理，并在被控对象允许的时间范围内做出快速反应。实时系统对交互能力要求不高，但要求可靠性有保障。<br>
+  实时系统分为实时控制系统和实时信息处理系统。实时控制系统主要用于生产过程的自动控制，例如数据自动采集、武器控制、火炮自动控制、飞机自动驾驶和导弹的制导系统等。实时信息处理系统主要用于实时信息处理，例如飞机订票系统、情报检索系统等。</p>
+<h2 id="4网络操作系统">
+  4.网络操作系统
+  <a class="anchor" href="#4%e7%bd%91%e7%bb%9c%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<p>  网络操作系统是使联网计算机能方便而有效地共享网络资源，为网络用户提供各种服务的软件和有关协议的集合。</p>
+<h2 id="5分布式操作系统">
+  5.分布式操作系统
+  <a class="anchor" href="#5%e5%88%86%e5%b8%83%e5%bc%8f%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<p>  分布式计算机系统是由多个分散的计算机经连接而成的计算机系统，系统中的计算机无主次之分，任意两台计算机可以通过通信交换信息。通常，为分布式计算机系统配置的操作系统称为分布式操作系统。分布式操作系统能直接对系统中的各类资源进行动态分配和调度、任务划分、信息传输协调工作，并为用户提供一个统一的界面与标准的接口，用户通过这一界面实现所需要的操作和使用系统资源，使系统中若干台计算机相互协作完成共同的任务，有效地控制和协调诸任务的并行执行。分布式操作系统是网络操作系统的更高级形式，它保持网络系统所拥有的全部功能，同时又有透明性、可靠性和高性能等特性。</p>
+<h2 id="6微型计算机操作系统">
+  6.微型计算机操作系统
+  <a class="anchor" href="#6%e5%be%ae%e5%9e%8b%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<p>  微型计算机操作系统简称微机操作系统，常用的有 Windows、Mac OS、Linux。</p>
+<h2 id="7嵌入式操作系统">
+  7.嵌入式操作系统
+  <a class="anchor" href="#7%e5%b5%8c%e5%85%a5%e5%bc%8f%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<p>  嵌入式操作系统运行在嵌入式智能设备环境中微型化，其主要特点如下：微型化、可定制、实时性、可靠性、易移植性</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1批处理操作系统">1.批处理操作系统</a></li>
+    <li><a href="#2分时操作系统">2.分时操作系统</a></li>
+    <li><a href="#3实时操作系统">3.实时操作系统</a></li>
+    <li><a href="#4网络操作系统">4.网络操作系统</a></li>
+    <li><a href="#5分布式操作系统">5.分布式操作系统</a></li>
+    <li><a href="#6微型计算机操作系统">6.微型计算机操作系统</a></li>
+    <li><a href="#7嵌入式操作系统">7.嵌入式操作系统</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

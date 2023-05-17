@@ -1,0 +1,18 @@
+# 课程内容提要
+- 1.操作系统的组成及作用✅✅✅
+- 2.操作系统的特性✅✅✅
+- 3.操作系统的分类✅✅✅
+- 4.进程管理
+  - 进程的状态&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
+  - 前趋图&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅✅
+  - 信号量与P/V操作 &emsp;&emsp;✅✅✅✅
+  - 死锁及银行家算法&emsp;&emsp;✅
+- 5.存储管理
+  - 页式存储&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
+  - 段式存储&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
+  - 页面置换算法&emsp;&emsp;&emsp;&emsp;✅
+- 6.文件管理
+  - 绝对路径与相对路径&emsp;✅
+  - 索引文件&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
+  - 位示图&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
+- 7.设备管理&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
