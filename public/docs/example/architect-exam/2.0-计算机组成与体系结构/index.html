@@ -37,7 +37,7 @@ Cache的命中率：
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.55663f9adf202ada4a9b5883aba16f00bcab7df77a08f1b3045c36d40b98f36e.js" integrity="sha256-VWY/mt8gKtpKm1iDq6FvALyrffd6CPGzBFw21AuY824=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f3283f87e84b656799b23659eeb19dcb4113b2c1d074a4a17d5db1aa50355872.js" integrity="sha256-8yg/h&#43;hLZWeZsjZZ7rGdy0ETssHQdKShfV2xqlA1WHI=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/2.0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -529,10 +529,16 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#31-程序查询方式">3.1 程序查询方式</a></li>
         <li><a href="#32-程序中断方式">3.2 程序中断方式</a></li>
         <li><a href="#33-dma方式">3.3 DMA方式</a></li>
-        <li><a href="#4-总线">4 总线</a></li>
-        <li><a href="#5-cisc与risc">5 CISC与RISC</a></li>
-        <li><a href="#6-流水线">6 流水线</a></li>
-        <li><a href="#7-校验码">7 校验码</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-总线">4 总线</a></li>
+    <li><a href="#5-cisc与risc">5 CISC与RISC</a></li>
+    <li><a href="#6-流水线">6 流水线</a></li>
+    <li><a href="#7-校验码">7 校验码</a>
+      <ul>
+        <li><a href="#71-奇偶校验码">7.1 奇偶校验码</a></li>
+        <li><a href="#72-循环冗余码">7.2 循环冗余码</a></li>
+        <li><a href="#73-海明码">7.3 海明码</a></li>
         <li><a href="#8-嵌入式">8 嵌入式</a></li>
       </ul>
     </li>
@@ -692,22 +698,69 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 <a href="https://imgse.com/i/p9hyFcn"><img src="https://s1.ax1x.com/2023/05/19/p9hyFcn.md.png" alt="p9hyFcn.md.png" /></a><br>
 学霸做对了没</p>
 </blockquote>
-<h3 id="4-总线">
+<h2 id="4-总线">
   4 总线
   <a class="anchor" href="#4-%e6%80%bb%e7%ba%bf">#</a>
-</h3>
-<h3 id="5-cisc与risc">
+</h2>
+<p>  总线(Bus)，是指计算机设备和设备之间传输信息的公共数据通道。总线是连接计算机硬件系统内多种设备的通信线路，它的一个重要特征是由总线上的所有设备共享，因此可以将计算机系统内的多种设备连接到总线上。一条总线同一时刻仅允许一个设备发送，但允许多个设备接收，所以总线是半双工模式。<br>
+  总线具体分为数据总线(并行数据传输位数)、地址总线(系统可管理的内存空间的大小) 、控制总线(传送控制命令)。</p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9h6vFS"><img src="https://s1.ax1x.com/2023/05/19/p9h6vFS.md.png" alt="p9h6vFS.md.png" /></a><br>
+学霸做对了没
+<a href="https://imgse.com/i/p9hcSzj"><img src="https://s1.ax1x.com/2023/05/19/p9hcSzj.md.png" alt="p9hcSzj.md.png" /></a><br>
+学霸做对了没</p>
+</blockquote>
+<h2 id="5-cisc与risc">
   5 CISC与RISC
   <a class="anchor" href="#5-cisc%e4%b8%8erisc">#</a>
-</h3>
-<h3 id="6-流水线">
+</h2>
+<p><a href="https://imgse.com/i/p9hcPLq"><img src="https://s1.ax1x.com/2023/05/19/p9hcPLq.md.png" alt="p9hcPLq.md.png" /></a></p>
+<h2 id="6-流水线">
   6 流水线
   <a class="anchor" href="#6-%e6%b5%81%e6%b0%b4%e7%ba%bf">#</a>
-</h3>
-<h3 id="7-校验码">
+</h2>
+<p><strong>流水线时间计算</strong><br>
+<strong>流水线周期</strong>:指令分成不同执行段(取址、分析、执行)，其中执行时间最长的段为流水线周期。<br>
+<strong>流水线执行时间</strong>:1条指令总执行时间+ (总指令条数-1)*流水线周期。<br>
+<strong>流水线吞吐率计算</strong>:吞叶率即单位时间内执行的指今条数。即：指令条数/流水线执行时间<br>
+<strong>流水线的加速比计算</strong>:加速比即使用流水线后的效率提升度，即比不使用流水线快了多少倍，越高表明流水线效率越高。即：不使用流水线执行时间/使用流水线执行时间。<br>
+<a href="https://imgse.com/i/p9hcNSH"><img src="https://s1.ax1x.com/2023/05/19/p9hcNSH.md.png" alt="p9hcNSH.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9hca6A"><img src="https://s1.ax1x.com/2023/05/19/p9hca6A.md.png" alt="p9hca6A.md.png" /></a><br>
+学霸做对了没</p>
+</blockquote>
+<h2 id="7-校验码">
   7 校验码
   <a class="anchor" href="#7-%e6%a0%a1%e9%aa%8c%e7%a0%81">#</a>
+</h2>
+<h3 id="71-奇偶校验码">
+  7.1 奇偶校验码
+  <a class="anchor" href="#71-%e5%a5%87%e5%81%b6%e6%a0%a1%e9%aa%8c%e7%a0%81">#</a>
 </h3>
+<p>  奇偶校验码:在编码中增加1位校验位来使编码中1的个数为奇数(奇校验)或者偶数(偶校验)，编码中，含有奇数个1，发送给接收方，接收方收到后，会计算收到的编码有多少个1，如果是奇数个，则无误，是偶数个，则有误。</p>
+<h3 id="72-循环冗余码">
+  7.2 循环冗余码
+  <a class="anchor" href="#72-%e5%be%aa%e7%8e%af%e5%86%97%e4%bd%99%e7%a0%81">#</a>
+</h3>
+<p><a href="https://imgse.com/i/p9hcq1J"><img src="https://s1.ax1x.com/2023/05/19/p9hcq1J.md.png" alt="p9hcq1J.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9hgu4S"><img src="https://s1.ax1x.com/2023/05/19/p9hgu4S.md.png" alt="p9hgu4S.md.png" /></a><br>
+学霸做对了没</p>
+</blockquote>
+<h3 id="73-海明码">
+  7.3 海明码
+  <a class="anchor" href="#73-%e6%b5%b7%e6%98%8e%e7%a0%81">#</a>
+</h3>
+<p><a href="https://imgse.com/i/p9hg8un"><img src="https://s1.ax1x.com/2023/05/19/p9hg8un.md.png" alt="p9hg8un.md.png" /></a>
+<a href="https://imgse.com/i/p9hgGBq"><img src="https://s1.ax1x.com/2023/05/19/p9hgGBq.md.png" alt="p9hgGBq.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9hgU4U"><img src="https://s1.ax1x.com/2023/05/19/p9hgU4U.md.png" alt="p9hgU4U.md.png" /></a><br>
+学霸做对了没</p>
+</blockquote>
 <h3 id="8-嵌入式">
   8 嵌入式
   <a class="anchor" href="#8-%e5%b5%8c%e5%85%a5%e5%bc%8f">#</a>
@@ -772,10 +825,16 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
         <li><a href="#31-程序查询方式">3.1 程序查询方式</a></li>
         <li><a href="#32-程序中断方式">3.2 程序中断方式</a></li>
         <li><a href="#33-dma方式">3.3 DMA方式</a></li>
-        <li><a href="#4-总线">4 总线</a></li>
-        <li><a href="#5-cisc与risc">5 CISC与RISC</a></li>
-        <li><a href="#6-流水线">6 流水线</a></li>
-        <li><a href="#7-校验码">7 校验码</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-总线">4 总线</a></li>
+    <li><a href="#5-cisc与risc">5 CISC与RISC</a></li>
+    <li><a href="#6-流水线">6 流水线</a></li>
+    <li><a href="#7-校验码">7 校验码</a>
+      <ul>
+        <li><a href="#71-奇偶校验码">7.1 奇偶校验码</a></li>
+        <li><a href="#72-循环冗余码">7.2 循环冗余码</a></li>
+        <li><a href="#73-海明码">7.3 海明码</a></li>
         <li><a href="#8-嵌入式">8 嵌入式</a></li>
       </ul>
     </li>
