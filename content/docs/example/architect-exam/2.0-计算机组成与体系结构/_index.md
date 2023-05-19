@@ -27,7 +27,7 @@
 &emsp;&emsp;时序部件：提供时序控制信号。
 >例题
 [![p9DnRPg.md.png](https://s1.ax1x.com/2023/05/10/p9DnRPg.md.png)](https://imgse.com/i/p9DnRPg)\
-答案：A
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
 ## 2 存储系统
 &emsp;&emsp;整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。如下图：\
 [![p9DutLq.md.png](https://s1.ax1x.com/2023/05/10/p9DutLq.md.png)](https://imgse.com/i/p9DutLq)\
@@ -44,9 +44,9 @@ Cache的命中率：\
 &emsp;&emsp;当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache，则CPU读取一次的平均时间为(90% * 1 + 10% * 1000)ns\
 >例题
 [![p9D4n8x.md.png](https://s1.ax1x.com/2023/05/10/p9D4n8x.md.png)](https://imgse.com/i/p9D4n8x)\
-答案：B
+{{< expand "学霸肯定对了">}}B{{< /expand >}}
 [![p9D4JIA.md.png](https://s1.ax1x.com/2023/05/10/p9D4JIA.md.png)](https://imgse.com/i/p9D4JIA)\
-答案：D
+{{< expand "学霸肯定对了">}}D{{< /expand >}}
 ### 2.2 主存(内存)编址计算
 &emsp;&emsp;主存如图所示，可以看图试着回答红色框线里面的问题，看完应该知道32位机器和64位机器大概是啥意思了。
 [![p9D5gTH.md.png](https://s1.ax1x.com/2023/05/10/p9D5gTH.md.png)](https://imgse.com/i/p9D5gTH)\

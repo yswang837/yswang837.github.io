@@ -12,8 +12,7 @@
 指令寄存器IR：存储即将执行的指令。
 指令译码器ID：对指令中的操作码字段进行分析解释。
 时序部件：提供时序控制信号。
-例题 答案：A
-2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。如下图：
+例题 学霸肯定对了 ↕ A 2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。如下图：
 \
 2.1 高速缓存Cache # 高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于程序员来说是透明的。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。
 地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。
@@ -24,8 +23,7 @@ Cache的功能：
 4.使用Cache改善系统性能的依据是程序的局部性原理(总的来说，在CPU运行时，所访问的数据会趋向于一个较小的局部时空内。包括下面两个方面: 时间局部性原理:如果一个数据项正在被访问，那么在近期它很可能会被再次访问，即在相邻的时间里会访问同一个数据项。空间局部性原理:在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问。)
 Cache的命中率：
 当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache，则CPU读取一次的平均时间为(90% * 1 &#43; 10% * 1000)ns\
-例题 答案：B 答案：D
-2.2 主存(内存)编址计算 # 主存如图所示，可以看图试着回答红色框线里面的问题，看完应该知道32位机器和64位机器大概是啥意思了。 特别提醒：不要硬算，要化简为2的幂指数来算。 存储单元个数=最大地址-最小地址&#43;1">
+例题 学霸肯定对了 ↕ B 学霸肯定对了 ↕ D 2.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -37,7 +35,7 @@ Cache的命中率：
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f3283f87e84b656799b23659eeb19dcb4113b2c1d074a4a17d5db1aa50355872.js" integrity="sha256-8yg/h&#43;hLZWeZsjZZ7rGdy0ETssHQdKShfV2xqlA1WHI=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1818fa5ce0e4f3a822f7ea1e0589f5b14310cea0201739dcaa66d6d90242cea6.js" integrity="sha256-GBj6XODk86gi9&#43;oeBYn1sUMQzqAgFzncqmbW2QJCzqY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/2.0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -594,7 +592,20 @@ https://github.com/alex-shpak/hugo-book
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9DnRPg"><img src="https://s1.ax1x.com/2023/05/10/p9DnRPg.md.png" alt="p9DnRPg.md.png" /></a><br>
-答案：A</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
 <h2 id="2-存储系统">
   2 存储系统
@@ -619,9 +630,35 @@ Cache的命中率：<br>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9D4n8x"><img src="https://s1.ax1x.com/2023/05/10/p9D4n8x.md.png" alt="p9D4n8x.md.png" /></a><br>
-答案：B
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      B
+    </div>
+  </label>
+</div>
+
 <a href="https://imgse.com/i/p9D4JIA"><img src="https://s1.ax1x.com/2023/05/10/p9D4JIA.md.png" alt="p9D4JIA.md.png" /></a><br>
-答案：D</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
 <h3 id="22-主存内存编址计算">
   2.2 主存(内存)编址计算
