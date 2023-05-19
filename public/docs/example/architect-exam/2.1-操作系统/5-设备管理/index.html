@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="特定领域软件架构 DSSA # DSSA全称为Domain Specific Software Architecture
-基本活动 领域分析机制 三层次模型 \
-例题 学霸做对了没">
+<meta name="description" content="设备管理 # 1 I/O软件层次 # 1/0设备管理软件的所有层次及每一层功能如下图：
+实例：当用户程序试图读一个硬盘文件时，需要通过操作系统实现这一操作。与设备无关软件检查高速缓存中有无要读的数据块，若没有，则调用设备驱动程序，向1/0 硬件发出一个请求。然后，用户进程阻塞并等待磁盘操作的完成。当磁盘操作完成时，硬件产生一个中断，转入中断处理程序。中断处理程序检查中断的原因，认识到这时磁盘读取操作已经完成，于是唤醒用户进程取回从磁盘读取的信息，从而结束此次1/0 请求。用户进程在得到了所需的硬盘文件内容之，后继续运行。
+2 SPOOLING技术 # 虚拟性是OS的四大特性之一。如果说可以通过多道程序技术将一台物理CPU虚拟为多台逻辑CPU，从而允许多个用户共享一台主机，那么，通过SPOOling技术便可将一台物理I/O设备虚拟为多台逻辑I/O设备，同样允许多个用户共享一台物理I/O设备。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86/" />
 
-<title>3) 特定领域软件架构 | 小钻风</title>
+<title>5) 设备管理 | 小钻风</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.35935242578908699f263d2dc2b83272cf5e7d697723138aabe77ac66c727201.js" integrity="sha256-NZNSQleJCGmfJj0twrgycs9efWl3IxOKq&#43;d6xmxycgE=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/index.xml" title="小钻风" />
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -262,7 +262,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86/" class="">5) 设备管理</a>
+    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/5-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86/" class="active">5) 设备管理</a>
   
 
           
@@ -370,7 +370,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="active">3) 特定领域软件架构</a>
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="">3) 特定领域软件架构</a>
   
 
           
@@ -600,7 +600,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>3) 特定领域软件架构</strong>
+  <strong>5) 设备管理</strong>
 
   <label for="toc-control">
     
@@ -614,7 +614,12 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-io软件层次">1 I/O软件层次</a></li>
+    <li><a href="#2-spooling技术">2 SPOOLING技术</a></li>
+  </ul>
+</nav>
 
 
 
@@ -625,22 +630,22 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="特定领域软件架构-dssa">
-  特定领域软件架构 DSSA
-  <a class="anchor" href="#%e7%89%b9%e5%ae%9a%e9%a2%86%e5%9f%9f%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84-dssa">#</a>
+  <article class="markdown"><h1 id="设备管理">
+  设备管理
+  <a class="anchor" href="#%e8%ae%be%e5%a4%87%e7%ae%a1%e7%90%86">#</a>
 </h1>
-<p>DSSA全称为Domain Specific Software Architecture<br>
-基本活动
-<a href="https://imgse.com/i/p9gjzhn"><img src="https://s1.ax1x.com/2023/05/15/p9gjzhn.md.png" alt="p9gjzhn.md.png" /></a><br>
-领域分析机制
-<a href="https://imgse.com/i/p9gvCcV"><img src="https://s1.ax1x.com/2023/05/15/p9gvCcV.md.png" alt="p9gvCcV.md.png" /></a><br>
-三层次模型
-<a href="https://imgse.com/i/p9gvGAH"><img src="https://s1.ax1x.com/2023/05/15/p9gvGAH.md.png" alt="p9gvGAH.md.png" /></a>\</p>
-<blockquote>
-<p>例题
-<a href="https://imgse.com/i/p9gvdjf"><img src="https://s1.ax1x.com/2023/05/15/p9gvdjf.md.png" alt="p9gvdjf.md.png" /></a><br>
-学霸做对了没</p>
-</blockquote>
+<h2 id="1-io软件层次">
+  1 I/O软件层次
+  <a class="anchor" href="#1-io%e8%bd%af%e4%bb%b6%e5%b1%82%e6%ac%a1">#</a>
+</h2>
+<p>  1/0设备管理软件的所有层次及每一层功能如下图：<br>
+<a href="https://imgse.com/i/p9hu4dU"><img src="https://s1.ax1x.com/2023/05/19/p9hu4dU.md.png" alt="p9hu4dU.md.png" /></a><br>
+<strong>实例</strong>：当用户程序试图读一个硬盘文件时，需要通过操作系统实现这一操作。与设备无关软件检查高速缓存中有无要读的数据块，若没有，则调用设备驱动程序，向1/0 硬件发出一个请求。然后，用户进程阻塞并等待磁盘操作的完成。当磁盘操作完成时，硬件产生一个中断，转入中断处理程序。中断处理程序检查中断的原因，认识到这时磁盘读取操作已经完成，于是唤醒用户进程取回从磁盘读取的信息，从而结束此次1/0 请求。用户进程在得到了所需的硬盘文件内容之，后继续运行。</p>
+<h2 id="2-spooling技术">
+  2 SPOOLING技术
+  <a class="anchor" href="#2-spooling%e6%8a%80%e6%9c%af">#</a>
+</h2>
+<p>  虚拟性是OS的四大特性之一。如果说可以通过多道程序技术将一台物理CPU虚拟为多台逻辑CPU，从而允许多个用户共享一台主机，那么，通过SPOOling技术便可将一台物理I/O设备虚拟为多台逻辑I/O设备，同样允许多个用户共享一台物理I/O设备。</p>
 </article>
  
       
@@ -680,7 +685,12 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-io软件层次">1 I/O软件层次</a></li>
+    <li><a href="#2-spooling技术">2 SPOOLING技术</a></li>
+  </ul>
+</nav>
 
 
  

@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="特定领域软件架构 DSSA # DSSA全称为Domain Specific Software Architecture
-基本活动 领域分析机制 三层次模型 \
-例题 学霸做对了没">
+<meta name="description" content="操作系统的特性 # 1.并发性 # 在多道程序环境下，并发性是指在一段时间内，宏观上有多个程序同时运行，但实际上在单CPU的运行环境，每一个时刻只有一个程序在执行。因此，从微观上来说，各个程序是交替、轮流执行的，如果计算机系统中有多个 CPU，则可将多个程序分配到不同 CPU 上实现并行运行。
+2.共享性 # 共享是指操作系统中的资源(包括硬件资源和信息资源)可以被多个并发执行的进程(线程)共同使用，而不是被一个进程所独占。
+3.不确定性 # 但由于资源有限，在多数情况下进程的执行不是一贯到底的，而是“走走停停”。例如一个进程，在 CPU上运行一段时间后，由于等待资源或某事件发生，它被暂停执行，将 CPU 转让给另一个进程执行。系统中的进程何时执行，何时暂停，以什么样的速度向前推进，进程总共要花多少时间执行才能完成，这些都是不可预知的。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E6%80%A7/" />
 
-<title>3) 特定领域软件架构 | 小钻风</title>
+<title>1) 操作系统的特性 | 小钻风</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.35935242578908699f263d2dc2b83272cf5e7d697723138aabe77ac66c727201.js" integrity="sha256-NZNSQleJCGmfJj0twrgycs9efWl3IxOKq&#43;d6xmxycgE=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/index.xml" title="小钻风" />
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E6%80%A7/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -190,7 +190,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E6%80%A7/" class="">1) 操作系统的特性</a>
+    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E6%80%A7/" class="active">1) 操作系统的特性</a>
   
 
           
@@ -370,7 +370,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="active">3) 特定领域软件架构</a>
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="">3) 特定领域软件架构</a>
   
 
           
@@ -600,7 +600,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>3) 特定领域软件架构</strong>
+  <strong>1) 操作系统的特性</strong>
 
   <label for="toc-control">
     
@@ -614,7 +614,13 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1并发性">1.并发性</a></li>
+    <li><a href="#2共享性">2.共享性</a></li>
+    <li><a href="#3不确定性">3.不确定性</a></li>
+  </ul>
+</nav>
 
 
 
@@ -625,22 +631,25 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="特定领域软件架构-dssa">
-  特定领域软件架构 DSSA
-  <a class="anchor" href="#%e7%89%b9%e5%ae%9a%e9%a2%86%e5%9f%9f%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84-dssa">#</a>
+  <article class="markdown"><h1 id="操作系统的特性">
+  操作系统的特性
+  <a class="anchor" href="#%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e7%9a%84%e7%89%b9%e6%80%a7">#</a>
 </h1>
-<p>DSSA全称为Domain Specific Software Architecture<br>
-基本活动
-<a href="https://imgse.com/i/p9gjzhn"><img src="https://s1.ax1x.com/2023/05/15/p9gjzhn.md.png" alt="p9gjzhn.md.png" /></a><br>
-领域分析机制
-<a href="https://imgse.com/i/p9gvCcV"><img src="https://s1.ax1x.com/2023/05/15/p9gvCcV.md.png" alt="p9gvCcV.md.png" /></a><br>
-三层次模型
-<a href="https://imgse.com/i/p9gvGAH"><img src="https://s1.ax1x.com/2023/05/15/p9gvGAH.md.png" alt="p9gvGAH.md.png" /></a>\</p>
-<blockquote>
-<p>例题
-<a href="https://imgse.com/i/p9gvdjf"><img src="https://s1.ax1x.com/2023/05/15/p9gvdjf.md.png" alt="p9gvdjf.md.png" /></a><br>
-学霸做对了没</p>
-</blockquote>
+<h2 id="1并发性">
+  1.并发性
+  <a class="anchor" href="#1%e5%b9%b6%e5%8f%91%e6%80%a7">#</a>
+</h2>
+<p>  在多道程序环境下，并发性是指在一段时间内，宏观上有多个程序同时运行，但实际上在单CPU的运行环境，每一个时刻只有一个程序在执行。因此，从微观上来说，各个程序是交替、轮流执行的，如果计算机系统中有多个 CPU，则可将多个程序分配到不同 CPU 上实现并行运行。</p>
+<h2 id="2共享性">
+  2.共享性
+  <a class="anchor" href="#2%e5%85%b1%e4%ba%ab%e6%80%a7">#</a>
+</h2>
+<p>  共享是指操作系统中的资源(包括硬件资源和信息资源)可以被多个并发执行的进程(线程)共同使用，而不是被一个进程所独占。</p>
+<h2 id="3不确定性">
+  3.不确定性
+  <a class="anchor" href="#3%e4%b8%8d%e7%a1%ae%e5%ae%9a%e6%80%a7">#</a>
+</h2>
+<p>  但由于资源有限，在多数情况下进程的执行不是一贯到底的，而是“走走停停”。例如一个进程，在 CPU上运行一段时间后，由于等待资源或某事件发生，它被暂停执行，将 CPU 转让给另一个进程执行。系统中的进程何时执行，何时暂停，以什么样的速度向前推进，进程总共要花多少时间执行才能完成，这些都是不可预知的。</p>
 </article>
  
       
@@ -680,7 +689,13 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1并发性">1.并发性</a></li>
+    <li><a href="#2共享性">2.共享性</a></li>
+    <li><a href="#3不确定性">3.不确定性</a></li>
+  </ul>
+</nav>
 
 
  

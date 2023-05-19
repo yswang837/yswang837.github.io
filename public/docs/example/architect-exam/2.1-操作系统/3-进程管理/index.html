@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="特定领域软件架构 DSSA # DSSA全称为Domain Specific Software Architecture
-基本活动 领域分析机制 三层次模型 \
-例题 学霸做对了没">
+<meta name="description" content="进程管理 # 进程由进程控制块PCB(唯一标识)&#43;程序(描述进程要做什么)&#43;数据(存放进程执行所需的数据)。
+1 进程的三态图 # 2 同步互斥 # 临界资源：各进程间需要以互斥方式对其进行访问的资源。
+临界区：指进程中对临界资源实施操作的那段程序。本质是一段程序代码。
+互斥：某资源 (即临界资源)在同一时间内只能由一个任务单独使用，使用时需要加锁，使用完后解锁才能被其他任务使用;如打印机。
+同步：多个任务可以并发执行，只不过有速度上的差异，在一定情况下停下等待，不存在资源是否单独或共享的问题;如自行车和汽车。
+互斥信号量：对临界资源采用互斥访问，使用互斥信号量后其他进程无法访问，初值为1。
+同步信号量：同步信号量:对共享资源的访问控制，初值一般是共享资源的数量；如公司电脑数量。 3 前趋图与PV操作 # P操作：申请资源，S=S-1，若S)0，则执行P操作的进程继续执行;若S&lt;0，则置该进程为阻塞状态 (因为无可用资源)，并将其插入阻塞队列。
+V操作：释放资源，S=S&#43;1，若S&gt;0，则执行V操作的进程继续执行:若S&lt;=0，则从阻塞状态唤醒一个进程，并将其插入就绪队列(此时因为缺少资源被P操作阻塞的进程可以继续执行，然后执行V操作的进程继续。
+4 死锁 # 死锁就考一个死锁资源的计算。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" />
 
-<title>3) 特定领域软件架构 | 小钻风</title>
+<title>3) 进程管理 | 小钻风</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.35935242578908699f263d2dc2b83272cf5e7d697723138aabe77ac66c727201.js" integrity="sha256-NZNSQleJCGmfJj0twrgycs9efWl3IxOKq&#43;d6xmxycgE=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/index.xml" title="小钻风" />
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -226,7 +232,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="">3) 进程管理</a>
+    <a href="/docs/example/architect-exam/2.1-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/3-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="active">3) 进程管理</a>
   
 
           
@@ -370,7 +376,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="active">3) 特定领域软件架构</a>
+    <a href="/docs/example/architect-exam/3.2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="">3) 特定领域软件架构</a>
   
 
           
@@ -600,7 +606,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>3) 特定领域软件架构</strong>
+  <strong>3) 进程管理</strong>
 
   <label for="toc-control">
     
@@ -614,7 +620,14 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-进程的三态图">1 进程的三态图</a></li>
+    <li><a href="#2-同步互斥">2 同步互斥</a></li>
+    <li><a href="#3-前趋图与pv操作">3 前趋图与PV操作</a></li>
+    <li><a href="#4-死锁">4 死锁</a></li>
+  </ul>
+</nav>
 
 
 
@@ -625,22 +638,41 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="特定领域软件架构-dssa">
-  特定领域软件架构 DSSA
-  <a class="anchor" href="#%e7%89%b9%e5%ae%9a%e9%a2%86%e5%9f%9f%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84-dssa">#</a>
+  <article class="markdown"><h1 id="进程管理">
+  进程管理
+  <a class="anchor" href="#%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86">#</a>
 </h1>
-<p>DSSA全称为Domain Specific Software Architecture<br>
-基本活动
-<a href="https://imgse.com/i/p9gjzhn"><img src="https://s1.ax1x.com/2023/05/15/p9gjzhn.md.png" alt="p9gjzhn.md.png" /></a><br>
-领域分析机制
-<a href="https://imgse.com/i/p9gvCcV"><img src="https://s1.ax1x.com/2023/05/15/p9gvCcV.md.png" alt="p9gvCcV.md.png" /></a><br>
-三层次模型
-<a href="https://imgse.com/i/p9gvGAH"><img src="https://s1.ax1x.com/2023/05/15/p9gvGAH.md.png" alt="p9gvGAH.md.png" /></a>\</p>
-<blockquote>
-<p>例题
-<a href="https://imgse.com/i/p9gvdjf"><img src="https://s1.ax1x.com/2023/05/15/p9gvdjf.md.png" alt="p9gvdjf.md.png" /></a><br>
-学霸做对了没</p>
-</blockquote>
+<p>  进程由进程控制块PCB(唯一标识)+程序(描述进程要做什么)+数据(存放进程执行所需的数据)。</p>
+<h2 id="1-进程的三态图">
+  1 进程的三态图
+  <a class="anchor" href="#1-%e8%bf%9b%e7%a8%8b%e7%9a%84%e4%b8%89%e6%80%81%e5%9b%be">#</a>
+</h2>
+<p><a href="https://imgse.com/i/p9Wehqg"><img src="https://s1.ax1x.com/2023/05/17/p9Wehqg.png" alt="p9Wehqg.png" /></a></p>
+<h2 id="2-同步互斥">
+  2 同步互斥
+  <a class="anchor" href="#2-%e5%90%8c%e6%ad%a5%e4%ba%92%e6%96%a5">#</a>
+</h2>
+<p><strong>临界资源</strong>：各进程间需要以互斥方式对其进行访问的资源。<br>
+<strong>临界区</strong>：指进程中对临界资源实施操作的那段程序。本质是一段程序代码。<br>
+<strong>互斥</strong>：某资源 (即临界资源)在同一时间内只能由一个任务单独使用，使用时需要加锁，使用完后解锁才能被其他任务使用;如打印机。<br>
+<strong>同步</strong>：多个任务可以并发执行，只不过有速度上的差异，在一定情况下停下等待，不存在资源是否单独或共享的问题;如自行车和汽车。<br>
+<strong>互斥信号量</strong>：对临界资源采用互斥访问，使用互斥信号量后其他进程无法访问，初值为1。<br>
+<strong>同步信号量</strong>：同步信号量:对共享资源的访问控制，初值一般是共享资源的数量；如公司电脑数量。
+<a href="https://imgse.com/i/p9hmJTe"><img src="https://s1.ax1x.com/2023/05/19/p9hmJTe.md.png" alt="p9hmJTe.md.png" /></a></p>
+<h2 id="3-前趋图与pv操作">
+  3 前趋图与PV操作
+  <a class="anchor" href="#3-%e5%89%8d%e8%b6%8b%e5%9b%be%e4%b8%8epv%e6%93%8d%e4%bd%9c">#</a>
+</h2>
+<p><strong>P操作</strong>：申请资源，S=S-1，若S)0，则执行P操作的进程继续执行;若S&lt;0，则置该进程为阻塞状态 (因为无可用资源)，并将其插入阻塞队列。<br>
+<strong>V操作</strong>：释放资源，S=S+1，若S&gt;0，则执行V操作的进程继续执行:若S&lt;=0，则从阻塞状态唤醒一个进程，并将其插入就绪队列(此时因为缺少资源被P操作阻塞的进程可以继续执行，然后执行V操作的进程继续。<br>
+<a href="https://imgse.com/i/p9hmyTg"><img src="https://s1.ax1x.com/2023/05/19/p9hmyTg.md.png" alt="p9hmyTg.md.png" /></a>
+<a href="https://imgse.com/i/p9hmgYj"><img src="https://s1.ax1x.com/2023/05/19/p9hmgYj.md.png" alt="p9hmgYj.md.png" /></a></p>
+<h2 id="4-死锁">
+  4 死锁
+  <a class="anchor" href="#4-%e6%ad%bb%e9%94%81">#</a>
+</h2>
+<p>  死锁就考一个死锁资源的计算。<br>
+<a href="https://imgse.com/i/p9hmImT"><img src="https://s1.ax1x.com/2023/05/19/p9hmImT.md.png" alt="p9hmImT.md.png" /></a></p>
 </article>
  
       
@@ -680,7 +712,14 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-进程的三态图">1 进程的三态图</a></li>
+    <li><a href="#2-同步互斥">2 同步互斥</a></li>
+    <li><a href="#3-前趋图与pv操作">3 前趋图与PV操作</a></li>
+    <li><a href="#4-死锁">4 死锁</a></li>
+  </ul>
+</nav>
 
 
  
