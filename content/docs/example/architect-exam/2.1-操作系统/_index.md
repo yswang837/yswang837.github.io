@@ -117,3 +117,4 @@
 ### 7.3 位示图
 &emsp;&emsp;位示图是用于记录文件存储器的使用情况。每一位对应文件存储器上的一个物理块，取值 0 和 1 分别表示空闲和占用。\
 [![p9hMw4g.md.png](https://s1.ax1x.com/2023/05/19/p9hMw4g.md.png)](https://imgse.com/i/p9hMw4g)
+
