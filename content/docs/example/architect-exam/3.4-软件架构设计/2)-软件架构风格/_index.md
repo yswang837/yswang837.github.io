@@ -48,9 +48,9 @@ title: "2) 软件架构风格"
 [![p9roC60.md.png](https://s1.ax1x.com/2023/05/11/p9roC60.md.png)](https://imgse.com/i/p9roC60)\
 >例题
 [![p9r7KeK.md.png](https://s1.ax1x.com/2023/05/11/p9r7KeK.md.png)](https://imgse.com/i/p9r7KeK)\
-{{< expand "学霸肯定对了">}}{{< /expand >}}
+{{< expand "学霸肯定对了">}}1.虚拟机&emsp;&emsp;2.数据流&emsp;&emsp;3.独立构建风格&emsp;&emsp;4.解释器&emsp;&emsp;5.过程控制{{< /expand >}}
 [![p9rq1FU.md.png](https://s1.ax1x.com/2023/05/11/p9rq1FU.md.png)](https://imgse.com/i/p9rq1FU)\
-{{< expand "学霸肯定对了">}}{{< /expand >}}
+{{< expand "学霸肯定对了">}}1.黑板&emsp;&emsp;2.隐式调用&emsp;&emsp;3.独立构建风格&emsp;&emsp;4.解释器&emsp;&emsp;5.过程控制{{< /expand >}}
 [![p9rOyqI.md.png](https://s1.ax1x.com/2023/05/11/p9rOyqI.md.png)](https://imgse.com/i/p9rOyqI)\
 {{< expand "学霸肯定对了">}}{{< /expand >}}
 ## 2.8 架构风格具体实例
