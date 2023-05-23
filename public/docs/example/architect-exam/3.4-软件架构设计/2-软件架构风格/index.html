@@ -3,7 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2.软件架构风格 # 架构风格反映了领域中众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。 2.1 数据流风格 # 数据流风格以数据驱动的方式推进项目，其的典型应用有传统编译器、网络报文处理，它包含2个子风格：
+<meta name="description" content="2.软件架构风格🏁 # 架构风格反映了领域中众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。以下是常见风格的特点或应用：
+批处理&mdash;&gt;传统编译器。
+管道过滤器&mdash;&gt;支持分阶段数据处理。
+层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。
+过程控制&mdash;&gt;控制系统，其特点是不断采集系统当前状态，与系统中的设定状态进行对比，并通过将当前状态与设定状态进行对比从而进行控制。
+隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。
+事件系统&mdash;&gt;注册事件处理的是回调函数，当某个界面事件发生时（例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件。
+解析器&mdash;&gt;运行时的系统行为定义与改变的能力，采用解释器架构风格的系统，可以通过部分解释代码预先编译的方式提高系统性能。
+黑板风格&mdash;&gt;信号处理领域，语音识别系统是一个十分典型的专家系统，其特点是求解的正确结果不止一个，求解过程比较复杂，需要通过专家知识和反馈逐步得到正确结果。
+虚拟机风格&mdash;&gt;通过虚拟机架构屏蔽不同的硬件环境。
+C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规则运作的并行构件网络。
+数据仓库&mdash;&gt;现代集成开发环境（现代编译器）。
+下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。 2.1 数据流风格 # 数据流风格以数据驱动的方式推进项目，其的典型应用有传统编译器、网络报文处理，它包含2个子风格：
 1、批处理。做题要点：大量整体数据、无需用户交互
 2、管道过滤器。做题要点：流式数据、弱用户交互
 具体如下图： 2.2 调用/返回风格 # 调用/返回风格包含3个子风格：
@@ -19,8 +31,7 @@
 2.5 仓库风格 # 仓库风格包含2个子风格：
 1、数据库系统
 2、黑板系统 2.6 闭环控制风格(过程风格) # 2.7 C2架构风格 # \
-例题 学霸肯定对了 ↕ 1.虚拟机 2.数据流 3.独立构建风格 4.解释器 5.过程控制 学霸肯定对了 ↕ 1.黑板 2.隐式调用 3.独立构建风格 4.解释器 5.过程控制 学霸肯定对了 ↕ 2.8 架构风格具体实例 # 没有最好的架构，只有更适合具体业务场景的架构。
-2.8.1 从 C/S -&gt; B/S -&gt; 混合架构 # 双层C/S架构">
+例题 学霸肯定对了 ↕ 1.虚拟机 2.数据流 3.独立构建风格 4.解释器 5.过程控制 学霸肯定对了 ↕ 1.黑板 2.隐式调用 3.事件驱动风格 学霸肯定对了 ↕ 1.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="2) 软件架构风格" />
 <meta property="og:description" content="" />
@@ -32,7 +43,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.050542ca4f3a64739c1a54d89a7124a6f5079c713e041cbbbaf6f7491cdb261a.js" integrity="sha256-BQVCyk86ZHOcGlTYmnEkpvUHnHE&#43;BBy7uvb3SRzbJho=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1a7486c8e72cf8c8204a7dad10766f987be5f7bf60c00903afc22be6df27660f.js" integrity="sha256-GnSGyOcs&#43;MggSn2tEHZvmHvl979gwAkDr8Ir5t8nZg8=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.4-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -627,10 +638,22 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="2软件架构风格">
-  2.软件架构风格
+  2.软件架构风格🏁
   <a class="anchor" href="#2%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h1>
-<p>  架构风格反映了领域中众多系统所共有的<strong>结构</strong>和<strong>语义</strong>特性，并指导如何将各个<strong>构件</strong>有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。
+<p>  架构风格反映了领域中众多系统所共有的<strong>结构</strong>和<strong>语义</strong>特性，并指导如何将各个<strong>构件</strong>有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。以下是常见风格的特点或应用：<br>
+  批处理&mdash;&gt;传统编译器。<br>
+  管道过滤器&mdash;&gt;支持分阶段数据处理。<br>
+  层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。<br>
+  过程控制&mdash;&gt;控制系统，其特点是不断采集系统当前状态，与系统中的设定状态进行对比，并通过将当前状态与设定状态进行对比从而进行控制。<br>
+  隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。<br>
+  事件系统&mdash;&gt;注册事件处理的是回调函数，当某个界面事件发生时（例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件。<br>
+  解析器&mdash;&gt;运行时的系统行为定义与改变的能力，采用解释器架构风格的系统，可以通过部分解释代码预先编译的方式提高系统性能。<br>
+  黑板风格&mdash;&gt;信号处理领域，语音识别系统是一个十分典型的专家系统，其特点是求解的正确结果不止一个，求解过程比较复杂，需要通过专家知识和反馈逐步得到正确结果。<br>
+  虚拟机风格&mdash;&gt;通过虚拟机架构屏蔽不同的硬件环境。<br>
+  C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规则运作的并行构件网络。<br>
+  数据仓库&mdash;&gt;现代集成开发环境（现代编译器）。<br>
+下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。
 <a href="https://imgse.com/i/p9rTTqf"><img src="https://s1.ax1x.com/2023/05/11/p9rTTqf.md.png" alt="p9rTTqf.md.png" /></a></p>
 <h2 id="21-数据流风格">
   2.1 数据流风格
@@ -717,7 +740,7 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      1.黑板  2.隐式调用  3.独立构建风格  4.解释器  5.过程控制
+      1.黑板  2.隐式调用  3.事件驱动风格
     </div>
   </label>
 </div>
@@ -732,7 +755,7 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      
+      1.顺序批处理  2.数据共享  3.隐式调用风格  4.模拟  5.虚拟机
     </div>
   </label>
 </div>
