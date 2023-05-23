@@ -12,9 +12,8 @@
 指令寄存器IR：存储即将执行的指令。
 指令译码器ID：对指令中的操作码字段进行分析解释。
 时序部件：提供时序控制信号。
-例题 学霸肯定对了 ↕ A 2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。如下图：
-\
-2.1 高速缓存Cache # 高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于程序员来说是透明的。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。
+例题 学霸肯定对了 ↕ 答案：A
+计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器（PC)的内容送到地址总线上，PC-&gt;IR。 2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。如下图： 2.1 高速缓存Cache # 高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于程序员来说是透明的。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。
 地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。
 Cache的功能：
 1.提高CPU数据输入输出的速率，突破冯·诺依曼瓶颈，即突破CPU与存储系统间数据传送带宽限制。
@@ -22,7 +21,7 @@ Cache的功能：
 3.Cache对程序员来说是透明的。
 4.使用Cache改善系统性能的依据是程序的局部性原理(总的来说，在CPU运行时，所访问的数据会趋向于一个较小的局部时空内。包括下面两个方面: 时间局部性原理:如果一个数据项正在被访问，那么在近期它很可能会被再次访问，即在相邻的时间里会访问同一个数据项。空间局部性原理:在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问。)
 Cache的命中率：
-当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache，则CPU读取一次的平均时间为(90% * 1 &#43; 10% * 1000)ns\
+当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache，则CPU读取一次的平均时间为(90% * 1 &#43; 10% * 1000)ns
 例题 学霸肯定对了 ↕ B 学霸肯定对了 ↕ D 2.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
@@ -35,7 +34,7 @@ Cache的命中率：
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f7beed470b104cf72d21d8cb18b40afffaeb6d7186871e26dccd867874b5b656.js" integrity="sha256-977tRwsQTPctIdjLGLQK//rrbXGGhx4m3M2GeHS1tlY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.60ff12d839737dd4aee866b0f8dde544657090e2247086aff500361fc68b8519.js" integrity="sha256-YP8S2DlzfdSu6Gaw&#43;N3lRGVwkOIkcIav9QA2H8aLhRk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -645,9 +644,9 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#71-奇偶校验码">7.1 奇偶校验码</a></li>
         <li><a href="#72-循环冗余码">7.2 循环冗余码</a></li>
         <li><a href="#73-海明码">7.3 海明码</a></li>
-        <li><a href="#8-嵌入式">8 嵌入式</a></li>
       </ul>
     </li>
+    <li><a href="#8-嵌入式">8 嵌入式</a></li>
   </ul>
 </nav>
 
@@ -709,7 +708,8 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      A
+      答案：A<br>
+计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器（PC)的内容送到地址总线上，PC-&gt;IR。
     </div>
   </label>
 </div>
@@ -719,13 +719,13 @@ https://github.com/alex-shpak/hugo-book
   2 存储系统
   <a class="anchor" href="#2-%e5%ad%98%e5%82%a8%e7%b3%bb%e7%bb%9f">#</a>
 </h2>
-<p>  整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。如下图：<br>
-<a href="https://imgse.com/i/p9DutLq"><img src="https://s1.ax1x.com/2023/05/10/p9DutLq.md.png" alt="p9DutLq.md.png" /></a>\</p>
+<p>  整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。如下图：
+<a href="https://imgse.com/i/p9DutLq"><img src="https://s1.ax1x.com/2023/05/10/p9DutLq.md.png" alt="p9DutLq.md.png" /></a></p>
 <h3 id="21-高速缓存cache">
   2.1 高速缓存Cache
   <a class="anchor" href="#21-%e9%ab%98%e9%80%9f%e7%bc%93%e5%ad%98cache">#</a>
 </h3>
-<p>  高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于程序员来说是透明的。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。<br>
+<p>  高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于<strong>程序员来说是透明的</strong>。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。<br>
 地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。<br>
 Cache的功能：<br>
   1.提高CPU数据输入输出的速率，突破冯·诺依曼瓶颈，即突破CPU与存储系统间数据传送带宽限制。<br>
@@ -734,7 +734,7 @@ Cache的功能：<br>
   4.使用Cache改善系统性能的依据是程序的局部性原理(总的来说，在CPU运行时，所访问的数据会趋向于一个较小的局部时空内。包括下面两个方面:
 <strong>时间局部性</strong>原理:如果一个数据项正在被访问，那么在近期它很可能会被再次访问，即在相邻的时间里会访问同一个数据项。<strong>空间局部性</strong>原理:在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问。)<br>
 Cache的命中率：<br>
-  当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache，则CPU读取一次的平均时间为(90% * 1 + 10% * 1000)ns\</p>
+  当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache，则CPU读取一次的平均时间为(90% * 1 + 10% * 1000)ns</p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9D4n8x"><img src="https://s1.ax1x.com/2023/05/10/p9D4n8x.md.png" alt="p9D4n8x.md.png" /></a><br>
@@ -774,7 +774,7 @@ Cache的命中率：<br>
 </h3>
 <p>  主存如图所示，可以看图试着回答红色框线里面的问题，看完应该知道32位机器和64位机器大概是啥意思了。
 <a href="https://imgse.com/i/p9D5gTH"><img src="https://s1.ax1x.com/2023/05/10/p9D5gTH.md.png" alt="p9D5gTH.md.png" /></a><br>
-<strong>特别提醒</strong>：不要硬算，要化简为2的幂指数来算。
+<strong>特别提醒</strong>：不要硬算，要化简为二进制或者十进制来算。
 <strong>存储单元个数</strong>=最大地址-最小地址+1</p>
 <ul>
 <li>编址方式
@@ -789,7 +789,21 @@ Cache的命中率：<br>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9h0daQ"><img src="https://s1.ax1x.com/2023/05/19/p9h0daQ.md.png" alt="p9h0daQ.md.png" /></a><br>
-学霸做对了没</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：B C<br>
+总容量=BFFFFH+1-80000H=40000H，转换为十进制为：4 * 16^4=262144，因为按字节编址，所以总容量为262144字节，即262144/1024=256KB，16k * 4bit = 8k * 8bit(1字节=8bit)，所以用这种芯片存这些数据，所需的芯片数量为：256/8=32片
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
 <h3 id="23-磁盘管理">
   2.3 磁盘管理
@@ -812,9 +826,36 @@ Cache的命中率：<br>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9hsNSs"><img src="https://s1.ax1x.com/2023/05/19/p9hsNSs.md.png" alt="p9hsNSs.md.png" /></a><br>
-学霸做对了没
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：D
+    </div>
+  </label>
+</div>
+
 <a href="https://imgse.com/i/p9hsWOx"><img src="https://s1.ax1x.com/2023/05/19/p9hsWOx.md.png" alt="p9hsWOx.md.png" /></a><br>
-学霸做对了没</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：A<br>
+读取一个块需要的时间：100ms+2ms=102ms，读取100个块需要的时间：10 * 10ms * 102ms = 10200ms
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
 <h2 id="3-数据传输控制方式">
   3 数据传输控制方式
@@ -839,9 +880,35 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9hyPpj"><img src="https://s1.ax1x.com/2023/05/19/p9hyPpj.md.png" alt="p9hyPpj.md.png" /></a><br>
-学霸做对了没
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：D C
+    </div>
+  </label>
+</div>
+
 <a href="https://imgse.com/i/p9hyFcn"><img src="https://s1.ax1x.com/2023/05/19/p9hyFcn.md.png" alt="p9hyFcn.md.png" /></a><br>
-学霸做对了没</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：D
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
 <h2 id="4-总线">
   4 总线
@@ -852,9 +919,35 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9h6vFS"><img src="https://s1.ax1x.com/2023/05/19/p9h6vFS.md.png" alt="p9h6vFS.md.png" /></a><br>
-学霸做对了没
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：B
+    </div>
+  </label>
+</div>
+
 <a href="https://imgse.com/i/p9hcSzj"><img src="https://s1.ax1x.com/2023/05/19/p9hcSzj.md.png" alt="p9hcSzj.md.png" /></a><br>
-学霸做对了没</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：C
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
 <h2 id="5-cisc与risc">
   5 CISC与RISC
@@ -906,10 +999,32 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 <a href="https://imgse.com/i/p9hgU4U"><img src="https://s1.ax1x.com/2023/05/19/p9hgU4U.md.png" alt="p9hgU4U.md.png" /></a><br>
 学霸做对了没</p>
 </blockquote>
-<h3 id="8-嵌入式">
+<h2 id="8-嵌入式">
   8 嵌入式
   <a class="anchor" href="#8-%e5%b5%8c%e5%85%a5%e5%bc%8f">#</a>
-</h3>
+</h2>
+<p>  <strong>DSP</strong>：也称数字信号处理器，是一种特别适合于进行数字信号处理运算的微处理器，其主要应用是实时快速地实现各种数字信号处理算法。<br>
+  <strong>SOC</strong>：System on Chip，简称SoC，也即片上系统。从狭义角度讲，它是信息系统核心的芯片集成是将系统关键部件集成在一块芯片上，从广义角度讲，SoC是一个微小型系统，如果说中央处理器 (CPU) 是大脑，那么SoC就是包括大脑、心脏、眼睛和手的系统。<br>
+  <strong>MPU</strong>：微机中的中央处理器 (CPU)称为微处理器 (MPU)，是构成微机的核心部件，也可以说是微机的心脏。它起到控制整个微型计算机工作的作用，产生控制信号对相应的部件进行控制.并执行相应的操作。<br>
+  <strong>MCU</strong>：微控制单元 (Microcontroller Unit;MCU)，又称单片微型计算机(Single ChipMicrocomputer) 或者单片机，是把中央处理器(Central Process Unit;CPU) 的频率与规(Timer) 、USB、A/D转换、UART、PLC格做适当缩减，并将内存(memory) 、计数器DMA等周边接口，甚至LCD驱动电路都整合在单一芯片上，形成芯片级的计算机，为不同的应用场合做不同组合控制。</p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9Ten76"><img src="https://s1.ax1x.com/2023/05/23/p9Ten76.md.png" alt="p9Ten76.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 </article>
  
       
@@ -980,9 +1095,9 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
         <li><a href="#71-奇偶校验码">7.1 奇偶校验码</a></li>
         <li><a href="#72-循环冗余码">7.2 循环冗余码</a></li>
         <li><a href="#73-海明码">7.3 海明码</a></li>
-        <li><a href="#8-嵌入式">8 嵌入式</a></li>
       </ul>
     </li>
+    <li><a href="#8-嵌入式">8 嵌入式</a></li>
   </ul>
 </nav>
 
