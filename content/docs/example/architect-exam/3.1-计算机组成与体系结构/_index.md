@@ -78,8 +78,8 @@ Cache的命中率：\
 [![p9hsNSs.md.png](https://s1.ax1x.com/2023/05/19/p9hsNSs.md.png)](https://imgse.com/i/p9hsNSs)\
 {{< expand "学霸肯定对了">}}答案：D{{< /expand >}}
 [![p9hsWOx.md.png](https://s1.ax1x.com/2023/05/19/p9hsWOx.md.png)](https://imgse.com/i/p9hsWOx)\
-{{< expand "学霸肯定对了">}}答案：A\
-读取一个块需要的时间：100ms+2ms=102ms，读取100个块需要的时间：10 * 10ms * 102ms = 10200ms
+{{< expand "学霸肯定对了">}}答案：D\
+读取一个块需要的时间：10*10ms(移动)+100ms(延迟)+2ms(传输)=202ms，读取100个块需要的时间：100ms * 102ms = 20200ms
 {{< /expand >}}
 ## 3 数据传输控制方式
 ### 3.1 程序查询方式
