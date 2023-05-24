@@ -19,4 +19,16 @@
 &emsp;&emsp;SOA方法有三个主要的抽象级别：操作、服务、业务流程；\
 &emsp;&emsp;SOA分为三个层次：基础设计层(底层服务构件)、应用结构层(服务之间的接口和服务级协定)和业务组织层(业务流程建模和服务流程编排)；\
 &emsp;&emsp;服务建模：分为服务发现、服务规约和服务实现三个阶段。
+## 1.5 其他软件开发方法
+&emsp;&emsp;形式化方法：所有东西均可证明/验证，而不是代码测试\
+&emsp;&emsp;**统一过程方法**；\
+&emsp;&emsp;**敏捷开发方法**；\
+&emsp;&emsp;快速应用开发方法；\
+&emsp;&emsp;基于构建的开发方法；\
+&emsp;&emsp;迭代开发方法；\
+&emsp;&emsp;模型驱动开发方法；\
+&emsp;&emsp;**基于架构的开发方法ABSD**。
+>例题
+[![p9TxpLQ.md.png](https://s1.ax1x.com/2023/05/24/p9TxpLQ.md.png)](https://imgse.com/i/p9TxpLQ)
+{{< expand "学霸肯定对了">}}D A B{{< /expand >}}
 
