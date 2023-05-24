@@ -25,16 +25,26 @@
 ## 2.9 快速应用开发模型RAD
 &emsp;&emsp;快速应用开发=瀑布模型(SDLC)+基于构建的开发(CBSD)
 [![p97KtcF.md.png](https://s1.ax1x.com/2023/05/24/p97KtcF.md.png)](https://imgse.com/i/p97KtcF)
-## 2.10 统一过程模型UP
+## 2.10 统一过程模型UP/RUP
 &emsp;&emsp;三大特点：用例驱动、以架构为中心、迭代和增量。
 - 四个阶段：
   - 初始：确定项目范围和边界
   - 细化：建立软件架构基础
   - 构建：开发剩余的构建、构建组装与测试
   - 交付：制作发布版本
+  
 [![p97uTOJ.md.png](https://s1.ax1x.com/2023/05/24/p97uTOJ.md.png)](https://imgse.com/i/p97uTOJ)
 ## 2.11 敏捷开发模型
 &emsp;&emsp;小步快跑的模式，适合小型项目。
 [![p97MU8f.md.png](https://s1.ax1x.com/2023/05/24/p97MU8f.md.png)](https://imgse.com/i/p97MU8f)
 [![p97M5qJ.png](https://s1.ax1x.com/2023/05/24/p97M5qJ.png)](https://imgse.com/i/p97M5qJ)
-
+[![p97QdF1.md.png](https://s1.ax1x.com/2023/05/24/p97QdF1.md.png)](https://imgse.com/i/p97QdF1)
+>例题
+[![p97QyOe.md.png](https://s1.ax1x.com/2023/05/24/p97QyOe.md.png)](https://imgse.com/i/p97QyOe)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
+[![p97QWFI.md.png](https://s1.ax1x.com/2023/05/24/p97QWFI.md.png)](https://imgse.com/i/p97QWFI)
+{{< expand "学霸肯定对了">}}{{< /expand >}}
+[![p97Q5Sf.md.png](https://s1.ax1x.com/2023/05/24/p97Q5Sf.md.png)](https://imgse.com/i/p97Q5Sf)
+{{< expand "学霸肯定对了">}}{{< /expand >}}
+[![p97Qo6S.md.png](https://s1.ax1x.com/2023/05/24/p97Qo6S.md.png)](https://imgse.com/i/p97Qo6S)
+{{< expand "学霸肯定对了">}}{{< /expand >}}

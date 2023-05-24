@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content=" 2. 软件开发模型 # 2.1 瀑布模型 # 严格先后完成每个阶段，上一阶段的输出时下一个阶段的输入，是结构化开发方法的典型模型，适合于需求明确的项目，对大型项目来说风险较大。 2.2 演化/迭代模型 # 2.3 增量模型 # 2.4 螺旋模型 # 螺旋模型=原型&#43;瀑布模型，首次引入风险分析，适合大型项目。 2.5 原型模型 # 适合需求不明确的系统。若题目中指明“需求不明确”，选原型而不选螺旋模型
 2.6 喷泉模型 # 2.7 V模型 # 测试提前做，测试贯穿于始终。 2.8 构建组装模型 # 优点：快，成本低、可靠。
-缺点：构建库的建立需要慢慢积累。 2.9 快速应用开发模型RAD # 快速应用开发=瀑布模型(SDLC)&#43;基于构建的开发(CBSD) 2.10 统一过程模型UP # 三大特点：用例驱动、以架构为中心、迭代和增量。
-四个阶段： 初始：确定项目范围和边界 细化：建立软件架构基础 构建：开发剩余的构建、构建组装与测试 交付：制作发布版本 2.11 敏捷开发模型 # 小步快跑的模式，适合小型项目。 ">
+缺点：构建库的建立需要慢慢积累。 2.9 快速应用开发模型RAD # 快速应用开发=瀑布模型(SDLC)&#43;基于构建的开发(CBSD) 2.10 统一过程模型UP/RUP # 三大特点：用例驱动、以架构为中心、迭代和增量。
+四个阶段： 初始：确定项目范围和边界 细化：建立软件架构基础 构建：开发剩余的构建、构建组装与测试 交付：制作发布版本 2.11 敏捷开发模型 # 小步快跑的模式，适合小型项目。 例题 学霸肯定对了 ↕ C 学霸肯定对了 ↕ 学霸肯定对了 ↕ 学霸肯定对了 ↕ ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -18,7 +18,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.614f12cc017e448ca8d7a2681b7fd5846dd13cb39975932529740da1af52a364.js" integrity="sha256-YU8SzAF&#43;RIyo16JoG3/VhG3RPLOZdZMlKXQNoa9So2Q=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.749bcae8df4606e730565231bee1822625864445e9e0d602afe67b5dcd961c50.js" integrity="sha256-dJvK6N9GBucwVlIxvuGCJiWGREXp4NYCr&#43;Z7Xc2WHFA=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -734,7 +734,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#27-v模型">2.7 V模型</a></li>
     <li><a href="#28-构建组装模型">2.8 构建组装模型</a></li>
     <li><a href="#29-快速应用开发模型rad">2.9 快速应用开发模型RAD</a></li>
-    <li><a href="#210-统一过程模型up">2.10 统一过程模型UP</a></li>
+    <li><a href="#210-统一过程模型uprup">2.10 统一过程模型UP/RUP</a></li>
     <li><a href="#211-敏捷开发模型">2.11 敏捷开发模型</a></li>
   </ul>
 </nav>
@@ -804,9 +804,9 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>  快速应用开发=瀑布模型(SDLC)+基于构建的开发(CBSD)
 <a href="https://imgse.com/i/p97KtcF"><img src="https://s1.ax1x.com/2023/05/24/p97KtcF.md.png" alt="p97KtcF.md.png" /></a></p>
-<h2 id="210-统一过程模型up">
-  2.10 统一过程模型UP
-  <a class="anchor" href="#210-%e7%bb%9f%e4%b8%80%e8%bf%87%e7%a8%8b%e6%a8%a1%e5%9e%8bup">#</a>
+<h2 id="210-统一过程模型uprup">
+  2.10 统一过程模型UP/RUP
+  <a class="anchor" href="#210-%e7%bb%9f%e4%b8%80%e8%bf%87%e7%a8%8b%e6%a8%a1%e5%9e%8buprup">#</a>
 </h2>
 <p>  三大特点：用例驱动、以架构为中心、迭代和增量。</p>
 <ul>
@@ -815,18 +815,82 @@ https://github.com/alex-shpak/hugo-book
 <li>初始：确定项目范围和边界</li>
 <li>细化：建立软件架构基础</li>
 <li>构建：开发剩余的构建、构建组装与测试</li>
-<li>交付：制作发布版本
-<a href="https://imgse.com/i/p97uTOJ"><img src="https://s1.ax1x.com/2023/05/24/p97uTOJ.md.png" alt="p97uTOJ.md.png" /></a></li>
+<li>交付：制作发布版本</li>
 </ul>
 </li>
 </ul>
+<p><a href="https://imgse.com/i/p97uTOJ"><img src="https://s1.ax1x.com/2023/05/24/p97uTOJ.md.png" alt="p97uTOJ.md.png" /></a></p>
 <h2 id="211-敏捷开发模型">
   2.11 敏捷开发模型
   <a class="anchor" href="#211-%e6%95%8f%e6%8d%b7%e5%bc%80%e5%8f%91%e6%a8%a1%e5%9e%8b">#</a>
 </h2>
 <p>  小步快跑的模式，适合小型项目。
 <a href="https://imgse.com/i/p97MU8f"><img src="https://s1.ax1x.com/2023/05/24/p97MU8f.md.png" alt="p97MU8f.md.png" /></a>
-<a href="https://imgse.com/i/p97M5qJ"><img src="https://s1.ax1x.com/2023/05/24/p97M5qJ.png" alt="p97M5qJ.png" /></a></p>
+<a href="https://imgse.com/i/p97M5qJ"><img src="https://s1.ax1x.com/2023/05/24/p97M5qJ.png" alt="p97M5qJ.png" /></a>
+<a href="https://imgse.com/i/p97QdF1"><img src="https://s1.ax1x.com/2023/05/24/p97QdF1.md.png" alt="p97QdF1.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p97QyOe"><img src="https://s1.ax1x.com/2023/05/24/p97QyOe.md.png" alt="p97QyOe.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/p97QWFI"><img src="https://s1.ax1x.com/2023/05/24/p97QWFI.md.png" alt="p97QWFI.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/p97Q5Sf"><img src="https://s1.ax1x.com/2023/05/24/p97Q5Sf.md.png" alt="p97Q5Sf.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/p97Qo6S"><img src="https://s1.ax1x.com/2023/05/24/p97Qo6S.md.png" alt="p97Qo6S.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 </article>
  
       
@@ -877,7 +941,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#27-v模型">2.7 V模型</a></li>
     <li><a href="#28-构建组装模型">2.8 构建组装模型</a></li>
     <li><a href="#29-快速应用开发模型rad">2.9 快速应用开发模型RAD</a></li>
-    <li><a href="#210-统一过程模型up">2.10 统一过程模型UP</a></li>
+    <li><a href="#210-统一过程模型uprup">2.10 统一过程模型UP/RUP</a></li>
     <li><a href="#211-敏捷开发模型">2.11 敏捷开发模型</a></li>
   </ul>
 </nav>
