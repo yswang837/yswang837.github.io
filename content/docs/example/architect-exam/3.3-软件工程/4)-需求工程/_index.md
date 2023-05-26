@@ -39,17 +39,22 @@ E-R图：实体关系图\
 &emsp;&emsp;实体类：永久保存某些数据。\
 &emsp;&emsp;边界类：人机交互界面、系统交互接口之类的。\
 &emsp;&emsp;实体类：非实体类和边界类就是实体类。
-- UML\
-UML全称Unified Modeling Language，
+#### 1）UML
+&emsp;&emsp;UML全称Unified Modeling Language，统一建模语言，UML由**构造块**、规则和公共机制；构造块中最重要的是**事物**和**图**；事物中包含结构事物是静态部分、行为事物是动态部分。
 [![p9H0rH1.md.png](https://s1.ax1x.com/2023/05/25/p9H0rH1.md.png)](https://imgse.com/i/p9H0rH1)
+&emsp;&emsp;UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点)。
 [![p9H06N6.md.png](https://s1.ax1x.com/2023/05/25/p9H06N6.md.png)](https://imgse.com/i/p9H06N6)
-[![p9H0R3D.md.png](https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png)](https://imgse.com/i/p9H0R3D)
+&emsp;&emsp;UML4+1视图，同架构的4+1视图可以一一对应
+[![p9H0R3D.md.png](https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png)](https://imgse.com/i/p9H0R3D)\
+&emsp;&emsp;一般UML分析阶段建模主要是建立**用例模型**(用例图)和**分析模型**(类图)
 [![p9H05DA.md.png](https://s1.ax1x.com/2023/05/25/p9H05DA.md.png)](https://imgse.com/i/p9H05DA)
 ## 4.4 需求定义
 [![p9H0H4f.md.png](https://s1.ax1x.com/2023/05/25/p9H0H4f.md.png)](https://imgse.com/i/p9H0H4f)
 >例题
 [![p9H0L8S.md.png](https://s1.ax1x.com/2023/05/25/p9H0L8S.md.png)](https://imgse.com/i/p9H0L8S)
 {{< expand "学霸肯定对了">}}{{< /expand >}}
+## 4.5 需求验证
+[![p9Hj0HJ.md.png](https://s1.ax1x.com/2023/05/25/p9Hj0HJ.md.png)](https://imgse.com/i/p9Hj0HJ)
 
 
 
