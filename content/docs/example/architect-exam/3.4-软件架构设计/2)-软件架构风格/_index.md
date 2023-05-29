@@ -131,3 +131,15 @@ title: "2) 软件架构风格"
 ### 2.8.8 MDA
 [![p9gq4xO.md.png](https://s1.ax1x.com/2023/05/15/p9gq4xO.md.png)](https://imgse.com/i/p9gq4xO)
 [![p9gqOit.md.png](https://s1.ax1x.com/2023/05/15/p9gqOit.md.png)](https://imgse.com/i/p9gqOit)
+## 习题
+[![p9XVutI.md.png](https://s1.ax1x.com/2023/05/29/p9XVutI.md.png)](https://imgse.com/i/p9XVutI)
+[![p9XVQ9P.md.png](https://s1.ax1x.com/2023/05/29/p9XVQ9P.md.png)](https://imgse.com/i/p9XVQ9P)
+[![p9XVl1f.png](https://s1.ax1x.com/2023/05/29/p9XVl1f.png)](https://imgse.com/i/p9XVl1f)
+[![p9XV1c8.md.png](https://s1.ax1x.com/2023/05/29/p9XV1c8.md.png)](https://imgse.com/i/p9XV1c8)
+[![p9XVNAs.md.png](https://s1.ax1x.com/2023/05/29/p9XVNAs.md.png)](https://imgse.com/i/p9XVNAs)
+[![p9XVw90.md.png](https://s1.ax1x.com/2023/05/29/p9XVw90.md.png)](https://imgse.com/i/p9XVw90)
+[![p9XV03V.md.png](https://s1.ax1x.com/2023/05/29/p9XV03V.md.png)](https://imgse.com/i/p9XV03V)
+[![p9XVsuF.md.png](https://s1.ax1x.com/2023/05/29/p9XVsuF.md.png)](https://imgse.com/i/p9XVsuF)
+[![p9XV6HJ.md.png](https://s1.ax1x.com/2023/05/29/p9XV6HJ.md.png)](https://imgse.com/i/p9XV6HJ)
+[![p9XVgE9.md.png](https://s1.ax1x.com/2023/05/29/p9XVgE9.md.png)](https://imgse.com/i/p9XVgE9)
+

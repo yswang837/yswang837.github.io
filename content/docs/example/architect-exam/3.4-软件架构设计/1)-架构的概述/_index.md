@@ -25,6 +25,7 @@ title: "1) 软件架构的概述"
 >例题
 [![p9rwokD.md.png](https://s1.ax1x.com/2023/05/11/p9rwokD.md.png)](https://imgse.com/i/p9rwokD)\
 {{< expand "学霸肯定对了">}}A D C{{< /expand >}}
+## 习题
 [![p9OOWsf.md.png](https://s1.ax1x.com/2023/05/29/p9OOWsf.md.png)](https://imgse.com/i/p9OOWsf)
 [![p9OO4eS.md.png](https://s1.ax1x.com/2023/05/29/p9OO4eS.md.png)](https://imgse.com/i/p9OO4eS)
 [![p9OOIoQ.md.png](https://s1.ax1x.com/2023/05/29/p9OOIoQ.md.png)](https://imgse.com/i/p9OOIoQ)
