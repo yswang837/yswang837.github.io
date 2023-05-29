@@ -25,3 +25,15 @@ title: "1) 软件架构的概述"
 >例题
 [![p9rwokD.md.png](https://s1.ax1x.com/2023/05/11/p9rwokD.md.png)](https://imgse.com/i/p9rwokD)\
 {{< expand "学霸肯定对了">}}A D C{{< /expand >}}
+[![p9OOWsf.md.png](https://s1.ax1x.com/2023/05/29/p9OOWsf.md.png)](https://imgse.com/i/p9OOWsf)
+[![p9OO4eS.md.png](https://s1.ax1x.com/2023/05/29/p9OO4eS.md.png)](https://imgse.com/i/p9OO4eS)
+[![p9OOIoQ.md.png](https://s1.ax1x.com/2023/05/29/p9OOIoQ.md.png)](https://imgse.com/i/p9OOIoQ)
+[![p9OObzq.md.png](https://s1.ax1x.com/2023/05/29/p9OObzq.md.png)](https://imgse.com/i/p9OObzq)
+[![p9OOXLT.md.png](https://s1.ax1x.com/2023/05/29/p9OOXLT.md.png)](https://imgse.com/i/p9OOXLT)
+[![p9OOxwF.md.png](https://s1.ax1x.com/2023/05/29/p9OOxwF.md.png)](https://imgse.com/i/p9OOxwF)
+[![p9OXiS1.md.png](https://s1.ax1x.com/2023/05/29/p9OXiS1.md.png)](https://imgse.com/i/p9OXiS1)
+[![p9OXAOK.md.png](https://s1.ax1x.com/2023/05/29/p9OXAOK.md.png)](https://imgse.com/i/p9OXAOK)
+[![p9OXeTe.md.png](https://s1.ax1x.com/2023/05/29/p9OXeTe.md.png)](https://imgse.com/i/p9OXeTe)
+[![p9OXeTe.md.png](https://s1.ax1x.com/2023/05/29/p9OXeTe.md.png)](https://imgse.com/i/p9OXeTe) 
+[![p9OXQSI.md.png](https://s1.ax1x.com/2023/05/29/p9OXQSI.md.png)](https://imgse.com/i/p9OXQSI)
+[![p9OXGm8.md.png](https://s1.ax1x.com/2023/05/29/p9OXGm8.md.png)](https://imgse.com/i/p9OXGm8)
