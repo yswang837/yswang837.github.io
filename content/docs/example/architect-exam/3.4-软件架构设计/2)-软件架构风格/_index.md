@@ -165,7 +165,24 @@ title: "2) 软件架构风格"
 [![p9jZLHe.md.png](https://s1.ax1x.com/2023/05/30/p9jZLHe.md.png)](https://imgse.com/i/p9jZLHe)
 [![p9jZjNd.md.png](https://s1.ax1x.com/2023/05/30/p9jZjNd.md.png)](https://imgse.com/i/p9jZjNd)
 ### 第30题
+[![p9j1s3Q.md.png](https://s1.ax1x.com/2023/05/30/p9j1s3Q.md.png)](https://imgse.com/i/p9j1s3Q)
+[![p9j16js.md.png](https://s1.ax1x.com/2023/05/30/p9j16js.md.png)](https://imgse.com/i/p9j16js)
+[![p9j1RH0.md.png](https://s1.ax1x.com/2023/05/30/p9j1RH0.md.png)](https://imgse.com/i/p9j1RH0)
+[![p9j1RH0.md.png](https://s1.ax1x.com/2023/05/30/p9j1RH0.md.png)](https://imgse.com/i/p9j1RH0)
+[![p9j144U.md.png](https://s1.ax1x.com/2023/05/30/p9j144U.md.png)](https://imgse.com/i/p9j144U)
+[![p9j1ICF.md.png](https://s1.ax1x.com/2023/05/30/p9j1ICF.md.png)](https://imgse.com/i/p9j1ICF)
+[![p9jNQr4.md.png](https://s1.ax1x.com/2023/05/30/p9jNQr4.md.png)](https://imgse.com/i/p9jNQr4)
+[![p9jNGI1.md.png](https://s1.ax1x.com/2023/05/30/p9jNGI1.md.png)](https://imgse.com/i/p9jNGI1)
+[![p9jNUxO.md.png](https://s1.ax1x.com/2023/05/30/p9jNUxO.md.png)](https://imgse.com/i/p9jNUxO)
+[![p9jNwse.md.png](https://s1.ax1x.com/2023/05/30/p9jNwse.md.png)](https://imgse.com/i/p9jNwse)
 ### 第40题
+[![p9jNDZd.md.png](https://s1.ax1x.com/2023/05/30/p9jNDZd.md.png)](https://imgse.com/i/p9jNDZd)
+[![p9jNIds.md.png](https://s1.ax1x.com/2023/05/30/p9jNIds.md.png)](https://imgse.com/i/p9jNIds)
+[![p9jNoon.md.png](https://s1.ax1x.com/2023/05/30/p9jNoon.md.png)](https://imgse.com/i/p9jNoon)
+[![p9jN7iq.md.png](https://s1.ax1x.com/2023/05/30/p9jN7iq.md.png)](https://imgse.com/i/p9jN7iq)
+[![p9jNXyF.png](https://s1.ax1x.com/2023/05/30/p9jNXyF.png)](https://imgse.com/i/p9jNXyF)
+[![p9jUSoR.md.png](https://s1.ax1x.com/2023/05/30/p9jUSoR.md.png)](https://imgse.com/i/p9jUSoR)
+
 ### 第50题
 ### 第60题
 ### 第70题
