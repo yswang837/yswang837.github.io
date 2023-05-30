@@ -142,4 +142,27 @@ title: "2) 软件架构风格"
 [![p9XVsuF.md.png](https://s1.ax1x.com/2023/05/29/p9XVsuF.md.png)](https://imgse.com/i/p9XVsuF)
 [![p9XV6HJ.md.png](https://s1.ax1x.com/2023/05/29/p9XV6HJ.md.png)](https://imgse.com/i/p9XV6HJ)
 [![p9XVgE9.md.png](https://s1.ax1x.com/2023/05/29/p9XVgE9.md.png)](https://imgse.com/i/p9XVgE9)
+[![p9jkOW6.md.png](https://s1.ax1x.com/2023/05/30/p9jkOW6.md.png)](https://imgse.com/i/p9jkOW6)
+[![p9jkvQO.png](https://s1.ax1x.com/2023/05/30/p9jkvQO.png)](https://imgse.com/i/p9jkvQO)
+[![p9jkzOe.md.png](https://s1.ax1x.com/2023/05/30/p9jkzOe.md.png)](https://imgse.com/i/p9jkzOe)
+[![p9jApeH.md.png](https://s1.ax1x.com/2023/05/30/p9jApeH.md.png)](https://imgse.com/i/p9jApeH)
+[![p9jEzad.md.png](https://s1.ax1x.com/2023/05/30/p9jEzad.md.png)](https://imgse.com/i/p9jEzad)
+[![p9jVCGt.md.png](https://s1.ax1x.com/2023/05/30/p9jVCGt.md.png)](https://imgse.com/i/p9jVCGt)
+[![p9jVEqg.md.png](https://s1.ax1x.com/2023/05/30/p9jVEqg.md.png)](https://imgse.com/i/p9jVEqg)
+[![p9jVZZQ.md.png](https://s1.ax1x.com/2023/05/30/p9jVZZQ.md.png)](https://imgse.com/i/p9jVZZQ)
+[![p9jVMR0.md.png](https://s1.ax1x.com/2023/05/30/p9jVMR0.md.png)](https://imgse.com/i/p9jVMR0)
+[![p9jVJZ4.md.png](https://s1.ax1x.com/2023/05/30/p9jVJZ4.md.png)](https://imgse.com/i/p9jVJZ4)
+[![p9jVUiR.md.png](https://s1.ax1x.com/2023/05/30/p9jVUiR.md.png)](https://imgse.com/i/p9jVUiR)
+[![p9jVwz6.png](https://s1.ax1x.com/2023/05/30/p9jVwz6.png)](https://imgse.com/i/p9jVwz6)
+[![p9jVyee.md.png](https://s1.ax1x.com/2023/05/30/p9jVyee.md.png)](https://imgse.com/i/p9jVyee)
+[![p9jVIOS.png](https://s1.ax1x.com/2023/05/30/p9jVIOS.png)](https://imgse.com/i/p9jVIOS)
+[![p9jVHoj.md.png](https://s1.ax1x.com/2023/05/30/p9jVHoj.md.png)](https://imgse.com/i/p9jVHoj)
+[![p9jVvlV.png](https://s1.ax1x.com/2023/05/30/p9jVvlV.png)](https://imgse.com/i/p9jVvlV)
+[![p9jVxyT.md.png](https://s1.ax1x.com/2023/05/30/p9jVxyT.md.png)](https://imgse.com/i/p9jVxyT)
+
+
+
+
+
+
 
