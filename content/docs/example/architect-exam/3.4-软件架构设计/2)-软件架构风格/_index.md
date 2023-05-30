@@ -132,6 +132,7 @@ title: "2) 软件架构风格"
 [![p9gq4xO.md.png](https://s1.ax1x.com/2023/05/15/p9gq4xO.md.png)](https://imgse.com/i/p9gq4xO)
 [![p9gqOit.md.png](https://s1.ax1x.com/2023/05/15/p9gqOit.md.png)](https://imgse.com/i/p9gqOit)
 ## 习题
+### 第1题
 [![p9XVutI.md.png](https://s1.ax1x.com/2023/05/29/p9XVutI.md.png)](https://imgse.com/i/p9XVutI)
 [![p9XVQ9P.md.png](https://s1.ax1x.com/2023/05/29/p9XVQ9P.md.png)](https://imgse.com/i/p9XVQ9P)
 [![p9XVl1f.png](https://s1.ax1x.com/2023/05/29/p9XVl1f.png)](https://imgse.com/i/p9XVl1f)
@@ -141,6 +142,7 @@ title: "2) 软件架构风格"
 [![p9XV03V.md.png](https://s1.ax1x.com/2023/05/29/p9XV03V.md.png)](https://imgse.com/i/p9XV03V)
 [![p9XVsuF.md.png](https://s1.ax1x.com/2023/05/29/p9XVsuF.md.png)](https://imgse.com/i/p9XVsuF)
 [![p9XV6HJ.md.png](https://s1.ax1x.com/2023/05/29/p9XV6HJ.md.png)](https://imgse.com/i/p9XV6HJ)
+### 第10题
 [![p9XVgE9.md.png](https://s1.ax1x.com/2023/05/29/p9XVgE9.md.png)](https://imgse.com/i/p9XVgE9)
 [![p9jkOW6.md.png](https://s1.ax1x.com/2023/05/30/p9jkOW6.md.png)](https://imgse.com/i/p9jkOW6)
 [![p9jkvQO.png](https://s1.ax1x.com/2023/05/30/p9jkvQO.png)](https://imgse.com/i/p9jkvQO)
@@ -151,6 +153,7 @@ title: "2) 软件架构风格"
 [![p9jVEqg.md.png](https://s1.ax1x.com/2023/05/30/p9jVEqg.md.png)](https://imgse.com/i/p9jVEqg)
 [![p9jVZZQ.md.png](https://s1.ax1x.com/2023/05/30/p9jVZZQ.md.png)](https://imgse.com/i/p9jVZZQ)
 [![p9jVMR0.md.png](https://s1.ax1x.com/2023/05/30/p9jVMR0.md.png)](https://imgse.com/i/p9jVMR0)
+### 第20题
 [![p9jVJZ4.md.png](https://s1.ax1x.com/2023/05/30/p9jVJZ4.md.png)](https://imgse.com/i/p9jVJZ4)
 [![p9jVUiR.md.png](https://s1.ax1x.com/2023/05/30/p9jVUiR.md.png)](https://imgse.com/i/p9jVUiR)
 [![p9jVwz6.png](https://s1.ax1x.com/2023/05/30/p9jVwz6.png)](https://imgse.com/i/p9jVwz6)
@@ -159,7 +162,13 @@ title: "2) 软件架构风格"
 [![p9jVHoj.md.png](https://s1.ax1x.com/2023/05/30/p9jVHoj.md.png)](https://imgse.com/i/p9jVHoj)
 [![p9jVvlV.png](https://s1.ax1x.com/2023/05/30/p9jVvlV.png)](https://imgse.com/i/p9jVvlV)
 [![p9jVxyT.md.png](https://s1.ax1x.com/2023/05/30/p9jVxyT.md.png)](https://imgse.com/i/p9jVxyT)
-
+[![p9jZLHe.md.png](https://s1.ax1x.com/2023/05/30/p9jZLHe.md.png)](https://imgse.com/i/p9jZLHe)
+[![p9jZjNd.md.png](https://s1.ax1x.com/2023/05/30/p9jZjNd.md.png)](https://imgse.com/i/p9jZjNd)
+### 第30题
+### 第40题
+### 第50题
+### 第60题
+### 第70题
 
 
 
