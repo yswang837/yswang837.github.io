@@ -9,7 +9,7 @@ title: "9) 构建与中间件技术"
 &emsp;&emsp;1、**软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。**\
 &emsp;&emsp;2、构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。\
 &emsp;&emsp;3、构件是一个独立发布的功能部分，可以通过其接口访问它的服务。
->前一张图
+[![p9vU7ZQ.md.png](https://s1.ax1x.com/2023/05/31/p9vU7ZQ.md.png)](https://imgse.com/i/p9vU7ZQ)
 - 特性\
 &emsp;&emsp;构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。\
 &emsp;&emsp;构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。\
@@ -23,15 +23,16 @@ title: "9) 构建与中间件技术"
 
 ## 2. 中间件
 中间件是一类构件、中间件是一类系统软件
->前一张图
+[![p9vUbIs.md.png](https://s1.ax1x.com/2023/05/31/p9vUbIs.md.png)](https://imgse.com/i/p9vUbIs)
 
 中间件技术的优点：
->前一张图
+[![p9vUOGq.md.png](https://s1.ax1x.com/2023/05/31/p9vUOGq.md.png)](https://imgse.com/i/p9vUOGq)
 
 ## 3. 构件的复用
->前一张图
->前一张图
->前一张图
->前一张图
->前一张图
+[![p9vg0zQ.md.png](https://s1.ax1x.com/2023/05/31/p9vg0zQ.md.png)](https://imgse.com/i/p9vg0zQ)
+[![p9vgsLn.md.png](https://s1.ax1x.com/2023/05/31/p9vgsLn.md.png)](https://imgse.com/i/p9vgsLn)
+[![p9vgcd0.md.png](https://s1.ax1x.com/2023/05/31/p9vgcd0.md.png)](https://imgse.com/i/p9vgcd0)
+[![p9vggoV.md.png](https://s1.ax1x.com/2023/05/31/p9vggoV.md.png)](https://imgse.com/i/p9vggoV)
+[![p9vgWJU.md.png](https://s1.ax1x.com/2023/05/31/p9vgWJU.md.png)](https://imgse.com/i/p9vgWJU)
+>例题
 >例题
