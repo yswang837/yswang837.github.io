@@ -1,16 +1,16 @@
 ## 课程内容提要
 
-- 1.计算机结构&emsp;&emsp;&emsp;&emsp;✅
-- 2.存储系统&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅✅
-- 3.数据传输控制方式&emsp;✅
-- 4.总线&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
-- 5.CISC与RISC  &emsp;  &emsp;&emsp;✅✅
-- 6.流水线&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
-- 7.校验码&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
-- 8.嵌入式&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
+- 1. 计算机结构&emsp;&emsp;&emsp;&emsp;✅
+- 2. 存储系统&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅✅
+- 3. 数据传输控制方式&emsp;✅
+- 4. 总线&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
+- 5. CISC与RISC  &emsp;  &emsp;&emsp;✅✅
+- 6. 流水线&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
+- 7. 校验码&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
+- 8. 嵌入式&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
 
 ## 1 计算机结构
-&emsp;&emsp;计算机的硬件包含5大组成：**控制器**、**运算器**、**存储器**、**输入设备**和**输出设备**。这也是著名的**冯诺依曼**结构，CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。它们之间的交互如下图：
+&emsp;&emsp;计算机的硬件包含5大组成：**控制器**、**运算器**、**存储器**、**输入设备**和**输出设备**。**冯诺依曼**(一般用于pc处理器，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令)，**哈佛结构**(一般用于嵌入式系统处理器DSP，指令和数据可并行分开存储与传输)，CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。它们之间的交互如下图：
 [![p9DeARs.md.png](https://s1.ax1x.com/2023/05/10/p9DeARs.md.png)](https://imgse.com/i/p9DeARs)\
 &emsp;&emsp;别的部件会在后面的章节详细讲解，这里是说运算器和控制器。
 ### 1.1 运算器
