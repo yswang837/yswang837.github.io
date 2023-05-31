@@ -3,7 +3,24 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 构建与中间件技术 # ">
+<meta name="description" content="构件与中间件技术 # 1. 构件的定义 # 1、软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。
+2、构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。
+3、构件是一个独立发布的功能部分，可以通过其接口访问它的服务。
+前一张图
+特性
+构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。
+构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。
+概念框架的互操作设计包括系统体系结构连接的所有框架间的互操作的规则。
+构件是一组通常需要同时部署的原子构件。构件和原子构件之间的区别在于，大多数原子构件永远都不会被单独部署，尽管它们可以被单独部署。
+一个原子构件是一个模块和一组资源。
+模块是一组类和可能的非面向对象的结构体，比如过程或者函数。
+资源是一个类型化的项的固定集合。
+资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法。
+中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。 2. 中间件 # 中间件是一类构件、中间件是一类系统软件
+前一张图
+中间件技术的优点：
+前一张图
+3. 构件的复用 # 前一张图 前一张图 前一张图 前一张图 前一张图 例题">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="9) 构建与中间件技术" />
 <meta property="og:description" content="" />
@@ -15,7 +32,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4db57443b907aa3b0c9dffa3a77b9c229b4bd569ea1f865ede35a7247778c30d.js" integrity="sha256-TbV0Q7kHqjsMnf&#43;jp3ucIptL1WnqH4Ze3jWnJHd4ww0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.9ffe506fd9ef17ddca6409efcb5319e8a6a3e52a58676f3fcbf393a13f2f4163.js" integrity="sha256-n/5Qb9nvF93KZAnvy1MZ6Kaj5SpYZ28/y/OToT8vQWM=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.4-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-%E6%9E%84%E5%BB%BA%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -738,7 +755,13 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-构件的定义">1. 构件的定义</a></li>
+    <li><a href="#2-中间件">2. 中间件</a></li>
+    <li><a href="#3-构件的复用">3. 构件的复用</a></li>
+  </ul>
+</nav>
 
 
 
@@ -749,10 +772,56 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="构建与中间件技术">
-  构建与中间件技术
-  <a class="anchor" href="#%e6%9e%84%e5%bb%ba%e4%b8%8e%e4%b8%ad%e9%97%b4%e4%bb%b6%e6%8a%80%e6%9c%af">#</a>
+  <article class="markdown"><h1 id="构件与中间件技术">
+  构件与中间件技术
+  <a class="anchor" href="#%e6%9e%84%e4%bb%b6%e4%b8%8e%e4%b8%ad%e9%97%b4%e4%bb%b6%e6%8a%80%e6%9c%af">#</a>
 </h1>
+<h2 id="1-构件的定义">
+  1. 构件的定义
+  <a class="anchor" href="#1-%e6%9e%84%e4%bb%b6%e7%9a%84%e5%ae%9a%e4%b9%89">#</a>
+</h2>
+<p>  1、<strong>软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。</strong><br>
+  2、构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。<br>
+  3、构件是一个独立发布的功能部分，可以通过其接口访问它的服务。</p>
+<blockquote>
+<p>前一张图</p>
+</blockquote>
+<ul>
+<li>特性<br>
+  构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。<br>
+  构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。<br>
+  概念框架的互操作设计包括系统体系结构连接的所有框架间的互操作的规则。<br>
+  构件是一组通常需要同时部署的原子构件。构件和原子构件之间的区别在于，大多数原子构件永远都不会被单独部署，尽管它们可以被单独部署。<br>
+  一个原子构件是一个模块和一组资源。<br>
+  模块是一组类和可能的非面向对象的结构体，比如过程或者函数。<br>
+  资源是一个类型化的项的固定集合。<br>
+  资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法。<br>
+  中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。</li>
+</ul>
+<h2 id="2-中间件">
+  2. 中间件
+  <a class="anchor" href="#2-%e4%b8%ad%e9%97%b4%e4%bb%b6">#</a>
+</h2>
+<p>中间件是一类构件、中间件是一类系统软件</p>
+<blockquote>
+<p>前一张图</p>
+</blockquote>
+<p>中间件技术的优点：</p>
+<blockquote>
+<p>前一张图</p>
+</blockquote>
+<h2 id="3-构件的复用">
+  3. 构件的复用
+  <a class="anchor" href="#3-%e6%9e%84%e4%bb%b6%e7%9a%84%e5%a4%8d%e7%94%a8">#</a>
+</h2>
+<blockquote>
+<p>前一张图
+前一张图
+前一张图
+前一张图
+前一张图
+例题</p>
+</blockquote>
 </article>
  
       
@@ -792,7 +861,13 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-构件的定义">1. 构件的定义</a></li>
+    <li><a href="#2-中间件">2. 中间件</a></li>
+    <li><a href="#3-构件的复用">3. 构件的复用</a></li>
+  </ul>
+</nav>
 
 
  
