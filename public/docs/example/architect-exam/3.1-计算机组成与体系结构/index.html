@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 # 计算机结构 ✅ 存储系统 ✅✅✅✅ 数据传输控制方式 ✅ 总线 ✅✅ CISC与RISC ✅✅ 流水线 ✅✅ 校验码 ✅ 嵌入式 ✅ 1 计算机结构 # 计算机的硬件包含5大组成：控制器、运算器、存储器、输入设备和输出设备。冯诺依曼(一般用于pc处理器，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令)，哈佛结构(一般用于嵌入式系统处理器DSP，指令和数据可并行分开存储与传输)，CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。它们之间的交互如下图： 别的部件会在后面的章节详细讲解，这里是说运算器和控制器。
+<meta name="description" content="课程内容提要 🏁 # 计算机结构 ✅ 存储系统 ✅✅✅✅ 数据传输控制方式 ✅ 总线 ✅✅ CISC与RISC ✅✅ 流水线 ✅✅ 校验码 ✅ 嵌入式 ✅ 1 计算机结构 # 计算机的硬件包含5大组成：控制器、运算器、存储器、输入设备和输出设备。冯诺依曼(一般用于pc处理器，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令)，哈佛结构(一般用于嵌入式系统处理器DSP，指令和数据可并行分开存储与传输)，CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。它们之间的交互如下图： 别的部件会在后面的章节详细讲解，这里是说运算器和控制器。
 1.1 运算器 # 算术逻辑单元ALU：实现对数据的算术和逻辑运算。
 累加寄存器AC：运算结果或源操作数的存放区。
 数据缓冲寄存器DR：暂时存放内存的指令或数据。
@@ -34,7 +34,7 @@ Cache的命中率：
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.eab4ff31e1b019aebb9ac5981f910bd7653abeba249eb8cd578b2ce4dec8ccd5.js" integrity="sha256-6rT/MeGwGa67msWYH5EL12U6vroknrjNV4ss5N7IzNU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.811e2a50f2f4cbe974a1b1baa8a059d9429f09ab8838ba6316a2fa54a428aa94.js" integrity="sha256-gR4qUPL0y&#43;l0obG6qKBZ2UKfCauIOLpjFqL6VKQoqpQ=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -759,7 +759,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#课程内容提要">课程内容提要</a></li>
+    <li><a href="#课程内容提要-">课程内容提要 🏁</a></li>
     <li><a href="#1-计算机结构">1 计算机结构</a>
       <ul>
         <li><a href="#11-运算器">1.1 运算器</a></li>
@@ -803,9 +803,9 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="课程内容提要">
-  课程内容提要
-  <a class="anchor" href="#%e8%af%be%e7%a8%8b%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81">#</a>
+  <article class="markdown"><h2 id="课程内容提要-">
+  课程内容提要 🏁
+  <a class="anchor" href="#%e8%af%be%e7%a8%8b%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81-">#</a>
 </h2>
 <ul>
 <li>
@@ -1027,7 +1027,7 @@ Cache的命中率：<br>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
       答案：D<br>
-读取一个块需要的时间：10*10ms(移动)+100ms(延迟)+2ms(传输)=202ms，读取100个块需要的时间：100ms * 102ms = 20200ms
+读取一个块需要的时间：10*10ms(移动)+100ms(延迟)+2ms(传输)=202ms，读取100个块需要的时间：100ms * 202ms = 20200ms
     </div>
   </label>
 </div>
@@ -1143,7 +1143,25 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9hca6A"><img src="https://s1.ax1x.com/2023/05/19/p9hca6A.md.png" alt="p9hca6A.md.png" /></a><br>
-学霸做对了没</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：D C B C<br>
+  解析：设每个盘块儿读入缓冲区的时间为t1、缓冲区送入用户区的时间为t2、用户区处理每个盘块儿的时间为t3，为了能够代入<strong>流水线执行时间</strong>的公式，需要将题目转成标准的流水线。<br>
+  对于单缓冲区而言，需要将3阶段流水线转换成2阶段流水线，即第一阶段为t1+t2，第二阶段为t3，所以：流水线执行时间=1条指令总执行时间+ (总指令条数-1)*流水线周期 = (t1+t2)+t3 + (10-1) * 20 = 201<br>
+  对于双缓冲区而言，题目已经是标准流水线了，可以直接带入公式，所以：流水线执行时间=1条指令总执行时间+ (总指令条数-1)*流水线周期 = t1+t2+t3 + (10 - 1) * 15 = 156<br>
+  流水线的吞吐率，由题目可知，已是标准流水线，可直接带入公式算吞吐率，设执行了N条指令，n/9t+(n-1)<em>3t，即(n/(3n+6)) * (1/t)，当n趋于无穷大时，得到最大吞吐率为1/3t<br>
+  流水线的加速比=不使用流水线执行时间/使用流水线执行时间，不使用流水线执行时间=10</em>(2+1+3+1+2)=90，使用流水线执行时间=9+(10-1)*3=36，即90/36=5/2
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
 <h2 id="7-校验码">
   7 校验码
@@ -1162,7 +1180,21 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9hgu4S"><img src="https://s1.ax1x.com/2023/05/19/p9hgu4S.md.png" alt="p9hgu4S.md.png" /></a><br>
-学霸做对了没</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：A<br>
+  解析：补零：原始信息串为1100，生成多项式为3阶，则补3个0，即被除数为：1100000，除数也是根据生成多项式来的，幂指数存在的为1，不存在的为0，即1011(题目已经给出了，未给出的时候要知道是这样算的)，异或相除将余数010(不足3位的在左边补0)添加到原始信息串1100后面得到1100010，即选A
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
 <h3 id="73-海明码">
   7.3 海明码
@@ -1173,7 +1205,21 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9hgU4U"><img src="https://s1.ax1x.com/2023/05/19/p9hgU4U.md.png" alt="p9hgU4U.md.png" /></a><br>
-学霸做对了没</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：D B<br>
+  解析：32 16 8 4 2 1 需要6位。读题目可知D5是第10位，用8+2校验，故选B
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
 <h2 id="8-嵌入式">
   8 嵌入式
@@ -1242,7 +1288,7 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#课程内容提要">课程内容提要</a></li>
+    <li><a href="#课程内容提要-">课程内容提要 🏁</a></li>
     <li><a href="#1-计算机结构">1 计算机结构</a>
       <ul>
         <li><a href="#11-运算器">1.1 运算器</a></li>
