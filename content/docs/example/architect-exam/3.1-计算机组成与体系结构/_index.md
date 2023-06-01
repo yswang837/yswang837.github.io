@@ -28,7 +28,7 @@
 >例题
 [![p9DnRPg.md.png](https://s1.ax1x.com/2023/05/10/p9DnRPg.md.png)](https://imgse.com/i/p9DnRPg)\
 {{< expand "学霸肯定对了">}}答案：A\
-计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器（PC)的内容送到地址总线上，PC->IR。{{< /expand >}}
+计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器(PC)的内容送到地址总线上，PC->IR。{{< /expand >}}
 ## 2 存储系统
 &emsp;&emsp;整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。如下图：
 [![p9DutLq.md.png](https://s1.ax1x.com/2023/05/10/p9DutLq.md.png)](https://imgse.com/i/p9DutLq)
@@ -153,3 +153,22 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 >例题
 [![p9Ten76.md.png](https://s1.ax1x.com/2023/05/23/p9Ten76.md.png)](https://imgse.com/i/p9Ten76)
 {{< expand "学霸肯定对了">}}A{{< /expand >}}
+
+## 章节习题
+[![p9zGrQO.md.png](https://s1.ax1x.com/2023/06/01/p9zGrQO.md.png)](https://imgse.com/i/p9zGrQO)
+[![p9zGsyD.md.png](https://s1.ax1x.com/2023/06/01/p9zGsyD.md.png)](https://imgse.com/i/p9zGsyD)
+[![p9zGIl8.md.png](https://s1.ax1x.com/2023/06/01/p9zGIl8.md.png)](https://imgse.com/i/p9zGIl8)
+[![p9zGIl8.md.png](https://s1.ax1x.com/2023/06/01/p9zGIl8.md.png)](https://imgse.com/i/p9zGIl8)
+[![p9zJpXF.png](https://s1.ax1x.com/2023/06/01/p9zJpXF.png)](https://imgse.com/i/p9zJpXF)
+[![p9zJEfx.png](https://s1.ax1x.com/2023/06/01/p9zJEfx.png)](https://imgse.com/i/p9zJEfx)
+[![p9zJ8ht.md.png](https://s1.ax1x.com/2023/06/01/p9zJ8ht.md.png)](https://imgse.com/i/p9zJ8ht)
+[![p9zJdBQ.md.png](https://s1.ax1x.com/2023/06/01/p9zJdBQ.md.png)](https://imgse.com/i/p9zJdBQ)
+[![p9zJRuF.png](https://s1.ax1x.com/2023/06/01/p9zJRuF.png)](https://imgse.com/i/p9zJRuF)
+[![p9zJvEd.md.png](https://s1.ax1x.com/2023/06/01/p9zJvEd.md.png)](https://imgse.com/i/p9zJvEd)\
+杂项
+[![p9zJz4I.md.png](https://s1.ax1x.com/2023/06/01/p9zJz4I.md.png)](https://imgse.com/i/p9zJz4I)
+[![p9zYCgf.md.png](https://s1.ax1x.com/2023/06/01/p9zYCgf.md.png)](https://imgse.com/i/p9zYCgf)
+[![p9zYMvT.md.png](https://s1.ax1x.com/2023/06/01/p9zYMvT.md.png)](https://imgse.com/i/p9zYMvT)
+
+
+
