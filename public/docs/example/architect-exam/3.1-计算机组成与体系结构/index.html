@@ -34,7 +34,7 @@ Cache的命中率：
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.811e2a50f2f4cbe974a1b1baa8a059d9429f09ab8838ba6316a2fa54a428aa94.js" integrity="sha256-gR4qUPL0y&#43;l0obG6qKBZ2UKfCauIOLpjFqL6VKQoqpQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7879aed0b7879db8d1cacbeb5fa9f64b46facba90d5d79c56ab507fd287ff3a6.js" integrity="sha256-eHmu0LeHnbjRysvrX6n2S0b6y6kNXXnFarUH/Sh/86Y=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1028,6 +1028,23 @@ Cache的命中率：<br>
     <div class="book-expand-content markdown-inner">
       答案：D<br>
 读取一个块需要的时间：10*10ms(移动)+100ms(延迟)+2ms(传输)=202ms，读取100个块需要的时间：100ms * 202ms = 20200ms
+    </div>
+  </label>
+</div>
+
+例题
+<a href="https://imgse.com/i/p9xx6hT"><img src="https://s1.ax1x.com/2023/06/01/p9xx6hT.md.png" alt="p9xx6hT.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：C B<br>
+由题意可知每个扇区存放逻辑记录，处理单个记录的延时为：33/11+3=6ms，由于磁头处于r0的开始处，且是单缓冲区顺序处理这些记录，所以6+10*(33+3)=366；若对存储信息进行优化，优化后为：r0r6r1r7r2r8r3r9r4r10r5，r0和r5收尾相接形成一个完整的磁道。此时只需要转2圈就可以把数据处理完。
     </div>
   </label>
 </div>
