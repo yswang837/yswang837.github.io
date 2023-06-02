@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 软件架构评估 # 1. 名词解释 # 敏感点：是一个或多个构件 (和/或构件之间的关系)的特性。
-权衡点：是影响多个质量属性的特性，是多个质量属性的敏感点。
-风险点：是指架构设计中潜在的、存在问题的架构决策所带来的隐患。
-非风险点：是指不会带来隐患，一般以“xxx要求是可以实现 (或接受)的”方式表达。 2、架构评估方法 # 架构评估方法包含3中方式：基于问卷调查的方式、基于度量的方式、基于场景的方式。 2.1 基于场景的评估方法 # 基于场景的评估方法包含3种：软件架构分析法(SAAM)、架构权衡分析法(ATAM)、成本效益分析法(CBAM)。
-SAAM：最初用于分析架构可修改性，后扩展到其他质量属性。 ATAM：在SAAM的基础上发展起来的，主要针对性能、实用性、安全性和可修改性，在系统开发之前，对这些质量属性进行评价和折中。 2.2 质量效用数 # ">
+<meta name="description" content=" 课程内容提要 🏁 # 1. 性能指标✅ # 字长：cpu一次读取数据的长度，它也影响着最大的内存容量(最大地址)。2^32 = 4G，32位操作系统最大支持4GB内存。
+主存容量和存取速度：存取速度和cache的命中率相关。
+运算速度：主频：(单位之间内的脉冲数)2.4GHz，CPU时钟周期：1/主频。
+吞吐量和吞吐率
+响应时间
+完成时间
+兼容性
+例题 2. 阿姆达尔解决方案✅✅✅ # 学霸肯定对了 ↕ 答案：B
+100/52 3. 性能评价方法✅✅✅ # 课后习题 # 第1题 # 第10题 # ">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="7) 软件架构评估" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.4-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.2-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/" />
 
-<title>7) 软件架构评估 | 小钻风</title>
+<title>3.2 系统配置与性能评价 | 小钻风</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/en.search.min.90be3ba7d77a1bd5fc8df71af46b16b18e31baf7762e5a63f7bab1dca5afcb17.js" integrity="sha256-kL47p9d6G9X8jfca9GsWsY4xuvd2Llpj97qx3KWvyxc=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.4-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/index.xml" title="小钻风" />
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -179,7 +183,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.2-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/" class="">3.2 系统配置与性能评价</a>
+    <a href="/docs/example/architect-exam/3.2-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/" class="active">3.2 系统配置与性能评价</a>
   
 
           
@@ -480,7 +484,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.4-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="active">7) 软件架构评估</a>
+    <a href="/docs/example/architect-exam/3.4-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">7) 软件架构评估</a>
   
 
           
@@ -746,7 +750,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>7) 软件架构评估</strong>
+  <strong>3.2 系统配置与性能评价</strong>
 
   <label for="toc-control">
     
@@ -762,13 +766,16 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-名词解释">1. 名词解释</a></li>
-    <li><a href="#2架构评估方法">2、架构评估方法</a>
+    <li><a href="#课程内容提要-">课程内容提要 🏁</a></li>
+    <li><a href="#1-性能指标">1. 性能指标✅</a></li>
+    <li><a href="#2-阿姆达尔解决方案">2. 阿姆达尔解决方案✅✅✅</a></li>
+    <li><a href="#3-性能评价方法">3. 性能评价方法✅✅✅</a></li>
+    <li><a href="#课后习题">课后习题</a>
       <ul>
-        <li><a href="#21-基于场景的评估方法">2.1 基于场景的评估方法</a></li>
+        <li><a href="#第1题">第1题</a></li>
+        <li><a href="#第10题">第10题</a></li>
       </ul>
     </li>
-    <li><a href="#22-质量效用数">2.2 质量效用数</a></li>
   </ul>
 </nav>
 
@@ -781,48 +788,74 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="软件架构评估">
-  软件架构评估
-  <a class="anchor" href="#%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84%e8%af%84%e4%bc%b0">#</a>
-</h1>
-<h2 id="1-名词解释">
-  1. 名词解释
-  <a class="anchor" href="#1-%e5%90%8d%e8%af%8d%e8%a7%a3%e9%87%8a">#</a>
+  <article class="markdown"><h2 id="课程内容提要-">
+  课程内容提要 🏁
+  <a class="anchor" href="#%e8%af%be%e7%a8%8b%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81-">#</a>
 </h2>
-<p><strong>敏感点</strong>：是一个或多个构件 (和/或构件之间的关系)的特性。<br>
-<strong>权衡点</strong>：是影响多个质量属性的特性，是多个质量属性的敏感点。<br>
-<strong>风险点</strong>：是指架构设计中潜在的、存在问题的架构决策所带来的隐患。<br>
-<strong>非风险点</strong>：是指不会带来隐患，一般以“xxx要求是可以实现 (或接受)的”方式表达。
-<a href="https://imgse.com/i/p9vUlvT"><img src="https://s1.ax1x.com/2023/05/31/p9vUlvT.png" alt="p9vUlvT.png" /></a></p>
-<h2 id="2架构评估方法">
-  2、架构评估方法
-  <a class="anchor" href="#2%e6%9e%b6%e6%9e%84%e8%af%84%e4%bc%b0%e6%96%b9%e6%b3%95">#</a>
+<h2 id="1-性能指标">
+  1. 性能指标✅
+  <a class="anchor" href="#1-%e6%80%a7%e8%83%bd%e6%8c%87%e6%a0%87">#</a>
 </h2>
-<p>  架构评估方法包含3中方式：基于问卷调查的方式、基于度量的方式、<strong>基于场景的方式</strong>。
-<a href="https://imgse.com/i/p9vUGb4"><img src="https://s1.ax1x.com/2023/05/31/p9vUGb4.md.png" alt="p9vUGb4.md.png" /></a></p>
-<h3 id="21-基于场景的评估方法">
-  2.1 基于场景的评估方法
-  <a class="anchor" href="#21-%e5%9f%ba%e4%ba%8e%e5%9c%ba%e6%99%af%e7%9a%84%e8%af%84%e4%bc%b0%e6%96%b9%e6%b3%95">#</a>
+<p><strong>字长</strong>：cpu一次读取数据的长度，它也影响着最大的内存容量(最大地址)。2^32 = 4G，32位操作系统最大支持4GB内存。<br>
+<strong>主存容量和存取速度</strong>：存取速度和cache的命中率相关。<br>
+<strong>运算速度</strong>：主频：(单位之间内的脉冲数)2.4GHz，CPU时钟周期：1/主频。<br>
+<strong>吞吐量和吞吐率</strong><br>
+<strong>响应时间</strong><br>
+<strong>完成时间</strong><br>
+<strong>兼容性</strong><br>
+<a href="https://imgse.com/i/p9zbE1s"><img src="https://s1.ax1x.com/2023/06/02/p9zbE1s.md.png" alt="p9zbE1s.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9zbnBV"><img src="https://s1.ax1x.com/2023/06/02/p9zbnBV.md.png" alt="p9zbnBV.md.png" /></a></p>
+</blockquote>
+<h2 id="2-阿姆达尔解决方案">
+  2. 阿姆达尔解决方案✅✅✅
+  <a class="anchor" href="#2-%e9%98%bf%e5%a7%86%e8%be%be%e5%b0%94%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">#</a>
+</h2>
+<p><a href="https://imgse.com/i/p9zbtnx"><img src="https://s1.ax1x.com/2023/06/02/p9zbtnx.md.png" alt="p9zbtnx.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      答案：B<br>
+100/52
+    </div>
+  </label>
+</div>
+</p>
+<h2 id="3-性能评价方法">
+  3. 性能评价方法✅✅✅
+  <a class="anchor" href="#3-%e6%80%a7%e8%83%bd%e8%af%84%e4%bb%b7%e6%96%b9%e6%b3%95">#</a>
+</h2>
+<p><a href="https://imgse.com/i/p9zbh4g"><img src="https://s1.ax1x.com/2023/06/02/p9zbh4g.md.png" alt="p9zbh4g.md.png" /></a>
+<a href="https://imgse.com/i/p9zbI3j"><img src="https://s1.ax1x.com/2023/06/02/p9zbI3j.md.png" alt="p9zbI3j.md.png" /></a></p>
+<h2 id="课后习题">
+  课后习题
+  <a class="anchor" href="#%e8%af%be%e5%90%8e%e4%b9%a0%e9%a2%98">#</a>
+</h2>
+<h3 id="第1题">
+  第1题
+  <a class="anchor" href="#%e7%ac%ac1%e9%a2%98">#</a>
 </h3>
-<p>  基于场景的评估方法包含3种：<strong>软件架构分析法</strong>(SAAM)、<strong>架构权衡分析法</strong>(ATAM)、成本效益分析法(CBAM)。</p>
-<ul>
-<li>
-<p>SAAM：最初用于分析架构可修改性，后扩展到其他质量属性。
-<a href="https://imgse.com/i/p9vUta9"><img src="https://s1.ax1x.com/2023/05/31/p9vUta9.md.png" alt="p9vUta9.md.png" /></a></p>
-</li>
-<li>
-<p>ATAM：在SAAM的基础上发展起来的，主要针对性能、实用性、安全性和可修改性，在系统开发之前，对这些质量属性进行评价和折中。
-<a href="https://imgse.com/i/p9vUN5R"><img src="https://s1.ax1x.com/2023/05/31/p9vUN5R.md.png" alt="p9vUN5R.md.png" /></a>
-<a href="https://imgse.com/i/p9vUaP1"><img src="https://s1.ax1x.com/2023/05/31/p9vUaP1.md.png" alt="p9vUaP1.md.png" /></a>
-<a href="https://imgse.com/i/p9vUd8x"><img src="https://s1.ax1x.com/2023/05/31/p9vUd8x.md.png" alt="p9vUd8x.md.png" /></a>
-<a href="https://imgse.com/i/p9vUw26"><img src="https://s1.ax1x.com/2023/05/31/p9vUw26.md.png" alt="p9vUw26.md.png" /></a></p>
-</li>
-</ul>
-<h2 id="22-质量效用数">
-  2.2 质量效用数
-  <a class="anchor" href="#22-%e8%b4%a8%e9%87%8f%e6%95%88%e7%94%a8%e6%95%b0">#</a>
-</h2>
-<p><a href="https://imgse.com/i/p9vU0xK"><img src="https://s1.ax1x.com/2023/05/31/p9vU0xK.md.png" alt="p9vU0xK.md.png" /></a></p>
+<p><a href="https://imgse.com/i/p9zLZwV"><img src="https://s1.ax1x.com/2023/06/02/p9zLZwV.md.png" alt="p9zLZwV.md.png" /></a>
+<a href="https://imgse.com/i/p9zL1yR"><img src="https://s1.ax1x.com/2023/06/02/p9zL1yR.md.png" alt="p9zL1yR.md.png" /></a>
+<a href="https://imgse.com/i/p9zLGex"><img src="https://s1.ax1x.com/2023/06/02/p9zLGex.md.png" alt="p9zLGex.md.png" /></a>
+<a href="https://imgse.com/i/p9zLYTK"><img src="https://s1.ax1x.com/2023/06/02/p9zLYTK.md.png" alt="p9zLYTK.md.png" /></a>
+<a href="https://imgse.com/i/p9zLwSH"><img src="https://s1.ax1x.com/2023/06/02/p9zLwSH.md.png" alt="p9zLwSH.md.png" /></a>
+<a href="https://imgse.com/i/p9zLsmt"><img src="https://s1.ax1x.com/2023/06/02/p9zLsmt.md.png" alt="p9zLsmt.md.png" /></a>
+<a href="https://imgse.com/i/p9zL6Tf"><img src="https://s1.ax1x.com/2023/06/02/p9zL6Tf.md.png" alt="p9zL6Tf.md.png" /></a>
+<a href="https://imgse.com/i/p9zL2tS"><img src="https://s1.ax1x.com/2023/06/02/p9zL2tS.md.png" alt="p9zL2tS.md.png" /></a>
+<a href="https://imgse.com/i/p9zLfpQ"><img src="https://s1.ax1x.com/2023/06/02/p9zLfpQ.md.png" alt="p9zLfpQ.md.png" /></a>
+<a href="https://imgse.com/i/p9zL46s"><img src="https://s1.ax1x.com/2023/06/02/p9zL46s.md.png" alt="p9zL46s.md.png" /></a></p>
+<h3 id="第10题">
+  第10题
+  <a class="anchor" href="#%e7%ac%ac10%e9%a2%98">#</a>
+</h3>
 </article>
  
       
@@ -864,13 +897,16 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-名词解释">1. 名词解释</a></li>
-    <li><a href="#2架构评估方法">2、架构评估方法</a>
+    <li><a href="#课程内容提要-">课程内容提要 🏁</a></li>
+    <li><a href="#1-性能指标">1. 性能指标✅</a></li>
+    <li><a href="#2-阿姆达尔解决方案">2. 阿姆达尔解决方案✅✅✅</a></li>
+    <li><a href="#3-性能评价方法">3. 性能评价方法✅✅✅</a></li>
+    <li><a href="#课后习题">课后习题</a>
       <ul>
-        <li><a href="#21-基于场景的评估方法">2.1 基于场景的评估方法</a></li>
+        <li><a href="#第1题">第1题</a></li>
+        <li><a href="#第10题">第10题</a></li>
       </ul>
     </li>
-    <li><a href="#22-质量效用数">2.2 质量效用数</a></li>
   </ul>
 </nav>
 
