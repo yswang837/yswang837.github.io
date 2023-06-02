@@ -1,4 +1,4 @@
-# 1. 软件开发方法🏁
+# 1 软件开发方法🏁
 &emsp;&emsp;常见的软件开发方法有4种：**结构化**法、**原型法**、**面向对象**方法、**面向服务**方法。\
 &emsp;&emsp;整体图示如下图：
 [![p9TvZbd.md.png](https://s1.ax1x.com/2023/05/24/p9TvZbd.md.png)](https://imgse.com/i/p9TvZbd)

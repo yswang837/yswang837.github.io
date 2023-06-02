@@ -182,8 +182,12 @@ title: "2) 软件架构风格"
 [![p9jN7iq.md.png](https://s1.ax1x.com/2023/05/30/p9jN7iq.md.png)](https://imgse.com/i/p9jN7iq)
 [![p9jNXyF.png](https://s1.ax1x.com/2023/05/30/p9jNXyF.png)](https://imgse.com/i/p9jNXyF)
 [![p9jUSoR.md.png](https://s1.ax1x.com/2023/05/30/p9jUSoR.md.png)](https://imgse.com/i/p9jUSoR)
-
+[![pCSWR8P.md.png](https://s1.ax1x.com/2023/06/02/pCSWR8P.md.png)](https://imgse.com/i/pCSWR8P)
+[![pCSWWgf.md.png](https://s1.ax1x.com/2023/06/02/pCSWWgf.md.png)](https://imgse.com/i/pCSWWgf)
+[![pCShSQf.md.png](https://s1.ax1x.com/2023/06/02/pCShSQf.md.png)](https://imgse.com/i/pCShSQf)
+[![pCShPeg.md.png](https://s1.ax1x.com/2023/06/02/pCShPeg.md.png)](https://imgse.com/i/pCShPeg)
 ### 第50题
+[![pCShFoj.md.png](https://s1.ax1x.com/2023/06/02/pCShFoj.md.png)](https://imgse.com/i/pCShFoj)
 ### 第60题
 ### 第70题
 

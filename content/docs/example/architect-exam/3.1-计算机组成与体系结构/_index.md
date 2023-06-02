@@ -156,7 +156,7 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 &emsp;&emsp;嵌入式系统的初始化过程：片级初始化->版级初始化->系统初始化
 
 ## 章节习题
-### 第1题
+
 [![p9zGrQO.md.png](https://s1.ax1x.com/2023/06/01/p9zGrQO.md.png)](https://imgse.com/i/p9zGrQO)
 [![p9zGsyD.md.png](https://s1.ax1x.com/2023/06/01/p9zGsyD.md.png)](https://imgse.com/i/p9zGsyD)
 [![p9zGIl8.md.png](https://s1.ax1x.com/2023/06/01/p9zGIl8.md.png)](https://imgse.com/i/p9zGIl8)
@@ -168,7 +168,7 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 [![p9zJRuF.png](https://s1.ax1x.com/2023/06/01/p9zJRuF.png)](https://imgse.com/i/p9zJRuF)
 ### 第10题
 [![p9zJvEd.md.png](https://s1.ax1x.com/2023/06/01/p9zJvEd.md.png)](https://imgse.com/i/p9zJvEd)
-
+//todo 嵌入式的题目
 
 
 ### 前沿题
