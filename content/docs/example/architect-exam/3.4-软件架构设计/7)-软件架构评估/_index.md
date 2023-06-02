@@ -27,3 +27,4 @@ title: "7) 软件架构评估"
 [![p9vUw26.md.png](https://s1.ax1x.com/2023/05/31/p9vUw26.md.png)](https://imgse.com/i/p9vUw26)
 ## 2.2 质量效用数
 [![p9vU0xK.md.png](https://s1.ax1x.com/2023/05/31/p9vU0xK.md.png)](https://imgse.com/i/p9vU0xK)
+[![pCSkMsf.md.png](https://s1.ax1x.com/2023/06/02/pCSkMsf.md.png)](https://imgse.com/i/pCSkMsf)
