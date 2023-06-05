@@ -23,7 +23,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a1552f305354910aad3d604714ad3d5932133aba4b51d027b01bafad815b2c4f.js" integrity="sha256-oVUvMFNUkQqtPWBHFK09WTITOrpLUdAnsBuvrYFbLE8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a9f77481456a3cce334730b1ae318623f1ecc4a81edc47eb690bfdf598c1f49b.js" integrity="sha256-qfd0gUVqPM4zRzCxrjGGI/HsxKge3EfraQv99ZjB9Js=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1144,7 +1144,7 @@ https://github.com/alex-shpak/hugo-book
   6.1 I/O软件层次
   <a class="anchor" href="#61-io%e8%bd%af%e4%bb%b6%e5%b1%82%e6%ac%a1">#</a>
 </h3>
-<p>  1/0设备管理软件的所有层次及每一层功能如下图：<br>
+<p>  I/O设备管理软件的所有层次及每一层功能如下图：<br>
 <a href="https://imgse.com/i/p9hu4dU"><img src="https://s1.ax1x.com/2023/05/19/p9hu4dU.md.png" alt="p9hu4dU.md.png" /></a><br>
 <strong>实例</strong>：当用户程序试图读一个硬盘文件时，需要通过操作系统实现这一操作。与设备无关软件检查高速缓存中有无要读的数据块，若没有，则调用设备驱动程序，向1/0 硬件发出一个请求。然后，用户进程阻塞并等待磁盘操作的完成。当磁盘操作完成时，硬件产生一个中断，转入中断处理程序。中断处理程序检查中断的原因，认识到这时磁盘读取操作已经完成，于是唤醒用户进程取回从磁盘读取的信息，从而结束此次1/0 请求。用户进程在得到了所需的硬盘文件内容之，后继续运行。</p>
 <h3 id="62-spooling技术">
@@ -1189,7 +1189,8 @@ https://github.com/alex-shpak/hugo-book
 <a href="https://imgse.com/i/pCCWqlq"><img src="https://s1.ax1x.com/2023/06/05/pCCWqlq.md.png" alt="pCCWqlq.md.png" /></a>
 <a href="https://imgse.com/i/pCCftAg"><img src="https://s1.ax1x.com/2023/06/05/pCCftAg.md.png" alt="pCCftAg.md.png" /></a>
 <a href="https://imgse.com/i/pCCfruV"><img src="https://s1.ax1x.com/2023/06/05/pCCfruV.md.png" alt="pCCfruV.md.png" /></a>
-<a href="https://imgse.com/i/pCCfgN4"><img src="https://s1.ax1x.com/2023/06/05/pCCfgN4.md.png" alt="pCCfgN4.md.png" /></a></p>
+<a href="https://imgse.com/i/pCCfgN4"><img src="https://s1.ax1x.com/2023/06/05/pCCfgN4.md.png" alt="pCCfgN4.md.png" /></a><br>
+todo 操作系统习题</p>
 </article>
  
       

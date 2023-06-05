@@ -135,7 +135,7 @@
 
 ## 6 设备管理
 ### 6.1 I/O软件层次
-&emsp;&emsp;1/0设备管理软件的所有层次及每一层功能如下图：\
+&emsp;&emsp;I/O设备管理软件的所有层次及每一层功能如下图：\
 [![p9hu4dU.md.png](https://s1.ax1x.com/2023/05/19/p9hu4dU.md.png)](https://imgse.com/i/p9hu4dU)\
 **实例**：当用户程序试图读一个硬盘文件时，需要通过操作系统实现这一操作。与设备无关软件检查高速缓存中有无要读的数据块，若没有，则调用设备驱动程序，向1/0 硬件发出一个请求。然后，用户进程阻塞并等待磁盘操作的完成。当磁盘操作完成时，硬件产生一个中断，转入中断处理程序。中断处理程序检查中断的原因，认识到这时磁盘读取操作已经完成，于是唤醒用户进程取回从磁盘读取的信息，从而结束此次1/0 请求。用户进程在得到了所需的硬盘文件内容之，后继续运行。
 ### 6.2 SPOOLING技术
@@ -164,7 +164,9 @@
 [![pCCWqlq.md.png](https://s1.ax1x.com/2023/06/05/pCCWqlq.md.png)](https://imgse.com/i/pCCWqlq)
 [![pCCftAg.md.png](https://s1.ax1x.com/2023/06/05/pCCftAg.md.png)](https://imgse.com/i/pCCftAg)
 [![pCCfruV.md.png](https://s1.ax1x.com/2023/06/05/pCCfruV.md.png)](https://imgse.com/i/pCCfruV)
-[![pCCfgN4.md.png](https://s1.ax1x.com/2023/06/05/pCCfgN4.md.png)](https://imgse.com/i/pCCfgN4)
+[![pCCfgN4.md.png](https://s1.ax1x.com/2023/06/05/pCCfgN4.md.png)](https://imgse.com/i/pCCfgN4)\
+todo 操作系统习题
+
 
 
 
