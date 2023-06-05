@@ -156,7 +156,6 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 &emsp;&emsp;嵌入式系统的初始化过程：片级初始化->版级初始化->系统初始化
 
 ## 章节习题
-
 [![p9zGrQO.md.png](https://s1.ax1x.com/2023/06/01/p9zGrQO.md.png)](https://imgse.com/i/p9zGrQO)
 [![p9zGsyD.md.png](https://s1.ax1x.com/2023/06/01/p9zGsyD.md.png)](https://imgse.com/i/p9zGsyD)
 [![p9zGIl8.md.png](https://s1.ax1x.com/2023/06/01/p9zGIl8.md.png)](https://imgse.com/i/p9zGIl8)
@@ -168,6 +167,22 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 [![p9zJRuF.png](https://s1.ax1x.com/2023/06/01/p9zJRuF.png)](https://imgse.com/i/p9zJRuF)
 ### 第10题
 [![p9zJvEd.md.png](https://s1.ax1x.com/2023/06/01/p9zJvEd.md.png)](https://imgse.com/i/p9zJvEd)
+[![pCCBk9O.md.png](https://s1.ax1x.com/2023/06/05/pCCBk9O.md.png)](https://imgse.com/i/pCCBk9O)
+[![pCCBA3D.png](https://s1.ax1x.com/2023/06/05/pCCBA3D.png)](https://imgse.com/i/pCCBA3D)
+[![pCCBVjH.md.png](https://s1.ax1x.com/2023/06/05/pCCBVjH.md.png)](https://imgse.com/i/pCCBVjH)
+[![pCCBeud.md.png](https://s1.ax1x.com/2023/06/05/pCCBeud.md.png)](https://imgse.com/i/pCCBeud)
+[![pCCBGvQ.md.png](https://s1.ax1x.com/2023/06/05/pCCBGvQ.md.png)](https://imgse.com/i/pCCBGvQ)
+[![pCCBD8U.png](https://s1.ax1x.com/2023/06/05/pCCBD8U.png)](https://imgse.com/i/pCCBD8U)
+[![pCCB4PK.md.png](https://s1.ax1x.com/2023/06/05/pCCB4PK.md.png)](https://imgse.com/i/pCCB4PK)
+[![pCCBbqA.md.png](https://s1.ax1x.com/2023/06/05/pCCBbqA.md.png)](https://imgse.com/i/pCCBbqA)
+### 第20题
+[![pCCBXIP.md.png](https://s1.ax1x.com/2023/06/05/pCCBXIP.md.png)](https://imgse.com/i/pCCBXIP)
+[![pCCDViV.md.png](https://s1.ax1x.com/2023/06/05/pCCDViV.md.png)](https://imgse.com/i/pCCDViV)
+[![pCCDmzF.md.png](https://s1.ax1x.com/2023/06/05/pCCDmzF.md.png)](https://imgse.com/i/pCCDmzF)
+[![pCCDtzD.md.png](https://s1.ax1x.com/2023/06/05/pCCDtzD.md.png)](https://imgse.com/i/pCCDtzD)
+[![pCCDsFP.md.png](https://s1.ax1x.com/2023/06/05/pCCDsFP.md.png)](https://imgse.com/i/pCCDsFP)
+[![pCCDhes.md.png](https://s1.ax1x.com/2023/06/05/pCCDhes.md.png)](https://imgse.com/i/pCCDhes)
+[![pCCDjm9.png](https://s1.ax1x.com/2023/06/05/pCCDjm9.png)](https://imgse.com/i/pCCDjm9)
 //todo 嵌入式的题目
 
 
