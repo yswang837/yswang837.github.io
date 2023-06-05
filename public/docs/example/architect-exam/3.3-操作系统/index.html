@@ -23,7 +23,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.ff201104e21993f1f7d09dc64c37a2d7337fbb513e1970ae47193d0f9e1464c4.js" integrity="sha256-/yARBOIZk/H30J3GTDei1zN/u1E&#43;GXCuRxk9D54UZMQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.09db5aae507187537690d3553b6d6ce534ae17dc61fa7ef0863e0875af8d4e26.js" integrity="sha256-CdtarlBxh1N2kNNVO21s5TSuF9xh&#43;n7whj4Ida&#43;NTiY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -995,7 +995,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#43-%e5%89%8d%e8%b6%8b%e5%9b%be%e4%b8%8epv%e6%93%8d%e4%bd%9c">#</a>
 </h3>
 <p><strong>P操作</strong>：申请资源，S=S-1，若S&gt;=0，则执行P操作的进程继续执行;若S&lt;0，则置该进程为阻塞状态 (因为无可用资源)，并将其插入阻塞队列。可认为是加锁操作。<br>
-<strong>V操作</strong>：释放资源，S=S+1，若S&gt;0，则执行V操作的进程继续执行:若S&lt;=0，则从阻塞状态唤醒一个进程，并将其插入就绪队列(此时因为缺少资源被P操作阻塞的进程可以继续执行，然后执行V操作的进程继续。可认为解锁操作。\</p>
+<strong>V操作</strong>：释放资源，S=S+1，若S&gt;0，则执行V操作的进程继续执行:若S&lt;=0，则从阻塞状态唤醒一个进程，并将其插入就绪队列(此时因为缺少资源被P操作阻塞的进程可以继续执行，然后执行V操作的进程继续。可认为解锁操作。</p>
 <blockquote>
 <p>github摘抄<br>
   进程通常分为就绪、运行和阻塞三个工作状态。三个状态之间的转换就是靠PV操作来控制的。 PV操作主要就是P操作、V操作。信号量的值只能由PV操作来改变。 信号量是最早出现的用来解决进程同步与互斥问题的机制。 P表示获得，V表示释放。来源于荷兰语，P和V是荷兰语两个单词的首字母。<br>
@@ -1031,8 +1031,27 @@ https://github.com/alex-shpak/hugo-book
   4.4 死锁
   <a class="anchor" href="#44-%e6%ad%bb%e9%94%81">#</a>
 </h3>
-<p>  死锁就考一个死锁资源的计算。<br>
+<p>  死锁就考死锁资源的计算。<br>
 <a href="https://imgse.com/i/p9hmImT"><img src="https://s1.ax1x.com/2023/05/19/p9hmImT.md.png" alt="p9hmImT.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCCnkL9"><img src="https://s1.ax1x.com/2023/06/05/pCCnkL9.md.png" alt="pCCnkL9.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      B<br>
+解析：当前可用资源R1为9-7=2，R2为8-7=1，R3为5-5=0，进程P1的仍需R1资源数为6-1=5，以此类推算出所有进程的所有仍需资源数，发现首先执行P2，P2执行完成后，会释放P2的资源，即当前的发现可用资源210+211=4，2，1，即可算出是答案B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 <h2 id="5-存储管理">
   5 存储管理
   <a class="anchor" href="#5-%e5%ad%98%e5%82%a8%e7%ae%a1%e7%90%86">#</a>
@@ -1041,7 +1060,13 @@ https://github.com/alex-shpak/hugo-book
   5.1 分页存储管理
   <a class="anchor" href="#51-%e5%88%86%e9%a1%b5%e5%ad%98%e5%82%a8%e7%ae%a1%e7%90%86">#</a>
 </h3>
-<p>  逻辑页分为页号和页内地址，页内地址就是物理偏移地址，而页号与物理块号并非按序对应的需要查询页表，才能得知页号对应的物理块号，再用物理块号加上偏移地址才得出了真正运行时的物理地址。<br>
+<p>  分页存储管理管理的是内存和外存之间的数据(同cache和内存之间的管理一样，只不过cache和内存之间靠的是硬件，而内存与外存靠的是软件（页表），这里是页式存储管理)。
+页式存储管理：将用户程序(外存)与内存均划分为相同大小的块，以页为单位将程序调入内存；这样会产生一个页表的数据结构，用户程序称为逻辑页，对应于页表的页号，内存划分对应于物理块号；<br>
+逻辑地址：页号+页内地址<br>
+物理地址：块号(页帧号)+页内地址<br>
+<a href="https://imgse.com/i/pCCKtxS"><img src="https://s1.ax1x.com/2023/06/05/pCCKtxS.md.png" alt="pCCKtxS.md.png" /></a>
+<a href="https://imgse.com/i/pCCKD5q"><img src="https://s1.ax1x.com/2023/06/05/pCCKD5q.md.png" alt="pCCKD5q.md.png" /></a><br>
+  逻辑页分为页号和页内地址，页内地址就是物理偏移地址，而页号与物理块号并非按序对应的，需要查询页表，才能得知页号对应的物理块号，再用物理块号加上偏移地址才得出了真正运行时的物理地址。如果CPU查找数据时，内存中没有，就会产生缺页中断，重新去外存寻找数据。当要调用逻辑页号为3的页面到内存时，优先淘汰访问位0的页面，当多个页面的访问位为0时，才会优先淘汰修改位为0的页面。<br>
 <a href="https://imgse.com/i/p9hmT7F"><img src="https://s1.ax1x.com/2023/05/19/p9hmT7F.md.png" alt="p9hmT7F.md.png" /></a></p>
 <ul>
 <li>页面置换算法<br>
@@ -1049,7 +1074,7 @@ https://github.com/alex-shpak/hugo-book
 <strong>先进先出算法</strong>:FIFO，先调入内存的页先被置换淘汰，会产生抖动现象，即分配的页帧数越多缺页率可能越多(即效率越低)。<br>
 <strong>最近最少使用</strong>:LRU，在最近的过去，进程执行过程中，过去最少使用的页面被置换淘汰，根据局部性原理，这种方式效率高，且不会产生抖动现象，使用大量计数器，但是没有LFU多。<br>
 <strong>淘汰原则</strong>:优先淘汰最近未访问的，而后淘汰最近未被修改的页面。<br>
-<strong>快表</strong>:是一块小容量的相联存储器，由快速存储器组成，按内容访问，速度快，并且可以从硬件上保证按内容并行查找，一般用来存放当前访问最频繁的少数活动页面的页号。快表是将页表存于Cache中;慢表是将页表存于内存上。慢表需要访问两次内存才能取出页，而快表是访问一次Cache和一次内存，因此更快。\</li>
+<strong>快表</strong>:是一块小容量的相联存储器，由快速存储器组成，按内容访问，速度快，并且可以从硬件上保证按内容并行查找，一般用来存放当前访问最频繁的少数活动页面的页号。快表是将页表存于Cache中;慢表是将页表存于内存上。慢表需要访问两次内存才能取出页，而快表是访问一次Cache和一次内存，因此更快。</li>
 </ul>
 <blockquote>
 <p>例题
@@ -1063,7 +1088,25 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      
+      C D<br>
+页面大小为512字节，则需要用9个bit位表示；十进制的1111的二进制表示为：100 0101 0111，所以页号为二进制10，则十进制的2，查页表得知物理页4，所以选C，读题可知直接选D，因为都要共享8
+    </div>
+  </label>
+</div>
+
+例题
+<a href="https://imgse.com/i/pCCUBdK"><img src="https://s1.ax1x.com/2023/06/05/pCCUBdK.md.png" alt="pCCUBdK.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A B<br>
+页面大小为4k，得用12个bit位表示；逻辑地址=页号+页内地址，5148H的二进制的低12位都用于表示页内地址，高4位用于表示页号，所以页号就是5(0101)；物理地址=物理块号+页内地址，查页表得知块号=3，所以其物理地址的十六进制为A选项；淘汰的是在内存中，首先访问位为0的页面，即2，若多个访问位为0，则淘汰修改位为0的页面，所以选B
     </div>
   </label>
 </div>
@@ -1079,7 +1122,8 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      
+      A C<br>
+由程序得知矩阵是按行访问，若按行存放，则缺页中断次数=10000/200=50次，若按列存放，则缺页中断次数=10000/2=5000次
     </div>
   </label>
 </div>
@@ -1089,7 +1133,7 @@ https://github.com/alex-shpak/hugo-book
   5.2 分段存储管理
   <a class="anchor" href="#52-%e5%88%86%e6%ae%b5%e5%ad%98%e5%82%a8%e7%ae%a1%e7%90%86">#</a>
 </h3>
-<p>  将进程空间分为一个个段，每段也有段号和段内地址，与页式存储不同的是，每段物理大小不同，分段是根据逻辑整体分段的，因此，段表也与页表的内容不同，页表中直接是逻辑页号对应物理块号，而下图所示，段表有段长和基址两个属性，才能确定一个逻辑段在物理段中的位置。<br>
+<p>  按逻辑上的大小来截断(和页式存储不同，页式存储固定大小页面)，将进程空间分为一个个段，每段也有段号和段内地址，与页式存储不同的是，每段物理大小不同，分段是根据逻辑整体分段的，因此，段表也与页表的内容不同，页表中直接是逻辑页号对应物理块号，而下图所示，段表有段长和基址两个属性，才能确定一个逻辑段在物理段中的位置。<br>
 <a href="https://imgse.com/i/p9hndN4"><img src="https://s1.ax1x.com/2023/05/19/p9hndN4.md.png" alt="p9hndN4.md.png" /></a>
 <a href="https://imgse.com/i/p9hnw4J"><img src="https://s1.ax1x.com/2023/05/19/p9hnw4J.md.png" alt="p9hnw4J.md.png" /></a></p>
 <h2 id="6-设备管理">
