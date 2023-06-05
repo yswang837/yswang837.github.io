@@ -183,13 +183,13 @@ DMA控制器来完成，在主存和外设之间建立直接的数据通路，�
 [![pCCDsFP.md.png](https://s1.ax1x.com/2023/06/05/pCCDsFP.md.png)](https://imgse.com/i/pCCDsFP)
 [![pCCDhes.md.png](https://s1.ax1x.com/2023/06/05/pCCDhes.md.png)](https://imgse.com/i/pCCDhes)
 [![pCCDjm9.png](https://s1.ax1x.com/2023/06/05/pCCDjm9.png)](https://imgse.com/i/pCCDjm9)
-//todo 嵌入式的题目
-
-
+[![pCC2tAJ.md.png](https://s1.ax1x.com/2023/06/05/pCC2tAJ.md.png)](https://imgse.com/i/pCC2tAJ)
+[![pCC2w1x.md.png](https://s1.ax1x.com/2023/06/05/pCC2w1x.md.png)](https://imgse.com/i/pCC2w1x)
+### 第30题
+[![pCC2sBD.md.png](https://s1.ax1x.com/2023/06/05/pCC2sBD.md.png)](https://imgse.com/i/pCC2sBD)
+[![pCC2cAH.md.png](https://s1.ax1x.com/2023/06/05/pCC2cAH.md.png)](https://imgse.com/i/pCC2cAH)
+[![pCC2gNd.md.png](https://s1.ax1x.com/2023/06/05/pCC2gNd.md.png)](https://imgse.com/i/pCC2gNd)
 ### 前沿题
 [![p9zJz4I.md.png](https://s1.ax1x.com/2023/06/01/p9zJz4I.md.png)](https://imgse.com/i/p9zJz4I)
 [![p9zYCgf.md.png](https://s1.ax1x.com/2023/06/01/p9zYCgf.md.png)](https://imgse.com/i/p9zYCgf)
 [![p9zYMvT.md.png](https://s1.ax1x.com/2023/06/01/p9zYMvT.md.png)](https://imgse.com/i/p9zYMvT)
-
-
-
