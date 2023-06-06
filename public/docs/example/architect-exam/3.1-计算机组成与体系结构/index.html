@@ -34,7 +34,7 @@ Cache的命中率：
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4ce92d23432840bb94ac55b504b1ab1b26d6fd1d415909c6e4ff43ce55bfe1e0.js" integrity="sha256-TOktI0MoQLuUrFW1BLGrGybW/R1BWQnG5P9DzlW/4eA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.55eec559ac8ad3b5909ee7718bf6d053c9b295b22a459bc2a77aa52c3528a284.js" integrity="sha256-Ve7FWayK07WQnudxi/bQU8mylbIqRZvCp3qlLDUoooQ=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -361,6 +361,24 @@ https://github.com/alex-shpak/hugo-book
 
         </li>
       
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.4-%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/" class="">3.4 知识产权与标准化</a>
+  
+
+          
+  <ul>
     
   </ul>
 
@@ -1080,6 +1098,7 @@ Cache的命中率：<br>
   3 数据传输控制方式
   <a class="anchor" href="#3-%e6%95%b0%e6%8d%ae%e4%bc%a0%e8%be%93%e6%8e%a7%e5%88%b6%e6%96%b9%e5%bc%8f">#</a>
 </h2>
+<p>主存和外设交换数据</p>
 <h3 id="31-程序查询方式">
   3.1 程序查询方式
   <a class="anchor" href="#31-%e7%a8%8b%e5%ba%8f%e6%9f%a5%e8%af%a2%e6%96%b9%e5%bc%8f">#</a>
@@ -1089,13 +1108,12 @@ Cache的命中率：<br>
   3.2 程序中断方式
   <a class="anchor" href="#32-%e7%a8%8b%e5%ba%8f%e4%b8%ad%e6%96%ad%e6%96%b9%e5%bc%8f">#</a>
 </h3>
-<p><strong>程序中断方式</strong>: 外设完成数据传输后，向CPU发送中断，等待CPU处理数据，效率相对较高，中断响应时间指的是从发出中断请求到开始进入中断处理程序;中断处理时间指的是从中断处理开始到中断处理结束。中断向量提供中断服务程序的入口地址。多级中断嵌套，使用堆栈来保护断点和现场。</p>
+<p><strong>程序中断方式</strong>: 外设完成数据传输后，向CPU发送中断，等待CPU处理数据，效率相对较高，中断响应时间指的是从发出中断请求到开始进入中断处理程序;中断处理时间指的是从中断处理开始到中断处理结束。中断向量提供中断服务程序的入口地址。多级中断嵌套，使用堆栈来保护断点和现场。如鼠标键盘</p>
 <h3 id="33-dma方式">
   3.3 DMA方式
   <a class="anchor" href="#33-dma%e6%96%b9%e5%bc%8f">#</a>
 </h3>
-<p><strong>DMA方式(直接主存存取)</strong>:CPU只需完成必要的初始化等操作，数据传输的整个过程都申。
-DMA控制器来完成，在主存和外设之间建立直接的数据通路，效率很高。</p>
+<p><strong>DMA方式(直接主存存取)</strong>:CPU只需完成必要的初始化等操作，数据传输的整个过程都中，都由DMA控制器来完成，在主存和外设之间建立直接的数据通路，效率很高。如硬盘</p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9hyPpj"><img src="https://s1.ax1x.com/2023/05/19/p9hyPpj.md.png" alt="p9hyPpj.md.png" /></a><br>
