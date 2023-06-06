@@ -23,7 +23,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a9f77481456a3cce334730b1ae318623f1ecc4a81edc47eb690bfdf598c1f49b.js" integrity="sha256-qfd0gUVqPM4zRzCxrjGGI/HsxKge3EfraQv99ZjB9Js=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4ce92d23432840bb94ac55b504b1ab1b26d6fd1d415909c6e4ff43ce55bfe1e0.js" integrity="sha256-TOktI0MoQLuUrFW1BLGrGybW/R1BWQnG5P9DzlW/4eA=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1135,7 +1135,21 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p>  按逻辑上的大小来截断(和页式存储不同，页式存储固定大小页面)，将进程空间分为一个个段，每段也有段号和段内地址，与页式存储不同的是，每段物理大小不同，分段是根据逻辑整体分段的，因此，段表也与页表的内容不同，页表中直接是逻辑页号对应物理块号，而下图所示，段表有段长和基址两个属性，才能确定一个逻辑段在物理段中的位置。<br>
 <a href="https://imgse.com/i/p9hndN4"><img src="https://s1.ax1x.com/2023/05/19/p9hndN4.md.png" alt="p9hndN4.md.png" /></a>
-<a href="https://imgse.com/i/p9hnw4J"><img src="https://s1.ax1x.com/2023/05/19/p9hnw4J.md.png" alt="p9hnw4J.md.png" /></a></p>
+<a href="https://imgse.com/i/p9hnw4J"><img src="https://s1.ax1x.com/2023/05/19/p9hnw4J.md.png" alt="p9hnw4J.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D C
+    </div>
+  </label>
+</div>
+</p>
 <h2 id="6-设备管理">
   6 设备管理
   <a class="anchor" href="#6-%e8%ae%be%e5%a4%87%e7%ae%a1%e7%90%86">#</a>
@@ -1160,12 +1174,26 @@ https://github.com/alex-shpak/hugo-book
   7.1 索引文件结构
   <a class="anchor" href="#71-%e7%b4%a2%e5%bc%95%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84">#</a>
 </h3>
-<p>  如图所示，系统中有13个索引节点，0-9为直接索引,即每个索引节点存放的是内容，假设每个物理盘大小为4KB，共可存4KB*10=40KB数据。<br>
+<p>  如图所示，一般linux的系统中默认有13个索引节点，索引可以理解为地址、指针、盘块号，0-9为直接索引,即每个索引节点存放的是内容，假设每个物理盘大小为4KB，共可存4KB*10=40KB数据。<br>
 <a href="https://imgse.com/i/p9hK8mV"><img src="https://s1.ax1x.com/2023/05/19/p9hK8mV.md.png" alt="p9hK8mV.md.png" /></a><br>
-  10号索引节点为一级间接索引节点，大小为4KB，存放的并非直接数据，而是链接到直接物理盘块的地址，假设每个地址占4B，则共有4KB/4B = 1024个地址，对应1024个物理盘，可存1024*4KB=4096KB数据。<br>
+  10号索引节点为一级间接索引节点，大小为4KB，存放的并非直接数据，而是链接到直接物理盘块的地址，假设每个地址(指针、盘块号)占4B，则共有4KB/4B = 1024个地址，对应1024个物理盘，可存1024*4KB=4096KB数据。<br>
   11号索引节点为二级索引节点，直接盘存放一级地址，一级地址再存放物理盘快地址，而后链接到存放数据的物理盘块，容量又扩大了一个数量级，为1024 * 1024 * 4KB数据。<br>
 <a href="https://imgse.com/i/p9hKJTU"><img src="https://s1.ax1x.com/2023/05/19/p9hKJTU.md.png" alt="p9hKJTU.md.png" /></a><br>
-学霸做对了没</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C D<br>
+地址大小为4Byte，磁盘索引块和磁盘数据块都是4KB大小，所以单个索引块存储了4KB/4B=256个地址，物理块一般来说在内存中是离散的，而逻辑块是连续的，所以物理块号50对应于0，67-&gt;1，68-&gt;2&hellip;89-&gt;4，58-&gt;5，136的逻辑号为x-5+1=256,得到x=260，即136-&gt;260，187-&gt;261，所以答案选C，看题知道第二空选D
+    </div>
+  </label>
+</div>
+</p>
 <h3 id="72-文件目录">
   7.2 文件目录
   <a class="anchor" href="#72-%e6%96%87%e4%bb%b6%e7%9b%ae%e5%bd%95">#</a>
