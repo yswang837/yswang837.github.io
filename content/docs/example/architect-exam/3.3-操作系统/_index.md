@@ -185,7 +185,24 @@
 ### 第20题
 [![pCP7itK.png](https://s1.ax1x.com/2023/06/06/pCP7itK.png)](https://imgse.com/i/pCP7itK)
 [![pCP7FfO.png](https://s1.ax1x.com/2023/06/06/pCP7FfO.png)](https://imgse.com/i/pCP7FfO)
-[![pCP7ApD.md.png](https://s1.ax1x.com/2023/06/06/pCP7ApD.md.png)](https://imgse.com/i/pCP7ApD)\
+[![pCP7ApD.md.png](https://s1.ax1x.com/2023/06/06/pCP7ApD.md.png)](https://imgse.com/i/pCP7ApD)
+[![pCiuZ0H.md.png](https://s1.ax1x.com/2023/06/06/pCiuZ0H.md.png)](https://imgse.com/i/pCiuZ0H)
+[![pCiuBcT.md.png](https://s1.ax1x.com/2023/06/06/pCiuBcT.md.png)](https://imgse.com/i/pCiuBcT)
+[![pCiuDjU.md.png](https://s1.ax1x.com/2023/06/06/pCiuDjU.md.png)](https://imgse.com/i/pCiuDjU)
+[![pCiusuF.md.png](https://s1.ax1x.com/2023/06/06/pCiusuF.md.png)](https://imgse.com/i/pCiusuF)
+[![pCiuyB4.md.png](https://s1.ax1x.com/2023/06/06/pCiuyB4.md.png)](https://imgse.com/i/pCiuyB4)
+[![pCiugE9.md.png](https://s1.ax1x.com/2023/06/06/pCiugE9.md.png)](https://imgse.com/i/pCiugE9)
+### 第30题
+[![pCiu2NR.md.png](https://s1.ax1x.com/2023/06/06/pCiu2NR.md.png)](https://imgse.com/i/pCiu2NR)
+[![pCiuf9x.md.png](https://s1.ax1x.com/2023/06/06/pCiuf9x.md.png)](https://imgse.com/i/pCiuf9x)
+[![pCiKnrF.md.png](https://s1.ax1x.com/2023/06/06/pCiKnrF.md.png)](https://imgse.com/i/pCiKnrF)
+[![pCiKub4.md.png](https://s1.ax1x.com/2023/06/06/pCiKub4.md.png)](https://imgse.com/i/pCiKub4)
+[![pCiKMVJ.md.png](https://s1.ax1x.com/2023/06/06/pCiKMVJ.md.png)](https://imgse.com/i/pCiKMVJ)
+[![pCiKG26.md.png](https://s1.ax1x.com/2023/06/06/pCiKG26.md.png)](https://imgse.com/i/pCiKG26)
+[![pCiKNrD.md.png](https://s1.ax1x.com/2023/06/06/pCiKNrD.md.png)](https://imgse.com/i/pCiKNrD)
+[![pCiKcM8.md.png](https://s1.ax1x.com/2023/06/06/pCiKcM8.md.png)](https://imgse.com/i/pCiKcM8)\
+
+
 todo 操作系统习题
 
 
