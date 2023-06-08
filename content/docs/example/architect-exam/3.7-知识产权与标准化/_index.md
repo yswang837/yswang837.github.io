@@ -4,12 +4,12 @@ title: 3.7 知识产权与标准化
 ---
 
 ## 课程内容提要
-- 1. 保护范围与对象✅✅✅
-- 2. 保护期限✅✅
-- 3. 知识产权人确定✅✅✅
-- 4. 侵权判定✅✅✅✅
-- 5. 标准的分类✅
-- 6. 标准代号的识别✅
+- 1. 保护范围与对象&emsp;✅✅✅
+- 2. 保护期限&emsp;&emsp;&emsp;&emsp;✅✅
+- 3. 知识产权人确定&emsp;✅✅✅
+- 4. 侵权判定&emsp;&emsp;&emsp;&emsp;✅✅✅✅
+- 5. 标准的分类&emsp;&emsp;&emsp;✅
+- 6. 标准代号的识别&emsp;✅
 
 ## 1 保护范围与对象
 [![pCiue7d.md.png](https://s1.ax1x.com/2023/06/06/pCiue7d.md.png)](https://imgse.com/i/pCiue7d)

@@ -14,4 +14,4 @@ title: 3.10 软件架构设计
 - 7. 软件架构评估&emsp;&emsp;&emsp;&emsp;✅✅✅✅✅
 - 8. 软件产品线&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
 - 9. 构建与中间件技术&emsp;&emsp;✅✅✅✅
-- 10. web架构设计 &emsp;&emsp;&emsp; ✅✅✅✅✅
+- 10. web架构设计 &emsp; &emsp; &emsp; ✅✅✅✅✅
