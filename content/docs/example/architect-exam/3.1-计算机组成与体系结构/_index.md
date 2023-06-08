@@ -9,21 +9,21 @@ title: 3.1 计算机组成与体系结构
 - 2. 存储系统&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅✅
 - 3. 数据传输控制方式&emsp;✅
 - 4. 总线&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
-- 5. CISC与RISC  &emsp;  &emsp;&emsp;✅✅
+- 5. CISC与RISC  &emsp;  &emsp;&emsp;✅
 - 6. 流水线&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
 - 7. 校验码&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
 - 8. 嵌入式&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
 
 ## 1 计算机结构
-&emsp;&emsp;计算机的硬件包含5大组成：**控制器**、**运算器**、**存储器**、**输入设备**和**输出设备**。**冯诺依曼**(一般用于pc处理器，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令)，**哈佛结构**(一般用于嵌入式系统处理器DSP，指令和数据可并行分开存储与传输)，CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。它们之间的交互如下图：
+&emsp;&emsp;计算机的硬件包含5大组成：**控制器**、**运算器**、**存储器**、**输入设备**和**输出设备**。**冯诺依曼**(一般用于pc处理器，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令)，**哈佛结构**(一般用于嵌入式系统处理器DSP(数字信号处理器)，指令和数据可并行分开存储与传输)，CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。程序员是可以通过汇编语言直接操作CPU中的寄存器的。它们之间的交互如下图：
 [![p9DeARs.md.png](https://s1.ax1x.com/2023/05/10/p9DeARs.md.png)](https://imgse.com/i/p9DeARs)\
 &emsp;&emsp;别的部件会在后面的章节详细讲解，这里是说运算器和控制器。
 ### 1.1 运算器
 
 &emsp;&emsp;算术逻辑单元ALU：实现对数据的算术和逻辑运算。\
-&emsp;&emsp;累加寄存器AC：运算结果或源操作数的存放区。\
+&emsp;&emsp;累加寄存器AC：通用寄存器、运算结果或源操作数的存放区。\
 &emsp;&emsp;数据缓冲寄存器DR：暂时存放内存的指令或数据。\
-&emsp;&emsp;状态条件寄存器PSW：保存指令运行结果的条件码内容，如溢出标志等。
+&emsp;&emsp;状态条件寄存器PSW：保存指令运行结果的条件码内容，如溢出标志、进位等。
 ### 1.2 控制器
 
 &emsp;&emsp;**程序计数器PC**：存储下一条要执行指令的地址。\
@@ -34,9 +34,11 @@ title: 3.1 计算机组成与体系结构
 [![p9DnRPg.md.png](https://s1.ax1x.com/2023/05/10/p9DnRPg.md.png)](https://imgse.com/i/p9DnRPg)\
 {{< expand "学霸肯定对了">}}答案：A\
 计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器(PC)的内容送到地址总线上，PC->IR。{{< /expand >}}
+[![pCkN5KH.md.png](https://s1.ax1x.com/2023/06/08/pCkN5KH.md.png)](https://imgse.com/i/pCkN5KH)
+{{< expand "学霸肯定对了">}}答案：B{{< /expand >}}
 ## 2 存储系统
-&emsp;&emsp;整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。如下图：
-[![p9DutLq.md.png](https://s1.ax1x.com/2023/05/10/p9DutLq.md.png)](https://imgse.com/i/p9DutLq)
+&emsp;&emsp;整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。内存外存称为虚拟存储器、cache内存外存成为三级存储结构，如下图：
+[![pCkau6g.md.png](https://s1.ax1x.com/2023/06/08/pCkau6g.md.png)](https://imgse.com/i/pCkau6g)
 ### 2.1 高速缓存Cache
 &emsp;&emsp;高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于**程序员来说是透明的**。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。\
 地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。\
@@ -45,16 +47,18 @@ Cache的功能：\
 &emsp;&emsp;2.在计算机的存储系统体系中(除cpu中的寄存器外)，Cache是访问速度最快的层次。\
 &emsp;&emsp;3.Cache对程序员来说是透明的。\
 &emsp;&emsp;4.使用Cache改善系统性能的依据是程序的局部性原理(总的来说，在CPU运行时，所访问的数据会趋向于一个较小的局部时空内。包括下面两个方面:
-**时间局部性**原理:如果一个数据项正在被访问，那么在近期它很可能会被再次访问，即在相邻的时间里会访问同一个数据项。**空间局部性**原理:在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问。)\
-Cache的命中率：\
-&emsp;&emsp;当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache，则CPU读取一次的平均时间为(90% * 1 + 10% * 1000)ns
+**时间局部性**原理:如果一个数据项正在被访问，那么在近期它很可能会被再次访问(代码里面的循环)，即在相邻的时间里会访问同一个数据项。**空间局部性**原理:在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问(数组)。)\
+**Cache的命中率**：\
+&emsp;&emsp;当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache(90%一般由cache的算法决定)，则CPU读取一次的平均时间为(90% * 1 + 10% * 1000)ns
 >例题
-[![p9D4n8x.md.png](https://s1.ax1x.com/2023/05/10/p9D4n8x.md.png)](https://imgse.com/i/p9D4n8x)\
+[![p9D4n8x.md.png](https://s1.ax1x.com/2023/05/10/p9D4n8x.md.png)](https://imgse.com/i/p9D4n8x)
 {{< expand "学霸肯定对了">}}B{{< /expand >}}
-[![p9D4JIA.md.png](https://s1.ax1x.com/2023/05/10/p9D4JIA.md.png)](https://imgse.com/i/p9D4JIA)\
+[![p9D4JIA.md.png](https://s1.ax1x.com/2023/05/10/p9D4JIA.md.png)](https://imgse.com/i/p9D4JIA)
 {{< expand "学霸肯定对了">}}D{{< /expand >}}
+[![pCkdaPP.md.png](https://s1.ax1x.com/2023/06/08/pCkdaPP.md.png)](https://imgse.com/i/pCkdaPP)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
 ### 2.2 主存(内存)编址计算
-&emsp;&emsp;主存如图所示，可以看图试着回答红色框线里面的问题，看完应该知道32位机器和64位机器大概是啥意思了。
+&emsp;&emsp;主存如图所示，可以看图试着回答红色框线里面的问题，图中一个存储单元存放了4个bit位，每个存储单元的地址就是我们熟悉的指针，看完应该知道32位机器和64位机器大概是啥意思了。
 [![p9D5gTH.md.png](https://s1.ax1x.com/2023/05/10/p9D5gTH.md.png)](https://imgse.com/i/p9D5gTH)\
 **特别提醒**：不要硬算，要化简为二进制或者十进制来算。
 **存储单元个数**=最大地址-最小地址+1
@@ -63,7 +67,7 @@ Cache的命中率：\
   - 按字节编址：一个存储单元存储的是一个字节，最小寻址单位是一个字节。
 
 **总容量**=存储单元个数*单个存储单元所占大小\
-**单位换算**：1GB=1024MB，1MB=1024KB，1KB=1024Byte，1Byte=8bit。
+**单位换算**：1GB=1024MB，1MB=1024KB，1KB=1024Byte，1Byte=8bit。K=2^10，M=2^20，G=2^30
 >例题
 [![p9h0daQ.md.png](https://s1.ax1x.com/2023/05/19/p9h0daQ.md.png)](https://imgse.com/i/p9h0daQ)\
 {{< expand "学霸肯定对了">}}答案：B C\
@@ -71,10 +75,10 @@ Cache的命中率：\
 {{< /expand >}}
 ### 2.3 磁盘管理
 &emsp;&emsp;磁盘有正反两个盘面，每个盘面有多个同心圆，每个同心圆是一个磁道，每个同心圆又被划分为多个扇区，数据就被存放在一个个扇区中。\
-[![p9hrBPH.png](https://s1.ax1x.com/2023/05/19/p9hrBPH.png)](https://imgse.com/i/p9hrBPH)\
+[![pCkwesg.md.png](https://s1.ax1x.com/2023/06/08/pCkwesg.md.png)](https://imgse.com/i/pCkwesg)\
 &emsp;&emsp;磁头首先要寻找到对应的磁道，然后等待磁盘进行周期旋转，旋转到指定的扇区，才能读取到对应的数据，因此，会产生寻道时间和等待时间。其**公式**为：
 存取时间=寻道时间+等待时间(平均定位时间+转动延迟)
-- 磁盘调度算法
+- 磁盘调度算法(磁盘旋转是同方向匀速旋转，只会在寻道的时候产生优化算法)
   - 先来先服务FCFS:根据进程请求访问磁盘的先后顺序进行调度。
   - 最短寻道时间优先SSTF:请求访问的磁道与当前磁道最进的进程优先调度，使得每次的寻道时间最短。会产生“饥饿”现象，即远处进程可能永远无法访问。
   - 扫描算法SCAN:又称“电梯算法”，磁头在磁盘上双向移动，其会选择离磁头当前所在磁道最近的请求访问的磁道，并且与磁头移动方向一致，磁头永远都是从里向外或者从外向里一直移动完才掉头。
@@ -89,9 +93,14 @@ Cache的命中率：\
 >例题
 [![p9xx6hT.md.png](https://s1.ax1x.com/2023/06/01/p9xx6hT.md.png)](https://imgse.com/i/p9xx6hT)
 {{< expand "学霸肯定对了">}}答案：C B\
-由题意可知每个扇区存放逻辑记录，处理单个记录的延时为：33/11+3=6ms，由于磁头处于r0的开始处，且是单缓冲区顺序处理这些记录，所以6+10*(33+3)=366；若对存储信息进行优化，优化后为：r0r6r1r7r2r8r3r9r4r10r5，r0和r5收尾相接形成一个完整的磁道。此时只需要转2圈就可以把数据处理完。
-
+由题意可知每个扇区存放逻辑记录，处理单个记录的延时为：33/11+3=6ms，由于磁头处于r0的开始处，且是单缓冲区（同一时间只能一个任务读或者写缓冲区）顺序处理这些记录，所以6+10*(33+3)=366；若对存储信息进行优化，优化后为：r0r6r1r7r2r8r3r9r4r10r5，r0和r5收尾相接形成一个完整的磁道。此时只需要转2圈就可以把数据处理完。
 {{< /expand >}}
+- 磁盘单缓冲区与双缓冲区的读取问题
+[![pCk0XuD.md.png](https://s1.ax1x.com/2023/06/08/pCk0XuD.md.png)](https://imgse.com/i/pCk0XuD)
+
+{{< expand "学霸肯定对了">}}答案：D C\
+[![pCkBYVJ.md.png](https://s1.ax1x.com/2023/06/08/pCkBYVJ.md.png)](https://imgse.com/i/pCkBYVJ)\
+也可用流水线的公式计算，详见流水线例题{{< /expand >}}
 ## 3 数据传输控制方式
 主存和外设交换数据
 ### 3.1 程序查询方式
@@ -151,14 +160,14 @@ Cache的命中率：\
 &emsp;&emsp;解析：32 16 8 4 2 1 需要6位。读题目可知D5是第10位，用8+2校验，故选B
 {{< /expand >}}
 ## 8 嵌入式
-&emsp;&emsp;**DSP**：也称数字信号处理器，是一种特别适合于进行数字信号处理运算的微处理器，其主要应用是实时快速地实现各种数字信号处理算法。\
-&emsp;&emsp;**SOC**：System on Chip，简称SoC，也即片上系统。从狭义角度讲，它是信息系统核心的芯片集成是将系统关键部件集成在一块芯片上，从广义角度讲，SoC是一个微小型系统，如果说中央处理器 (CPU) 是大脑，那么SoC就是包括大脑、心脏、眼睛和手的系统。\
-&emsp;&emsp;**MPU**：微机中的中央处理器 (CPU)称为微处理器 (MPU)，是构成微机的核心部件，也可以说是微机的心脏。它起到控制整个微型计算机工作的作用，产生控制信号对相应的部件进行控制.并执行相应的操作。\
-&emsp;&emsp;**MCU**：微控制单元 (Microcontroller Unit;MCU)，又称单片微型计算机(Single ChipMicrocomputer) 或者单片机，是把中央处理器(Central Process Unit;CPU) 的频率与规(Timer) 、USB、A/D转换、UART、PLC格做适当缩减，并将内存(memory) 、计数器DMA等周边接口，甚至LCD驱动电路都整合在单一芯片上，形成芯片级的计算机，为不同的应用场合做不同组合控制。
+&emsp;&emsp;嵌入式系统的初始化过程：片级初始化->版级初始化->系统初始化
+[![pCkNhxe.md.png](https://s1.ax1x.com/2023/06/08/pCkNhxe.md.png)](https://imgse.com/i/pCkNhxe)
 >例题
 [![p9Ten76.md.png](https://s1.ax1x.com/2023/05/23/p9Ten76.md.png)](https://imgse.com/i/p9Ten76)
 {{< expand "学霸肯定对了">}}A{{< /expand >}}
-&emsp;&emsp;嵌入式系统的初始化过程：片级初始化->版级初始化->系统初始化
+
+[![pCkN7VI.md.png](https://s1.ax1x.com/2023/06/08/pCkN7VI.md.png)](https://imgse.com/i/pCkN7VI)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
 
 ## 章节习题
 [![p9zGrQO.md.png](https://s1.ax1x.com/2023/06/01/p9zGrQO.md.png)](https://imgse.com/i/p9zGrQO)
