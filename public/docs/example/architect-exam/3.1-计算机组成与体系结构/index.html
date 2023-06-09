@@ -36,7 +36,7 @@ Cache的命中率：
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.1d474871b9fb133d18566d38c4284096e190a6b2d3e614725720033a76895c69.js" integrity="sha256-HUdIcbn7Ez0YVm04xChAluGQprLT5hRyVyADOnaJXGk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3105f9c11f5fb26a1a5d25103f7db025a84ccf49068d8285467e232b053a5b39.js" integrity="sha256-MQX5wR9fsmoaXSUQP32wJahMz0kGjYKFRn4jKwU6Wzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1085,14 +1085,14 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#21-cache">#</a>
 </h3>
 <p>  高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于<strong>程序员来说是透明的</strong>。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。<br>
-  地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。<br>
-<strong>Cache的功能</strong>：<br>
+  地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。</p>
+<p><strong>Cache的功能</strong>：<br>
   1.提高CPU数据输入输出的速率，突破冯·诺依曼瓶颈，即突破CPU与存储系统间数据传送带宽限制。<br>
   2.在计算机的存储系统体系中(除cpu中的寄存器外)，Cache是访问速度最快的层次。<br>
   3.Cache对程序员来说是透明的。<br>
   4.使用Cache改善系统性能的依据是程序的局部性原理(总的来说，在CPU运行时，所访问的数据会趋向于一个较小的局部时空内。包括下面两个方面:
-<strong>时间局部性</strong>原理:如果一个数据项正在被访问，那么在近期它很可能会被再次访问(代码里面的循环)，即在相邻的时间里会访问同一个数据项。<strong>空间局部性</strong>原理:在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问(数组))<br>
-<strong>Cache的命中率</strong>：<br>
+<strong>时间局部性</strong>原理:如果一个数据项正在被访问，那么在近期它很可能会被再次访问(代码里面的循环)，即在相邻的时间里会访问同一个数据项。<strong>空间局部性</strong>原理:在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问(数组))</p>
+<p><strong>Cache的命中率</strong>：<br>
   当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache(90%一般由cache的算法决定)，则CPU读取一次的平均时间为(90% * 1 + 10% * 1000)ns。</p>
 <blockquote>
 <p>例题
@@ -1154,12 +1154,12 @@ https://github.com/alex-shpak/hugo-book
 <li>编址方式
 <ul>
 <li>按字编址：一个存储单元存储的是一个字，最小寻址单位是一个字。</li>
-<li>按字节编址：一个存储单元存储的是一个字节，最小寻址单位是一个字节。
-<strong>总容量</strong>=存储单元个数*单个存储单元所占大小<br>
-<strong>单位换算</strong>：1GB=1024MB，1MB=1024KB，1KB=1024Byte，1Byte=8bit。K=2^10，M=2^20，G=2^30</li>
+<li>按字节编址：一个存储单元存储的是一个字节，最小寻址单位是一个字节。</li>
 </ul>
 </li>
 </ul>
+<p><strong>总容量</strong>=存储单元个数*单个存储单元所占大小<br>
+<strong>单位换算</strong>：1GB=1024MB，1MB=1024KB，1KB=1024Byte，1Byte=8bit。K=2^10，M=2^20，G=2^30</p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9h0daQ"><img src="https://s1.ax1x.com/2023/05/19/p9h0daQ.md.png" alt="p9h0daQ.md.png" /></a><br>
@@ -1271,22 +1271,22 @@ https://github.com/alex-shpak/hugo-book
   3 数据传输控制方式
   <a class="anchor" href="#3-%e6%95%b0%e6%8d%ae%e4%bc%a0%e8%be%93%e6%8e%a7%e5%88%b6%e6%96%b9%e5%bc%8f">#</a>
 </h2>
-<p>主存和外设交换数据</p>
+<p>  用于主存和外设交换数据。</p>
 <h3 id="31-程序查询方式">
   3.1 程序查询方式
   <a class="anchor" href="#31-%e7%a8%8b%e5%ba%8f%e6%9f%a5%e8%af%a2%e6%96%b9%e5%bc%8f">#</a>
 </h3>
-<p><strong>程序控制(查询)方式</strong>:CPU主动查询外设是否完成数据传输，如果没有CPU持续查询并等待I/O，效率极低。</p>
+<p>  CPU主动查询外设是否完成数据传输，如果没有CPU持续查询并等待I/O，效率极低。</p>
 <h3 id="32-程序中断方式">
   3.2 程序中断方式
   <a class="anchor" href="#32-%e7%a8%8b%e5%ba%8f%e4%b8%ad%e6%96%ad%e6%96%b9%e5%bc%8f">#</a>
 </h3>
-<p><strong>程序中断方式</strong>: 外设开始或者完成数据传输后，向CPU发送中断，等待CPU处理数据，效率相对较高，中断响应时间指的是从发出中断请求到开始进入中断处理程序;中断处理时间指的是从中断处理开始到中断处理结束。中断向量提供中断服务程序的入口地址。多级中断嵌套，使用栈来保护断点和现场。如鼠标键盘</p>
+<p>  外设开始或者完成数据传输后，向CPU发送中断，等待CPU处理数据，效率相对较高，中断响应时间指的是从发出中断请求到开始进入中断处理程序;中断处理时间指的是从中断处理开始到中断处理结束。中断向量提供中断服务程序的入口地址。多级中断嵌套，使用栈来保护断点和现场。如鼠标键盘</p>
 <h3 id="33-dma方式">
   3.3 DMA方式
   <a class="anchor" href="#33-dma%e6%96%b9%e5%bc%8f">#</a>
 </h3>
-<p><strong>DMA方式(直接主存存取)</strong>:CPU只需完成必要的初始化等操作，数据传输的整个过程都中，都由DMA控制器来完成，在主存和外设之间建立直接的数据通路，效率很高。如硬盘</p>
+<p>  CPU只需完成必要的初始化等操作，数据传输的整个过程都中，都由DMA控制器来完成，在主存和外设之间建立直接的数据通路，效率很高。如硬盘</p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9hyPpj"><img src="https://s1.ax1x.com/2023/05/19/p9hyPpj.md.png" alt="p9hyPpj.md.png" /></a><br>
@@ -1442,8 +1442,8 @@ x86一般是复杂指令系统，arm系统一般是精简指令集
   7.1 奇偶校验码
   <a class="anchor" href="#71-%e5%a5%87%e5%81%b6%e6%a0%a1%e9%aa%8c%e7%a0%81">#</a>
 </h3>
-<p>  奇偶校验码:在编码中增加1位校验位来使编码中1的个数为奇数(奇校验)或者偶数(偶校验)，编码中，含有奇数个1，发送给接收方，接收方收到后，会计算收到的编码有多少个1，如果是奇数个，则无误，是偶数个，则有误。
-  特点：奇偶校验可检查出1位错位，不可纠错</p>
+<p>  奇偶校验码:在编码中增加1位校验位来使编码中1的个数为奇数(奇校验)或者偶数(偶校验)，编码中，含有奇数个1，发送给接收方，接收方收到后，会计算收到的编码有多少个1，如果是奇数个，则无误，是偶数个，则有误。<br>
+  特点：奇偶校验可检查出1位错位，不可纠错。</p>
 <h3 id="72-循环冗余码">
   7.2 循环冗余码
   <a class="anchor" href="#72-%e5%be%aa%e7%8e%af%e5%86%97%e4%bd%99%e7%a0%81">#</a>
@@ -1504,21 +1504,6 @@ x86一般是复杂指令系统，arm系统一般是精简指令集
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9Ten76"><img src="https://s1.ax1x.com/2023/05/23/p9Ten76.md.png" alt="p9Ten76.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      A
-    </div>
-  </label>
-</div>
-
-<a href="https://imgse.com/i/pCkN7VI"><img src="https://s1.ax1x.com/2023/06/08/pCkN7VI.md.png" alt="pCkN7VI.md.png" /></a>
 
 <div class="book-expand">
   <label>
