@@ -169,46 +169,6 @@ title: 3.2 操作系统
 {{< expand "学霸肯定对了">}}C D\
 物理块号编址从0开始，所以总物理块数为16385+1=16386，16386/32=512余2，位示图编号从0开始，所以前511号编满了，512号编到第二个位置，选C，1000G*1024/4/32=8000，选D{{< /expand >}}
 ## 课后习题
-[![pCCW40S.md.png](https://s1.ax1x.com/2023/06/05/pCCW40S.md.png)](https://imgse.com/i/pCCW40S)
-[![pCCWokQ.md.png](https://s1.ax1x.com/2023/06/05/pCCWokQ.md.png)](https://imgse.com/i/pCCWokQ)
-[![pCCWqlq.md.png](https://s1.ax1x.com/2023/06/05/pCCWqlq.md.png)](https://imgse.com/i/pCCWqlq)
-[![pCCftAg.md.png](https://s1.ax1x.com/2023/06/05/pCCftAg.md.png)](https://imgse.com/i/pCCftAg)
-[![pCCfruV.md.png](https://s1.ax1x.com/2023/06/05/pCCfruV.md.png)](https://imgse.com/i/pCCfruV)
-[![pCCfgN4.md.png](https://s1.ax1x.com/2023/06/05/pCCfgN4.md.png)](https://imgse.com/i/pCCfgN4)
-[![pCPrxL4.png](https://s1.ax1x.com/2023/06/06/pCPrxL4.png)](https://imgse.com/i/pCPrxL4)
-[![pCPfaW9.md.png](https://s1.ax1x.com/2023/06/06/pCPfaW9.md.png)](https://imgse.com/i/pCPfaW9)
-[![pCPfdzR.png](https://s1.ax1x.com/2023/06/06/pCPfdzR.png)](https://imgse.com/i/pCPfdzR)
-### 第10题
-[![pCPfDL6.md.png](https://s1.ax1x.com/2023/06/06/pCPfDL6.md.png)](https://imgse.com/i/pCPfDL6)
-[![pCPfseK.md.png](https://s1.ax1x.com/2023/06/06/pCPfseK.md.png)](https://imgse.com/i/pCPfseK)
-[![pCPfydO.md.png](https://s1.ax1x.com/2023/06/06/pCPfydO.md.png)](https://imgse.com/i/pCPfydO)
-[![pCPf6oD.md.png](https://s1.ax1x.com/2023/06/06/pCPf6oD.md.png)](https://imgse.com/i/pCPf6oD)
-[![pCPffSA.png](https://s1.ax1x.com/2023/06/06/pCPffSA.png)](https://imgse.com/i/pCPffSA)
-[![pCPf4yt.md.png](https://s1.ax1x.com/2023/06/06/pCPf4yt.md.png)](https://imgse.com/i/pCPf4yt)
-[![pCPTXpF.md.png](https://s1.ax1x.com/2023/06/06/pCPTXpF.md.png)](https://imgse.com/i/pCPTXpF)
-[![pCPTjl4.md.png](https://s1.ax1x.com/2023/06/06/pCPTjl4.md.png)](https://imgse.com/i/pCPTjl4)
-[![pCPTxX9.md.png](https://s1.ax1x.com/2023/06/06/pCPTxX9.md.png)](https://imgse.com/i/pCPTxX9)
-### 第20题
-[![pCP7itK.png](https://s1.ax1x.com/2023/06/06/pCP7itK.png)](https://imgse.com/i/pCP7itK)
-[![pCP7FfO.png](https://s1.ax1x.com/2023/06/06/pCP7FfO.png)](https://imgse.com/i/pCP7FfO)
-[![pCP7ApD.md.png](https://s1.ax1x.com/2023/06/06/pCP7ApD.md.png)](https://imgse.com/i/pCP7ApD)
-[![pCiuZ0H.md.png](https://s1.ax1x.com/2023/06/06/pCiuZ0H.md.png)](https://imgse.com/i/pCiuZ0H)
-[![pCiuBcT.md.png](https://s1.ax1x.com/2023/06/06/pCiuBcT.md.png)](https://imgse.com/i/pCiuBcT)
-[![pCiuDjU.md.png](https://s1.ax1x.com/2023/06/06/pCiuDjU.md.png)](https://imgse.com/i/pCiuDjU)
-[![pCiusuF.md.png](https://s1.ax1x.com/2023/06/06/pCiusuF.md.png)](https://imgse.com/i/pCiusuF)
-[![pCiuyB4.md.png](https://s1.ax1x.com/2023/06/06/pCiuyB4.md.png)](https://imgse.com/i/pCiuyB4)
-[![pCiugE9.md.png](https://s1.ax1x.com/2023/06/06/pCiugE9.md.png)](https://imgse.com/i/pCiugE9)
-### 第30题
-[![pCiu2NR.md.png](https://s1.ax1x.com/2023/06/06/pCiu2NR.md.png)](https://imgse.com/i/pCiu2NR)
-[![pCiuf9x.md.png](https://s1.ax1x.com/2023/06/06/pCiuf9x.md.png)](https://imgse.com/i/pCiuf9x)
-[![pCiKnrF.md.png](https://s1.ax1x.com/2023/06/06/pCiKnrF.md.png)](https://imgse.com/i/pCiKnrF)
-[![pCiKub4.md.png](https://s1.ax1x.com/2023/06/06/pCiKub4.md.png)](https://imgse.com/i/pCiKub4)
-[![pCiKMVJ.md.png](https://s1.ax1x.com/2023/06/06/pCiKMVJ.md.png)](https://imgse.com/i/pCiKMVJ)
-[![pCiKG26.md.png](https://s1.ax1x.com/2023/06/06/pCiKG26.md.png)](https://imgse.com/i/pCiKG26)
-[![pCiKNrD.md.png](https://s1.ax1x.com/2023/06/06/pCiKNrD.md.png)](https://imgse.com/i/pCiKNrD)
-[![pCiKcM8.md.png](https://s1.ax1x.com/2023/06/06/pCiKcM8.md.png)](https://imgse.com/i/pCiKcM8)\
-
-
 todo 操作系统习题
 
 
