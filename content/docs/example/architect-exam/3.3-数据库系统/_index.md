@@ -175,3 +175,33 @@ title: 3.3 数据库系统
 {{< expand "学霸肯定对了">}}B C{{< /expand >}}
 
 ## 5 规范化理论
+- 规范的必要性\
+&emsp;&emsp;非规范化的关系模式可能存在的问题包括：数据冗余、更新异常(修改操作一致性问题)、插入异常、删除异常。
+[![pCVrGW9.md.png](https://s1.ax1x.com/2023/06/11/pCVrGW9.md.png)](https://imgse.com/i/pCVrGW9)\
+经常考察的点：\
+1、给你一个关系模式，让你看看有啥问题，做法：先看该关系模式达到第几范式，再说出对应范式的问题就行；\
+2、让你修改关系模式来消除这些问题。一般来说没达到第三范式都有问题。
+### 5.1 函数依赖
+&emsp;&emsp;函数依赖是一个语义概念，是一个自然而然的概念。如果x能唯一决定y，则称x函数决定y，或者是y函数依赖于x，记作x->y。
+- 特殊的函数依赖关系
+  - 部分函数依赖
+[![pCVcU9e.md.png](https://s1.ax1x.com/2023/06/11/pCVcU9e.md.png)](https://imgse.com/i/pCVcU9e)
+  - 传递函数依赖
+[![pCVca1H.md.png](https://s1.ax1x.com/2023/06/11/pCVca1H.md.png)](https://imgse.com/i/pCVca1H)
+### 5.2 求候选键
+&emsp;&emsp;候选键可以有多个，每个候选键可以由多个属性构成。知道候选键了以后，其余的情况都知道了，现在介绍如何求取候选键。\
+&emsp;&emsp;1、在关系模式中，一般用R(U,F)表示，U是属性，表示节点；F是函数依赖，表示边；所以将关系模式转换为一个有向图（可选）。\
+&emsp;&emsp;2、找入度为0的属性(只在箭头左边出现过的属性就是入度为0的属性；箭头指入为入度，箭头指出为出度)，并以该属性集合为起点，尝试遍历有向图，若能正常遍历图中所有结点，则该属性集即为关系模式的候选键。\
+&emsp;&emsp;3、若入度为0的属性集不能遍历图中所有结点，则需要尝试性的将一些中间结点(既有入度，也有出度的结点)并入入度为0的属性集中，直至该集合能遍历所有结点，集合为候选键。
+>例题
+[![pCV67SH.md.png](https://s1.ax1x.com/2023/06/11/pCV67SH.md.png)](https://imgse.com/i/pCV67SH)
+{{< expand "学霸肯定对了">}}A ABCD B{{< /expand >}}
+### 5.3 Armstrong公理
+&emsp;&emsp;函数依赖在题目中一般都给的不全，但是我们可以通过题目给的函数依赖推导出所有的属性，期间推导的依据就是Armstrong公理。
+[![pCVczHx.md.png](https://s1.ax1x.com/2023/06/11/pCVczHx.md.png)](https://imgse.com/i/pCVczHx)
+[![pCVgZDI.md.png](https://s1.ax1x.com/2023/06/11/pCVgZDI.md.png)](https://imgse.com/i/pCVgZDI)
+>例题
+[![pCVgQPS.md.png](https://s1.ax1x.com/2023/06/11/pCVgQPS.md.png)](https://imgse.com/i/pCVgQPS)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
+### 5.4 范式判断
+
