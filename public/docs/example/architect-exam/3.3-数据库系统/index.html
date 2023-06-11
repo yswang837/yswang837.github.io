@@ -30,7 +30,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.0d6b7aa6460441d794593ad9b98935bf62f2e9aca373ae709f1189b94b6e3c11.js" integrity="sha256-DWt6pkYEQdeUWTrZuYk1v2Ly6ayjc65wnxGJuUtuPBE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.8d5a2953a46715ff054c33a08275cd21f3fc3cb9362db53f84f1a1597eacde9b.js" integrity="sha256-jVopU6RnFf8FTDOggnXNIfP8PLk2LbU/hPGhWX6s3ps=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -946,6 +946,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#52-求候选键">5.2 求候选键</a></li>
         <li><a href="#53-armstrong公理">5.3 Armstrong公理</a></li>
         <li><a href="#54-范式判断">5.4 范式判断</a></li>
+        <li><a href="#55-模式分解">5.5 模式分解</a></li>
       </ul>
     </li>
   </ul>
@@ -1432,7 +1433,7 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p>  候选键可以有多个，每个候选键可以由多个属性构成。知道候选键了以后，其余的情况都知道了，现在介绍如何求取候选键。<br>
   1、在关系模式中，一般用R(U,F)表示，U是属性，表示节点；F是函数依赖，表示边；所以将关系模式转换为一个有向图（可选）。<br>
-  2、找入度为0的属性(只在箭头左边出现过的属性就是入度为0的属性；箭头指入为入度，箭头指出为出度)，并以该属性集合为起点，尝试遍历有向图，若能正常遍历图中所有结点，则该属性集即为关系模式的候选键。<br>
+  2、(入度出度都为0的属性一定是在候选码中)，找入度为0的属性(只在箭头左边出现过的属性就是入度为0的属性；箭头指入为入度，箭头指出为出度)，并以该属性集合为起点，尝试遍历有向图，若能正常遍历图中所有结点，则该属性集即为关系模式的候选键。<br>
   3、若入度为0的属性集不能遍历图中所有结点，则需要尝试性的将一些中间结点(既有入度，也有出度的结点)并入入度为0的属性集中，直至该集合能遍历所有结点，集合为候选键。</p>
 <blockquote>
 <p>例题
@@ -1480,6 +1481,43 @@ https://github.com/alex-shpak/hugo-book
 <h3 id="54-范式判断">
   5.4 范式判断
   <a class="anchor" href="#54-%e8%8c%83%e5%bc%8f%e5%88%a4%e6%96%ad">#</a>
+</h3>
+<p>  关系数据库在设计过程中必然会考虑到规范化程度，范式就是判断规范化程度的度量。欲达到更高的规范化程度，则需要将表格拆分得更细。拆分得越细，查询性能会越低，所以并不是越细越好，所以也会出现非规范化理论。一般在开发过程中达到第三范式就刚好。
+<a href="https://imgse.com/i/pCVqdgI"><img src="https://s1.ax1x.com/2023/06/11/pCVqdgI.md.png" alt="pCVqdgI.md.png" /></a></p>
+<ul>
+<li>第一范式<br>
+  最普通的二维表就达到了第一范式，一般题目给到的表，都是达到了第一范式。所以下表不满足第一范式，不是普通二维表，因为高级职称人数可继续拆分。
+<a href="https://imgse.com/i/pCVq2Cj"><img src="https://s1.ax1x.com/2023/06/11/pCVq2Cj.md.png" alt="pCVq2Cj.md.png" /></a></li>
+<li>第二范式<br>
+  该例子是一个普通的二维表，所以该关系模式至少达到了第一范式，但该关系模式存在非主属性对候选码的部分函数依赖(学分部分依赖候选码学号和课程号)，所以改关系模型未能达到第二范式，目前只是第一范式。存在部分函数依赖的前提是候选码至少由两个及以上的属性构成。若消除了非主属性对候选码的部分函数依赖，则该关系模式可以达到第二范式；如何消除？将该关系模式(学号，课程号，成绩，学分)拆成两个关系模式(课程号，学分)和(学号，课程号，成绩)。
+<a href="https://imgse.com/i/pCVq4K0"><img src="https://s1.ax1x.com/2023/06/11/pCVq4K0.md.png" alt="pCVq4K0.md.png" /></a></li>
+<li>第三范式<br>
+  该例子是普通二维表且候选码只有一个属性构成，所以该关系模式至少达到了第二范式。主属性学号-&gt;系号，系号-&gt;系名和系位置(其中系号一定是非主属性才行)；所以该关系模式存在非主属性对主属性的传递依赖(系名和系位置传递依赖于学号)，所以该关系模式未达到第三范式。若消除了非主属性对主属性的传递依赖，则该模式可以达到第三范式，如何消除？将关系模式(学号，姓名，系号，系名，系位置)拆分成两个关系模式(学号，姓名，系号)和(系号，系名，系位置)。
+<a href="https://imgse.com/i/pCVq5rV"><img src="https://s1.ax1x.com/2023/06/11/pCVq5rV.md.png" alt="pCVq5rV.md.png" /></a></li>
+<li>BCNF范式<br>
+  该例子是是普通二维表且没有非主属性(F{T-&gt;J,SJ-&gt;T}，所以候选码为：SJ，ST)，所以该关系模型至少达到了第三范式。当且仅当F中的每个依赖的左边都必定包含R的某个候选码时，就达到BCNF范式。显然T不包含SJ或ST，所以未达到BCNF范式。
+<a href="https://imgse.com/i/pCVON6I"><img src="https://s1.ax1x.com/2023/06/11/pCVON6I.md.png" alt="pCVON6I.md.png" /></a></li>
+</ul>
+<blockquote>
+<p>例题</p>
+</blockquote>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C A
+    </div>
+  </label>
+</div>
+
+<h3 id="55-模式分解">
+  5.5 模式分解
+  <a class="anchor" href="#55-%e6%a8%a1%e5%bc%8f%e5%88%86%e8%a7%a3">#</a>
 </h3>
 </article>
  
@@ -1551,6 +1589,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#52-求候选键">5.2 求候选键</a></li>
         <li><a href="#53-armstrong公理">5.3 Armstrong公理</a></li>
         <li><a href="#54-范式判断">5.4 范式判断</a></li>
+        <li><a href="#55-模式分解">5.5 模式分解</a></li>
       </ul>
     </li>
   </ul>
