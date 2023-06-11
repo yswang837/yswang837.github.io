@@ -11,7 +11,6 @@ title: 3.1 计算机组成与体系结构
 - 5. CISC与RISC  &emsp;  &emsp;&emsp;✅
 - 6. 流水线&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
 - 7. 校验码&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
-- 8. 嵌入式&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
 ## 1 计算机结构
 &emsp;&emsp;计算机的硬件包含5大组成：**控制器**、**运算器**、**存储器**、**输入设备**和**输出设备**。CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。程序员是可以通过汇编语言直接操作CPU中的寄存器的。\
 &emsp;&emsp;**冯诺依曼**：一般用于pc处理器，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令。\
@@ -169,9 +168,7 @@ x86一般是复杂指令系统，arm系统一般是精简指令集{{< /expand >}
 {{< expand "学霸肯定对了">}}答案：D B\
 &emsp;&emsp;解析：32 16 8 4 2 1 需要6位。读题目可知D5是第10位，用8+2校验，故选B
 {{< /expand >}}
-## 8 嵌入式
-&emsp;&emsp;嵌入式系统的初始化过程：片级初始化->版级初始化->系统初始化
-[![pCkNhxe.md.png](https://s1.ax1x.com/2023/06/08/pCkNhxe.md.png)](https://imgse.com/i/pCkNhxe)
+
 >例题
 [![p9Ten76.md.png](https://s1.ax1x.com/2023/05/23/p9Ten76.md.png)](https://imgse.com/i/p9Ten76)
 {{< expand "学霸肯定对了">}}A{{< /expand >}}

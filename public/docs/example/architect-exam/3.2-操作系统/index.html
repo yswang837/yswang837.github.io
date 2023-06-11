@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 # 操作系统概述 操作系统的组成及作用 ✅✅✅ 操作系统的特性 ✅✅✅ 操作系统的分类 ✅✅✅ 进程管理 进程的状态 ✅ 前趋图 ✅✅✅✅ 信号量与P/V操作 ✅✅✅✅ 死锁及银行家算法 ✅ 存储管理 页式存储 ✅✅✅ 段式存储 ✅✅✅ 页面置换算法 ✅ 文件管理 绝对路径与相对路径 ✅ 索引文件 ✅✅✅ 位示图 ✅ 设备管理 ✅✅ 微内核操作系统 ✅ 嵌入式操作系统 ✅✅✅ 1. 操作系统概述 # 操作系统是裸机上的第一层软件，它管理着系统的软硬件资源，控制着程序的运行，是应用软件和硬件之间的接口，也是人机交互的接口。它可以管理系统中的进程、存储、文件、作业以及设备。 例题 学霸肯定对了 ↕ B 1.1 操作系统的组成及作用 # 操作系统的组成
+<meta name="description" content="课程内容提要 # 操作系统概述 操作系统的组成及作用 ✅✅✅ 操作系统的特性 ✅✅✅ 操作系统的分类 ✅✅✅ 进程管理 进程的状态 ✅ 前趋图 ✅✅✅✅ 信号量与P/V操作 ✅✅✅✅ 死锁及银行家算法 ✅ 存储管理 页式存储 ✅✅✅ 段式存储 ✅✅✅ 页面置换算法 ✅ 设备管理 ✅✅ 文件管理 绝对路径与相对路径 ✅ 索引文件 ✅✅✅ 位示图 ✅ 嵌入式操作系统 ✅✅ 实时操作系统 ✅✅ 微内核操作系统 ✅✅ 1. 操作系统概述 # 操作系统是裸机上的第一层软件，它管理着系统的软硬件资源，控制着程序的运行，是应用软件和硬件之间的接口，也是人机交互的接口。它可以管理系统中的进程、存储、文件、作业以及设备。 例题 学霸肯定对了 ↕ B 1.1 操作系统的组成及作用 # 操作系统的组成
 通常由操作系统内核 (Kernel) 和其他许多附加的配套软件所组成，包括图形用户界面程序、为支持应用软件开发和运行的各种软件构件(如应用框架、编译器和程序库等)、常用的应用程序(如任务管理器、防火墙、网络浏览器等)。
 其中，内核指的是能提供进程管理(任务管理)、存储管理、文件管理和设备管理等功能的那些软件模块，它们是操作系统中最基本的部分，用于为众多应用程序访问计算机硬件提供服务。由于应用程序直接对硬件操作非常复杂，所以操作系统内核对硬件设备进行了抽象，为应用软件提供了一套简洁、统一的接口(称为系统调用接口或应用程序接口 API)。内核通常都驻留在内存中，它以 CPU 的最高优先级运行，能执行指令系统中的特权指令，具有直接访问各种外设和全部主存空间的特权，负责对系统资源进行管理和分配。
 操作系统的作用
 操作系统主要有以下 3 个方面的重要作用：
 (1) 管理计算机中运行的程序和分配各种软硬件资源。计算机中一般总有多个程序在运行.这些程序在运行时都可能要求使用系统中的资源(如访问硬盘，在屏幕上显示信息等)，此时操作系统就承担着资源的调度和分配任务，以避免冲突，保证程序正常有序地运行。操作系统的资源管理功能主要包括处理器管理、存储管理、文件管理、I/O 设备管理等几个方面。
-(2) 为用户提供友善的人机界面。人机界面的任务是实现用户与计算机之间的通信(对话)。几乎所有操作系统都向用户提供图形用户界面 (GUI)。
-(3) 为应用程序的开发和运行提供一个高效率的平台。操作系统屏蔽了几乎所有物理设备的技术细节，它以规范、高效的方式 (例如系统调用、库函数等)向应用程序提供了有力的支持，从而为开发和运行其他系统软件及各种应用软件提供了一个平台。">
+(2) 为用户提供友善的人机界面。人机界面的任务是实现用户与计算机之间的通信(对话)。几乎所有操作系统都向用户提供图形用户界面 (GUI)。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.2 操作系统" />
 <meta property="og:description" content="" />
@@ -22,7 +21,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.3105f9c11f5fb26a1a5d25103f7db025a84ccf49068d8285467e232b053a5b39.js" integrity="sha256-MQX5wR9fsmoaXSUQP32wJahMz0kGjYKFRn4jKwU6Wzk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4b088f7e58bb2a23f0cf4994977fdb1540b1f29905aad420d5c42df87a4c98a6.js" integrity="sha256-SwiPfli7KiPwz0mUl3/bFUCx8pkFqtQg1cQt&#43;HpMmKY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -917,33 +916,36 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#13-操作系统的分类">1.3 操作系统的分类</a></li>
       </ul>
     </li>
-    <li><a href="#4-进程管理">4 进程管理</a>
+    <li><a href="#2-进程管理">2 进程管理</a>
       <ul>
-        <li><a href="#41-进程的三态图">4.1 进程的三态图</a></li>
-        <li><a href="#42-同步互斥">4.2 同步互斥</a></li>
-        <li><a href="#43-前趋图与pv操作">4.3 前趋图与PV操作</a></li>
-        <li><a href="#44-死锁">4.4 死锁</a></li>
+        <li><a href="#21-进程的三态图">2.1 进程的三态图</a></li>
+        <li><a href="#22-进程间的同步互斥">2.2 进程间的同步互斥</a></li>
+        <li><a href="#23-前趋图与pv操作">2.3 前趋图与PV操作</a></li>
+        <li><a href="#24-死锁">2.4 死锁</a></li>
       </ul>
     </li>
-    <li><a href="#5-存储管理">5 存储管理</a>
+    <li><a href="#3-存储管理">3 存储管理</a>
       <ul>
-        <li><a href="#51-分页存储管理">5.1 分页存储管理</a></li>
-        <li><a href="#52-分段存储管理">5.2 分段存储管理</a></li>
+        <li><a href="#31-分页存储管理">3.1 分页存储管理</a></li>
+        <li><a href="#32-分段存储管理">3.2 分段存储管理</a></li>
       </ul>
     </li>
-    <li><a href="#6-设备管理">6 设备管理</a>
+    <li><a href="#4-设备管理">4 设备管理</a>
       <ul>
-        <li><a href="#61-io软件层次">6.1 I/O软件层次</a></li>
-        <li><a href="#62-spooling技术">6.2 SPOOLING技术</a></li>
+        <li><a href="#41-io软件层次">4.1 I/O软件层次</a></li>
+        <li><a href="#42-spooling技术">4.2 SPOOLING技术</a></li>
       </ul>
     </li>
-    <li><a href="#7-文件管理">7 文件管理</a>
+    <li><a href="#5-文件管理">5 文件管理</a>
       <ul>
-        <li><a href="#71-索引文件结构">7.1 索引文件结构</a></li>
-        <li><a href="#72-文件目录">7.2 文件目录</a></li>
-        <li><a href="#73-位示图">7.3 位示图</a></li>
+        <li><a href="#51-索引文件结构">5.1 索引文件结构</a></li>
+        <li><a href="#52-文件目录">5.2 文件目录</a></li>
+        <li><a href="#53-位示图">5.3 位示图</a></li>
       </ul>
     </li>
+    <li><a href="#6-嵌入式操作系统">6. 嵌入式操作系统</a></li>
+    <li><a href="#7-实时操作系统">7. 实时操作系统</a></li>
+    <li><a href="#8-微内核操作系统">8. 微内核操作系统</a></li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>
@@ -995,6 +997,11 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li>
 <ol start="4">
+<li>设备管理       ✅✅</li>
+</ol>
+</li>
+<li>
+<ol start="5">
 <li>文件管理</li>
 </ol>
 <ul>
@@ -1004,18 +1011,18 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li>
-<ol start="5">
-<li>设备管理       ✅✅</li>
-</ol>
-</li>
-<li>
 <ol start="6">
-<li>微内核操作系统    ✅</li>
+<li>嵌入式操作系统    ✅✅</li>
 </ol>
 </li>
 <li>
 <ol start="7">
-<li>嵌入式操作系统    ✅✅✅</li>
+<li>实时操作系统     ✅✅</li>
+</ol>
+</li>
+<li>
+<ol start="8">
+<li>微内核操作系统    ✅✅</li>
 </ol>
 </li>
 </ul>
@@ -1123,16 +1130,19 @@ https://github.com/alex-shpak/hugo-book
   嵌入式操作系统运行在嵌入式智能设备环境中微型化，其主要特点如下：微型化、可定制、实时性、可靠性、易移植性</p>
 </li>
 </ul>
-<h2 id="4-进程管理">
-  4 进程管理
-  <a class="anchor" href="#4-%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86">#</a>
+<h2 id="2-进程管理">
+  2 进程管理
+  <a class="anchor" href="#2-%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86">#</a>
 </h2>
-<p>  进程由进程控制块PCB(唯一标识)+程序(描述进程要做什么)+数据(存放进程执行所需的数据)。</p>
-<h3 id="41-进程的三态图">
-  4.1 进程的三态图
-  <a class="anchor" href="#41-%e8%bf%9b%e7%a8%8b%e7%9a%84%e4%b8%89%e6%80%81%e5%9b%be">#</a>
+<p>  进程由进程控制块PCB(唯一标识)+程序(描述进程要做什么)+数据(存放进程执行所需的数据)。程序是放在外存中的文件(静态的)，进程是程序的一次执行过程(动态的)。下图是进程和线程的关系，明显看出来选C
+<a href="https://imgse.com/i/pCE6gvn"><img src="https://s1.ax1x.com/2023/06/10/pCE6gvn.md.png" alt="pCE6gvn.md.png" /></a></p>
+<h3 id="21-进程的三态图">
+  2.1 进程的三态图
+  <a class="anchor" href="#21-%e8%bf%9b%e7%a8%8b%e7%9a%84%e4%b8%89%e6%80%81%e5%9b%be">#</a>
 </h3>
-<p>  三态图之间的状态转换就是PV操作来控制的。
+<p>  三态图之间的状态转换就是PV操作来控制的。系统中资源一般分为：<br>
+1、CPU资源：  有   无   无<br>
+2、非CPU资源： 有   有   无
 <a href="https://imgse.com/i/p9Wehqg"><img src="https://s1.ax1x.com/2023/05/17/p9Wehqg.png" alt="p9Wehqg.png" /></a></p>
 <blockquote>
 <p>例题
@@ -1151,38 +1161,62 @@ https://github.com/alex-shpak/hugo-book
     </div>
   </label>
 </div>
+
+<a href="https://imgse.com/i/pCE6WD0"><img src="https://s1.ax1x.com/2023/06/10/pCE6WD0.md.png" alt="pCE6WD0.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C C
+    </div>
+  </label>
+</div>
 </p>
 </blockquote>
-<h3 id="42-同步互斥">
-  4.2 同步互斥
-  <a class="anchor" href="#42-%e5%90%8c%e6%ad%a5%e4%ba%92%e6%96%a5">#</a>
+<h3 id="22-进程间的同步互斥">
+  2.2 进程间的同步互斥
+  <a class="anchor" href="#22-%e8%bf%9b%e7%a8%8b%e9%97%b4%e7%9a%84%e5%90%8c%e6%ad%a5%e4%ba%92%e6%96%a5">#</a>
 </h3>
 <p><strong>临界资源</strong>：各进程间需要以互斥方式对其进行访问的资源。<br>
 <strong>临界区</strong>：指进程中对临界资源实施操作的那段程序。本质是一段程序代码。<br>
-<strong>互斥</strong>：某资源 (即临界资源)在同一时间内只能由一个任务单独使用，使用时需要加锁，使用完后解锁才能被其他任务使用，属于<strong>间接制约</strong>关系;如打印机。<br>
-<strong>同步</strong>：多个任务可以并发执行，只不过有速度上的差异，在一定情况下停下等待，属于<strong>直接制约</strong>关系，不存在资源是否单独或共享的问题;如自行车和汽车。<br>
-<strong>互斥信号量</strong>：对临界资源采用互斥访问，使用互斥信号量后其他进程无法访问，它是全局变量，一般用S表示，的初值为1。<br>
-<strong>同步信号量</strong>：同步信号量:对共享资源的访问控制，初值一般是共享资源的数量，它是全局变量；一般用S表示，如公司电脑数量。
+<strong>互斥模型</strong>：某<strong>资源</strong> (即临界资源)在同一时间内只能由一个进程单独使用，使用时需要加锁，使用完后解锁才能被其他任务使用，属于<strong>间接制约</strong>关系;如打印机、缓冲区。<br>
+<strong>同步模型</strong>：多个任务可以并发执行(进程与进程之间存在协作关系)，只不过有<strong>速度</strong>上的差异，在一定情况下停下等待，属于<strong>直接制约</strong>关系，不存在资源是否单独或共享的问题;如自行车和汽车。<br>
+<strong>互斥模型的信号量</strong>：对临界资源采用互斥访问，使用互斥信号量后其他进程无法访问，它是全局变量，一般用S表示，的初值为1。<br>
+<strong>同步模型的信号量</strong>：同步信号量:对共享资源的访问控制，初值一般是共享资源的数量，它是全局变量；一般用S表示，如公司电脑数量。
 <a href="https://imgse.com/i/pCSKx0I"><img src="https://s1.ax1x.com/2023/06/02/pCSKx0I.md.png" alt="pCSKx0I.md.png" /></a>
 <a href="https://imgse.com/i/pCSMF1g"><img src="https://s1.ax1x.com/2023/06/02/pCSMF1g.md.png" alt="pCSMF1g.md.png" /></a></p>
-<h3 id="43-前趋图与pv操作">
-  4.3 前趋图与PV操作
-  <a class="anchor" href="#43-%e5%89%8d%e8%b6%8b%e5%9b%be%e4%b8%8epv%e6%93%8d%e4%bd%9c">#</a>
+<h3 id="23-前趋图与pv操作">
+  2.3 前趋图与PV操作
+  <a class="anchor" href="#23-%e5%89%8d%e8%b6%8b%e5%9b%be%e4%b8%8epv%e6%93%8d%e4%bd%9c">#</a>
 </h3>
-<p><strong>P操作</strong>：申请资源，S=S-1，若S&gt;=0，则执行P操作的进程继续执行;若S&lt;0，则置该进程为阻塞状态 (因为无可用资源)，并将其插入阻塞队列。可认为是加锁操作。<br>
-<strong>V操作</strong>：释放资源，S=S+1，若S&gt;0，则执行V操作的进程继续执行:若S&lt;=0，则从阻塞状态唤醒一个进程，并将其插入就绪队列(此时因为缺少资源被P操作阻塞的进程可以继续执行，然后执行V操作的进程继续。可认为解锁操作。</p>
+<p><strong>P操作</strong>：申请并占用资源，S=S-1，若S&gt;=0，则执行P操作的进程继续执行;若S&lt;0，则置该进程为阻塞状态 (因为无可用资源)，并将其插入阻塞队列。可认为是加锁操作。<br>
+<strong>V操作</strong>：释放资源，S=S+1，若S&gt;0，则执行V操作的进程继续执行:若S&lt;=0，则从阻塞状态唤醒一个进程，并将其插入就绪队列(此时因为缺少资源被P操作阻塞的进程可以继续执行)，然后执行V操作的进程继续。可认为解锁操作。</p>
+<ul>
+<li>PV操作与互斥模型示例
+<a href="https://imgse.com/i/pCE678J"><img src="https://s1.ax1x.com/2023/06/10/pCE678J.md.png" alt="pCE678J.md.png" /></a></li>
+<li>PV操作与同步模型示例
+<a href="https://imgse.com/i/pCE6bvR"><img src="https://s1.ax1x.com/2023/06/10/pCE6bvR.md.png" alt="pCE6bvR.md.png" /></a>
+  下图中的进程队列是阻塞进程队列，当S为-3时，可认为是有3个进程在等待资源。
+<a href="https://imgse.com/i/p9hmyTg"><img src="https://s1.ax1x.com/2023/05/19/p9hmyTg.md.png" alt="p9hmyTg.md.png" /></a></li>
+<li>PV操作在前趋图中的应用<br>
+  前趋图是一个有向无环图，箭头的结束位置为P操作，箭头的开始位置为V操作
+<a href="https://imgse.com/i/pCE6Xb6"><img src="https://s1.ax1x.com/2023/06/10/pCE6Xb6.md.png" alt="pCE6Xb6.md.png" /></a></li>
+</ul>
 <blockquote>
 <p>github摘抄<br>
   进程通常分为就绪、运行和阻塞三个工作状态。三个状态之间的转换就是靠PV操作来控制的。 PV操作主要就是P操作、V操作。信号量的值只能由PV操作来改变。 信号量是最早出现的用来解决进程同步与互斥问题的机制。 P表示获得，V表示释放。来源于荷兰语，P和V是荷兰语两个单词的首字母。<br>
   信号量（Semaphore）由一个值和一个指针组成，指针指向等待该信号量的进程。信号量的值表示相应资源的使用情况。<br>
-信号量S&gt;=0时，S表示可用资源的数量。 当S&lt;0时，表示已经没有可用资源，S的绝对值表示当前等待该资源的进程数。请求者必须等待其他进程释放该类资源，才能继续运行。 执行一次P操作意味着请求分配一个资源，因此S的值减1； 执行一个V操作意味着释放一个资源，因此S的值加1；此时若S&lt;0，表示有某些进程正在等待该资源，因此要唤醒一个等待状态的进程，使之运行下去。<br>
+  信号量S&gt;=0时，S表示可用资源的数量。 当S&lt;0时，表示已经没有可用资源，S的绝对值表示当前等待该资源的进程数。请求者必须等待其他进程释放该类资源，才能继续运行。 执行一次P操作意味着请求分配一个资源，因此S的值减1； 执行一个V操作意味着释放一个资源，因此S的值加1；此时若S&lt;0，表示有某些进程正在等待该资源，因此要唤醒一个等待状态的进程，使之运行下去。<br>
   S大于0那就表示有临界资源可供使用，为什么不唤醒进程？ S大于0的确表示有临界资源可供使用，也就是说这个时候没有进程被阻塞在这个资源上，所以不需要唤醒。<br>
   S小于0应该是说没有临界资源可供使用，为什么还要唤醒进程？ V原语操作的本质在于：一个进程使用完临界资源后，释放临界资源，使S加1，以通知其它的进程，这个时候如果S&lt;0，表明有进程阻塞在该类资源上，因此要从阻塞队列里唤醒一个进程来“转手”该类资源。比如，有两个某类资源，四个进程A、B、C、D要用该类资源，最开始S=2，当A进入，S=1，当B进入S=0，表明该类资源刚好用完， 当C进入时S=-1，表明有一个进程被阻塞了，D进入，S=-2。当A用完该类资源时，进行V操作，S=-1，释放该类资源，因为S&lt;0，表明有进程阻塞在该类资源上，于是唤醒一个。<br>
   如果是互斥信号量的话，应该设置信号量S=1，但是当有5个进程都访问的话，最后在该信号量的链表里会有4个在等待，也是说S=-4，那么第一个进程执行了V操作使S加1，释放了资源，下一个应该能够执行，但唤醒的这个进程在执行P操作时因S&lt;0，也还是执行不了，这是怎么回事呢？ 当一个进程阻塞了的时候，它已经执行过了P操作，并卡在临界区那个地方。当唤醒它时就立即进入它自己的临界区，并不需要执行P操作了，当执行完了临界区的程序后，就执行V操作。<br>
-  S的绝对值表示等待的进程数，同时又表示临界资源，这到底是怎么回事？ 当信号量S小于0时，其绝对值表示系统中因请求该类资源而被阻塞的进程数目.S大于0时表示可用的临界资源数。注意在不同情况下所表达的含义不一样。当等于0时，表示刚好用完。\</p>
+  S的绝对值表示等待的进程数，同时又表示临界资源，这到底是怎么回事？ 当信号量S小于0时，其绝对值表示系统中因请求该类资源而被阻塞的进程数目.S大于0时表示可用的临界资源数。注意在不同情况下所表达的含义不一样。当等于0时，表示刚好用完。</p>
 </blockquote>
-<p>  下图中的进程队列是阻塞进程队列，当S为-3时，可认为是有3个进程在等待资源。
-<a href="https://imgse.com/i/p9hmyTg"><img src="https://s1.ax1x.com/2023/05/19/p9hmyTg.md.png" alt="p9hmyTg.md.png" /></a></p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9hmgYj"><img src="https://s1.ax1x.com/2023/05/19/p9hmgYj.md.png" alt="p9hmgYj.md.png" /></a>
@@ -1200,11 +1234,26 @@ https://github.com/alex-shpak/hugo-book
     </div>
   </label>
 </div>
+
+<a href="https://imgse.com/i/pCEcFKI"><img src="https://s1.ax1x.com/2023/06/10/pCEcFKI.md.png" alt="pCEcFKI.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C A
+    </div>
+  </label>
+</div>
 </p>
 </blockquote>
-<h3 id="44-死锁">
-  4.4 死锁
-  <a class="anchor" href="#44-%e6%ad%bb%e9%94%81">#</a>
+<h3 id="24-死锁">
+  2.4 死锁
+  <a class="anchor" href="#24-%e6%ad%bb%e9%94%81">#</a>
 </h3>
 <p>  死锁就考死锁资源的计算。<br>
 <a href="https://imgse.com/i/p9hmImT"><img src="https://s1.ax1x.com/2023/05/19/p9hmImT.md.png" alt="p9hmImT.md.png" /></a></p>
@@ -1227,13 +1276,14 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
-<h2 id="5-存储管理">
-  5 存储管理
-  <a class="anchor" href="#5-%e5%ad%98%e5%82%a8%e7%ae%a1%e7%90%86">#</a>
+<h2 id="3-存储管理">
+  3 存储管理
+  <a class="anchor" href="#3-%e5%ad%98%e5%82%a8%e7%ae%a1%e7%90%86">#</a>
 </h2>
-<h3 id="51-分页存储管理">
-  5.1 分页存储管理
-  <a class="anchor" href="#51-%e5%88%86%e9%a1%b5%e5%ad%98%e5%82%a8%e7%ae%a1%e7%90%86">#</a>
+<p>  外存往内存调用数据</p>
+<h3 id="31-分页存储管理">
+  3.1 分页存储管理
+  <a class="anchor" href="#31-%e5%88%86%e9%a1%b5%e5%ad%98%e5%82%a8%e7%ae%a1%e7%90%86">#</a>
 </h3>
 <p>  分页存储管理管理的是内存和外存之间的数据(同cache和内存之间的管理一样，只不过cache和内存之间靠的是硬件，而内存与外存靠的是软件（页表），这里是页式存储管理)。
 页式存储管理：将用户程序(外存)与内存均划分为相同大小的块，以页为单位将程序调入内存；这样会产生一个页表的数据结构，用户程序称为逻辑页，对应于页表的页号，内存划分对应于物理块号；<br>
@@ -1304,9 +1354,9 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
-<h3 id="52-分段存储管理">
-  5.2 分段存储管理
-  <a class="anchor" href="#52-%e5%88%86%e6%ae%b5%e5%ad%98%e5%82%a8%e7%ae%a1%e7%90%86">#</a>
+<h3 id="32-分段存储管理">
+  3.2 分段存储管理
+  <a class="anchor" href="#32-%e5%88%86%e6%ae%b5%e5%ad%98%e5%82%a8%e7%ae%a1%e7%90%86">#</a>
 </h3>
 <p>  按逻辑上的大小来截断(和页式存储不同，页式存储固定大小页面)，将进程空间分为一个个段，每段也有段号和段内地址，与页式存储不同的是，每段物理大小不同，分段是根据逻辑整体分段的，因此，段表也与页表的内容不同，页表中直接是逻辑页号对应物理块号，而下图所示，段表有段长和基址两个属性，才能确定一个逻辑段在物理段中的位置。<br>
 <a href="https://imgse.com/i/p9hndN4"><img src="https://s1.ax1x.com/2023/05/19/p9hndN4.md.png" alt="p9hndN4.md.png" /></a>
@@ -1325,29 +1375,29 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 </p>
-<h2 id="6-设备管理">
-  6 设备管理
-  <a class="anchor" href="#6-%e8%ae%be%e5%a4%87%e7%ae%a1%e7%90%86">#</a>
+<h2 id="4-设备管理">
+  4 设备管理
+  <a class="anchor" href="#4-%e8%ae%be%e5%a4%87%e7%ae%a1%e7%90%86">#</a>
 </h2>
-<h3 id="61-io软件层次">
-  6.1 I/O软件层次
-  <a class="anchor" href="#61-io%e8%bd%af%e4%bb%b6%e5%b1%82%e6%ac%a1">#</a>
+<h3 id="41-io软件层次">
+  4.1 I/O软件层次
+  <a class="anchor" href="#41-io%e8%bd%af%e4%bb%b6%e5%b1%82%e6%ac%a1">#</a>
 </h3>
 <p>  I/O设备管理软件的所有层次及每一层功能如下图：<br>
 <a href="https://imgse.com/i/p9hu4dU"><img src="https://s1.ax1x.com/2023/05/19/p9hu4dU.md.png" alt="p9hu4dU.md.png" /></a><br>
 <strong>实例</strong>：当用户程序试图读一个硬盘文件时，需要通过操作系统实现这一操作。与设备无关软件检查高速缓存中有无要读的数据块，若没有，则调用设备驱动程序，向1/0 硬件发出一个请求。然后，用户进程阻塞并等待磁盘操作的完成。当磁盘操作完成时，硬件产生一个中断，转入中断处理程序。中断处理程序检查中断的原因，认识到这时磁盘读取操作已经完成，于是唤醒用户进程取回从磁盘读取的信息，从而结束此次1/0 请求。用户进程在得到了所需的硬盘文件内容之，后继续运行。</p>
-<h3 id="62-spooling技术">
-  6.2 SPOOLING技术
-  <a class="anchor" href="#62-spooling%e6%8a%80%e6%9c%af">#</a>
+<h3 id="42-spooling技术">
+  4.2 SPOOLING技术
+  <a class="anchor" href="#42-spooling%e6%8a%80%e6%9c%af">#</a>
 </h3>
 <p>  虚拟性是OS的四大特性之一。如果说可以通过多道程序技术将一台物理CPU虚拟为多台逻辑CPU，从而允许多个用户共享一台主机，那么，通过SPOOling技术便可将一台物理I/O设备虚拟为多台逻辑I/O设备，同样允许多个用户共享一台物理I/O设备。</p>
-<h2 id="7-文件管理">
-  7 文件管理
-  <a class="anchor" href="#7-%e6%96%87%e4%bb%b6%e7%ae%a1%e7%90%86">#</a>
+<h2 id="5-文件管理">
+  5 文件管理
+  <a class="anchor" href="#5-%e6%96%87%e4%bb%b6%e7%ae%a1%e7%90%86">#</a>
 </h2>
-<h3 id="71-索引文件结构">
-  7.1 索引文件结构
-  <a class="anchor" href="#71-%e7%b4%a2%e5%bc%95%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84">#</a>
+<h3 id="51-索引文件结构">
+  5.1 索引文件结构
+  <a class="anchor" href="#51-%e7%b4%a2%e5%bc%95%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84">#</a>
 </h3>
 <p>  如图所示，一般linux的系统中默认有13个索引节点，索引可以理解为地址、指针、盘块号，0-9为直接索引,即每个索引节点存放的是内容，假设每个物理盘大小为4KB，共可存4KB*10=40KB数据。<br>
 <a href="https://imgse.com/i/p9hK8mV"><img src="https://s1.ax1x.com/2023/05/19/p9hK8mV.md.png" alt="p9hK8mV.md.png" /></a><br>
@@ -1369,17 +1419,17 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 </p>
-<h3 id="72-文件目录">
-  7.2 文件目录
-  <a class="anchor" href="#72-%e6%96%87%e4%bb%b6%e7%9b%ae%e5%bd%95">#</a>
+<h3 id="52-文件目录">
+  5.2 文件目录
+  <a class="anchor" href="#52-%e6%96%87%e4%bb%b6%e7%9b%ae%e5%bd%95">#</a>
 </h3>
 <p><strong>相对路径</strong>：是从当前路径开始的路径。<br>
 <strong>绝对路径</strong>：是从根目录开始的路径。<br>
 <strong>全文件名</strong>=绝对路径+文件名。要注意，绝对路径和相对路径是不加最后的文件名的，只是单纯的路径序列。<br>
 <a href="https://imgse.com/i/p9hK061"><img src="https://s1.ax1x.com/2023/05/19/p9hK061.md.png" alt="p9hK061.md.png" /></a></p>
-<h3 id="73-位示图">
-  7.3 位示图
-  <a class="anchor" href="#73-%e4%bd%8d%e7%a4%ba%e5%9b%be">#</a>
+<h3 id="53-位示图">
+  5.3 位示图
+  <a class="anchor" href="#53-%e4%bd%8d%e7%a4%ba%e5%9b%be">#</a>
 </h3>
 <p>  位示图是用于记录文件存储器的使用情况。每一位对应文件存储器上的一个物理块，取值 0 和 1 分别表示空闲和占用。<br>
 <a href="https://imgse.com/i/pCPdb01"><img src="https://s1.ax1x.com/2023/06/06/pCPdb01.md.png" alt="pCPdb01.md.png" /></a>
@@ -1399,6 +1449,146 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 </p>
+<h2 id="6-嵌入式操作系统">
+  6. 嵌入式操作系统
+  <a class="anchor" href="#6-%e5%b5%8c%e5%85%a5%e5%bc%8f%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<p>  嵌入式系统的初始化过程：片级初始化-&gt;版级初始化-&gt;系统初始化
+<a href="https://imgse.com/i/pCkNhxe"><img src="https://s1.ax1x.com/2023/06/08/pCkNhxe.md.png" alt="pCkNhxe.md.png" /></a>
+<a href="https://imgse.com/i/pCEgcmq"><img src="https://s1.ax1x.com/2023/06/10/pCEgcmq.md.png" alt="pCEgcmq.md.png" /></a><br>
+  嵌入式系统主要由嵌入式硬件平台、相关支撑硬件、嵌入式操作系统、支撑软件和应用软件组成。其中，嵌入性、专用性和计算机系统是嵌入式系统的三个核心要素。典型的嵌入式系统具有以下特点:系统专用性强、系统实时性强、软硬件依赖性强、处理器专用、多种技术紧密结合、系统透明性、系统资源受限。<br>
+  嵌入式操作系统特点:(1) 微型化、(2) 代码质量高、(3) 专业化、(4) 实时性强、(5) 可裁减、可配置。针对不同的硬件平台，操作系统通常建立在一个硬件抽象层 (HAL)上，该层位于底层硬件和内核之间，为内核提供各种方便移植的宏定义接口，在不同的平台间移植时，只需要修改宏定义即可。与硬件相关，与操作系统相关。</p>
+<ul>
+<li>低功耗</li>
+</ul>
+<p>  嵌基于硬件的低功耗设计：板级电路低功耗设计，选择低功耗处理器，总线的低功耗设计;接口驱动电路的设计，分区分时供电技术。<br>
+  嵌基于软件的低功耗设计：编译优化技术 (指令开销)，软件与硬件的协同设计 (硬件功能交由软件完成)，算法优化 (低时间复杂度)。</p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCEg0fg"><img src="https://s1.ax1x.com/2023/06/10/pCEg0fg.md.png" alt="pCEg0fg.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCEg27V"><img src="https://s1.ax1x.com/2023/06/10/pCEg27V.md.png" alt="pCEg27V.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCEghhF"><img src="https://s1.ax1x.com/2023/06/10/pCEghhF.md.png" alt="pCEghhF.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="7-实时操作系统">
+  7. 实时操作系统
+  <a class="anchor" href="#7-%e5%ae%9e%e6%97%b6%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<ul>
+<li>性能指标</li>
+</ul>
+<p>任务切换时间<br>
+断处理相关的时间指标：中断延迟时间、中断响应时间<br>
+系统响应时间 (对用户的输入或请求作出反应的时间)<br>
+信号量混洗时间 (指从一个任务释放信号量到另一个等待该信号量的任务被激活的时间延迟)\</p>
+<ul>
+<li>实时操作系统任务调度算法</li>
+</ul>
+<p>实时系统存在多种调度算法，在RTOS中，大多数的RTOS调度算法都是抢占式的。<br>
+  优先级调度算法: 分配一个相对固定的优先顺序，然后调度程序根据优先级的高低排序，按时间顺序进行高优先级任务优先调度。(非抢占式)<br>
+  抢占式优先级调度算法:是在优先级调度算法基础上，允许高优先级任务抢占低优先级任务而运行。<br>
+  时间轮转调度算法:调度程序会依次调度每个任务运行一个小的时间片，然后再调度另一个任务。每个任务运行完一个时间片，无论是否结束都会释放CPU让下一个任务运行。(纯粹的时间轮转调度无法满足实时系统的要求，取而代之的是基于优先级的抢占式时间。<br>
+  轮转调度)最晚截止期调度算法:指调度程序按每个任务的最接近其截止期末端的时间进行调度。最早截止期调度算法，指调度程序按每个任务的截止期时间，选择最早到截止期头端时间的任务进行调度。<br>
+<a href="https://imgse.com/i/pCE2kAf"><img src="https://s1.ax1x.com/2023/06/10/pCE2kAf.md.png" alt="pCE2kAf.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCE2Scd"><img src="https://s1.ax1x.com/2023/06/10/pCE2Scd.md.png" alt="pCE2Scd.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCE2e3Q"><img src="https://s1.ax1x.com/2023/06/10/pCE2e3Q.md.png" alt="pCE2e3Q.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="8-微内核操作系统">
+  8. 微内核操作系统
+  <a class="anchor" href="#8-%e5%be%ae%e5%86%85%e6%a0%b8%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f">#</a>
+</h2>
+<p>  现代操作系统大多拥有两种工作状态，分别是核心态和用户态。一般应用程序工作在用户态，而内核模块和最基本的操作系统核心工作在核心态。<br>
+  将传统的操作系统代码放置到更高层，从操作系统中去掉尽可能多的东西，而只留下最小的核心，称之为微内核。(C/S结构)
+<a href="https://imgse.com/i/pCE2MBq"><img src="https://s1.ax1x.com/2023/06/10/pCE2MBq.md.png" alt="pCE2MBq.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCE25Uf"><img src="https://s1.ax1x.com/2023/06/10/pCE25Uf.md.png" alt="pCE25Uf.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 <h2 id="课后习题">
   课后习题
   <a class="anchor" href="#%e8%af%be%e5%90%8e%e4%b9%a0%e9%a2%98">#</a>
@@ -1453,33 +1643,36 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#13-操作系统的分类">1.3 操作系统的分类</a></li>
       </ul>
     </li>
-    <li><a href="#4-进程管理">4 进程管理</a>
+    <li><a href="#2-进程管理">2 进程管理</a>
       <ul>
-        <li><a href="#41-进程的三态图">4.1 进程的三态图</a></li>
-        <li><a href="#42-同步互斥">4.2 同步互斥</a></li>
-        <li><a href="#43-前趋图与pv操作">4.3 前趋图与PV操作</a></li>
-        <li><a href="#44-死锁">4.4 死锁</a></li>
+        <li><a href="#21-进程的三态图">2.1 进程的三态图</a></li>
+        <li><a href="#22-进程间的同步互斥">2.2 进程间的同步互斥</a></li>
+        <li><a href="#23-前趋图与pv操作">2.3 前趋图与PV操作</a></li>
+        <li><a href="#24-死锁">2.4 死锁</a></li>
       </ul>
     </li>
-    <li><a href="#5-存储管理">5 存储管理</a>
+    <li><a href="#3-存储管理">3 存储管理</a>
       <ul>
-        <li><a href="#51-分页存储管理">5.1 分页存储管理</a></li>
-        <li><a href="#52-分段存储管理">5.2 分段存储管理</a></li>
+        <li><a href="#31-分页存储管理">3.1 分页存储管理</a></li>
+        <li><a href="#32-分段存储管理">3.2 分段存储管理</a></li>
       </ul>
     </li>
-    <li><a href="#6-设备管理">6 设备管理</a>
+    <li><a href="#4-设备管理">4 设备管理</a>
       <ul>
-        <li><a href="#61-io软件层次">6.1 I/O软件层次</a></li>
-        <li><a href="#62-spooling技术">6.2 SPOOLING技术</a></li>
+        <li><a href="#41-io软件层次">4.1 I/O软件层次</a></li>
+        <li><a href="#42-spooling技术">4.2 SPOOLING技术</a></li>
       </ul>
     </li>
-    <li><a href="#7-文件管理">7 文件管理</a>
+    <li><a href="#5-文件管理">5 文件管理</a>
       <ul>
-        <li><a href="#71-索引文件结构">7.1 索引文件结构</a></li>
-        <li><a href="#72-文件目录">7.2 文件目录</a></li>
-        <li><a href="#73-位示图">7.3 位示图</a></li>
+        <li><a href="#51-索引文件结构">5.1 索引文件结构</a></li>
+        <li><a href="#52-文件目录">5.2 文件目录</a></li>
+        <li><a href="#53-位示图">5.3 位示图</a></li>
       </ul>
     </li>
+    <li><a href="#6-嵌入式操作系统">6. 嵌入式操作系统</a></li>
+    <li><a href="#7-实时操作系统">7. 实时操作系统</a></li>
+    <li><a href="#8-微内核操作系统">8. 微内核操作系统</a></li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>
