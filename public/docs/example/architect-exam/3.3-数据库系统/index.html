@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 # 数据库模式✅ 分布式数据库✅✅✅ 分布式数据库的特点 分布式数据库的层次 分布透明性 分布式数据库的两阶段提交协议 数据库设计阶段✅✅ 需求分析✅ 概念结构设计&ndash;ER模型✅ 逻辑结构设计&ndash;关系模型✅✅ 物理设计✅ 关系代数✅✅✅✅ 规范化理论✅✅✅✅✅ 函数依赖 求候选键 Armstrong公理 范式判断 并发控制✅ 数据库的安全性✅ 数据库的备份与恢复技术✅ 数据库性能优化✅ 专项练习 在讲义56、296页 # 1 数据库模式 # 数据库的三级模式两级映像可以保证数据的逻辑独立性和物理独立性。 关系的3种类型
+<meta name="description" content="课程内容提要 ✌ # 数据库模式✅ 分布式数据库✅✅✅ 分布式数据库的特点 分布式数据库的层次 分布透明性 分布式数据库的两阶段提交协议 数据库设计阶段✅✅ 需求分析✅ 概念结构设计&ndash;ER模型✅ 逻辑结构设计&ndash;关系模型✅✅ 物理设计✅ 关系代数✅✅✅✅ 规范化理论✅✅✅✅✅ 函数依赖 求候选键 Armstrong公理 范式判断 模式分解 并发控制✅ 数据库的安全性✅ 数据库的备份与恢复技术✅ 数据库性能优化✅ 专项练习 在讲义56、296页 # 1 数据库模式 # 数据库的三级模式两级映像可以保证数据的逻辑独立性和物理独立性。 关系的3种类型
 基本关系 (通常又称为基本表或基表) : 实际存在的表，实际存储数据的逻辑表示。 查询表:查询结果对应的表。 视图表:由基表或其他视图表导出的表，本身不独立存储，数据库只存放它的定义，常称为虚表。
 视图表
 数据库视图:它一个虚拟表 (逻辑上的表)，其内容由查询定义(仅保存SOL查询语句)同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并没有真正存储这些数据，而是通过查询原始表动态生成所需要的数据。
@@ -30,7 +30,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f3c6055c31f61d60f133bc07f9786658fc1ee4406a12498a7ab93fbd254ef976.js" integrity="sha256-88YFXDH2HWDxM7wH&#43;XhmWPwe5EBqEkmKerk/vSVO&#43;XY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.79fc885b1d2366fa5942037ad4dac6b7e56fac718c7c7d240754251df1279342.js" integrity="sha256-efyIWx0jZvpZQgN61NrGt&#43;VvrHGMfH0kB1QlHfEnk0I=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -917,7 +917,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#课程内容提要">课程内容提要</a>
+    <li><a href="#课程内容提要-">课程内容提要 ✌</a>
       <ul>
         <li><a href="#在讲义56296页">在讲义56、296页</a></li>
       </ul>
@@ -949,6 +949,11 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#55-模式分解">5.5 模式分解</a></li>
       </ul>
     </li>
+    <li><a href="#6-并发控制">6 并发控制</a></li>
+    <li><a href="#7-数据库的安全性">7 数据库的安全性</a></li>
+    <li><a href="#8-数据库的备份与恢复技术">8 数据库的备份与恢复技术</a></li>
+    <li><a href="#9-数据库性能优化">9 数据库性能优化</a></li>
+    <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>
 
@@ -961,9 +966,9 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="课程内容提要">
-  课程内容提要
-  <a class="anchor" href="#%e8%af%be%e7%a8%8b%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81">#</a>
+  <article class="markdown"><h2 id="课程内容提要-">
+  课程内容提要 ✌
+  <a class="anchor" href="#%e8%af%be%e7%a8%8b%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81-">#</a>
 </h2>
 <ul>
 <li>
@@ -1007,30 +1012,31 @@ https://github.com/alex-shpak/hugo-book
 <li>求候选键</li>
 <li>Armstrong公理</li>
 <li>范式判断</li>
+<li>模式分解</li>
 </ul>
 </li>
 <li>
-<ol start="8">
+<ol start="6">
 <li>并发控制✅</li>
 </ol>
 </li>
 <li>
-<ol start="9">
+<ol start="7">
 <li>数据库的安全性✅</li>
 </ol>
 </li>
 <li>
-<ol start="10">
+<ol start="8">
 <li>数据库的备份与恢复技术✅</li>
 </ol>
 </li>
 <li>
-<ol start="11">
+<ol start="9">
 <li>数据库性能优化✅</li>
 </ol>
 </li>
 <li>
-<ol start="12">
+<ol start="10">
 <li>专项练习</li>
 </ol>
 </li>
@@ -1594,8 +1600,58 @@ https://github.com/alex-shpak/hugo-book
 </div>
 
 <a href="https://imgse.com/i/pCZ5lUs"><img src="https://s1.ax1x.com/2023/06/12/pCZ5lUs.md.png" alt="pCZ5lUs.md.png" /></a>
-<a href="https://imgse.com/i/pCZ5fVH"><img src="https://s1.ax1x.com/2023/06/12/pCZ5fVH.md.png" alt="pCZ5fVH.md.png" /></a></p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D A<br>
+解析参考上面例题的解析，思路完全一模一样。
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCZ5fVH"><img src="https://s1.ax1x.com/2023/06/12/pCZ5fVH.md.png" alt="pCZ5fVH.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A D
+    </div>
+  </label>
+</div>
+</p>
 </blockquote>
+<h2 id="6-并发控制">
+  6 并发控制
+  <a class="anchor" href="#6-%e5%b9%b6%e5%8f%91%e6%8e%a7%e5%88%b6">#</a>
+</h2>
+<h2 id="7-数据库的安全性">
+  7 数据库的安全性
+  <a class="anchor" href="#7-%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%ae%89%e5%85%a8%e6%80%a7">#</a>
+</h2>
+<h2 id="8-数据库的备份与恢复技术">
+  8 数据库的备份与恢复技术
+  <a class="anchor" href="#8-%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%a4%87%e4%bb%bd%e4%b8%8e%e6%81%a2%e5%a4%8d%e6%8a%80%e6%9c%af">#</a>
+</h2>
+<h2 id="9-数据库性能优化">
+  9 数据库性能优化
+  <a class="anchor" href="#9-%e6%95%b0%e6%8d%ae%e5%ba%93%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96">#</a>
+</h2>
+<h2 id="课后习题">
+  课后习题
+  <a class="anchor" href="#%e8%af%be%e5%90%8e%e4%b9%a0%e9%a2%98">#</a>
+</h2>
+<p>todo 数据库系统习题</p>
 </article>
  
       
@@ -1637,7 +1693,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#课程内容提要">课程内容提要</a>
+    <li><a href="#课程内容提要-">课程内容提要 ✌</a>
       <ul>
         <li><a href="#在讲义56296页">在讲义56、296页</a></li>
       </ul>
@@ -1669,6 +1725,11 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#55-模式分解">5.5 模式分解</a></li>
       </ul>
     </li>
+    <li><a href="#6-并发控制">6 并发控制</a></li>
+    <li><a href="#7-数据库的安全性">7 数据库的安全性</a></li>
+    <li><a href="#8-数据库的备份与恢复技术">8 数据库的备份与恢复技术</a></li>
+    <li><a href="#9-数据库性能优化">9 数据库性能优化</a></li>
+    <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>
 
