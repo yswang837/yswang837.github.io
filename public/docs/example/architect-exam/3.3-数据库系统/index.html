@@ -30,7 +30,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.8d5a2953a46715ff054c33a08275cd21f3fc3cb9362db53f84f1a1597eacde9b.js" integrity="sha256-jVopU6RnFf8FTDOggnXNIfP8PLk2LbU/hPGhWX6s3ps=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.2e7aa3238c1710f939d38421c89593fc1fdace03f0f00e15b4c0341de0ff603d.js" integrity="sha256-LnqjI4wXEPk504QhyJWT/B/azgPw8A4VtMA0HeD/YD0=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1499,8 +1499,8 @@ https://github.com/alex-shpak/hugo-book
 <a href="https://imgse.com/i/pCVON6I"><img src="https://s1.ax1x.com/2023/06/11/pCVON6I.md.png" alt="pCVON6I.md.png" /></a></li>
 </ul>
 <blockquote>
-<p>例题</p>
-</blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCZwCJs"><img src="https://s1.ax1x.com/2023/06/12/pCZwCJs.md.png" alt="pCZwCJs.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1514,11 +1514,65 @@ https://github.com/alex-shpak/hugo-book
     </div>
   </label>
 </div>
-
+</p>
+</blockquote>
 <h3 id="55-模式分解">
   5.5 模式分解
   <a class="anchor" href="#55-%e6%a8%a1%e5%bc%8f%e5%88%86%e8%a7%a3">#</a>
 </h3>
+<p>  将关系模式拆分成更小的关系模式以达到更高的规范化程度的过程就是模式分解的过程。模式分解的过程中，需要考虑两个问题：1、是否保持函数依赖；2、是否无损分解。比较好的模式分解应该是即保持了函数依赖，又是无损分解。</p>
+<ul>
+<li>保持函数依赖分解<br>
+  关系模式分解前必然存在一个函数依赖集合F，关系模式分解后假设得到了两个关系模式，那么这两个关系模式也必定有自己的函数依赖集合F1，F2；若F1并F2等价于F，则称这种模式分解保持了函数依赖。在F中可能存在冗余函数依赖，它其实是可以通过公理推导出来的，所以在判断是否保持函数依赖时不用考虑冗余函数依赖。</li>
+</ul>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCZ090O"><img src="https://s1.ax1x.com/2023/06/12/pCZ090O.md.png" alt="pCZ090O.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      是 是<br>
+第一问解析：R1的函数依赖F1={A-&gt;B}，R2的函数依赖F2={B-&gt;C}，函数依赖F1并F2是等价于分解前的函数依赖F的，所以该分解保持了函数依赖。第二问解析：同第一问一样，只不过F中存在了冗余函数依赖A-&gt;C(通过传递律可知)，在判断的时候不需要考虑，所以该分解保持了函数依赖。
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCZ0Jcq"><img src="https://s1.ax1x.com/2023/06/12/pCZ0Jcq.md.png" alt="pCZ0Jcq.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      不是 是<br>
+第一问解析：R1的函数依赖F1={A-&gt;B}，R2的函数依赖F2={A-&gt;C}，函数依赖F1并F2是不等价于分解前的函数依赖F的(缺少B-&gt;C)，所以该分解没有保持函数依赖。第二问解析：R1的函数依赖F1={A-&gt;B}，R2的函数依赖F2={D-&gt;E}，函数依赖F1并F2是等价于分解前的函数依赖F的，所以该分解保持了函数依赖。
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<ul>
+<li>有损无损分解
+<ul>
+<li>有损：拆分后不能还原出原来的函数依赖。</li>
+<li>无损：拆分后可以还原出原来的函数依赖。指将一个关系模式分解成若干关系模式后，通过自然连接和投影运算仍能还原成原来的关系模式。</li>
+</ul>
+</li>
+</ul>
+<p>  判断是否无损分解一般可用表格法和公式法判断。</p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCZBlqK"><img src="https://s1.ax1x.com/2023/06/12/pCZBlqK.md.png" alt="pCZBlqK.md.png" /></a></p>
+</blockquote>
 </article>
  
       
