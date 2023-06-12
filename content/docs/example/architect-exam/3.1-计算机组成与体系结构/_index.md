@@ -4,7 +4,7 @@ title: 3.1 计算机组成与体系结构
 ---
 
 ## 课程内容提要 ✌
-
+---
 - 1. 计算机结构&emsp;&emsp;&emsp;&emsp;✅
 - 2. 存储系统&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅✅
 - 3. 数据传输控制方式&emsp;✅
