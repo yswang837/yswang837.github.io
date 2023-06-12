@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 # 数据库模式✅ 分布式数据库✅✅✅ 分布式数据库的特点 分布式数据库的层次 分布透明性 分布式数据库的两阶段提交协议 数据库设计阶段✅✅ 需求分析✅ 概念结构设计-ER模型✅ 逻辑结构设计-关系模型✅✅ 物理设计✅ 关系代数✅✅✅✅ 规范化理论✅✅✅✅✅ 函数依赖 求候选键 Armstrong公理 范式判断 并发控制✅ 数据库的安全性✅ 数据库的备份与恢复技术✅ 数据库性能优化✅ 专项练习 在讲义56、296页 # 1 数据库模式 # 数据库的三级模式两级映像可以保证数据的逻辑独立性和物理独立性。 关系的3种类型
+<meta name="description" content="课程内容提要 # 数据库模式✅ 分布式数据库✅✅✅ 分布式数据库的特点 分布式数据库的层次 分布透明性 分布式数据库的两阶段提交协议 数据库设计阶段✅✅ 需求分析✅ 概念结构设计&ndash;ER模型✅ 逻辑结构设计&ndash;关系模型✅✅ 物理设计✅ 关系代数✅✅✅✅ 规范化理论✅✅✅✅✅ 函数依赖 求候选键 Armstrong公理 范式判断 并发控制✅ 数据库的安全性✅ 数据库的备份与恢复技术✅ 数据库性能优化✅ 专项练习 在讲义56、296页 # 1 数据库模式 # 数据库的三级模式两级映像可以保证数据的逻辑独立性和物理独立性。 关系的3种类型
 基本关系 (通常又称为基本表或基表) : 实际存在的表，实际存储数据的逻辑表示。 查询表:查询结果对应的表。 视图表:由基表或其他视图表导出的表，本身不独立存储，数据库只存放它的定义，常称为虚表。
 视图表
 数据库视图:它一个虚拟表 (逻辑上的表)，其内容由查询定义(仅保存SOL查询语句)同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并没有真正存储这些数据，而是通过查询原始表动态生成所需要的数据。
@@ -30,7 +30,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.2e7aa3238c1710f939d38421c89593fc1fdace03f0f00e15b4c0341de0ff603d.js" integrity="sha256-LnqjI4wXEPk504QhyJWT/B/azgPw8A4VtMA0HeD/YD0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.f3c6055c31f61d60f133bc07f9786658fc1ee4406a12498a7ab93fbd254ef976.js" integrity="sha256-88YFXDH2HWDxM7wH&#43;XhmWPwe5EBqEkmKerk/vSVO&#43;XY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -988,8 +988,8 @@ https://github.com/alex-shpak/hugo-book
 </ol>
 <ul>
 <li>需求分析✅</li>
-<li>概念结构设计-ER模型✅</li>
-<li>逻辑结构设计-关系模型✅✅</li>
+<li>概念结构设计&ndash;ER模型✅</li>
+<li>逻辑结构设计&ndash;关系模型✅✅</li>
 <li>物理设计✅</li>
 </ul>
 </li>
@@ -1568,10 +1568,33 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<p>  判断是否无损分解一般可用表格法和公式法判断。</p>
+<p>  判断是否无损分解一般可用表格法(通用方法)和公式法判断(本文不做介绍)。</p>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/pCZBlqK"><img src="https://s1.ax1x.com/2023/06/12/pCZBlqK.md.png" alt="pCZBlqK.md.png" /></a></p>
+<a href="https://imgse.com/i/pCZBlqK"><img src="https://s1.ax1x.com/2023/06/12/pCZBlqK.md.png" alt="pCZBlqK.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      无损分解<br>
+解析：分解前为1NF，分解后满足BCNF。模式分解后保持了函数依赖。现在判断是否无损分解。<br>
+用表格法比较清晰：<br>
+1、构造初始表，列名是源属性集，行是分解后的关系模式，有值的给✅；<br>
+2、找出表中的同名属性列，看它在原本函数依赖F中能决定出什么，如果有的话说明该函数依赖在分解后被保留下来了，就可以在各表的同名属性列决定的属性处打钩，如果没有就跳过；<br>
+3、新决定出来的列可重新按上述规则重新判断下一个，以此类推，知道出现任意一行全部为钩则无损分解，若表格的所有属性都遍历完了也没有一行全为钩的，就是有损分解。<br>
+具体为：初始表如下；同名属性列学号在原有函数依赖中决定了姓名，所以在学号为✅的行给姓名打✅；同名属性列姓名在源有函数依赖中没有决定任何属性，所以跳过；同名属性列课程号在原有函数依赖中决定了课程名，所以在课程号为✅的行给课程名打✅；此时满足任意一行(成绩)全为✅；所以它是无损分解。
+<a href="https://imgse.com/i/pCZ5ECt"><img src="https://s1.ax1x.com/2023/06/12/pCZ5ECt.md.png" alt="pCZ5ECt.md.png" /></a>
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCZ5lUs"><img src="https://s1.ax1x.com/2023/06/12/pCZ5lUs.md.png" alt="pCZ5lUs.md.png" /></a>
+<a href="https://imgse.com/i/pCZ5fVH"><img src="https://s1.ax1x.com/2023/06/12/pCZ5fVH.md.png" alt="pCZ5fVH.md.png" /></a></p>
 </blockquote>
 </article>
  
