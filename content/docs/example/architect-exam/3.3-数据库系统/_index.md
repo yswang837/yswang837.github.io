@@ -419,13 +419,18 @@ title: 3.3 数据库系统
 {{< expand "学霸肯定对了">}}A D\
 解析参考上面例题的解析，思路完全一模一样。{{< /expand >}}
 
+### 5.6 闭包
+
+[![pCmDSFU.md.png](https://s1.ax1x.com/2023/06/13/pCmDSFU.md.png)](https://imgse.com/i/pCmDSFU)
+[![pCmDPSJ.md.png](https://s1.ax1x.com/2023/06/13/pCmDPSJ.md.png)](https://imgse.com/i/pCmDPSJ)
+
 ## 6 并发控制
 
 ---
 
 ### 6.1 事务
 
-&emsp;&emsp;并发控制指的是事务的并发控制。事务有4个特点：简称ACID
+&emsp;&emsp;并发控制指的是事务的并发控制，事务保证了数据的完整性。事务有4个特点：简称ACID
 
 - 原子性(Atomicity)
 
