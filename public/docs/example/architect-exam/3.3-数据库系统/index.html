@@ -32,7 +32,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.51b8e4b98c6c077ac1c0c327991bd80204d1c705e55e7df89707de01eda7568c.js" integrity="sha256-UbjkuYxsB3rBwMMnmRvYAgTRxwXlXn34lwfeAe2nVow=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.178293bee11816758eca1cd2204e9c14dc61e7a4f18518c4f27c14cd140cd933.js" integrity="sha256-F4KTvuEYFnWOyhzSIE6cFNxh56TxhRjE8nwUzRQM2TM=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -951,9 +951,20 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#55-模式分解">5.5 模式分解</a></li>
       </ul>
     </li>
-    <li><a href="#6-并发控制">6 并发控制</a></li>
+    <li><a href="#6-并发控制">6 并发控制</a>
+      <ul>
+        <li><a href="#61-事务">6.1 事务</a></li>
+        <li><a href="#62-并发可能产生的问题">6.2 并发可能产生的问题</a></li>
+        <li><a href="#63-封锁协议">6.3 封锁协议</a></li>
+      </ul>
+    </li>
     <li><a href="#7-数据库的安全性">7 数据库的安全性</a></li>
-    <li><a href="#8-数据库的备份与恢复技术">8 数据库的备份与恢复技术</a></li>
+    <li><a href="#8-数据库的备份与恢复技术">8 数据库的备份与恢复技术</a>
+      <ul>
+        <li><a href="#81-数据备份">8.1 数据备份</a></li>
+        <li><a href="#82-数据库故障与恢复">8.2 数据库故障与恢复</a></li>
+      </ul>
+    </li>
     <li><a href="#9-数据库性能优化">9 数据库性能优化</a></li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>
@@ -1696,21 +1707,106 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#6-%e5%b9%b6%e5%8f%91%e6%8e%a7%e5%88%b6">#</a>
 </h2>
 <hr>
+<h3 id="61-事务">
+  6.1 事务
+  <a class="anchor" href="#61-%e4%ba%8b%e5%8a%a1">#</a>
+</h3>
+<p>  并发控制指的是事务的并发控制。事务有4个特点：简称ACID</p>
+<ul>
+<li>原子性(Atomicity)</li>
+</ul>
+<p>  是指事务包含的所有操作要么全部成功，要么全部失败回滚。这些操作是一个整体，不能部分地完成，跟操作系统的原语一样(PV操作)。</p>
+<ul>
+<li>一致性(Consistency)</li>
+</ul>
+<p>  是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。比如说转账。</p>
+<ul>
+<li>隔离性(Isolation)</li>
+</ul>
+<p>  是指一个事务的执行不能被其他事务干扰，即一个事务内部的操作及使用的数据对并发的其他事务是隔离的。也就是执行的效果应该和串行一样互不影响。</p>
+<ul>
+<li>持久性(Durability)</li>
+</ul>
+<p>  是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，无论发送何种故障，都不应对其有任何影响。</p>
+<h3 id="62-并发可能产生的问题">
+  6.2 并发可能产生的问题
+  <a class="anchor" href="#62-%e5%b9%b6%e5%8f%91%e5%8f%af%e8%83%bd%e4%ba%a7%e7%94%9f%e7%9a%84%e9%97%ae%e9%a2%98">#</a>
+</h3>
+<p>  并发可能会产生以下问题：1、丢失更新；2、不可重复读问题；3、脏数据的读出。</p>
+<p><a href="https://imgse.com/i/pCeo5Q0"><img src="https://s1.ax1x.com/2023/06/13/pCeo5Q0.md.png" alt="pCeo5Q0.md.png" /></a></p>
+<h3 id="63-封锁协议">
+  6.3 封锁协议
+  <a class="anchor" href="#63-%e5%b0%81%e9%94%81%e5%8d%8f%e8%ae%ae">#</a>
+</h3>
+<p>  封锁协议是用来解决并发可能会产生的那三个问题。</p>
+<p><a href="https://imgse.com/i/pCeo7eU"><img src="https://s1.ax1x.com/2023/06/13/pCeo7eU.md.png" alt="pCeo7eU.md.png" /></a></p>
+<p>  S封锁是读锁/共享锁(一个事务对操作对象上了读锁，另一个事务也可对该操作对象上读锁，这两个事务共享该操作对象)，X锁是写锁/排它锁(一个事务对操作对象上了写锁，那么其他任何事务都没法对该操作对象上任何锁，X锁具有排它性)。一级封锁协议可防止丢失更新；二级封锁协议可防止丢失更新和读脏数据；三级封锁协议可防止丢失更新、读脏数据和不可重复读问题。</p>
+<p><a href="https://imgse.com/i/pCeoxQx"><img src="https://s1.ax1x.com/2023/06/13/pCeoxQx.md.png" alt="pCeoxQx.md.png" /></a></p>
 <h2 id="7-数据库的安全性">
   7 数据库的安全性
   <a class="anchor" href="#7-%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%ae%89%e5%85%a8%e6%80%a7">#</a>
 </h2>
 <hr>
+<p><a href="https://imgse.com/i/pCeTjAg"><img src="https://s1.ax1x.com/2023/06/13/pCeTjAg.md.png" alt="pCeTjAg.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCe7S9s"><img src="https://s1.ax1x.com/2023/06/13/pCe7S9s.md.png" alt="pCe7S9s.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C<br>
+索引和视图是无法更新的、存储过程是可以被第三方开发人员调用的，而触发器不行
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 <h2 id="8-数据库的备份与恢复技术">
   8 数据库的备份与恢复技术
   <a class="anchor" href="#8-%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%a4%87%e4%bb%bd%e4%b8%8e%e6%81%a2%e5%a4%8d%e6%8a%80%e6%9c%af">#</a>
 </h2>
+<h3 id="81-数据备份">
+  8.1 数据备份
+  <a class="anchor" href="#81-%e6%95%b0%e6%8d%ae%e5%a4%87%e4%bb%bd">#</a>
+</h3>
 <hr>
+<p><a href="https://imgse.com/i/pCe7n3R"><img src="https://s1.ax1x.com/2023/06/13/pCe7n3R.md.png" alt="pCe7n3R.md.png" /></a>
+<a href="https://imgse.com/i/pCe71HO"><img src="https://s1.ax1x.com/2023/06/13/pCe71HO.md.png" alt="pCe71HO.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCe7wKP"><img src="https://s1.ax1x.com/2023/06/13/pCe7wKP.md.png" alt="pCe7wKP.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h3 id="82-数据库故障与恢复">
+  8.2 数据库故障与恢复
+  <a class="anchor" href="#82-%e6%95%b0%e6%8d%ae%e5%ba%93%e6%95%85%e9%9a%9c%e4%b8%8e%e6%81%a2%e5%a4%8d">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCeHSaD"><img src="https://s1.ax1x.com/2023/06/13/pCeHSaD.md.png" alt="pCeHSaD.md.png" /></a></p>
 <h2 id="9-数据库性能优化">
   9 数据库性能优化
   <a class="anchor" href="#9-%e6%95%b0%e6%8d%ae%e5%ba%93%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96">#</a>
 </h2>
 <hr>
+<p><a href="https://imgse.com/i/pCeHVqf"><img src="https://s1.ax1x.com/2023/06/13/pCeHVqf.md.png" alt="pCeHVqf.md.png" /></a></p>
 <h2 id="课后习题">
   课后习题
   <a class="anchor" href="#%e8%af%be%e5%90%8e%e4%b9%a0%e9%a2%98">#</a>
@@ -1790,9 +1886,20 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#55-模式分解">5.5 模式分解</a></li>
       </ul>
     </li>
-    <li><a href="#6-并发控制">6 并发控制</a></li>
+    <li><a href="#6-并发控制">6 并发控制</a>
+      <ul>
+        <li><a href="#61-事务">6.1 事务</a></li>
+        <li><a href="#62-并发可能产生的问题">6.2 并发可能产生的问题</a></li>
+        <li><a href="#63-封锁协议">6.3 封锁协议</a></li>
+      </ul>
+    </li>
     <li><a href="#7-数据库的安全性">7 数据库的安全性</a></li>
-    <li><a href="#8-数据库的备份与恢复技术">8 数据库的备份与恢复技术</a></li>
+    <li><a href="#8-数据库的备份与恢复技术">8 数据库的备份与恢复技术</a>
+      <ul>
+        <li><a href="#81-数据备份">8.1 数据备份</a></li>
+        <li><a href="#82-数据库故障与恢复">8.2 数据库故障与恢复</a></li>
+      </ul>
+    </li>
     <li><a href="#9-数据库性能优化">9 数据库性能优化</a></li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>

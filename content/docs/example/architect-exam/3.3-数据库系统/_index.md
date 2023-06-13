@@ -425,17 +425,77 @@ title: 3.3 数据库系统
 
 ---
 
+### 6.1 事务
+
+&emsp;&emsp;并发控制指的是事务的并发控制。事务有4个特点：简称ACID
+
+- 原子性(Atomicity)
+
+&emsp;&emsp;是指事务包含的所有操作要么全部成功，要么全部失败回滚。这些操作是一个整体，不能部分地完成，跟操作系统的原语一样(PV操作)。
+
+- 一致性(Consistency)
+
+&emsp;&emsp;是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。比如说转账。
+
+- 隔离性(Isolation)
+
+&emsp;&emsp;是指一个事务的执行不能被其他事务干扰，即一个事务内部的操作及使用的数据对并发的其他事务是隔离的。也就是执行的效果应该和串行一样互不影响。
+
+- 持久性(Durability)
+
+&emsp;&emsp;是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，无论发送何种故障，都不应对其有任何影响。
+
+### 6.2 并发可能产生的问题
+
+&emsp;&emsp;并发可能会产生以下问题：1、丢失更新；2、不可重复读问题；3、脏数据的读出。
+
+[![pCeo5Q0.md.png](https://s1.ax1x.com/2023/06/13/pCeo5Q0.md.png)](https://imgse.com/i/pCeo5Q0)
+
+### 6.3 封锁协议
+
+&emsp;&emsp;封锁协议是用来解决并发可能会产生的那三个问题。
+
+[![pCeo7eU.md.png](https://s1.ax1x.com/2023/06/13/pCeo7eU.md.png)](https://imgse.com/i/pCeo7eU)
+
+&emsp;&emsp;S封锁是读锁/共享锁(一个事务对操作对象上了读锁，另一个事务也可对该操作对象上读锁，这两个事务共享该操作对象)，X锁是写锁/排它锁(一个事务对操作对象上了写锁，那么其他任何事务都没法对该操作对象上任何锁，X锁具有排它性)。一级封锁协议可防止丢失更新；二级封锁协议可防止丢失更新和读脏数据；三级封锁协议可防止丢失更新、读脏数据和不可重复读问题。
+
+
+
+[![pCeoxQx.md.png](https://s1.ax1x.com/2023/06/13/pCeoxQx.md.png)](https://imgse.com/i/pCeoxQx)
+
 ## 7 数据库的安全性
 
 ---
 
+[![pCeTjAg.md.png](https://s1.ax1x.com/2023/06/13/pCeTjAg.md.png)](https://imgse.com/i/pCeTjAg)
+
+>例题
+[![pCe7S9s.md.png](https://s1.ax1x.com/2023/06/13/pCe7S9s.md.png)](https://imgse.com/i/pCe7S9s)
+{{< expand "学霸肯定对了">}}C\
+索引和视图是无法更新的、存储过程是可以被第三方开发人员调用的，而触发器不行{{< /expand >}}
+
 ## 8 数据库的备份与恢复技术
 
+### 8.1 数据备份
+
 ---
+
+[![pCe7n3R.md.png](https://s1.ax1x.com/2023/06/13/pCe7n3R.md.png)](https://imgse.com/i/pCe7n3R)
+[![pCe71HO.md.png](https://s1.ax1x.com/2023/06/13/pCe71HO.md.png)](https://imgse.com/i/pCe71HO)
+
+>例题
+[![pCe7wKP.md.png](https://s1.ax1x.com/2023/06/13/pCe7wKP.md.png)](https://imgse.com/i/pCe7wKP)
+{{< expand "学霸肯定对了">}}B{{< /expand >}}
+
+### 8.2 数据库故障与恢复
+
+[![pCeHSaD.md.png](https://s1.ax1x.com/2023/06/13/pCeHSaD.md.png)](https://imgse.com/i/pCeHSaD)
 
 ## 9 数据库性能优化
 
 ---
+
+[![pCeHVqf.md.png](https://s1.ax1x.com/2023/06/13/pCeHVqf.md.png)](https://imgse.com/i/pCeHVqf)
 
 ## 课后习题
 
