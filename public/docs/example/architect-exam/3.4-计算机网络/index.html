@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 课程内容提要 # TCP/IP协议族 DHCP与DNS ✅✅✅ TCP与UDP ✅✅✅ 网络规划与设计 逻辑设计与物理设计 ✅✅✅✅ 网络接入标准 3G与4G标准 ✅✅✅ 网络存储 ✅ IPV6 ✅ 综合布线 ✅ 网络技术扩展 物联网 ✅ 云计算 ✅ 1 TCP/IP协议族 # 例题 学霸肯定对了 ↕ C
-A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠错一般才要求重发；D项IP不是虚电路，而是走路由器。所以选C 1.1 DHCP与DNS # DNS(Domain Name System) ">
+<meta name="description" content="课程内容提要 # TCP/IP协议族 DHCP与DNS ✅✅✅ TCP与UDP ✅✅✅ 网络规划与设计 逻辑设计 ✅✅✅✅ 物理设计 ✅✅✅✅ 常见的网络设计 层次网络设计 ✅✅✅ 网络冗余设计 ✅✅ 网络存储 ✅ 各式网络存储架构 磁盘阵列容量计算 IPV6 ✅ 网络接入标准 3G与4G标准 ✅✅✅ 网络存储 ✅ 综合布线 ✅ 网络技术扩展 物联网 ✅ 云计算 ✅ 1 TCP/IP协议族 # 1.1 TCP与UDP # 例题 学霸肯定对了 ↕ C
+A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠错一般才要求重发；D项IP不是虚电路，而是走路由器。所以选C 1.2 DHCP与DNS # DNS(Domain Name System) 例题 学霸肯定对了 ↕ A 学霸肯定对了 ↕ C DHCP(Dynamic Host Configuration Protocol) 例题 学霸肯定对了 ↕ A 2 网络规划与设计 # 网络规划与设计包含5个阶段，它们分别是：需求分析、通信规范分析、逻辑网络设计、物理网络设计、实施阶段。这里重点看逻辑网络设计和物理网络设计，需求分析和通信规范分析的产物需要知道。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.4 计算机网络" />
 <meta property="og:description" content="" />
@@ -16,7 +16,7 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.607e04d0c4e08a2933f35e6cf8da21403cf09d7b7d06efc30af170a67c44ac59.js" integrity="sha256-YH4E0MTgiikz815s&#43;NohQDzwnXt9Bu/DCvFwpnxErFk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.168f1ab31081e4195b8bd8b49d569d252e6c10666b1b1acb1b37072401eb44eb.js" integrity="sha256-Fo8asxCB5Blbi9i0nVadJS5sEGZrGxrLGzcHJAHrROs=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -906,9 +906,19 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#课程内容提要">课程内容提要</a></li>
     <li><a href="#1-tcpip协议族">1 TCP/IP协议族</a>
       <ul>
-        <li><a href="#11-dhcp与dns">1.1 DHCP与DNS</a></li>
+        <li><a href="#11-tcp与udp">1.1 TCP与UDP</a></li>
+        <li><a href="#12-dhcp与dns">1.2 DHCP与DNS</a></li>
       </ul>
     </li>
+    <li><a href="#2-网络规划与设计">2 网络规划与设计</a>
+      <ul>
+        <li><a href="#21-逻辑网络设计">2.1 逻辑网络设计</a></li>
+        <li><a href="#22-物理网络设计">2.2 物理网络设计</a></li>
+      </ul>
+    </li>
+    <li><a href="#23-常见的网络设计">2.3 常见的网络设计</a></li>
+    <li><a href="#3-网络存储">3 网络存储</a></li>
+    <li><a href="#4-ipv6">4 IPV6</a></li>
   </ul>
 </nav>
 
@@ -940,8 +950,29 @@ https://github.com/alex-shpak/hugo-book
 <li>网络规划与设计</li>
 </ol>
 <ul>
-<li>逻辑设计与物理设计 ✅✅✅✅</li>
+<li>逻辑设计    ✅✅✅✅</li>
+<li>物理设计    ✅✅✅✅</li>
+<li>常见的网络设计
+<ul>
+<li>层次网络设计   ✅✅✅</li>
+<li>网络冗余设计   ✅✅</li>
 </ul>
+</li>
+</ul>
+</li>
+<li>
+<ol start="3">
+<li>网络存储      ✅</li>
+</ol>
+<ul>
+<li>各式网络存储架构</li>
+<li>磁盘阵列容量计算</li>
+</ul>
+</li>
+<li>
+<ol start="4">
+<li>IPV6        ✅</li>
+</ol>
 </li>
 <li>
 <ol start="3">
@@ -958,7 +989,7 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li>
 <ol start="5">
-<li>IPV6        ✅</li>
+<li></li>
 </ol>
 </li>
 <li>
@@ -982,8 +1013,12 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <hr>
 <p><a href="https://imgse.com/i/pCebHj1"><img src="https://s1.ax1x.com/2023/06/13/pCebHj1.md.png" alt="pCebHj1.md.png" /></a>
-<a href="https://imgse.com/i/pCebqnx"><img src="https://s1.ax1x.com/2023/06/13/pCebqnx.md.png" alt="pCebqnx.md.png" /></a>
-<a href="https://imgse.com/i/pCebvND"><img src="https://s1.ax1x.com/2023/06/13/pCebvND.md.png" alt="pCebvND.md.png" /></a></p>
+<a href="https://imgse.com/i/pCebqnx"><img src="https://s1.ax1x.com/2023/06/13/pCebqnx.md.png" alt="pCebqnx.md.png" /></a></p>
+<h3 id="11-tcp与udp">
+  1.1 TCP与UDP
+  <a class="anchor" href="#11-tcp%e4%b8%8eudp">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCebvND"><img src="https://s1.ax1x.com/2023/06/13/pCebvND.md.png" alt="pCebvND.md.png" /></a></p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/pCeqp3d"><img src="https://s1.ax1x.com/2023/06/13/pCeqp3d.md.png" alt="pCeqp3d.md.png" /></a>
@@ -1003,14 +1038,276 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 </div>
 </p>
 </blockquote>
-<h3 id="11-dhcp与dns">
-  1.1 DHCP与DNS
-  <a class="anchor" href="#11-dhcp%e4%b8%8edns">#</a>
+<h3 id="12-dhcp与dns">
+  1.2 DHCP与DNS
+  <a class="anchor" href="#12-dhcp%e4%b8%8edns">#</a>
 </h3>
 <ul>
 <li>DNS(Domain Name System)</li>
 </ul>
-<p><a href="https://imgse.com/i/pCmCD41"><img src="https://s1.ax1x.com/2023/06/13/pCmCD41.md.png" alt="pCmCD41.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pCmCD41"><img src="https://s1.ax1x.com/2023/06/13/pCmCD41.md.png" alt="pCmCD41.md.png" /></a>
+<a href="https://imgse.com/i/pCmxskq"><img src="https://s1.ax1x.com/2023/06/14/pCmxskq.md.png" alt="pCmxskq.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCmxhnJ"><img src="https://s1.ax1x.com/2023/06/14/pCmxhnJ.md.png" alt="pCmxhnJ.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCmx7h6"><img src="https://s1.ax1x.com/2023/06/14/pCmx7h6.md.png" alt="pCmx7h6.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<ul>
+<li>DHCP(Dynamic Host Configuration Protocol)</li>
+</ul>
+<p><a href="https://imgse.com/i/pCmxOje"><img src="https://s1.ax1x.com/2023/06/14/pCmxOje.md.png" alt="pCmxOje.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCmzP9f"><img src="https://s1.ax1x.com/2023/06/14/pCmzP9f.md.png" alt="pCmzP9f.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="2-网络规划与设计">
+  2 网络规划与设计
+  <a class="anchor" href="#2-%e7%bd%91%e7%bb%9c%e8%a7%84%e5%88%92%e4%b8%8e%e8%ae%be%e8%ae%a1">#</a>
+</h2>
+<p>  网络规划与设计包含5个阶段，它们分别是：需求分析、通信规范分析、逻辑网络设计、物理网络设计、实施阶段。这里重点看逻辑网络设计和物理网络设计，需求分析和通信规范分析的产物需要知道。</p>
+<p><a href="https://imgse.com/i/pCmz8u4"><img src="https://s1.ax1x.com/2023/06/14/pCmz8u4.md.png" alt="pCmz8u4.md.png" /></a></p>
+<h3 id="21-逻辑网络设计">
+  2.1 逻辑网络设计
+  <a class="anchor" href="#21-%e9%80%bb%e8%be%91%e7%bd%91%e7%bb%9c%e8%ae%be%e8%ae%a1">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCmzw8K"><img src="https://s1.ax1x.com/2023/06/14/pCmzw8K.md.png" alt="pCmzw8K.md.png" /></a></p>
+<h3 id="22-物理网络设计">
+  2.2 物理网络设计
+  <a class="anchor" href="#22-%e7%89%a9%e7%90%86%e7%bd%91%e7%bb%9c%e8%ae%be%e8%ae%a1">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCmz25t"><img src="https://s1.ax1x.com/2023/06/14/pCmz25t.md.png" alt="pCmz25t.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCmzIKg"><img src="https://s1.ax1x.com/2023/06/14/pCmzIKg.md.png" alt="pCmzIKg.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCmzban"><img src="https://s1.ax1x.com/2023/06/14/pCmzban.md.png" alt="pCmzban.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCmzq5q"><img src="https://s1.ax1x.com/2023/06/14/pCmzq5q.md.png" alt="pCmzq5q.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCmzzMF"><img src="https://s1.ax1x.com/2023/06/14/pCmzzMF.md.png" alt="pCmzzMF.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="23-常见的网络设计">
+  2.3 常见的网络设计
+  <a class="anchor" href="#23-%e5%b8%b8%e8%a7%81%e7%9a%84%e7%bd%91%e7%bb%9c%e8%ae%be%e8%ae%a1">#</a>
+</h2>
+<ul>
+<li>层次网络设计</li>
+</ul>
+<p><a href="https://imgse.com/i/pCnSpqJ"><img src="https://s1.ax1x.com/2023/06/14/pCnSpqJ.md.png" alt="pCnSpqJ.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCnSAG6"><img src="https://s1.ax1x.com/2023/06/14/pCnSAG6.md.png" alt="pCnSAG6.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCnSERK"><img src="https://s1.ax1x.com/2023/06/14/pCnSERK.md.png" alt="pCnSERK.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<ul>
+<li>网络冗余设计</li>
+</ul>
+<p><a href="https://imgse.com/i/pCnPdXT"><img src="https://s1.ax1x.com/2023/06/14/pCnPdXT.md.png" alt="pCnPdXT.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCnFcy6"><img src="https://s1.ax1x.com/2023/06/14/pCnFcy6.md.png" alt="pCnFcy6.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="3-网络存储">
+  3 网络存储
+  <a class="anchor" href="#3-%e7%bd%91%e7%bb%9c%e5%ad%98%e5%82%a8">#</a>
+</h2>
+<ul>
+<li>各式网络存储架构</li>
+</ul>
+<p><a href="https://imgse.com/i/pCneIfg"><img src="https://s1.ax1x.com/2023/06/14/pCneIfg.md.png" alt="pCneIfg.md.png" /></a>
+<a href="https://imgse.com/i/pCneH6s"><img src="https://s1.ax1x.com/2023/06/14/pCneH6s.md.png" alt="pCneH6s.md.png" /></a></p>
+<ul>
+<li>磁盘阵列容量计算</li>
+</ul>
+<p>  会计算Raid3和5的磁盘容量就行</p>
+<p><a href="https://imgse.com/i/pCnn2If"><img src="https://s1.ax1x.com/2023/06/14/pCnn2If.md.png" alt="pCnn2If.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCneX7V"><img src="https://s1.ax1x.com/2023/06/14/pCneX7V.md.png" alt="pCneX7V.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pCnnhRg"><img src="https://s1.ax1x.com/2023/06/14/pCnnhRg.md.png" alt="pCnnhRg.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      B B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="4-ipv6">
+  4 IPV6
+  <a class="anchor" href="#4-ipv6">#</a>
+</h2>
+<ul>
+<li>IPV6的特点</li>
+</ul>
+<p><a href="https://imgse.com/i/pCnuCe1"><img src="https://s1.ax1x.com/2023/06/14/pCnuCe1.md.png" alt="pCnuCe1.md.png" /></a>
+<a href="https://imgse.com/i/pCnumyd"><img src="https://s1.ax1x.com/2023/06/14/pCnumyd.md.png" alt="pCnumyd.md.png" /></a></p>
+<ul>
+<li>IPV4-&gt;IPV6</li>
+</ul>
+<p><a href="https://imgse.com/i/pCnukFK"><img src="https://s1.ax1x.com/2023/06/14/pCnukFK.md.png" alt="pCnukFK.md.png" /></a></p>
+<ul>
+<li>IPV6地址合法性判断</li>
+</ul>
+<p><a href="https://imgse.com/i/pCnuZSe"><img src="https://s1.ax1x.com/2023/06/14/pCnuZSe.md.png" alt="pCnuZSe.md.png" /></a></p>
 </article>
  
       
@@ -1055,9 +1352,19 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
     <li><a href="#课程内容提要">课程内容提要</a></li>
     <li><a href="#1-tcpip协议族">1 TCP/IP协议族</a>
       <ul>
-        <li><a href="#11-dhcp与dns">1.1 DHCP与DNS</a></li>
+        <li><a href="#11-tcp与udp">1.1 TCP与UDP</a></li>
+        <li><a href="#12-dhcp与dns">1.2 DHCP与DNS</a></li>
       </ul>
     </li>
+    <li><a href="#2-网络规划与设计">2 网络规划与设计</a>
+      <ul>
+        <li><a href="#21-逻辑网络设计">2.1 逻辑网络设计</a></li>
+        <li><a href="#22-物理网络设计">2.2 物理网络设计</a></li>
+      </ul>
+    </li>
+    <li><a href="#23-常见的网络设计">2.3 常见的网络设计</a></li>
+    <li><a href="#3-网络存储">3 网络存储</a></li>
+    <li><a href="#4-ipv6">4 IPV6</a></li>
   </ul>
 </nav>
 

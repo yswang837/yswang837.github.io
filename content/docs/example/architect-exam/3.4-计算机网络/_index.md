@@ -8,11 +8,21 @@ title: 3.4 计算机网络
   - DHCP与DNS&emsp;  &emsp;&emsp;  &emsp;✅✅✅
   - TCP与UDP&emsp;&emsp;&emsp;&emsp;  &emsp;✅✅✅
 - 2. 网络规划与设计
-  - 逻辑设计与物理设计&emsp;✅✅✅✅
+  - 逻辑设计&emsp;&emsp;&emsp;&emsp;✅✅✅✅
+  - 物理设计&emsp;&emsp;&emsp;&emsp;✅✅✅✅
+  - 常见的网络设计
+    - 层次网络设计&emsp;&emsp;&emsp;✅✅✅
+    - 网络冗余设计&emsp;&emsp;&emsp;✅✅
+- 3. 网络存储&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
+  - 各式网络存储架构
+  - 磁盘阵列容量计算
+- 4. IPV6&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
+
+
 - 3. 网络接入标准
   - 3G与4G标准&emsp;   &emsp;  &emsp;&emsp;✅✅✅
 - 4. 网络存储&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
-- 5. IPV6&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
+- 5. 
 - 6. 综合布线&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
 - 7. 网络技术扩展
   - 物联网&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
@@ -24,14 +34,113 @@ title: 3.4 计算机网络
 
 [![pCebHj1.md.png](https://s1.ax1x.com/2023/06/13/pCebHj1.md.png)](https://imgse.com/i/pCebHj1)
 [![pCebqnx.md.png](https://s1.ax1x.com/2023/06/13/pCebqnx.md.png)](https://imgse.com/i/pCebqnx)
+
+### 1.1 TCP与UDP
+
 [![pCebvND.md.png](https://s1.ax1x.com/2023/06/13/pCebvND.md.png)](https://imgse.com/i/pCebvND)
+
 >例题
 [![pCeqp3d.md.png](https://s1.ax1x.com/2023/06/13/pCeqp3d.md.png)](https://imgse.com/i/pCeqp3d)
 {{< expand "学霸肯定对了">}}C\
 A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠错一般才要求重发；D项IP不是虚电路，而是走路由器。所以选C{{< /expand >}}
 
-### 1.1 DHCP与DNS
+### 1.2 DHCP与DNS
 
 - DNS(Domain Name System)
 
 [![pCmCD41.md.png](https://s1.ax1x.com/2023/06/13/pCmCD41.md.png)](https://imgse.com/i/pCmCD41)
+[![pCmxskq.md.png](https://s1.ax1x.com/2023/06/14/pCmxskq.md.png)](https://imgse.com/i/pCmxskq)
+
+>例题
+[![pCmxhnJ.md.png](https://s1.ax1x.com/2023/06/14/pCmxhnJ.md.png)](https://imgse.com/i/pCmxhnJ)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
+[![pCmx7h6.md.png](https://s1.ax1x.com/2023/06/14/pCmx7h6.md.png)](https://imgse.com/i/pCmx7h6)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
+
+- DHCP(Dynamic Host Configuration Protocol)
+
+[![pCmxOje.md.png](https://s1.ax1x.com/2023/06/14/pCmxOje.md.png)](https://imgse.com/i/pCmxOje)
+
+>例题
+[![pCmzP9f.md.png](https://s1.ax1x.com/2023/06/14/pCmzP9f.md.png)](https://imgse.com/i/pCmzP9f)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
+
+## 2 网络规划与设计
+
+&emsp;&emsp;网络规划与设计包含5个阶段，它们分别是：需求分析、通信规范分析、逻辑网络设计、物理网络设计、实施阶段。这里重点看逻辑网络设计和物理网络设计，需求分析和通信规范分析的产物需要知道。
+
+[![pCmz8u4.md.png](https://s1.ax1x.com/2023/06/14/pCmz8u4.md.png)](https://imgse.com/i/pCmz8u4)
+
+### 2.1 逻辑网络设计
+
+[![pCmzw8K.md.png](https://s1.ax1x.com/2023/06/14/pCmzw8K.md.png)](https://imgse.com/i/pCmzw8K)
+
+### 2.2 物理网络设计
+
+[![pCmz25t.md.png](https://s1.ax1x.com/2023/06/14/pCmz25t.md.png)](https://imgse.com/i/pCmz25t)
+
+>例题
+[![pCmzIKg.md.png](https://s1.ax1x.com/2023/06/14/pCmzIKg.md.png)](https://imgse.com/i/pCmzIKg)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
+[![pCmzban.md.png](https://s1.ax1x.com/2023/06/14/pCmzban.md.png)](https://imgse.com/i/pCmzban)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
+[![pCmzq5q.md.png](https://s1.ax1x.com/2023/06/14/pCmzq5q.md.png)](https://imgse.com/i/pCmzq5q)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
+[![pCmzzMF.md.png](https://s1.ax1x.com/2023/06/14/pCmzzMF.md.png)](https://imgse.com/i/pCmzzMF)
+{{< expand "学霸肯定对了">}}D{{< /expand >}}
+
+## 2.3 常见的网络设计
+
+- 层次网络设计
+
+[![pCnSpqJ.md.png](https://s1.ax1x.com/2023/06/14/pCnSpqJ.md.png)](https://imgse.com/i/pCnSpqJ)
+
+>例题
+[![pCnSAG6.md.png](https://s1.ax1x.com/2023/06/14/pCnSAG6.md.png)](https://imgse.com/i/pCnSAG6)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
+[![pCnSERK.md.png](https://s1.ax1x.com/2023/06/14/pCnSERK.md.png)](https://imgse.com/i/pCnSERK)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
+
+- 网络冗余设计
+
+[![pCnPdXT.md.png](https://s1.ax1x.com/2023/06/14/pCnPdXT.md.png)](https://imgse.com/i/pCnPdXT)
+
+>例题
+[![pCnFcy6.md.png](https://s1.ax1x.com/2023/06/14/pCnFcy6.md.png)](https://imgse.com/i/pCnFcy6)
+{{< expand "学霸肯定对了">}}B{{< /expand >}}
+
+## 3 网络存储
+
+- 各式网络存储架构
+
+[![pCneIfg.md.png](https://s1.ax1x.com/2023/06/14/pCneIfg.md.png)](https://imgse.com/i/pCneIfg)
+[![pCneH6s.md.png](https://s1.ax1x.com/2023/06/14/pCneH6s.md.png)](https://imgse.com/i/pCneH6s)
+
+- 磁盘阵列容量计算
+
+&emsp;&emsp;会计算Raid3和5的磁盘容量就行
+
+[![pCnn2If.md.png](https://s1.ax1x.com/2023/06/14/pCnn2If.md.png)](https://imgse.com/i/pCnn2If)
+
+>例题
+[![pCneX7V.md.png](https://s1.ax1x.com/2023/06/14/pCneX7V.md.png)](https://imgse.com/i/pCneX7V)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
+[![pCnnhRg.md.png](https://s1.ax1x.com/2023/06/14/pCnnhRg.md.png)](https://imgse.com/i/pCnnhRg)
+{{< expand "学霸肯定对了">}}B B{{< /expand >}}
+
+## 4 IPV6
+
+- IPV6的特点
+
+[![pCnuCe1.md.png](https://s1.ax1x.com/2023/06/14/pCnuCe1.md.png)](https://imgse.com/i/pCnuCe1)
+[![pCnumyd.md.png](https://s1.ax1x.com/2023/06/14/pCnumyd.md.png)](https://imgse.com/i/pCnumyd)
+
+- IPV4->IPV6
+
+[![pCnukFK.md.png](https://s1.ax1x.com/2023/06/14/pCnukFK.md.png)](https://imgse.com/i/pCnukFK)
+
+- IPV6地址合法性判断
+
+[![pCnuZSe.md.png](https://s1.ax1x.com/2023/06/14/pCnuZSe.md.png)](https://imgse.com/i/pCnuZSe)
+
+
