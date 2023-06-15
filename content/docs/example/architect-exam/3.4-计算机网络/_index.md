@@ -3,7 +3,7 @@ weight: 4
 title: 3.4 计算机网络
 ---
 
-## 课程内容提要
+## 课程内容提要 ✌
 - 1. TCP/IP协议族
   - DHCP与DNS&emsp;  &emsp;&emsp;  &emsp;✅✅✅
   - TCP与UDP&emsp;&emsp;&emsp;&emsp;  &emsp;✅✅✅
@@ -17,12 +17,7 @@ title: 3.4 计算机网络
   - 各式网络存储架构
   - 磁盘阵列容量计算
 - 4. IPV6&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
-
-
-- 3. 网络接入标准
-  - 3G与4G标准&emsp;   &emsp;  &emsp;&emsp;✅✅✅
-- 4. 网络存储&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
-- 5. 
+- 5. 网络接入技术
 - 6. 综合布线&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
 - 7. 网络技术扩展
   - 物联网&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
@@ -134,6 +129,7 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 
 [![pCnuCe1.md.png](https://s1.ax1x.com/2023/06/14/pCnuCe1.md.png)](https://imgse.com/i/pCnuCe1)
 [![pCnumyd.md.png](https://s1.ax1x.com/2023/06/14/pCnumyd.md.png)](https://imgse.com/i/pCnumyd)
+[![pCKQiFI.md.png](https://s1.ax1x.com/2023/06/15/pCKQiFI.md.png)](https://imgse.com/i/pCKQiFI)
 
 - IPV4->IPV6
 
@@ -143,4 +139,41 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 
 [![pCnuZSe.md.png](https://s1.ax1x.com/2023/06/14/pCnuZSe.md.png)](https://imgse.com/i/pCnuZSe)
 
+>例题
+[![pCKQkfP.md.png](https://s1.ax1x.com/2023/06/15/pCKQkfP.md.png)](https://imgse.com/i/pCKQkfP)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
 
+## 5 网络接入技术
+[![pCKQVl8.md.png](https://s1.ax1x.com/2023/06/15/pCKQVl8.md.png)](https://imgse.com/i/pCKQVl8)
+[![pCKQ8pV.md.png](https://s1.ax1x.com/2023/06/15/pCKQ8pV.md.png)](https://imgse.com/i/pCKQ8pV)
+
+## 6 综合布线
+[![pCKQNm4.md.png](https://s1.ax1x.com/2023/06/15/pCKQNm4.md.png)](https://imgse.com/i/pCKQNm4)
+[![pCKQwkR.md.png](https://s1.ax1x.com/2023/06/15/pCKQwkR.md.png)](https://imgse.com/i/pCKQwkR)
+>例题
+[![pCKQBfx.md.png](https://s1.ax1x.com/2023/06/15/pCKQBfx.md.png)](https://imgse.com/i/pCKQBfx)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
+
+## 7 网络技术扩展
+
+### 7.1 物联网
+
+[![pCKQI9P.md.png](https://s1.ax1x.com/2023/06/15/pCKQI9P.md.png)](https://imgse.com/i/pCKQI9P)
+[![pCKQgne.md.png](https://s1.ax1x.com/2023/06/15/pCKQgne.md.png)](https://imgse.com/i/pCKQgne)
+
+- 感知层的关键技术
+
+[![pCKQ7jS.md.png](https://s1.ax1x.com/2023/06/15/pCKQ7jS.md.png)](https://imgse.com/i/pCKQ7jS)
+[![pCKQbng.md.png](https://s1.ax1x.com/2023/06/15/pCKQbng.md.png)](https://imgse.com/i/pCKQbng)
+
+>例题
+[![pCKQqBQ.md.png](https://s1.ax1x.com/2023/06/15/pCKQqBQ.md.png)](https://imgse.com/i/pCKQqBQ)
+{{< expand "学霸肯定对了">}}D{{< /expand >}}
+
+### 7.2 云计算
+
+[![pCKllHH.md.png](https://s1.ax1x.com/2023/06/15/pCKllHH.md.png)](https://imgse.com/i/pCKllHH)
+
+>例题
+[![pCKldKS.md.png](https://s1.ax1x.com/2023/06/15/pCKldKS.md.png)](https://imgse.com/i/pCKldKS)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
