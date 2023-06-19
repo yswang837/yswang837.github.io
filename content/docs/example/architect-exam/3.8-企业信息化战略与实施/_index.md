@@ -38,6 +38,12 @@ title: 3.8 企业信息化战略与实施
 
 ## 2 信息系统生命周期
 
+&emsp;&emsp;单个系统的生命周期比较常考
+
+[![pC1T5DJ.md.png](https://s1.ax1x.com/2023/06/19/pC1T5DJ.md.png)](https://imgse.com/i/pC1T5DJ)
+[![pC1b8HJ.md.png](https://s1.ax1x.com/2023/06/19/pC1b8HJ.md.png)](https://imgse.com/i/pC1b8HJ)
+
+
 ## 3 信息系统战略规划
 
 - 方法论
@@ -67,4 +73,62 @@ title: 3.8 企业信息化战略与实施
 >例题
 [![pC1ydeS.md.png](https://s1.ax1x.com/2023/06/19/pC1ydeS.md.png)](https://imgse.com/i/pC1ydeS)
 {{< expand "学霸肯定对了">}}答案：B C{{< /expand >}}
+
+## 4 政府信息化与电子政务
+
+[![pC1bdgK.md.png](https://s1.ax1x.com/2023/06/19/pC1bdgK.md.png)](https://imgse.com/i/pC1bdgK)
+
+&emsp;&emsp;主动与被动
+
+[![pC1byEd.md.png](https://s1.ax1x.com/2023/06/19/pC1byEd.md.png)](https://imgse.com/i/pC1byEd)
+
+>例题
+[![pC1bL80.md.png](https://s1.ax1x.com/2023/06/19/pC1bL80.md.png)](https://imgse.com/i/pC1bL80)
+{{< expand "学霸肯定对了">}}答案：B A D C{{< /expand >}}
+
+## 5 企业信息化与电子商务
+
+### 5.1 ERP
+
+[![pC1qpVJ.md.png](https://s1.ax1x.com/2023/06/19/pC1qpVJ.md.png)](https://imgse.com/i/pC1qpVJ)
+
+- 特点
+
+[![pC1qk26.md.png](https://s1.ax1x.com/2023/06/19/pC1qk26.md.png)](https://imgse.com/i/pC1qk26)
+
+### 5.2 客户关系管理
+
+[![pC1qnVH.md.png](https://s1.ax1x.com/2023/06/19/pC1qnVH.md.png)](https://imgse.com/i/pC1qnVH)
+
+### 5.3 供应链管理
+
+[![pC1qlGt.md.png](https://s1.ax1x.com/2023/06/19/pC1qlGt.md.png)](https://imgse.com/i/pC1qlGt)
+[![pC1qUaj.md.png](https://s1.ax1x.com/2023/06/19/pC1qUaj.md.png)](https://imgse.com/i/pC1qUaj)
+
+### 5.4 商业智能 BI
+
+[![pC1qTsO.md.png](https://s1.ax1x.com/2023/06/19/pC1qTsO.md.png)](https://imgse.com/i/pC1qTsO)
+
+- 数据仓库
+
+[![pC1L9OS.md.png](https://s1.ax1x.com/2023/06/19/pC1L9OS.md.png)](https://imgse.com/i/pC1L9OS)
+[![pC1LmlV.md.png](https://s1.ax1x.com/2023/06/19/pC1LmlV.md.png)](https://imgse.com/i/pC1LmlV)
+
+- 数据挖掘
+
+[![pC1LYSx.md.png](https://s1.ax1x.com/2023/06/19/pC1LYSx.md.png)](https://imgse.com/i/pC1LYSx)
+
+>例题
+[![pC1Ltl6.md.png](https://s1.ax1x.com/2023/06/19/pC1Ltl6.md.png)](https://imgse.com/i/pC1Ltl6)
+{{< expand "学霸肯定对了">}}答案：B{{< /expand >}}
+[![pC1LdmD.md.png](https://s1.ax1x.com/2023/06/19/pC1LdmD.md.png)](https://imgse.com/i/pC1LdmD)
+{{< expand "学霸肯定对了">}}答案：C D B{{< /expand >}}
+
+- 数据湖
+
+
+
+## 6 企业门户
+
+## 7 企业应用集成
 
