@@ -38,10 +38,31 @@ title: 3.7 知识产权与标准化
 [![pCi2JAg.md.png](https://s1.ax1x.com/2023/06/07/pCi2JAg.md.png)](https://imgse.com/i/pCi2JAg)
 [![pCi23B8.md.png](https://s1.ax1x.com/2023/06/07/pCi23B8.md.png)](https://imgse.com/i/pCi23B8)
 
+>例题
+[![pCMaVH0.md.png](https://s1.ax1x.com/2023/06/16/pCMaVH0.md.png)](https://imgse.com/i/pCMaVH0)
+{{< expand "学霸肯定对了">}}答案：D{{< /expand >}}
+[![pC1Dyz6.md.png](https://s1.ax1x.com/2023/06/19/pC1Dyz6.md.png)](https://imgse.com/i/pC1Dyz6)
+{{< expand "学霸肯定对了">}}答案：A{{< /expand >}}
+[![pC1DgsO.md.png](https://s1.ax1x.com/2023/06/19/pC1DgsO.md.png)](https://imgse.com/i/pC1DgsO)
+{{< expand "学霸肯定对了">}}答案：B{{< /expand >}}
+
 ## 4 侵权判定
 
 [![pCi2thj.md.png](https://s1.ax1x.com/2023/06/07/pCi2thj.md.png)](https://imgse.com/i/pCi2thj)
 [![pCi2a3n.md.png](https://s1.ax1x.com/2023/06/07/pCi2a3n.md.png)](https://imgse.com/i/pCi2a3n)
+
+>例题
+[![pC1D2LD.md.png](https://s1.ax1x.com/2023/06/19/pC1D2LD.md.png)](https://imgse.com/i/pC1D2LD)
+{{< expand "学霸肯定对了">}}答案：B{{< /expand >}}
+[![pC1Dhod.md.png](https://s1.ax1x.com/2023/06/19/pC1Dhod.md.png)](https://imgse.com/i/pC1Dhod)
+{{< expand "学霸肯定对了">}}答案：A{{< /expand >}}
+[![pC1D5FA.md.png](https://s1.ax1x.com/2023/06/19/pC1D5FA.md.png)](https://imgse.com/i/pC1D5FA)
+{{< expand "学霸肯定对了">}}答案：D{{< /expand >}}
+[![pC1DoWt.md.png](https://s1.ax1x.com/2023/06/19/pC1DoWt.md.png)](https://imgse.com/i/pC1DoWt)
+{{< expand "学霸肯定对了">}}答案：A{{< /expand >}}
+[![pC1D7SP.md.png](https://s1.ax1x.com/2023/06/19/pC1D7SP.md.png)](https://imgse.com/i/pC1D7SP)
+{{< expand "学霸肯定对了">}}答案：D{{< /expand >}}
+
 
 ## 5 标准的分类
 
@@ -50,6 +71,10 @@ title: 3.7 知识产权与标准化
 ## 6 标准代号的识别
 
 [![pCi2R3R.md.png](https://s1.ax1x.com/2023/06/07/pCi2R3R.md.png)](https://imgse.com/i/pCi2R3R)
+
+>例题
+[![pC1Dby8.md.png](https://s1.ax1x.com/2023/06/19/pC1Dby8.md.png)](https://imgse.com/i/pC1Dby8)
+{{< expand "学霸肯定对了">}}答案：B{{< /expand >}}
 
 ## 课后习题
 
