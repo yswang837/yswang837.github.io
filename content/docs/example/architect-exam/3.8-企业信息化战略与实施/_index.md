@@ -105,7 +105,11 @@ title: 3.8 企业信息化战略与实施
 [![pC1qlGt.md.png](https://s1.ax1x.com/2023/06/19/pC1qlGt.md.png)](https://imgse.com/i/pC1qlGt)
 [![pC1qUaj.md.png](https://s1.ax1x.com/2023/06/19/pC1qUaj.md.png)](https://imgse.com/i/pC1qUaj)
 
-### 5.4 商业智能 BI
+### 5.4 电子商务
+
+[![pC3OxmT.md.png](https://s1.ax1x.com/2023/06/20/pC3OxmT.md.png)](https://imgse.com/i/pC3OxmT)
+
+### 5.5 商业智能 BI
 
 [![pC1qTsO.md.png](https://s1.ax1x.com/2023/06/19/pC1qTsO.md.png)](https://imgse.com/i/pC1qTsO)
 
@@ -128,12 +132,43 @@ title: 3.8 企业信息化战略与实施
 
 &emsp;&emsp;数据湖可以理解为数据库到数据仓库的中间状态
 
+[![pC3X8jP.md.png](https://s1.ax1x.com/2023/06/20/pC3X8jP.md.png)](https://imgse.com/i/pC3X8jP)
+[![pC3X11I.md.png](https://s1.ax1x.com/2023/06/20/pC3X11I.md.png)](https://imgse.com/i/pC3X11I)
+
 - 业务流程重组BPR和业务流程管理BPM
 
+[![pC3XhC9.md.png](https://s1.ax1x.com/2023/06/20/pC3XhC9.md.png)](https://imgse.com/i/pC3XhC9)
 
 ## 6 企业门户
 
+[![pC3X2EF.md.png](https://s1.ax1x.com/2023/06/20/pC3X2EF.md.png)](https://imgse.com/i/pC3X2EF)
+
 ## 7 企业应用集成
 
+&emsp;&emsp;集成支持的方式有3种。
 
+[![pC3jKbT.md.png](https://s1.ax1x.com/2023/06/20/pC3jKbT.md.png)](https://imgse.com/i/pC3jKbT)
 
+&emsp;&emsp;从不同的角度，可以将企业应用集成划分为3个方面。
+
+### 7.1 架构分层的角度
+
+[![pC3XO4H.md.png](https://s1.ax1x.com/2023/06/20/pC3XO4H.md.png)](https://imgse.com/i/pC3XO4H)
+[![pC3XjCd.md.png](https://s1.ax1x.com/2023/06/20/pC3XjCd.md.png)](https://imgse.com/i/pC3XjCd)
+
+### 7.2 消息传递的角度
+
+[![pC3jFUg.md.png](https://s1.ax1x.com/2023/06/20/pC3jFUg.md.png)](https://imgse.com/i/pC3jFUg)
+
+### 7.3 组织范围的角度
+
+[![pC3jk5Q.md.png](https://s1.ax1x.com/2023/06/20/pC3jk5Q.md.png)](https://imgse.com/i/pC3jk5Q)
+[![pC3jV8s.md.png](https://s1.ax1x.com/2023/06/20/pC3jV8s.md.png)](https://imgse.com/i/pC3jV8s)
+
+>例题
+[![pC3joGj.md.png](https://s1.ax1x.com/2023/06/20/pC3joGj.md.png)](https://imgse.com/i/pC3joGj)
+{{< expand "学霸肯定对了">}}答案：C{{< /expand >}}
+[![pC3j7zn.md.png](https://s1.ax1x.com/2023/06/20/pC3j7zn.md.png)](https://imgse.com/i/pC3j7zn)
+{{< expand "学霸肯定对了">}}答案：C D{{< /expand >}}
+[![pC3jXZT.md.png](https://s1.ax1x.com/2023/06/20/pC3jXZT.md.png)](https://imgse.com/i/pC3jXZT)
+{{< expand "学霸肯定对了">}}答案：C{{< /expand >}}
