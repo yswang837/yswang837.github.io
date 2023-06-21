@@ -102,7 +102,6 @@ title: 3.8 企业信息化战略与实施
 
 ### 5.3 供应链管理
 
-[![pC1qlGt.md.png](https://s1.ax1x.com/2023/06/19/pC1qlGt.md.png)](https://imgse.com/i/pC1qlGt)
 [![pC1qUaj.md.png](https://s1.ax1x.com/2023/06/19/pC1qUaj.md.png)](https://imgse.com/i/pC1qUaj)
 
 ### 5.4 电子商务
