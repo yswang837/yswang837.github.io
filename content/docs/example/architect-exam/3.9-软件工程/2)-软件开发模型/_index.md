@@ -1,4 +1,4 @@
-# 软件开发模型
+# 软件开发模型 ✌
 
 &emsp;&emsp;一个开发方法下面可以有多个开发模型。
 
@@ -25,6 +25,10 @@
 &emsp;&emsp;螺旋模型 = 原型 + 瀑布模型，首次引入**风险分析**，适合大型项目。
 
 [![p97urQg.md.png](https://s1.ax1x.com/2023/05/24/p97urQg.md.png)](https://imgse.com/i/p97urQg)
+
+>例题
+[![pCNJCLD.md.png](https://s1.ax1x.com/2023/06/25/pCNJCLD.md.png)](https://imgse.com/i/pCNJCLD)
+{{< expand "学霸肯定对了">}}B{{< /expand >}}
 
 ## 2.5 原型模型
 
@@ -62,25 +66,42 @@
 
 - 四个阶段：
   - 初始：确定项目范围和边界
-  - 细化：建立软件架构基础
+  - 细化：设计并确定架构体系
   - 构建：开发剩余的构建、构建组装与测试
   - 交付：制作发布版本
   
 [![p97uTOJ.md.png](https://s1.ax1x.com/2023/05/24/p97uTOJ.md.png)](https://imgse.com/i/p97uTOJ)
 
+>例题
+[![pCNJkod.md.png](https://s1.ax1x.com/2023/06/25/pCNJkod.md.png)](https://imgse.com/i/pCNJkod)
+{{< expand "学霸肯定对了">}}B A{{< /expand >}}
+
 ## 2.11 敏捷开发模型
 
 &emsp;&emsp;小步快跑的模式，适合小型项目。
 
+&emsp;&emsp;敏捷方法介于无软件开发和传统软件开发方法之间；将更重要的注意力集中于可运行的代码本身，而不太重视各类文档、流程之类的。
+
 [![p97MU8f.md.png](https://s1.ax1x.com/2023/05/24/p97MU8f.md.png)](https://imgse.com/i/p97MU8f)
+
+价值观与最佳实践
+
 [![p97M5qJ.png](https://s1.ax1x.com/2023/05/24/p97M5qJ.png)](https://imgse.com/i/p97M5qJ)
+
+敏捷开发下的模型
+
 [![p97QdF1.md.png](https://s1.ax1x.com/2023/05/24/p97QdF1.md.png)](https://imgse.com/i/p97QdF1)
+
+SCRUM
+
+[![pCNJLX8.md.png](https://s1.ax1x.com/2023/06/25/pCNJLX8.md.png)](https://imgse.com/i/pCNJLX8)
+
 >例题
 [![p97QyOe.md.png](https://s1.ax1x.com/2023/05/24/p97QyOe.md.png)](https://imgse.com/i/p97QyOe)
 {{< expand "学霸肯定对了">}}C{{< /expand >}}
 [![p97QWFI.md.png](https://s1.ax1x.com/2023/05/24/p97QWFI.md.png)](https://imgse.com/i/p97QWFI)
-{{< expand "学霸肯定对了">}}{{< /expand >}}
+{{< expand "学霸肯定对了">}}B A{{< /expand >}}
 [![p97Q5Sf.md.png](https://s1.ax1x.com/2023/05/24/p97Q5Sf.md.png)](https://imgse.com/i/p97Q5Sf)
-{{< expand "学霸肯定对了">}}{{< /expand >}}
+{{< expand "学霸肯定对了">}}B{{< /expand >}}
 [![p97Qo6S.md.png](https://s1.ax1x.com/2023/05/24/p97Qo6S.md.png)](https://imgse.com/i/p97Qo6S)
-{{< expand "学霸肯定对了">}}{{< /expand >}}
+{{< expand "学霸肯定对了">}}B D{{< /expand >}}
