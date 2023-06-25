@@ -12,7 +12,17 @@ title: 3.14 专业英语
 
 - 原文
 
-&emsp;&emsp;An architectural Style defines as a family of such systems in terms of a pattern、of structural organization.More specifically an architectural style defines a vocabulary of components and connector types, and a set of constraints on how they can be combined. For many styles there may also exist one or more semantic models that specify how to determine a system’s overall properties from the properties of its parts. Many of architectural styles have been developed over the years.The best-known examples of pipe-and-filter architectures are programs written in the Unix shell. 
+&emsp;&emsp;An architectural style defines as a family of such systems in terms of a ( 1 ) of structural organization.More specifically， an architectural style defines a vocabulary of ( 2 ) and connector types， and a set of ( 3 ) on how they can be combined. For many styles there may also exist one or more ( 4 ) that specify how to determine a system’s overall properties from the properties of its parts.Many of architectural styles have been developed over the years. The best-known examples of ( 5 ) architectures are programs written in the Unix shell.
+
+(1) &emsp;A.pattern &emsp;B.data flow &emsp;C.business process &emsp;D.position level
+
+(2) &emsp;A.metadata &emsp;B.components &emsp;C.models &emsp;D.entities
+
+(3) &emsp;A.functions &emsp;B.code segments &emsp;C.interfaces &emsp;D.constraints
+
+(4) &emsp;A.semantic models &emsp;B.weak entities &emsp;C.data schemas &emsp;D.business models
+
+(5) &emsp;A.event-based &emsp;B.object-oriented &emsp;C.pipe-and-filter &emsp;D.Layered
 
 - 翻译
 
@@ -40,15 +50,17 @@ title: 3.14 专业英语
 
 - 原文
 
-&emsp;&emsp;The software architecture is a set of software components, subsystems, relationships, interactions, the properties of each of these elements, and the set of guiding principles that together constitute the fundamental properties and constraints of a software system or set of systems. Architectural pattern defines a general set of element types and their interactions. The examples include Pipes and Filters, Model-View-Controller, and Reflection.
+&emsp;&emsp;The software architecture is a set of software components, subsystems, relationships， interactions, the properties of each of these elements， and the set of guiding principles that together constitute the fundamental properties and constraints of a software system or set of systems. ( 1 ) defines a general set of element types and their interactions. The examples include Pipes and Filters, Model-View-Controller, and Reflection. A ( 2 ) in software architecture is a representation used to understand or document one or more aspects of a problem or solution. Architecture is usually used in conjunction with many adjunct terms. The ( 3 ) defines the key strategies, organization, goals and related processes of the enterprise. At the enterprise level, the ( 4 ) may be more of a set of guidelines on how the various software architectures should be constructed consistently across the enterprise. The ( 5 ), which describes the high-level set of elements involved in application from a particular domain along with their Interactions, is often used to focus on subsystem definition rather than application process level definition.
 
-&emsp;&emsp;A model in software architecture is a representation used to understand or document one or more aspects of a problem or solution. Architecture is usually used in conjunction with many adjunct terms.
+(1)&emsp;A.Architectural pattern &emsp;B.Architectural description &emsp;C.Architectural view &emsp;D.Architectural viewpoint
 
-&emsp;&emsp;The business architecture defines the key strategies, organization, goals and related processes of the enterprise.
+(2)&emsp;A.model &emsp;B.domain &emsp;C.component &emsp;D.subsystem
 
-&emsp;&emsp;At the enterprise level, the application architecture may be more of a set of guidelines on how the various software architectures should be constructed consistently across the enterprise.
+(3)&emsp;A.enterprise architecture &emsp;B.technical architecture &emsp;C.infrastructure architecture &emsp;D.business architecture
 
-&emsp;&emsp;The reference architecture, which describes the high-level set of elements involved in application from a particular domain along with their interactions, is often used to focus on subsystem definition rather than application process level definition.
+(4)&emsp;A.enterprise architecture &emsp;B.data architecture &emsp;C.application architecture &emsp;D.information architecture
+
+(5)&emsp;A.product-line architecture &emsp;B.reference architecture &emsp;C.technology architecture &emsp;D.infrastructure architecture
 
 - 翻译
 
@@ -90,15 +102,24 @@ title: 3.14 专业英语
 
 &emsp;&emsp;Information systems design is defined as those tasks that focus on the specification of a detailed computer-based solution. Typically, there are four systems design tasks for in-house development.
 
-&emsp;&emsp;The first task is to specify an application architecture,which defines the technologies to be used by one, more, or all information systems in terms of their data, processes, interfaces, and network components. This task is accomplished by analyzing the data models and process models that are initially created during requirements analysis.
+&emsp;&emsp;1) The first task is to specify ( 1 ), which defines the technologies to be used by one, more, or all information systems in terms of their data, processes, interfaces, and network components. This task is accomplished by analyzing the data models and process models that are initially created during requirements analys16.
 
-&emsp;&emsp;The next systems design task is to develop the database design specifications. The purpose of this task is to prepare technical design specifications for a database that will be adaptable to future requirements and expansion.
+&emsp;&emsp;2) The next systems design task is to develop the ( 2 ). The purpose of this task is to prepare technical design specifications for a database that will be adaptable to future requirements and expansion.
 
-&emsp;&emsp;Once the database prototype has been built, the systems designer can work closely with system users to develop input, output and dialogue specifications. The internal controls must be specified to ensure that the outputs are not lost, misrouted, misused, or incomplete.
+&emsp;&emsp;3) Once the database prototype has been built, the systems designer can work closely with system users to develop input, output and dialogue specifications. The ( 3 ) must be specified to ensure that the outputs are not lost, misrouted, misused, or incomplete.
 
-&emsp;&emsp;The fourth design task involves packaging all the specifications from the previous design tasks into a set of specifications that will guide the computer programmer’s activities during the following phases of the systems development methodology.
+&emsp;&emsp;4) The fourth design task involves packaging all the specifications from the previous design tasks into a set of specifications that will guide the ( 4 ) activities during the following phases of the systems development methodology.
+Finally, we should( 5 ) and update the project plan accordingly. The key deliverable should include a detailed plan for the construction phase that should follow.
 
-&emsp;&emsp;Finally, we should reevaluate project feasibility and update the project plan accordingly. The key deliverable should include a detailed plan for the construction phase that should follow.
+(1)&emsp;A. an application architecture&emsp;B. a distributed system&emsp;C. a system scope&emsp;D. a system physical model
+
+(2)&emsp;A. database design specifications &emsp;B. database organization decisions &emsp;C. data structure specifications&emsp;D. data distribution decisions
+
+(3)&emsp;A. format and layout&emsp;B. transaction details&emsp;C. additional instructions&emsp;D. internal controls
+
+(4)&emsp;A. system administrator’s&emsp;B. system analyst’s&emsp;C. computer programmer’s&emsp;D. system designer’s
+
+(5)&emsp;A. adjust the project schedule&emsp;B. reevaluate project feasibility&emsp;C. evaluate vendor proposals&emsp;D. select the best vendor proposal
 
 - 翻译
 
@@ -144,7 +165,17 @@ title: 3.14 专业英语
 
 - 原文
 
-&emsp;&emsp;An application architecture specifies the technologies to be used to implement one or more information systems. It serves as an outline for detailed design, construction, and implementation. Given the models and details, include logical DFDs and ERD, we can distribute data and processes to create a general design of application architecture. The design will normally be constrained by architecture standards, project objectives, and the feasibility of techniques used. The first, physical DFD to be drawn is the network architecture DFD. The next step is to distribute data stores to different processors. Data partitioning and replication are two types of distributed data which most RDBMSs support. There are many distribution options used in data distribution. In the case of storing specific tables on different servers, we should record each tableas a data store on the physical DFD and connect each to the appropriate server.
+&emsp;&emsp;An application architecture specifies the technologies to be used to implement one or more information systems. It serves as an outline for detailed design, construction, and implementation. Given the models and details, include( 1 ), we can distribute data and processes to create a general design of application architecture. The design will normally be constrained by architecture standards, project objectives, and ( 2 ). The first physical DFD to be drawn is the( 3 ). The next step is to distribute data stores to different processors. Data( 4 ) are two types of distributed data which most RDBMSs support. There are many distribution options used in data distribution. In the case of ( 5 ) we should record each table as a data store on the physical DFD and connect each to the appropriate server.
+
+(1)&emsp;A.logical DFDs and ERD&emsp;B.ideal object model and analysis class model&emsp;C.use case models and interface prototypes&emsp;D.physical DFDs and database schema
+
+(2)&emsp;A.the database management system&emsp;B.the feasibility of techniques used&emsp;C.the network topology and technology&emsp;D.the user interface and process methods
+
+(3)&emsp;A.context DFD&emsp;B.system DFD&emsp;C.network architecture DFD&emsp;D.event-response DFD
+
+(4)&emsp;A.vertical partitioning and horizontal replication&emsp;B.vertical replication and horizontal partitioning&emsp;C.integration and distribution&emsp;D.partitioning and replication
+
+(5)&emsp;A.storing all data on a single server&emsp;B.storing specific tables on different servers&emsp;C.storing subsets of specific tables on different servers&emsp;D.duplicating specific tables or subsets on different servers
 
 - 翻译
 
@@ -178,13 +209,23 @@ title: 3.14 专业英语
 
 - 原文
 
-&emsp;&emsp;A system’s architecture is a representation of a system in which there is a mapping of functionality onto hardware and software components, a mapping of the software architecture onto the hardware architecture, and a concern for the human interaction with these components. That is,system architecture is concerned with a total system, including hardware, software, and humans. Software architectural structures can be divided into three major categories, depending on the broad nature of the elements they show.
+&emsp;&emsp;A system's architecture is a representation of a system in which there is a mapping of( 1 ) onto hardware and software components, a mapping of the ( 2 ) onto the hardware architecture. and a concern for the human interaction with these components. That is, system architecture is concerned with a total system, including hardware. software, and humans. Software architectural structures can be divided into three major categories, depending on the broad nature of the elements they show.
 
-&emsp;&emsp;1)Module structures embody decisions as a set of code or data units that have to be constructed or procured.
+&emsp;I):( 3 ) embody decisions as a set of code or data units that have to be constructed or procured.
 
-&emsp;&emsp;2)Component-and-connector structures embody decisions as to how the system is to be structured as set of elements that have runtime behavior and interactions.
+&emsp;II): ( 4 ) embody decisions as to how the system is to be structured as set of elements that have runtime behavior and interactions.
 
-&emsp;&emsp;3)Allocation structures embody decisions as to how the system will relate to non software structures in its environment (such as CPUs, file systems, networks, development teams, etc.).
+&emsp;III): ( 5 ) embody decisions as to how the system will relate to nonsoftware structures in its environment(such as CPUs, file systems, networks, development teams, etc.).
+
+(1)&emsp;A.attributes&emsp;B.constraint&emsp;C.functionality&emsp;D.requirements
+
+(2)&emsp;A.physical components&emsp;B.network architecture&emsp;C.software architecture&emsp;D.interface architecture
+
+(3)&emsp;A.Service structures&emsp;B.Module structures&emsp;C.Deployment structures&emsp;D.Work assignment structures
+
+(4)&emsp;A.Decompostion structures&emsp;B.Layer structures&emsp;C.Implementation structures&emsp;D.Component-and-connector structures
+
+(5)&emsp;A.Allocation structures&emsp;B.Class structures&emsp;C.Concurrency structures&emsp;D.Uses structures
 
 - 翻译
 
@@ -212,7 +253,17 @@ title: 3.14 专业英语
 
 - 原文
 
-&emsp;&emsp;Software architecture reconstruction is an interpretive, interactive, and iterative process including many activities. Information extraction involves analyzing a system’s existing design and implementation artifacts to construct a model of it. The result is used in the following activities to construct a view of the system. The database construction activity converts the elements and relations contained in the view into a standard format for storage in a database. The view fusion activity involves defining and manipulating the information stored in database to reconcile, augment, and establish connections between the elements. Reconstruction consists of two primary activities: visualization and interaction and pattern definition and recognition. The former provides a mechanism for the user to manipulate architectural elements, and the latter provides facilities for architecture reconstruction.
+&emsp;&emsp;Software architecture reconstruction is an interpretive, jnteractive, and iterative process including many activities. ( 1 ) involves analyzing a system's existing design and implementation artifacts to construct a model of it. The result is used in the following activities to construct(结构) a view of the system. The database construction activity converts the ( 2 ) contained in the view into a standard format for storage in a database. The ( 3 ) activity involves defining and manipulating( 控 制 ) the information stored( 存 储 的 ) in database to reconcile, augment(增强), and establish(建立) connections between the elements. Reconstruction consists of two primary activities: ( 4 ) and ( 5 ). The former provides a mechanism for the user to manipulate architectural elements, and the latter provides facilities for architecture reconstruction.
+
+(1)&emsp;A.Reverse engineering&emsp;B.Information extraction&emsp;C.Requirements analysis&emsp;D.Source code analysis
+
+(2)&emsp;A.actors and use cases&emsp;B.processes and data&emsp;C.elements and relations&emsp;D.schemas and tables
+
+(3)&emsp;A.database normalization&emsp;B.schema definition&emsp;C.database optimization&emsp;D.view fusion
+
+(4)&emsp;A.architecture analysis and design&emsp;B.domain analysis and static modeling&emsp;C.visualization and interaction&emsp;D.user requirements modeling
+
+(5)&emsp;A.pattern definition and recognition&emsp;B.architecture design and implementation&emsp;C.system architecture modeling&emsp;D.dynamic modeling and reconstruction
 
 - 翻译
 
@@ -246,7 +297,16 @@ title: 3.14 专业英语
 
 - 原文
 
-&emsp;&emsp;The objective of architecture design is to determine what parts of the application software will be assigned to what hardware.The major software components of the system being developed have to be identified and then allocated to the various hardware components on which the system will operate. All software systems can be divided into four basic functions. The first is data storage. Most information systems require data to be stored and retrieved,whether a small file,such as a memo produced by a word processor,or a large database,such as one that stores an organization’s accounting records. The second function is the data access logic,the processing required to access data,which often means database queries in Structured Query Language. The third function is the application logic,which is the logic documented in the DFDs,use cases,and functional requirements.The fourth function is the presentation logic,the display of information to the user and the acceptance of the user’s commands.The three primary hardware components of a system are clients,servers,and network.
+&emsp;&emsp;The objective of ( 1 ) is to determine what parts of the application software will be assigned to what hardware.The major software components of the system being developed have to be identified and then allocated to the various hardware components on which the system will operate. All software systems can be divided into four basic functions. The first is( 2 ). Most information systems require data to be stored and retrieved,whether a small file,such as a memo produced by a word processor,or a large database,such as one that stores an organization’s accounting records. The second function is the ( 3 ),the processing required to access data,which often means database queries in Structured Query Language. The third function is the ( 4 ),which is the logic documented in the DFDs,use cases,and functional requirements.The fourth function is the presentation logic,the display of information to the user and the acceptance of the user’s commands.The three primary hardware components of a system are ( 5 ).
+(1)&emsp;A.architecture design &emsp;B.modular design &emsp;C.physical design &emsp;D.distribution design
+
+(2)&emsp;A.data access components &emsp;B.database management system &emsp;C.data storage&emsp;D.data entities
+
+(3)&emsp;A.data persistence&emsp;B.data access objects&emsp;C.database connection&emsp;D.dataaccess logic
+
+(4)&emsp;A.system requirements&emsp;B.system architecture&emsp;C.application logic&emsp;D.application program
+
+(5)&emsp;A.computers,cables and network&emsp;B.clients,servers,and network&emsp;C.CPUs,memories and I/O devices&emsp;D.CPUs,hard disks and I/O devices
 
 - 翻译
 
@@ -270,6 +330,18 @@ title: 3.14 专业英语
 
 - 原文
 
+The objective of ( 1 ) is to determine what parts of the application software will be assigned to what hardware. The major software components of the system being developed have to be identified and then allocated to the various hardware components on which the system will operate. All software systems can be divided into four basic functions. The first is ( 2 ). Most information systems require data to be stored and retrieved, whether a small file,such as a memo produced by a word processor, or a large database, such as one that stores an organization’s accounting records.The second function is the ( 3 ), the processing required to access data, which often means database queries in Structured Query Language. The third function is the ( 4 ),which is the logic documented in the DFDs, use cases,and functional requirements.The fourth function is the presentation logic,the display of information to the user and the acceptance of the user’s commands.The three primary hardware components of a system are ( 5 ).
+
+(1)&emsp;A.architecture design&emsp;B.modular design&emsp;C.physical design&emsp;D.distribution design
+
+(2)&emsp;A.data access components&emsp;B.database management system&emsp;C.data storage&emsp;D.data entities
+
+(3)&emsp;A.data persistence&emsp;B.data access objects&emsp;C.database connection&emsp;D.data access logic
+
+(4)&emsp;A.system requirements&emsp;B.system architecture&emsp;C.application logic&emsp;D.application program
+
+(5)&emsp;A.computers,cables and network&emsp;B.clients,servers,and network&emsp;C.CPUs,memories and I/O devices&emsp;D.CPUs,hard disks and I/O devices
+
 - 翻译
 
 - 重点词汇
@@ -278,11 +350,17 @@ title: 3.14 专业英语
 
 - 原文
 
-&emsp;&emsp;The architecture design specifies the overall architecture and the placement of software and hardware that will be used. Architecture design is a very complex process that is often left to experienced architecture designers and consultants.
+&emsp;&emsp;The architecture design specifies the overall architecture and the placement of software and hardware that will be used. Architecture design is a very complex process that is often left to experienced architecture designers and consultants. The first step is to refine the ( 1 ) into more detailed requirements that are then employed to help select the architecture to be used and the software components to be placed on each device. In a ( 2 ), one also has to decide whether to use a two-tier,three-tier,or n-tier architecture. Then the requirements and the architecture design are used to develop the hardware and software specification. There are four primary types of nonfunctional requirements that can be important in designing the architecture. ( 3 ) specify the operating environment(s) in which the system must perform and how those may change over time. ( 4 ) focus on the nonfunctional requirements issues such as response time, capacity, and reliability. ( 5 ) are the abilities to protect the information system from disruption and data loss, whether caused by an intentional act. Cultural and political requirements are specific to the countries in which the system will be used.
 
-&emsp;&emsp;The first step is to refine the nonfunctional requirements into more detailed requirements that are then employed to help select the architecture to be used and the software components to be placed on each device. In a client-server architecture, one also has to decide whether to use a two-tier, three-tier,or n-tier architecture.
+(1)&emsp;A. functional requirements&emsp;B. nonfunctional requirements&emsp;C. system constraint&emsp;D. system operational environment
 
-&emsp;&emsp;Then the requirements and the architecture design are used to develop the hardware and software specification. There are four primary types of nonfunctional requirements that can be important in designing the architecture.Operational requirements specify the operating environment(s) in which the system must perform and how those may change over time. Performance requirements focus on the nonfunctional requirements issues such as response time,capacity,and reliability. Security requirements are the abilities to protect the information system from disruption and data loss, whether caused by an intentional act. Cultural and political requirements are specific to the countries in which the system will be used.
+(2)&emsp;A. client-based architecture&emsp;B. server-based architecture&emsp;C. network architecture&emsp;D. client-server architecture
+
+(3)&emsp;A. Operational requirements&emsp;B. Speed requirement&emsp;C. Access control requirements&emsp;D. Customization requirements
+
+(4)&emsp;A. Environment requirements&emsp;B. Maintainability requirements&emsp;C. Performance requirements&emsp;D. Virus control requirements
+
+(5)&emsp;A. Safety requirements&emsp;B. Security requirements&emsp;C. Data management requirements&emsp;D. System requirements
 
 - 翻译
 
@@ -315,7 +393,17 @@ title: 3.14 专业英语
 
 - 原文
 
-&emsp;&emsp;Designing the data storage architecture is an important activity in system design.There are two main types of data storage formats: files and databases. Files are electronic of data that have been optimized to perform a particular transaction. There are several types of files that differ in the way they are used to support an application.Master files store core information that is important to the business and , more specifically , to the application , such as order information or customer mailing information . Audit files contain static values , such as a list of valid codes or the names of cities. Typically, the list is used for validation. A database is a collection of groupings of information that are related to each other in some way. There are many different types of databases that exist on the market today. Legacy database is given to those databases which are based on older, sometimes outdated technology that is seldom used to develop new applications . Hierarchical database are collections of records that are related to each other through pointers. In relational database, referential integrity can be used in ensuring that values linking the tables together through the primary and foreign keys are valid and correctly synchronized.
+&emsp;&emsp;Designing the data storage architecture is an important activity in system design. There are two main types of data storage formats: files and databases. Files are electronic of data that have been optimized to perform a particular transaction. There are several types of files that differ in the way they are used to support an application.(71)store core information that is important to the business and , more specifically , to the application , such as order information or customer mailing information . (72)contain static values , such as a list of valid codes or the names of cities . Typically, the list is used for validation. A database is a collection of groupings of information that are related to each other in some way. There are many different types of databases that exist on the market today.(73)is given to those databases which are based on older , sometimes outdated technology that is seldom used to develop new applications . (74)are collections of records that are related to each other through pointers In relational database , (75)can be used in ensuring that values linking the tables together through the primary and foreign keys are valid and correctly synchronized.
+
+(71)&emsp;A.Master files&emsp;B.Look-up files.&emsp;C.Transaction files &emsp;D.History files
+
+(72)&emsp;A.Master files&emsp;B.Look-up files&emsp;C.Audit files&emsp;D.History files
+
+(73)&emsp;A.Legacy database&emsp;B.Backup database&emsp;C. Multidimensional database&emsp;D. Workgroup database
+
+(74)&emsp;A.Hierarchical database&emsp;B. Workgroup database&emsp;C. Linked table database&emsp;D. Network database
+
+(75)&emsp;A.identifying relationships&emsp;B. normalization&emsp;C.referential integrity&emsp;D.store procedure
 
 - 翻译
 
@@ -329,6 +417,18 @@ title: 3.14 专业英语
 
 - 原文
 
+&emsp;&emsp;During the systems analysis phase , you must decide how data will be organized, stored.and manage D. A( 1 )is a framework for organizing, storing, and managing datEach file or table contains data about people, places, things, or events. One of the potentiaproblems existing in a file processing environment is ( 2 ), which means that data common totwo or more information systems is stored in several places.In a DBMS, the linked tables form a unified data structure that greatly improves dataquality and access. A(n) ( 3 ) is a model that shows the logical relationships and interactionamong system entities . It provides an overall view of the system and a blueprint for creatingthe physical data structures. ( 4 ) is the process of creating table designs by assigning specificfields or attributes to each table in the database. A table design specifies the fields andidentifies the primary key in a particular table or file. The three normal forms constitute aprogression in which( 5 )represents the best design. Most business-related databases must bedesigned in that form
+
+(1)&emsp;A. data entity&emsp;B. data structure&emsp;C.file collection&emsp;D. data definition
+
+(2)&emsp;A. data integrity&emsp;B. the rigid data structure&emsp;C.data redundancy&emsp;D.the many-to-many relationship
+
+(3)&emsp;A. entity-relationship diagram&emsp;B. data dictionary&emsp;C. database schema&emsp;D. physical database model
+
+(4)&emsp;A. Normalization&emsp;B. Replication&emsp;C. Partitioning&emsp;D. Optimization
+
+(5)&emsp;A. standard notation form&emsp;B. first normal form&emsp;C. second normal form&emsp;D. third normal form
+
 - 翻译
 
 - 重点词汇
@@ -336,6 +436,18 @@ title: 3.14 专业英语
 ### 1.12 2020年
 
 - 原文
+
+&emsp;The purpose of systems design is to specify a(n) ( 1 ), which defines the technologies to be usedto build the proposed information systems. This task is accomplished by analyzing the datamodels and process models that were initially created during ( 2 ) . The ( 3 ) is used to establishphysical processes and data stores across a network. To complete this activity, the analyst mayinvolve a number of system designers and ( 4 ) , which may be involved in this activity to helpaddress business data, process, and location issues. The key inputs to this task are the facts,recommendations, and opinions that are solicited from various sources and the approved ( 5 ) fromthe decision analysis phase.
+
+(1)&emsp;A.physical model&emsp;B.prototype system&emsp;C.database schema&emsp;D.application architecture
+
+(2)&emsp;A.requirements analysis&emsp;B.problem analysis&emsp;C.cause-effect analysis&emsp;D.decision analysis
+
+(3)&emsp;A.entity-relationship diagram&emsp;B.physical data flow diagram&emsp;C.data flow diagram&emsp;D.physical database model
+
+(4)&emsp;A.system users&emsp;B.system analyst&emsp;C.system owner&emsp;D.project manager
+
+(5)&emsp;A.system architecture&emsp;B.system proposal&emsp;C.technical model&emsp;D.business procedure
 
 - 翻译
 
@@ -345,6 +457,18 @@ title: 3.14 专业英语
 
 - 原文
 
+&emsp;&emsp;The prevailing distributed computing model of the current era is called client/server computing. A( 1 )is a solution in which the presentation,presentation logic,applicatio nlogic,data manipulation and data layers are distributed between client PCs and one o r moreservers. A( 2 ) is a personal computer that does not have to be very powerfu lin terms ofprocessor speed and memory because it only presents the interface to th e user. A( 3 )is apersonal computer.notebook computer,or workstation that is typic ally more powerful interms of processor speed,memory,and storage capacity. A(n)( 4 )hosts one or more shareddatabase but also executes all database commands and s ervices for information systems. A(n) ( 5 ) hosts Internet or intranet Web sites,it co mmunicates with clients by returning tothem documents and data.
+
+(1)&emsp;A. Client/Server system&emsp;B.Client-side&emsp;C.Serve-sider&emsp;D.Database
+
+(2)&emsp;A. Serve-sider&emsp;B.Browser&emsp;C. Fat client&emsp;D.Thin client
+
+(3)&emsp;A. Cloud platform&emsp;B. Cluster system&emsp;C. Fat client&emsp;D.Thin client
+
+(4)&emsp;A.Transaction server&emsp;B. Database serverer&emsp;C.Application server&emsp;D.Message server
+
+(5)&emsp;A. Database server&emsp;B.Message server&emsp;C.Web server&emsp;D.Application server
+
 - 翻译
 
 - 重点词汇
@@ -353,8 +477,19 @@ title: 3.14 专业英语
 
 - 原文
 
+&emsp;&emsp;Micro-service is a software development technology, which advocates dividing a single applicationinto a group of small services，which coordinates and cooperates with each other to provide ultimatevalue for users.The micro-service ( 1 ) has many important benefits.First, it solves the problem ofbusiness complexity.It decomposes the original huge single application into a group ofservices.Although the total amount of functions remains the same, the application has beendecomposed into manageable services.The development speed of a single service is much faster,and it is easier to understand and ( 2 ) Second.this architecture allows each service to be ( 3 ) independently by a team.Developers are free to choose any appropriate technology.Third,themicro-service architecture mode enables each service to be ( 4 )independently.Developers never needto coordinate the deployment of local changes to their services.These types of changes can bedeploved immediately after testing.Finally.the micro-service architecture enables each service to ( 5 ) independently.
+
+(1)&emsp;A、architecture&emsp;B、software&emsp;C、application&emsp;D、technology
+
+(2)&emsp;A、develop&emsp;B、maintain&emsp;C、utilize&emsp;D、deploy
+
+(3)&emsp;A、planned&emsp;B、developed&emsp;C、utilized&emsp;D、deployed
+
+(4)&emsp;A、utilized&emsp;B、developed&emsp;C、tested&emsp;D、deployed
+
+(5)&emsp;A、analyze&emsp;B、use&emsp;C、design&emsp;D、expand
+
 - 翻译
 
 - 重点词汇
-
 
