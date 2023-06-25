@@ -4,9 +4,9 @@ title: 3.14 专业英语
 ---
 ## 课程内容提要
 
-- 1. 原文、翻译及重点词汇
+- 1. 历年真题
 
-## 1 原文及翻译
+## 1 历年真题
 
 ### 1.1 2009年
 
@@ -24,27 +24,21 @@ title: 3.14 专业英语
 
 (5) &emsp;A.event-based &emsp;B.object-oriented &emsp;C.pipe-and-filter &emsp;D.Layered
 
-- 翻译
+{{< expand "学霸肯定对了">}}&emsp;&emsp;架构风格以一种结构化组织模式定义一组这样的系统。具体来说，一种架构风格定义了一个构件及连接器类型的词汇表，以及一组关于它们如何能够被关联的约束对于许多风格来说，可能也存在一个或多个语义模型，从系统部件的特性来确定系统的整体特性。许多架构风格已经发展了很多年，众所周知的管道-过滤器架构的例子就是用 UNIX shell 编写的程序。
 
-&emsp;&emsp;一种架构风格以一种结构化组织模式定义一组这样的系统。具体来说，一种架构风格定义了一个构件及连接器类型的词汇表，以及一组关于它们如何能够被关联的约束。对于许多风格来说，可能也存在一个或多个语义模型，从系统部件的特性来确定系统的整体特性。许多架构风格已经发展了很多年，众所周知的管道-过滤器架构的例子就是用UNIX shell编写的程序。
+&emsp;&emsp;pattern:模式
 
-- 重点词汇
+&emsp;&emsp;metadata:元数据
 
-&emsp;&emsp;pattern. 模式.
+&emsp;&emsp;segments:部分
 
-&emsp;&emsp;component. 构件.
+&emsp;&emsp;constraints:约束
 
-&emsp;&emsp;constraint. 约束.
+&emsp;&emsp;semantic:语义
 
-&emsp;&emsp;semantic model. 语义模型.
+&emsp;&emsp;schemas:模式，图式，计划
 
-&emsp;&emsp;pope-and-filter. 管道-过滤器架构.
-
-&emsp;&emsp;architectural style. 架构风格
-
-&emsp;&emsp;specifically. 具体地.
-
-&emsp;&emsp;specify. 指定、确定.
+&emsp;&emsp;layered:分层的{{< /expand >}}
 
 ### 1.2 2010年
 
@@ -62,39 +56,12 @@ title: 3.14 专业英语
 
 (5)&emsp;A.product-line architecture &emsp;B.reference architecture &emsp;C.technology architecture &emsp;D.infrastructure architecture
 
-- 翻译
+{{< expand "学霸肯定对了">}}A、A、D、C、B
 
-&emsp;&emsp;软件架构中的模型是一种表现形式，用于从一个或多个方面理解或记录一个问题或解决方案。架构通常会与一些附属词结合起来使用。
+&emsp;&emsp;软件架构是一组软件构件、子系统、关联关系、交互关系以及其中每个元素的特性和一
+组指导原则，这些共同构成一个软件系统或一组系统的基本特性和约束。架构模式定义了一 组通用的元素类型及其交互关系。其中的例子包括 Pipes and Filters、MVC 和 Reflection。软 件架构中的模型是一种表现形式，用于从一个或多个方面理解或记录一个问题或解决方案。 架构通常会与一些附属词结合起来使用。业务架构定义了企业的关键策略、组织、目标和相 关过程。在企业层面，应用架构可能更多的是一组关于应该如何在整个企业一致地构建各种 软件架构的指导原则。参考架构描述了源自特定领域的应用涉及的高层元素集合及其交互关 系，通常用于关注子系统的定义而不是应用过程级别定义。
 
-&emsp;&emsp;业务架构定义了企业的关键策略、组织、目标和相关过程。
-
-&emsp;&emsp;在企业层面，应用架构可能更多的是一组关于应该如何在整个企业一致地构建各种软件架构的指导原则。
-
-&emsp;&emsp;参考架构描述了源自特定领域的应用涉及的髙层元素集合及其交互关系，通常用于关注子系统的定义而不是应用过程级别定义。
-
-- 重点词汇
-
-&emsp;&emsp;Architectural pattern. 架构模式
-
-&emsp;&emsp;model. 模型
-
-&emsp;&emsp;business architecture. 业务架构
-
-&emsp;&emsp;application architecture. 应用架构
-
-&emsp;&emsp;reference architecture. 参考架构
-
-&emsp;&emsp;software architecture. 软件架构
-
-&emsp;&emsp;Pipes and Filters. 管道与过滤器
-
-&emsp;&emsp;Model-View-Controller. MVC框架，模型(model)－视图(view)－控制器(controller)
-
-&emsp;&emsp;Reflection. 反射机制
-
-&emsp;&emsp;involve. 涉及、包括
-
-&emsp;&emsp;interaction. 交互
+&emsp;&emsp;Infrastructure:基础设施{{< /expand >}}
 
 ### 1.3 2011年
 
@@ -121,45 +88,22 @@ Finally, we should( 5 ) and update the project plan accordingly. The key deliver
 
 (5)&emsp;A. adjust the project schedule&emsp;B. reevaluate project feasibility&emsp;C. evaluate vendor proposals&emsp;D. select the best vendor proposal
 
-- 翻译
+{{< expand "学霸肯定对了">}}A、A、D、C、B
 
-&emsp;&emsp;信息系统设计被定义为一些任务，它们主要关注一个详细的计算机解决方案的规格说明。通常来说，内部开发有四种系统设计任务。
+&emsp;&emsp;信息系统设计被定义为一些任务，它们主要关注一个详细的计算机解决方案的规格说 明。通常来说，内部开发有四种系统设计任务。
 
-&emsp;&emsp;第一项任务是确定一个应用程序架构，它以数据、过程、接口和网络组件的方式定义一个、多个或所有信息系统要使用的技术。完成这项任务需要分析最初创建于需求分析期间的数据模型和过程模型。
+(1)第一项任务是确定一个应用程序架构，它以数据、过程、接口和网络组件的方式 定义一个、多个或所有信息系统要使用的技术。完成这项任务需要分析最初创建于需求分析 期间的数据模型和过程模型。
 
-&emsp;&emsp;下一项系统设计任务是开发数据库设计的规格说明。该任务的目的是准备一个数据库技术设计规格说明，以适应将来的需求和扩展。
+(2)下一项系统设计任务是开发数据库设计的规格说明。该任务的目的是准备一个数 据库技术设计规格说明，以适应将来的需求和扩展。
 
-&emsp;&emsp;—旦建成了数据库原型，系统设计人员能够和系统用户密切合作开发输入、输出和对话框规格说明。必须指定内部控件来确保输出不会丢失、误传、滥用或不完整。
+(3)一旦建成了数据库原型，系统设计入员能够和系统用户密切合作开发输入、输出 和对话框规格说明。必须指定内部控件来确保输出不会丢失、误传、滥用或不完整。
 
-&emsp;&emsp;第四项设计任务包括把之前所有设计任务的规格说明打包为一套规格说明，将在系统开发方法的后续阶段中指导计算机程序员的活动。
+(4)第四项设计任务包括把之前所有设计任务的规格说明打包为一套规格说明，将在 系统开发方法的后续阶段中指导计算机程序员的活动。
+最后，我们应该重新评估项目的可行性并相应地更新项目计划。主要交付成果将包括构 建阶段应该遵循的一个详细计划。
 
-&emsp;&emsp;最后，我们应该重新评估项目可行性并相应地更新项目计划。主要交付成果将包括构建阶段应该遵循的一个详细计划。
+&emsp;&emsp;Specifications(规格)
 
-- 重点词汇
-
-&emsp;&emsp;application architecture. 应用架构
-
-&emsp;&emsp;database design specifications. 数据库设计规范
-
-&emsp;&emsp;internal control. 内部控制
-
-&emsp;&emsp;computer programmer. 计算机程序员
-
-&emsp;&emsp;reevaluate project feasibility. 重新评估项目可行性
-
-&emsp;&emsp;Information system. 信息系统
-
-&emsp;&emsp;requirements analysis. 需求分析
-
-&emsp;&emsp;systems development methodology. 系统开发方法
-
-&emsp;&emsp;project feasibility. 项目可行性
-
-&emsp;&emsp;specify. 指定、确定
-
-&emsp;&emsp;specification. 规格
-
-&emsp;&emsp;involve. 涉及、包括
+&emsp;&emsp;internal(内部的){{< /expand >}}
 
 ### 1.4 2012年
 
@@ -177,33 +121,12 @@ Finally, we should( 5 ) and update the project plan accordingly. The key deliver
 
 (5)&emsp;A.storing all data on a single server&emsp;B.storing specific tables on different servers&emsp;C.storing subsets of specific tables on different servers&emsp;D.duplicating specific tables or subsets on different servers
 
-- 翻译
+{{< expand "学霸肯定对了">}}A、B、C、B、D
 
-&emsp;&emsp;应用架构说明了实现一个或多个信息系统所使用的技术，它作为详细设计、构造和实现的一个大纲。给定了包括逻辑数据流图和实体联系图在内的模型和详细资料，我们可以分配数据和过程以创建应用架构的一个概要设计。概要设计通常会受到架构标准、项目目标和所使用技术的可行性的制约。需要绘制的第一个物理数据流图是网络架构数据流图。接下来是分配数据存储到不同的处理器。数据分区和复制是大多数关系型数据库支持的两种分布式数据形式。有许多分配方法用于数据分布。在不同服务器上存储特定表的情况下，我们应该将每个表记为物理数据流图中的一个数据存储，并将每个表连接到相应的服务器。
+&emsp;&emsp;应用架构说明了实现一个或多个信息系统所使用的技术，它作为详细设计、构造和实现
+的一个大纲。给定了包括逻辑数据流图和实体联系图在内的模型和详细资料，我们可以分配 数据和过程以创建应用架构的一个概要设计。概要设计通常会受到架构标准、项目目标和所 使用技术的可行性的制约。需要绘制的第一个物理数据流图是网络架构数据流图。接下来是 分配数据存储到不同的处理器。数据分区和复制是大多数关系型数据库支持的两种分布式数 据形式。有许多分配方法用于数据分布。在不同服务器上存储特定表的情况下，我们应该将 每个表记为物理数据流图中的一个数据存储，并将其连接到相应的服务器
+{{< /expand >}}
 
-- 重点词汇
-
-&emsp;&emsp;logical DFDs and ERD. 逻辑数据流图和实体联系图
-
-&emsp;&emsp;the feasibility of techniques. 技术可行性
-
-&emsp;&emsp;network architecture DFD. 网络架构数据流图
-
-&emsp;&emsp;Data partitioning and replication. 数据分配和复制
-
-&emsp;&emsp;storing specific tables on different servers. 在不同服务器上存储特定表
-
-&emsp;&emsp;application architecture. 应用架构
-
-&emsp;&emsp;detailed design. 详细设计
-
-&emsp;&emsp;general design. 概要设计
-
-&emsp;&emsp;feasibility of techniques. 技术可行性
-
-&emsp;&emsp;data stores. 数据存储
-
-&emsp;&emsp;RDBMS. 关系数据库管理系统，Relational Database Management System
 
 ### 1.5 2013年
 
@@ -227,27 +150,22 @@ Finally, we should( 5 ) and update the project plan accordingly. The key deliver
 
 (5)&emsp;A.Allocation structures&emsp;B.Class structures&emsp;C.Concurrency structures&emsp;D.Uses structures
 
-- 翻译
+{{< expand "学霸肯定对了">}}C、C、B、D、A
 
-&emsp;&emsp;系统架构是一个系统的一种表示，包含了功能到软硬件构件的映射、软件架构到硬件架构的映射以及对于这些组件人机交互的关注。也就是说，系统架构关注于整个系统， 包括硬件、软件和使用者。软件架构结构根据其所展示元素的广义性质，可以被分为三个主要类别。
+&emsp;&emsp;系统架构是一个系统的一种表示，包含了功能到软硬件构件的映射、软件架构到硬件架构的映射以及对于这些组件人机交互的关注。也就是说，系统架构关注于整个系统，包括硬 件、软件和使用者。软件架构结构根据其所展示元素的广义性质，可以被分为三个主要类别。
 
-&emsp;&emsp;1)模块结构将决策体现为一组需要被构建或获取的代码或数据单元。
+&emsp;&emsp;1)模块结构将决策体现为一组需要被构建或采购的代码或数据单元。
 
-&emsp;&emsp;2)构件-连接器结构将决策体现为系统如何被结构化为一组具有运行时行为和交互的元素。
+&emsp;&emsp;2)构件连接器结构将决策体现为系统如何被结构化为一组具有运行时行为和交互的元 素。
 
-&emsp;&emsp;3)配置结构将决策体现为系统如何在其环境中关联到非软件结构，如CPU、文件系统、 网络、开发团队等。
+&emsp;&emsp;3)分配结构将决策体现为系统如何在其环境中关联到非软件结构，如 CPU、文件系 统、网络、开发团队等。
 
-- 重点词汇
+&emsp;&emsp;Constraint:约束
 
-&emsp;&emsp;functionality. 功能 (计算机或电子系统的)
+&emsp;&emsp;Structure:架构
 
-&emsp;&emsp;software architecture. 软件架构
-
-&emsp;&emsp;module structures. 模块结构
-
-&emsp;&emsp;component-and-connector structures. 组件-连接器结构
-
-&emsp;&emsp;Allocation structures. 配置结构
+&emsp;&emsp;Concurrency:并发。
+{{< /expand >}}
 
 ### 1.6 2014年
 
@@ -265,33 +183,10 @@ Finally, we should( 5 ) and update the project plan accordingly. The key deliver
 
 (5)&emsp;A.pattern definition and recognition&emsp;B.architecture design and implementation&emsp;C.system architecture modeling&emsp;D.dynamic modeling and reconstruction
 
-- 翻译
+{{< expand "学霸肯定对了">}}B、C、D、C、A
 
-&emsp;&emsp;软件架构重构是一个解释性、交互式和反复迭代的过程，包括了多项活动。信息提取通过分析系统现有设计和实现构件来构造它的模型。其结果用于在后续活动中构造系统的视图。数据库构建活动把模型中包含的元素和关系转换为数据库中的标准存储格式。视图融合活动包括定义和操作数据库中存储的信息，理顺、加强并建立起元素之间的连接。重构由两个主要活动组成：可视化和交互记及模式定义和识别。前者提供了一种让用户操作架构元素的机制，后者则提供了用于架构重构的设施。
-
-- 重点词汇
-
-&emsp;&emsp;Information extraction. 信息提取
-
-&emsp;&emsp;elements and relations. 元素和关系
-
-&emsp;&emsp;view fusion. 视图融合
-
-&emsp;&emsp;visualization and interaction. 可视化与交互
-
-&emsp;&emsp;pattern definition and recognition. 模式定义与识别
-
-&emsp;&emsp;interpretive, interactive, and iterative process. 解释性的、动态的、迭代的的过程
-
-&emsp;&emsp;involve. 涉及、包括
-
-&emsp;&emsp;artifact. 构件
-
-&emsp;&emsp;convert. 转换
-
-&emsp;&emsp;reconcile. 协调、理顺
-
-&emsp;&emsp;augment. 加强
+&emsp;&emsp;软件架构重用是一个解释性、交互式和反复迭代的过程，包括了多项活动。信息提取通
+过分析系统现有设计和实现工件来构造它的模型。其结果用于在后续活动中构造系统的视 图。数据库构建活动把模型中包含的元素和关系转换为数据库中的标准存储格式。视图融合 活动包括定义和操作数据库中存储的信息，理顺、加强并建立起元素之间的连接。重构由两 个主要活动组成;可视化和交互及模式定义和识别。前者提供了一种让用户操作架构元素的 机制，后者则提供了用于架构重构的设施。{{< /expand >}}
 
 ### 1.7 2015年
 
@@ -308,23 +203,9 @@ Finally, we should( 5 ) and update the project plan accordingly. The key deliver
 
 (5)&emsp;A.computers,cables and network&emsp;B.clients,servers,and network&emsp;C.CPUs,memories and I/O devices&emsp;D.CPUs,hard disks and I/O devices
 
-- 翻译
+{{< expand "学霸肯定对了">}}A、C、D、C、B
 
-&emsp;&emsp;架构设计的目标是确定应用软件的哪些部分将被分配到何种硬件。识别出正在开发系统的主要软件构件并分配到系统将要运行的硬件构件。所有软件系统可分为四项基本功能。第一项是数据存储。大多数信息系统需要数据进行存储并检索，无论是一个小文件，比如一个字处理器产生的一个备忘录，还是一个大型数据库，比如存储一个企业会计记录的数据库。第二项功能是数据访问逻辑，处理过程需要访问数据，这通常是指用SQL进行数据库查询。第三项功能是应用程序逻辑，这些逻辑通过数据流图，用例和功能需求记录下来。第四项功能是表示逻辑，给用户显示信息并接收用户命令。一个系统的三类主要硬件构件是客户机、服务器和网络。
-
-- 重点词汇
-
-&emsp;&emsp;architecture design. 架构设计
-
-&emsp;&emsp;data storage. 数据存储
-
-&emsp;&emsp;data access logic. 数据访问逻辑
-
-&emsp;&emsp;application logic. 应用逻辑
-
-&emsp;&emsp;clients,servers,and network. 客户机、服务器和网络
-
-&emsp;&emsp;allocate. 分配
+&emsp;&emsp;架构设计的目标是确定应用软件的哪些部分将分配到何种硬件。识别出正在开发系统的主要软件构件并分配到系统将要运行的硬件构件。所有软件系统可分为四项基本功能。第一 项是数据存储。大多数信息系统需要数据进行存储并检索，不论是一个小文件，比如一个字 处理器产生的一个备忘录，还是一个大型数据库，比如存储一个企业会计记录的数据库。第 二项功能是数据访问逻辑，处理过程需要访问数据，这通常是指用 SQL 进行数据库查询。 第三项功能是应用程序逻辑，这些逻辑通过数据流图，用例和功能需求来记录。第四项功能 是表示逻辑，给用户显示信息并接收用户命令。一个系统的三类主要硬件构件是客户机、服务器和网络。{{< /expand >}}
 
 ### 1.8 2016年
 
@@ -342,9 +223,9 @@ The objective of ( 1 ) is to determine what parts of the application software wi
 
 (5)&emsp;A.computers,cables and network&emsp;B.clients,servers,and network&emsp;C.CPUs,memories and I/O devices&emsp;D.CPUs,hard disks and I/O devices
 
-- 翻译
+{{< expand "学霸肯定对了">}}A、C、D、C、B
 
-- 重点词汇
+&emsp;&emsp;架构设计的目标是确定应用软件的哪些部分将分配到何种硬件。识别出正在开发系统的主要软件构件并分配到系统将要运行的硬件构件。所有软件系统可分为四项基本功 能。第一项是数据存储。大多数信息系统需要数据进行存储并检索，不论是一个小文件，比 如一个字处理器产生的一个备忘录，还是一个大型数据库，比如存储一个企业会计记录的数 据库。第二项功能是数据访问逻辑，处理过程需要访问数据，这通常是指用 SQL 进行数据 库查询。第三项功能是应用程序逻辑，这些逻辑通过数据流图，用例和功能需求来记录。第 四项功能是表示逻辑，给用户显示信息并接收用户命令。一个系统的三类主要硬件构件是客 户机、服务器和网络。{{< /expand >}}
 
 ### 1.9 2017年
 
@@ -362,31 +243,49 @@ The objective of ( 1 ) is to determine what parts of the application software wi
 
 (5)&emsp;A. Safety requirements&emsp;B. Security requirements&emsp;C. Data management requirements&emsp;D. System requirements
 
-- 翻译
+{{< expand "学霸肯定对了">}}B、D、A、C、B
 
-&emsp;&emsp;架构设计指定了将要使用的软件和硬件的总体架构和布局。 架构设计是一个非常复杂的过程，往往留给经验丰富的架构设计师和顾问。
+&emsp;&emsp;架构设计指定了将要使用的软件和硬件的总体架构和布局。架构设计是一个非常复杂的过程，往往留给经验丰富的架构设计师和顾问。第一步是将(71)细化为更详细的要求，然 后用于帮助选择要使用的体系结构以及要放置在每个设备上的软件组件。在(72)中，还必须决定是使用两层，三层还是 n 层架构。 然后使用需求和体系结构 设计来开发硬件和软件规范。有四种主要的非功能需求类型可能在设计架构时非常重要。 (73)指定系统必须执行的操作环境以及这些操作环境如何随时间变化。(74)侧重于非功 能性需求问题，如响应时间，容量和可靠性。(75)是否有能力保护信息系统免受故意行为 造成的破坏和数据丢失。文化和政治要求是特定于系统将被使用的国家。
 
-&emsp;&emsp;第一步是将非功能需求细化为更详细的需求，然后用于帮助选择要使用的体系结构以及要放置在每个设备上的软件组件。在客户端-服务器架构中，还必须决定是使用两层，三层还是n层架构。
+&emsp;&emsp;functional requirements(功能需求)
 
-&emsp;&emsp;然后使用需求和体系结构设计来开发硬件和软件规范。 有四种主要的非功能需求类型可能在设计架构时非常重要。操作需求指定系统必须执行的操作环境以及这些操作环境如何随时间变化。 性能需求注重非功能性需求是特定于系统将被使用的国家。
+&emsp;&emsp;nonfunctional requirements (非功能需求)
 
-- 重点词汇
+&emsp;&emsp;system constraint (系统约束)
 
-&emsp;&emsp;nonfunctional requirements. 非功能需求
+&emsp;&emsp;system operational environment (系统操作环境)
 
-&emsp;&emsp;client-server architecture. 客户端-服务器架构
+&emsp;&emsp;client-based architecture (基于客户端的架构)
 
-&emsp;&emsp;operational requirements. 操作需求
+&emsp;&emsp;server-based architecture(基于服务器的架构)
 
-&emsp;&emsp;performance requirements. 性能需求
+&emsp;&emsp;network architecture (网络架构)
 
-&emsp;&emsp;security requirements. 安全需求
+&emsp;&emsp;client-server architecture (客户端-服务器架构)
 
-&emsp;&emsp;specify. 指定
+&emsp;&emsp;operational requirements (操作要求)
 
-&emsp;&emsp;specification. 规范
+&emsp;&emsp;speed requirements (速度要求)
 
-&emsp;&emsp;specific. 特定的
+&emsp;&emsp;Access control requirements (访问控制要求)
+
+&emsp;&emsp;customization requirements (用户要求)
+
+&emsp;&emsp;environment requirements (环境要求)
+
+&emsp;&emsp;Maintainability requirements (可维护性要求)
+
+&emsp;&emsp;performance requirements (性能要求)
+
+&emsp;&emsp;virus control requirements(病毒控制要求)
+
+&emsp;&emsp;safety requirements (安全要求)
+
+&emsp;&emsp;security requirements(安全要求)
+
+&emsp;&emsp;Data management requirements (数据管理要求)
+
+&emsp;&emsp;system requirements(系统要求){{< /expand >}}
 
 
 ### 1.10 2018年
@@ -405,13 +304,7 @@ The objective of ( 1 ) is to determine what parts of the application software wi
 
 (75)&emsp;A.identifying relationships&emsp;B. normalization&emsp;C.referential integrity&emsp;D.store procedure
 
-- 翻译
-
-&emsp;&emsp;设计数据存储架构是系统设计中的一项重要活动。主要有两种类型的数据存储格式：文件和数据库。文件是经过优化的可以执行特定事务的电子数据。有几种类型的文件，它们支持应用程序的方式也不同。主文件存储对业务，尤其是应用程序的重要核心信息，例如订单信息或客户邮件信息。审核文件包含静态值，例如有效代码列表或城市名称。通常，该列表用于验证。数据库是以某种方式相关联的信息分组的集合。当今市场上存在许多不同类型的数据库。遗留数据库被赋予那些基于旧的，或者过时技术的数据库，这些技术很少用于开发新的应用。分层数据库是通过指针相互关联的记录的集合。在关系数据库中，引用完整性可用于确保通过主键和外键将表链接在一起的值有效且正确同步。
-
-- 重点词汇
-
-&emsp;&emsp;specifically. 具体地
+{{< expand "学霸肯定对了">}}A C A A C{{< /expand >}}
 
 ### 1.11 2019年
 
@@ -429,15 +322,16 @@ The objective of ( 1 ) is to determine what parts of the application software wi
 
 (5)&emsp;A. standard notation form&emsp;B. first normal form&emsp;C. second normal form&emsp;D. third normal form
 
-- 翻译
+{{< expand "学霸肯定对了">}}B、C、A、A、D
 
-- 重点词汇
+&emsp;&emsp;在系统分析阶段，需要确定数据如何组织、存储和管理。数据结构是用于组织、存储和管理数据的一个框架。每个文件或表中包含了关于人物、地点、事物和事件的数据。文件处理场景中存在的潜在问题之一是数据冗余，意味着两个或多个信息系统中相同的数据存储在
+多个不同位置。在关系数据库管理系统 (DBMS) 中，相互链接的表格形成了一个统一的数据结构，可以大大提升数据质量和访问。实体联系图是一个模型，显示了系统实体之间的逻辑关系和交互。它提供了一个系统的全局视图和用于创建物理数据结构的蓝图。规范化是通过为数据库中的每个表分配特定的字段或属性来创建表设计的过程。表设计是在特定表或文件中确定字段并标识主关键字。三种范式构成了一个序列，其中第三范式代表了最好的设计，大部分与业务相关的数据库必须设计成这种形式。{{< /expand >}}
 
 ### 1.12 2020年
 
 - 原文
 
-&emsp;The purpose of systems design is to specify a(n) ( 1 ), which defines the technologies to be usedto build the proposed information systems. This task is accomplished by analyzing the datamodels and process models that were initially created during ( 2 ) . The ( 3 ) is used to establishphysical processes and data stores across a network. To complete this activity, the analyst mayinvolve a number of system designers and ( 4 ) , which may be involved in this activity to helpaddress business data, process, and location issues. The key inputs to this task are the facts,recommendations, and opinions that are solicited from various sources and the approved ( 5 ) fromthe decision analysis phase.
+&emsp;&emsp;The purpose of systems design is to specify a(n) ( 1 ), which defines the technologies to be usedto build the proposed information systems. This task is accomplished by analyzing the datamodels and process models that were initially created during ( 2 ) . The ( 3 ) is used to establishphysical processes and data stores across a network. To complete this activity, the analyst mayinvolve a number of system designers and ( 4 ) , which may be involved in this activity to helpaddress business data, process, and location issues. The key inputs to this task are the facts,recommendations, and opinions that are solicited from various sources and the approved ( 5 ) fromthe decision analysis phase.
 
 (1)&emsp;A.physical model&emsp;B.prototype system&emsp;C.database schema&emsp;D.application architecture
 
@@ -449,9 +343,19 @@ The objective of ( 1 ) is to determine what parts of the application software wi
 
 (5)&emsp;A.system architecture&emsp;B.system proposal&emsp;C.technical model&emsp;D.business procedure
 
-- 翻译
+{{< expand "学霸肯定对了">}}D.A.B.A.B
 
-- 重点词汇
+&emsp;&emsp;系统设计的目的是指定一种 ()，它定义了用于构建拟议信息系统的技术。此任务通过分析最初在 ()期间创建的数据模型和流程模型来完成。() 用于跨网络建立物理过程和数据存储。为了完成这项活动，分析师可能会让许多系统设计师和 () 参与这项活动，以帮助解决业务数据、流程和位置问题。这项任务的关键输入是从各种来源征求的事实、建议和意见，以及决策分析阶段获得的批准 ()。
+
+&emsp;&emsp;第1题:A、物理模型 B、原型系统 C、数据库模式 D、应用体系架构
+
+&emsp;&emsp;第2题:A、需求分析 B、问题分析 C、因果分析 D、决策分析
+
+&emsp;&emsp;第3题:A、实体联系图 B、物理数据流图 C、数据流图 D、物理数据库模型
+
+&emsp;&emsp;第4题:A、系统用户 B、系统分析师 C、系统所有者 D、项目经理
+
+&emsp;&emsp;第5题:A、 系统架构 B、系统建议书 C、技术模型 D、 业务流程{{< /expand >}}
 
 ### 1.13 2021年
 
@@ -469,9 +373,9 @@ The objective of ( 1 ) is to determine what parts of the application software wi
 
 (5)&emsp;A. Database server&emsp;B.Message server&emsp;C.Web server&emsp;D.Application server
 
-- 翻译
+{{< expand "学霸肯定对了">}}A、D、C、B、C
 
-- 重点词汇
+&emsp;&emsp;现在主流的分布式计算是客户/服务器计算模式。客户/服务器系统是一种解决方案，其中表示层、表示逻辑层、应用逻辑、数据操作、数据层分布在客户的PC 端与一个或多个服务器端之间。瘦客户端指的是个人电脑在处理速度、内存方面无须很强大，因为它仅仅是展示接口给用户。胖客户端是指个人电脑、笔记本、工作站在处理速度、内存、存储容量方面都很强大的一类电脑。数据库服务器控制一个或多个共享数据库，同时也执行所有数据库命令以及服务于信息系统。web 服务器控制互联网、信息平台，与客户端通信，返回给客户端文件与数据。{{< /expand >}}
 
 ### 1.14 2022年
 
@@ -489,7 +393,4 @@ The objective of ( 1 ) is to determine what parts of the application software wi
 
 (5)&emsp;A、analyze&emsp;B、use&emsp;C、design&emsp;D、expand
 
-- 翻译
-
-- 重点词汇
-
+{{< expand "学霸肯定对了">}}D C{{< /expand >}}
