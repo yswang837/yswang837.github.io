@@ -12,6 +12,8 @@ title: 3.6 系统配置与性能评价
 
 ## 1 性能指标
 
+---
+
 [![pCMmUyQ.md.png](https://s1.ax1x.com/2023/06/16/pCMmUyQ.md.png)](https://imgse.com/i/pCMmUyQ)
 
 **字长**：cpu一次读取数据的长度，它也影响着最大的内存容量(最大地址)。2^32 = 4G，32位操作系统最大支持4GB内存。
@@ -40,6 +42,8 @@ title: 3.6 系统配置与性能评价
 
 ## 2 阿姆达尔解决方案
 
+---
+
 >例题
 [![p9zbtnx.md.png](https://s1.ax1x.com/2023/06/02/p9zbtnx.md.png)](https://imgse.com/i/p9zbtnx)
 {{< expand "学霸肯定对了">}}答案：B\
@@ -49,6 +53,8 @@ title: 3.6 系统配置与性能评价
 求极限就行，1/0.1n{{< /expand >}}
 
 ## 3 性能评价方法
+
+---
 
 [![p9zbh4g.md.png](https://s1.ax1x.com/2023/06/02/p9zbh4g.md.png)](https://imgse.com/i/p9zbh4g)
 [![p9zbI3j.md.png](https://s1.ax1x.com/2023/06/02/p9zbI3j.md.png)](https://imgse.com/i/p9zbI3j)
@@ -62,6 +68,8 @@ title: 3.6 系统配置与性能评价
 {{< expand "学霸肯定对了">}}答案：B{{< /expand >}}
 
 ## 课后习题
+
+---
 
 todo 补充课后习题
 

@@ -14,6 +14,8 @@ title: 3.8 企业信息化战略与实施
 
 ## 1 信息与信息化概念
 
+---
+
 ### 1.1 信息
 
 香农(信息论)：信息就是不确定性的减少。
@@ -38,13 +40,16 @@ title: 3.8 企业信息化战略与实施
 
 ## 2 信息系统生命周期
 
+---
+
 &emsp;&emsp;单个系统的生命周期比较常考
 
 [![pC1T5DJ.md.png](https://s1.ax1x.com/2023/06/19/pC1T5DJ.md.png)](https://imgse.com/i/pC1T5DJ)
 [![pC1b8HJ.md.png](https://s1.ax1x.com/2023/06/19/pC1b8HJ.md.png)](https://imgse.com/i/pC1b8HJ)
 
-
 ## 3 信息系统战略规划
+
+---
 
 - 方法论
 
@@ -76,6 +81,8 @@ title: 3.8 企业信息化战略与实施
 
 ## 4 政府信息化与电子政务
 
+---
+
 [![pC1bdgK.md.png](https://s1.ax1x.com/2023/06/19/pC1bdgK.md.png)](https://imgse.com/i/pC1bdgK)
 
 &emsp;&emsp;主动与被动
@@ -87,6 +94,8 @@ title: 3.8 企业信息化战略与实施
 {{< expand "学霸肯定对了">}}答案：B A D C{{< /expand >}}
 
 ## 5 企业信息化与电子商务
+
+---
 
 ### 5.1 ERP
 
@@ -140,9 +149,13 @@ title: 3.8 企业信息化战略与实施
 
 ## 6 企业门户
 
+---
+
 [![pC3X2EF.md.png](https://s1.ax1x.com/2023/06/20/pC3X2EF.md.png)](https://imgse.com/i/pC3X2EF)
 
 ## 7 企业应用集成
+
+---
 
 &emsp;&emsp;集成支持的方式有3种。
 
@@ -171,3 +184,9 @@ title: 3.8 企业信息化战略与实施
 {{< expand "学霸肯定对了">}}答案：C D{{< /expand >}}
 [![pC3jXZT.md.png](https://s1.ax1x.com/2023/06/20/pC3jXZT.md.png)](https://imgse.com/i/pC3jXZT)
 {{< expand "学霸肯定对了">}}答案：C{{< /expand >}}
+
+## 课后习题
+
+---
+
+todo 习题

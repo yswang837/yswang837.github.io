@@ -62,6 +62,8 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 
 ## 2 网络规划与设计
 
+---
+
 &emsp;&emsp;网络规划与设计包含5个阶段，它们分别是：需求分析、通信规范分析、逻辑网络设计、物理网络设计、实施阶段。这里重点看逻辑网络设计和物理网络设计，需求分析和通信规范分析的产物需要知道。
 
 [![pCmz8u4.md.png](https://s1.ax1x.com/2023/06/14/pCmz8u4.md.png)](https://imgse.com/i/pCmz8u4)
@@ -106,6 +108,8 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 
 ## 3 网络存储
 
+---
+
 - 各式网络存储架构
 
 [![pCneIfg.md.png](https://s1.ax1x.com/2023/06/14/pCneIfg.md.png)](https://imgse.com/i/pCneIfg)
@@ -124,6 +128,8 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 {{< expand "学霸肯定对了">}}B B{{< /expand >}}
 
 ## 4 IPV6
+
+---
 
 - IPV6的特点
 
@@ -144,10 +150,16 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 {{< expand "学霸肯定对了">}}C{{< /expand >}}
 
 ## 5 网络接入技术
+
+---
+
 [![pCKQVl8.md.png](https://s1.ax1x.com/2023/06/15/pCKQVl8.md.png)](https://imgse.com/i/pCKQVl8)
 [![pCKQ8pV.md.png](https://s1.ax1x.com/2023/06/15/pCKQ8pV.md.png)](https://imgse.com/i/pCKQ8pV)
 
 ## 6 综合布线
+
+---
+
 [![pCKQNm4.md.png](https://s1.ax1x.com/2023/06/15/pCKQNm4.md.png)](https://imgse.com/i/pCKQNm4)
 [![pCKQwkR.md.png](https://s1.ax1x.com/2023/06/15/pCKQwkR.md.png)](https://imgse.com/i/pCKQwkR)
 >例题
@@ -155,6 +167,8 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 {{< expand "学霸肯定对了">}}C{{< /expand >}}
 
 ## 7 网络技术扩展
+
+---
 
 ### 7.1 物联网
 
@@ -177,3 +191,9 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 >例题
 [![pCKldKS.md.png](https://s1.ax1x.com/2023/06/15/pCKldKS.md.png)](https://imgse.com/i/pCKldKS)
 {{< expand "学霸肯定对了">}}A{{< /expand >}}
+
+## 课后习题
+
+---
+
+todo 计算机网络习题

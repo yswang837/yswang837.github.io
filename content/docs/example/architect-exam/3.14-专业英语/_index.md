@@ -393,4 +393,10 @@ The objective of ( 1 ) is to determine what parts of the application software wi
 
 (5)&emsp;A、analyze&emsp;B、use&emsp;C、design&emsp;D、expand
 
-{{< expand "学霸肯定对了">}}D C{{< /expand >}}
+{{< expand "学霸肯定对了">}}{{< /expand >}}
+
+## 课后习题
+
+---
+
+todo 习题
