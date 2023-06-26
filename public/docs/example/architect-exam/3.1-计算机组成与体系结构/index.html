@@ -15,7 +15,8 @@
 指令译码器ID：对指令中的操作码字段进行分析解释。
 时序部件：提供时序控制信号。
 例题 学霸肯定对了 ↕ 答案：A
-计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器(PC)的内容送到地址总线上，PC-&gt;IR。 学霸肯定对了 ↕ 答案：B 2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。内存外存称为虚拟存储器、cache内存外存成为三级存储结构.如下图：
+计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器(PC)的内容送到地址总线上，PC-&gt;IR。
+学霸肯定对了 ↕ 答案：B 2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。内存外存称为虚拟存储器、cache内存外存成为三级存储结构.如下图：
 2.1 Cache # 高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于程序员来说是透明的。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。
 地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。
 Cache的功能 1.提高CPU数据输入输出的速率，突破冯·诺依曼瓶颈，即突破CPU与存储系统间数据传送带宽限制。
@@ -34,7 +35,7 @@ Cache的命中率 当CPU所访问的数据在Cache中时，命中，直接丛Cac
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.416616b5e3fa2ecec9a0b551a53d9c45756d9207a83d3830f3476e8b7872b3b1.js" integrity="sha256-QWYWteP6Ls7JoLVRpT2cRXVtkgeoPTgw80dui3hys7E=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.84a06d69bfc7901703790e0836019ad46cf569931376cdba253dcacbf769ffea.js" integrity="sha256-hKBtab/HkBcDeQ4INgGa1Gz1aZMTds26JT3Ky/dp/&#43;o=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1051,8 +1052,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：A<br>
-  计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器(PC)的内容送到地址总线上，PC-&gt;IR。
+      <p>答案：A</p>
+<p>  计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器(PC)的内容送到地址总线上，PC-&gt;IR。</p>
+
     </div>
   </label>
 </div>
@@ -1176,8 +1178,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：B C<br>
-总容量=BFFFFH+1-80000H=40000H，转换为十进制为：4 * 16^4=262144，因为按字节编址，所以总容量为262144字节，即262144/1024=256KB，16k * 4bit = 8k * 8bit(1字节=8bit)，所以用这种芯片存这些数据，所需的芯片数量为：256/8=32片
+      <p>答案：B C</p>
+<p>总容量=BFFFFH+1-80000H=40000H，转换为十进制为：4 * 16^4=262144，因为按字节编址，所以总容量为262144字节，即262144/1024=256KB，16k * 4bit = 8k * 8bit(1字节=8bit)，所以用这种芯片存这些数据，所需的芯片数量为：256/8=32片</p>
+
     </div>
   </label>
 </div>
@@ -1211,7 +1214,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/p9hsNSs"><img src="https://s1.ax1x.com/2023/05/19/p9hsNSs.md.png" alt="p9hsNSs.md.png" /></a><br>
+<a href="https://imgse.com/i/p9hsNSs"><img src="https://s1.ax1x.com/2023/05/19/p9hsNSs.md.png" alt="p9hsNSs.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1226,7 +1229,7 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 
-<a href="https://imgse.com/i/p9hsWOx"><img src="https://s1.ax1x.com/2023/05/19/p9hsWOx.md.png" alt="p9hsWOx.md.png" /></a><br>
+<a href="https://imgse.com/i/p9hsWOx"><img src="https://s1.ax1x.com/2023/05/19/p9hsWOx.md.png" alt="p9hsWOx.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1236,8 +1239,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：D<br>
-  读取一个块需要的时间：10 * 10ms(移动)+100ms(延迟)+2ms(传输)=202ms，读取100个块需要的时间：100ms * 202ms = 20200ms
+      <p>答案：D</p>
+<p>  读取一个块需要的时间：10 * 10ms(移动)+100ms(延迟)+2ms(传输)=202ms，读取100个块需要的时间：100ms * 202ms = 20200ms</p>
+
     </div>
   </label>
 </div>
@@ -1252,8 +1256,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：C B<br>
-  由题意可知每个扇区存放逻辑记录，处理单个记录的延时为：33/11+3=6ms，由于磁头处于r0的开始处，且是单缓冲区（同一时间只能一个任务读或者写缓冲区）顺序处理这些记录，所以6+10*(33+3)=366；若对存储信息进行优化，优化后为：r0r6r1r7r2r8r3r9r4r10r5，r0和r5收尾相接形成一个完整的磁道。此时只需要转2圈就可以把数据处理完。
+      <p>答案：C B</p>
+<p>  由题意可知每个扇区存放逻辑记录，处理单个记录的延时为：33/11+3=6ms，由于磁头处于r0的开始处，且是单缓冲区（同一时间只能一个任务读或者写缓冲区）顺序处理这些记录，所以6+10*(33+3)=366；若对存储信息进行优化，优化后为：r0r6r1r7r2r8r3r9r4r10r5，r0和r5收尾相接形成一个完整的磁道。此时只需要转2圈就可以把数据处理完。</p>
+
     </div>
   </label>
 </div>
@@ -1272,9 +1277,10 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：D C<br>
-也可用流水线的公式计算，详见流水线例题
-<a href="https://imgse.com/i/pCkBYVJ"><img src="https://s1.ax1x.com/2023/06/08/pCkBYVJ.md.png" alt="pCkBYVJ.md.png" /></a>
+      <p>答案：D C</p>
+<p>也可用流水线的公式计算，详见流水线例题
+<a href="https://imgse.com/i/pCkBYVJ"><img src="https://s1.ax1x.com/2023/06/08/pCkBYVJ.md.png" alt="pCkBYVJ.md.png" /></a></p>
+
     </div>
   </label>
 </div>
@@ -1302,7 +1308,7 @@ https://github.com/alex-shpak/hugo-book
 <p>  CPU只需完成必要的初始化等操作，数据传输的整个过程都中，都由DMA控制器来完成，在主存和外设之间建立直接的数据通路，效率很高。如硬盘</p>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/p9hyPpj"><img src="https://s1.ax1x.com/2023/05/19/p9hyPpj.md.png" alt="p9hyPpj.md.png" /></a><br>
+<a href="https://imgse.com/i/p9hyPpj"><img src="https://s1.ax1x.com/2023/05/19/p9hyPpj.md.png" alt="p9hyPpj.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1317,7 +1323,7 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 
-<a href="https://imgse.com/i/p9hyFcn"><img src="https://s1.ax1x.com/2023/05/19/p9hyFcn.md.png" alt="p9hyFcn.md.png" /></a><br>
+<a href="https://imgse.com/i/p9hyFcn"><img src="https://s1.ax1x.com/2023/05/19/p9hyFcn.md.png" alt="p9hyFcn.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1382,8 +1388,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：C<br>
-串行总线可以是单工，半双工，全双工，其波特率在使用中是可以改变的，可以是软件查询方式，也可以是中断方式，所以选C
+      <p>答案：C</p>
+<p>串行总线可以是单工，半双工，全双工，其波特率在使用中是可以改变的，可以是软件查询方式，也可以是中断方式，所以选C</p>
+
     </div>
   </label>
 </div>
@@ -1407,8 +1414,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：B<br>
-x86一般是复杂指令系统，arm系统一般是精简指令集
+      <p>答案：B</p>
+<p>x86一般是复杂指令系统，arm系统一般是精简指令集</p>
+
     </div>
   </label>
 </div>
@@ -1430,7 +1438,7 @@ x86一般是复杂指令系统，arm系统一般是精简指令集
 <p><a href="https://imgse.com/i/p9hcNSH"><img src="https://s1.ax1x.com/2023/05/19/p9hcNSH.md.png" alt="p9hcNSH.md.png" /></a></p>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/p9hca6A"><img src="https://s1.ax1x.com/2023/05/19/p9hca6A.md.png" alt="p9hca6A.md.png" /></a><br>
+<a href="https://imgse.com/i/p9hca6A"><img src="https://s1.ax1x.com/2023/05/19/p9hca6A.md.png" alt="p9hca6A.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1440,8 +1448,8 @@ x86一般是复杂指令系统，arm系统一般是精简指令集
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      <p>答案：D C B C<br>
-  解析：设每个盘块儿读入缓冲区的时间为t1、缓冲区送入用户区的时间为t2、用户区处理每个盘块儿的时间为t3，为了能够代入<strong>流水线执行时间</strong>的公式，需要将题目转成标准的流水线。</p>
+      <p>答案：D C B C</p>
+<p>  解析：设每个盘块儿读入缓冲区的时间为t1、缓冲区送入用户区的时间为t2、用户区处理每个盘块儿的时间为t3，为了能够代入<strong>流水线执行时间</strong>的公式，需要将题目转成标准的流水线。</p>
 <p>  对于单缓冲区而言，需要将3阶段流水线转换成2阶段流水线，即第一阶段为t1+t2，第二阶段为t3，所以：流水线执行时间=1条指令总执行时间+ (总指令条数-1)*流水线周期 = (t1+t2)+t3 + (10-1) * 20 = 201</p>
 <p>  对于双缓冲区而言，题目已经是标准流水线了，可以直接带入公式，所以：流水线执行时间=1条指令总执行时间+ (总指令条数-1)*流水线周期 = t1+t2+t3 + (10 - 1) * 15 = 156</p>
 <p>  流水线的吞吐率，由题目可知，已是标准流水线，可直接带入公式算吞吐率，设执行了N条指令，n/9t+(n-1) * 3t，即(n/(3n+6)) * (1/t)，当n趋于无穷大时，得到最大吞吐率为1/3t</p>
@@ -1472,7 +1480,7 @@ x86一般是复杂指令系统，arm系统一般是精简指令集
 <p><a href="https://imgse.com/i/p9hcq1J"><img src="https://s1.ax1x.com/2023/05/19/p9hcq1J.md.png" alt="p9hcq1J.md.png" /></a></p>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/p9hgu4S"><img src="https://s1.ax1x.com/2023/05/19/p9hgu4S.md.png" alt="p9hgu4S.md.png" /></a><br>
+<a href="https://imgse.com/i/p9hgu4S"><img src="https://s1.ax1x.com/2023/05/19/p9hgu4S.md.png" alt="p9hgu4S.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1482,8 +1490,9 @@ x86一般是复杂指令系统，arm系统一般是精简指令集
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：A<br>
-  解析：补零：原始信息串为1100，生成多项式为3阶，则补3个0，即被除数为：1100000，除数也是根据生成多项式来的，幂指数存在的为1，不存在的为0，即1011(题目已经给出了，未给出的时候要知道是这样算的)，异或相除将余数010(不足3位的在左边补0)添加到原始信息串1100后面得到1100010，即选A
+      <p>答案：A</p>
+<p>  解析：补零：原始信息串为1100，生成多项式为3阶，则补3个0，即被除数为：1100000，除数也是根据生成多项式来的，幂指数存在的为1，不存在的为0，即1011(题目已经给出了，未给出的时候要知道是这样算的)，异或相除将余数010(不足3位的在左边补0)添加到原始信息串1100后面得到1100010，即选A</p>
+
     </div>
   </label>
 </div>
@@ -1508,8 +1517,9 @@ x86一般是复杂指令系统，arm系统一般是精简指令集
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：D B<br>
-  解析：32 16 8 4 2 1 需要6位。读题目可知D5是第10位，用8+2校验，故选B
+      <p>答案：D B</p>
+<p>  解析：32 16 8 4 2 1 需要6位。读题目可知D5是第10位，用8+2校验，故选B</p>
+
     </div>
   </label>
 </div>

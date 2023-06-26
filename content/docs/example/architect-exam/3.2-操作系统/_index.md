@@ -131,7 +131,8 @@ title: 3.2 操作系统
 
 >例题
 [![p9hmJTe.md.png](https://s1.ax1x.com/2023/05/19/p9hmJTe.md.png)](https://imgse.com/i/p9hmJTe)
-{{< expand "学霸肯定对了">}}**A C** \
+{{< expand "学霸肯定对了">}}A C
+
 解析：参考进程三态图{{< /expand >}}
 [![pCE6WD0.md.png](https://s1.ax1x.com/2023/06/10/pCE6WD0.md.png)](https://imgse.com/i/pCE6WD0)
 {{< expand "学霸肯定对了">}}C C{{< /expand >}}
@@ -194,7 +195,8 @@ title: 3.2 操作系统
 
 >例题
 [![p9hmgYj.md.png](https://s1.ax1x.com/2023/05/19/p9hmgYj.md.png)](https://imgse.com/i/p9hmgYj)
-{{< expand "学霸肯定对了">}}答案：B A\
+{{< expand "学霸肯定对了">}}答案：B A
+
 解析：考察同步互斥，互斥信号量的初始值为1，同步信号量的初始值为{{< /expand >}}
 [![pCEcFKI.md.png](https://s1.ax1x.com/2023/06/10/pCEcFKI.md.png)](https://imgse.com/i/pCEcFKI)
 {{< expand "学霸肯定对了">}}答案：C A{{< /expand >}}
@@ -206,7 +208,8 @@ title: 3.2 操作系统
 [![p9hmImT.md.png](https://s1.ax1x.com/2023/05/19/p9hmImT.md.png)](https://imgse.com/i/p9hmImT)
 >例题
 [![pCCnkL9.md.png](https://s1.ax1x.com/2023/06/05/pCCnkL9.md.png)](https://imgse.com/i/pCCnkL9)
-{{< expand "学霸肯定对了">}}答案：B\
+{{< expand "学霸肯定对了">}}答案：B
+
 解析：当前可用资源R1为9-7=2，R2为8-7=1，R3为5-5=0，进程P1的仍需R1资源数为6-1=5，以此类推算出所有进程的所有仍需资源数，发现首先执行P2，P2执行完成后，会释放P2的资源，即当前的发现可用资源210+211=4，2，1，即可算出是答案B{{< /expand >}}
 
 ## 3 存储管理
@@ -245,13 +248,16 @@ title: 3.2 操作系统
 
 >例题
 [![p9hnenf.md.png](https://s1.ax1x.com/2023/05/19/p9hnenf.md.png)](https://imgse.com/i/p9hnenf)
-{{< expand "学霸肯定对了">}}答案：C D\
+{{< expand "学霸肯定对了">}}答案：C D
+
 页面大小为512字节，则需要用9个bit位表示；十进制的1111的二进制表示为：100 0101 0111，所以页号为二进制10，则十进制的2，查页表得知物理页4，所以选C，读题可知直接选D，因为都要共享8{{< /expand >}}
 [![pCCUBdK.md.png](https://s1.ax1x.com/2023/06/05/pCCUBdK.md.png)](https://imgse.com/i/pCCUBdK)
-{{< expand "学霸肯定对了">}}答案：A B\
+{{< expand "学霸肯定对了">}}答案：A B
+
 页面大小为4k，得用12个bit位表示；逻辑地址=页号+页内地址，5148H的二进制的低12位都用于表示页内地址，高4位用于表示页号，所以页号就是5(0101)；物理地址=物理块号+页内地址，查页表得知块号=3，所以其物理地址的十六进制为A选项；淘汰的是在内存中，首先访问位为0的页面，即2，若多个访问位为0，则淘汰修改位为0的页面，所以选B{{< /expand >}}
 [![p9hn33n.md.png](https://s1.ax1x.com/2023/05/19/p9hn33n.md.png)](https://imgse.com/i/p9hn33n)
-{{< expand "学霸肯定对了">}}答案：A C\
+{{< expand "学霸肯定对了">}}答案：A C
+
 由程序得知矩阵是按行访问，若按行存放，则缺页中断次数=10000/200=50次，若按列存放，则缺页中断次数=10000/2=5000次{{< /expand >}}
 
 ### 3.2 分段存储管理
@@ -293,7 +299,8 @@ title: 3.2 操作系统
 &emsp;&emsp;11号索引节点为二级索引节点，直接盘存放一级地址，一级地址再存放物理盘快地址，而后链接到存放数据的物理盘块，容量又扩大了一个数量级，为1024 * 1024 * 4KB数据。
 
 [![p9hKJTU.md.png](https://s1.ax1x.com/2023/05/19/p9hKJTU.md.png)](https://imgse.com/i/p9hKJTU)
-{{< expand "学霸肯定对了">}}答案：C D\
+{{< expand "学霸肯定对了">}}答案：C D
+
 地址大小为4Byte，磁盘索引块和磁盘数据块都是4KB大小，所以单个索引块存储了4KB/4B=256个地址，物理块一般来说在内存中是离散的，而逻辑块是连续的，所以物理块号50对应于0，67->1，68->2...89->4，58->5，136的逻辑号为x-5+1=256,得到x=260，即136->260，187->261，所以答案选C，看题知道第二空选D{{< /expand >}}
 
 ### 5.2 文件目录
@@ -312,7 +319,8 @@ title: 3.2 操作系统
 
 [![pCPdb01.md.png](https://s1.ax1x.com/2023/06/06/pCPdb01.md.png)](https://imgse.com/i/pCPdb01)
 [![p9hMw4g.md.png](https://s1.ax1x.com/2023/05/19/p9hMw4g.md.png)](https://imgse.com/i/p9hMw4g)
-{{< expand "学霸肯定对了">}}答案：C D\
+{{< expand "学霸肯定对了">}}答案：C D
+
 物理块号编址从0开始，所以总物理块数为16385+1=16386，16386/32=512余2，位示图编号从0开始，所以前511号编满了，512号编到第二个位置，选C，1000G*1024/4/32=8000，选D{{< /expand >}}
 
 ## 6. 嵌入式操作系统

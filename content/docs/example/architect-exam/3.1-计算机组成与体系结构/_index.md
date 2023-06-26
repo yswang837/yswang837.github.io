@@ -54,7 +54,8 @@ title: 3.1 计算机组成与体系结构
 
 >例题
 [![p9DnRPg.md.png](https://s1.ax1x.com/2023/05/10/p9DnRPg.md.png)](https://imgse.com/i/p9DnRPg)
-{{< expand "学霸肯定对了">}}答案：A\
+{{< expand "学霸肯定对了">}}答案：A
+
 &emsp;&emsp;计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器(PC)的内容送到地址总线上，PC->IR。{{< /expand >}}
 [![pCkN5KH.md.png](https://s1.ax1x.com/2023/06/08/pCkN5KH.md.png)](https://imgse.com/i/pCkN5KH)
 {{< expand "学霸肯定对了">}}答案：B{{< /expand >}}
@@ -114,7 +115,8 @@ title: 3.1 计算机组成与体系结构
 **单位换算**：1GB=1024MB，1MB=1024KB，1KB=1024Byte，1Byte=8bit。K=2^10，M=2^20，G=2^30
 >例题
 [![p9h0daQ.md.png](https://s1.ax1x.com/2023/05/19/p9h0daQ.md.png)](https://imgse.com/i/p9h0daQ)
-{{< expand "学霸肯定对了">}}答案：B C\
+{{< expand "学霸肯定对了">}}答案：B C
+
 总容量=BFFFFH+1-80000H=40000H，转换为十进制为：4 * 16^4=262144，因为按字节编址，所以总容量为262144字节，即262144/1024=256KB，16k * 4bit = 8k * 8bit(1字节=8bit)，所以用这种芯片存这些数据，所需的芯片数量为：256/8=32片
 {{< /expand >}}
 
@@ -137,21 +139,24 @@ title: 3.1 计算机组成与体系结构
   - 单向扫描调度算法CSCAN：与电梯算法类似，与SCAN不同的是，其只做单向移动，即只能从里向外或者从外向里。
 
 >例题
-[![p9hsNSs.md.png](https://s1.ax1x.com/2023/05/19/p9hsNSs.md.png)](https://imgse.com/i/p9hsNSs)\
+[![p9hsNSs.md.png](https://s1.ax1x.com/2023/05/19/p9hsNSs.md.png)](https://imgse.com/i/p9hsNSs)
 {{< expand "学霸肯定对了">}}答案：D{{< /expand >}}
-[![p9hsWOx.md.png](https://s1.ax1x.com/2023/05/19/p9hsWOx.md.png)](https://imgse.com/i/p9hsWOx)\
-{{< expand "学霸肯定对了">}}答案：D\
+[![p9hsWOx.md.png](https://s1.ax1x.com/2023/05/19/p9hsWOx.md.png)](https://imgse.com/i/p9hsWOx)
+{{< expand "学霸肯定对了">}}答案：D
+
 &emsp;&emsp;读取一个块需要的时间：10 * 10ms(移动)+100ms(延迟)+2ms(传输)=202ms，读取100个块需要的时间：100ms * 202ms = 20200ms
 {{< /expand >}}
 [![p9xx6hT.md.png](https://s1.ax1x.com/2023/06/01/p9xx6hT.md.png)](https://imgse.com/i/p9xx6hT)
-{{< expand "学霸肯定对了">}}答案：C B\
+{{< expand "学霸肯定对了">}}答案：C B
+
 &emsp;&emsp;由题意可知每个扇区存放逻辑记录，处理单个记录的延时为：33/11+3=6ms，由于磁头处于r0的开始处，且是单缓冲区（同一时间只能一个任务读或者写缓冲区）顺序处理这些记录，所以6+10*(33+3)=366；若对存储信息进行优化，优化后为：r0r6r1r7r2r8r3r9r4r10r5，r0和r5收尾相接形成一个完整的磁道。此时只需要转2圈就可以把数据处理完。
 {{< /expand >}}
 
 - 磁盘单缓冲区与双缓冲区的读取问题
 
 [![pCk0XuD.md.png](https://s1.ax1x.com/2023/06/08/pCk0XuD.md.png)](https://imgse.com/i/pCk0XuD)
-{{< expand "学霸肯定对了">}}答案：D C\
+{{< expand "学霸肯定对了">}}答案：D C
+
 也可用流水线的公式计算，详见流水线例题
 [![pCkBYVJ.md.png](https://s1.ax1x.com/2023/06/08/pCkBYVJ.md.png)](https://imgse.com/i/pCkBYVJ){{< /expand >}}
 
@@ -173,9 +178,9 @@ title: 3.1 计算机组成与体系结构
 
 &emsp;&emsp;CPU只需完成必要的初始化等操作，数据传输的整个过程都中，都由DMA控制器来完成，在主存和外设之间建立直接的数据通路，效率很高。如硬盘
 >例题
-[![p9hyPpj.md.png](https://s1.ax1x.com/2023/05/19/p9hyPpj.md.png)](https://imgse.com/i/p9hyPpj)\
+[![p9hyPpj.md.png](https://s1.ax1x.com/2023/05/19/p9hyPpj.md.png)](https://imgse.com/i/p9hyPpj)
 {{< expand "学霸肯定对了">}}答案：D C{{< /expand >}}
-[![p9hyFcn.md.png](https://s1.ax1x.com/2023/05/19/p9hyFcn.md.png)](https://imgse.com/i/p9hyFcn)\
+[![p9hyFcn.md.png](https://s1.ax1x.com/2023/05/19/p9hyFcn.md.png)](https://imgse.com/i/p9hyFcn)
 {{< expand "学霸肯定对了">}}答案：D{{< /expand >}}
 
 ## 4 总线
@@ -191,7 +196,8 @@ title: 3.1 计算机组成与体系结构
 [![p9hcSzj.md.png](https://s1.ax1x.com/2023/05/19/p9hcSzj.md.png)](https://imgse.com/i/p9hcSzj)
 {{< expand "学霸肯定对了">}}答案：C{{< /expand >}}
 [![pCAaPbj.md.png](https://s1.ax1x.com/2023/06/09/pCAaPbj.md.png)](https://imgse.com/i/pCAaPbj)
-{{< expand "学霸肯定对了">}}答案：C\
+{{< expand "学霸肯定对了">}}答案：C
+
 串行总线可以是单工，半双工，全双工，其波特率在使用中是可以改变的，可以是软件查询方式，也可以是中断方式，所以选C{{< /expand >}}
 
 ## 5 CISC与RISC
@@ -201,7 +207,8 @@ title: 3.1 计算机组成与体系结构
 [![p9hcPLq.md.png](https://s1.ax1x.com/2023/05/19/p9hcPLq.md.png)](https://imgse.com/i/p9hcPLq)
 >例题
 [![pCAae2T.md.png](https://s1.ax1x.com/2023/06/09/pCAae2T.md.png)](https://imgse.com/i/pCAae2T)
-{{< expand "学霸肯定对了">}}答案：B\
+{{< expand "学霸肯定对了">}}答案：B
+
 x86一般是复杂指令系统，arm系统一般是精简指令集{{< /expand >}}
 
 ## 6 流水线
@@ -222,8 +229,9 @@ x86一般是复杂指令系统，arm系统一般是精简指令集{{< /expand >}
 
 [![p9hcNSH.md.png](https://s1.ax1x.com/2023/05/19/p9hcNSH.md.png)](https://imgse.com/i/p9hcNSH)
 >例题
-[![p9hca6A.md.png](https://s1.ax1x.com/2023/05/19/p9hca6A.md.png)](https://imgse.com/i/p9hca6A)\
-{{< expand "学霸肯定对了">}}答案：D C B C\
+[![p9hca6A.md.png](https://s1.ax1x.com/2023/05/19/p9hca6A.md.png)](https://imgse.com/i/p9hca6A)
+{{< expand "学霸肯定对了">}}答案：D C B C
+
 &emsp;&emsp;解析：设每个盘块儿读入缓冲区的时间为t1、缓冲区送入用户区的时间为t2、用户区处理每个盘块儿的时间为t3，为了能够代入**流水线执行时间**的公式，需要将题目转成标准的流水线。
 
 &emsp;&emsp;对于单缓冲区而言，需要将3阶段流水线转换成2阶段流水线，即第一阶段为t1+t2，第二阶段为t3，所以：流水线执行时间=1条指令总执行时间+ (总指令条数-1)*流水线周期 = (t1+t2)+t3 + (10-1) * 20 = 201
@@ -253,8 +261,9 @@ x86一般是复杂指令系统，arm系统一般是精简指令集{{< /expand >}
 
 [![p9hcq1J.md.png](https://s1.ax1x.com/2023/05/19/p9hcq1J.md.png)](https://imgse.com/i/p9hcq1J)
 >例题
-[![p9hgu4S.md.png](https://s1.ax1x.com/2023/05/19/p9hgu4S.md.png)](https://imgse.com/i/p9hgu4S)\
-{{< expand "学霸肯定对了">}}答案：A\
+[![p9hgu4S.md.png](https://s1.ax1x.com/2023/05/19/p9hgu4S.md.png)](https://imgse.com/i/p9hgu4S)
+{{< expand "学霸肯定对了">}}答案：A
+
 &emsp;&emsp;解析：补零：原始信息串为1100，生成多项式为3阶，则补3个0，即被除数为：1100000，除数也是根据生成多项式来的，幂指数存在的为1，不存在的为0，即1011(题目已经给出了，未给出的时候要知道是这样算的)，异或相除将余数010(不足3位的在左边补0)添加到原始信息串1100后面得到1100010，即选A
 {{< /expand >}}
 
@@ -266,7 +275,8 @@ x86一般是复杂指令系统，arm系统一般是精简指令集{{< /expand >}
 [![p9hgGBq.md.png](https://s1.ax1x.com/2023/05/19/p9hgGBq.md.png)](https://imgse.com/i/p9hgGBq)
 >例题
 [![p9hgU4U.md.png](https://s1.ax1x.com/2023/05/19/p9hgU4U.md.png)](https://imgse.com/i/p9hgU4U)
-{{< expand "学霸肯定对了">}}答案：D B\
+{{< expand "学霸肯定对了">}}答案：D B
+
 &emsp;&emsp;解析：32 16 8 4 2 1 需要6位。读题目可知D5是第10位，用8+2校验，故选B
 {{< /expand >}}
 

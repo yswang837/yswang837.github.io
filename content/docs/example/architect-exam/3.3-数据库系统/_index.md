@@ -167,7 +167,8 @@ title: 3.3 数据库系统
 
 >例题
 [![pCVdmf1.md.png](https://s1.ax1x.com/2023/06/11/pCVdmf1.md.png)](https://imgse.com/i/pCVdmf1)
-{{< expand "学霸肯定对了">}}C\
+{{< expand "学霸肯定对了">}}C
+
 需求分析产物有：数据流图、数据字典、需求说明书，概念结构设计的产物有：ER图，逻辑结构设计的产物有：关系模式，还需要考虑ER图转关系模式的转换规则和规范化相关的一些东西，物理设计考虑的是具体的物理存储、物理分布等，故选C{{< /expand >}}
 [![pCVdKl6.md.png](https://s1.ax1x.com/2023/06/11/pCVdKl6.md.png)](https://imgse.com/i/pCVdKl6)
 {{< expand "学霸肯定对了">}}C{{< /expand >}}
@@ -382,10 +383,12 @@ title: 3.3 数据库系统
 
 >例题
 [![pCZ090O.md.png](https://s1.ax1x.com/2023/06/12/pCZ090O.md.png)](https://imgse.com/i/pCZ090O)
-{{< expand "学霸肯定对了">}}是 是\
+{{< expand "学霸肯定对了">}}是 是
+
 第一问解析：R1的函数依赖F1={A->B}，R2的函数依赖F2={B->C}，函数依赖F1并F2是等价于分解前的函数依赖F的，所以该分解保持了函数依赖。第二问解析：同第一问一样，只不过F中存在了冗余函数依赖A->C(通过传递律可知)，在判断的时候不需要考虑，所以该分解保持了函数依赖。{{< /expand >}}
 [![pCZ0Jcq.md.png](https://s1.ax1x.com/2023/06/12/pCZ0Jcq.md.png)](https://imgse.com/i/pCZ0Jcq)
-{{< expand "学霸肯定对了">}}不是 是\
+{{< expand "学霸肯定对了">}}不是 是
+
 第一问解析：R1的函数依赖F1={A->B}，R2的函数依赖F2={A->C}，函数依赖F1并F2是不等价于分解前的函数依赖F的(缺少B->C)，所以该分解没有保持函数依赖。第二问解析：R1的函数依赖F1={A->B}，R2的函数依赖F2={D->E}，函数依赖F1并F2是等价于分解前的函数依赖F的，所以该分解保持了函数依赖。{{< /expand >}}
 
 - 有损无损分解
@@ -398,7 +401,8 @@ title: 3.3 数据库系统
 
 >例题
 [![pCZBlqK.md.png](https://s1.ax1x.com/2023/06/12/pCZBlqK.md.png)](https://imgse.com/i/pCZBlqK)
-{{< expand "学霸肯定对了">}}无损分解\
+{{< expand "学霸肯定对了">}}无损分解
+
 解析：分解前为1NF，分解后满足BCNF。模式分解后保持了函数依赖。现在判断是否无损分解。
 
 用表格法比较清晰：
@@ -414,10 +418,12 @@ title: 3.3 数据库系统
 [![pCZ5ECt.md.png](https://s1.ax1x.com/2023/06/12/pCZ5ECt.md.png)](https://imgse.com/i/pCZ5ECt){{< /expand >}}
 
 [![pCZ5lUs.md.png](https://s1.ax1x.com/2023/06/12/pCZ5lUs.md.png)](https://imgse.com/i/pCZ5lUs)
-{{< expand "学霸肯定对了">}}D A\
+{{< expand "学霸肯定对了">}}D A
+
 解析参考上面例题的解析，思路完全一模一样。{{< /expand >}}
 [![pCZ5fVH.md.png](https://s1.ax1x.com/2023/06/12/pCZ5fVH.md.png)](https://imgse.com/i/pCZ5fVH)
-{{< expand "学霸肯定对了">}}A D\
+{{< expand "学霸肯定对了">}}A D
+
 解析参考上面例题的解析，思路完全一模一样。{{< /expand >}}
 
 ### 5.6 闭包
@@ -473,7 +479,8 @@ title: 3.3 数据库系统
 
 >例题
 [![pCe7S9s.md.png](https://s1.ax1x.com/2023/06/13/pCe7S9s.md.png)](https://imgse.com/i/pCe7S9s)
-{{< expand "学霸肯定对了">}}C\
+{{< expand "学霸肯定对了">}}C
+
 索引和视图是无法更新的、存储过程是可以被第三方开发人员调用的，而触发器不行{{< /expand >}}
 
 ## 8 数据库的备份与恢复技术

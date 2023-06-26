@@ -20,7 +20,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.416616b5e3fa2ecec9a0b551a53d9c45756d9207a83d3830f3476e8b7872b3b1.js" integrity="sha256-QWYWteP6Ls7JoLVRpT2cRXVtkgeoPTgw80dui3hys7E=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.84a06d69bfc7901703790e0836019ad46cf569931376cdba253dcacbf769ffea.js" integrity="sha256-hKBtab/HkBcDeQ4INgGa1Gz1aZMTds26JT3Ky/dp/&#43;o=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1152,8 +1152,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      <strong>A C</strong> <br>
-解析：参考进程三态图
+      <p>A C</p>
+<p>解析：参考进程三态图</p>
+
     </div>
   </label>
 </div>
@@ -1229,8 +1230,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：B A<br>
-解析：考察同步互斥，互斥信号量的初始值为1，同步信号量的初始值为
+      <p>答案：B A</p>
+<p>解析：考察同步互斥，互斥信号量的初始值为1，同步信号量的初始值为</p>
+
     </div>
   </label>
 </div>
@@ -1269,8 +1271,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：B<br>
-解析：当前可用资源R1为9-7=2，R2为8-7=1，R3为5-5=0，进程P1的仍需R1资源数为6-1=5，以此类推算出所有进程的所有仍需资源数，发现首先执行P2，P2执行完成后，会释放P2的资源，即当前的发现可用资源210+211=4，2，1，即可算出是答案B
+      <p>答案：B</p>
+<p>解析：当前可用资源R1为9-7=2，R2为8-7=1，R3为5-5=0，进程P1的仍需R1资源数为6-1=5，以此类推算出所有进程的所有仍需资源数，发现首先执行P2，P2执行完成后，会释放P2的资源，即当前的发现可用资源210+211=4，2，1，即可算出是答案B</p>
+
     </div>
   </label>
 </div>
@@ -1314,8 +1317,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：C D<br>
-页面大小为512字节，则需要用9个bit位表示；十进制的1111的二进制表示为：100 0101 0111，所以页号为二进制10，则十进制的2，查页表得知物理页4，所以选C，读题可知直接选D，因为都要共享8
+      <p>答案：C D</p>
+<p>页面大小为512字节，则需要用9个bit位表示；十进制的1111的二进制表示为：100 0101 0111，所以页号为二进制10，则十进制的2，查页表得知物理页4，所以选C，读题可知直接选D，因为都要共享8</p>
+
     </div>
   </label>
 </div>
@@ -1330,8 +1334,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：A B<br>
-页面大小为4k，得用12个bit位表示；逻辑地址=页号+页内地址，5148H的二进制的低12位都用于表示页内地址，高4位用于表示页号，所以页号就是5(0101)；物理地址=物理块号+页内地址，查页表得知块号=3，所以其物理地址的十六进制为A选项；淘汰的是在内存中，首先访问位为0的页面，即2，若多个访问位为0，则淘汰修改位为0的页面，所以选B
+      <p>答案：A B</p>
+<p>页面大小为4k，得用12个bit位表示；逻辑地址=页号+页内地址，5148H的二进制的低12位都用于表示页内地址，高4位用于表示页号，所以页号就是5(0101)；物理地址=物理块号+页内地址，查页表得知块号=3，所以其物理地址的十六进制为A选项；淘汰的是在内存中，首先访问位为0的页面，即2，若多个访问位为0，则淘汰修改位为0的页面，所以选B</p>
+
     </div>
   </label>
 </div>
@@ -1346,8 +1351,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：A C<br>
-由程序得知矩阵是按行访问，若按行存放，则缺页中断次数=10000/200=50次，若按列存放，则缺页中断次数=10000/2=5000次
+      <p>答案：A C</p>
+<p>由程序得知矩阵是按行访问，若按行存放，则缺页中断次数=10000/200=50次，若按列存放，则缺页中断次数=10000/2=5000次</p>
+
     </div>
   </label>
 </div>
@@ -1414,8 +1420,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：C D<br>
-地址大小为4Byte，磁盘索引块和磁盘数据块都是4KB大小，所以单个索引块存储了4KB/4B=256个地址，物理块一般来说在内存中是离散的，而逻辑块是连续的，所以物理块号50对应于0，67-&gt;1，68-&gt;2&hellip;89-&gt;4，58-&gt;5，136的逻辑号为x-5+1=256,得到x=260，即136-&gt;260，187-&gt;261，所以答案选C，看题知道第二空选D
+      <p>答案：C D</p>
+<p>地址大小为4Byte，磁盘索引块和磁盘数据块都是4KB大小，所以单个索引块存储了4KB/4B=256个地址，物理块一般来说在内存中是离散的，而逻辑块是连续的，所以物理块号50对应于0，67-&gt;1，68-&gt;2&hellip;89-&gt;4，58-&gt;5，136的逻辑号为x-5+1=256,得到x=260，即136-&gt;260，187-&gt;261，所以答案选C，看题知道第二空选D</p>
+
     </div>
   </label>
 </div>
@@ -1444,8 +1451,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      答案：C D<br>
-物理块号编址从0开始，所以总物理块数为16385+1=16386，16386/32=512余2，位示图编号从0开始，所以前511号编满了，512号编到第二个位置，选C，1000G*1024/4/32=8000，选D
+      <p>答案：C D</p>
+<p>物理块号编址从0开始，所以总物理块数为16385+1=16386，16386/32=512余2，位示图编号从0开始，所以前511号编满了，512号编到第二个位置，选C，1000G*1024/4/32=8000，选D</p>
+
     </div>
   </label>
 </div>

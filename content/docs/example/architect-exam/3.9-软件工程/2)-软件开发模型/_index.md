@@ -2,7 +2,7 @@
 
 &emsp;&emsp;一个开发方法下面可以有多个开发模型。
 
-## 2.1 瀑布模型
+## 1 瀑布模型
 
 ---
 
@@ -10,7 +10,7 @@
 
 [![p9TxwTA.md.png](https://s1.ax1x.com/2023/05/24/p9TxwTA.md.png)](https://imgse.com/i/p9TxwTA)
 
-## 2.2 迭代/演化模型
+## 2 迭代/演化模型
 
 ---
 
@@ -18,7 +18,7 @@
 
 [![p97uiGT.md.png](https://s1.ax1x.com/2023/05/24/p97uiGT.md.png)](https://imgse.com/i/p97uiGT)
 
-## 2.3 增量模型
+## 3 增量模型
 
 ---
 
@@ -26,7 +26,7 @@
 
 [![p97u9I0.png](https://s1.ax1x.com/2023/05/24/p97u9I0.png)](https://imgse.com/i/p97u9I0)
 
-## 2.4 螺旋模型
+## 4 螺旋模型
 
 ---
 
@@ -38,13 +38,13 @@
 [![pCNJCLD.md.png](https://s1.ax1x.com/2023/06/25/pCNJCLD.md.png)](https://imgse.com/i/pCNJCLD)
 {{< expand "学霸肯定对了">}}B{{< /expand >}}
 
-## 2.5 原型模型
+## 5 原型模型
 
 ---
 
 &emsp;&emsp;适合需求不明确的系统。若题目中指明“需求不明确”，选原型而不选螺旋模型。
 
-## 2.6 喷泉模型
+## 6 喷泉模型
 
 ---
 
@@ -52,7 +52,7 @@
 
 [![p97u2oq.png](https://s1.ax1x.com/2023/05/24/p97u2oq.png)](https://imgse.com/i/p97u2oq)
 
-## 2.7 V模型
+## 7 V模型
 
 ---
 
@@ -60,7 +60,7 @@
 
 [![p97uces.md.png](https://s1.ax1x.com/2023/05/24/p97uces.md.png)](https://imgse.com/i/p97uces)
 
-## 2.8 构建组装模型
+## 8 构建组装模型
 
 ---
 
@@ -70,7 +70,7 @@
 
 [![p97u5SU.md.png](https://s1.ax1x.com/2023/05/24/p97u5SU.md.png)](https://imgse.com/i/p97u5SU)
 
-## 2.9 快速应用开发模型RAD
+## 9 快速应用开发模型RAD
 
 ---
 
@@ -78,7 +78,7 @@
 
 [![p97KtcF.md.png](https://s1.ax1x.com/2023/05/24/p97KtcF.md.png)](https://imgse.com/i/p97KtcF)
 
-## 2.10 统一过程模型UP/RUP
+## 10 统一过程模型UP/RUP
 
 ---
 
@@ -96,7 +96,7 @@
 [![pCNJkod.md.png](https://s1.ax1x.com/2023/06/25/pCNJkod.md.png)](https://imgse.com/i/pCNJkod)
 {{< expand "学霸肯定对了">}}B A{{< /expand >}}
 
-## 2.11 敏捷开发模型
+## 11 敏捷开发模型
 
 ---
 

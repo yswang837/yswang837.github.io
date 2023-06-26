@@ -46,10 +46,12 @@ title: 3.6 系统配置与性能评价
 
 >例题
 [![p9zbtnx.md.png](https://s1.ax1x.com/2023/06/02/p9zbtnx.md.png)](https://imgse.com/i/p9zbtnx)
-{{< expand "学霸肯定对了">}}答案：B\
+{{< expand "学霸肯定对了">}}答案：B
+
 100/52{{< /expand >}}
 [![pCMmXmd.md.png](https://s1.ax1x.com/2023/06/16/pCMmXmd.md.png)](https://imgse.com/i/pCMmXmd)
-{{< expand "学霸肯定对了">}}答案：B\
+{{< expand "学霸肯定对了">}}答案：B
+
 求极限就行，1/0.1n{{< /expand >}}
 
 ## 3 性能评价方法

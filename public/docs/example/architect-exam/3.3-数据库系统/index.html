@@ -33,7 +33,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.416616b5e3fa2ecec9a0b551a53d9c45756d9207a83d3830f3476e8b7872b3b1.js" integrity="sha256-QWYWteP6Ls7JoLVRpT2cRXVtkgeoPTgw80dui3hys7E=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.84a06d69bfc7901703790e0836019ad46cf569931376cdba253dcacbf769ffea.js" integrity="sha256-hKBtab/HkBcDeQ4INgGa1Gz1aZMTds26JT3Ky/dp/&#43;o=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1259,8 +1259,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      C<br>
-需求分析产物有：数据流图、数据字典、需求说明书，概念结构设计的产物有：ER图，逻辑结构设计的产物有：关系模式，还需要考虑ER图转关系模式的转换规则和规范化相关的一些东西，物理设计考虑的是具体的物理存储、物理分布等，故选C
+      <p>C</p>
+<p>需求分析产物有：数据流图、数据字典、需求说明书，概念结构设计的产物有：ER图，逻辑结构设计的产物有：关系模式，还需要考虑ER图转关系模式的转换规则和规范化相关的一些东西，物理设计考虑的是具体的物理存储、物理分布等，故选C</p>
+
     </div>
   </label>
 </div>
@@ -1601,8 +1602,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      是 是<br>
-第一问解析：R1的函数依赖F1={A-&gt;B}，R2的函数依赖F2={B-&gt;C}，函数依赖F1并F2是等价于分解前的函数依赖F的，所以该分解保持了函数依赖。第二问解析：同第一问一样，只不过F中存在了冗余函数依赖A-&gt;C(通过传递律可知)，在判断的时候不需要考虑，所以该分解保持了函数依赖。
+      <p>是 是</p>
+<p>第一问解析：R1的函数依赖F1={A-&gt;B}，R2的函数依赖F2={B-&gt;C}，函数依赖F1并F2是等价于分解前的函数依赖F的，所以该分解保持了函数依赖。第二问解析：同第一问一样，只不过F中存在了冗余函数依赖A-&gt;C(通过传递律可知)，在判断的时候不需要考虑，所以该分解保持了函数依赖。</p>
+
     </div>
   </label>
 </div>
@@ -1617,8 +1619,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      不是 是<br>
-第一问解析：R1的函数依赖F1={A-&gt;B}，R2的函数依赖F2={A-&gt;C}，函数依赖F1并F2是不等价于分解前的函数依赖F的(缺少B-&gt;C)，所以该分解没有保持函数依赖。第二问解析：R1的函数依赖F1={A-&gt;B}，R2的函数依赖F2={D-&gt;E}，函数依赖F1并F2是等价于分解前的函数依赖F的，所以该分解保持了函数依赖。
+      <p>不是 是</p>
+<p>第一问解析：R1的函数依赖F1={A-&gt;B}，R2的函数依赖F2={A-&gt;C}，函数依赖F1并F2是不等价于分解前的函数依赖F的(缺少B-&gt;C)，所以该分解没有保持函数依赖。第二问解析：R1的函数依赖F1={A-&gt;B}，R2的函数依赖F2={D-&gt;E}，函数依赖F1并F2是等价于分解前的函数依赖F的，所以该分解保持了函数依赖。</p>
+
     </div>
   </label>
 </div>
@@ -1650,8 +1653,8 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      <p>无损分解<br>
-解析：分解前为1NF，分解后满足BCNF。模式分解后保持了函数依赖。现在判断是否无损分解。</p>
+      <p>无损分解</p>
+<p>解析：分解前为1NF，分解后满足BCNF。模式分解后保持了函数依赖。现在判断是否无损分解。</p>
 <p>用表格法比较清晰：</p>
 <p>1、构造初始表，列名是源属性集，行是分解后的关系模式，有值的给✅；</p>
 <p>2、找出表中的同名属性列，看它在原本函数依赖F中能决定出什么，如果有的话说明该函数依赖在分解后被保留下来了，就可以在各表的同名属性列决定的属性处打钩，如果没有就跳过；</p>
@@ -1674,8 +1677,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      D A<br>
-解析参考上面例题的解析，思路完全一模一样。
+      <p>D A</p>
+<p>解析参考上面例题的解析，思路完全一模一样。</p>
+
     </div>
   </label>
 </div>
@@ -1690,8 +1694,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      A D<br>
-解析参考上面例题的解析，思路完全一模一样。
+      <p>A D</p>
+<p>解析参考上面例题的解析，思路完全一模一样。</p>
+
     </div>
   </label>
 </div>
@@ -1760,8 +1765,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      C<br>
-索引和视图是无法更新的、存储过程是可以被第三方开发人员调用的，而触发器不行
+      <p>C</p>
+<p>索引和视图是无法更新的、存储过程是可以被第三方开发人员调用的，而触发器不行</p>
+
     </div>
   </label>
 </div>

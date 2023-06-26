@@ -1,6 +1,6 @@
-# 4. 需求工程 ✌
+# 需求工程 ✌
 
-## 4.1 概述
+## 1 概述
 
 ---
 
@@ -20,7 +20,7 @@
 [![p9HFah4.md.png](https://s1.ax1x.com/2023/05/25/p9HFah4.md.png)](https://imgse.com/i/p9HFah4)
 {{< expand "学霸肯定对了">}}D{{< /expand >}}
 
-## 4.2 需求获取
+## 2 需求获取
 
 ---
 
@@ -36,7 +36,7 @@
 
 [![p9HFsnx.md.png](https://s1.ax1x.com/2023/05/25/p9HFsnx.md.png)](https://imgse.com/i/p9HFsnx)
 
-## 4.3 需求分析
+## 3 需求分析
 
 ---
 
@@ -101,7 +101,7 @@ E-R图：实体关系图，（数据建模）
 
 [![p9H05DA.md.png](https://s1.ax1x.com/2023/05/25/p9H05DA.md.png)](https://imgse.com/i/p9H05DA)
 
-## 4.4 需求定义
+## 4 需求定义
 
 ---
 
@@ -115,7 +115,7 @@ E-R图：实体关系图，（数据建模）
 [![p9H0L8S.md.png](https://s1.ax1x.com/2023/05/25/p9H0L8S.md.png)](https://imgse.com/i/p9H0L8S)
 {{< expand "学霸肯定对了">}}C{{< /expand >}}
 
-## 4.5 需求验证
+## 5 需求验证
 
 ---
 
@@ -123,7 +123,7 @@ E-R图：实体关系图，（数据建模）
 
 [![p9Hj0HJ.md.png](https://s1.ax1x.com/2023/05/25/p9Hj0HJ.md.png)](https://imgse.com/i/p9Hj0HJ)
 
-## 4.6 需求状态管理
+## 6 需求状态管理
 
 ---
 
@@ -131,7 +131,7 @@ E-R图：实体关系图，（数据建模）
 
 [![pCUi4SI.md.png](https://s1.ax1x.com/2023/06/26/pCUi4SI.md.png)](https://imgse.com/i/pCUi4SI)
 
-## 4.7 需求跟踪
+## 7 需求跟踪
 
 ---
 
@@ -141,7 +141,7 @@ E-R图：实体关系图，（数据建模）
 
 [![pCUiz60.md.png](https://s1.ax1x.com/2023/06/26/pCUiz60.md.png)](https://imgse.com/i/pCUiz60)
 
-## 4.8 需求变更
+## 8 需求变更
 
 ---
 
