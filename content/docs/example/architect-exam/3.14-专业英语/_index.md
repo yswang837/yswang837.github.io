@@ -10,7 +10,7 @@ title: 3.14 专业英语
 
 - 原文
 
-&emsp;&emsp;An architectural style defines as a family of such systems in terms of a ( 1 ) of structural organization.More specifically， an architectural style defines a vocabulary of ( 2 ) and connector types， and a set of ( 3 ) on how they can be combined. For many styles there may also exist one or more ( 4 ) that specify how to determine a system’s overall properties from the properties of its parts.Many of architectural styles have been developed over the years. The best-known examples of ( 5 ) architectures are programs written in the Unix shell.
+&emsp;&emsp;An architectural style defines as a family of such systems in terms of a ( 1 ) of structural organization. More specifically, an architectural style defines a vocabulary of ( 2 ) and connector types， and a set of ( 3 ) on how they can be combined. For many styles there may also exist one or more ( 4 ) that specify how to determine a system’s overall properties from the properties of its parts.Many of architectural styles have been developed over the years. The best-known examples of ( 5 ) architectures are programs written in the Unix shell.
 
 (1) &emsp;A.pattern &emsp;B.data flow &emsp;C.business process &emsp;D.position level
 
@@ -22,7 +22,9 @@ title: 3.14 专业英语
 
 (5) &emsp;A.event-based &emsp;B.object-oriented &emsp;C.pipe-and-filter &emsp;D.Layered
 
-{{< expand "学霸肯定对了">}}&emsp;&emsp;架构风格以一种结构化组织模式定义一组这样的系统。具体来说，一种架构风格定义了一个构件及连接器类型的词汇表，以及一组关于它们如何能够被关联的约束对于许多风格来说，可能也存在一个或多个语义模型，从系统部件的特性来确定系统的整体特性。许多架构风格已经发展了很多年，众所周知的管道-过滤器架构的例子就是用 UNIX shell 编写的程序。
+{{< expand "学霸肯定对了">}}A B D
+
+&emsp;&emsp;架构风格以一种结构化组织模式定义一组这样的系统。具体来说，一种架构风格定义了一个构件及连接器类型的词汇表，以及一组关于它们如何能够被关联的约束对于许多风格来说，可能也存在一个或多个语义模型，从系统部件的特性来确定系统的整体特性。许多架构风格已经发展了很多年，众所周知的管道-过滤器架构的例子就是用 UNIX shell 编写的程序。
 
 &emsp;&emsp;pattern:模式
 
@@ -36,7 +38,11 @@ title: 3.14 专业英语
 
 &emsp;&emsp;schemas:模式，图式，计划
 
-&emsp;&emsp;layered:分层的{{< /expand >}}
+&emsp;&emsp;layered:分层的
+
+&emsp;&emsp;in terms of:在...方面，按照
+
+{{< /expand >}}
 
 ## 2 2010年
 
