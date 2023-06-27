@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 系统设计 # 1 界面设计 # 例题 学霸肯定对了 ↕ A 2 软件设计 # 体系结构设计就是架构设计。
+<meta name="description" content="系统设计 # 1 界面设计 # 例题 学霸肯定对了 ↕ A 2 软件设计 # 体系结构设计就是架构设计。
 例题 学霸肯定对了 ↕ B A D 6.2.1 结构化设计 # 外部和内部、高内聚和低耦合的角度都是模块，符合自顶向下的原则。扇入：别人调自己，扇出：自己调别人。
 6.2.2 面向对象设计 # 面向对象设计的上一步是面向对象分析OOA；它所包含的总体任务如下：
-面向对象的设计原则如下： 例题 学霸肯定对了 ↕ C 设计模式 设计模式属于面向对象设计里面的一个点，详情见 6.3 设计模式
+面向对象的设计原则如下： 例题 学霸肯定对了 ↕ C 设计模式 设计模式-github代码
+设计模式属于面向对象设计里面的一个点，详情见 6.3 设计模式
 6.3 设计模式 # 学习设计模式需要关注的点：
 1、设计模式三种类型的定位
 2、设计模式的分类
 3、设计模式应用场景及特点
 设计模式的三种类型 例题 学霸肯定对了 ↕ A B B 设计模式的分类 创建型模式：创建对象(目标) 结构型模式：更大的结构(目标) 行为型模式：交互及指责分配(目标) 类模式（类似于类的静态方法，不用初始化对象，直接通过类名来调用）
-6.3.1 创建型模式 # ">
+6.3.1 创建型模式 # 工厂方法模式 抽象工厂模式 构建器模式 原型模式 对象的直接克隆。
+单例模式 例如数据库的连接。
+6.3.2 结构型模式 # 适配器模式 桥接模式 组合模式 代理模式 应用程序的快捷方式。房东房子很多，需要卖房的时候，他把房子全权代理给房屋代理机构，让该机构负责。注意跟中介模式、适配器模式区分。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -24,7 +27,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.47a3f378e57a9733c5800fb5ed5dd85d3904636381bfa459d44a4c0e1fa7cb00.js" integrity="sha256-R6PzeOV6lzPFgA&#43;17V3YXTkEY2OBv6RZ1EpMDh&#43;nywA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.77272fcbb9055e82a5bf5a5b1dfa93e889a416a608e18a30c3a6b85885cd1125.js" integrity="sha256-dycvy7kFXoKlv1pbHfqT6ImkFqYI4Yoww6a4WIXNESU=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -413,7 +416,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/7-%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%AF%84%E5%AE%A1/" class="">7) 测试与评审</a>
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/7-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" class="">7) 软件测试</a>
   
 
           
@@ -921,6 +924,8 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#63-设计模式">6.3 设计模式</a>
       <ul>
         <li><a href="#631-创建型模式">6.3.1 创建型模式</a></li>
+        <li><a href="#632-结构型模式">6.3.2 结构型模式</a></li>
+        <li><a href="#633-行为型模式">6.3.3 行为型模式</a></li>
       </ul>
     </li>
   </ul>
@@ -1026,6 +1031,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>设计模式</li>
 </ul>
+<p>  <a href="https://github.com/yswang837/golang-design-pattern">设计模式-github代码</a></p>
 <p>  设计模式属于面向对象设计里面的一个点，详情见 6.3 设计模式</p>
 <h2 id="63-设计模式">
   6.3 设计模式
@@ -1074,6 +1080,131 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#631-%e5%88%9b%e5%bb%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f">#</a>
 </h3>
 <p><a href="https://imgse.com/i/pCUJ9u8"><img src="https://s1.ax1x.com/2023/06/26/pCUJ9u8.md.png" alt="pCUJ9u8.md.png" /></a></p>
+<ul>
+<li>工厂方法模式</li>
+</ul>
+<p><a href="https://imgse.com/i/pCaZIM9"><img src="https://s1.ax1x.com/2023/06/27/pCaZIM9.md.png" alt="pCaZIM9.md.png" /></a></p>
+<ul>
+<li>抽象工厂模式</li>
+</ul>
+<p><a href="https://imgse.com/i/pCaZorR"><img src="https://s1.ax1x.com/2023/06/27/pCaZorR.md.png" alt="pCaZorR.md.png" /></a></p>
+<ul>
+<li>构建器模式</li>
+</ul>
+<p><a href="https://imgse.com/i/pCaZOPO"><img src="https://s1.ax1x.com/2023/06/27/pCaZOPO.md.png" alt="pCaZOPO.md.png" /></a></p>
+<ul>
+<li>原型模式</li>
+</ul>
+<p>  对象的直接克隆。</p>
+<ul>
+<li>单例模式</li>
+</ul>
+<p>  例如数据库的连接。</p>
+<h3 id="632-结构型模式">
+  6.3.2 结构型模式
+  <a class="anchor" href="#632-%e7%bb%93%e6%9e%84%e5%9e%8b%e6%a8%a1%e5%bc%8f">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCaeVzQ"><img src="https://s1.ax1x.com/2023/06/27/pCaeVzQ.md.png" alt="pCaeVzQ.md.png" /></a></p>
+<ul>
+<li>适配器模式</li>
+</ul>
+<p><a href="https://imgse.com/i/pCaeeMj"><img src="https://s1.ax1x.com/2023/06/27/pCaeeMj.md.png" alt="pCaeeMj.md.png" /></a></p>
+<ul>
+<li>桥接模式</li>
+</ul>
+<p><a href="https://imgse.com/i/pCaenLn"><img src="https://s1.ax1x.com/2023/06/27/pCaenLn.md.png" alt="pCaenLn.md.png" /></a></p>
+<ul>
+<li>组合模式</li>
+</ul>
+<p><a href="https://imgse.com/i/pCaeQoV"><img src="https://s1.ax1x.com/2023/06/27/pCaeQoV.md.png" alt="pCaeQoV.md.png" /></a></p>
+<ul>
+<li>代理模式</li>
+</ul>
+<p>  应用程序的快捷方式。房东房子很多，需要卖房的时候，他把房子全权代理给房屋代理机构，让该机构负责。注意跟中介模式、适配器模式区分。</p>
+<p><a href="https://imgse.com/i/pCaety9"><img src="https://s1.ax1x.com/2023/06/27/pCaety9.md.png" alt="pCaety9.md.png" /></a></p>
+<ul>
+<li>装饰模式</li>
+</ul>
+<p>  动态的附加一些简单的职能。原始的咖啡加糖，加冰等等。</p>
+<ul>
+<li>外观模式</li>
+</ul>
+<p>  子系统的一组接口对外提供一个统一的接口。比如说：一键开会(拉下幕布，打开投影仪，灯光降低，关闭窗帘)。</p>
+<ul>
+<li>享元模式</li>
+</ul>
+<p>  汉字编码。常用汉字也就几千字，如果在word中有几十万字，那么大多数都是重复的常用汉字，那么这些常用汉字可以共享空间。</p>
+<h3 id="633-行为型模式">
+  6.3.3 行为型模式
+  <a class="anchor" href="#633-%e8%a1%8c%e4%b8%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCamC6J"><img src="https://s1.ax1x.com/2023/06/27/pCamC6J.md.png" alt="pCamC6J.md.png" /></a>
+<a href="https://imgse.com/i/pCanZbn"><img src="https://s1.ax1x.com/2023/06/27/pCanZbn.md.png" alt="pCanZbn.md.png" /></a></p>
+<ul>
+<li>中介模式</li>
+</ul>
+<p>  解决买房和卖房信息不对称的矛盾，两个对象之间的两两交互过于麻烦，简化流程。比如银联、央行。</p>
+<p><a href="https://imgse.com/i/pCamU1g"><img src="https://s1.ax1x.com/2023/06/27/pCamU1g.md.png" alt="pCamU1g.md.png" /></a></p>
+<ul>
+<li>职责链模式</li>
+</ul>
+<p>  提交的请假如果本层解决不了，则层层网上传递，这就形成一个职责链。跟某些部门踢皮球一样。</p>
+<p><a href="https://imgse.com/i/pCamg9U"><img src="https://s1.ax1x.com/2023/06/27/pCamg9U.md.png" alt="pCamg9U.md.png" /></a></p>
+<ul>
+<li>命令模式</li>
+</ul>
+<p>  日志记录，可撤销。将命令封装在对象里面，如word的各种撤销(及时性的东西)等等。</p>
+<ul>
+<li>解释器模式</li>
+</ul>
+<p>  如架构风格里面的虚拟机风格。可为特定的、自定义的场景做出解释，如迷宫。</p>
+<ul>
+<li>迭代器模式</li>
+</ul>
+<p>  若高级语言里面的可迭代对象。数据集的某些迭代操作。</p>
+<ul>
+<li>备忘录模式</li>
+</ul>
+<p>  快照。可以在不向外界公开具体细节的时候恢复到最初的状态，游戏存档，git版本存档。命令模式是撤销一些及时性的东西。</p>
+<ul>
+<li>观察者模式</li>
+</ul>
+<p>  订阅、广播、联动。在Execl中，A1=10,A2=20,A3=A1+A2，当A1或A2变化时A3也会随之变化。</p>
+<ul>
+<li>状态模式</li>
+</ul>
+<p>  将状态变成类，可以很好地管理状态之间的变迁。不同的状态对应不同的行为和属性。订酒店：房间有空闲状态，入住状态，待清洁状态等等。会员的升级等。</p>
+<ul>
+<li>策略模式</li>
+</ul>
+<p>  多方案、多策略的切换。如商场打折。</p>
+<p><a href="https://imgse.com/i/pCanw8O"><img src="https://s1.ax1x.com/2023/06/27/pCanw8O.md.png" alt="pCanw8O.md.png" /></a></p>
+<ul>
+<li>模板方法模式</li>
+</ul>
+<p>  PPT模板、简历模板等。如软件开发里面的框架。</p>
+<ul>
+<li>访问者模式</li>
+</ul>
+<p>  数据与操作分离。因为操作老是会变，而数据基本不变。将变的和不变的分离开来。</p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCanyqA"><img src="https://s1.ax1x.com/2023/06/27/pCanyqA.md.png" alt="pCanyqA.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A D C B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 </article>
  
       
@@ -1125,6 +1256,8 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#63-设计模式">6.3 设计模式</a>
       <ul>
         <li><a href="#631-创建型模式">6.3.1 创建型模式</a></li>
+        <li><a href="#632-结构型模式">6.3.2 结构型模式</a></li>
+        <li><a href="#633-行为型模式">6.3.3 行为型模式</a></li>
       </ul>
     </li>
   </ul>
