@@ -13,5 +13,5 @@ title: "3) 架构描述语言"
 
 &emsp;&emsp;3、架构配置：描述架构的构件与连接件的连接图。
 
-[![p9yKAiV.md.png](https://s1.ax1x.com/2023/05/12/p9yKAiV.md.png)](https://imgse.com/i/p9yKAiV)\
+[![p9yKAiV.md.png](https://s1.ax1x.com/2023/05/12/p9yKAiV.md.png)](https://imgse.com/i/p9yKAiV)
 {{< expand "学霸肯定对了">}}C{{< /expand >}}

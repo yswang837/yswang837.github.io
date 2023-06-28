@@ -8,8 +8,8 @@
 2、ABSD方法有三个基础。第一个基础是功能的分解。在功能分解中，ABSD方法使用已有的基于模块的内聚和耦合技术，第二个基础是通过选择架构风格来实现质量和业务需求，第三个基础是软件模板的使用。
 3、视角与视图:从不同的视角来检查，所以会有不同的视图。
 4、用例用来捕获功能需求、特定场景用来捕获质量需求。
-4.1 开发过程 # 4.1.1 架构需求 # 4.1.2 架构设计 # 4.1.3 架构文档化 # 4.1.4 架构复审 # 架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误。
-4.1.5 架构实现 # 4.1.6 架构演化 # 例题 学霸肯定对了 ↕ 学霸肯定对了 ↕ ">
+1 开发过程 # 1.1 架构需求 # 1.2 架构设计 # 1.3 架构文档化 # 1.4 架构复审 # 架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误。
+1.5 架构实现 # 1.6 架构演化 # 例题 学霸肯定对了 ↕ 学霸肯定对了 ↕ ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="5) 基于架构的软件开发" />
 <meta property="og:description" content="" />
@@ -21,7 +21,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.2d0eb8a790ed0657ed440982962fa8cba817ca799192fce2d8fcf15f5088c54c.js" integrity="sha256-LQ64p5DtBlftRAmCli&#43;oy6gXynmRkvzi2PzxX1CIxUw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.401787893d8e23b0469735f9fb4c346e03504fa228e4d7a3008265fb973e097a.js" integrity="sha256-QBeHiT2OI7BGlzX5&#43;0w0bgNQT6Io5NejAIJl&#43;5c&#43;CXo=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/5-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -908,14 +908,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#41-开发过程">4.1 开发过程</a>
+    <li><a href="#1-开发过程">1 开发过程</a>
       <ul>
-        <li><a href="#411-架构需求">4.1.1 架构需求</a></li>
-        <li><a href="#412-架构设计">4.1.2 架构设计</a></li>
-        <li><a href="#413-架构文档化">4.1.3 架构文档化</a></li>
-        <li><a href="#414-架构复审">4.1.4 架构复审</a></li>
-        <li><a href="#415-架构实现">4.1.5 架构实现</a></li>
-        <li><a href="#416-架构演化">4.1.6 架构演化</a></li>
+        <li><a href="#11-架构需求">1.1 架构需求</a></li>
+        <li><a href="#12-架构设计">1.2 架构设计</a></li>
+        <li><a href="#13-架构文档化">1.3 架构文档化</a></li>
+        <li><a href="#14-架构复审">1.4 架构复审</a></li>
+        <li><a href="#15-架构实现">1.5 架构实现</a></li>
+        <li><a href="#16-架构演化">1.6 架构演化</a></li>
       </ul>
     </li>
   </ul>
@@ -934,49 +934,49 @@ https://github.com/alex-shpak/hugo-book
   基于架构的软件开发ABSD
   <a class="anchor" href="#%e5%9f%ba%e4%ba%8e%e6%9e%b6%e6%9e%84%e7%9a%84%e8%bd%af%e4%bb%b6%e5%bc%80%e5%8f%91absd">#</a>
 </h1>
-<p>  基于架构的软件开发ABSD(Architecture-Based Software Design)。它能很好地支持重用。<br>
-  1、ABSD方法是架构驱动，即强调由<strong>业务</strong>、<strong>质量</strong>和<strong>功能需求</strong>的组合驱动架构设计。<br>
-  2、ABSD方法有三个基础。第一个基础是<strong>功能的分解</strong>。在功能分解中，ABSD方法使用已有的基于模块的内聚和耦合技术，第二个基础是<strong>通过选择架构风格来实现质量</strong>和<strong>业务需求</strong>，第三个基础是<strong>软件模板的使用</strong>。<br>
-  3、视角与视图:从不同的视角来检查，所以会有不同的视图。<br>
-  4、<strong>用例</strong>用来捕获<strong>功能需求</strong>、<strong>特定场景</strong>用来捕获<strong>质量需求</strong>。</p>
-<h2 id="41-开发过程">
-  4.1 开发过程
-  <a class="anchor" href="#41-%e5%bc%80%e5%8f%91%e8%bf%87%e7%a8%8b">#</a>
+<p>  基于架构的软件开发ABSD(Architecture-Based Software Design)。它能很好地支持重用。</p>
+<p>  1、ABSD方法是架构驱动，即强调由<strong>业务</strong>、<strong>质量</strong>和<strong>功能需求</strong>的组合驱动架构设计。</p>
+<p>  2、ABSD方法有三个基础。第一个基础是<strong>功能的分解</strong>。在功能分解中，ABSD方法使用已有的基于模块的内聚和耦合技术，第二个基础是<strong>通过选择架构风格来实现质量</strong>和<strong>业务需求</strong>，第三个基础是<strong>软件模板的使用</strong>。</p>
+<p>  3、视角与视图:从不同的视角来检查，所以会有不同的视图。</p>
+<p>  4、<strong>用例</strong>用来捕获<strong>功能需求</strong>、<strong>特定场景</strong>用来捕获<strong>质量需求</strong>。</p>
+<h2 id="1-开发过程">
+  1 开发过程
+  <a class="anchor" href="#1-%e5%bc%80%e5%8f%91%e8%bf%87%e7%a8%8b">#</a>
 </h2>
 <p><a href="https://imgse.com/i/p9gxrM6"><img src="https://s1.ax1x.com/2023/05/15/p9gxrM6.png" alt="p9gxrM6.png" /></a></p>
-<h3 id="411-架构需求">
-  4.1.1 架构需求
-  <a class="anchor" href="#411-%e6%9e%b6%e6%9e%84%e9%9c%80%e6%b1%82">#</a>
+<h3 id="11-架构需求">
+  1.1 架构需求
+  <a class="anchor" href="#11-%e6%9e%b6%e6%9e%84%e9%9c%80%e6%b1%82">#</a>
 </h3>
 <p><a href="https://imgse.com/i/p9RTuX4"><img src="https://s1.ax1x.com/2023/05/17/p9RTuX4.png" alt="p9RTuX4.png" /></a></p>
-<h3 id="412-架构设计">
-  4.1.2 架构设计
-  <a class="anchor" href="#412-%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1">#</a>
+<h3 id="12-架构设计">
+  1.2 架构设计
+  <a class="anchor" href="#12-%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1">#</a>
 </h3>
 <p><a href="https://imgse.com/i/p9RTl7R"><img src="https://s1.ax1x.com/2023/05/17/p9RTl7R.png" alt="p9RTl7R.png" /></a></p>
-<h3 id="413-架构文档化">
-  4.1.3 架构文档化
-  <a class="anchor" href="#413-%e6%9e%b6%e6%9e%84%e6%96%87%e6%a1%a3%e5%8c%96">#</a>
+<h3 id="13-架构文档化">
+  1.3 架构文档化
+  <a class="anchor" href="#13-%e6%9e%b6%e6%9e%84%e6%96%87%e6%a1%a3%e5%8c%96">#</a>
 </h3>
 <p><a href="https://imgse.com/i/p9RTwBd"><img src="https://s1.ax1x.com/2023/05/17/p9RTwBd.md.png" alt="p9RTwBd.md.png" /></a></p>
-<h3 id="414-架构复审">
-  4.1.4 架构复审
-  <a class="anchor" href="#414-%e6%9e%b6%e6%9e%84%e5%a4%8d%e5%ae%a1">#</a>
+<h3 id="14-架构复审">
+  1.4 架构复审
+  <a class="anchor" href="#14-%e6%9e%b6%e6%9e%84%e5%a4%8d%e5%ae%a1">#</a>
 </h3>
 <p>  架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误。</p>
-<h3 id="415-架构实现">
-  4.1.5 架构实现
-  <a class="anchor" href="#415-%e6%9e%b6%e6%9e%84%e5%ae%9e%e7%8e%b0">#</a>
+<h3 id="15-架构实现">
+  1.5 架构实现
+  <a class="anchor" href="#15-%e6%9e%b6%e6%9e%84%e5%ae%9e%e7%8e%b0">#</a>
 </h3>
 <p><a href="https://imgse.com/i/p9RT8tx"><img src="https://s1.ax1x.com/2023/05/17/p9RT8tx.md.png" alt="p9RT8tx.md.png" /></a></p>
-<h3 id="416-架构演化">
-  4.1.6 架构演化
-  <a class="anchor" href="#416-%e6%9e%b6%e6%9e%84%e6%bc%94%e5%8c%96">#</a>
+<h3 id="16-架构演化">
+  1.6 架构演化
+  <a class="anchor" href="#16-%e6%9e%b6%e6%9e%84%e6%bc%94%e5%8c%96">#</a>
 </h3>
 <p><a href="https://imgse.com/i/p9RTGh6"><img src="https://s1.ax1x.com/2023/05/17/p9RTGh6.png" alt="p9RTGh6.png" /></a></p>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/p9RTDAI"><img src="https://s1.ax1x.com/2023/05/17/p9RTDAI.md.png" alt="p9RTDAI.md.png" /></a><br>
+<a href="https://imgse.com/i/p9RTDAI"><img src="https://s1.ax1x.com/2023/05/17/p9RTDAI.md.png" alt="p9RTDAI.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -991,7 +991,7 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 
-<a href="https://imgse.com/i/p9RT2jg"><img src="https://s1.ax1x.com/2023/05/17/p9RT2jg.md.png" alt="p9RT2jg.md.png" /></a><br>
+<a href="https://imgse.com/i/p9RT2jg"><img src="https://s1.ax1x.com/2023/05/17/p9RT2jg.md.png" alt="p9RT2jg.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1048,14 +1048,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#41-开发过程">4.1 开发过程</a>
+    <li><a href="#1-开发过程">1 开发过程</a>
       <ul>
-        <li><a href="#411-架构需求">4.1.1 架构需求</a></li>
-        <li><a href="#412-架构设计">4.1.2 架构设计</a></li>
-        <li><a href="#413-架构文档化">4.1.3 架构文档化</a></li>
-        <li><a href="#414-架构复审">4.1.4 架构复审</a></li>
-        <li><a href="#415-架构实现">4.1.5 架构实现</a></li>
-        <li><a href="#416-架构演化">4.1.6 架构演化</a></li>
+        <li><a href="#11-架构需求">1.1 架构需求</a></li>
+        <li><a href="#12-架构设计">1.2 架构设计</a></li>
+        <li><a href="#13-架构文档化">1.3 架构文档化</a></li>
+        <li><a href="#14-架构复审">1.4 架构复审</a></li>
+        <li><a href="#15-架构实现">1.5 架构实现</a></li>
+        <li><a href="#16-架构演化">1.6 架构演化</a></li>
       </ul>
     </li>
   </ul>

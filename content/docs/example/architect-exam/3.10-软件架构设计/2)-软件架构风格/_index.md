@@ -17,7 +17,7 @@ title: "2) 软件架构风格"
 
 &emsp;&emsp;隐式调用--->回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。
 
-&emsp;&emsp;事件系统--->注册事件处理的是回调函数，当某个界面事件发生时（例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件。
+&emsp;&emsp;事件驱动系统--->注册事件处理的是回调函数，当某个界面事件发生时（例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件。
 
 &emsp;&emsp;解析器--->运行时的系统行为定义与改变的能力，采用解释器架构风格的系统，可以通过部分解释代码预先编译的方式提高系统性能。
 
@@ -120,9 +120,9 @@ title: "2) 软件架构风格"
 [![p9r7KeK.md.png](https://s1.ax1x.com/2023/05/11/p9r7KeK.md.png)](https://imgse.com/i/p9r7KeK)
 {{< expand "学霸肯定对了">}}1.虚拟机&emsp;&emsp;2.数据流&emsp;&emsp;3.隐式调用&emsp;&emsp;4.解释器&emsp;&emsp;5.过程控制{{< /expand >}}
 [![p9rq1FU.md.png](https://s1.ax1x.com/2023/05/11/p9rq1FU.md.png)](https://imgse.com/i/p9rq1FU)
-{{< expand "学霸肯定对了">}}1.黑板&emsp;&emsp;2.隐式调用&emsp;&emsp;3.事件驱动风格{{< /expand >}}
+{{< expand "学霸肯定对了">}}1.黑板&emsp;&emsp;2.解释器&emsp;&emsp;3.事件驱动风格{{< /expand >}}
 [![p9rOyqI.md.png](https://s1.ax1x.com/2023/05/11/p9rOyqI.md.png)](https://imgse.com/i/p9rOyqI)
-{{< expand "学霸肯定对了">}}1.顺序批处理&emsp;&emsp;2.数据共享&emsp;&emsp;3.隐式调用风格&emsp;&emsp;4.模拟&emsp;&emsp;5.虚拟机{{< /expand >}}
+{{< expand "学霸肯定对了">}}1.顺序批处理&emsp;&emsp;2.数据共享&emsp;&emsp;3.隐式调用风格&emsp;&emsp;4.适配&emsp;&emsp;5.虚拟机{{< /expand >}}
 
 ## 2.8 架构风格具体实例
 
@@ -132,6 +132,8 @@ title: "2) 软件架构风格"
 
 ### 2.8.1 从 C/S -> B/S -> 混合架构
 
+&emsp;&emsp;属于层次架构风格的实例。
+
 - 双层C/S架构
 
 &emsp;&emsp;通过图示可以看出非常明显的缺点：将业务逻辑的代码嵌入进客户端，在早期互联网并不普及的情况下，频繁变更的业务逻辑代码和难以推广升级的客户端存在巨大矛盾。
@@ -140,7 +142,7 @@ title: "2) 软件架构风格"
 
 - 三层C/S架构
 
-&emsp;&emsp;相比于双层C/S架构，三层C/S架构的优势在于：将业务逻辑层单独拆分出来(独立于数据库服务器、用户客户端)放在单独的服务器上，经常变更的业务逻辑代码并不会直接影响到客户端的使用。其劣势依然需要用户安装客户端(你可以认为就是手机中的APP)。
+&emsp;&emsp;相比于双层C/S架构，三层C/S架构的优势在于：将业务逻辑层(功能层)单独拆分出来(独立于数据库服务器、用户客户端)放在单独的服务器上(应用服务端)，经常变更的业务逻辑代码并不会直接影响到客户端的使用。其劣势依然需要用户安装客户端(你可以认为就是手机中的APP)。
 
 [![p9sqDPS.md.png](https://s1.ax1x.com/2023/05/12/p9sqDPS.md.png)](https://imgse.com/i/p9sqDPS)
 [![p9sLpxH.md.png](https://s1.ax1x.com/2023/05/12/p9sLpxH.md.png)](https://imgse.com/i/p9sLpxH)
@@ -162,6 +164,8 @@ title: "2) 软件架构风格"
 
 ### 2.8.2 MVC架构风格
 
+&emsp;&emsp;属于层次架构风格的实例。
+
 &emsp;&emsp;MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数
 据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。
 
@@ -169,9 +173,11 @@ title: "2) 软件架构风格"
 
 [![p9ym5FK.md.png](https://s1.ax1x.com/2023/05/12/p9ym5FK.md.png)](https://imgse.com/i/p9ym5FK)
 
-&emsp;&emsp;在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是Entity Bean/Session Bean，View是JSP，Controller是Servlet。
+&emsp;&emsp;在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是EJB(Entity Bean/Session Bean)，View是JSP，Controller是Servlet。
 
 ### 2.8.3 MVP架构风格
+
+&emsp;&emsp;属于层次架构风格的实例。
 
 &emsp;&emsp;MVP(Model-View-Presenter)，~~注意：它不是LOL中的MVP~~，它是MVC的变种，它实现了MV之间的解耦。
 
@@ -179,15 +185,25 @@ title: "2) 软件架构风格"
 
 ### 2.8.4 MVVM架构风格
 
+&emsp;&emsp;属于层次架构风格的实例。
+
 &emsp;&emsp;MVVM(Model-ViewModel-View),类似于vue中的双向数据绑定，View改变则ViewModel也改变，反之亦然。
 
 [![p9ynzH1.md.png](https://s1.ax1x.com/2023/05/12/p9ynzH1.md.png)](https://imgse.com/i/p9ynzH1)
 
 ### 2.8.5 RIA架构风格
 
-&emsp;&emsp;RIA(富互联网架构)类似于综合了C/S和B/S架构的优点(C/S反应快，交互强，B/S易传播)，它在首次加载初期比较慢，一旦加载完成使用就快多了。典型的例子就是在线网游。
+&emsp;&emsp;属于层次架构风格的实例。
+
+&emsp;&emsp;RIA(富互联网架构)类似于综合了C/S和B/S架构的优点(C/S反应快，交互强，B/S易传播，B/S交互能力不那么强，一般以文字和图片为主)，它在首次加载初期比较慢，一旦加载完成使用就快多了。典型的例子就是在线网游、小程序。
 
 ### 2.8.6 基于服务的架构(SOA)
+
+&emsp;&emsp;服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。经典场景：对历史遗留系统进行集成。如下图：
+
+[![pCddrGD.md.png](https://s1.ax1x.com/2023/06/28/pCddrGD.md.png)](https://imgse.com/i/pCddrGD)
+
+[![p9glNbF.md.png](https://s1.ax1x.com/2023/05/15/p9glNbF.md.png)](https://imgse.com/i/p9glNbF)
 
 &emsp;&emsp;1、服务构件粗粒度，传统构件细粒度居多。
 
@@ -197,19 +213,17 @@ title: "2) 软件架构风格"
 
 &emsp;&emsp;4、服务构件可以通过构件容器提供OoS的服务，传统构件完全由程序代码直接控制。
 
-[![p9glNbF.md.png](https://s1.ax1x.com/2023/05/15/p9glNbF.md.png)](https://imgse.com/i/p9glNbF)
-
-&emsp;&emsp;SOA的实现方式：WebService；WSDL就是WebService接口对应的WSDL文件，该文件通过xml格式说明如何调用可以看作WebService的接口文档 (使用说明书)。
-
 [![p9gsw36.md.png](https://s1.ax1x.com/2023/05/15/p9gsw36.md.png)](https://imgse.com/i/p9gsw36)
 
-&emsp;&emsp;SOA的实现方式：ESB
+&emsp;&emsp;SOA的实现方式1：WebService；WSDL就是WebService接口对应的WSDL文件，该文件通过xml格式说明如何调用可以看作WebService的接口文档 (使用说明书)。
 
 [![p9gssDe.md.png](https://s1.ax1x.com/2023/05/15/p9gssDe.md.png)](https://imgse.com/i/p9gssDe)
 
+&emsp;&emsp;SOA的实现方式2：ESB 企业服务总线。
+
 ### 2.8.7 微服务
 
-&emsp;&emsp;微服务顾名思义，就是很小的服务，所以它属于面向服务架构的一种。
+&emsp;&emsp;微服务顾名思义，就是很小的服务，所以它属于面向服务架构SOA的一种。
 
 &emsp;&emsp;微服务架构是一种架构模式，它提倡将单一应用程序划分成一组小的服务，服务之间互相协调、互相配合，为用户提供最终价值。每个服务运行在其独立的进程中，服务与服务间采用轻量级的通信机制互相沟通 (通常是基于HTTP协议的RESTfulAPI)。每个服务都围绕着具体业务进行构建，并且能够被独立的部署到生产环境、类生产环境等。另外，应当尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建。
 
@@ -220,6 +234,8 @@ title: "2) 软件架构风格"
 &emsp;&emsp;2、轻量级的通信机制。
 
 &emsp;&emsp;3、松耦合、独立部署。
+
+&emsp;&emsp;微服务和单体架构服务的对比，微服务类似于活字印刷，单体架构服务类似于版式印刷。
 
 [![p9gsj2V.md.png](https://s1.ax1x.com/2023/05/15/p9gsj2V.md.png)](https://imgse.com/i/p9gsj2V)
 
@@ -233,7 +249,7 @@ title: "2) 软件架构风格"
 
 &emsp;&emsp;4、可组织性
 
-微服务的挑战：
+微服务的劣势：
 
 &emsp;&emsp;1、分布式系统的复杂度
 
@@ -249,6 +265,10 @@ title: "2) 软件架构风格"
 [![p9gyMad.md.png](https://s1.ax1x.com/2023/05/15/p9gyMad.md.png)](https://imgse.com/i/p9gyMad)
 
 ### 2.8.8 MDA
+
+&emsp;&emsp;模型驱动架构。是形式化方法下的产物。
+
+&emsp;&emsp;**平台无关模型**通过变换工具转为**平台相关模型**，再通过变换工具转为**代码code**
 
 [![p9gq4xO.md.png](https://s1.ax1x.com/2023/05/15/p9gq4xO.md.png)](https://imgse.com/i/p9gq4xO)
 [![p9gqOit.md.png](https://s1.ax1x.com/2023/05/15/p9gqOit.md.png)](https://imgse.com/i/p9gqOit)
