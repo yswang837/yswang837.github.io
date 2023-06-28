@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2.软件架构风格🏁 # 架构风格反映了领域中众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。以下是常见风格的特点或应用：
+<meta name="description" content="2.软件架构风格 # 架构风格反映了领域中众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。以下是常见风格的特点或应用：
 批处理&mdash;&gt;传统编译器。
 管道过滤器&mdash;&gt;支持分阶段数据处理。
 层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。
@@ -18,7 +18,8 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。 2.1 数据流风格 # 数据流风格以数据驱动的方式推进项目，其的典型应用有传统编译器、网络报文处理，它包含2个子风格：
 1、批处理。做题要点：大量整体数据、无需用户交互
 2、管道过滤器。做题要点：流式数据、弱用户交互
-具体如下图： 2.2 调用/返回风格 # 调用/返回风格包含3个子风格：
+具体如下图：
+2.2 调用/返回风格 # 调用/返回风格包含3个子风格：
 1、主程序/子程序风格
 2、面向对象风格
 3、分层风格，将在“2.8 架构风格具体实例”中详细说明
@@ -30,8 +31,8 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 2、规则系统，做题关键字：在解释器的基础上增加经验规则
 2.5 仓库风格 # 仓库风格包含2个子风格：
 1、数据库系统
-2、黑板系统 2.6 闭环控制风格(过程风格) # 2.7 C2架构风格 # \
-例题 学霸肯定对了 ↕ 1.虚拟机 2.数据流 3.独立构建风格 4.解释器 5.过程控制 学霸肯定对了 ↕ 1.黑板 2.隐式调用 3.事件驱动风格 学霸肯定对了 ↕ 1.">
+2、黑板系统
+2.6 闭环控制风格(过程风格) # 2.7 C2架构风格 # 例题 学霸肯定对了 ↕ 1.虚拟机 2.数据流 3.独立构建风格 4.解释器 5.过程控制 学霸肯定对了 ↕ 1.黑板 2.隐式调用 3.事件驱动风格 学霸肯定对了 ↕ 1.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="2) 软件架构风格" />
 <meta property="og:description" content="" />
@@ -43,7 +44,7 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.4a2b839cf2639fda2d4b8ea4fc9d040e589b9841bd678271bbed37994ca53856.js" integrity="sha256-SiuDnPJjn9otS46k/J0EDlibmEG9Z4Jxu&#43;03mUylOFY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.27c8c1810dafab468c8838507bcd39f65af68df52e92cf6228d70c7f9eec8346.js" integrity="sha256-J8jBgQ2vq0aMiDhQe8059lr2jfUuks9iKNcMf57sg0Y=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -962,69 +963,69 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="2软件架构风格">
-  2.软件架构风格🏁
+  2.软件架构风格
   <a class="anchor" href="#2%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h1>
-<p>  架构风格反映了领域中众多系统所共有的<strong>结构</strong>和<strong>语义</strong>特性，并指导如何将各个<strong>构件</strong>有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。以下是常见风格的特点或应用：<br>
-  批处理&mdash;&gt;传统编译器。<br>
-  管道过滤器&mdash;&gt;支持分阶段数据处理。<br>
-  层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。<br>
-  过程控制&mdash;&gt;控制系统，其特点是不断采集系统当前状态，与系统中的设定状态进行对比，并通过将当前状态与设定状态进行对比从而进行控制。<br>
-  隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。<br>
-  事件系统&mdash;&gt;注册事件处理的是回调函数，当某个界面事件发生时（例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件。<br>
-  解析器&mdash;&gt;运行时的系统行为定义与改变的能力，采用解释器架构风格的系统，可以通过部分解释代码预先编译的方式提高系统性能。<br>
-  黑板风格&mdash;&gt;信号处理领域，语音识别系统是一个十分典型的专家系统，其特点是求解的正确结果不止一个，求解过程比较复杂，需要通过专家知识和反馈逐步得到正确结果。<br>
-  虚拟机风格&mdash;&gt;通过虚拟机架构屏蔽不同的硬件环境。<br>
-  C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规则运作的并行构件网络。<br>
-  数据仓库&mdash;&gt;现代集成开发环境（现代编译器）。<br>
-下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。
+<p>  架构风格反映了领域中众多系统所共有的<strong>结构</strong>和<strong>语义</strong>特性，并指导如何将各个<strong>构件</strong>有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。以下是常见风格的特点或应用：</p>
+<p>  批处理&mdash;&gt;传统编译器。</p>
+<p>  管道过滤器&mdash;&gt;支持分阶段数据处理。</p>
+<p>  层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。</p>
+<p>  过程控制&mdash;&gt;控制系统，其特点是不断采集系统当前状态，与系统中的设定状态进行对比，并通过将当前状态与设定状态进行对比从而进行控制。</p>
+<p>  隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。</p>
+<p>  事件系统&mdash;&gt;注册事件处理的是回调函数，当某个界面事件发生时（例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件。</p>
+<p>  解析器&mdash;&gt;运行时的系统行为定义与改变的能力，采用解释器架构风格的系统，可以通过部分解释代码预先编译的方式提高系统性能。</p>
+<p>  黑板风格&mdash;&gt;信号处理领域，语音识别系统是一个十分典型的专家系统，其特点是求解的正确结果不止一个，求解过程比较复杂，需要通过专家知识和反馈逐步得到正确结果。</p>
+<p>  虚拟机风格&mdash;&gt;通过虚拟机架构屏蔽不同的硬件环境。</p>
+<p>  C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规则运作的并行构件网络。</p>
+<p>  数据仓库&mdash;&gt;现代集成开发环境（现代编译器）。</p>
+<p>下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。
 <a href="https://imgse.com/i/p9rTTqf"><img src="https://s1.ax1x.com/2023/05/11/p9rTTqf.md.png" alt="p9rTTqf.md.png" /></a></p>
 <h2 id="21-数据流风格">
   2.1 数据流风格
   <a class="anchor" href="#21-%e6%95%b0%e6%8d%ae%e6%b5%81%e9%a3%8e%e6%a0%bc">#</a>
 </h2>
-<p>  数据流风格以数据驱动的方式推进项目，其的典型应用有<strong>传统编译器</strong>、<strong>网络报文处理</strong>，它包含2个子风格：<br>
-  1、批处理。做题要点：<strong>大量整体数据</strong>、<strong>无需用户交互</strong><br>
-  2、管道过滤器。做题要点：<strong>流式数据</strong>、<strong>弱用户交互</strong><br>
-具体如下图：
-<a href="https://imgse.com/i/p9rIyS1"><img src="https://s1.ax1x.com/2023/05/11/p9rIyS1.md.png" alt="p9rIyS1.md.png" /></a>
+<p>  数据流风格以数据驱动的方式推进项目，其的典型应用有<strong>传统编译器</strong>、<strong>网络报文处理</strong>，它包含2个子风格：</p>
+<p>  1、批处理。做题要点：<strong>大量整体数据</strong>、<strong>无需用户交互</strong></p>
+<p>  2、管道过滤器。做题要点：<strong>流式数据</strong>、<strong>弱用户交互</strong></p>
+<p>具体如下图：</p>
+<p><a href="https://imgse.com/i/p9rIyS1"><img src="https://s1.ax1x.com/2023/05/11/p9rIyS1.md.png" alt="p9rIyS1.md.png" /></a>
 <a href="https://imgse.com/i/p9rI6Qx"><img src="https://s1.ax1x.com/2023/05/11/p9rI6Qx.md.png" alt="p9rI6Qx.md.png" /></a></p>
 <h2 id="22-调用返回风格">
   2.2 调用/返回风格
   <a class="anchor" href="#22-%e8%b0%83%e7%94%a8%e8%bf%94%e5%9b%9e%e9%a3%8e%e6%a0%bc">#</a>
 </h2>
-<p>  调用/返回风格包含3个子风格：<br>
-  1、主程序/子程序风格<br>
-  2、面向对象风格<br>
-  3、分层风格，将在“2.8 架构风格具体实例”中详细说明<br>
-<a href="https://imgse.com/i/p9rIfTe"><img src="https://s1.ax1x.com/2023/05/11/p9rIfTe.md.png" alt="p9rIfTe.md.png" /></a>
+<p>  调用/返回风格包含3个子风格：</p>
+<p>  1、主程序/子程序风格</p>
+<p>  2、面向对象风格</p>
+<p>  3、分层风格，将在“2.8 架构风格具体实例”中详细说明</p>
+<p><a href="https://imgse.com/i/p9rIfTe"><img src="https://s1.ax1x.com/2023/05/11/p9rIfTe.md.png" alt="p9rIfTe.md.png" /></a>
 <a href="https://imgse.com/i/p9rI5Yd"><img src="https://s1.ax1x.com/2023/05/11/p9rI5Yd.md.png" alt="p9rI5Yd.md.png" /></a></p>
 <h2 id="23-独立构建风格">
   2.3 独立构建风格
   <a class="anchor" href="#23-%e7%8b%ac%e7%ab%8b%e6%9e%84%e5%bb%ba%e9%a3%8e%e6%a0%bc">#</a>
 </h2>
-<p>  独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：<br>
-  1、进程通信<br>
-  2、事件驱动系统（隐式调用）<br>
-<a href="https://imgse.com/i/p9rIIfA"><img src="https://s1.ax1x.com/2023/05/11/p9rIIfA.md.png" alt="p9rIIfA.md.png" /></a>
+<p>  独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：</p>
+<p>  1、进程通信</p>
+<p>  2、事件驱动系统（隐式调用）</p>
+<p><a href="https://imgse.com/i/p9rIIfA"><img src="https://s1.ax1x.com/2023/05/11/p9rIIfA.md.png" alt="p9rIIfA.md.png" /></a>
 <a href="https://imgse.com/i/p9rIH6P"><img src="https://s1.ax1x.com/2023/05/11/p9rIH6P.md.png" alt="p9rIH6P.md.png" /></a></p>
 <h2 id="24-虚拟机风格">
   2.4 虚拟机风格
   <a class="anchor" href="#24-%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%a3%8e%e6%a0%bc">#</a>
 </h2>
-<p>  虚拟机风格包含2个子风格：<br>
-  1、解释器风格，做题关键字：需要自定义规则的场景<br>
-  2、规则系统，做题关键字：在解释器的基础上增加经验规则</p>
+<p>  虚拟机风格包含2个子风格：</p>
+<p>  1、解释器风格，做题关键字：需要自定义规则的场景</p>
+<p>  2、规则系统，做题关键字：在解释器的基础上增加经验规则</p>
 <p><a href="https://imgse.com/i/p9rILm8"><img src="https://s1.ax1x.com/2023/05/11/p9rILm8.md.png" alt="p9rILm8.md.png" /></a>
 <a href="https://imgse.com/i/p9rIO0S"><img src="https://s1.ax1x.com/2023/05/11/p9rIO0S.md.png" alt="p9rIO0S.md.png" /></a></p>
 <h2 id="25-仓库风格">
   2.5 仓库风格
   <a class="anchor" href="#25-%e4%bb%93%e5%ba%93%e9%a3%8e%e6%a0%bc">#</a>
 </h2>
-<p>  仓库风格包含2个子风格：<br>
-  1、数据库系统<br>
-  2、黑板系统
-<a href="https://imgse.com/i/p9r7PdU"><img src="https://s1.ax1x.com/2023/05/11/p9r7PdU.md.png" alt="p9r7PdU.md.png" /></a>
+<p>  仓库风格包含2个子风格：</p>
+<p>  1、数据库系统</p>
+<p>  2、黑板系统</p>
+<p><a href="https://imgse.com/i/p9r7PdU"><img src="https://s1.ax1x.com/2023/05/11/p9r7PdU.md.png" alt="p9r7PdU.md.png" /></a>
 <a href="https://imgse.com/i/p9rIzfs"><img src="https://s1.ax1x.com/2023/05/11/p9rIzfs.md.png" alt="p9rIzfs.md.png" /></a>
 <a href="https://imgse.com/i/p9roppn"><img src="https://s1.ax1x.com/2023/05/11/p9roppn.md.png" alt="p9roppn.md.png" /></a></p>
 <h2 id="26-闭环控制风格过程风格">
@@ -1036,10 +1037,10 @@ https://github.com/alex-shpak/hugo-book
   2.7 C2架构风格
   <a class="anchor" href="#27-c2%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h2>
-<p><a href="https://imgse.com/i/p9roC60"><img src="https://s1.ax1x.com/2023/05/11/p9roC60.md.png" alt="p9roC60.md.png" /></a>\</p>
+<p><a href="https://imgse.com/i/p9roC60"><img src="https://s1.ax1x.com/2023/05/11/p9roC60.md.png" alt="p9roC60.md.png" /></a></p>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/p9r7KeK"><img src="https://s1.ax1x.com/2023/05/11/p9r7KeK.md.png" alt="p9r7KeK.md.png" /></a><br>
+<a href="https://imgse.com/i/p9r7KeK"><img src="https://s1.ax1x.com/2023/05/11/p9r7KeK.md.png" alt="p9r7KeK.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1054,7 +1055,7 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 
-<a href="https://imgse.com/i/p9rq1FU"><img src="https://s1.ax1x.com/2023/05/11/p9rq1FU.md.png" alt="p9rq1FU.md.png" /></a><br>
+<a href="https://imgse.com/i/p9rq1FU"><img src="https://s1.ax1x.com/2023/05/11/p9rq1FU.md.png" alt="p9rq1FU.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1069,7 +1070,7 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 
-<a href="https://imgse.com/i/p9rOyqI"><img src="https://s1.ax1x.com/2023/05/11/p9rOyqI.md.png" alt="p9rOyqI.md.png" /></a><br>
+<a href="https://imgse.com/i/p9rOyqI"><img src="https://s1.ax1x.com/2023/05/11/p9rOyqI.md.png" alt="p9rOyqI.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1095,43 +1096,49 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#281-%e4%bb%8e-cs---bs---%e6%b7%b7%e5%90%88%e6%9e%b6%e6%9e%84">#</a>
 </h3>
 <ul>
-<li>双层C/S架构<br>
-  通过图示可以看出非常明显的缺点：将业务逻辑的代码嵌入进客户端，在早期互联网并不普及的情况下，频繁变更的业务逻辑代码和难以推广升级的客户端存在巨大矛盾。
-<a href="https://imgse.com/i/p9sqZv9"><img src="https://s1.ax1x.com/2023/05/12/p9sqZv9.md.png" alt="p9sqZv9.md.png" /></a></li>
-<li>三层C/S架构<br>
-  相比于双层C/S架构，三层C/S架构的优势在于：将业务逻辑层单独拆分出来(独立于数据库服务器、用户客户端)放在单独的服务器上，经常变更的业务逻辑代码并不会直接影响到客户端的使用。其劣势依然需要用户安装客户端(你可以认为就是手机中的APP)。
-<a href="https://imgse.com/i/p9sqDPS"><img src="https://s1.ax1x.com/2023/05/12/p9sqDPS.md.png" alt="p9sqDPS.md.png" /></a>
-<a href="https://imgse.com/i/p9sLpxH"><img src="https://s1.ax1x.com/2023/05/12/p9sLpxH.md.png" alt="p9sLpxH.md.png" /></a></li>
-<li>B/S架构<br>
-  相比于C/S架构，B/S架构也有自己的优缺点<br>
-  优势：推广容易，不需要用户下载什么客户端之类的，只需要浏览器访问对应地址即可，这也就是早期各大厂都是从门户网站起家的。<br>
-  劣势：响应速度较慢，早期只能整个提交页面数据(不能局部刷新)、其安全性较低等。
-<a href="https://imgse.com/i/p9sLRQH"><img src="https://s1.ax1x.com/2023/05/12/p9sLRQH.png" alt="p9sLRQH.png" /></a></li>
-<li>混合架构<br>
-  结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。
-<a href="https://imgse.com/i/p9sxzJP"><img src="https://s1.ax1x.com/2023/05/12/p9sxzJP.md.png" alt="p9sxzJP.md.png" /></a></li>
+<li>双层C/S架构</li>
 </ul>
+<p>  通过图示可以看出非常明显的缺点：将业务逻辑的代码嵌入进客户端，在早期互联网并不普及的情况下，频繁变更的业务逻辑代码和难以推广升级的客户端存在巨大矛盾。</p>
+<p><a href="https://imgse.com/i/p9sqZv9"><img src="https://s1.ax1x.com/2023/05/12/p9sqZv9.md.png" alt="p9sqZv9.md.png" /></a></p>
+<ul>
+<li>三层C/S架构</li>
+</ul>
+<p>  相比于双层C/S架构，三层C/S架构的优势在于：将业务逻辑层单独拆分出来(独立于数据库服务器、用户客户端)放在单独的服务器上，经常变更的业务逻辑代码并不会直接影响到客户端的使用。其劣势依然需要用户安装客户端(你可以认为就是手机中的APP)。</p>
+<p><a href="https://imgse.com/i/p9sqDPS"><img src="https://s1.ax1x.com/2023/05/12/p9sqDPS.md.png" alt="p9sqDPS.md.png" /></a>
+<a href="https://imgse.com/i/p9sLpxH"><img src="https://s1.ax1x.com/2023/05/12/p9sLpxH.md.png" alt="p9sLpxH.md.png" /></a></p>
+<ul>
+<li>B/S架构</li>
+</ul>
+<p>  相比于C/S架构，B/S架构也有自己的优缺点</p>
+<p>  优势：推广容易，不需要用户下载什么客户端之类的，只需要浏览器访问对应地址即可，这也就是早期各大厂都是从门户网站起家的。</p>
+<p>  劣势：响应速度较慢，早期只能整个提交页面数据(不能局部刷新)、其安全性较低等。</p>
+<p><a href="https://imgse.com/i/p9sLRQH"><img src="https://s1.ax1x.com/2023/05/12/p9sLRQH.png" alt="p9sLRQH.png" /></a></p>
+<ul>
+<li>混合架构</li>
+</ul>
+<p>  结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。</p>
+<p><a href="https://imgse.com/i/p9sxzJP"><img src="https://s1.ax1x.com/2023/05/12/p9sxzJP.md.png" alt="p9sxzJP.md.png" /></a></p>
 <h3 id="282-mvc架构风格">
   2.8.2 MVC架构风格
   <a class="anchor" href="#282-mvc%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h3>
 <p>  MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数
-据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。<br>
-  MVC分为主动MVC和被动MVC(具体不用了解)，MVC架构的缺点在于MV之间没有解耦，不是严格的分层架构(严格的分层架构：当前层之和上下层之间有联系)
-<a href="https://imgse.com/i/p9ym5FK"><img src="https://s1.ax1x.com/2023/05/12/p9ym5FK.md.png" alt="p9ym5FK.md.png" /></a><br>
-  在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是Entity Bean/Session Bean，View是JSP，Controller是Servlet。</p>
+据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
+<p>  MVC分为主动MVC和被动MVC(具体不用了解)，MVC架构的缺点在于MV之间没有解耦，不是严格的分层架构(严格的分层架构：当前层之和上下层之间有联系)</p>
+<p><a href="https://imgse.com/i/p9ym5FK"><img src="https://s1.ax1x.com/2023/05/12/p9ym5FK.md.png" alt="p9ym5FK.md.png" /></a></p>
+<p>  在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是Entity Bean/Session Bean，View是JSP，Controller是Servlet。</p>
 <h3 id="283-mvp架构风格">
   2.8.3 MVP架构风格
   <a class="anchor" href="#283-mvp%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h3>
-<p>  MVP(Model-View-Presenter)，<del>注意：它不是LOL中的MVP</del>，它是MVC的变种，它实现了MV之间的解耦。
-<a href="https://imgse.com/i/p9ynxBR"><img src="https://s1.ax1x.com/2023/05/12/p9ynxBR.md.png" alt="p9ynxBR.md.png" /></a></p>
+<p>  MVP(Model-View-Presenter)，<del>注意：它不是LOL中的MVP</del>，它是MVC的变种，它实现了MV之间的解耦。</p>
+<p><a href="https://imgse.com/i/p9ynxBR"><img src="https://s1.ax1x.com/2023/05/12/p9ynxBR.md.png" alt="p9ynxBR.md.png" /></a></p>
 <h3 id="284-mvvm架构风格">
   2.8.4 MVVM架构风格
   <a class="anchor" href="#284-mvvm%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h3>
-<p>  MVVM(Model-ViewModel-View),类似于vue中的双向数据绑定，View改变则ViewModel也改变，反之亦然。
-<a href="https://imgse.com/i/p9ynzH1"><img src="https://s1.ax1x.com/2023/05/12/p9ynzH1.md.png" alt="p9ynzH1.md.png" /></a></p>
+<p>  MVVM(Model-ViewModel-View),类似于vue中的双向数据绑定，View改变则ViewModel也改变，反之亦然。</p>
+<p><a href="https://imgse.com/i/p9ynzH1"><img src="https://s1.ax1x.com/2023/05/12/p9ynzH1.md.png" alt="p9ynzH1.md.png" /></a></p>
 <h3 id="285-ria架构风格">
   2.8.5 RIA架构风格
   <a class="anchor" href="#285-ria%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
@@ -1141,41 +1148,41 @@ https://github.com/alex-shpak/hugo-book
   2.8.6 基于服务的架构(SOA)
   <a class="anchor" href="#286-%e5%9f%ba%e4%ba%8e%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%9e%b6%e6%9e%84soa">#</a>
 </h3>
-<p>  1、服务构件粗粒度，传统构件细粒度居多。<br>
-  2、服务构件的接口是标准的，主要是WSDL接口，传统构件常以具体API形式出现。<br>
-  3、服务构件的实现与语言无关，传统构件绑定某种特定语言。<br>
-  4、服务构件可以通过构件容器提供OoS的服务，传统构件完全由程序代码直接控制。
-<a href="https://imgse.com/i/p9glNbF"><img src="https://s1.ax1x.com/2023/05/15/p9glNbF.md.png" alt="p9glNbF.md.png" /></a><br>
-  SOA的实现方式：WebService；WSDL就是WebService接口对应的WSDL文件，该文件通过xml格式说明如何调用可以看作WebService的接口文档 (使用说明书)。
-<a href="https://imgse.com/i/p9gsw36"><img src="https://s1.ax1x.com/2023/05/15/p9gsw36.md.png" alt="p9gsw36.md.png" /></a><br>
-  SOA的实现方式：ESB
-<a href="https://imgse.com/i/p9gssDe"><img src="https://s1.ax1x.com/2023/05/15/p9gssDe.md.png" alt="p9gssDe.md.png" /></a></p>
+<p>  1、服务构件粗粒度，传统构件细粒度居多。</p>
+<p>  2、服务构件的接口是标准的，主要是WSDL接口，传统构件常以具体API形式出现。</p>
+<p>  3、服务构件的实现与语言无关，传统构件绑定某种特定语言。</p>
+<p>  4、服务构件可以通过构件容器提供OoS的服务，传统构件完全由程序代码直接控制。</p>
+<p><a href="https://imgse.com/i/p9glNbF"><img src="https://s1.ax1x.com/2023/05/15/p9glNbF.md.png" alt="p9glNbF.md.png" /></a></p>
+<p>  SOA的实现方式：WebService；WSDL就是WebService接口对应的WSDL文件，该文件通过xml格式说明如何调用可以看作WebService的接口文档 (使用说明书)。</p>
+<p><a href="https://imgse.com/i/p9gsw36"><img src="https://s1.ax1x.com/2023/05/15/p9gsw36.md.png" alt="p9gsw36.md.png" /></a></p>
+<p>  SOA的实现方式：ESB</p>
+<p><a href="https://imgse.com/i/p9gssDe"><img src="https://s1.ax1x.com/2023/05/15/p9gssDe.md.png" alt="p9gssDe.md.png" /></a></p>
 <h3 id="287-微服务">
   2.8.7 微服务
   <a class="anchor" href="#287-%e5%be%ae%e6%9c%8d%e5%8a%a1">#</a>
 </h3>
-<p>  微服务顾名思义，就是很小的服务，所以它属于面向服务架构的一种。
-  微服务架构是一种架构模式，它提倡将单一应用程序划分成一组小的服务，服务之间互相协调、互相配合，为用户提供最终价值。每个服务运行在其独立的进程中，服务与服务间采用轻量级的通信机制互相沟通 (通常是基于HTTP协议的RESTfulAPI)。每个服务都围绕着具体业务进行构建，并且能够被独立的部署到生产环境、类生产环境等。另外，应当尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建。<br>
-  其特点有：<br>
-  1、小,且专注于做一件事情。<br>
-  2、轻量级的通信机制。<br>
-  3、松耦合、独立部署。<br>
-<a href="https://imgse.com/i/p9gsj2V"><img src="https://s1.ax1x.com/2023/05/15/p9gsj2V.md.png" alt="p9gsj2V.md.png" /></a><br>
-微服务的优势：<br>
-  1、技术异构<br>
-  2、弹性扩展<br>
-  3、在自动化部署情况下，能简化部署<br>
-  4、可组织性<br>
-微服务的挑战：<br>
-  1、分布式系统的复杂度<br>
-  2、运维成本<br>
-  3、服务间的依赖管理和测试<br>
-  4、部署自动化\</p>
+<p>  微服务顾名思义，就是很小的服务，所以它属于面向服务架构的一种。</p>
+<p>  微服务架构是一种架构模式，它提倡将单一应用程序划分成一组小的服务，服务之间互相协调、互相配合，为用户提供最终价值。每个服务运行在其独立的进程中，服务与服务间采用轻量级的通信机制互相沟通 (通常是基于HTTP协议的RESTfulAPI)。每个服务都围绕着具体业务进行构建，并且能够被独立的部署到生产环境、类生产环境等。另外，应当尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建。</p>
+<p>  其特点有：</p>
+<p>  1、小,且专注于做一件事情。</p>
+<p>  2、轻量级的通信机制。</p>
+<p>  3、松耦合、独立部署。</p>
+<p><a href="https://imgse.com/i/p9gsj2V"><img src="https://s1.ax1x.com/2023/05/15/p9gsj2V.md.png" alt="p9gsj2V.md.png" /></a></p>
+<p>微服务的优势：</p>
+<p>  1、技术异构</p>
+<p>  2、弹性扩展</p>
+<p>  3、在自动化部署情况下，能简化部署</p>
+<p>  4、可组织性</p>
+<p>微服务的挑战：</p>
+<p>  1、分布式系统的复杂度</p>
+<p>  2、运维成本</p>
+<p>  3、服务间的依赖管理和测试</p>
+<p>  4、部署自动化</p>
 <ul>
-<li>SOA与微服务的对比
-<a href="https://imgse.com/i/p9gyVxK"><img src="https://s1.ax1x.com/2023/05/15/p9gyVxK.md.png" alt="p9gyVxK.md.png" /></a>
-<a href="https://imgse.com/i/p9gyMad"><img src="https://s1.ax1x.com/2023/05/15/p9gyMad.md.png" alt="p9gyMad.md.png" /></a></li>
+<li>SOA与微服务的对比</li>
 </ul>
+<p><a href="https://imgse.com/i/p9gyVxK"><img src="https://s1.ax1x.com/2023/05/15/p9gyVxK.md.png" alt="p9gyVxK.md.png" /></a>
+<a href="https://imgse.com/i/p9gyMad"><img src="https://s1.ax1x.com/2023/05/15/p9gyMad.md.png" alt="p9gyMad.md.png" /></a></p>
 <h3 id="288-mda">
   2.8.8 MDA
   <a class="anchor" href="#288-mda">#</a>
