@@ -23,3 +23,13 @@
 ---
 
 [![pCaYvrV.md.png](https://s1.ax1x.com/2023/06/27/pCaYvrV.md.png)](https://imgse.com/i/pCaYvrV)
+
+## 4 系统运行与维护
+
+---
+
+[![pCde97q.md.png](https://s1.ax1x.com/2023/06/28/pCde97q.md.png)](https://imgse.com/i/pCde97q)
+
+>例题
+[![pCdeE3F.md.png](https://s1.ax1x.com/2023/06/28/pCdeE3F.md.png)](https://imgse.com/i/pCdeE3F)
+{{< expand "学霸肯定对了">}}A D C{{< /expand >}}
