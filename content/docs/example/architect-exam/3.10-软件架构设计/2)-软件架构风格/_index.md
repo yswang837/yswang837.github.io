@@ -34,6 +34,8 @@ title: "2) 软件架构风格"
 
 ## 2.1 数据流风格
 
+---
+
 &emsp;&emsp;数据流风格以数据驱动的方式推进项目，其的典型应用有**传统编译器**、**网络报文处理**，它包含2个子风格：
 
 &emsp;&emsp;1、批处理。做题要点：**大量整体数据**、**无需用户交互**
@@ -46,6 +48,8 @@ title: "2) 软件架构风格"
 [![p9rI6Qx.md.png](https://s1.ax1x.com/2023/05/11/p9rI6Qx.md.png)](https://imgse.com/i/p9rI6Qx)
 
 ## 2.2 调用/返回风格
+
+---
 
 &emsp;&emsp;调用/返回风格包含3个子风格：
 
@@ -60,6 +64,8 @@ title: "2) 软件架构风格"
 
 ## 2.3 独立构建风格
 
+---
+
 &emsp;&emsp;独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：
 
 &emsp;&emsp;1、进程通信
@@ -71,6 +77,8 @@ title: "2) 软件架构风格"
 
 ## 2.4 虚拟机风格
 
+---
+
 &emsp;&emsp;虚拟机风格包含2个子风格：
 
 &emsp;&emsp;1、解释器风格，做题关键字：需要自定义规则的场景
@@ -81,6 +89,8 @@ title: "2) 软件架构风格"
 [![p9rIO0S.md.png](https://s1.ax1x.com/2023/05/11/p9rIO0S.md.png)](https://imgse.com/i/p9rIO0S)
 
 ## 2.5 仓库风格
+
+---
 
 &emsp;&emsp;仓库风格包含2个子风格：
 
@@ -94,21 +104,29 @@ title: "2) 软件架构风格"
 
 ## 2.6 闭环控制风格(过程风格)
 
+---
+
 [![p9ro9lq.md.png](https://s1.ax1x.com/2023/05/11/p9ro9lq.md.png)](https://imgse.com/i/p9ro9lq)
 
 ## 2.7 C2架构风格
+
+---
+
+&emsp;&emsp;C2属于层次架构风格。
 
 [![p9roC60.md.png](https://s1.ax1x.com/2023/05/11/p9roC60.md.png)](https://imgse.com/i/p9roC60)
 
 >例题
 [![p9r7KeK.md.png](https://s1.ax1x.com/2023/05/11/p9r7KeK.md.png)](https://imgse.com/i/p9r7KeK)
-{{< expand "学霸肯定对了">}}1.虚拟机&emsp;&emsp;2.数据流&emsp;&emsp;3.独立构建风格&emsp;&emsp;4.解释器&emsp;&emsp;5.过程控制{{< /expand >}}
+{{< expand "学霸肯定对了">}}1.虚拟机&emsp;&emsp;2.数据流&emsp;&emsp;3.隐式调用&emsp;&emsp;4.解释器&emsp;&emsp;5.过程控制{{< /expand >}}
 [![p9rq1FU.md.png](https://s1.ax1x.com/2023/05/11/p9rq1FU.md.png)](https://imgse.com/i/p9rq1FU)
 {{< expand "学霸肯定对了">}}1.黑板&emsp;&emsp;2.隐式调用&emsp;&emsp;3.事件驱动风格{{< /expand >}}
 [![p9rOyqI.md.png](https://s1.ax1x.com/2023/05/11/p9rOyqI.md.png)](https://imgse.com/i/p9rOyqI)
 {{< expand "学霸肯定对了">}}1.顺序批处理&emsp;&emsp;2.数据共享&emsp;&emsp;3.隐式调用风格&emsp;&emsp;4.模拟&emsp;&emsp;5.虚拟机{{< /expand >}}
 
 ## 2.8 架构风格具体实例
+
+---
 
 &emsp;&emsp;没有最好的架构，只有更适合具体业务场景的架构。
 
