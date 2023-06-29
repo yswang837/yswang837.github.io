@@ -3,16 +3,23 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 构件与中间件技术 # 1. 构件的定义 # 软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。 构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。 构件是一个独立发布的功能部分，可以通过其接口访问它的服务。 特性
-构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。
+<meta name="description" content=" 构件与中间件技术 # 1. 构件的定义 # 软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。
+构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。
+构件是一个独立发布的功能部分，可以通过其接口访问它的服务。
+特性 构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。
 构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。
 概念框架的互操作设计包括系统体系结构连接的所有框架间的互操作的规则。
 构件是一组通常需要同时部署的原子构件。构件和原子构件之间的区别在于，大多数原子构件永远都不会被单独部署，尽管它们可以被单独部署。
 一个原子构件是一个模块和一组资源。
 模块是一组类和可能的非面向对象的结构体，比如过程或者函数。
 资源是一个类型化的项的固定集合。
-资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法。
-中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。 2. 中间件 # 中间件是一类构件、中间件是一类系统软件 中间件技术的优点： 3. 构件的复用 # ">
+资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。
+2. 中间件 # 中间件是一类构件、中间件是一类系统软件。ESB
+中间件技术的优点：
+3. 构件的复用 # 复用的发展史 构建的复用流程 例题 学霸肯定对了 ↕ B
+水平：通用，普遍
+垂直：专用，特定用途
+学霸肯定对了 ↕ C 4. 构件标准 # 4.1 COBRA # 例题 学霸肯定对了 ↕ A ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="9) 构建与中间件技术" />
 <meta property="og:description" content="" />
@@ -24,7 +31,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.aa197c94228177431f7ab02a7f1d585ca2b7b8b4dcafaa4b540d4b964b4240c1.js" integrity="sha256-qhl8lCKBd0MferAqfx1YXKK3uLTcr6pLVA1LlktCQME=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d1ea198d489f13e751c749ad6ffe9e7c070fc8fd590594ad3ca9f7b53bbd44db.js" integrity="sha256-0eoZjUifE&#43;dRx0mtb/6efAcPyP1ZBZStPKn3tTu9RNs=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-%E6%9E%84%E5%BB%BA%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -593,7 +600,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">7 ) 软件架构评估</a>
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">7) 软件架构评估</a>
   
 
           
@@ -647,25 +654,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/10-web%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">10) web架构设计</a>
-  
-
-          
-  <ul>
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/11-%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" class="">11) 专项练习</a>
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/10-%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" class="">10) 专项练习</a>
   
 
           
@@ -914,6 +903,11 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#1-构件的定义">1. 构件的定义</a></li>
     <li><a href="#2-中间件">2. 中间件</a></li>
     <li><a href="#3-构件的复用">3. 构件的复用</a></li>
+    <li><a href="#4-构件标准">4. 构件标准</a>
+      <ul>
+        <li><a href="#41-cobra">4.1 COBRA</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -934,41 +928,125 @@ https://github.com/alex-shpak/hugo-book
   1. 构件的定义
   <a class="anchor" href="#1-%e6%9e%84%e4%bb%b6%e7%9a%84%e5%ae%9a%e4%b9%89">#</a>
 </h2>
+<hr>
 <ul>
-<li><strong>软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。</strong></li>
-<li>构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。</li>
-<li>构件是一个独立发布的功能部分，可以通过其接口访问它的服务。
-<a href="https://imgse.com/i/p9vU7ZQ"><img src="https://s1.ax1x.com/2023/05/31/p9vU7ZQ.md.png" alt="p9vU7ZQ.md.png" /></a></li>
-<li>特性<br>
-  构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。<br>
-  构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。<br>
-  概念框架的互操作设计包括系统体系结构连接的所有框架间的互操作的规则。<br>
-  构件是一组通常需要同时部署的原子构件。构件和原子构件之间的区别在于，大多数原子构件永远都不会被单独部署，尽管它们可以被单独部署。<br>
-  一个原子构件是一个模块和一组资源。<br>
-  模块是一组类和可能的非面向对象的结构体，比如过程或者函数。<br>
-  资源是一个类型化的项的固定集合。<br>
-  资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法。<br>
-  中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。</li>
+<li>
+<p><strong>软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。</strong></p>
+</li>
+<li>
+<p>构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。</p>
+</li>
+<li>
+<p>构件是一个独立发布的功能部分，可以通过其接口访问它的服务。</p>
+</li>
 </ul>
+<p><a href="https://imgse.com/i/p9vU7ZQ"><img src="https://s1.ax1x.com/2023/05/31/p9vU7ZQ.md.png" alt="p9vU7ZQ.md.png" /></a></p>
+<ul>
+<li>特性</li>
+</ul>
+<p>  构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。</p>
+<p>  构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。</p>
+<p>  概念框架的互操作设计包括系统体系结构连接的所有框架间的互操作的规则。</p>
+<p>  构件是一组通常需要同时部署的原子构件。构件和原子构件之间的区别在于，大多数原子构件永远都不会被单独部署，尽管它们可以被单独部署。</p>
+<p>  一个原子构件是一个模块和一组资源。</p>
+<p>  模块是一组类和可能的非面向对象的结构体，比如过程或者函数。</p>
+<p>  资源是一个类型化的项的固定集合。</p>
+<p>  资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。</p>
 <h2 id="2-中间件">
   2. 中间件
   <a class="anchor" href="#2-%e4%b8%ad%e9%97%b4%e4%bb%b6">#</a>
 </h2>
-<p>中间件是一类构件、中间件是一类系统软件
-<a href="https://imgse.com/i/p9vUbIs"><img src="https://s1.ax1x.com/2023/05/31/p9vUbIs.md.png" alt="p9vUbIs.md.png" /></a></p>
-<p>中间件技术的优点：
-<a href="https://imgse.com/i/p9vUOGq"><img src="https://s1.ax1x.com/2023/05/31/p9vUOGq.md.png" alt="p9vUOGq.md.png" /></a></p>
+<hr>
+<p>  中间件是一类构件、中间件是一类系统软件。ESB</p>
+<p><a href="https://imgse.com/i/p9vUbIs"><img src="https://s1.ax1x.com/2023/05/31/p9vUbIs.md.png" alt="p9vUbIs.md.png" /></a></p>
+<p>  中间件技术的优点：</p>
+<p><a href="https://imgse.com/i/p9vUOGq"><img src="https://s1.ax1x.com/2023/05/31/p9vUOGq.md.png" alt="p9vUOGq.md.png" /></a></p>
 <h2 id="3-构件的复用">
   3. 构件的复用
   <a class="anchor" href="#3-%e6%9e%84%e4%bb%b6%e7%9a%84%e5%a4%8d%e7%94%a8">#</a>
 </h2>
-<p><a href="https://imgse.com/i/p9vg0zQ"><img src="https://s1.ax1x.com/2023/05/31/p9vg0zQ.md.png" alt="p9vg0zQ.md.png" /></a>
+<hr>
+<ul>
+<li>
+<p>复用的发展史
+<a href="https://imgse.com/i/p9vg0zQ"><img src="https://s1.ax1x.com/2023/05/31/p9vg0zQ.md.png" alt="p9vg0zQ.md.png" /></a></p>
+</li>
+<li>
+<p>构建的复用流程
 <a href="https://imgse.com/i/p9vgsLn"><img src="https://s1.ax1x.com/2023/05/31/p9vgsLn.md.png" alt="p9vgsLn.md.png" /></a>
 <a href="https://imgse.com/i/p9vgcd0"><img src="https://s1.ax1x.com/2023/05/31/p9vgcd0.md.png" alt="p9vgcd0.md.png" /></a>
 <a href="https://imgse.com/i/p9vggoV"><img src="https://s1.ax1x.com/2023/05/31/p9vggoV.md.png" alt="p9vggoV.md.png" /></a>
-<a href="https://imgse.com/i/p9vgWJU"><img src="https://s1.ax1x.com/2023/05/31/p9vgWJU.md.png" alt="p9vgWJU.md.png" /></a>
+<a href="https://imgse.com/i/p9vgWJU"><img src="https://s1.ax1x.com/2023/05/31/p9vgWJU.md.png" alt="p9vgWJU.md.png" /></a></p>
+</li>
+</ul>
+<blockquote>
+<p>例题
 <a href="https://imgse.com/i/p9vOP78"><img src="https://s1.ax1x.com/2023/05/31/p9vOP78.md.png" alt="p9vOP78.md.png" /></a>
-<a href="https://imgse.com/i/p9vOVpj"><img src="https://s1.ax1x.com/2023/05/31/p9vOVpj.md.png" alt="p9vOVpj.md.png" /></a></p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>B</p>
+<p>水平：通用，普遍</p>
+<p>垂直：专用，特定用途</p>
+
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/p9vOVpj"><img src="https://s1.ax1x.com/2023/05/31/p9vOVpj.md.png" alt="p9vOVpj.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="4-构件标准">
+  4. 构件标准
+  <a class="anchor" href="#4-%e6%9e%84%e4%bb%b6%e6%a0%87%e5%87%86">#</a>
+</h2>
+<hr>
+<p><a href="https://imgse.com/i/pCwRUBT"><img src="https://s1.ax1x.com/2023/06/29/pCwRUBT.md.png" alt="pCwRUBT.md.png" /></a></p>
+<h3 id="41-cobra">
+  4.1 COBRA
+  <a class="anchor" href="#41-cobra">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCwRgu6"><img src="https://s1.ax1x.com/2023/06/29/pCwRgu6.md.png" alt="pCwRgu6.md.png" /></a>
+<a href="https://imgse.com/i/pCwR7vt"><img src="https://s1.ax1x.com/2023/06/29/pCwR7vt.md.png" alt="pCwR7vt.md.png" /></a>
+<a href="https://imgse.com/i/pCwRbKP"><img src="https://s1.ax1x.com/2023/06/29/pCwRbKP.md.png" alt="pCwRbKP.md.png" /></a>
+<a href="https://imgse.com/i/pCwRv5Q"><img src="https://s1.ax1x.com/2023/06/29/pCwRv5Q.md.png" alt="pCwRv5Q.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCwRzCj"><img src="https://s1.ax1x.com/2023/06/29/pCwRzCj.md.png" alt="pCwRzCj.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 </article>
  
       
@@ -1013,6 +1091,11 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#1-构件的定义">1. 构件的定义</a></li>
     <li><a href="#2-中间件">2. 中间件</a></li>
     <li><a href="#3-构件的复用">3. 构件的复用</a></li>
+    <li><a href="#4-构件标准">4. 构件标准</a>
+      <ul>
+        <li><a href="#41-cobra">4.1 COBRA</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
