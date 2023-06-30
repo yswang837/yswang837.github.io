@@ -43,6 +43,8 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 
 - DNS(Domain Name System)
 
+&emsp;&emsp;在Linux中，DNS的配置文件保存在/etc/resolv.conf。/etc/resolv.conf是DNS客户机的配置文件，用于设置DNS服务器的IP地址及DNS城名，还包含了主机的城名搜索顺序。该文件是由域名解析器 (一个根据主机名解析IP地址的库)使用的配置文件。它的格式比较简单，每行以一个关键字开头，后接一个或多个由空格隔开的参数（一般情况下，系统不会去回写用户程序、用户数据，即便系统去写了这两部分也不会对系统本身造成较大的影响。只有系统对系统本身的目录或关键文件回写异常，才有可能导致较大的影响，严重的会导致系统崩溃。举个例子，linux系统下root账号回写/etc/resolv.conf异常时，可能会导致系统DNS服务异常）。
+
 [![pCmCD41.md.png](https://s1.ax1x.com/2023/06/13/pCmCD41.md.png)](https://imgse.com/i/pCmCD41)
 [![pCmxskq.md.png](https://s1.ax1x.com/2023/06/14/pCmxskq.md.png)](https://imgse.com/i/pCmxskq)
 

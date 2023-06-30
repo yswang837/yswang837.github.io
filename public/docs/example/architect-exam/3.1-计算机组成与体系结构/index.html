@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 ✌ # 计算机结构 ✅ 存储系统 ✅✅✅✅ 数据传输控制方式 ✅ 总线 ✅✅ CISC与RISC ✅ 流水线 ✅✅ 校验码 ✅ 1 计算机结构 # 计算机的硬件包含5大组成：控制器、运算器、存储器、输入设备和输出设备。CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。程序员是可以通过汇编语言直接操作CPU中的寄存器的，CPU访问内存通常是同步方式，CPU与I/0接口交换信息通常是同步方式，CPU与PCI总线交换信息通常是同步方式，I/O接口与打印机交换信息则通常采用基于缓存池的异步方式。
+<meta name="description" content="课程内容提要 ✌ # 计算机结构 ✅ 存储系统 ✅✅✅✅ 数据传输控制方式 ✅ 总线 ✅✅ CISC与RISC ✅ 流水线 ✅✅ 校验码 ✅ 1 计算机结构 # 计算机的硬件包含5大组成：控制器、运算器、存储器、输入设备和输出设备。CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。程序员是可以通过汇编语言直接操作CPU中的寄存器的，CPU访问内存通常是同步方式，CPU与I/0接口交换信息通常是同步方式，CPU与PCI总线交换信息通常是同步方式，I/O接口与打印机交换信息则通常采用基于缓存池的异步方式(PCI (Peripheral ComponentInt Interconnect)总线标准是种局部并行总线标准，常用来表示个人计算机中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽。GUI (Graphical User Interface)常用来表示采用图形方式显示的计算机操作用户界面。API(Application Programming Interface，应用程序编程接口)是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，开发人员无须访问源码(或理解内部工作机制的细节))。
 它们之间的交互如下图（别的部件会在后面的章节详细讲解，这里只说运算器和控制器）： 冯诺依曼结构 一般用于pc处理器，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令。
 哈佛结构 一般用于嵌入式系统处理器DSP(数字信号处理器)，指令和数据可并行分开存储与传输。
 1.1 运算器 # 算术逻辑单元ALU：实现对数据的算术和逻辑运算。
@@ -16,14 +16,12 @@
 时序部件：提供时序控制信号。
 例题 学霸肯定对了 ↕ 答案：A
 计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器(PC)的内容送到地址总线上，PC-&gt;IR。
-学霸肯定对了 ↕ 答案：B 2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。内存外存称为虚拟存储器、cache内存外存成为三级存储结构.如下图：
+学霸肯定对了 ↕ 答案：B 2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。虚拟存储器（是一个容量非常大的逻辑存储模型，可认为是内存&#43;外存，当虚拟存储器发生页面失效时，需要进行外部地址变换，即实现虚地址到辅存物理地址的变换。）、cache内存外存成为三级存储结构.如下图：
 2.1 Cache # 高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于程序员来说是透明的。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。
 地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。
 Cache的功能 1.提高CPU数据输入输出的速率，突破冯·诺依曼瓶颈，即突破CPU与存储系统间数据传送带宽限制。
 2.在计算机的存储系统体系中(除cpu中的寄存器外)，Cache是访问速度最快的层次。
-3.Cache对程序员来说是透明的。
-4.使用Cache改善系统性能的依据是程序的局部性原理(总的来说，在CPU运行时，所访问的数据会趋向于一个较小的局部时空内。包括下面两个方面: 时间局部性原理:如果一个数据项正在被访问，那么在近期它很可能会被再次访问(代码里面的循环)，即在相邻的时间里会访问同一个数据项。空间局部性原理:在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问(数组))
-Cache的命中率 当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache(90%一般由cache的算法决定)，则CPU读取一次的平均时间为(90% * 1 &#43; 10% * 1000)ns。">
+3.Cache对程序员来说是透明的。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.1 计算机组成与体系结构" />
 <meta property="og:description" content="" />
@@ -35,7 +33,7 @@ Cache的命中率 当CPU所访问的数据在Cache中时，命中，直接丛Cac
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.112a4794393e2c1ec5f0ff21885c87524c7893b070e649740e28152ad6a705eb.js" integrity="sha256-ESpHlDk&#43;LB7F8P8hiFyHUkx4k7Bw5kl0DigVKtanBes=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.850cefccf73fc344c1695df53dce3bf932b7cdcc2f4e762ceb1153f2a92daf9d.js" integrity="sha256-hQzvzPc/w0TBaV31Pc47&#43;TK3zcwvTnYs6xFT8qktr50=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1013,7 +1011,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#1-%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bb%93%e6%9e%84">#</a>
 </h2>
 <hr>
-<p>  计算机的硬件包含5大组成：<strong>控制器</strong>、<strong>运算器</strong>、<strong>存储器</strong>、<strong>输入设备</strong>和<strong>输出设备</strong>。CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。程序员是可以通过汇编语言直接操作CPU中的寄存器的，CPU访问内存通常是同步方式，CPU与I/0接口交换信息通常是同步方式，CPU与PCI总线交换信息通常是同步方式，I/O接口与打印机交换信息则通常采用基于缓存池的异步方式。</p>
+<p>  计算机的硬件包含5大组成：<strong>控制器</strong>、<strong>运算器</strong>、<strong>存储器</strong>、<strong>输入设备</strong>和<strong>输出设备</strong>。CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。程序员是可以通过汇编语言直接操作CPU中的寄存器的，CPU访问内存通常是同步方式，CPU与I/0接口交换信息通常是同步方式，CPU与PCI总线交换信息通常是同步方式，I/O接口与打印机交换信息则通常采用基于缓存池的异步方式(PCI (Peripheral ComponentInt Interconnect)总线标准是种局部并行总线标准，常用来表示个人计算机中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽。GUI (Graphical User Interface)常用来表示采用图形方式显示的计算机操作用户界面。API(Application Programming Interface，应用程序编程接口)是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，开发人员无须访问源码(或理解内部工作机制的细节))。</p>
 <p>  它们之间的交互如下图（别的部件会在后面的章节详细讲解，这里只说运算器和控制器）：
 <a href="https://imgse.com/i/p9DeARs"><img src="https://s1.ax1x.com/2023/05/10/p9DeARs.md.png" alt="p9DeARs.md.png" /></a></p>
 <ul>
@@ -1080,7 +1078,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#2-%e5%ad%98%e5%82%a8%e7%b3%bb%e7%bb%9f">#</a>
 </h2>
 <hr>
-<p>  整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。内存外存称为虚拟存储器、cache内存外存成为三级存储结构.如下图：</p>
+<p>  整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。虚拟存储器（是一个容量非常大的逻辑存储模型，可认为是内存+外存，当虚拟存储器发生页面失效时，需要进行外部地址变换，即实现虚地址到辅存物理地址的变换。）、cache内存外存成为三级存储结构.如下图：</p>
 <p><a href="https://imgse.com/i/pCkau6g"><img src="https://s1.ax1x.com/2023/06/08/pCkau6g.md.png" alt="pCkau6g.md.png" /></a></p>
 <h3 id="21-cache">
   2.1 Cache
