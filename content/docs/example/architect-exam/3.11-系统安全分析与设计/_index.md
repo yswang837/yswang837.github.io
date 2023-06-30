@@ -8,12 +8,17 @@ title: 3.11 系统安全分析与设计
   - 对称与非对称加密&emsp;✅✅✅
   - 数字签名&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
   - 信息摘要&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
+  - 数字证书
 - 2. 网络安全
-  - 安全协议&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
+  - 网络各层次的安全保障&emsp;&emsp;✅✅✅
   - 网络攻击&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
   - 等级保护标准&emsp;&emsp;&emsp;✅✅
+  - 安全防范体系的层次
+  - 信息安全体系结构
 
 ## 1 安全基础基础
+
+---
 
 ### 1.1 对称与非对称加密
 
@@ -47,7 +52,81 @@ title: 3.11 系统安全分析与设计
 
 >例题
 [![pCwfEOP.md.png](https://s1.ax1x.com/2023/06/29/pCwfEOP.md.png)](https://imgse.com/i/pCwfEOP)
-{{< expand "学霸肯定对了">}}{{< /expand >}}
+{{< expand "学霸肯定对了">}}对称加密压缩信息，非对称加密传递对称秘钥，数字签名发送者不可抵赖，信息摘要防止信息被篡改。
+[![pC0wZWT.md.png](https://s1.ax1x.com/2023/06/30/pC0wZWT.md.png)](https://imgse.com/i/pC0wZWT)
+{{< /expand >}}
+[![pC0wKOJ.md.png](https://s1.ax1x.com/2023/06/30/pC0wKOJ.md.png)](https://imgse.com/i/pC0wKOJ)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
+[![pC0wJfK.md.png](https://s1.ax1x.com/2023/06/30/pC0wJfK.md.png)](https://imgse.com/i/pC0wJfK)
+{{< expand "学霸肯定对了">}}C B{{< /expand >}}
+
+### 1.4 数字证书CA
+
+[![pC0wcp8.md.png](https://s1.ax1x.com/2023/06/30/pC0wcp8.md.png)](https://imgse.com/i/pC0wcp8)
+
+- PKI公钥体系
+
+[![pC0w47n.md.png](https://s1.ax1x.com/2023/06/30/pC0w47n.md.png)](https://imgse.com/i/pC0w47n)
+[![pC0wIkq.md.png](https://s1.ax1x.com/2023/06/30/pC0wIkq.md.png)](https://imgse.com/i/pC0wIkq)
+
+## 2 网络安全
+
+---
+
+### 2.1 网络各层次的安全保障
+
+&emsp;&emsp;需要知道各个层用什么协议来保障安全。
+
+&emsp;&emsp;PGP (Pretty Good Privacy):优良保密协议。
+
+&emsp;&emsp;SSL (Secure Sockets Layer):安全套接字协议。
+
+&emsp;&emsp;TLS (Transport Layer Security):传输层安全协议。
+
+&emsp;&emsp;SET(Secure Electronic Transaction):安全电子交易协议。
+
+&emsp;&emsp;IPSEC(Internet Protocol Security):互联网安全协议。
+
+[![pC0wHpT.md.png](https://s1.ax1x.com/2023/06/30/pC0wHpT.md.png)](https://imgse.com/i/pC0wHpT)
+
+>例题
+[![pC00ph6.md.png](https://s1.ax1x.com/2023/06/30/pC00ph6.md.png)](https://imgse.com/i/pC00ph6)
+{{< expand "学霸肯定对了">}}D{{< /expand >}}
+[![pC00C9K.md.png](https://s1.ax1x.com/2023/06/30/pC00C9K.md.png)](https://imgse.com/i/pC00C9K)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
+
+### 2.2 网络攻击
+
+[![pC00icD.md.png](https://s1.ax1x.com/2023/06/30/pC00icD.md.png)](https://imgse.com/i/pC00icD)
+[![pC00AnH.md.png](https://s1.ax1x.com/2023/06/30/pC00AnH.md.png)](https://imgse.com/i/pC00AnH)
+
+>例题
+[![pC00EBd.md.png](https://s1.ax1x.com/2023/06/30/pC00EBd.md.png)](https://imgse.com/i/pC00EBd)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
+
+### 2.3 等级保护标准
+
+&emsp;&emsp;等级最低：用户自主。等级最高：访问验证。
+
+&emsp;&emsp;银行：安全标记。广播电台：结构化保护
+
+[![pC00n4P.md.png](https://s1.ax1x.com/2023/06/30/pC00n4P.md.png)](https://imgse.com/i/pC00n4P)
+[![pC00ljg.md.png](https://s1.ax1x.com/2023/06/30/pC00ljg.md.png)](https://imgse.com/i/pC00ljg)
+
+### 2.4 安全防范体系的层次
+
+[![pC0BSbj.md.png](https://s1.ax1x.com/2023/06/30/pC0BSbj.md.png)](https://imgse.com/i/pC0BSbj)
+
+>例题
+[![pC05KPS.md.png](https://s1.ax1x.com/2023/06/30/pC05KPS.md.png)](https://imgse.com/i/pC05KPS)
+{{< expand "学霸肯定对了">}}C D{{< /expand >}}
+
+### 2.5 信息安全体系结构
+
+&emsp;&emsp;自主访问控制：主体是用户，给用户赋予用些权限。访问控制列表：主体是资源，给资源的权限赋予给用户。强制访问控制：资源和用户都分级，高级的用户可以访问低级的资源。
+
+[![pC05Q2Q.md.png](https://s1.ax1x.com/2023/06/30/pC05Q2Q.md.png)](https://imgse.com/i/pC05Q2Q)
+[![pC058rn.md.png](https://s1.ax1x.com/2023/06/30/pC058rn.md.png)](https://imgse.com/i/pC058rn)
 
 ## 课后习题
 
