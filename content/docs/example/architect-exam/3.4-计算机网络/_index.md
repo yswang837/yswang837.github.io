@@ -125,7 +125,9 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 [![pCneX7V.md.png](https://s1.ax1x.com/2023/06/14/pCneX7V.md.png)](https://imgse.com/i/pCneX7V)
 {{< expand "学霸肯定对了">}}C{{< /expand >}}
 [![pCnnhRg.md.png](https://s1.ax1x.com/2023/06/14/pCnnhRg.md.png)](https://imgse.com/i/pCnnhRg)
-{{< expand "学霸肯定对了">}}B B{{< /expand >}}
+{{< expand "学霸肯定对了">}}B B
+
+3块80G的Raid5的容量=(3-1) * 80=160G，2块80G和1块40G的磁盘做Raid5的容量=(3-1) * 40=80G{{< /expand >}}
 
 ## 4 IPV6
 
