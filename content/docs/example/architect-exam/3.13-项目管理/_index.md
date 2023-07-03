@@ -27,11 +27,13 @@ title: 3.13 项目管理
 
 >例题
 [![pCrZdsS.md.png](https://s1.ax1x.com/2023/07/03/pCrZdsS.md.png)](https://imgse.com/i/pCrZdsS)
-{{< expand "学霸肯定对了">}}{{< /expand >}}
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
 
 ## 3 时间管理
 
 ---
+
+[![pCrUNrQ.md.png](https://s1.ax1x.com/2023/07/03/pCrUNrQ.md.png)](https://imgse.com/i/pCrUNrQ)
 
 ## 4 成本管理
 
