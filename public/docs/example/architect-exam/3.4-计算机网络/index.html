@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 ✌ # TCP/IP协议族 DHCP与DNS ✅✅✅ TCP与UDP ✅✅✅ 网络规划与设计 逻辑设计 ✅✅✅✅ 物理设计 ✅✅✅✅ 常见的网络设计 层次网络设计 ✅✅✅ 网络冗余设计 ✅✅ 网络存储 ✅ 各式网络存储架构 磁盘阵列容量计算 IPV6 ✅ 网络接入技术 综合布线 ✅ 网络技术扩展 物联网 ✅ 云计算 ✅ 1 TCP/IP协议族 # 1.1 TCP与UDP # 例题 学霸肯定对了 ↕ C
+<meta name="description" content="课程内容提要 ✌ # TCP/IP协议族 DHCP与DNS ✅✅✅ TCP与UDP ✅✅✅ 网络规划与设计 逻辑设计 ✅✅✅✅ 物理设计 ✅✅✅✅ 常见的网络设计 层次网络设计 ✅✅✅ 网络冗余设计 ✅✅ 网络存储 ✅ 各式网络存储架构 磁盘阵列容量计算 IPV6 ✅ 网络接入技术 综合布线 ✅ 网络技术扩展 物联网 ✅ 云计算 ✅ 常见网络设备的原理或作用 路由的管理距离 网络延迟 层次化网络编址 1 TCP/IP协议族 # HTTP协议是一种使用明文数据传输的网络协议，缺省端口80。HTTPS协议可以理解为HTTP协议的升级,就是在HTTP的基础上增加了数据加密SSL，缺省端口443。
+在客户机上运行nslookup查询某服务器名称时能解析出IP地址，查询IP地址时却不能解析出服务器名称，解决这问题的方法是 (为该服务器创建PTR记录，即反向地址解析协议)。
+1.1 TCP与UDP # internet网的网络层核心协议是IP协议，而IP协议是一种分组交换的协议。
+TCP端口号的作用是：应用层进程的寻址依据。
+例题 学霸肯定对了 ↕ C
 A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠错一般才要求重发；D项IP不是虚电路，而是走路由器。所以选C 1.2 DHCP与DNS # DNS(Domain Name System) 在Linux中，DNS的配置文件保存在/etc/resolv.conf。/etc/resolv.conf是DNS客户机的配置文件，用于设置DNS服务器的IP地址及DNS城名，还包含了主机的城名搜索顺序。该文件是由域名解析器 (一个根据主机名解析IP地址的库)使用的配置文件。它的格式比较简单，每行以一个关键字开头，后接一个或多个由空格隔开的参数（一般情况下，系统不会去回写用户程序、用户数据，即便系统去写了这两部分也不会对系统本身造成较大的影响。只有系统对系统本身的目录或关键文件回写异常，才有可能导致较大的影响，严重的会导致系统崩溃。举个例子，linux系统下root账号回写/etc/resolv.conf异常时，可能会导致系统DNS服务异常）。
-例题 学霸肯定对了 ↕ A 学霸肯定对了 ↕ C DHCP(Dynamic Host Configuration Protocol) 例题 学霸肯定对了 ↕ A 2 网络规划与设计 # 网络规划与设计包含5个阶段，它们分别是：需求分析、通信规范分析、逻辑网络设计、物理网络设计、实施阶段。这里重点看逻辑网络设计和物理网络设计，需求分析和通信规范分析的产物需要知道。">
+例题 学霸肯定对了 ↕ A 学霸肯定对了 ↕ C DHCP(Dynamic Host Configuration Protocol) DHCP客户端接收到服务器的DhcpOffer后，需要请求地址时发送DhcpRequest报文，如果服务器同意则发送DhcpAck,否则发送DhcpNack;当客户方接收到服务器的DhcpAck报文后，发现提供的地址存问题时发送DhcpDecline拒绝该地址。如：发送给DHCP客户端的地址已经被其他DHCP客户端使用，客户端会向服务器发送(DhcpDecline)信息包拒绝接受已经分配的地址信息。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.4 计算机网络" />
 <meta property="og:description" content="" />
@@ -17,7 +21,7 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.9862f536c3c425030c799d3286588d0218f04bc64ba307b5b8653232cb6e310b.js" integrity="sha256-mGL1NsPEJQMMeZ0yhliNAhjwS8ZLowe1uGUyMstuMQs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.83f4c9b0d96a98317e30055c5fb6ac2b41145c8b7b947b1bbb7e5d76d794d256.js" integrity="sha256-g/TJsNlqmDF&#43;MAVcX7asK0EUXIt7lHsbu35ddteU0lY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -917,7 +921,14 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#22-物理网络设计">2.2 物理网络设计</a></li>
       </ul>
     </li>
-    <li><a href="#23-常见的网络设计">2.3 常见的网络设计</a></li>
+    <li><a href="#23-常见的网络设计">2.3 常见的网络设计</a>
+      <ul>
+        <li><a href="#231-层次网络设计">2.3.1 层次网络设计</a></li>
+        <li><a href="#232-网络冗余设计">2.3.2 网络冗余设计</a></li>
+        <li><a href="#233-集成服务与区分服务">2.3.3 集成服务与区分服务</a></li>
+        <li><a href="#234-软件定义网络-sdn">2.3.4 软件定义网络 SDN</a></li>
+      </ul>
+    </li>
     <li><a href="#3-网络存储">3 网络存储</a></li>
     <li><a href="#4-ipv6">4 IPV6</a></li>
     <li><a href="#5-网络接入技术">5 网络接入技术</a></li>
@@ -928,6 +939,16 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#72-云计算">7.2 云计算</a></li>
       </ul>
     </li>
+    <li><a href="#8-常见网络设备的原理或作用">8 常见网络设备的原理或作用</a>
+      <ul>
+        <li><a href="#81-交换机">8.1 交换机</a></li>
+        <li><a href="#82-路由器">8.2 路由器</a></li>
+        <li><a href="#83-网闸">8.3 网闸</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-路由的管理距离">9 路由的管理距离</a></li>
+    <li><a href="#10-网络延迟">10 网络延迟</a></li>
+    <li><a href="#11-层次化网络编址">11 层次化网络编址</a></li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>
@@ -1003,18 +1024,42 @@ https://github.com/alex-shpak/hugo-book
 <li>云计算       ✅</li>
 </ul>
 </li>
+<li>
+<ol start="8">
+<li>常见网络设备的原理或作用</li>
+</ol>
+</li>
+<li>
+<ol start="9">
+<li>路由的管理距离</li>
+</ol>
+</li>
+<li>
+<ol start="10">
+<li>网络延迟</li>
+</ol>
+</li>
+<li>
+<ol start="11">
+<li>层次化网络编址</li>
+</ol>
+</li>
 </ul>
 <h2 id="1-tcpip协议族">
   1 TCP/IP协议族
   <a class="anchor" href="#1-tcpip%e5%8d%8f%e8%ae%ae%e6%97%8f">#</a>
 </h2>
 <hr>
+<p>  HTTP协议是一种使用明文数据传输的网络协议，缺省端口80。HTTPS协议可以理解为HTTP协议的升级,就是在HTTP的基础上增加了数据加密SSL，缺省端口443。</p>
+<p>  在客户机上运行nslookup查询某服务器名称时能解析出IP地址，查询IP地址时却不能解析出服务器名称，解决这问题的方法是 (为该服务器创建PTR记录，即反向地址解析协议)。</p>
 <p><a href="https://imgse.com/i/pCebHj1"><img src="https://s1.ax1x.com/2023/06/13/pCebHj1.md.png" alt="pCebHj1.md.png" /></a>
 <a href="https://imgse.com/i/pCebqnx"><img src="https://s1.ax1x.com/2023/06/13/pCebqnx.md.png" alt="pCebqnx.md.png" /></a></p>
 <h3 id="11-tcp与udp">
   1.1 TCP与UDP
   <a class="anchor" href="#11-tcp%e4%b8%8eudp">#</a>
 </h3>
+<p>  internet网的网络层核心协议是IP协议，而IP协议是一种分组交换的协议。</p>
+<p>  TCP端口号的作用是：应用层进程的寻址依据。</p>
 <p><a href="https://imgse.com/i/pCebvND"><img src="https://s1.ax1x.com/2023/06/13/pCebvND.md.png" alt="pCebvND.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -1081,6 +1126,13 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 <ul>
 <li>DHCP(Dynamic Host Configuration Protocol)</li>
 </ul>
+<p>  DHCP客户端接收到服务器的DhcpOffer后，需要请求地址时发送DhcpRequest报文，如果服务器同意则发送DhcpAck,否则发送DhcpNack;当客户方接收到服务器的DhcpAck报文后，发现提供的地址存问题时发送DhcpDecline拒绝该地址。如：发送给DHCP客户端的地址已经被其他DHCP客户端使用，客户端会向服务器发送(DhcpDecline)信息包拒绝接受已经分配的地址信息。</p>
+<p>  可提供域名服务的包括本地缓存、本地域名服务器、权限域名服务器、顶级域名服务器以及根域名服务器。DNS主机名解析的查找顺序是，先查找客户端本地缓存，如果没有成功，则向DNS服务器发出解析请求。</p>
+<p>  本地缓存是内存中的一块区域，保存着最近被解析的主机名及其IP地址映像。由于解析程序缓存常驻内存中，所以比其他解析方法速度快。</p>
+<p>  当一个主机发出DNS查询报文时，这个查询报文就首先被送往该主机的本地域名服务器。本地域名服务器离用户较近，当所要查询的主机也属于同一个本地ISP时，该本地域名服务器立即就能将所查询的主机名转换为它的IP地址，而不需要再去询问其他的域名服务器。</p>
+<p>  每一个区都设置有域名服务器，即权限服务器，它负责将其管辖区内的主机域名转换为该主机的IP地址。在其上保存有所管辖区内的所有主机域名到IP地址的映射。</p>
+<p>  顶级域名服务器负责管理在本顶级域名服务器上注册的所有二级域名。当收到DNS查询请求时，能够将其管辖的二级域名转换为该二级域名的IP地址。或者是下一步应该找寻的域名服务器的IP地址。</p>
+<p>  根域名服务器是最高层次的域名服务器。每一个根域名服务器都要存有所有顶级域名服务器的IP地址和域名。当一个本地域名服务器对一个域名无法解析时，就会直接找到根域名服务器，然后根域名服务器会告知它应该去找哪一个顶级域名服务器进行查询。</p>
 <p><a href="https://imgse.com/i/pCmxOje"><img src="https://s1.ax1x.com/2023/06/14/pCmxOje.md.png" alt="pCmxOje.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -1105,7 +1157,7 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
   <a class="anchor" href="#2-%e7%bd%91%e7%bb%9c%e8%a7%84%e5%88%92%e4%b8%8e%e8%ae%be%e8%ae%a1">#</a>
 </h2>
 <hr>
-<p>  网络规划与设计包含5个阶段，它们分别是：需求分析、通信规范分析、逻辑网络设计、物理网络设计、实施阶段。这里重点看逻辑网络设计和物理网络设计，需求分析和通信规范分析的产物需要知道。</p>
+<p>  网络规划与设计包含5个阶段，它们分别是：需求分析、通信规范分析、逻辑网络设计、物理网络设计、实施阶段。这里重点看逻辑网络设计和物理网络设计，需求分析和通信规范分析的产物需要知道。工程造价估算是需求分析中的一个重要环节。</p>
 <p><a href="https://imgse.com/i/pCmz8u4"><img src="https://s1.ax1x.com/2023/06/14/pCmz8u4.md.png" alt="pCmz8u4.md.png" /></a></p>
 <h3 id="21-逻辑网络设计">
   2.1 逻辑网络设计
@@ -1184,9 +1236,16 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
   2.3 常见的网络设计
   <a class="anchor" href="#23-%e5%b8%b8%e8%a7%81%e7%9a%84%e7%bd%91%e7%bb%9c%e8%ae%be%e8%ae%a1">#</a>
 </h2>
-<ul>
-<li>层次网络设计</li>
-</ul>
+<h3 id="231-层次网络设计">
+  2.3.1 层次网络设计
+  <a class="anchor" href="#231-%e5%b1%82%e6%ac%a1%e7%bd%91%e7%bb%9c%e8%ae%be%e8%ae%a1">#</a>
+</h3>
+<p>  层次化网络设计应该遵循一些简单的原则，这些原则可以保证设计出来的网络更加具有层次的特性:</p>
+<p>  1、在设计时，设计者应该尽量控制层次化的程度，一般情况下，由核心层、汇聚层、接入层三个层次就足够了，过多的层次会导致整体网络性能的下降，并且会提高网络的延迟，但是方便网络故障排查和文档编写。</p>
+<p>  2、在接入层应当保持对网络结构的严格控制，接入层的用户总是为了获得更大的外部网络访问带宽，而随意申请其他的渠道访问外部网络是不允许的。</p>
+<p>  3、为了保证网络的层次性，不能在设计中随意加入额外连接，额外连接是指打破层次性，在不相邻层次间的连接，这些连接会导致网络中的各种问题，例如缺乏汇聚层的访问控制和数据报过滤等。</p>
+<p>  4、在进行设计时，应当首先设计接入层，根据流量负载、流量和行为的分析，对上层进行更精细的容量规划，再依次完成各上层的设计。</p>
+<p>  5、除去接入层的其他层次，应尽量采用模块化方式，每个层次由多个模块或者设备集合构成，每个模块间的边界应非常清晰。</p>
 <p><a href="https://imgse.com/i/pCnSpqJ"><img src="https://s1.ax1x.com/2023/06/14/pCnSpqJ.md.png" alt="pCnSpqJ.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -1221,9 +1280,10 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 </div>
 </p>
 </blockquote>
-<ul>
-<li>网络冗余设计</li>
-</ul>
+<h3 id="232-网络冗余设计">
+  2.3.2 网络冗余设计
+  <a class="anchor" href="#232-%e7%bd%91%e7%bb%9c%e5%86%97%e4%bd%99%e8%ae%be%e8%ae%a1">#</a>
+</h3>
 <p><a href="https://imgse.com/i/pCnPdXT"><img src="https://s1.ax1x.com/2023/06/14/pCnPdXT.md.png" alt="pCnPdXT.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -1243,6 +1303,26 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 </div>
 </p>
 </blockquote>
+<h3 id="233-集成服务与区分服务">
+  2.3.3 集成服务与区分服务
+  <a class="anchor" href="#233-%e9%9b%86%e6%88%90%e6%9c%8d%e5%8a%a1%e4%b8%8e%e5%8c%ba%e5%88%86%e6%9c%8d%e5%8a%a1">#</a>
+</h3>
+<ul>
+<li>集成服务</li>
+</ul>
+<p>  IETF集成服务(IntServ)工作组根据服务质量的不同，把Internet服务分成了三种类型:</p>
+<p>  1、保证质量的服务(Guranteed Services):对带宽、时延抖动和丢包率提供定量的保证;</p>
+<p>  2、负载受控的服务 (Comrolled-load Services):提供一种类似于网络欠载情况下的服务，这是一种定性的指标;</p>
+<p>  3、尽力而为的服务(Best-Effort):这是Internet提供的一般服务，基本上无任何质量保证。</p>
+<ul>
+<li>区分服务</li>
+</ul>
+<p>  区分服务要求每个IP分组都要根据IPv4协议头中的服务类型 (在IPv6中是通信类型)字段加上一个DS码点，然后内部路由器根据DS码点的值对分组进行调度和转发。</p>
+<h3 id="234-软件定义网络-sdn">
+  2.3.4 软件定义网络 SDN
+  <a class="anchor" href="#234-%e8%bd%af%e4%bb%b6%e5%ae%9a%e4%b9%89%e7%bd%91%e7%bb%9c-sdn">#</a>
+</h3>
+<p>  SDN(Software Defined Netwok)的网络架构中包含:控制层、转发层和应用层，没有逻辑层。</p>
 <h2 id="3-网络存储">
   3 网络存储
   <a class="anchor" href="#3-%e7%bd%91%e7%bb%9c%e5%ad%98%e5%82%a8">#</a>
@@ -1335,8 +1415,9 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
   <a class="anchor" href="#5-%e7%bd%91%e7%bb%9c%e6%8e%a5%e5%85%a5%e6%8a%80%e6%9c%af">#</a>
 </h2>
 <hr>
-<p><a href="https://imgse.com/i/pCKQVl8"><img src="https://s1.ax1x.com/2023/06/15/pCKQVl8.md.png" alt="pCKQVl8.md.png" /></a>
-<a href="https://imgse.com/i/pCKQ8pV"><img src="https://s1.ax1x.com/2023/06/15/pCKQ8pV.md.png" alt="pCKQ8pV.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pCKQVl8"><img src="https://s1.ax1x.com/2023/06/15/pCKQVl8.md.png" alt="pCKQVl8.md.png" /></a></p>
+<p>  5G网络的切片技术是将5G网络分割成多张虚拟网络，从而支持更多的应用。就是将一个物理网络切割成多个虚拟的端到端的网络,每个虚拟网络之间，包括网络内的设备、接入、传输和核心网,是逻辑独立的,任何一个虚拟网络发生故障都不会影响到其它虚拟网络。</p>
+<p><a href="https://imgse.com/i/pCKQ8pV"><img src="https://s1.ax1x.com/2023/06/15/pCKQ8pV.md.png" alt="pCKQ8pV.md.png" /></a></p>
 <h2 id="6-综合布线">
   6 综合布线
   <a class="anchor" href="#6-%e7%bb%bc%e5%90%88%e5%b8%83%e7%ba%bf">#</a>
@@ -1419,6 +1500,56 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 </div>
 </p>
 </blockquote>
+<h2 id="8-常见网络设备的原理或作用">
+  8 常见网络设备的原理或作用
+  <a class="anchor" href="#8-%e5%b8%b8%e8%a7%81%e7%bd%91%e7%bb%9c%e8%ae%be%e5%a4%87%e7%9a%84%e5%8e%9f%e7%90%86%e6%88%96%e4%bd%9c%e7%94%a8">#</a>
+</h2>
+<hr>
+<h3 id="81-交换机">
+  8.1 交换机
+  <a class="anchor" href="#81-%e4%ba%a4%e6%8d%a2%e6%9c%ba">#</a>
+</h3>
+<p>  交换机的初始mac地址表为空。</p>
+<p>  交换机接收到数据后，如果没有相应的表项，则采用ARP洪泛操作（即通过广播的方式转发）。</p>
+<p>  交换机通过读取输入帧中的源地址添加相应的MAC地址表项。</p>
+<p>  交换机的MAC地址表项是动态增长的。</p>
+<h3 id="82-路由器">
+  8.2 路由器
+  <a class="anchor" href="#82-%e8%b7%af%e7%94%b1%e5%99%a8">#</a>
+</h3>
+<p>  路由器一般采取存储转发方式，需要对待转发的数据包进行重新拆包，分析其源地址和目的地址，再根据路由表对其进行路由和转发，而交换机采取的是直接转发方式，不对数据包的三层地址进行分析，因此路由器转发所带来的延迟要小于交换机。</p>
+<h3 id="83-网闸">
+  8.3 网闸
+  <a class="anchor" href="#83-%e7%bd%91%e9%97%b8">#</a>
+</h3>
+<p>  网闸是使用带有多种控制功能的固态开关读写介质连接两个独立主机系统的信息安全设备。由于物理隔离，网闸所连接的两个独立主机系统之间不存在通信的物理连接、逻辑连接、信息传输命令、信息传输协议，不存在依据协议的信息包转发，只有数据文件的无协议“摆渡”，且对固态存储介质只有“读”和“写”两个命令。所以，物理隔离网闸从物理上隔离、阻断了具有潜在攻击可能的一切连接，使“黑客”无法入侵、无法攻击、无法破坏，实现了真正的安全。</p>
+<p>  使用安全隔离网闸的意义如下所述。</p>
+<p>  1.当用户的网络需要保证高强度的安全，同时又与其他不信任网络进行信息交换的情况下，如果采用物理隔离卡，用户必须使用开关在内外网之间来回切换，不仅管理起来非常麻烦，使用起来也非常不方便。如果采用防火墙，由于防火墙自身的安全很难保证，所以防火墙也无法防止内部信息泄漏和外部病毒、黑客程序的渗入，安全性无法保证。在这种情况下，安全隔离网闸能够同时满足这两个要求，弥补了物理隔离卡和防火墙的不足之处，是最好的选择。</p>
+<p>  2.对网络的隔离是通过网闸隔离硬件实现两个网络在链路层断开，但是为了交换数据，通过设计的隔离硬件在两个网络对应层次上进行切换，通过对硬件上的存储芯片的读写，完成数据的交换。</p>
+<p>  3.安装了相应的应用模块之后，安全隔离网闸可以在保证安全的前提下，使用户可以浏览网页、收发电子邮件、在不同网络上的数据库之间交换数据，并可以在网络之间交换定制的文件。</p>
+<h2 id="9-路由的管理距离">
+  9 路由的管理距离
+  <a class="anchor" href="#9-%e8%b7%af%e7%94%b1%e7%9a%84%e7%ae%a1%e7%90%86%e8%b7%9d%e7%a6%bb">#</a>
+</h2>
+<hr>
+<p>  若管理距离为15，则这个路由的管理距离小于外部BGP的管理距离，所以该路由信息比较可靠。</p>
+<p><a href="https://imgse.com/i/pCr61mV"><img src="https://s1.ax1x.com/2023/07/03/pCr61mV.md.png" alt="pCr61mV.md.png" /></a></p>
+<h2 id="10-网络延迟">
+  10 网络延迟
+  <a class="anchor" href="#10-%e7%bd%91%e7%bb%9c%e5%bb%b6%e8%bf%9f">#</a>
+</h2>
+<hr>
+<p>  网络中的延迟产生与以下几个方面有关:运算、读取和写入、数据传输以及数据传输过程中的拥塞所带来的延迟。在网络中，数据读写的速率较之于数据计算和传输的速率要大得多，所以数据读写的延迟是影响网络延迟的最大的因素。</p>
+<p>  在对等网络中，由于采用总线式的连接，因此网络中的终端数量越多，终端所能够分配到的转发时隙就越小，所带来的延迟也就越大。</p>
+<p>  路由器一般采取存储转发方式，需要对待转发的数据包进行重新拆包，分析其源地址和目的地址，再根据路由表对其进行路由和转发，而交换机采取的是直接转发方式，不对数据包的三层地址进行分析，因此路由器转发所带来的延迟要小于交换机。</p>
+<p>  数据在Internet中传输时，由于互联网中的转发数据量大且所需经过的点多，势必会带来更大的延迟。</p>
+<h2 id="11-层次化网络编址">
+  11 层次化网络编址
+  <a class="anchor" href="#11-%e5%b1%82%e6%ac%a1%e5%8c%96%e7%bd%91%e7%bb%9c%e7%bc%96%e5%9d%80">#</a>
+</h2>
+<hr>
+<p>  层次化编址是一种对地址进行结构化设计的模型，使用地址的左半部的号码可以体现大块的网络或者节点群，而才半部可以体现单个网络或节点。层次化编址的主要优点在于可以实现层次化的路由选择，有利于在网络互联路由设备之间发现网络拓扑。</p>
+<p>  设计人员在进行地址分配时，为了配合实现层次化的路由器，必须遵守一条简单的规则:如果网络中存在分支管理，而且一台路由器负责连接上级和下级机构，则分配给这些下级机构网段应该属于一个连续的地址空间，并且这些连续的地址空间可以用一个子网或者超网段表示。</p>
 <h2 id="课后习题">
   课后习题
   <a class="anchor" href="#%e8%af%be%e5%90%8e%e4%b9%a0%e9%a2%98">#</a>
@@ -1479,7 +1610,14 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
         <li><a href="#22-物理网络设计">2.2 物理网络设计</a></li>
       </ul>
     </li>
-    <li><a href="#23-常见的网络设计">2.3 常见的网络设计</a></li>
+    <li><a href="#23-常见的网络设计">2.3 常见的网络设计</a>
+      <ul>
+        <li><a href="#231-层次网络设计">2.3.1 层次网络设计</a></li>
+        <li><a href="#232-网络冗余设计">2.3.2 网络冗余设计</a></li>
+        <li><a href="#233-集成服务与区分服务">2.3.3 集成服务与区分服务</a></li>
+        <li><a href="#234-软件定义网络-sdn">2.3.4 软件定义网络 SDN</a></li>
+      </ul>
+    </li>
     <li><a href="#3-网络存储">3 网络存储</a></li>
     <li><a href="#4-ipv6">4 IPV6</a></li>
     <li><a href="#5-网络接入技术">5 网络接入技术</a></li>
@@ -1490,6 +1628,16 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
         <li><a href="#72-云计算">7.2 云计算</a></li>
       </ul>
     </li>
+    <li><a href="#8-常见网络设备的原理或作用">8 常见网络设备的原理或作用</a>
+      <ul>
+        <li><a href="#81-交换机">8.1 交换机</a></li>
+        <li><a href="#82-路由器">8.2 路由器</a></li>
+        <li><a href="#83-网闸">8.3 网闸</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-路由的管理距离">9 路由的管理距离</a></li>
+    <li><a href="#10-网络延迟">10 网络延迟</a></li>
+    <li><a href="#11-层次化网络编址">11 层次化网络编址</a></li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>
