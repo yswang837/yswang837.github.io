@@ -26,6 +26,8 @@ title: 3.13 项目管理
 [![pC0op1e.md.png](https://s1.ax1x.com/2023/06/30/pC0op1e.md.png)](https://imgse.com/i/pC0op1e)
 
 >例题
+[![pCrZdsS.md.png](https://s1.ax1x.com/2023/07/03/pCrZdsS.md.png)](https://imgse.com/i/pCrZdsS)
+{{< expand "学霸肯定对了">}}{{< /expand >}}
 
 ## 3 时间管理
 
