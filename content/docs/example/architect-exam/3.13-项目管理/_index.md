@@ -81,6 +81,10 @@ title: 3.13 项目管理
 
 ---
 
+[![pCsNCGV.md.png](https://s1.ax1x.com/2023/07/04/pCsNCGV.md.png)](https://imgse.com/i/pCsNCGV)
+
+### 4.1 挣值估算
+
 ## 5 软件质量管理
 
 ---
