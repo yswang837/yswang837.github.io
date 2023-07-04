@@ -33,7 +33,49 @@ title: 3.13 项目管理
 
 ---
 
+
+
 [![pCrUNrQ.md.png](https://s1.ax1x.com/2023/07/03/pCrUNrQ.md.png)](https://imgse.com/i/pCrUNrQ)
+>例题
+[![pCsed2t.md.png](https://s1.ax1x.com/2023/07/04/pCsed2t.md.png)](https://imgse.com/i/pCsed2t)
+{{< expand "学霸肯定对了">}}B{{< /expand >}}
+
+[![pCsmvfs.md.png](https://s1.ax1x.com/2023/07/04/pCsmvfs.md.png)](https://imgse.com/i/pCsmvfs)
+
+### 3.1 单代号网络图
+
+&emsp;&emsp;关键路径是最早完成时间下的最长的路径。关键路径可以有多条，关键路径的条数越少越好。
+
+&emsp;&emsp;ES和EF是正向推导过程。关键路径需要反推才能得到。总时差=LS-ES，总时差为0的节点连接起来就是关键路径。
+
+&emsp;&emsp;自由时差小于等于总时差。当前节点的自由时差=紧后活动的ES-当前活动的EF。自由时差会影响紧后活动（压缩了别人的自由）
+
+[![pCsefx0.md.png](https://s1.ax1x.com/2023/07/04/pCsefx0.md.png)](https://imgse.com/i/pCsefx0)
+
+### 3.2 双代号网络图
+
+&emsp;&emsp;虚线不能去掉，2->3的距离为0，但不能删掉，因为A和B都是E的紧前活动，也不能合并。
+
+[![pCsmNeU.md.png](https://s1.ax1x.com/2023/07/04/pCsmNeU.md.png)](https://imgse.com/i/pCsmNeU)
+[![pCsmq0S.md.png](https://s1.ax1x.com/2023/07/04/pCsmq0S.md.png)](https://imgse.com/i/pCsmq0S)
+
+### 3.3 甘特图
+
+&emsp;&emsp;细线表示计划，粗线表示当前进度。
+
+[![pCsnhHU.md.png](https://s1.ax1x.com/2023/07/04/pCsnhHU.md.png)](https://imgse.com/i/pCsnhHU)
+
+>例题
+[![pCsnjHO.md.png](https://s1.ax1x.com/2023/07/04/pCsnjHO.md.png)](https://imgse.com/i/pCsnjHO)
+{{< expand "学霸肯定对了">}}C
+
+[![pCsukKP.md.png](https://s1.ax1x.com/2023/07/04/pCsukKP.md.png)](https://imgse.com/i/pCsukKP)
+
+也就是求D的总时差{{< /expand >}}
+[![pCsuEb8.md.png](https://s1.ax1x.com/2023/07/04/pCsuEb8.md.png)](https://imgse.com/i/pCsuEb8)
+{{< expand "学霸肯定对了">}}A A
+
+正常进度=直接费用+间接费用=55+12*5=115天，赶工进度：压缩D两天，压缩A两天，B和D同时压1天，也就是：55+4+8+4+35=106，需要7天。{{< /expand >}}
 
 ## 4 成本管理
 
