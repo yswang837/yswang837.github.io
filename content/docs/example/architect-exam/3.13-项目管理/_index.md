@@ -83,15 +83,43 @@ title: 3.13 项目管理
 
 [![pCsNCGV.md.png](https://s1.ax1x.com/2023/07/04/pCsNCGV.md.png)](https://imgse.com/i/pCsNCGV)
 
-### 4.1 挣值估算
+### 4.1 挣值分析
+
+[![pCsU1f0.md.png](https://s1.ax1x.com/2023/07/04/pCsU1f0.md.png)](https://imgse.com/i/pCsU1f0)
+
+>例题
+[![pCsU20H.md.png](https://s1.ax1x.com/2023/07/04/pCsU20H.md.png)](https://imgse.com/i/pCsU20H)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
 
 ## 5 软件质量管理
 
 ---
 
+[![pCsUfAA.md.png](https://s1.ax1x.com/2023/07/04/pCsUfAA.md.png)](https://imgse.com/i/pCsUfAA)
+
+### 5.1 质量保证方式CMMI
+
+&emsp;&emsp;软件过程改进：CMMI
+
+[![pCsa9jU.md.png](https://s1.ax1x.com/2023/07/04/pCsa9jU.md.png)](https://imgse.com/i/pCsa9jU)
+
 ## 6 软件配置管理
 
 ---
+
+[![pCsaENR.md.png](https://s1.ax1x.com/2023/07/04/pCsaENR.md.png)](https://imgse.com/i/pCsaENR)
+
+### 6.1 软件工具
+
+[![pCsaYCt.md.png](https://s1.ax1x.com/2023/07/04/pCsaYCt.md.png)](https://imgse.com/i/pCsaYCt)
+
+>例题
+[![pCsalHH.md.png](https://s1.ax1x.com/2023/07/04/pCsalHH.md.png)](https://imgse.com/i/pCsalHH)
+{{< expand "学霸肯定对了">}}C{{< /expand >}}
+
+### 6.2 版本控制
+
+[![pCsarUs.md.png](https://s1.ax1x.com/2023/07/04/pCsarUs.md.png)](https://imgse.com/i/pCsarUs)
 
 ## 课后习题
 
