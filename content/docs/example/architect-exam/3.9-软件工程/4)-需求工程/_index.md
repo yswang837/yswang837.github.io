@@ -52,9 +52,22 @@
 
 [![p9HF6HK.md.png](https://s1.ax1x.com/2023/05/25/p9HF6HK.md.png)](https://imgse.com/i/p9HF6HK)
 
-DFD：Data Flow Diagram，（功能建模）系统跟外界实体之间的交互，数据、加工交换的方式。
+- DFD：Data Flow Diagram，（功能建模）系统跟外界实体之间的交互，数据、加工交换的方式。
 
+[![pCyFSJ0.md.png](https://s1.ax1x.com/2023/07/05/pCyFSJ0.md.png)](https://imgse.com/i/pCyFSJ0)
+[![pCyFEw9.md.png](https://s1.ax1x.com/2023/07/05/pCyFEw9.md.png)](https://imgse.com/i/pCyFEw9)
 [![p9HFf9H.md.png](https://s1.ax1x.com/2023/05/25/p9HFf9H.md.png)](https://imgse.com/i/p9HFf9H)
+
+- DFD的平衡原则：用于DFD里面填空(类似于完形填空)，如上图的“注册请求”、“课程安排”等在父图和子图中应该是一致的。
+
+[![pCyF6kn.md.png](https://s1.ax1x.com/2023/07/05/pCyF6kn.md.png)](https://imgse.com/i/pCyF6kn)
+
+- DFD答题技巧
+
+[![pCyFI0J.md.png](https://s1.ax1x.com/2023/07/05/pCyFI0J.md.png)](https://imgse.com/i/pCyFI0J)
+[![pCyFHt1.md.png](https://s1.ax1x.com/2023/07/05/pCyFHt1.md.png)](https://imgse.com/i/pCyFHt1)
+[![pCyFX6O.md.png](https://s1.ax1x.com/2023/07/05/pCyFX6O.md.png)](https://imgse.com/i/pCyFX6O)
+
 
 STD：State Transform Diagram，（状态建模）
 
@@ -89,9 +102,28 @@ E-R图：实体关系图，（数据建模）
 
 [![p9H0rH1.md.png](https://s1.ax1x.com/2023/05/25/p9H0rH1.md.png)](https://imgse.com/i/p9H0rH1)
 
-&emsp;&emsp;UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点)。
+&emsp;&emsp;UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：**类图**、**用例图**、顺序图、通信图、状态图、活动图)。
 
 [![p9H06N6.md.png](https://s1.ax1x.com/2023/05/25/p9H06N6.md.png)](https://imgse.com/i/p9H06N6)
+
+- 用例图
+
+[![pCykUE9.md.png](https://s1.ax1x.com/2023/07/05/pCykUE9.md.png)](https://imgse.com/i/pCykUE9)
+
+- 用例的关系
+
+&emsp;&emsp;包含关系如上图的用户登录。如何区分包含关系和扩展关系：前者是必须的，后者非必须。
+
+&emsp;&emsp;扩展关系如上图的查询书籍信息和修改书籍信息，只有查询书籍信息且信息不对时才会修改书籍信息，修改书籍信息是非必须执行的。
+
+&emsp;&emsp;明显的父子的继承关系，注意却别包含关系··。
+
+[![pCykyuD.md.png](https://s1.ax1x.com/2023/07/05/pCykyuD.md.png)](https://imgse.com/i/pCykyuD)
+[![pCyA9rF.md.png](https://s1.ax1x.com/2023/07/05/pCyA9rF.md.png)](https://imgse.com/i/pCyA9rF)
+
+>例题
+[![pCyAEP1.md.png](https://s1.ax1x.com/2023/07/05/pCyAEP1.md.png)](https://imgse.com/i/pCyAEP1)
+{{< expand "学霸肯定对了">}}B C{{< /expand >}}
 
 &emsp;&emsp;UML4+1视图，同架构的4+1视图可以一一对应
 
@@ -100,6 +132,14 @@ E-R图：实体关系图，（数据建模）
 &emsp;&emsp;一般UML分析阶段建模主要是建立**用例模型**(用例图)和**分析模型**(类图)
 
 [![p9H05DA.md.png](https://s1.ax1x.com/2023/05/25/p9H05DA.md.png)](https://imgse.com/i/p9H05DA)
+
+- 类图
+
+[![pCyA6zV.md.png](https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png)](https://imgse.com/i/pCyA6zV)
+
+- 类图的关系
+
+[![pCyA6zV.md.png](https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png)](https://imgse.com/i/pCyA6zV)
 
 ## 4 需求定义
 

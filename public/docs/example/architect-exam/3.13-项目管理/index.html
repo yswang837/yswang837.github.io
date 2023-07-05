@@ -12,7 +12,7 @@ ES和EF是正向推导过程。关键路径需要反推才能得到。总时差=
 也就是求D的总时差
 学霸肯定对了 ↕ A A
 正常进度=直接费用&#43;间接费用=55&#43;12*5=115天，赶工进度：压缩D两天，压缩A两天，B和D同时压1天，也就是：55&#43;4&#43;8&#43;4&#43;35=106，需要7天。
-4 成本管理 # 5 软件质量管理 # 6 软件配置管理 # 课后习题 # todo 习题">
+4 成本管理 # 4.1 挣值分析 # 例题 学霸肯定对了 ↕ C 5 软件质量管理 # 5.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.13 项目管理" />
 <meta property="og:description" content="" />
@@ -24,7 +24,7 @@ ES和EF是正向推导过程。关键路径需要反推才能得到。总时差=
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b6c2d676c5d1e5c3cbc70813c3feb72c1a900242a3b660d872ce6a4d86135824.js" integrity="sha256-tsLWdsXR5cPLxwgTw/63LBqQAkKjtmDYcs5qTYYTWCQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7ef1cb474aadd57ec6a07766deed74f56f422f07908efd6a422bb8bf35d3ce55.js" integrity="sha256-fvHLR0qt1X7GoHdm3u109W9CLweQjv1qQiu4vzXTzlU=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.13-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -925,9 +925,22 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#33-甘特图">3.3 甘特图</a></li>
       </ul>
     </li>
-    <li><a href="#4-成本管理">4 成本管理</a></li>
-    <li><a href="#5-软件质量管理">5 软件质量管理</a></li>
-    <li><a href="#6-软件配置管理">6 软件配置管理</a></li>
+    <li><a href="#4-成本管理">4 成本管理</a>
+      <ul>
+        <li><a href="#41-挣值分析">4.1 挣值分析</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-软件质量管理">5 软件质量管理</a>
+      <ul>
+        <li><a href="#51-质量保证方式cmmi">5.1 质量保证方式CMMI</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-软件配置管理">6 软件配置管理</a>
+      <ul>
+        <li><a href="#61-软件工具">6.1 软件工具</a></li>
+        <li><a href="#62-版本控制">6.2 版本控制</a></li>
+      </ul>
+    </li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>
@@ -1100,16 +1113,76 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#4-%e6%88%90%e6%9c%ac%e7%ae%a1%e7%90%86">#</a>
 </h2>
 <hr>
+<p><a href="https://imgse.com/i/pCsNCGV"><img src="https://s1.ax1x.com/2023/07/04/pCsNCGV.md.png" alt="pCsNCGV.md.png" /></a></p>
+<h3 id="41-挣值分析">
+  4.1 挣值分析
+  <a class="anchor" href="#41-%e6%8c%a3%e5%80%bc%e5%88%86%e6%9e%90">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCsU1f0"><img src="https://s1.ax1x.com/2023/07/04/pCsU1f0.md.png" alt="pCsU1f0.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCsU20H"><img src="https://s1.ax1x.com/2023/07/04/pCsU20H.md.png" alt="pCsU20H.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 <h2 id="5-软件质量管理">
   5 软件质量管理
   <a class="anchor" href="#5-%e8%bd%af%e4%bb%b6%e8%b4%a8%e9%87%8f%e7%ae%a1%e7%90%86">#</a>
 </h2>
 <hr>
+<p><a href="https://imgse.com/i/pCsUfAA"><img src="https://s1.ax1x.com/2023/07/04/pCsUfAA.md.png" alt="pCsUfAA.md.png" /></a></p>
+<h3 id="51-质量保证方式cmmi">
+  5.1 质量保证方式CMMI
+  <a class="anchor" href="#51-%e8%b4%a8%e9%87%8f%e4%bf%9d%e8%af%81%e6%96%b9%e5%bc%8fcmmi">#</a>
+</h3>
+<p>  软件过程改进：CMMI</p>
+<p><a href="https://imgse.com/i/pCsa9jU"><img src="https://s1.ax1x.com/2023/07/04/pCsa9jU.md.png" alt="pCsa9jU.md.png" /></a></p>
 <h2 id="6-软件配置管理">
   6 软件配置管理
   <a class="anchor" href="#6-%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86">#</a>
 </h2>
 <hr>
+<p><a href="https://imgse.com/i/pCsaENR"><img src="https://s1.ax1x.com/2023/07/04/pCsaENR.md.png" alt="pCsaENR.md.png" /></a></p>
+<h3 id="61-软件工具">
+  6.1 软件工具
+  <a class="anchor" href="#61-%e8%bd%af%e4%bb%b6%e5%b7%a5%e5%85%b7">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCsaYCt"><img src="https://s1.ax1x.com/2023/07/04/pCsaYCt.md.png" alt="pCsaYCt.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCsalHH"><img src="https://s1.ax1x.com/2023/07/04/pCsalHH.md.png" alt="pCsalHH.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h3 id="62-版本控制">
+  6.2 版本控制
+  <a class="anchor" href="#62-%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCsarUs"><img src="https://s1.ax1x.com/2023/07/04/pCsarUs.md.png" alt="pCsarUs.md.png" /></a></p>
 <h2 id="课后习题">
   课后习题
   <a class="anchor" href="#%e8%af%be%e5%90%8e%e4%b9%a0%e9%a2%98">#</a>
@@ -1171,9 +1244,22 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#33-甘特图">3.3 甘特图</a></li>
       </ul>
     </li>
-    <li><a href="#4-成本管理">4 成本管理</a></li>
-    <li><a href="#5-软件质量管理">5 软件质量管理</a></li>
-    <li><a href="#6-软件配置管理">6 软件配置管理</a></li>
+    <li><a href="#4-成本管理">4 成本管理</a>
+      <ul>
+        <li><a href="#41-挣值分析">4.1 挣值分析</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-软件质量管理">5 软件质量管理</a>
+      <ul>
+        <li><a href="#51-质量保证方式cmmi">5.1 质量保证方式CMMI</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-软件配置管理">6 软件配置管理</a>
+      <ul>
+        <li><a href="#61-软件工具">6.1 软件工具</a></li>
+        <li><a href="#62-版本控制">6.2 版本控制</a></li>
+      </ul>
+    </li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>

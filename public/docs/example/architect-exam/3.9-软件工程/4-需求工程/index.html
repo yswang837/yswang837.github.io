@@ -17,8 +17,7 @@
 1、结构化需求分析SA；
 2、面向对象需求分析OOA。
 4.3.1 结构化需求分析SA # SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图)，其中数据字典起到解释的作用(学生：学号、名字、年龄)，比如学生关系包含学号、名字、年龄等。
-DFD：Data Flow Diagram，（功能建模）系统跟外界实体之间的交互，数据、加工交换的方式。
-STD：State Transform Diagram，（状态建模）
+DFD：Data Flow Diagram，（功能建模）系统跟外界实体之间的交互，数据、加工交换的方式。 DFD的平衡原则：用于DFD里面填空(类似于完形填空)，如上图的“注册请求”、“课程安排”等在父图和子图中应该是一致的。 DFD答题技巧 STD：State Transform Diagram，（状态建模）
 E-R图：实体关系图，（数据建模）
 例题 学霸肯定对了 ↕ C D
 用例图、对象图、通信图、顺序图和活动图都是面向对象的图，都是UML里面的图
@@ -28,12 +27,11 @@ E-R图：实体关系图，（数据建模）
 边界类：人机交互界面、系统交互接口之类的。
 实体类：非实体类和边界类就是实体类。
 1）UML # UML全称Unified Modeling Language，统一建模语言，UML由构造块、规则和公共机制；构造块中最重要的是事物和图；事物中包含结构事物是静态部分、行为事物是动态部分。
-UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点)。
-UML4&#43;1视图，同架构的4&#43;1视图可以一一对应
-一般UML分析阶段建模主要是建立用例模型(用例图)和分析模型(类图)
-4 需求定义 # 把需求分析的成果落地成文档的过程就是需求定义的过程。需求定义包含2大类：严格定义法、原型法。
-需求定义的产物的是：需求规格说明书SRS。
-例题 学霸肯定对了 ↕ C 5 需求验证 # 对需求规格说明书SRS进行验证，需求甲方参与确认。最为最终的需求基线。">
+UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：类图、用例图、顺序图、通信图、状态图、活动图)。
+用例图 用例的关系 包含关系如上图的用户登录。如何区分包含关系和扩展关系：前者是必须的，后者非必须。
+扩展关系如上图的查询书籍信息和修改书籍信息，只有查询书籍信息且信息不对时才会修改书籍信息，修改书籍信息是非必须执行的。
+明显的父子的继承关系，注意却别包含关系··。
+例题 学霸肯定对了 ↕ B C UML4&#43;1视图，同架构的4&#43;1视图可以一一对应">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -45,7 +43,7 @@ UML4&#43;1视图，同架构的4&#43;1视图可以一一对应
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b6c2d676c5d1e5c3cbc70813c3feb72c1a900242a3b660d872ce6a4d86135824.js" integrity="sha256-tsLWdsXR5cPLxwgTw/63LBqQAkKjtmDYcs5qTYYTWCQ=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.7ef1cb474aadd57ec6a07766deed74f56f422f07908efd6a422bb8bf35d3ce55.js" integrity="sha256-fvHLR0qt1X7GoHdm3u109W9CLweQjv1qQiu4vzXTzlU=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/4-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1015,8 +1013,22 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p>  SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图)，其中数据字典起到解释的作用(学生：学号、名字、年龄)，比如学生关系包含学号、名字、年龄等。</p>
 <p><a href="https://imgse.com/i/p9HF6HK"><img src="https://s1.ax1x.com/2023/05/25/p9HF6HK.md.png" alt="p9HF6HK.md.png" /></a></p>
-<p>DFD：Data Flow Diagram，（功能建模）系统跟外界实体之间的交互，数据、加工交换的方式。</p>
-<p><a href="https://imgse.com/i/p9HFf9H"><img src="https://s1.ax1x.com/2023/05/25/p9HFf9H.md.png" alt="p9HFf9H.md.png" /></a></p>
+<ul>
+<li>DFD：Data Flow Diagram，（功能建模）系统跟外界实体之间的交互，数据、加工交换的方式。</li>
+</ul>
+<p><a href="https://imgse.com/i/pCyFSJ0"><img src="https://s1.ax1x.com/2023/07/05/pCyFSJ0.md.png" alt="pCyFSJ0.md.png" /></a>
+<a href="https://imgse.com/i/pCyFEw9"><img src="https://s1.ax1x.com/2023/07/05/pCyFEw9.md.png" alt="pCyFEw9.md.png" /></a>
+<a href="https://imgse.com/i/p9HFf9H"><img src="https://s1.ax1x.com/2023/05/25/p9HFf9H.md.png" alt="p9HFf9H.md.png" /></a></p>
+<ul>
+<li>DFD的平衡原则：用于DFD里面填空(类似于完形填空)，如上图的“注册请求”、“课程安排”等在父图和子图中应该是一致的。</li>
+</ul>
+<p><a href="https://imgse.com/i/pCyF6kn"><img src="https://s1.ax1x.com/2023/07/05/pCyF6kn.md.png" alt="pCyF6kn.md.png" /></a></p>
+<ul>
+<li>DFD答题技巧</li>
+</ul>
+<p><a href="https://imgse.com/i/pCyFI0J"><img src="https://s1.ax1x.com/2023/07/05/pCyFI0J.md.png" alt="pCyFI0J.md.png" /></a>
+<a href="https://imgse.com/i/pCyFHt1"><img src="https://s1.ax1x.com/2023/07/05/pCyFHt1.md.png" alt="pCyFHt1.md.png" /></a>
+<a href="https://imgse.com/i/pCyFX6O"><img src="https://s1.ax1x.com/2023/07/05/pCyFX6O.md.png" alt="pCyFX6O.md.png" /></a></p>
 <p>STD：State Transform Diagram，（状态建模）</p>
 <p><a href="https://imgse.com/i/p9HF4gA"><img src="https://s1.ax1x.com/2023/05/25/p9HF4gA.md.png" alt="p9HF4gA.md.png" /></a></p>
 <p>E-R图：实体关系图，（数据建模）</p>
@@ -1057,12 +1069,50 @@ https://github.com/alex-shpak/hugo-book
 </h4>
 <p>  UML全称Unified Modeling Language，统一建模语言，UML由<strong>构造块</strong>、规则和公共机制；构造块中最重要的是<strong>事物</strong>和<strong>图</strong>；事物中包含结构事物是静态部分、行为事物是动态部分。</p>
 <p><a href="https://imgse.com/i/p9H0rH1"><img src="https://s1.ax1x.com/2023/05/25/p9H0rH1.md.png" alt="p9H0rH1.md.png" /></a></p>
-<p>  UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点)。</p>
+<p>  UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：<strong>类图</strong>、<strong>用例图</strong>、顺序图、通信图、状态图、活动图)。</p>
 <p><a href="https://imgse.com/i/p9H06N6"><img src="https://s1.ax1x.com/2023/05/25/p9H06N6.md.png" alt="p9H06N6.md.png" /></a></p>
+<ul>
+<li>用例图</li>
+</ul>
+<p><a href="https://imgse.com/i/pCykUE9"><img src="https://s1.ax1x.com/2023/07/05/pCykUE9.md.png" alt="pCykUE9.md.png" /></a></p>
+<ul>
+<li>用例的关系</li>
+</ul>
+<p>  包含关系如上图的用户登录。如何区分包含关系和扩展关系：前者是必须的，后者非必须。</p>
+<p>  扩展关系如上图的查询书籍信息和修改书籍信息，只有查询书籍信息且信息不对时才会修改书籍信息，修改书籍信息是非必须执行的。</p>
+<p>  明显的父子的继承关系，注意却别包含关系··。</p>
+<p><a href="https://imgse.com/i/pCykyuD"><img src="https://s1.ax1x.com/2023/07/05/pCykyuD.md.png" alt="pCykyuD.md.png" /></a>
+<a href="https://imgse.com/i/pCyA9rF"><img src="https://s1.ax1x.com/2023/07/05/pCyA9rF.md.png" alt="pCyA9rF.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCyAEP1"><img src="https://s1.ax1x.com/2023/07/05/pCyAEP1.md.png" alt="pCyAEP1.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      B C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 <p>  UML4+1视图，同架构的4+1视图可以一一对应</p>
 <p><a href="https://imgse.com/i/p9H0R3D"><img src="https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png" alt="p9H0R3D.md.png" /></a></p>
 <p>  一般UML分析阶段建模主要是建立<strong>用例模型</strong>(用例图)和<strong>分析模型</strong>(类图)</p>
 <p><a href="https://imgse.com/i/p9H05DA"><img src="https://s1.ax1x.com/2023/05/25/p9H05DA.md.png" alt="p9H05DA.md.png" /></a></p>
+<ul>
+<li>类图</li>
+</ul>
+<p><a href="https://imgse.com/i/pCyA6zV"><img src="https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png" alt="pCyA6zV.md.png" /></a></p>
+<ul>
+<li>类图的关系</li>
+</ul>
+<p><a href="https://imgse.com/i/pCyA6zV"><img src="https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png" alt="pCyA6zV.md.png" /></a></p>
 <h2 id="4-需求定义">
   4 需求定义
   <a class="anchor" href="#4-%e9%9c%80%e6%b1%82%e5%ae%9a%e4%b9%89">#</a>
