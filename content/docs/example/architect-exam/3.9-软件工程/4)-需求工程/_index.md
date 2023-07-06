@@ -94,7 +94,14 @@ E-R图：实体关系图，（数据建模）
 
 &emsp;&emsp;边界类：人机交互界面、系统交互接口之类的。
 
-&emsp;&emsp;实体类：非实体类和边界类就是实体类。
+&emsp;&emsp;控制类：非实体类和边界类就是控制类，如业务逻辑(订单结算等)。
+
+>例题
+[![pC6KH00.md.png](https://s1.ax1x.com/2023/07/06/pC6KH00.md.png)](https://imgse.com/i/pC6KH00)
+[![pC6MFAK.md.png](https://s1.ax1x.com/2023/07/06/pC6MFAK.md.png)](https://imgse.com/i/pC6MFAK)
+{{< expand "学霸肯定对了">}}
+[![pC6MMHP.md.png](https://s1.ax1x.com/2023/07/06/pC6MMHP.md.png)](https://imgse.com/i/pC6MMHP)
+{{< /expand >}}
 
 #### 1）UML
 

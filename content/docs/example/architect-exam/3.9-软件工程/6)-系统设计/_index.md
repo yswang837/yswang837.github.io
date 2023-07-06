@@ -197,3 +197,7 @@
 >例题
 [![pCanyqA.md.png](https://s1.ax1x.com/2023/06/27/pCanyqA.md.png)](https://imgse.com/i/pCanyqA)
 {{< expand "学霸肯定对了">}}A D C B{{< /expand >}}
+[![pC6MdH0.md.png](https://s1.ax1x.com/2023/07/06/pC6MdH0.md.png)](https://imgse.com/i/pC6MdH0)
+{{< expand "学霸肯定对了">}}
+[![pC6MhE6.md.png](https://s1.ax1x.com/2023/07/06/pC6MhE6.md.png)](https://imgse.com/i/pC6MhE6)
+{{< /expand >}}
