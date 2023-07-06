@@ -27,11 +27,12 @@ E-R图：实体关系图，（数据建模）
 边界类：人机交互界面、系统交互接口之类的。
 实体类：非实体类和边界类就是实体类。
 1）UML # UML全称Unified Modeling Language，统一建模语言，UML由构造块、规则和公共机制；构造块中最重要的是事物和图；事物中包含结构事物是静态部分、行为事物是动态部分。
-UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：类图、用例图、顺序图、通信图、状态图、活动图)。
-用例图 用例的关系 包含关系如上图的用户登录。如何区分包含关系和扩展关系：前者是必须的，后者非必须。
+UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：类图、用例图、顺序图、通信图、状态图、活动图)。
+用例图 细化用例描述，第一列包含9种用例规约。
+用例的关系 包含关系如上图的用户登录。如何区分包含关系和扩展关系：前者是必须的，后者非必须。
 扩展关系如上图的查询书籍信息和修改书籍信息，只有查询书籍信息且信息不对时才会修改书籍信息，修改书籍信息是非必须执行的。
 明显的父子的继承关系，注意却别包含关系··。
-例题 学霸肯定对了 ↕ B C UML4&#43;1视图，同架构的4&#43;1视图可以一一对应">
+例题 学霸肯定对了 ↕ B C 学霸肯定对了 ↕ 问题1：用例模型的参与者有：仓库管理员、仓库经理、系统管理员、时间、温度、温度调节系统。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -43,7 +44,7 @@ UML图同事物一样，也分为静态部分和动态部分，静态图称为�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.7ef1cb474aadd57ec6a07766deed74f56f422f07908efd6a422bb8bf35d3ce55.js" integrity="sha256-fvHLR0qt1X7GoHdm3u109W9CLweQjv1qQiu4vzXTzlU=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.8148773eef4496c10689428a70cc6149f6a32af6ae76515780c76b0fd1e04c95.js" integrity="sha256-gUh3Pu9ElsEGiUKKcMxhSfajKvaudlFXgMdrD9HgTJU=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/4-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1069,12 +1070,14 @@ https://github.com/alex-shpak/hugo-book
 </h4>
 <p>  UML全称Unified Modeling Language，统一建模语言，UML由<strong>构造块</strong>、规则和公共机制；构造块中最重要的是<strong>事物</strong>和<strong>图</strong>；事物中包含结构事物是静态部分、行为事物是动态部分。</p>
 <p><a href="https://imgse.com/i/p9H0rH1"><img src="https://s1.ax1x.com/2023/05/25/p9H0rH1.md.png" alt="p9H0rH1.md.png" /></a></p>
-<p>  UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：<strong>类图</strong>、<strong>用例图</strong>、顺序图、通信图、状态图、活动图)。</p>
+<p>  UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：<strong>类图</strong>、<strong>用例图</strong>、顺序图、通信图、<strong>状态图</strong>、<strong>活动图</strong>)。</p>
 <p><a href="https://imgse.com/i/p9H06N6"><img src="https://s1.ax1x.com/2023/05/25/p9H06N6.md.png" alt="p9H06N6.md.png" /></a></p>
 <ul>
 <li>用例图</li>
 </ul>
 <p><a href="https://imgse.com/i/pCykUE9"><img src="https://s1.ax1x.com/2023/07/05/pCykUE9.md.png" alt="pCykUE9.md.png" /></a></p>
+<p>  细化用例描述，第一列包含9种用例规约。</p>
+<p><a href="https://imgse.com/i/pC6id7d"><img src="https://s1.ax1x.com/2023/07/06/pC6id7d.md.png" alt="pC6id7d.md.png" /></a></p>
 <ul>
 <li>用例的关系</li>
 </ul>
@@ -1099,6 +1102,24 @@ https://github.com/alex-shpak/hugo-book
     </div>
   </label>
 </div>
+
+<a href="https://imgse.com/i/pC6itXD"><img src="https://s1.ax1x.com/2023/07/06/pC6itXD.md.png" alt="pC6itXD.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>问题1：用例模型的参与者有：仓库管理员、仓库经理、系统管理员、时间、温度、温度调节系统。</p>
+<p>问题2：用例名称、用例ID、角色、用例说明、前置条件、后置条件、基本事件流、其他事件流、异常事件流。</p>
+<p>问题3：用例之间的关系包括：包含关系、扩展关系、泛化关系。“出入库操作”与“登录”属于包含关系；“查询统计报表”与“生成统计报表”属于扩展关系；“用户注册”与“邮件注册”和“电话注册”属于典型的泛化关系。</p>
+
+    </div>
+  </label>
+</div>
 </p>
 </blockquote>
 <p>  UML4+1视图，同架构的4+1视图可以一一对应</p>
@@ -1112,7 +1133,105 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>类图的关系</li>
 </ul>
-<p><a href="https://imgse.com/i/pCyA6zV"><img src="https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png" alt="pCyA6zV.md.png" /></a></p>
+<p>  依赖关系好辨识：a调用b的函数，称为a依赖b。</p>
+<p>  泛化关系：父子关系，父：一般；子：特殊。</p>
+<p>  聚合关系：汽车和轮胎，汽车坏了，其零件还能用。</p>
+<p>  组合关系：公司和部门，公司没了，部门自然也就没了。</p>
+<p>  实现关系：接口和类</p>
+<p><a href="https://imgse.com/i/pC6CUgO"><img src="https://s1.ax1x.com/2023/07/06/pC6CUgO.md.png" alt="pC6CUgO.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC6PpI1"><img src="https://s1.ax1x.com/2023/07/06/pC6PpI1.md.png" alt="pC6PpI1.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<ul>
+<li>顺序图</li>
+</ul>
+<p><a href="https://imgse.com/i/pC6PFxO"><img src="https://s1.ax1x.com/2023/07/06/pC6PFxO.md.png" alt="pC6PFxO.md.png" /></a></p>
+<ul>
+<li>通信图(协作图)</li>
+</ul>
+<p><a href="https://imgse.com/i/pC6PVqH"><img src="https://s1.ax1x.com/2023/07/06/pC6PVqH.md.png" alt="pC6PVqH.md.png" /></a></p>
+<ul>
+<li>状态图</li>
+</ul>
+<p><a href="https://imgse.com/i/pC6PnII"><img src="https://s1.ax1x.com/2023/07/06/pC6PnII.md.png" alt="pC6PnII.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC6Plz8"><img src="https://s1.ax1x.com/2023/07/06/pC6Plz8.md.png" alt="pC6Plz8.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <a href="https://imgse.com/i/pC6P3QS"><img src="https://s1.ax1x.com/2023/07/06/pC6P3QS.md.png" alt="pC6P3QS.md.png" /></a>
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<ul>
+<li>活动图</li>
+</ul>
+<p>  活动图和状态图有点像，可以根据节点里面的内容是状态还是活动来进行区分。</p>
+<p>  活动图对标的是流程图，流程图是结构化时代的，而活动图是面向对象的图。</p>
+<p>  活动图中的两个粗线之间的活动是可以并行执行的。</p>
+<p><a href="https://imgse.com/i/pC6Ptds"><img src="https://s1.ax1x.com/2023/07/06/pC6Ptds.md.png" alt="pC6Ptds.md.png" /></a></p>
+<ul>
+<li>泳道活动图</li>
+</ul>
+<p><a href="https://imgse.com/i/pC6PNon"><img src="https://s1.ax1x.com/2023/07/06/pC6PNon.md.png" alt="pC6PNon.md.png" /></a></p>
+<ul>
+<li>定时图(计时图)</li>
+</ul>
+<p><a href="https://imgse.com/i/pC6iAf0"><img src="https://s1.ax1x.com/2023/07/06/pC6iAf0.md.png" alt="pC6iAf0.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC6PdJ0"><img src="https://s1.ax1x.com/2023/07/06/pC6PdJ0.md.png" alt="pC6PdJ0.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>B A</p>
+<p>  第一空分析：交互过程建模，说明要选择动态图。第二空分析：执行流程，说明要选择动态图。</p>
+
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<ul>
+<li>构建图与包图</li>
+</ul>
+<p>  构建图是对外提供的一个接口和功能，包图是为了管理方便，将相关的东西放在一个文件夹中。</p>
+<p><a href="https://imgse.com/i/pC6ie6U"><img src="https://s1.ax1x.com/2023/07/06/pC6ie6U.md.png" alt="pC6ie6U.md.png" /></a></p>
+<ul>
+<li>部署图</li>
+</ul>
+<p>  描述的是硬件节点和软件构建之间的关系。</p>
+<p><a href="https://imgse.com/i/pC6ium4"><img src="https://s1.ax1x.com/2023/07/06/pC6ium4.md.png" alt="pC6ium4.md.png" /></a></p>
 <h2 id="4-需求定义">
   4 需求定义
   <a class="anchor" href="#4-%e9%9c%80%e6%b1%82%e5%ae%9a%e4%b9%89">#</a>

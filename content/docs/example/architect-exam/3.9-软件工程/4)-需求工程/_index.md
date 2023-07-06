@@ -102,13 +102,17 @@ E-R图：实体关系图，（数据建模）
 
 [![p9H0rH1.md.png](https://s1.ax1x.com/2023/05/25/p9H0rH1.md.png)](https://imgse.com/i/p9H0rH1)
 
-&emsp;&emsp;UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：**类图**、**用例图**、顺序图、通信图、状态图、活动图)。
+&emsp;&emsp;UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：**类图**、**用例图**、顺序图、通信图、**状态图**、**活动图**)。
 
 [![p9H06N6.md.png](https://s1.ax1x.com/2023/05/25/p9H06N6.md.png)](https://imgse.com/i/p9H06N6)
 
 - 用例图
 
 [![pCykUE9.md.png](https://s1.ax1x.com/2023/07/05/pCykUE9.md.png)](https://imgse.com/i/pCykUE9)
+
+&emsp;&emsp;细化用例描述，第一列包含9种用例规约。
+
+[![pC6id7d.md.png](https://s1.ax1x.com/2023/07/06/pC6id7d.md.png)](https://imgse.com/i/pC6id7d)
 
 - 用例的关系
 
@@ -124,6 +128,13 @@ E-R图：实体关系图，（数据建模）
 >例题
 [![pCyAEP1.md.png](https://s1.ax1x.com/2023/07/05/pCyAEP1.md.png)](https://imgse.com/i/pCyAEP1)
 {{< expand "学霸肯定对了">}}B C{{< /expand >}}
+[![pC6itXD.md.png](https://s1.ax1x.com/2023/07/06/pC6itXD.md.png)](https://imgse.com/i/pC6itXD)
+{{< expand "学霸肯定对了">}}
+问题1：用例模型的参与者有：仓库管理员、仓库经理、系统管理员、时间、温度、温度调节系统。
+
+问题2：用例名称、用例ID、角色、用例说明、前置条件、后置条件、基本事件流、其他事件流、异常事件流。
+
+问题3：用例之间的关系包括：包含关系、扩展关系、泛化关系。“出入库操作”与“登录”属于包含关系；“查询统计报表”与“生成统计报表”属于扩展关系；“用户注册”与“邮件注册”和“电话注册”属于典型的泛化关系。{{< /expand >}}
 
 &emsp;&emsp;UML4+1视图，同架构的4+1视图可以一一对应
 
@@ -139,7 +150,75 @@ E-R图：实体关系图，（数据建模）
 
 - 类图的关系
 
-[![pCyA6zV.md.png](https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png)](https://imgse.com/i/pCyA6zV)
+&emsp;&emsp;依赖关系好辨识：a调用b的函数，称为a依赖b。
+
+&emsp;&emsp;泛化关系：父子关系，父：一般；子：特殊。
+
+&emsp;&emsp;聚合关系：汽车和轮胎，汽车坏了，其零件还能用。
+
+&emsp;&emsp;组合关系：公司和部门，公司没了，部门自然也就没了。
+
+&emsp;&emsp;实现关系：接口和类
+
+[![pC6CUgO.md.png](https://s1.ax1x.com/2023/07/06/pC6CUgO.md.png)](https://imgse.com/i/pC6CUgO)
+
+>例题
+[![pC6PpI1.md.png](https://s1.ax1x.com/2023/07/06/pC6PpI1.md.png)](https://imgse.com/i/pC6PpI1)
+{{< expand "学霸肯定对了">}}D C{{< /expand >}}
+
+- 顺序图
+
+[![pC6PFxO.md.png](https://s1.ax1x.com/2023/07/06/pC6PFxO.md.png)](https://imgse.com/i/pC6PFxO)
+
+- 通信图(协作图)
+
+[![pC6PVqH.md.png](https://s1.ax1x.com/2023/07/06/pC6PVqH.md.png)](https://imgse.com/i/pC6PVqH)
+
+- 状态图
+
+[![pC6PnII.md.png](https://s1.ax1x.com/2023/07/06/pC6PnII.md.png)](https://imgse.com/i/pC6PnII)
+
+>例题
+[![pC6Plz8.md.png](https://s1.ax1x.com/2023/07/06/pC6Plz8.md.png)](https://imgse.com/i/pC6Plz8)
+{{< expand "学霸肯定对了">}}
+[![pC6P3QS.md.png](https://s1.ax1x.com/2023/07/06/pC6P3QS.md.png)](https://imgse.com/i/pC6P3QS)
+{{< /expand >}}
+
+- 活动图
+
+&emsp;&emsp;活动图和状态图有点像，可以根据节点里面的内容是状态还是活动来进行区分。
+
+&emsp;&emsp;活动图对标的是流程图，流程图是结构化时代的，而活动图是面向对象的图。
+
+&emsp;&emsp;活动图中的两个粗线之间的活动是可以并行执行的。
+
+[![pC6Ptds.md.png](https://s1.ax1x.com/2023/07/06/pC6Ptds.md.png)](https://imgse.com/i/pC6Ptds)
+
+- 泳道活动图
+
+[![pC6PNon.md.png](https://s1.ax1x.com/2023/07/06/pC6PNon.md.png)](https://imgse.com/i/pC6PNon)
+
+- 定时图(计时图)
+
+[![pC6iAf0.md.png](https://s1.ax1x.com/2023/07/06/pC6iAf0.md.png)](https://imgse.com/i/pC6iAf0)
+
+>例题
+[![pC6PdJ0.md.png](https://s1.ax1x.com/2023/07/06/pC6PdJ0.md.png)](https://imgse.com/i/pC6PdJ0)
+{{< expand "学霸肯定对了">}}B A
+
+&emsp;&emsp;第一空分析：交互过程建模，说明要选择动态图。第二空分析：执行流程，说明要选择动态图。{{< /expand >}}
+
+- 构建图与包图
+
+&emsp;&emsp;构建图是对外提供的一个接口和功能，包图是为了管理方便，将相关的东西放在一个文件夹中。
+
+[![pC6ie6U.md.png](https://s1.ax1x.com/2023/07/06/pC6ie6U.md.png)](https://imgse.com/i/pC6ie6U)
+
+- 部署图
+
+&emsp;&emsp;描述的是硬件节点和软件构建之间的关系。
+
+[![pC6ium4.md.png](https://s1.ax1x.com/2023/07/06/pC6ium4.md.png)](https://imgse.com/i/pC6ium4)
 
 ## 4 需求定义
 
