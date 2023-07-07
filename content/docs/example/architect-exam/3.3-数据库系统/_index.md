@@ -31,7 +31,9 @@ title: 3.3 数据库系统
 - 9. 数据库的安全性✅
 - 10. 数据库的备份与恢复技术✅
 - 11. 数据库性能优化✅
-- 12. 专项练习
+- 12. 数据库索引
+- 13 数据库视图
+- 14. 专项练习
 
 ## 1 数据库模式
 
@@ -68,22 +70,6 @@ title: 3.3 数据库系统
 **查询表**:查询结果对应的表。
 
 **视图表**:由基表或其他视图表导出的表，本身不独立存储，数据库只存放它的定义，常称为虚表。
-
-- 视图表
-
-**数据库视图**:它一个虚拟表 (逻辑上的表)，其内容由查询定义(仅保存SOL查询语句)同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并没有真正存储这些数据，而是通过查询原始表动态生成所需要的数据。
-
-**视图的优点**:
-
-&emsp;&emsp;1、视图能简化用户操作
-
-&emsp;&emsp;2、视图使用户能以多种角度看待同一数据
-
-&emsp;&emsp;3、视图对重构数据库提供了一定程度的逻辑独立性
-
-&emsp;&emsp;4、视图可以对机密数据提供安全保护
-
-**物化视图**:它不是传统意义上虚拟视图，是实体化视图，其本身会存储数据。同时当原始表中的数据更新时，物化视图也会更新。适合于多查询少更新的场景。
 
 ## 2 关系数据库管理系统 RDBMS
 
@@ -177,7 +163,7 @@ title: 3.3 数据库系统
 
 &emsp;&emsp;数据库设计包含需求分析->概念结构设计->逻辑结构设计->物理设计阶段，每阶段的产物需要知道。
 
-[![pCVdeYR.md.png](https://s1.ax1x.com/2023/06/11/pCVdeYR.md.png)](https://imgse.com/i/pCVdeYR)
+[![pC6vv01.md.png](https://s1.ax1x.com/2023/07/07/pC6vv01.md.png)](https://imgse.com/i/pC6vv01)
 
 >例题
 [![pCVdmf1.md.png](https://s1.ax1x.com/2023/06/11/pCVdmf1.md.png)](https://imgse.com/i/pCVdmf1)
@@ -445,6 +431,17 @@ title: 3.3 数据库系统
 [![pCmDSFU.md.png](https://s1.ax1x.com/2023/06/13/pCmDSFU.md.png)](https://imgse.com/i/pCmDSFU)
 [![pCmDPSJ.md.png](https://s1.ax1x.com/2023/06/13/pCmDPSJ.md.png)](https://imgse.com/i/pCmDPSJ)
 
+### 7.7 反规范化理论
+
+[![pC6xV0I.md.png](https://s1.ax1x.com/2023/07/07/pC6xV0I.md.png)](https://imgse.com/i/pC6xV0I)
+[![pC6xJ7q.md.png](https://s1.ax1x.com/2023/07/07/pC6xJ7q.md.png)](https://imgse.com/i/pC6xJ7q)
+
+>例题
+[![pC6x4jH.md.png](https://s1.ax1x.com/2023/07/07/pC6x4jH.md.png)](https://imgse.com/i/pC6x4jH)
+{{< expand "学霸肯定对了">}}
+[![pC6xOC8.md.png](https://s1.ax1x.com/2023/07/07/pC6xOC8.md.png)](https://imgse.com/i/pC6xOC8)
+{{< /expand >}}
+
 ## 8 并发控制
 
 ---
@@ -521,6 +518,42 @@ title: 3.3 数据库系统
 ---
 
 [![pCeHVqf.md.png](https://s1.ax1x.com/2023/06/13/pCeHVqf.md.png)](https://imgse.com/i/pCeHVqf)
+
+## 12 数据库索引
+
+---
+
+&emsp;&emsp;索引表是实际存在的表。假设要查询学号为417的这条记录，顺序查找的思想是一个一个对比，查询6次才能查到，效率非常低；可能会很自然想到二分查找，但二分查找需要排序的前提。建立索引表本身采用的是B树或者B+树；为了方便解释，这里以二分查找建立索引为例。
+
+[![pC6zeKJ.md.png](https://s1.ax1x.com/2023/07/07/pC6zeKJ.md.png)](https://imgse.com/i/pC6zeKJ)
+[![pC6zKV1.md.png](https://s1.ax1x.com/2023/07/07/pC6zKV1.md.png)](https://imgse.com/i/pC6zKV1)
+
+## 13 数据库视图
+
+---
+
+**数据库视图**:它一个虚拟表 (逻辑上的表)，其内容由查询定义(仅保存SOL查询语句，所以效率可能有点低，可以使用物化视图提高效率)同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并没有真正存储这些数据，而是通过查询原始表动态生成所需要的数据，可以理解为视图是一个指针，可以指向单个表、多个表的联合查询结果，底层的表的数据变了，视图的结果自然也会变。
+
+[![pC6zvi6.md.png](https://s1.ax1x.com/2023/07/07/pC6zvi6.md.png)](https://imgse.com/i/pC6zvi6)
+
+**视图的优点**:
+
+&emsp;&emsp;1、视图能简化用户操作
+
+&emsp;&emsp;2、视图使用户能以多种角度看待同一数据
+
+&emsp;&emsp;3、视图对重构数据库提供了一定程度的逻辑独立性
+
+&emsp;&emsp;4、视图可以对机密数据提供安全保护，如不想授权整个表给外部查询，那么就可授权这个表的某个查询视图给外部就行。
+
+**物化视图**:它不是传统意义上虚拟视图，是实体化视图，其本身会存储数据。同时当原始表中的数据更新时，物化视图也会自动更新。适合于多查询少更新的场景。
+
+>例题
+[![pCcSYWT.md.png](https://s1.ax1x.com/2023/07/07/pCcSYWT.md.png)](https://imgse.com/i/pCcSYWT)
+[![pCcSUlF.md.png](https://s1.ax1x.com/2023/07/07/pCcSUlF.md.png)](https://imgse.com/i/pCcSUlF)
+{{< expand "学霸肯定对了">}}
+
+{{< /expand >}}
 
 ## 课后习题
 
