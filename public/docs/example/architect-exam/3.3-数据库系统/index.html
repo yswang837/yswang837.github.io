@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 ✌ # 数据库模式✅ 关系数据库管理系统 RDBMS 基于网络的数据库管理系统 NDB 分布式数据库✅✅✅ 分布式数据库的特点 分布式数据库的层次 分布透明性 分布式数据库的两阶段提交协议 数据库设计阶段✅✅ 需求分析✅ 概念结构设计&ndash;ER模型✅ 逻辑结构设计&ndash;关系模型✅✅ 物理设计✅ 关系代数✅✅✅✅ 规范化理论✅✅✅✅✅ 函数依赖 求候选键 Armstrong公理 范式判断 模式分解 并发控制✅ 数据库的安全性✅ 数据库的备份与恢复技术✅ 数据库性能优化✅ 专项练习 1 数据库模式 # 数据库模式一句话概括为三级模式两级映像，其中三级模式分别是：外模式(用户模式、子模式)、模式(概念模式)、内模式；两级映像分别是：外模式与模式之间的映像、模式与内模式之间的映像。
+<meta name="description" content="课程内容提要 ✌ # 数据库模式✅ 关系数据库管理系统 RDBMS 基于网络的数据库管理系统 NDB 分布式数据库✅✅✅ 分布式数据库的特点 分布式数据库的层次 分布透明性 分布式数据库的两阶段提交协议 数据库设计阶段✅✅ 需求分析✅ 概念结构设计&ndash;ER模型✅ 逻辑结构设计&ndash;关系模型✅✅ 物理设计✅ 关系代数✅✅✅✅ 规范化理论✅✅✅✅✅ 函数依赖 求候选键 Armstrong公理 范式判断 模式分解 并发控制✅ 数据库的安全性✅ 数据库的备份与恢复技术✅ 数据库性能优化✅ 数据库索引 数据库视图 数据库的分库分表分区 NoSQL 专项练习 1 数据库模式 # 数据库模式一句话概括为三级模式两级映像，其中三级模式分别是：外模式(用户模式、子模式)、模式(概念模式)、内模式；两级映像分别是：外模式与模式之间的映像、模式与内模式之间的映像。
 外模式 它是某个或某几个用户所看到的数据库的数据视图，是与某一应用有关的数据的逻辑表示。它是从模式导出的一个子集，包含模式中允许特定用户使用的那部分数据。外模式反映了数据库的用户观。
 模式 又称概念模式或逻辑模式，它是由数据库设计者综合所有用户的数据，按照统一的观点构造的全局逻辑结构，是对数据库中全部数据的逻辑结构和特征的总体描述，是所有用户的公共数据视图（全局视图）。体现和反映了数据库系统(DBS)的整体观。
 内模式： 又称存储模式，对应于物理级。它是数据库中全体数据的内部表示或底层描述，是数据库最低一级的逻辑描述，它描述了数据在存储介质上的存储方式和物理结构，对应着实际存储在外存储介质上的数据库。它是数据库的存储观。创建索引改变的是数据库的内模式。
@@ -12,15 +12,9 @@
 关系的3种类型 基本关系 (通常又称为基本表或基表) : 实际存在的表，实际存储数据的逻辑表示。
 查询表:查询结果对应的表。
 视图表:由基表或其他视图表导出的表，本身不独立存储，数据库只存放它的定义，常称为虚表。
-视图表 数据库视图:它一个虚拟表 (逻辑上的表)，其内容由查询定义(仅保存SOL查询语句)同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并没有真正存储这些数据，而是通过查询原始表动态生成所需要的数据。
-视图的优点:
-1、视图能简化用户操作
-2、视图使用户能以多种角度看待同一数据
-3、视图对重构数据库提供了一定程度的逻辑独立性
-4、视图可以对机密数据提供安全保护
-物化视图:它不是传统意义上虚拟视图，是实体化视图，其本身会存储数据。同时当原始表中的数据更新时，物化视图也会更新。适合于多查询少更新的场景。
 2 关系数据库管理系统 RDBMS # 数据分割和数据复制是数据分布的两种重要方式。数据分割有垂直分割和水平分割两种模式，前者是将表中不同字段的数据存储到不同的服务器上，后者是将表中不同行的数据存储到不同的服务器上。数据复制是为了提升数据访问效率而采用的一种增加数据冗余的方法，它将数据的多个副本存储到不同的服务器上，由RDBMS负责维护数据的一致性。
-3 基于网络的数据库管理系统 NDB # 基于网络的数据库系统(Netware Database SystemNDB)是基于4G/5G的移动通信之上，在逻辑上可以把嵌入式设备看作远程服务器的一个客户端。NDB主要由客户端、通信协议和远程服务器等三部分组成。NDB的客户端主要负责提供接口给嵌入式程序，通信协议负责规范客户端与远程服务器之间的通信，远程服务器负责维护服务器上的数据库数据。NDB是以文件方式存储数据库数据。即数据按照定格式储存在磁盘中，使用时由应用程序通过相应的驱动程序甚至直接对数据文件进行读写。NDB一般是嵌入式设备，裁剪性是嵌入式设备的特征。">
+3 基于网络的数据库管理系统 NDB # 基于网络的数据库系统(Netware Database SystemNDB)是基于4G/5G的移动通信之上，在逻辑上可以把嵌入式设备看作远程服务器的一个客户端。NDB主要由客户端、通信协议和远程服务器等三部分组成。NDB的客户端主要负责提供接口给嵌入式程序，通信协议负责规范客户端与远程服务器之间的通信，远程服务器负责维护服务器上的数据库数据。NDB是以文件方式存储数据库数据。即数据按照定格式储存在磁盘中，使用时由应用程序通过相应的驱动程序甚至直接对数据文件进行读写。NDB一般是嵌入式设备，裁剪性是嵌入式设备的特征。
+4 分布式数据库 # 分布式数据对应于集中式数据库而言的，平时所用到的SQL Server等都是集中式数据库，分布式会考虑物理上把数据放在不同的物理节点上，其逻辑上依然是一个整体。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.3 数据库系统" />
 <meta property="og:description" content="" />
@@ -32,7 +26,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.909ea237574412bf8011dde295d47d1338e308b4887b15fe2d6cf8296780b460.js" integrity="sha256-kJ6iN1dEEr&#43;AEd3ildR9EzjjCLSIexX&#43;LWz4KWeAtGA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.934b60ddc5d48072730f8907b7f34fc9b5f3372c4f8cf1e59c9e6d4b0a16c79b.js" integrity="sha256-k0tg3cXUgHJzD4kHt/NPybXzNyxPjPHlnJ5tSwoWx5s=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -929,6 +923,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#42-分布式数据库的层次">4.2 分布式数据库的层次</a></li>
         <li><a href="#43-分布透明性">4.3 分布透明性</a></li>
         <li><a href="#44-分布式数据库的两阶段提交协议">4.4 分布式数据库的两阶段提交协议</a></li>
+        <li><a href="#45-联邦数据库">4.5 联邦数据库</a></li>
       </ul>
     </li>
     <li><a href="#5-数据库设计阶段">5 数据库设计阶段</a>
@@ -948,6 +943,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#74-范式判断">7.4 范式判断</a></li>
         <li><a href="#75-模式分解">7.5 模式分解</a></li>
         <li><a href="#76-闭包">7.6 闭包</a></li>
+        <li><a href="#77-反规范化理论">7.7 反规范化理论</a></li>
       </ul>
     </li>
     <li><a href="#8-并发控制">8 并发控制</a>
@@ -965,6 +961,18 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#11-数据库性能优化">11 数据库性能优化</a></li>
+    <li><a href="#12-数据库索引">12 数据库索引</a></li>
+    <li><a href="#13-数据库视图">13 数据库视图</a></li>
+    <li><a href="#14-数据库的分库分表分区">14 数据库的分库分表分区</a>
+      <ul>
+        <li><a href="#141-常见的分区方式">14.1 常见的分区方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#15-nosql">15 NoSQL</a>
+      <ul>
+        <li><a href="#151-nosql分类">15.1 NoSQL分类</a></li>
+      </ul>
+    </li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>
@@ -1060,6 +1068,26 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li>
 <ol start="12">
+<li>数据库索引</li>
+</ol>
+</li>
+<li>
+<ol start="13">
+<li>数据库视图</li>
+</ol>
+</li>
+<li>
+<ol start="14">
+<li>数据库的分库分表分区</li>
+</ol>
+</li>
+<li>
+<ol start="15">
+<li>NoSQL</li>
+</ol>
+</li>
+<li>
+<ol start="16">
 <li>专项练习</li>
 </ol>
 </li>
@@ -1097,16 +1125,6 @@ https://github.com/alex-shpak/hugo-book
 <p><strong>基本关系</strong> (通常又称为基本表或基表) : 实际存在的表，实际存储数据的逻辑表示。</p>
 <p><strong>查询表</strong>:查询结果对应的表。</p>
 <p><strong>视图表</strong>:由基表或其他视图表导出的表，本身不独立存储，数据库只存放它的定义，常称为虚表。</p>
-<ul>
-<li>视图表</li>
-</ul>
-<p><strong>数据库视图</strong>:它一个虚拟表 (逻辑上的表)，其内容由查询定义(仅保存SOL查询语句)同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并没有真正存储这些数据，而是通过查询原始表动态生成所需要的数据。</p>
-<p><strong>视图的优点</strong>:</p>
-<p>  1、视图能简化用户操作</p>
-<p>  2、视图使用户能以多种角度看待同一数据</p>
-<p>  3、视图对重构数据库提供了一定程度的逻辑独立性</p>
-<p>  4、视图可以对机密数据提供安全保护</p>
-<p><strong>物化视图</strong>:它不是传统意义上虚拟视图，是实体化视图，其本身会存储数据。同时当原始表中的数据更新时，物化视图也会更新。适合于多查询少更新的场景。</p>
 <h2 id="2-关系数据库管理系统-rdbms">
   2 关系数据库管理系统 RDBMS
   <a class="anchor" href="#2-%e5%85%b3%e7%b3%bb%e6%95%b0%e6%8d%ae%e5%ba%93%e7%ae%a1%e7%90%86%e7%b3%bb%e7%bb%9f-rdbms">#</a>
@@ -1124,7 +1142,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#4-%e5%88%86%e5%b8%83%e5%bc%8f%e6%95%b0%e6%8d%ae%e5%ba%93">#</a>
 </h2>
 <hr>
-<p>  分布式数据对应于集中式数据库而言的，平时所用到的SQL Server等都是集中式数据库，分布式会考虑物理上把数据放在不同的物理节点上。</p>
+<p>  分布式数据对应于集中式数据库而言的，平时所用到的SQL Server等都是集中式数据库，分布式会考虑物理上把数据放在不同的物理节点上，其逻辑上依然是一个整体。</p>
 <h3 id="41-分布式数据库的特点">
   4.1 分布式数据库的特点
   <a class="anchor" href="#41-%e5%88%86%e5%b8%83%e5%bc%8f%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e7%89%b9%e7%82%b9">#</a>
@@ -1174,6 +1192,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#43-%e5%88%86%e5%b8%83%e9%80%8f%e6%98%8e%e6%80%a7">#</a>
 </h3>
 <p>  分布透明性分为：分片透明性、复制透明性、位置透明性、局部数据模型透明性；其中分片透明性又分为：水平分片、垂直分片、混合分片。</p>
+<p><a href="https://imgse.com/i/pCcmqIS"><img src="https://s1.ax1x.com/2023/07/07/pCcmqIS.md.png" alt="pCcmqIS.md.png" /></a></p>
 <ul>
 <li>
 <ol>
@@ -1217,6 +1236,12 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p>  1、只要有一个参与者撤销事务，协调者就必须做出全局撤销决定。</p>
 <p>  2、只有所有参与者都同意提交事务，协调者才能做出全局提交决定。</p>
+<h3 id="45-联邦数据库">
+  4.5 联邦数据库
+  <a class="anchor" href="#45-%e8%81%94%e9%82%a6%e6%95%b0%e6%8d%ae%e5%ba%93">#</a>
+</h3>
+<p>  分布式数据库和联邦数据库很相似，分布式数据库是同构的，而联邦数据库是异构的。它们都是对外提供的数据的接口。</p>
+<p><a href="https://imgse.com/i/pCcuefg"><img src="https://s1.ax1x.com/2023/07/07/pCcuefg.md.png" alt="pCcuefg.md.png" /></a></p>
 <p>例题&gt;
 <a href="https://imgse.com/i/pCEHMkj"><img src="https://s1.ax1x.com/2023/06/10/pCEHMkj.md.png" alt="pCEHMkj.md.png" /></a>
 
@@ -1269,7 +1294,7 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <hr>
 <p>  数据库设计包含需求分析-&gt;概念结构设计-&gt;逻辑结构设计-&gt;物理设计阶段，每阶段的产物需要知道。</p>
-<p><a href="https://imgse.com/i/pCVdeYR"><img src="https://s1.ax1x.com/2023/06/11/pCVdeYR.md.png" alt="pCVdeYR.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC6vv01"><img src="https://s1.ax1x.com/2023/07/07/pC6vv01.md.png" alt="pC6vv01.md.png" /></a></p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/pCVdmf1"><img src="https://s1.ax1x.com/2023/06/11/pCVdmf1.md.png" alt="pCVdmf1.md.png" /></a>
@@ -1730,6 +1755,30 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p><a href="https://imgse.com/i/pCmDSFU"><img src="https://s1.ax1x.com/2023/06/13/pCmDSFU.md.png" alt="pCmDSFU.md.png" /></a>
 <a href="https://imgse.com/i/pCmDPSJ"><img src="https://s1.ax1x.com/2023/06/13/pCmDPSJ.md.png" alt="pCmDPSJ.md.png" /></a></p>
+<h3 id="77-反规范化理论">
+  7.7 反规范化理论
+  <a class="anchor" href="#77-%e5%8f%8d%e8%a7%84%e8%8c%83%e5%8c%96%e7%90%86%e8%ae%ba">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC6xV0I"><img src="https://s1.ax1x.com/2023/07/07/pC6xV0I.md.png" alt="pC6xV0I.md.png" /></a>
+<a href="https://imgse.com/i/pC6xJ7q"><img src="https://s1.ax1x.com/2023/07/07/pC6xJ7q.md.png" alt="pC6xJ7q.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC6x4jH"><img src="https://s1.ax1x.com/2023/07/07/pC6x4jH.md.png" alt="pC6x4jH.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <a href="https://imgse.com/i/pC6xOC8"><img src="https://s1.ax1x.com/2023/07/07/pC6xOC8.md.png" alt="pC6xOC8.md.png" /></a>
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 <h2 id="8-并发控制">
   8 并发控制
   <a class="anchor" href="#8-%e5%b9%b6%e5%8f%91%e6%8e%a7%e5%88%b6">#</a>
@@ -1837,6 +1886,75 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <hr>
 <p><a href="https://imgse.com/i/pCeHVqf"><img src="https://s1.ax1x.com/2023/06/13/pCeHVqf.md.png" alt="pCeHVqf.md.png" /></a></p>
+<h2 id="12-数据库索引">
+  12 数据库索引
+  <a class="anchor" href="#12-%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b4%a2%e5%bc%95">#</a>
+</h2>
+<hr>
+<p>  索引表是实际存在的表。假设要查询学号为417的这条记录，顺序查找的思想是一个一个对比，查询6次才能查到，效率非常低；可能会很自然想到二分查找，但二分查找需要排序的前提。建立索引表本身采用的是B树或者B+树；为了方便解释，这里以二分查找建立索引为例。</p>
+<p><a href="https://imgse.com/i/pC6zeKJ"><img src="https://s1.ax1x.com/2023/07/07/pC6zeKJ.md.png" alt="pC6zeKJ.md.png" /></a>
+<a href="https://imgse.com/i/pC6zKV1"><img src="https://s1.ax1x.com/2023/07/07/pC6zKV1.md.png" alt="pC6zKV1.md.png" /></a></p>
+<h2 id="13-数据库视图">
+  13 数据库视图
+  <a class="anchor" href="#13-%e6%95%b0%e6%8d%ae%e5%ba%93%e8%a7%86%e5%9b%be">#</a>
+</h2>
+<hr>
+<p><strong>数据库视图</strong>:它一个虚拟表 (逻辑上的表)，其内容由查询定义(仅保存SOL查询语句，所以效率可能有点低，可以使用物化视图提高效率)同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并没有真正存储这些数据，而是通过查询原始表动态生成所需要的数据，可以理解为视图是一个指针，可以指向单个表、多个表的联合查询结果，底层的表的数据变了，视图的结果自然也会变。</p>
+<p><a href="https://imgse.com/i/pC6zvi6"><img src="https://s1.ax1x.com/2023/07/07/pC6zvi6.md.png" alt="pC6zvi6.md.png" /></a></p>
+<p><strong>视图的优点</strong>:</p>
+<p>  1、视图能简化用户操作</p>
+<p>  2、视图使用户能以多种角度看待同一数据</p>
+<p>  3、视图对重构数据库提供了一定程度的逻辑独立性</p>
+<p>  4、视图可以对机密数据提供安全保护，如不想授权整个表给外部查询，那么就可授权这个表的某个查询视图给外部就行。</p>
+<p><strong>物化视图</strong>:它不是传统意义上虚拟视图，是实体化视图，其本身会存储数据。同时当原始表中的数据更新时，物化视图也会自动更新。适合于多查询少更新的场景。</p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCcSYWT"><img src="https://s1.ax1x.com/2023/07/07/pCcSYWT.md.png" alt="pCcSYWT.md.png" /></a>
+<a href="https://imgse.com/i/pCcSUlF"><img src="https://s1.ax1x.com/2023/07/07/pCcSUlF.md.png" alt="pCcSUlF.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <a href="https://imgse.com/i/pCcea6I"><img src="https://s1.ax1x.com/2023/07/07/pCcea6I.md.png" alt="pCcea6I.md.png" /></a>
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="14-数据库的分库分表分区">
+  14 数据库的分库分表分区
+  <a class="anchor" href="#14-%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%88%86%e5%ba%93%e5%88%86%e8%a1%a8%e5%88%86%e5%8c%ba">#</a>
+</h2>
+<hr>
+<p>  分区是数据库自带的，比如说按天分区。</p>
+<p><a href="https://imgse.com/i/pCceWXq"><img src="https://s1.ax1x.com/2023/07/07/pCceWXq.md.png" alt="pCceWXq.md.png" /></a>
+<a href="https://imgse.com/i/pCce7h4"><img src="https://s1.ax1x.com/2023/07/07/pCce7h4.md.png" alt="pCce7h4.md.png" /></a></p>
+<h3 id="141-常见的分区方式">
+  14.1 常见的分区方式
+  <a class="anchor" href="#141-%e5%b8%b8%e8%a7%81%e7%9a%84%e5%88%86%e5%8c%ba%e6%96%b9%e5%bc%8f">#</a>
+</h3>
+<hr>
+<p>  哈希分区相对分的比较均匀。</p>
+<p><a href="https://imgse.com/i/pCceOj1"><img src="https://s1.ax1x.com/2023/07/07/pCceOj1.md.png" alt="pCceOj1.md.png" /></a>
+<a href="https://imgse.com/i/pCcejnx"><img src="https://s1.ax1x.com/2023/07/07/pCcejnx.md.png" alt="pCcejnx.md.png" /></a>
+<a href="https://imgse.com/i/pCcmP9H"><img src="https://s1.ax1x.com/2023/07/07/pCcmP9H.md.png" alt="pCcmP9H.md.png" /></a></p>
+<h2 id="15-nosql">
+  15 NoSQL
+  <a class="anchor" href="#15-nosql">#</a>
+</h2>
+<hr>
+<p>  向上扩展：用更好的服务器替换(当然现在mysql也有主从的集群)，向外扩展：用集群。</p>
+<p><a href="https://imgse.com/i/pCcnnqx"><img src="https://s1.ax1x.com/2023/07/07/pCcnnqx.md.png" alt="pCcnnqx.md.png" /></a></p>
+<h3 id="151-nosql分类">
+  15.1 NoSQL分类
+  <a class="anchor" href="#151-nosql%e5%88%86%e7%b1%bb">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCcupSH"><img src="https://s1.ax1x.com/2023/07/07/pCcupSH.md.png" alt="pCcupSH.md.png" /></a></p>
 <h2 id="课后习题">
   课后习题
   <a class="anchor" href="#%e8%af%be%e5%90%8e%e4%b9%a0%e9%a2%98">#</a>
@@ -1894,6 +2012,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#42-分布式数据库的层次">4.2 分布式数据库的层次</a></li>
         <li><a href="#43-分布透明性">4.3 分布透明性</a></li>
         <li><a href="#44-分布式数据库的两阶段提交协议">4.4 分布式数据库的两阶段提交协议</a></li>
+        <li><a href="#45-联邦数据库">4.5 联邦数据库</a></li>
       </ul>
     </li>
     <li><a href="#5-数据库设计阶段">5 数据库设计阶段</a>
@@ -1913,6 +2032,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#74-范式判断">7.4 范式判断</a></li>
         <li><a href="#75-模式分解">7.5 模式分解</a></li>
         <li><a href="#76-闭包">7.6 闭包</a></li>
+        <li><a href="#77-反规范化理论">7.7 反规范化理论</a></li>
       </ul>
     </li>
     <li><a href="#8-并发控制">8 并发控制</a>
@@ -1930,6 +2050,18 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#11-数据库性能优化">11 数据库性能优化</a></li>
+    <li><a href="#12-数据库索引">12 数据库索引</a></li>
+    <li><a href="#13-数据库视图">13 数据库视图</a></li>
+    <li><a href="#14-数据库的分库分表分区">14 数据库的分库分表分区</a>
+      <ul>
+        <li><a href="#141-常见的分区方式">14.1 常见的分区方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#15-nosql">15 NoSQL</a>
+      <ul>
+        <li><a href="#151-nosql分类">15.1 NoSQL分类</a></li>
+      </ul>
+    </li>
     <li><a href="#课后习题">课后习题</a></li>
   </ul>
 </nav>

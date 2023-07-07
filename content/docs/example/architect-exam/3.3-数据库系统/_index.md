@@ -32,8 +32,10 @@ title: 3.3 数据库系统
 - 10. 数据库的备份与恢复技术✅
 - 11. 数据库性能优化✅
 - 12. 数据库索引
-- 13 数据库视图
-- 14. 专项练习
+- 13. 数据库视图
+- 14. 数据库的分库分表分区
+- 15. NoSQL
+- 16. 专项练习
 
 ## 1 数据库模式
 
@@ -87,7 +89,7 @@ title: 3.3 数据库系统
 
 ---
 
-&emsp;&emsp;分布式数据对应于集中式数据库而言的，平时所用到的SQL Server等都是集中式数据库，分布式会考虑物理上把数据放在不同的物理节点上。
+&emsp;&emsp;分布式数据对应于集中式数据库而言的，平时所用到的SQL Server等都是集中式数据库，分布式会考虑物理上把数据放在不同的物理节点上，其逻辑上依然是一个整体。
 
 ### 4.1 分布式数据库的特点
 
@@ -121,6 +123,8 @@ title: 3.3 数据库系统
 
 &emsp;&emsp;分布透明性分为：分片透明性、复制透明性、位置透明性、局部数据模型透明性；其中分片透明性又分为：水平分片、垂直分片、混合分片。
 
+[![pCcmqIS.md.png](https://s1.ax1x.com/2023/07/07/pCcmqIS.md.png)](https://imgse.com/i/pCcmqIS)
+
 - 1) 分片透明：
 
 &emsp;&emsp;是指用户不必关心数据是如何分片的，它们对数据的操作在全局关系上进行，即如何分片对用户是透明的。
@@ -148,6 +152,12 @@ title: 3.3 数据库系统
 &emsp;&emsp;1、只要有一个参与者撤销事务，协调者就必须做出全局撤销决定。
 
 &emsp;&emsp;2、只有所有参与者都同意提交事务，协调者才能做出全局提交决定。
+
+### 4.5 联邦数据库
+
+&emsp;&emsp;分布式数据库和联邦数据库很相似，分布式数据库是同构的，而联邦数据库是异构的。它们都是对外提供的数据的接口。
+
+[![pCcuefg.md.png](https://s1.ax1x.com/2023/07/07/pCcuefg.md.png)](https://imgse.com/i/pCcuefg)
 
 例题>
 [![pCEHMkj.md.png](https://s1.ax1x.com/2023/06/10/pCEHMkj.md.png)](https://imgse.com/i/pCEHMkj)
@@ -552,8 +562,39 @@ title: 3.3 数据库系统
 [![pCcSYWT.md.png](https://s1.ax1x.com/2023/07/07/pCcSYWT.md.png)](https://imgse.com/i/pCcSYWT)
 [![pCcSUlF.md.png](https://s1.ax1x.com/2023/07/07/pCcSUlF.md.png)](https://imgse.com/i/pCcSUlF)
 {{< expand "学霸肯定对了">}}
-
+[![pCcea6I.md.png](https://s1.ax1x.com/2023/07/07/pCcea6I.md.png)](https://imgse.com/i/pCcea6I)
 {{< /expand >}}
+
+## 14 数据库的分库分表分区
+
+---
+
+&emsp;&emsp;分区是数据库自带的，比如说按天分区。
+
+[![pCceWXq.md.png](https://s1.ax1x.com/2023/07/07/pCceWXq.md.png)](https://imgse.com/i/pCceWXq)
+[![pCce7h4.md.png](https://s1.ax1x.com/2023/07/07/pCce7h4.md.png)](https://imgse.com/i/pCce7h4)
+
+### 14.1 常见的分区方式
+
+---
+
+&emsp;&emsp;哈希分区相对分的比较均匀。
+
+[![pCceOj1.md.png](https://s1.ax1x.com/2023/07/07/pCceOj1.md.png)](https://imgse.com/i/pCceOj1)
+[![pCcejnx.md.png](https://s1.ax1x.com/2023/07/07/pCcejnx.md.png)](https://imgse.com/i/pCcejnx)
+[![pCcmP9H.md.png](https://s1.ax1x.com/2023/07/07/pCcmP9H.md.png)](https://imgse.com/i/pCcmP9H)
+
+## 15 NoSQL
+
+---
+
+&emsp;&emsp;向上扩展：用更好的服务器替换(当然现在mysql也有主从的集群)，向外扩展：用集群。
+
+[![pCcnnqx.md.png](https://s1.ax1x.com/2023/07/07/pCcnnqx.md.png)](https://imgse.com/i/pCcnnqx)
+
+### 15.1 NoSQL分类
+
+[![pCcupSH.md.png](https://s1.ax1x.com/2023/07/07/pCcupSH.md.png)](https://imgse.com/i/pCcupSH)
 
 ## 课后习题
 
