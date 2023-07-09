@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" web架构设计 # ">
+<meta name="description" content=" todo # 1 web架构设计 # 主要围绕高性能、高可用、可维护等性能展开。
+1.1 单机到数据库-web应用服务器分离 # 1.2 应用服务器集群 # 此时需要做负载均衡和Session一致性问题。
+1.3 负载均衡 # 在OSI七层模型中，有两个层次可以用作做负载均衡，分别是：应用层、传输层。一般来说传输层的负载均衡效率更高。
+HTTP重定向：类似于在浏览器中打开某个网页的时候，发生跳转，跳转到另一台应用服务器上进行处理。
+VPN是正向代理的代表，它是从客户端-&gt;服务器。反向代理服务器：从服务器-&gt;客户端，请求来了首先访问代理服务器，将请求分发给具体的应用服务器，由应用服务器来处理并相应。
+DNS域名解析负载均衡：将一个域名绑定成多个IP，每次轮询到不同的IP即可实现分流；
+将一个外部IP绑定为内部的多个IP，在网关的位置，通过硬件来动态地转换为内部可用IP，一般4层就采用了这个技术。
+负载均衡算法 1.4 有状态和无状态问题 # 购物车就是有状态的。
+Session一致性是为了解决有状态请求 (1) 有状态 (2)无状态 (3)无状态 (4)有状态 (5)无状态
+1.5 持久化技术ORM # 1.6 数据库读写分离 # 1.7 缓存技术 # 由于redis比较重要，下面小结接着讲。
+1.8 redis # redis 集群切片场景方式 ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="10) web架构设计" />
 <meta property="og:description" content="" />
@@ -15,7 +25,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.aa197c94228177431f7ab02a7f1d585ca2b7b8b4dcafaa4b540d4b964b4240c1.js" integrity="sha256-qhl8lCKBd0MferAqfx1YXKK3uLTcr6pLVA1LlktCQME=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.336373f3b4b182e2ab26468f89805a7f0041c1a93a261fa425c4a2322060472f.js" integrity="sha256-M2Nz87SxguKrJkaPiYBafwBBwak6Jh&#43;kJcSiMiBgRy8=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/10-web%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -584,7 +594,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">7 ) 软件架构评估</a>
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">7) 软件架构评估</a>
   
 
           
@@ -751,7 +761,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.15-%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%93%E6%A0%8F/" class="">3.15 案例分析专栏</a>
+    <a href="/docs/example/architect-exam/3.15-%E5%85%B6%E4%BB%96/" class="">3.15 其他</a>
   
 
           
@@ -769,7 +779,25 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.16-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/" class="">3.16 论文写作专栏</a>
+    <a href="/docs/example/architect-exam/3.16-%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%93%E6%A0%8F/" class="">3.15 案例分析专栏</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.17-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/" class="">3.17 论文写作专栏</a>
   
 
           
@@ -900,7 +928,23 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#todo">todo</a></li>
+    <li><a href="#1-web架构设计">1 web架构设计</a>
+      <ul>
+        <li><a href="#11-单机到数据库-web应用服务器分离">1.1 单机到数据库-web应用服务器分离</a></li>
+        <li><a href="#12-应用服务器集群">1.2 应用服务器集群</a></li>
+        <li><a href="#13-负载均衡">1.3 负载均衡</a></li>
+        <li><a href="#14-有状态和无状态问题">1.4 有状态和无状态问题</a></li>
+        <li><a href="#15-持久化技术orm">1.5 持久化技术ORM</a></li>
+        <li><a href="#16-数据库读写分离">1.6 数据库读写分离</a></li>
+        <li><a href="#17-缓存技术">1.7 缓存技术</a></li>
+        <li><a href="#18-redis">1.8 redis</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -911,10 +955,85 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="web架构设计">
-  web架构设计
-  <a class="anchor" href="#web%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1">#</a>
-</h1>
+  <article class="markdown"><h2 id="todo">
+  todo
+  <a class="anchor" href="#todo">#</a>
+</h2>
+<h2 id="1-web架构设计">
+  1 web架构设计
+  <a class="anchor" href="#1-web%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1">#</a>
+</h2>
+<hr>
+<p>  主要围绕<strong>高性能</strong>、高可用、可维护等性能展开。</p>
+<p><a href="https://imgse.com/i/pC2SX0H"><img src="https://s1.ax1x.com/2023/07/09/pC2SX0H.md.png" alt="pC2SX0H.md.png" /></a></p>
+<h3 id="11-单机到数据库-web应用服务器分离">
+  1.1 单机到数据库-web应用服务器分离
+  <a class="anchor" href="#11-%e5%8d%95%e6%9c%ba%e5%88%b0%e6%95%b0%e6%8d%ae%e5%ba%93-web%e5%ba%94%e7%94%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%88%86%e7%a6%bb">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2pSht"><img src="https://s1.ax1x.com/2023/07/09/pC2pSht.md.png" alt="pC2pSht.md.png" /></a></p>
+<h3 id="12-应用服务器集群">
+  1.2 应用服务器集群
+  <a class="anchor" href="#12-%e5%ba%94%e7%94%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%9b%86%e7%be%a4">#</a>
+</h3>
+<p>  此时需要做负载均衡和Session一致性问题。</p>
+<p><a href="https://imgse.com/i/pC2pijS"><img src="https://s1.ax1x.com/2023/07/09/pC2pijS.md.png" alt="pC2pijS.md.png" /></a></p>
+<h3 id="13-负载均衡">
+  1.3 负载均衡
+  <a class="anchor" href="#13-%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2pMcT"><img src="https://s1.ax1x.com/2023/07/09/pC2pMcT.md.png" alt="pC2pMcT.md.png" /></a></p>
+<p>  在OSI七层模型中，有两个层次可以用作做负载均衡，分别是：应用层、传输层。一般来说传输层的负载均衡效率更高。</p>
+<p><a href="https://imgse.com/i/pC2pL80"><img src="https://s1.ax1x.com/2023/07/09/pC2pL80.md.png" alt="pC2pL80.md.png" /></a></p>
+<p>  HTTP重定向：类似于在浏览器中打开某个网页的时候，发生跳转，跳转到另一台应用服务器上进行处理。</p>
+<p>  VPN是正向代理的代表，它是从客户端-&gt;服务器。反向代理服务器：从服务器-&gt;客户端，请求来了首先访问代理服务器，将请求分发给具体的应用服务器，由应用服务器来处理并相应。</p>
+<p><a href="https://imgse.com/i/pC29C5R"><img src="https://s1.ax1x.com/2023/07/09/pC29C5R.md.png" alt="pC29C5R.md.png" /></a></p>
+<p>  DNS域名解析负载均衡：将一个域名绑定成多个IP，每次轮询到不同的IP即可实现分流；</p>
+<p>  将一个外部IP绑定为内部的多个IP，在网关的位置，通过硬件来动态地转换为内部可用IP，一般4层就采用了这个技术。</p>
+<p><a href="https://imgse.com/i/pC29QPI"><img src="https://s1.ax1x.com/2023/07/09/pC29QPI.md.png" alt="pC29QPI.md.png" /></a></p>
+<ul>
+<li>负载均衡算法</li>
+</ul>
+<p><a href="https://imgse.com/i/pC29win"><img src="https://s1.ax1x.com/2023/07/09/pC29win.md.png" alt="pC29win.md.png" /></a></p>
+<h3 id="14-有状态和无状态问题">
+  1.4 有状态和无状态问题
+  <a class="anchor" href="#14-%e6%9c%89%e7%8a%b6%e6%80%81%e5%92%8c%e6%97%a0%e7%8a%b6%e6%80%81%e9%97%ae%e9%a2%98">#</a>
+</h3>
+<p>  购物车就是有状态的。</p>
+<p><a href="https://imgse.com/i/pC29Ro9"><img src="https://s1.ax1x.com/2023/07/09/pC29Ro9.md.png" alt="pC29Ro9.md.png" /></a></p>
+<ul>
+<li>Session一致性是为了解决有状态请求</li>
+</ul>
+<p>  (1) 有状态 (2)无状态 (3)无状态 (4)有状态 (5)无状态</p>
+<p><a href="https://imgse.com/i/pC29gZ4"><img src="https://s1.ax1x.com/2023/07/09/pC29gZ4.md.png" alt="pC29gZ4.md.png" /></a></p>
+<h3 id="15-持久化技术orm">
+  1.5 持久化技术ORM
+  <a class="anchor" href="#15-%e6%8c%81%e4%b9%85%e5%8c%96%e6%8a%80%e6%9c%aform">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2CsfI"><img src="https://s1.ax1x.com/2023/07/09/pC2CsfI.md.png" alt="pC2CsfI.md.png" /></a></p>
+<h3 id="16-数据库读写分离">
+  1.6 数据库读写分离
+  <a class="anchor" href="#16-%e6%95%b0%e6%8d%ae%e5%ba%93%e8%af%bb%e5%86%99%e5%88%86%e7%a6%bb">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2Cf0g"><img src="https://s1.ax1x.com/2023/07/09/pC2Cf0g.md.png" alt="pC2Cf0g.md.png" /></a></p>
+<h3 id="17-缓存技术">
+  1.7 缓存技术
+  <a class="anchor" href="#17-%e7%bc%93%e5%ad%98%e6%8a%80%e6%9c%af">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2PijK"><img src="https://s1.ax1x.com/2023/07/09/pC2PijK.md.png" alt="pC2PijK.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2PQjf"><img src="https://s1.ax1x.com/2023/07/09/pC2PQjf.md.png" alt="pC2PQjf.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2P1u8"><img src="https://s1.ax1x.com/2023/07/09/pC2P1u8.md.png" alt="pC2P1u8.md.png" /></a></p>
+<p>  由于redis比较重要，下面小结接着讲。</p>
+<h3 id="18-redis">
+  1.8 redis
+  <a class="anchor" href="#18-redis">#</a>
+</h3>
+<ul>
+<li>redis 集群切片场景方式</li>
+</ul>
+<p><a href="https://imgse.com/i/pC2ertO"><img src="https://s1.ax1x.com/2023/07/09/pC2ertO.md.png" alt="pC2ertO.md.png" /></a></p>
+<ul>
+<li></li>
+</ul>
 </article>
  
       
@@ -954,7 +1073,23 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#todo">todo</a></li>
+    <li><a href="#1-web架构设计">1 web架构设计</a>
+      <ul>
+        <li><a href="#11-单机到数据库-web应用服务器分离">1.1 单机到数据库-web应用服务器分离</a></li>
+        <li><a href="#12-应用服务器集群">1.2 应用服务器集群</a></li>
+        <li><a href="#13-负载均衡">1.3 负载均衡</a></li>
+        <li><a href="#14-有状态和无状态问题">1.4 有状态和无状态问题</a></li>
+        <li><a href="#15-持久化技术orm">1.5 持久化技术ORM</a></li>
+        <li><a href="#16-数据库读写分离">1.6 数据库读写分离</a></li>
+        <li><a href="#17-缓存技术">1.7 缓存技术</a></li>
+        <li><a href="#18-redis">1.8 redis</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

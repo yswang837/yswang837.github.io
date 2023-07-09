@@ -123,6 +123,11 @@ title: "2) 软件架构风格"
 {{< expand "学霸肯定对了">}}1.黑板&emsp;&emsp;2.解释器&emsp;&emsp;3.事件驱动风格{{< /expand >}}
 [![p9rOyqI.md.png](https://s1.ax1x.com/2023/05/11/p9rOyqI.md.png)](https://imgse.com/i/p9rOyqI)
 {{< expand "学霸肯定对了">}}1.顺序批处理&emsp;&emsp;2.数据共享&emsp;&emsp;3.隐式调用风格&emsp;&emsp;4.适配&emsp;&emsp;5.虚拟机{{< /expand >}}
+[![pCgRR1K.md.png](https://s1.ax1x.com/2023/07/09/pCgRR1K.md.png)](https://imgse.com/i/pCgRR1K)
+[![pCgW9Nn.md.png](https://s1.ax1x.com/2023/07/09/pCgW9Nn.md.png)](https://imgse.com/i/pCgW9Nn)
+{{< expand "学霸肯定对了">}}
+[![pCgWkcT.md.png](https://s1.ax1x.com/2023/07/09/pCgWkcT.md.png)](https://imgse.com/i/pCgWkcT)
+{{< /expand >}}
 
 ## 2.8 架构风格具体实例
 
