@@ -83,5 +83,66 @@ title: "10) web架构设计"
 
 [![pC2ertO.md.png](https://s1.ax1x.com/2023/07/09/pC2ertO.md.png)](https://imgse.com/i/pC2ertO)
 
+[![pC2wDsI.md.png](https://s1.ax1x.com/2023/07/10/pC2wDsI.md.png)](https://imgse.com/i/pC2wDsI)
 
-- 
+[![pC2wyeP.md.png](https://s1.ax1x.com/2023/07/10/pC2wyeP.md.png)](https://imgse.com/i/pC2wyeP)
+
+- redis 分布式存储方案
+
+[![pC2w6df.md.png](https://s1.ax1x.com/2023/07/10/pC2w6df.md.png)](https://imgse.com/i/pC2w6df)
+
+- redis 数据类型
+
+[![pC2wco8.md.png](https://s1.ax1x.com/2023/07/10/pC2wco8.md.png)](https://imgse.com/i/pC2wco8)
+
+- redis 数据淘汰机制
+
+[![pC2wRJg.md.png](https://s1.ax1x.com/2023/07/10/pC2wRJg.md.png)](https://imgse.com/i/pC2wRJg)
+
+- redis 持久化技术
+
+[![pC2wWWQ.md.png](https://s1.ax1x.com/2023/07/10/pC2wWWQ.md.png)](https://imgse.com/i/pC2wWWQ)
+
+- redis 存在的问题
+
+[![pC2BMuR.md.png](https://s1.ax1x.com/2023/07/10/pC2BMuR.md.png)](https://imgse.com/i/pC2BMuR)
+
+[![pC2BlHx.md.png](https://s1.ax1x.com/2023/07/10/pC2BlHx.md.png)](https://imgse.com/i/pC2BlHx)
+
+[![pC2BG4O.md.png](https://s1.ax1x.com/2023/07/10/pC2BG4O.md.png)](https://imgse.com/i/pC2BG4O)
+
+### 1.9 CND 内容分发网络
+
+&emsp;&emsp;镜像站，就近访问原则，为了提高网络访问，如京东物流。
+
+[![pC2BrUf.md.png](https://s1.ax1x.com/2023/07/10/pC2BrUf.md.png)](https://imgse.com/i/pC2BrUf)
+
+### 1.10 XML与Json
+
+[![pC2B2vj.md.png](https://s1.ax1x.com/2023/07/10/pC2B2vj.md.png)](https://imgse.com/i/pC2B2vj)
+
+### 1.11 web应用服务器
+
+[![pC2BxVx.md.png](https://s1.ax1x.com/2023/07/10/pC2BxVx.md.png)](https://imgse.com/i/pC2BxVx)
+
+### 1.12 REST
+
+[![pC2DPRe.md.png](https://s1.ax1x.com/2023/07/10/pC2DPRe.md.png)](https://imgse.com/i/pC2DPRe)
+
+### 1.13 响应式web设计
+
+[![pC2rBh8.md.png](https://s1.ax1x.com/2023/07/10/pC2rBh8.md.png)](https://imgse.com/i/pC2rBh8)
+
+### 1.14 中台
+
+&emsp;&emsp;中台是一套结合互联网技术和行业特性，将企业核心能力以共享服务形式沉淀，形成“大中台、小前台”的组织和业务机制，供企业快速低成本的进行业务创新的企业架构。中台又可以进一步细分，比如业务中台，数据中台，XX中台。本质上，都是对企业通用能力在不同层面的沉淀，并对外能力开放。中台的践行者：Supercell: 芬兰移动游戏巨头，2015年世界游戏前10占5席，员工仅200多人，因使用中台具有小团队快速开发能力，后被腾讯86亿美金收购；阿里:2015年参观Supercell，而后推行中台。
+
+[![pC2rbu9.md.png](https://s1.ax1x.com/2023/07/10/pC2rbu9.md.png)](https://imgse.com/i/pC2rbu9)
+
+[![pC2rjN6.md.png](https://s1.ax1x.com/2023/07/10/pC2rjN6.md.png)](https://imgse.com/i/pC2rjN6)
+
+[![pC2s8U0.md.png](https://s1.ax1x.com/2023/07/10/pC2s8U0.md.png)](https://imgse.com/i/pC2s8U0)
+
+### 1.15 web系统分层
+
+[![pC2sfrd.md.png](https://s1.ax1x.com/2023/07/10/pC2sfrd.md.png)](https://imgse.com/i/pC2sfrd)

@@ -33,8 +33,6 @@ title: 3.13 项目管理
 
 ---
 
-
-
 [![pCrUNrQ.md.png](https://s1.ax1x.com/2023/07/03/pCrUNrQ.md.png)](https://imgse.com/i/pCrUNrQ)
 >例题
 [![pCsed2t.md.png](https://s1.ax1x.com/2023/07/04/pCsed2t.md.png)](https://imgse.com/i/pCsed2t)
@@ -90,6 +88,14 @@ title: 3.13 项目管理
 >例题
 [![pCsU20H.md.png](https://s1.ax1x.com/2023/07/04/pCsU20H.md.png)](https://imgse.com/i/pCsU20H)
 {{< expand "学霸肯定对了">}}C{{< /expand >}}
+
+
+>案例分析例题
+[![pC2sOMQ.md.png](https://s1.ax1x.com/2023/07/10/pC2sOMQ.md.png)](https://imgse.com/i/pC2sOMQ)
+[![pC2sxZn.md.png](https://s1.ax1x.com/2023/07/10/pC2sxZn.md.png)](https://imgse.com/i/pC2sxZn)
+{{< expand "学霸肯定对了">}}
+
+{{< /expand >}}
 
 ## 5 软件质量管理
 
