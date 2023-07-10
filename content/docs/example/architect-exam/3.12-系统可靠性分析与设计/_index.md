@@ -20,6 +20,10 @@ title: 3.12 系统可靠性分析与设计
 
 ### 2.1 可靠性指标
 
+&emsp;&emsp;MTTF：平均失效等待时间，也叫平均无故障时间。
+
+&emsp;&emsp;MTBF：平均失效间隔时间，也叫平均故障间隔时间。
+
 [![pC05jzQ.md.png](https://s1.ax1x.com/2023/06/30/pC05jzQ.md.png)](https://imgse.com/i/pC05jzQ)
 
 ### 2.2 串并联系统可靠性计算

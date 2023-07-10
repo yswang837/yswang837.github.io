@@ -417,13 +417,11 @@ title: 3.2 操作系统
 
 [![pCE2MBq.md.png](https://s1.ax1x.com/2023/06/10/pCE2MBq.md.png)](https://imgse.com/i/pCE2MBq)
 
-
-
 >例题
 [![pCE25Uf.md.png](https://s1.ax1x.com/2023/06/10/pCE25Uf.md.png)](https://imgse.com/i/pCE25Uf)
 {{< expand "学霸肯定对了">}}A{{< /expand >}}
 
-## 9 操作系统接口
+## 9 操作系统接口/
 
 ---
 

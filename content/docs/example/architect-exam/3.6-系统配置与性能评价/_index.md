@@ -46,6 +46,12 @@ title: 3.6 系统配置与性能评价
 [![pCMmhwR.md.png](https://s1.ax1x.com/2023/06/16/pCMmhwR.md.png)](https://imgse.com/i/pCMmhwR)
 {{< expand "学霸肯定对了">}}D A{{< /expand >}}
 
+- 性能监控
+
+&emsp;&emsp;进行系统监视通常有三种方式:一是通过系统命令，如UNIX/Linux系统中的ps、last等;二是通过系统记录文件查阅系统在特定时间内的运行状态;三是集成命令、文件记录和可视化技术的监控工具，如Perfmon (Performance Monitor)是Windows自带的性能监控工具，提供了图表化的系统性能实时监视器、性能日志和警报管理。通过添加性能计数器 (Performance Co inter)可以实现对CPU、内存、网络、磁盘、进程等多类对象的上百个指标的监控。
+
+&emsp;&emsp;而这些都不属于性能监控工具：Windows的netstat命令用来查看某个端口号是否被占用以及由哪个进程占用。iptables是在Linux2.4内核之后普遍使用的基于包过滤的防火墙工具，可以对流入和流出服务器的数据包进行很精细的控制。top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况。
+
 ## 2 阿姆达尔解决方案
 
 ---
