@@ -3,18 +3,29 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 ✌ # 性能指标 ✅ 阿姆达尔解决方案 ✅✅✅ 性能评价方法 ✅✅✅ 1 性能指标 # 字长：cpu一次读取数据的长度，它也影响着最大的内存容量(最大地址)。2^32 = 4G，32位操作系统最大支持4GB内存。
-主存容量和存取速度：存取速度和cache的命中率相关。
+<meta name="description" content="课程内容提要 ✌ # 性能指标 ✅ 阿姆达尔解决方案 ✅✅✅ 性能评价方法 ✅✅✅ 1 性能指标 # 对计算机评价的主要性能指标有时钟频率、数据处理速率、运算精度和内存容量等。其中，时钟频率是指CPU在单位时间内输出的脉冲数，它在很大程度上决定了计算机的运行速度，单位为MHz(或GHz)。数据处理速率是个综合性的指标，单位为MIPS (百万条指令/秒)。影响运算速度的因素主要是时钟频率和存取周期，字长和存储容量也有影响。内存容量是指内存储器中能存储的信息总字节数。常以8个二进制位(bit) 作为一个字节 (Byte)。对数据库管理系统评价的主要性能指标有最大连接数、数据库所允许的索引数量和最大并发事务处理能力等。
+字长：cpu一次读取数据的长度，它也影响着最大的内存容量(最大地址)。2^32 = 4G，32位操作系统最大支持4GB内存。
+主存容量：32位操作系统最大支持4GB内存。
+存取速度：存取速度和cache的命中率相关。
 运算速度：主频：(单位时间内的脉冲数)2.4GHz，主频=外频*倍频，CPU时钟周期：1/主频。在计算机中，处理器的运算主要依赖于晶振芯片给CPU提供的脉冲频率，处理器的运算速度也依赖于这个晶振芯片。通常CPU的频率分为主频、倍频和外频。主频是指CPU内部的时钟频率，是CPU进行运算时的工作频率。外频是指CPU与周边设备传输数据的频率，具体是指CPU到芯片组之间的总线速度。倍频是指CPU频率和系统总线频率之间相差的倍数，CPU速度可以通过倍频来无限提升。
-吞吐量和吞吐率
-响应时间
-完成时间
-兼容性
-性能瓶颈调整 例题 学霸肯定对了 ↕ D A 2 阿姆达尔解决方案 # 例题 学霸肯定对了 ↕ 答案：B
+每秒执行百万次指令数：峰值MIPS(每秒百万次指令数)用来描述计算机的定点运算速度，通过对计算机指令集中基本指令的执行速度计算得到。假设某计算机中基本指令的执行需要5个机器周期，每个机器周期为3微秒，则该计算机的定点运算速度为：每完成一个基本指令需要5*3=15微秒，根据峰值MIPS的定义，其定点运算速度为1/15=0.067MIPS，特别需要注意单位“微秒”和“百万指令数”，在计算过程中恰好抵消。
+性能瓶颈调整 计算机的性能包括的面很广，不单是CPU的利用率。即使CPU的利用率已经接近100%.这只说明目前计算机正在运行大型计算任务。其他方面的任务可能被外设阻塞着，而改进外设成为当前必须解决的瓶颈问题。
+如果磁盘存取速度低，则应增加新的磁盘或更换使用更先进的磁盘。安装更快的CPU不能解决磁盘存取速度问题。
+多处理机的性能并不能正比于CPU的数目，因为各个CPU之间需要协调，需要花费一定的开销。
+使用虚存的计算机系统如果主存太小，则主存与磁盘之间交换页面的频率将增加，业务处理效率就会降低，此时应当增加更多的内存。这就是说，除CPU主频外，内存大小对计算机实际运行的处理速度也密切相关。
+例题 学霸肯定对了 ↕ D A 2 阿姆达尔解决方案 # 例题 学霸肯定对了 ↕ 答案：B
 100/52
 学霸肯定对了 ↕ 答案：B
 求极限就行，1/0.1n
-3 性能评价方法 # 例题 学霸肯定对了 ↕ 答案：C A 学霸肯定对了 ↕ 答案：A B 学霸肯定对了 ↕ 答案：B 课后习题 # todo 补充课后习题">
+3 性能评价方法 # 对运行系统进行评估的主要目的是评价信息系统在性能方面的表现，找出系统可能存在的性能瓶颈。
+常见的Web服务器性能评估方法有基准测试、压力测试和可靠性测试等。
+评价Web服务器的主要性能指标有最大并发连接数、响应延迟和吞叶量等。
+当系统性能降到基本水平时需要查找影响性能的瓶颈并消除该瓶颈。
+基准程序法:把应用程序中用得最多、最频繁的那部分核心程序作为评估计算机系统性能的标准程序，称为基准测试程序 (benchmark)。基准程序法是目前一致承认的测试系统性能的较好方法。
+测试准确度排名：真实的程序 &gt; 核心程序 &gt; 小型基准程序 &gt; 合成基准程序
+在大多数情况下，为测试新系统的性能，用户必须依靠评价程序来评价机器的性能。对于真实程序、核心程序、小型基准程序和合成基准程序来说，其评测程度依次递减。我们把应用程序中用的最多、最频繁的那部分核心程序作为评价计算机性能的标准程序，称为基准测试程序(Benchmark)。
+事务处理性能委员会是制定商务应用基准程序(Benchmark)标准规范，并管理测试结果发布的非营利组织，其发布的TPC-C是在线事务处理的其准程序。TPC_D是决策支持的基准程序。
+例题 学霸肯定对了 ↕ 答案：C A 学霸肯定对了 ↕ 答案：A B 学霸肯定对了 ↕ 答案：B 课后习题 # todo 补充课后习题">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.6 系统配置与性能评价" />
 <meta property="og:description" content="" />
@@ -26,7 +37,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b807893ce9a071b4142de4598feb62403009fc96e9b4b4c10c65cbee512556eb.js" integrity="sha256-uAeJPOmgcbQULeRZj&#43;tiQDAJ/JbptLTBDGXL7lElVus=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ae79b3ff4b2cc499b0cd38c6ce18a3e05ed87ee25e00b5bd3c52851ca2e34fa0.js" integrity="sha256-rnmz/0ssxJmwzTjGzhij4F7YfuJeALW9PFKFHKLjT6A=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.6-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -974,18 +985,21 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#1-%e6%80%a7%e8%83%bd%e6%8c%87%e6%a0%87">#</a>
 </h2>
 <hr>
+<p>  对计算机评价的主要性能指标有时钟频率、数据处理速率、运算精度和内存容量等。其中，时钟频率是指CPU在单位时间内输出的脉冲数，它在很大程度上决定了计算机的运行速度，单位为MHz(或GHz)。数据处理速率是个综合性的指标，单位为MIPS (百万条指令/秒)。影响运算速度的因素主要是时钟频率和存取周期，字长和存储容量也有影响。内存容量是指内存储器中能存储的信息总字节数。常以8个二进制位(bit) 作为一个字节 (Byte)。对数据库管理系统评价的主要性能指标有最大连接数、数据库所允许的索引数量和最大并发事务处理能力等。</p>
 <p><a href="https://imgse.com/i/pCMmUyQ"><img src="https://s1.ax1x.com/2023/06/16/pCMmUyQ.md.png" alt="pCMmUyQ.md.png" /></a></p>
 <p><strong>字长</strong>：cpu一次读取数据的长度，它也影响着最大的内存容量(最大地址)。2^32 = 4G，32位操作系统最大支持4GB内存。</p>
-<p><strong>主存容量和存取速度</strong>：存取速度和cache的命中率相关。</p>
+<p><strong>主存容量</strong>：32位操作系统最大支持4GB内存。</p>
+<p><strong>存取速度</strong>：存取速度和cache的命中率相关。</p>
 <p><strong>运算速度</strong>：主频：(单位时间内的脉冲数)2.4GHz，主频=外频*倍频，CPU时钟周期：1/主频。在计算机中，处理器的运算主要依赖于晶振芯片给CPU提供的脉冲频率，处理器的运算速度也依赖于这个晶振芯片。通常CPU的频率分为主频、倍频和外频。主频是指CPU内部的时钟频率，是CPU进行运算时的工作频率。外频是指CPU与周边设备传输数据的频率，具体是指CPU到芯片组之间的总线速度。倍频是指CPU频率和系统总线频率之间相差的倍数，CPU速度可以通过倍频来无限提升。</p>
-<p><strong>吞吐量和吞吐率</strong></p>
-<p><strong>响应时间</strong></p>
-<p><strong>完成时间</strong></p>
-<p><strong>兼容性</strong></p>
+<p><strong>每秒执行百万次指令数</strong>：峰值MIPS(每秒百万次指令数)用来描述计算机的定点运算速度，通过对计算机指令集中基本指令的执行速度计算得到。假设某计算机中基本指令的执行需要5个机器周期，每个机器周期为3微秒，则该计算机的定点运算速度为：每完成一个基本指令需要5*3=15微秒，根据峰值MIPS的定义，其定点运算速度为1/15=0.067MIPS，特别需要注意单位“微秒”和“百万指令数”，在计算过程中恰好抵消。</p>
 <p><a href="https://imgse.com/i/p9zbE1s"><img src="https://s1.ax1x.com/2023/06/02/p9zbE1s.md.png" alt="p9zbE1s.md.png" /></a></p>
 <ul>
 <li>性能瓶颈调整</li>
 </ul>
+<p>  计算机的性能包括的面很广，不单是CPU的利用率。即使CPU的利用率已经接近100%.这只说明目前计算机正在运行大型计算任务。其他方面的任务可能被外设阻塞着，而改进外设成为当前必须解决的瓶颈问题。</p>
+<p>  如果磁盘存取速度低，则应增加新的磁盘或更换使用更先进的磁盘。安装更快的CPU不能解决磁盘存取速度问题。</p>
+<p>  多处理机的性能并不能正比于CPU的数目，因为各个CPU之间需要协调，需要花费一定的开销。</p>
+<p>  使用虚存的计算机系统如果主存太小，则主存与磁盘之间交换页面的频率将增加，业务处理效率就会降低，此时应当增加更多的内存。这就是说，除CPU主频外，内存大小对计算机实际运行的处理速度也密切相关。</p>
 <p><a href="https://imgse.com/i/pCMmfm9"><img src="https://s1.ax1x.com/2023/06/16/pCMmfm9.md.png" alt="pCMmfm9.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -1052,8 +1066,14 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#3-%e6%80%a7%e8%83%bd%e8%af%84%e4%bb%b7%e6%96%b9%e6%b3%95">#</a>
 </h2>
 <hr>
-<p><a href="https://imgse.com/i/p9zbh4g"><img src="https://s1.ax1x.com/2023/06/02/p9zbh4g.md.png" alt="p9zbh4g.md.png" /></a>
-<a href="https://imgse.com/i/p9zbI3j"><img src="https://s1.ax1x.com/2023/06/02/p9zbI3j.md.png" alt="p9zbI3j.md.png" /></a></p>
+<p>  对运行系统进行评估的主要目的是评价信息系统在性能方面的表现，找出系统可能存在的性能瓶颈。</p>
+<p>  常见的Web服务器性能评估方法有基准测试、压力测试和可靠性测试等。</p>
+<p>  评价Web服务器的主要性能指标有最大并发连接数、响应延迟和吞叶量等。</p>
+<p>  当系统性能降到基本水平时需要查找影响性能的瓶颈并消除该瓶颈。</p>
+<p><strong>基准程序法</strong>:把应用程序中用得最多、最频繁的那部分<strong>核心程序</strong>作为评估计算机系统性能的标准程序，称为基准测试程序 (benchmark)。基准程序法是目前一致承认的测试系统性能的较好方法。</p>
+<p><strong>测试准确度排名</strong>：真实的程序 &gt; 核心程序 &gt; 小型基准程序 &gt; 合成基准程序</p>
+<p>  在大多数情况下，为测试新系统的性能，用户必须依靠评价程序来评价机器的性能。对于真实程序、核心程序、小型基准程序和合成基准程序来说，其评测程度依次递减。我们把应用程序中用的最多、最频繁的那部分核心程序作为评价计算机性能的标准程序，称为基准测试程序(Benchmark)。</p>
+<p>  事务处理性能委员会是制定商务应用基准程序(Benchmark)标准规范，并管理测试结果发布的非营利组织，其发布的TPC-C是<strong>在线事务处理</strong>的其准程序。TPC_D是决策支持的基准程序。</p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/pCMnekq"><img src="https://s1.ax1x.com/2023/06/16/pCMnekq.md.png" alt="pCMnekq.md.png" /></a>

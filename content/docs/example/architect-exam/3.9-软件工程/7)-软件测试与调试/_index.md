@@ -13,11 +13,11 @@
 
 ### 1.1 测试类型的划分
 
-&emsp;&emsp;结构化测试。
-
 [![pCaGbdg.md.png](https://s1.ax1x.com/2023/06/27/pCaGbdg.md.png)](https://imgse.com/i/pCaGbdg)
 
 &emsp;&emsp;等价类划分：各个阶段的测试用例各选一个，如1-1000分为普卡用户，1001-3000为金卡用户，大于等于3001为砖石卡。
+
+&emsp;&emsp;白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确。
 
 [![pCaJpLT.md.png](https://s1.ax1x.com/2023/06/27/pCaJpLT.md.png)](https://imgse.com/i/pCaJpLT)
 
@@ -25,17 +25,21 @@
 [![pCaGvzq.md.png](https://s1.ax1x.com/2023/06/27/pCaGvzq.md.png)](https://imgse.com/i/pCaGvzq)
 {{< expand "学霸肯定对了">}}A C{{< /expand >}}
 
-### 1.2 测试阶段
+### 1.2 结构化测试阶段
 
-&emsp;&emsp;结构化测试。
+&emsp;&emsp;各种类型的计算机都具有自己的性能指标，计算机厂商当然希望自己研制的计算机有较高的性能。同样的计算机，如果采用不同的评价方法，所获得的性能指标也会不同。因此，用户希望能有一些公正的机构采用公认的评价方法来测试计算机的性能。这样的测试称为基准测试，基准测试采用的测试程序称为基准程序(Benchmark)，基准程序就是公认的标准程序，用它能测试多种计算机系统，比较和评价它们的性能，定期公布测试结果，供用户选购计算机时参考。
 
 [![pCaJt6P.md.png](https://s1.ax1x.com/2023/06/27/pCaJt6P.md.png)](https://imgse.com/i/pCaJt6P)
 
 - 集成测试
 
+&emsp;&emsp;在程序模块测试后进行的集成测试，主要测试各模块之间的接口是否正常起作用。
+
 [![pCaJypn.md.png](https://s1.ax1x.com/2023/06/27/pCaJypn.md.png)](https://imgse.com/i/pCaJypn)
 
 - 系统测试
+
+&emsp;&emsp;对计算机进行负载测试就是运行某种诊断程序，加大负载，检查哪个设备会发生故障。
 
 [![pCaJ6lq.md.png](https://s1.ax1x.com/2023/06/27/pCaJ6lq.md.png)](https://imgse.com/i/pCaJ6lq)
 

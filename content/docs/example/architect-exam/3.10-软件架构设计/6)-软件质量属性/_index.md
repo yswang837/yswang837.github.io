@@ -6,6 +6,8 @@ title: "6) 软件质量属性"
 
 # 软件质量属性
 
+&emsp;&emsp;最常见的质量属性分别是:可用性(Availability)、可修改性(Modifiability)、性能(Performance)、安全性(Security)、可测试性(Testability)、易用性(Usability)。刻画质量属性的手段由六部分组成:刺激源、刺激、环境、制品、响应、响应度量;
+
 [![pCw8H8s.md.png](https://s1.ax1x.com/2023/06/29/pCw8H8s.md.png)](https://imgse.com/i/pCw8H8s)
 
 ## 1 性能
