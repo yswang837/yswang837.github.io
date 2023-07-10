@@ -92,7 +92,24 @@ title: 3.13 项目管理
 [![pC2sOMQ.md.png](https://s1.ax1x.com/2023/07/10/pC2sOMQ.md.png)](https://imgse.com/i/pC2sOMQ)
 [![pC2sxZn.md.png](https://s1.ax1x.com/2023/07/10/pC2sxZn.md.png)](https://imgse.com/i/pC2sxZn)
 {{< expand "学霸肯定对了">}}
+说明：活动E不是关键路径上的活动，不应该加班。
 
+[![pC27GIU.md.png](https://s1.ax1x.com/2023/07/10/pC27GIU.md.png)](https://imgse.com/i/pC27GIU)
+
+[![pC27oo8.md.png](https://s1.ax1x.com/2023/07/10/pC27oo8.md.png)](https://imgse.com/i/pC27oo8)
+
+[![pC27Xyn.md.png](https://s1.ax1x.com/2023/07/10/pC27Xyn.md.png)](https://imgse.com/i/pC27Xyn)
+{{< /expand >}}
+[![pC27jLq.md.png](https://s1.ax1x.com/2023/07/10/pC27jLq.md.png)](https://imgse.com/i/pC27jLq)
+{{< expand "学霸肯定对了">}}
+
+松弛时间：总时差，关键路径上的总时差为0，反之亦然。
+
+[![pC2Hkl9.md.png](https://s1.ax1x.com/2023/07/10/pC2Hkl9.md.png)](https://imgse.com/i/pC2Hkl9)
+
+[![pC2HEO1.md.png](https://s1.ax1x.com/2023/07/10/pC2HEO1.md.png)](https://imgse.com/i/pC2HEO1)
+
+[![pC2HCYF.md.png](https://s1.ax1x.com/2023/07/10/pC2HCYF.md.png)](https://imgse.com/i/pC2HCYF)
 {{< /expand >}}
 
 ## 5 软件质量管理

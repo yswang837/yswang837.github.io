@@ -59,6 +59,13 @@ title: 3.12 系统可靠性分析与设计
 
 [![pC0IsSg.md.png](https://s1.ax1x.com/2023/06/30/pC0IsSg.md.png)](https://imgse.com/i/pC0IsSg)
 
+>案例分析例题
+[![pC2qlqI.md.png](https://s1.ax1x.com/2023/07/10/pC2qlqI.md.png)](https://imgse.com/i/pC2qlqI)
+[![pC2bT2Q.md.png](https://s1.ax1x.com/2023/07/10/pC2bT2Q.md.png)](https://imgse.com/i/pC2bT2Q)
+{{< expand "学霸肯定对了">}}
+[![pC2bbKs.md.png](https://s1.ax1x.com/2023/07/10/pC2bbKs.md.png)](https://imgse.com/i/pC2bbKs)
+{{< /expand >}}
+
 ## 课后习题
 
 ---

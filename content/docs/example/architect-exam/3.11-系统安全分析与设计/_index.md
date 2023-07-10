@@ -128,6 +128,14 @@ title: 3.11 系统安全分析与设计
 [![pC05Q2Q.md.png](https://s1.ax1x.com/2023/06/30/pC05Q2Q.md.png)](https://imgse.com/i/pC05Q2Q)
 [![pC058rn.md.png](https://s1.ax1x.com/2023/06/30/pC058rn.md.png)](https://imgse.com/i/pC058rn)
 
+>案例分析例题
+[![pC2bQEV.md.png](https://s1.ax1x.com/2023/07/10/pC2bQEV.md.png)](https://imgse.com/i/pC2bQEV)
+[![pC2bRbt.md.png](https://s1.ax1x.com/2023/07/10/pC2bRbt.md.png)](https://imgse.com/i/pC2bRbt)
+{{< expand "学霸肯定对了">}}
+[![pC2Hv1H.md.png](https://s1.ax1x.com/2023/07/10/pC2Hv1H.md.png)](https://imgse.com/i/pC2Hv1H)
+[![pC2bIPS.md.png](https://s1.ax1x.com/2023/07/10/pC2bIPS.md.png)](https://imgse.com/i/pC2bIPS)
+{{< /expand >}}
+
 ## 课后习题
 
 ---
