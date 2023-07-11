@@ -49,7 +49,7 @@ title: 3.12 系统可靠性分析与设计
 
 [![pC0Iue1.md.png](https://s1.ax1x.com/2023/06/30/pC0Iue1.md.png)](https://imgse.com/i/pC0Iue1)
 
-- 恢复块设计
+- 恢复块设计(动态冗余)
 
 [![pC0IYyd.md.png](https://s1.ax1x.com/2023/06/30/pC0IYyd.md.png)](https://imgse.com/i/pC0IYyd)
 
@@ -66,8 +66,10 @@ title: 3.12 系统可靠性分析与设计
 >案例分析例题
 [![pC2qlqI.md.png](https://s1.ax1x.com/2023/07/10/pC2qlqI.md.png)](https://imgse.com/i/pC2qlqI)
 [![pC2bT2Q.md.png](https://s1.ax1x.com/2023/07/10/pC2bT2Q.md.png)](https://imgse.com/i/pC2bT2Q)
+[![pCRvawj.md.png](https://s1.ax1x.com/2023/07/11/pCRvawj.md.png)](https://imgse.com/i/pCRvawj)
 {{< expand "学霸肯定对了">}}
 [![pC2bbKs.md.png](https://s1.ax1x.com/2023/07/10/pC2bbKs.md.png)](https://imgse.com/i/pC2bbKs)
+[![pCRvdTs.md.png](https://s1.ax1x.com/2023/07/11/pCRvdTs.md.png)](https://imgse.com/i/pCRvdTs)
 {{< /expand >}}
 
 ## 课后习题

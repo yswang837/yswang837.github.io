@@ -38,3 +38,9 @@ title: "8) 软件产品线"
 &emsp;&emsp;核心资源组开发领域工程相关的代码。应用组基于核心组开发特定应用。
 
 [![p9vUgIA.md.png](https://s1.ax1x.com/2023/05/31/p9vUgIA.md.png)](https://imgse.com/i/p9vUgIA)
+
+>案例分析例题
+[![pCRvL0H.md.png](https://s1.ax1x.com/2023/07/11/pCRvL0H.md.png)](https://imgse.com/i/pCRvL0H)
+{{< expand "学霸肯定对了">}}
+[![pCRvvtI.md.png](https://s1.ax1x.com/2023/07/11/pCRvvtI.md.png)](https://imgse.com/i/pCRvvtI)
+{{< /expand >}}
