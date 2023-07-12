@@ -3,3 +3,4 @@ languageCode = 'en-us'
 title = '小钻风'
 BookSection = 'docs'
 theme = 'hugo-book'
+defaultContentLanguage = "zh"
