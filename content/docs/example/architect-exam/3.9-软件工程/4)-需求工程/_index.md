@@ -4,15 +4,13 @@
 
 ---
 
-&emsp;&emsp;软件需求是指用户对系统在功能、行为、性能、设计约束等方面的期望。
-
-&emsp;&emsp;软件需求是指用户解决问题或达到目标所需的条件或能力，是系统或系统部件要满足合同、标准、规范或其他正式规定文档所需具有的条件或能力，以及反映这些条件或能力的文档说明。
+&emsp;&emsp;软件需求是指用户对系统在行为、功能、性能、设计约束等方面的期望。
 
 &emsp;&emsp;需求工程包括两个维度：需求开发维度(技术维度)和需求管理维度(管理维度)。
 
 &emsp;&emsp;需求定义的产出是：需求规格说明书SRS。
 
-&emsp;&emsp;需要验证的产出是需求基线，需求管理的对象就是需求基线。
+&emsp;&emsp;对需求规格说明书SRS进行需要验证得到需求基线，需求管理的对象就是需求基线。
 
 [![p9HF9te.md.png](https://s1.ax1x.com/2023/05/25/p9HF9te.md.png)](https://imgse.com/i/p9HF9te)
 
@@ -250,15 +248,23 @@ E-R图：实体关系图，（数据建模）
 
 [![p9Hj0HJ.md.png](https://s1.ax1x.com/2023/05/25/p9Hj0HJ.md.png)](https://imgse.com/i/p9Hj0HJ)
 
-## 6 需求状态管理
+## 6 需求变更控制
 
 ---
 
-&emsp;&emsp;又称为需求管理，一个需求确认以后，往往会有多个状态的变迁。
+&emsp;&emsp;需求变更是每个项目中客观存在的。无法杜绝的。我们要做的是管理和控制好需求的变更。
 
-[![pCUi4SI.md.png](https://s1.ax1x.com/2023/06/26/pCUi4SI.md.png)](https://imgse.com/i/pCUi4SI)
+[![pCUFZ11.md.png](https://s1.ax1x.com/2023/06/26/pCUFZ11.md.png)](https://imgse.com/i/pCUFZ11)
 
-## 7 需求跟踪
+>例题
+[![pCUFmX6.md.png](https://s1.ax1x.com/2023/06/26/pCUFmX6.md.png)](https://imgse.com/i/pCUFmX6)
+{{< expand "学霸肯定对了">}}D B{{< /expand >}}
+
+## 7 需求版本控制
+
+[![pCsarUs.md.png](https://s1.ax1x.com/2023/07/04/pCsarUs.md.png)](https://imgse.com/i/pCsarUs)
+
+## 8 需求跟踪
 
 ---
 
@@ -268,14 +274,10 @@ E-R图：实体关系图，（数据建模）
 
 [![pCUiz60.md.png](https://s1.ax1x.com/2023/06/26/pCUiz60.md.png)](https://imgse.com/i/pCUiz60)
 
-## 8 需求变更
+## 9 需求状态管理
 
 ---
 
-&emsp;&emsp;变更是每个项目中客观存在的。无法杜绝的。我们要做的是控制好需求变更的管理。
+&emsp;&emsp;又称为需求管理，一个需求确认以后，往往会有多个状态的变迁。
 
-[![pCUFZ11.md.png](https://s1.ax1x.com/2023/06/26/pCUFZ11.md.png)](https://imgse.com/i/pCUFZ11)
-
->例题
-[![pCUFmX6.md.png](https://s1.ax1x.com/2023/06/26/pCUFmX6.md.png)](https://imgse.com/i/pCUFmX6)
-{{< expand "学霸肯定对了">}}D B{{< /expand >}}
+[![pCUi4SI.md.png](https://s1.ax1x.com/2023/06/26/pCUi4SI.md.png)](https://imgse.com/i/pCUi4SI)
