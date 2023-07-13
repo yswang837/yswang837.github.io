@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="需求工程 ✌ # 1 概述 # 软件需求是指用户对系统在功能、行为、性能、设计约束等方面的期望。
-软件需求是指用户解决问题或达到目标所需的条件或能力，是系统或系统部件要满足合同、标准、规范或其他正式规定文档所需具有的条件或能力，以及反映这些条件或能力的文档说明。
+<meta name="description" content="需求工程 ✌ # 1 概述 # 软件需求是指用户对系统在行为、功能、性能、设计约束等方面的期望。
 需求工程包括两个维度：需求开发维度(技术维度)和需求管理维度(管理维度)。
 需求定义的产出是：需求规格说明书SRS。
-需要验证的产出是需求基线，需求管理的对象就是需求基线。
-例题 学霸肯定对了 ↕ D 2 需求获取 # 从技术维度分：
-需求分为：业务需求(整体全局)、用户需求(用户视角)、系统需求(计算机化)。
-系统需求分为：功能需求、性能需求、设计约束需求(既不是功能需求、又不是性能需求的就属于设计约束需求)。
-从管理维度分：
-需求分为：基本需求、期望需求(比较难把握，客户觉得你应该做的)、兴奋需求。
-3 需求分析 # 需求分析包含两个方面：
-1、结构化需求分析SA；
+对需求规格说明书SRS进行需要验证得到需求基线，需求管理的对象就是需求基线。
+例题 学霸肯定对了 ↕ D 2 需求获取 # 从技术维度可将需求分为： 1、业务需求(整体全局)
+2、用户需求(用户视角)
+3、系统需求(计算机化，系统需求分为：功能需求、性能需求、设计约束需求(既不是功能需求、又不是性能需求的就属于设计约束需求，比如年龄0到100岁，性别只能是男女等))。
+从管理维度可将需求分为： 1、基本需求(需求基线中明确要求要做的)
+2、期望需求(比较难把握，客户觉得你应该做的)
+3、兴奋需求(客户不要求你做的，但你做完了，这其实会加大系统开发的风险)
+3 需求分析 # 需求获取完以后，需要对需求进行整理和分析，需求分析包含两个方面： 1、结构化需求分析SA；
 2、面向对象需求分析OOA。
-4.3.1 结构化需求分析SA # SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图)，其中数据字典起到解释的作用(学生：学号、名字、年龄)，比如学生关系包含学号、名字、年龄等。
-DFD：Data Flow Diagram，（功能建模）系统跟外界实体之间的交互，数据、加工交换的方式。 DFD的平衡原则：用于DFD里面填空(类似于完形填空)，如上图的“注册请求”、“课程安排”等在父图和子图中应该是一致的。 DFD答题技巧 STD：State Transform Diagram，（状态建模）
+4.3.1 结构化需求分析SA # SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图)，其中数据字典起到解释的作用，比如学生关系包含学号、名字、年龄等。
+DFD：Data Flow Diagram，反映的是系统跟外界实体之间的交互，以及数据加工和交换的方式。 DFD的平衡原则：用于DFD里面填空(类似于完形填空)，如上图的“注册请求”、“课程安排”等在父图和子图中应该是一致的。 DFD答题技巧 STD：State Transform Diagram，（状态建模）
 E-R图：实体关系图，（数据建模）
 例题 学霸肯定对了 ↕ C D
 用例图、对象图、通信图、顺序图和活动图都是面向对象的图，都是UML里面的图
@@ -28,8 +27,7 @@ E-R图：实体关系图，（数据建模）
 控制类：非实体类和边界类就是控制类，如业务逻辑(订单结算等)。
 案例分析例题 学霸肯定对了 ↕ 1）UML # UML全称Unified Modeling Language，统一建模语言，UML由构造块、规则和公共机制；构造块中最重要的是事物和图；事物中包含结构事物是静态部分、行为事物是动态部分。
 UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：类图、用例图、顺序图、通信图、状态图、活动图)。
-用例图 细化用例描述，第一列包含9种用例规约。
-用例的关系 包含关系如上图的用户登录。如何区分包含关系和扩展关系：前者是必须的，后者非必须。">
+用例图 细化用例描述，第一列包含9种用例规约。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -41,7 +39,7 @@ UML图同事物一样，也分为静态部分和动态部分，静态图称为�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.3de0d2736a4d4c395b16d908a166deaa41d7a61ab00e4263592745cb788adefa.js" integrity="sha256-PeDSc2pNTDlbFtkIoWbeqkHXphqwDkJjWSdFy3iK3vo=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.29fefc54b9d8bbf9abca3721cd90e24e93102728cd16e39d83a129064a8bb80c.js" integrity="sha256-Kf78VLnYu/mryjchzZDiTpMQJyjNFuOdg6EpBkqLuAw=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/4-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -920,9 +918,10 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#4-需求定义">4 需求定义</a></li>
     <li><a href="#5-需求验证">5 需求验证</a></li>
-    <li><a href="#6-需求状态管理">6 需求状态管理</a></li>
-    <li><a href="#7-需求跟踪">7 需求跟踪</a></li>
-    <li><a href="#8-需求变更">8 需求变更</a></li>
+    <li><a href="#6-需求变更控制">6 需求变更控制</a></li>
+    <li><a href="#7-需求版本控制">7 需求版本控制</a></li>
+    <li><a href="#8-需求跟踪">8 需求跟踪</a></li>
+    <li><a href="#9-需求状态管理">9 需求状态管理</a></li>
   </ul>
 </nav>
 
@@ -944,11 +943,10 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#1-%e6%a6%82%e8%bf%b0">#</a>
 </h2>
 <hr>
-<p>  软件需求是指用户对系统在功能、行为、性能、设计约束等方面的期望。</p>
-<p>  软件需求是指用户解决问题或达到目标所需的条件或能力，是系统或系统部件要满足合同、标准、规范或其他正式规定文档所需具有的条件或能力，以及反映这些条件或能力的文档说明。</p>
+<p>  软件需求是指用户对系统在行为、功能、性能、设计约束等方面的期望。</p>
 <p>  需求工程包括两个维度：需求开发维度(技术维度)和需求管理维度(管理维度)。</p>
 <p>  需求定义的产出是：需求规格说明书SRS。</p>
-<p>  需要验证的产出是需求基线，需求管理的对象就是需求基线。</p>
+<p>  对需求规格说明书SRS进行需要验证得到需求基线，需求管理的对象就是需求基线。</p>
 <p><a href="https://imgse.com/i/p9HF9te"><img src="https://s1.ax1x.com/2023/05/25/p9HF9te.md.png" alt="p9HF9te.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -973,28 +971,37 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#2-%e9%9c%80%e6%b1%82%e8%8e%b7%e5%8f%96">#</a>
 </h2>
 <hr>
-<p>从技术维度分：</p>
-<p>  需求分为：业务需求(整体全局)、用户需求(用户视角)、系统需求(计算机化)。</p>
-<p>  系统需求分为：功能需求、性能需求、设计约束需求(既不是功能需求、又不是性能需求的就属于设计约束需求)。</p>
-<p>从管理维度分：</p>
-<p>  需求分为：基本需求、期望需求(比较难把握，客户觉得你应该做的)、兴奋需求。</p>
+<ul>
+<li>从技术维度可将需求分为：</li>
+</ul>
+<p>  1、业务需求(整体全局)</p>
+<p>  2、用户需求(用户视角)</p>
+<p>  3、系统需求(计算机化，系统需求分为：功能需求、性能需求、设计约束需求(既不是功能需求、又不是性能需求的就属于设计约束需求，比如年龄0到100岁，性别只能是男女等))。</p>
+<ul>
+<li>从管理维度可将需求分为：</li>
+</ul>
+<p>  1、基本需求(需求基线中明确要求要做的)</p>
+<p>  2、期望需求(比较难把握，客户觉得你应该做的)</p>
+<p>  3、兴奋需求(客户不要求你做的，但你做完了，这其实会加大系统开发的风险)</p>
 <p><a href="https://imgse.com/i/p9HFsnx"><img src="https://s1.ax1x.com/2023/05/25/p9HFsnx.md.png" alt="p9HFsnx.md.png" /></a></p>
 <h2 id="3-需求分析">
   3 需求分析
   <a class="anchor" href="#3-%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90">#</a>
 </h2>
 <hr>
-<p>需求分析包含两个方面：</p>
+<ul>
+<li>需求获取完以后，需要对需求进行整理和分析，需求分析包含两个方面：</li>
+</ul>
 <p>  1、结构化需求分析SA；</p>
 <p>  2、面向对象需求分析OOA。</p>
 <h3 id="431-结构化需求分析sa">
   4.3.1 结构化需求分析SA
   <a class="anchor" href="#431-%e7%bb%93%e6%9e%84%e5%8c%96%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90sa">#</a>
 </h3>
-<p>  SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图)，其中数据字典起到解释的作用(学生：学号、名字、年龄)，比如学生关系包含学号、名字、年龄等。</p>
+<p>  SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图)，其中数据字典起到解释的作用，比如学生关系包含学号、名字、年龄等。</p>
 <p><a href="https://imgse.com/i/p9HF6HK"><img src="https://s1.ax1x.com/2023/05/25/p9HF6HK.md.png" alt="p9HF6HK.md.png" /></a></p>
 <ul>
-<li>DFD：Data Flow Diagram，（功能建模）系统跟外界实体之间的交互，数据、加工交换的方式。</li>
+<li>DFD：Data Flow Diagram，反映的是系统跟外界实体之间的交互，以及数据加工和交换的方式。</li>
 </ul>
 <p><a href="https://imgse.com/i/pCyFSJ0"><img src="https://s1.ax1x.com/2023/07/05/pCyFSJ0.md.png" alt="pCyFSJ0.md.png" /></a>
 <a href="https://imgse.com/i/pCyFEw9"><img src="https://s1.ax1x.com/2023/07/05/pCyFEw9.md.png" alt="pCyFEw9.md.png" /></a>
@@ -1264,27 +1271,12 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <p>  对需求规格说明书SRS进行验证，需求甲方参与确认。最为最终的需求基线。</p>
 <p><a href="https://imgse.com/i/p9Hj0HJ"><img src="https://s1.ax1x.com/2023/05/25/p9Hj0HJ.md.png" alt="p9Hj0HJ.md.png" /></a></p>
-<h2 id="6-需求状态管理">
-  6 需求状态管理
-  <a class="anchor" href="#6-%e9%9c%80%e6%b1%82%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86">#</a>
+<h2 id="6-需求变更控制">
+  6 需求变更控制
+  <a class="anchor" href="#6-%e9%9c%80%e6%b1%82%e5%8f%98%e6%9b%b4%e6%8e%a7%e5%88%b6">#</a>
 </h2>
 <hr>
-<p>  又称为需求管理，一个需求确认以后，往往会有多个状态的变迁。</p>
-<p><a href="https://imgse.com/i/pCUi4SI"><img src="https://s1.ax1x.com/2023/06/26/pCUi4SI.md.png" alt="pCUi4SI.md.png" /></a></p>
-<h2 id="7-需求跟踪">
-  7 需求跟踪
-  <a class="anchor" href="#7-%e9%9c%80%e6%b1%82%e8%b7%9f%e8%b8%aa">#</a>
-</h2>
-<hr>
-<p>  需求工程的目标是获取用户最真实的需求，可往往在开发测试过程中会出现遗漏，这时候需要及时跟踪需求，以发现纰漏。</p>
-<p>  用户的需求称为原始需求，软件需求可以认为是用例(功能)，UC-n没有打钩，表示这个功能多余了，用户其实不需要这个功能；FR-m没有打钩，表示这个功能漏做了。</p>
-<p><a href="https://imgse.com/i/pCUiz60"><img src="https://s1.ax1x.com/2023/06/26/pCUiz60.md.png" alt="pCUiz60.md.png" /></a></p>
-<h2 id="8-需求变更">
-  8 需求变更
-  <a class="anchor" href="#8-%e9%9c%80%e6%b1%82%e5%8f%98%e6%9b%b4">#</a>
-</h2>
-<hr>
-<p>  变更是每个项目中客观存在的。无法杜绝的。我们要做的是控制好需求变更的管理。</p>
+<p>  需求变更是每个项目中客观存在的。无法杜绝的。我们要做的是管理和控制好需求的变更。</p>
 <p><a href="https://imgse.com/i/pCUFZ11"><img src="https://s1.ax1x.com/2023/06/26/pCUFZ11.md.png" alt="pCUFZ11.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -1304,6 +1296,26 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
+<h2 id="7-需求版本控制">
+  7 需求版本控制
+  <a class="anchor" href="#7-%e9%9c%80%e6%b1%82%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6">#</a>
+</h2>
+<p><a href="https://imgse.com/i/pCsarUs"><img src="https://s1.ax1x.com/2023/07/04/pCsarUs.md.png" alt="pCsarUs.md.png" /></a></p>
+<h2 id="8-需求跟踪">
+  8 需求跟踪
+  <a class="anchor" href="#8-%e9%9c%80%e6%b1%82%e8%b7%9f%e8%b8%aa">#</a>
+</h2>
+<hr>
+<p>  需求工程的目标是获取用户最真实的需求，可往往在开发测试过程中会出现遗漏，这时候需要及时跟踪需求，以发现纰漏。</p>
+<p>  用户的需求称为原始需求，软件需求可以认为是用例(功能)，UC-n没有打钩，表示这个功能多余了，用户其实不需要这个功能；FR-m没有打钩，表示这个功能漏做了。</p>
+<p><a href="https://imgse.com/i/pCUiz60"><img src="https://s1.ax1x.com/2023/06/26/pCUiz60.md.png" alt="pCUiz60.md.png" /></a></p>
+<h2 id="9-需求状态管理">
+  9 需求状态管理
+  <a class="anchor" href="#9-%e9%9c%80%e6%b1%82%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86">#</a>
+</h2>
+<hr>
+<p>  又称为需求管理，一个需求确认以后，往往会有多个状态的变迁。</p>
+<p><a href="https://imgse.com/i/pCUi4SI"><img src="https://s1.ax1x.com/2023/06/26/pCUi4SI.md.png" alt="pCUi4SI.md.png" /></a></p>
 </article>
  
       
@@ -1355,9 +1367,10 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#4-需求定义">4 需求定义</a></li>
     <li><a href="#5-需求验证">5 需求验证</a></li>
-    <li><a href="#6-需求状态管理">6 需求状态管理</a></li>
-    <li><a href="#7-需求跟踪">7 需求跟踪</a></li>
-    <li><a href="#8-需求变更">8 需求变更</a></li>
+    <li><a href="#6-需求变更控制">6 需求变更控制</a></li>
+    <li><a href="#7-需求版本控制">7 需求版本控制</a></li>
+    <li><a href="#8-需求跟踪">8 需求跟踪</a></li>
+    <li><a href="#9-需求状态管理">9 需求状态管理</a></li>
   </ul>
 </nav>
 
