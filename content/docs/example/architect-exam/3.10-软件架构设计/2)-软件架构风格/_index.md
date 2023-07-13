@@ -127,6 +127,7 @@ title: "2) 软件架构风格"
 [![pCgW9Nn.md.png](https://s1.ax1x.com/2023/07/09/pCgW9Nn.md.png)](https://imgse.com/i/pCgW9Nn)
 {{< expand "学霸肯定对了">}}
 [![pCgWkcT.md.png](https://s1.ax1x.com/2023/07/09/pCgWkcT.md.png)](https://imgse.com/i/pCgWkcT)
+[![pCgWZB4.md.png](https://s1.ax1x.com/2023/07/09/pCgWZB4.md.png)](https://imgse.com/i/pCgWZB4)
 {{< /expand >}}
 
 ## 2.8 架构风格具体实例
