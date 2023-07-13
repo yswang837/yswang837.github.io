@@ -96,7 +96,7 @@ E-R图：实体关系图，（数据建模）
 
 &emsp;&emsp;控制类：非实体类和边界类就是控制类，如业务逻辑(订单结算等)。
 
->例题
+>案例分析例题
 [![pC6KH00.md.png](https://s1.ax1x.com/2023/07/06/pC6KH00.md.png)](https://imgse.com/i/pC6KH00)
 [![pC6MFAK.md.png](https://s1.ax1x.com/2023/07/06/pC6MFAK.md.png)](https://imgse.com/i/pC6MFAK)
 {{< expand "学霸肯定对了">}}
@@ -135,6 +135,7 @@ E-R图：实体关系图，（数据建模）
 >例题
 [![pCyAEP1.md.png](https://s1.ax1x.com/2023/07/05/pCyAEP1.md.png)](https://imgse.com/i/pCyAEP1)
 {{< expand "学霸肯定对了">}}B C{{< /expand >}}
+>案例分析例题
 [![pC6itXD.md.png](https://s1.ax1x.com/2023/07/06/pC6itXD.md.png)](https://imgse.com/i/pC6itXD)
 {{< expand "学霸肯定对了">}}
 问题1：用例模型的参与者有：仓库管理员、仓库经理、系统管理员、时间、温度、温度调节系统。
@@ -185,7 +186,7 @@ E-R图：实体关系图，（数据建模）
 
 [![pC6PnII.md.png](https://s1.ax1x.com/2023/07/06/pC6PnII.md.png)](https://imgse.com/i/pC6PnII)
 
->例题
+>案例分析例题
 [![pC6Plz8.md.png](https://s1.ax1x.com/2023/07/06/pC6Plz8.md.png)](https://imgse.com/i/pC6Plz8)
 {{< expand "学霸肯定对了">}}
 [![pC6P3QS.md.png](https://s1.ax1x.com/2023/07/06/pC6P3QS.md.png)](https://imgse.com/i/pC6P3QS)

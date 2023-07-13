@@ -446,8 +446,9 @@ title: 3.3 数据库系统
 [![pC6xV0I.md.png](https://s1.ax1x.com/2023/07/07/pC6xV0I.md.png)](https://imgse.com/i/pC6xV0I)
 [![pC6xJ7q.md.png](https://s1.ax1x.com/2023/07/07/pC6xJ7q.md.png)](https://imgse.com/i/pC6xJ7q)
 
->例题
+>案例分析例题
 [![pC6x4jH.md.png](https://s1.ax1x.com/2023/07/07/pC6x4jH.md.png)](https://imgse.com/i/pC6x4jH)
+[![pChbJDH.md.png](https://s1.ax1x.com/2023/07/13/pChbJDH.md.png)](https://imgse.com/i/pChbJDH)
 {{< expand "学霸肯定对了">}}
 [![pC6xOC8.md.png](https://s1.ax1x.com/2023/07/07/pC6xOC8.md.png)](https://imgse.com/i/pC6xOC8)
 {{< /expand >}}
@@ -558,7 +559,7 @@ title: 3.3 数据库系统
 
 **物化视图**:它不是传统意义上虚拟视图，是实体化视图，其本身会存储数据。同时当原始表中的数据更新时，物化视图也会自动更新。适合于多查询少更新的场景。
 
->例题
+>案例分析例题
 [![pCcSYWT.md.png](https://s1.ax1x.com/2023/07/07/pCcSYWT.md.png)](https://imgse.com/i/pCcSYWT)
 [![pCcSUlF.md.png](https://s1.ax1x.com/2023/07/07/pCcSUlF.md.png)](https://imgse.com/i/pCcSUlF)
 {{< expand "学霸肯定对了">}}
