@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="需求工程 ✌ # 1 概述 # 软件需求是指用户对系统在行为、功能、性能、设计约束等方面的期望。
+需求工程包括两个维度：需求开发维度(技术维度)和需求管理维度(管理维度)。
+需求定义的产出是：需求规格说明书SRS。
+对需求规格说明书SRS进行需要验证得到需求基线，需求管理的对象就是需求基线。
+例题 学霸肯定对了 ↕ D 2 需求获取 # 从技术维度可将需求分为： 1、业务需求(整体全局)
+2、用户需求(用户视角)
+3、系统需求(计算机化，系统需求分为：功能需求、性能需求、设计约束需求(既不是功能需求、又不是性能需求的就属于设计约束需求，比如年龄0到100岁，性别只能是男女等))。
+从管理维度可将需求分为： 1、基本需求(需求基线中明确要求要做的)
+2、期望需求(比较难把握，客户觉得你应该做的)
+3、兴奋需求(客户不要求你做的，但你做完了，这其实会加大系统开发的风险)
+3 需求分析 # 需求获取完以后，需要对需求进行整理和分析，需求分析包含两个方面： 1、结构化需求分析SA；
+2、面向对象需求分析OOA。
+4.3.1 结构化需求分析SA # SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图)，其中数据字典起到解释的作用，比如学生关系包含学号、名字、年龄等。
+DFD：Data Flow Diagram，反映的是系统跟外界实体之间的交互，以及数据加工和交换的方式。 DFD的平衡原则：用于DFD里面填空(类似于完形填空)，如上图的“注册请求”、“课程安排”等在父图和子图中应该是一致的。 DFD答题技巧 STD：State Transform Diagram，（状态建模）
+E-R图：实体关系图，（数据建模）
+例题 学霸肯定对了 ↕ C D
+用例图、对象图、通信图、顺序图和活动图都是面向对象的图，都是UML里面的图
+4.3.2 面向对象需求分析OOA # 面向对象的相关概念。
+类的考察方法：
+实体类：用于永久保存数据信息。
+边界类：用于人机交互界面、系统交互接口。
+控制类：非实体类和非边界类就是控制类，如业务逻辑(订单结算等)。
+1）UML # UML全称Unified Modeling Language，统一建模语言，UML由构造块、规则和公共机制；构造块中最重要的是事物和图；事物中包含结构事物是静态部分、行为事物是动态部分。
+UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，该部分在案例分析里面需要掌握的图有：类图、用例图、顺序图、通信图、状态图、活动图)。
+一般UML分析阶段建模主要是建立用例模型(用例图)和分析模型(类图)
+1) 类图 # 类图的关系 依赖关系好辨识：a调用b的函数，称为a依赖b。">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/3-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" />
+
+<title>3) 需求工程 | 小钻风</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/zh.search.min.3cd3253733e651507fc84f7de4b628a21ff810ab21957585ee24c9a059428207.js" integrity="sha256-PNMlNzPmUVB/yE995LYooh/4EKshlXWF7iTJoFlCggc=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/3-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/index.xml" title="小钻风" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>小钻风</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">介绍</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0172079bf31c2e1230a2ba418e74787a" class="toggle"  />
+    <label for="section-0172079bf31c2e1230a2ba418e74787a" class="flex justify-between">
+      <a href="/docs/example/golang/" class="">1. golang - 从入门到入土</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-777a1736a727cd6e825002af5c691cae" class="toggle"  />
+    <label for="section-777a1736a727cd6e825002af5c691cae" class="flex justify-between">
+      <a href="/docs/example/gin/" class="">2. gin杂谈</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6c4eae7067e5dfff5c2e4406248debee" class="toggle" checked />
+    <label for="section-6c4eae7067e5dfff5c2e4406248debee" class="flex justify-between">
+      <a href="/docs/example/architect-exam/" class="">3. 高级软考 - 系统架构师</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="">3.1 计算机组成与体系结构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="">3.2 操作系统</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" class="">3.3 数据库系统</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="">3.4 计算机网络</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.5-%E6%95%B0%E5%AD%97%E4%B8%8E%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/" class="">3.5 数字与经济管理</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.6-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/" class="">3.6 系统配置与性能评价</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.7-%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/" class="">3.7 知识产权与标准化</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.8-%E4%BC%81%E4%B8%9A%E4%BF%A1%E6%81%AF%E5%8C%96%E6%88%98%E7%95%A5%E4%B8%8E%E5%AE%9E%E6%96%BD/" class="">3.8 企业信息化战略与实施</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="">3.9 软件工程</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/1-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" class="">1) 软件开发方法</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/" class="">2) 软件开发模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/3-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" class="active">3) 需求工程</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/4-%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%BB%BA%E6%A8%A1/" class="">4) 软件系统建模</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/5-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="">5) 系统设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/" class="">6) 软件测试与调试</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/7-%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4/" class="">7) 系统运行与软件维护</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">3.10 软件架构设计</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/1-%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E8%BF%B0/" class="">1) 软件架构的概述</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/" class="">2) 软件架构风格</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E6%9E%B6%E6%9E%84%E6%8F%8F%E8%BF%B0%E8%AF%AD%E8%A8%80/" class="">3) 架构描述语言</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/4-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="">4) 特定领域软件架构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/5-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="">5) 基于架构的软件开发</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/6-%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7/" class="">6) 软件质量属性</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">7) 软件架构评估</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/8-%E8%BD%AF%E4%BB%B6%E4%BA%A7%E5%93%81%E7%BA%BF/" class="">8) 软件产品线</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-%E6%9E%84%E5%BB%BA%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/" class="">9) 构建与中间件技术</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/10-web%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">10) web架构设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" class="">3.11 系统安全分析与设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.12-%E7%B3%BB%E7%BB%9F%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" class="">3.12 系统可靠性分析与设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.13-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="">3.13 项目管理</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.14-%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/" class="">3.14 专业英语</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.16-%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%93%E6%A0%8F/" class="">3.15 案例分析专栏</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.15-%E5%85%B6%E4%BB%96/" class="">3.15 其他</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.17-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/" class="">3.17 论文写作专栏</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c5af2a1cf2778ff160886bf03e434863" class="toggle"  />
+    <label for="section-c5af2a1cf2778ff160886bf03e434863" class="flex justify-between">
+      <a href="/docs/example/algorthem/" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-931d8f340adf73346e40d4b227426621" class="toggle"  />
+    <label for="section-931d8f340adf73346e40d4b227426621" class="flex justify-between">
+      <a href="/docs/example/leetcode/" class="">5. leetcode</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/leetcode/1-hot100/" class="">1) Hot100</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>3) 需求工程</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-概述">1 概述</a></li>
+    <li><a href="#2-需求获取">2 需求获取</a></li>
+    <li><a href="#3-需求分析">3 需求分析</a>
+      <ul>
+        <li><a href="#431-结构化需求分析sa">4.3.1 结构化需求分析SA</a></li>
+        <li><a href="#432-面向对象需求分析ooa">4.3.2 面向对象需求分析OOA</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-需求定义">4 需求定义</a></li>
+    <li><a href="#5-需求验证">5 需求验证</a></li>
+    <li><a href="#6-需求变更控制">6 需求变更控制</a></li>
+    <li><a href="#7-需求版本控制">7 需求版本控制</a></li>
+    <li><a href="#8-需求跟踪">8 需求跟踪</a></li>
+    <li><a href="#9-需求状态管理">9 需求状态管理</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="需求工程-">
+  需求工程 ✌
+  <a class="anchor" href="#%e9%9c%80%e6%b1%82%e5%b7%a5%e7%a8%8b-">#</a>
+</h1>
+<h2 id="1-概述">
+  1 概述
+  <a class="anchor" href="#1-%e6%a6%82%e8%bf%b0">#</a>
+</h2>
+<hr>
+<p>  软件需求是指用户对系统在行为、功能、性能、设计约束等方面的期望。</p>
+<p>  需求工程包括两个维度：需求开发维度(技术维度)和需求管理维度(管理维度)。</p>
+<p>  需求定义的产出是：需求规格说明书SRS。</p>
+<p>  对需求规格说明书SRS进行需要验证得到需求基线，需求管理的对象就是需求基线。</p>
+<p><a href="https://imgse.com/i/p9HF9te"><img src="https://s1.ax1x.com/2023/05/25/p9HF9te.md.png" alt="p9HF9te.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9HFah4"><img src="https://s1.ax1x.com/2023/05/25/p9HFah4.md.png" alt="p9HFah4.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="2-需求获取">
+  2 需求获取
+  <a class="anchor" href="#2-%e9%9c%80%e6%b1%82%e8%8e%b7%e5%8f%96">#</a>
+</h2>
+<hr>
+<ul>
+<li>从技术维度可将需求分为：</li>
+</ul>
+<p>  1、业务需求(整体全局)</p>
+<p>  2、用户需求(用户视角)</p>
+<p>  3、系统需求(计算机化，系统需求分为：功能需求、性能需求、设计约束需求(既不是功能需求、又不是性能需求的就属于设计约束需求，比如年龄0到100岁，性别只能是男女等))。</p>
+<ul>
+<li>从管理维度可将需求分为：</li>
+</ul>
+<p>  1、基本需求(需求基线中明确要求要做的)</p>
+<p>  2、期望需求(比较难把握，客户觉得你应该做的)</p>
+<p>  3、兴奋需求(客户不要求你做的，但你做完了，这其实会加大系统开发的风险)</p>
+<p><a href="https://imgse.com/i/p9HFsnx"><img src="https://s1.ax1x.com/2023/05/25/p9HFsnx.md.png" alt="p9HFsnx.md.png" /></a></p>
+<h2 id="3-需求分析">
+  3 需求分析
+  <a class="anchor" href="#3-%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90">#</a>
+</h2>
+<hr>
+<ul>
+<li>需求获取完以后，需要对需求进行整理和分析，需求分析包含两个方面：</li>
+</ul>
+<p>  1、结构化需求分析SA；</p>
+<p>  2、面向对象需求分析OOA。</p>
+<h3 id="431-结构化需求分析sa">
+  4.3.1 结构化需求分析SA
+  <a class="anchor" href="#431-%e7%bb%93%e6%9e%84%e5%8c%96%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90sa">#</a>
+</h3>
+<p>  SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图)，其中数据字典起到解释的作用，比如学生关系包含学号、名字、年龄等。</p>
+<p><a href="https://imgse.com/i/p9HF6HK"><img src="https://s1.ax1x.com/2023/05/25/p9HF6HK.md.png" alt="p9HF6HK.md.png" /></a></p>
+<ul>
+<li>DFD：Data Flow Diagram，反映的是系统跟外界实体之间的交互，以及数据加工和交换的方式。</li>
+</ul>
+<p><a href="https://imgse.com/i/pCyFSJ0"><img src="https://s1.ax1x.com/2023/07/05/pCyFSJ0.md.png" alt="pCyFSJ0.md.png" /></a>
+<a href="https://imgse.com/i/pCyFEw9"><img src="https://s1.ax1x.com/2023/07/05/pCyFEw9.md.png" alt="pCyFEw9.md.png" /></a>
+<a href="https://imgse.com/i/p9HFf9H"><img src="https://s1.ax1x.com/2023/05/25/p9HFf9H.md.png" alt="p9HFf9H.md.png" /></a></p>
+<ul>
+<li>DFD的平衡原则：用于DFD里面填空(类似于完形填空)，如上图的“注册请求”、“课程安排”等在父图和子图中应该是一致的。</li>
+</ul>
+<p><a href="https://imgse.com/i/pCyF6kn"><img src="https://s1.ax1x.com/2023/07/05/pCyF6kn.md.png" alt="pCyF6kn.md.png" /></a></p>
+<ul>
+<li>DFD答题技巧</li>
+</ul>
+<p><a href="https://imgse.com/i/pCyFI0J"><img src="https://s1.ax1x.com/2023/07/05/pCyFI0J.md.png" alt="pCyFI0J.md.png" /></a>
+<a href="https://imgse.com/i/pCyFHt1"><img src="https://s1.ax1x.com/2023/07/05/pCyFHt1.md.png" alt="pCyFHt1.md.png" /></a>
+<a href="https://imgse.com/i/pCyFX6O"><img src="https://s1.ax1x.com/2023/07/05/pCyFX6O.md.png" alt="pCyFX6O.md.png" /></a></p>
+<p>STD：State Transform Diagram，（状态建模）</p>
+<p><a href="https://imgse.com/i/p9HF4gA"><img src="https://s1.ax1x.com/2023/05/25/p9HF4gA.md.png" alt="p9HF4gA.md.png" /></a></p>
+<p>E-R图：实体关系图，（数据建模）</p>
+<p><a href="https://imgse.com/i/p9HFout"><img src="https://s1.ax1x.com/2023/05/25/p9HFout.md.png" alt="p9HFout.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9HFXCQ"><img src="https://s1.ax1x.com/2023/05/25/p9HFXCQ.md.png" alt="p9HFXCQ.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>C D</p>
+<p>用例图、对象图、通信图、顺序图和活动图都是面向对象的图，都是UML里面的图</p>
+
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h3 id="432-面向对象需求分析ooa">
+  4.3.2 面向对象需求分析OOA
+  <a class="anchor" href="#432-%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90ooa">#</a>
+</h3>
+<p>  面向对象的相关概念。</p>
+<p><a href="https://imgse.com/i/p9Hk9bV"><img src="https://s1.ax1x.com/2023/05/25/p9Hk9bV.md.png" alt="p9Hk9bV.md.png" /></a></p>
+<p>类的考察方法：</p>
+<p>  实体类：用于永久保存数据信息。</p>
+<p>  边界类：用于人机交互界面、系统交互接口。</p>
+<p>  控制类：非实体类和非边界类就是控制类，如业务逻辑(订单结算等)。</p>
+<h4 id="1uml">
+  1）UML
+  <a class="anchor" href="#1uml">#</a>
+</h4>
+<p>  UML全称Unified Modeling Language，统一建模语言，UML由<strong>构造块</strong>、规则和公共机制；构造块中最重要的是<strong>事物</strong>和<strong>图</strong>；事物中包含结构事物是静态部分、行为事物是动态部分。</p>
+<p><a href="https://imgse.com/i/p9H0rH1"><img src="https://s1.ax1x.com/2023/05/25/p9H0rH1.md.png" alt="p9H0rH1.md.png" /></a></p>
+<p>  UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，该部分在案例分析里面需要掌握的图有：<strong>类图</strong>、<strong>用例图</strong>、顺序图、通信图、<strong>状态图</strong>、<strong>活动图</strong>)。</p>
+<p><a href="https://imgse.com/i/p9H06N6"><img src="https://s1.ax1x.com/2023/05/25/p9H06N6.md.png" alt="p9H06N6.md.png" /></a></p>
+<p>  一般UML分析阶段建模主要是建立<strong>用例模型</strong>(用例图)和<strong>分析模型</strong>(类图)</p>
+<p><a href="https://imgse.com/i/p9H05DA"><img src="https://s1.ax1x.com/2023/05/25/p9H05DA.md.png" alt="p9H05DA.md.png" /></a></p>
+<h4 id="1-类图">
+  1) 类图
+  <a class="anchor" href="#1-%e7%b1%bb%e5%9b%be">#</a>
+</h4>
+<p><a href="https://imgse.com/i/pCyA6zV"><img src="https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png" alt="pCyA6zV.md.png" /></a></p>
+<ul>
+<li>类图的关系</li>
+</ul>
+<p>  依赖关系好辨识：a调用b的函数，称为a依赖b。</p>
+<p>  泛化关系：父子关系，父：一般；子：特殊。</p>
+<p>  聚合关系：汽车和轮胎，汽车坏了，其零件还能用。</p>
+<p>  组合关系：公司和部门，公司没了，部门自然也就没了。</p>
+<p>  实现关系：接口和类</p>
+<p><a href="https://imgse.com/i/pC6CUgO"><img src="https://s1.ax1x.com/2023/07/06/pC6CUgO.md.png" alt="pC6CUgO.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC6PpI1"><img src="https://s1.ax1x.com/2023/07/06/pC6PpI1.md.png" alt="pC6PpI1.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h4 id="2-用例图">
+  2) 用例图
+  <a class="anchor" href="#2-%e7%94%a8%e4%be%8b%e5%9b%be">#</a>
+</h4>
+<p><a href="https://imgse.com/i/pCykUE9"><img src="https://s1.ax1x.com/2023/07/05/pCykUE9.md.png" alt="pCykUE9.md.png" /></a></p>
+<ul>
+<li>用例的关系</li>
+</ul>
+<p>  包含关系(include直接理解为&quot;必须要先&quot;)：如上图的用户登录(查询外借信息和登记外借信息必须先登录，也就是说查询外借信息和登记外借信息包含了用户登录)。如何区分包含关系和扩展关系：前者是必须的，后者非必须。</p>
+<p>  扩展关系(extend：执行基本功能时<strong>可选</strong>执行扩展功能)：如上图的查询书籍信息和修改书籍信息，只有查询书籍信息且信息不对时才会修改书籍信息，修改书籍信息是非必须执行的(也就是说：修改书籍信息是查询书籍信息的扩展)。</p>
+<p>  泛化关系(generalize)：明显的父子的继承关系(比如说注册可通过手机号注册，也可通过邮箱注册；手机号注册和邮箱注册都继承于注册)，注意却别包含关系。</p>
+<p><a href="https://imgse.com/i/pCyA9rF"><img src="https://s1.ax1x.com/2023/07/05/pCyA9rF.md.png" alt="pCyA9rF.md.png" /></a></p>
+<ul>
+<li>细化用例描述，第一列包含9种用例规约：用例名称ID说明；前置后置条件；基本异常其他事件流；角色。</li>
+</ul>
+<p><a href="https://imgse.com/i/pC6id7d"><img src="https://s1.ax1x.com/2023/07/06/pC6id7d.md.png" alt="pC6id7d.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCyAEP1"><img src="https://s1.ax1x.com/2023/07/05/pCyAEP1.md.png" alt="pCyAEP1.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      B C
+    </div>
+  </label>
+</div>
+
+案例分析例题
+<a href="https://imgse.com/i/pC6itXD"><img src="https://s1.ax1x.com/2023/07/06/pC6itXD.md.png" alt="pC6itXD.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>问题1：用例模型的参与者有：仓库管理员、仓库经理、系统管理员、时间、温度、温度调节系统。</p>
+<p>问题2：用例名称、用例ID、角色、用例说明、前置条件、后置条件、基本事件流、其他事件流、异常事件流。</p>
+<p>问题3：用例之间的关系包括：包含关系、扩展关系、泛化关系。“出入库操作”与“登录”属于包含关系；“查询统计报表”与“生成统计报表”属于扩展关系；“用户注册”与“邮件注册”和“电话注册”属于典型的泛化关系。</p>
+
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h4 id="3-状态图">
+  3) 状态图
+  <a class="anchor" href="#3-%e7%8a%b6%e6%80%81%e5%9b%be">#</a>
+</h4>
+<p><a href="https://imgse.com/i/pC6PnII"><img src="https://s1.ax1x.com/2023/07/06/pC6PnII.md.png" alt="pC6PnII.md.png" /></a></p>
+<h4 id="4-活动图">
+  4) 活动图
+  <a class="anchor" href="#4-%e6%b4%bb%e5%8a%a8%e5%9b%be">#</a>
+</h4>
+<p>  活动图和状态图有点像，可以根据节点里面的内容是状态还是活动来进行区分。</p>
+<p>  活动图对标的是流程图，流程图是结构化时代的，而活动图是面向对象的图。</p>
+<p>  活动图中的两个粗线之间的活动是可以并行执行的。</p>
+<p>  活动图描述的是对象活动的顺序关系所遵循的规则，它着重表现系统的行为，而非处理过程;而流程图着重描述处理过程。</p>
+<p><a href="https://imgse.com/i/pC6Ptds"><img src="https://s1.ax1x.com/2023/07/06/pC6Ptds.md.png" alt="pC6Ptds.md.png" /></a></p>
+<ul>
+<li>泳道活动图</li>
+</ul>
+<p>  在活动图的基础上，增加区分各个活动发生在哪些角色中。</p>
+<p><a href="https://imgse.com/i/pC6PNon"><img src="https://s1.ax1x.com/2023/07/06/pC6PNon.md.png" alt="pC6PNon.md.png" /></a></p>
+<blockquote>
+<p>案例分析例题
+<a href="https://imgse.com/i/pC6Plz8"><img src="https://s1.ax1x.com/2023/07/06/pC6Plz8.md.png" alt="pC6Plz8.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <a href="https://imgse.com/i/pC6P3QS"><img src="https://s1.ax1x.com/2023/07/06/pC6P3QS.md.png" alt="pC6P3QS.md.png" /></a>
+    </div>
+  </label>
+</div>
+
+案例分析例题
+<a href="https://imgse.com/i/pC6KH00"><img src="https://s1.ax1x.com/2023/07/06/pC6KH00.md.png" alt="pC6KH00.md.png" /></a>
+<a href="https://imgse.com/i/pC6MFAK"><img src="https://s1.ax1x.com/2023/07/06/pC6MFAK.md.png" alt="pC6MFAK.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <a href="https://imgse.com/i/pC6MMHP"><img src="https://s1.ax1x.com/2023/07/06/pC6MMHP.md.png" alt="pC6MMHP.md.png" /></a>
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h4 id="5-顺序图">
+  5) 顺序图
+  <a class="anchor" href="#5-%e9%a1%ba%e5%ba%8f%e5%9b%be">#</a>
+</h4>
+<p>  强调对象之间消息传递的顺序性。</p>
+<p><a href="https://imgse.com/i/pC6PFxO"><img src="https://s1.ax1x.com/2023/07/06/pC6PFxO.md.png" alt="pC6PFxO.md.png" /></a></p>
+<h4 id="6-通信图协作图">
+  6) 通信图(协作图)
+  <a class="anchor" href="#6-%e9%80%9a%e4%bf%a1%e5%9b%be%e5%8d%8f%e4%bd%9c%e5%9b%be">#</a>
+</h4>
+<p>  强调对象之间消息传递的关系，不关心时间。</p>
+<p><a href="https://imgse.com/i/pC6PVqH"><img src="https://s1.ax1x.com/2023/07/06/pC6PVqH.md.png" alt="pC6PVqH.md.png" /></a></p>
+<h4 id="7-定时图计时图">
+  7) 定时图(计时图)
+  <a class="anchor" href="#7-%e5%ae%9a%e6%97%b6%e5%9b%be%e8%ae%a1%e6%97%b6%e5%9b%be">#</a>
+</h4>
+<p><a href="https://imgse.com/i/pC6iAf0"><img src="https://s1.ax1x.com/2023/07/06/pC6iAf0.md.png" alt="pC6iAf0.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC6PdJ0"><img src="https://s1.ax1x.com/2023/07/06/pC6PdJ0.md.png" alt="pC6PdJ0.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>B A</p>
+<p>  第一空分析：交互过程建模，说明要选择动态图。第二空分析：执行流程，说明要选择动态图。</p>
+
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h4 id="8-构建图与包图">
+  8) 构建图与包图
+  <a class="anchor" href="#8-%e6%9e%84%e5%bb%ba%e5%9b%be%e4%b8%8e%e5%8c%85%e5%9b%be">#</a>
+</h4>
+<p>  构建图是对外提供的一个接口和功能，包图是为了管理方便，将相关的东西放在一个文件夹中。</p>
+<p><a href="https://imgse.com/i/pC6ie6U"><img src="https://s1.ax1x.com/2023/07/06/pC6ie6U.md.png" alt="pC6ie6U.md.png" /></a></p>
+<h4 id="9-部署图">
+  9) 部署图
+  <a class="anchor" href="#9-%e9%83%a8%e7%bd%b2%e5%9b%be">#</a>
+</h4>
+<p>  描述的是硬件节点和软件构建之间的关系。</p>
+<p><a href="https://imgse.com/i/pC6ium4"><img src="https://s1.ax1x.com/2023/07/06/pC6ium4.md.png" alt="pC6ium4.md.png" /></a></p>
+<h4 id="10-uml41视图">
+  10) UML4+1视图
+  <a class="anchor" href="#10-uml41%e8%a7%86%e5%9b%be">#</a>
+</h4>
+<p>  同架构的4+1视图可以一一对应。例题可参考软件架构的概述。</p>
+<p><a href="https://imgse.com/i/p9H0R3D"><img src="https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png" alt="p9H0R3D.md.png" /></a></p>
+<h2 id="4-需求定义">
+  4 需求定义
+  <a class="anchor" href="#4-%e9%9c%80%e6%b1%82%e5%ae%9a%e4%b9%89">#</a>
+</h2>
+<hr>
+<p>  把需求分析的成果落地成文档的过程就是需求定义的过程。需求定义的产物的是：需求规格说明书SRS。</p>
+<ul>
+<li>需求定义包含2大类：
+<ul>
+<li>严格定义法：过于理想化，同形式化开发方法类似。</li>
+<li>原型法：同原型开发模型类似。</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://imgse.com/i/p9H0H4f"><img src="https://s1.ax1x.com/2023/05/25/p9H0H4f.md.png" alt="p9H0H4f.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9H0L8S"><img src="https://s1.ax1x.com/2023/05/25/p9H0L8S.md.png" alt="p9H0L8S.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="5-需求验证">
+  5 需求验证
+  <a class="anchor" href="#5-%e9%9c%80%e6%b1%82%e9%aa%8c%e8%af%81">#</a>
+</h2>
+<hr>
+<p>  对需求规格说明书SRS进行验证，需求甲方参与确认。最为最终的需求基线。</p>
+<p><a href="https://imgse.com/i/p9Hj0HJ"><img src="https://s1.ax1x.com/2023/05/25/p9Hj0HJ.md.png" alt="p9Hj0HJ.md.png" /></a></p>
+<h2 id="6-需求变更控制">
+  6 需求变更控制
+  <a class="anchor" href="#6-%e9%9c%80%e6%b1%82%e5%8f%98%e6%9b%b4%e6%8e%a7%e5%88%b6">#</a>
+</h2>
+<hr>
+<p>  需求变更是每个项目中客观存在的。无法杜绝的。我们要做的是管理和控制好需求的变更。</p>
+<p><a href="https://imgse.com/i/pCUFZ11"><img src="https://s1.ax1x.com/2023/06/26/pCUFZ11.md.png" alt="pCUFZ11.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCUFmX6"><img src="https://s1.ax1x.com/2023/06/26/pCUFmX6.md.png" alt="pCUFmX6.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="7-需求版本控制">
+  7 需求版本控制
+  <a class="anchor" href="#7-%e9%9c%80%e6%b1%82%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6">#</a>
+</h2>
+<p><a href="https://imgse.com/i/pCsarUs"><img src="https://s1.ax1x.com/2023/07/04/pCsarUs.md.png" alt="pCsarUs.md.png" /></a></p>
+<h2 id="8-需求跟踪">
+  8 需求跟踪
+  <a class="anchor" href="#8-%e9%9c%80%e6%b1%82%e8%b7%9f%e8%b8%aa">#</a>
+</h2>
+<hr>
+<p>  需求工程的目标是获取用户最真实的需求，可往往在开发测试过程中会出现遗漏，这时候需要及时跟踪需求，以发现纰漏。</p>
+<p>  用户的需求称为原始需求，软件需求可以认为是用例(功能)，UC-n没有打钩，表示这个功能多余了，用户其实不需要这个功能；FR-m没有打钩，表示这个功能漏做了。</p>
+<p><a href="https://imgse.com/i/pCUiz60"><img src="https://s1.ax1x.com/2023/06/26/pCUiz60.md.png" alt="pCUiz60.md.png" /></a></p>
+<h2 id="9-需求状态管理">
+  9 需求状态管理
+  <a class="anchor" href="#9-%e9%9c%80%e6%b1%82%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86">#</a>
+</h2>
+<hr>
+<p>  又称为需求管理，一个需求确认以后，往往会有多个状态的变迁。</p>
+<p><a href="https://imgse.com/i/pCUi4SI"><img src="https://s1.ax1x.com/2023/06/26/pCUi4SI.md.png" alt="pCUi4SI.md.png" /></a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-概述">1 概述</a></li>
+    <li><a href="#2-需求获取">2 需求获取</a></li>
+    <li><a href="#3-需求分析">3 需求分析</a>
+      <ul>
+        <li><a href="#431-结构化需求分析sa">4.3.1 结构化需求分析SA</a></li>
+        <li><a href="#432-面向对象需求分析ooa">4.3.2 面向对象需求分析OOA</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-需求定义">4 需求定义</a></li>
+    <li><a href="#5-需求验证">5 需求验证</a></li>
+    <li><a href="#6-需求变更控制">6 需求变更控制</a></li>
+    <li><a href="#7-需求版本控制">7 需求版本控制</a></li>
+    <li><a href="#8-需求跟踪">8 需求跟踪</a></li>
+    <li><a href="#9-需求状态管理">9 需求状态管理</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

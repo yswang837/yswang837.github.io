@@ -110,6 +110,10 @@ E-R图：实体关系图，（数据建模）
 
 [![p9H06N6.md.png](https://s1.ax1x.com/2023/05/25/p9H06N6.md.png)](https://imgse.com/i/p9H06N6)
 
+&emsp;&emsp;一般UML分析阶段建模主要是建立**用例模型**(用例图)和**分析模型**(类图)
+
+[![p9H05DA.md.png](https://s1.ax1x.com/2023/05/25/p9H05DA.md.png)](https://imgse.com/i/p9H05DA)
+
 #### 1) 类图
 
 [![pCyA6zV.md.png](https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png)](https://imgse.com/i/pCyA6zV)
@@ -231,24 +235,19 @@ E-R图：实体关系图，（数据建模）
 
 #### 10) UML4+1视图
 
-&emsp;&emsp;同架构的4+1视图可以一一对应
+&emsp;&emsp;同架构的4+1视图可以一一对应。例题可参考软件架构的概述。
 
 [![p9H0R3D.md.png](https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png)](https://imgse.com/i/p9H0R3D)
-
-&emsp;&emsp;一般UML分析阶段建模主要是建立**用例模型**(用例图)和**分析模型**(类图)
-
-[![p9H05DA.md.png](https://s1.ax1x.com/2023/05/25/p9H05DA.md.png)](https://imgse.com/i/p9H05DA)
-
-
-
 
 ## 4 需求定义
 
 ---
 
-&emsp;&emsp;把需求分析的成果落地成文档的过程就是需求定义的过程。需求定义包含2大类：严格定义法、原型法。
+&emsp;&emsp;把需求分析的成果落地成文档的过程就是需求定义的过程。需求定义的产物的是：需求规格说明书SRS。
 
-&emsp;&emsp;需求定义的产物的是：需求规格说明书SRS。
+- 需求定义包含2大类：
+  - 严格定义法：过于理想化，同形式化开发方法类似。
+  - 原型法：同原型开发模型类似。
 
 [![p9H0H4f.md.png](https://s1.ax1x.com/2023/05/25/p9H0H4f.md.png)](https://imgse.com/i/p9H0H4f)
 

@@ -4,7 +4,10 @@
 
 ---
 
-[![pCUAeeK.md.png](https://s1.ax1x.com/2023/06/26/pCUAeeK.md.png)](https://imgse.com/i/pCUAeeK)
+- 界面设计的三个原则
+  - 置于用户控制之下
+  - 减少用户的记忆负担
+  - 保持界面的一致性
 
 >例题
 [![pCUA8yt.md.png](https://s1.ax1x.com/2023/06/26/pCUA8yt.md.png)](https://imgse.com/i/pCUA8yt)
@@ -54,7 +57,7 @@
 
 ---
 
-&emsp;&emsp;设计模式放大一层就是架构风格。
+&emsp;&emsp;设计模式属于面向对象设计里面的一个点，设计模式放大一层就是架构风格。
 
 &emsp;&emsp;学习设计模式需要关注的点：
 
