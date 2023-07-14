@@ -4,8 +4,6 @@
 
 ---
 
-&emsp;&emsp;功能模型DFD和数据模型ER是需求分析的产物。
-
 [![pCaYluV.md.png](https://s1.ax1x.com/2023/06/27/pCaYluV.md.png)](https://imgse.com/i/pCaYluV)
 
 >例题

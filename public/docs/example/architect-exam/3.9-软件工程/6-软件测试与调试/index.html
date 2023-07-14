@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 软件测试与调试 # 1 软件测试方法 # 测试的原则 尽早、不断的进行测试 程序员避免测试自己设计的程序 既要选择有效、合理的数据，也要选择无效、不合理的数据 修改后应进行回归测试 尚未发现的错误数量与该程序已发现错误数成正比 1.1 测试类型的划分 # 等价类划分：各个阶段的测试用例各选一个，如1-1000分为普卡用户，1001-3000为金卡用户，大于等于3001为砖石卡。
+<meta name="description" content=" 软件测试与调试 # 1 软件测试方法 # 测试的原则 尽早、不断的进行测试 程序员避免测试自己设计的程序 既要选择有效、合理的数据，也要选择无效、不合理的数据 修改后应进行回归测试 尚未发现的错误数量与该程序已发现错误数成正比 1.1 测试类型的划分 # 动态测试 等价类划分：各个阶段的测试用例各选一个，如1-1000分为普卡用户，1001-3000为金卡用户，大于等于3001为砖石卡。
 白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确。
-例题 学霸肯定对了 ↕ A C 1.2 结构化测试阶段 # 各种类型的计算机都具有自己的性能指标，计算机厂商当然希望自己研制的计算机有较高的性能。同样的计算机，如果采用不同的评价方法，所获得的性能指标也会不同。因此，用户希望能有一些公正的机构采用公认的评价方法来测试计算机的性能。这样的测试称为基准测试，基准测试采用的测试程序称为基准程序(Benchmark)，基准程序就是公认的标准程序，用它能测试多种计算机系统，比较和评价它们的性能，定期公布测试结果，供用户选购计算机时参考。
-集成测试 在程序模块测试后进行的集成测试，主要测试各模块之间的接口是否正常起作用。
+例题 学霸肯定对了 ↕ A C 1.2 结构化测试阶段 # 集成测试 程序模块单元测试通过后进行的集成测试，主要测试各模块之间的接口是否正常起作用。
 系统测试 对计算机进行负载测试就是运行某种诊断程序，加大负载，检查哪个设备会发生故障。
-例题 学霸肯定对了 ↕ A 学霸肯定对了 ↕ A D 1.3 面向对象测试 # 和结构化测试基本上一一对应，只需要了解每个层大概有什么测试方法就行，不用掌握每一种方法。
+例题 学霸肯定对了 ↕ A 学霸肯定对了 ↕ A D 1.3 面向对象测试 # 和结构化测试基本上一一对应，但它只需要了解每个层大概有什么测试方法就行，不用掌握每一种方法。
 2 软件调试 # 2.1 软件调试方法 # 原因排除法：正向找错，回溯法：反向找错。
 2.2 调试和测试的区别 # ">
 <meta name="theme-color" content="#FFFFFF">
@@ -22,7 +21,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.2a9be95e54c067b031f9756a9a57373152211a5753787f7d3b317e6262c24297.js" integrity="sha256-KpvpXlTAZ7Ax&#43;XVqmlc3MVIhGldTeH99OzF&#43;YmLCQpc=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.d79d1a8f764b2be915f5195b35e53b7202fbc21ad5526389822dcc8f0b23057e.js" integrity="sha256-150aj3ZLK&#43;kV9RlbNeU7cgL7whrVUmOJgi3MjwsjBX4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -923,6 +922,9 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#11-%e6%b5%8b%e8%af%95%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%88%92%e5%88%86">#</a>
 </h3>
 <p><a href="https://imgse.com/i/pCaGbdg"><img src="https://s1.ax1x.com/2023/06/27/pCaGbdg.md.png" alt="pCaGbdg.md.png" /></a></p>
+<ul>
+<li>动态测试</li>
+</ul>
 <p>  等价类划分：各个阶段的测试用例各选一个，如1-1000分为普卡用户，1001-3000为金卡用户，大于等于3001为砖石卡。</p>
 <p>  白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确。</p>
 <p><a href="https://imgse.com/i/pCaJpLT"><img src="https://s1.ax1x.com/2023/06/27/pCaJpLT.md.png" alt="pCaJpLT.md.png" /></a></p>
@@ -948,12 +950,11 @@ https://github.com/alex-shpak/hugo-book
   1.2 结构化测试阶段
   <a class="anchor" href="#12-%e7%bb%93%e6%9e%84%e5%8c%96%e6%b5%8b%e8%af%95%e9%98%b6%e6%ae%b5">#</a>
 </h3>
-<p>  各种类型的计算机都具有自己的性能指标，计算机厂商当然希望自己研制的计算机有较高的性能。同样的计算机，如果采用不同的评价方法，所获得的性能指标也会不同。因此，用户希望能有一些公正的机构采用公认的评价方法来测试计算机的性能。这样的测试称为基准测试，基准测试采用的测试程序称为基准程序(Benchmark)，基准程序就是公认的标准程序，用它能测试多种计算机系统，比较和评价它们的性能，定期公布测试结果，供用户选购计算机时参考。</p>
 <p><a href="https://imgse.com/i/pCaJt6P"><img src="https://s1.ax1x.com/2023/06/27/pCaJt6P.md.png" alt="pCaJt6P.md.png" /></a></p>
 <ul>
 <li>集成测试</li>
 </ul>
-<p>  在程序模块测试后进行的集成测试，主要测试各模块之间的接口是否正常起作用。</p>
+<p>  程序模块单元测试通过后进行的集成测试，主要测试各模块之间的接口是否正常起作用。</p>
 <p><a href="https://imgse.com/i/pCaJypn"><img src="https://s1.ax1x.com/2023/06/27/pCaJypn.md.png" alt="pCaJypn.md.png" /></a></p>
 <ul>
 <li>系统测试</li>
@@ -997,7 +998,7 @@ https://github.com/alex-shpak/hugo-book
   1.3 面向对象测试
   <a class="anchor" href="#13-%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e6%b5%8b%e8%af%95">#</a>
 </h3>
-<p>  和结构化测试基本上一一对应，只需要了解每个层大概有什么测试方法就行，不用掌握每一种方法。</p>
+<p>  和结构化测试基本上一一对应，但它只需要了解每个层大概有什么测试方法就行，不用掌握每一种方法。</p>
 <p><a href="https://imgse.com/i/pCaYp9A"><img src="https://s1.ax1x.com/2023/06/27/pCaYp9A.md.png" alt="pCaYp9A.md.png" /></a></p>
 <h2 id="2-软件调试">
   2 软件调试
