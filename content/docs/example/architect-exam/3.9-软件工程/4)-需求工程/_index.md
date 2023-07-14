@@ -94,18 +94,11 @@ E-R图：实体关系图，（数据建模）
 
 类的考察方法：
 
-&emsp;&emsp;实体类：永久保存某些数据。
+&emsp;&emsp;实体类：用于永久保存数据信息。
 
-&emsp;&emsp;边界类：人机交互界面、系统交互接口之类的。
+&emsp;&emsp;边界类：用于人机交互界面、系统交互接口。
 
-&emsp;&emsp;控制类：非实体类和边界类就是控制类，如业务逻辑(订单结算等)。
-
->案例分析例题
-[![pC6KH00.md.png](https://s1.ax1x.com/2023/07/06/pC6KH00.md.png)](https://imgse.com/i/pC6KH00)
-[![pC6MFAK.md.png](https://s1.ax1x.com/2023/07/06/pC6MFAK.md.png)](https://imgse.com/i/pC6MFAK)
-{{< expand "学霸肯定对了">}}
-[![pC6MMHP.md.png](https://s1.ax1x.com/2023/07/06/pC6MMHP.md.png)](https://imgse.com/i/pC6MMHP)
-{{< /expand >}}
+&emsp;&emsp;控制类：非实体类和非边界类就是控制类，如业务逻辑(订单结算等)。
 
 #### 1）UML
 
@@ -113,50 +106,11 @@ E-R图：实体关系图，（数据建模）
 
 [![p9H0rH1.md.png](https://s1.ax1x.com/2023/05/25/p9H0rH1.md.png)](https://imgse.com/i/p9H0rH1)
 
-&emsp;&emsp;UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：**类图**、**用例图**、顺序图、通信图、**状态图**、**活动图**)。
+&emsp;&emsp;UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，该部分在案例分析里面需要掌握的图有：**类图**、**用例图**、顺序图、通信图、**状态图**、**活动图**)。
 
 [![p9H06N6.md.png](https://s1.ax1x.com/2023/05/25/p9H06N6.md.png)](https://imgse.com/i/p9H06N6)
 
-- 用例图
-
-[![pCykUE9.md.png](https://s1.ax1x.com/2023/07/05/pCykUE9.md.png)](https://imgse.com/i/pCykUE9)
-
-&emsp;&emsp;细化用例描述，第一列包含9种用例规约。
-
-[![pC6id7d.md.png](https://s1.ax1x.com/2023/07/06/pC6id7d.md.png)](https://imgse.com/i/pC6id7d)
-
-- 用例的关系
-
-&emsp;&emsp;包含关系如上图的用户登录。如何区分包含关系和扩展关系：前者是必须的，后者非必须。
-
-&emsp;&emsp;扩展关系如上图的查询书籍信息和修改书籍信息，只有查询书籍信息且信息不对时才会修改书籍信息，修改书籍信息是非必须执行的。
-
-&emsp;&emsp;明显的父子的继承关系，注意却别包含关系··。
-
-[![pCykyuD.md.png](https://s1.ax1x.com/2023/07/05/pCykyuD.md.png)](https://imgse.com/i/pCykyuD)
-[![pCyA9rF.md.png](https://s1.ax1x.com/2023/07/05/pCyA9rF.md.png)](https://imgse.com/i/pCyA9rF)
-
->例题
-[![pCyAEP1.md.png](https://s1.ax1x.com/2023/07/05/pCyAEP1.md.png)](https://imgse.com/i/pCyAEP1)
-{{< expand "学霸肯定对了">}}B C{{< /expand >}}
->案例分析例题
-[![pC6itXD.md.png](https://s1.ax1x.com/2023/07/06/pC6itXD.md.png)](https://imgse.com/i/pC6itXD)
-{{< expand "学霸肯定对了">}}
-问题1：用例模型的参与者有：仓库管理员、仓库经理、系统管理员、时间、温度、温度调节系统。
-
-问题2：用例名称、用例ID、角色、用例说明、前置条件、后置条件、基本事件流、其他事件流、异常事件流。
-
-问题3：用例之间的关系包括：包含关系、扩展关系、泛化关系。“出入库操作”与“登录”属于包含关系；“查询统计报表”与“生成统计报表”属于扩展关系；“用户注册”与“邮件注册”和“电话注册”属于典型的泛化关系。{{< /expand >}}
-
-&emsp;&emsp;UML4+1视图，同架构的4+1视图可以一一对应
-
-[![p9H0R3D.md.png](https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png)](https://imgse.com/i/p9H0R3D)
-
-&emsp;&emsp;一般UML分析阶段建模主要是建立**用例模型**(用例图)和**分析模型**(类图)
-
-[![p9H05DA.md.png](https://s1.ax1x.com/2023/05/25/p9H05DA.md.png)](https://imgse.com/i/p9H05DA)
-
-- 类图
+#### 1) 类图
 
 [![pCyA6zV.md.png](https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png)](https://imgse.com/i/pCyA6zV)
 
@@ -178,25 +132,41 @@ E-R图：实体关系图，（数据建模）
 [![pC6PpI1.md.png](https://s1.ax1x.com/2023/07/06/pC6PpI1.md.png)](https://imgse.com/i/pC6PpI1)
 {{< expand "学霸肯定对了">}}D C{{< /expand >}}
 
-- 顺序图
+#### 2) 用例图
 
-[![pC6PFxO.md.png](https://s1.ax1x.com/2023/07/06/pC6PFxO.md.png)](https://imgse.com/i/pC6PFxO)
+[![pCykUE9.md.png](https://s1.ax1x.com/2023/07/05/pCykUE9.md.png)](https://imgse.com/i/pCykUE9)
 
-- 通信图(协作图)
+- 用例的关系
 
-[![pC6PVqH.md.png](https://s1.ax1x.com/2023/07/06/pC6PVqH.md.png)](https://imgse.com/i/pC6PVqH)
+&emsp;&emsp;包含关系(include直接理解为"必须要先")：如上图的用户登录(查询外借信息和登记外借信息必须先登录，也就是说查询外借信息和登记外借信息包含了用户登录)。如何区分包含关系和扩展关系：前者是必须的，后者非必须。
 
-- 状态图
+&emsp;&emsp;扩展关系(extend：执行基本功能时**可选**执行扩展功能)：如上图的查询书籍信息和修改书籍信息，只有查询书籍信息且信息不对时才会修改书籍信息，修改书籍信息是非必须执行的(也就是说：修改书籍信息是查询书籍信息的扩展)。
+
+&emsp;&emsp;泛化关系(generalize)：明显的父子的继承关系(比如说注册可通过手机号注册，也可通过邮箱注册；手机号注册和邮箱注册都继承于注册)，注意却别包含关系。
+
+[![pCyA9rF.md.png](https://s1.ax1x.com/2023/07/05/pCyA9rF.md.png)](https://imgse.com/i/pCyA9rF)
+
+- 细化用例描述，第一列包含9种用例规约：用例名称ID说明；前置后置条件；基本异常其他事件流；角色。
+
+[![pC6id7d.md.png](https://s1.ax1x.com/2023/07/06/pC6id7d.md.png)](https://imgse.com/i/pC6id7d)
+
+>例题
+[![pCyAEP1.md.png](https://s1.ax1x.com/2023/07/05/pCyAEP1.md.png)](https://imgse.com/i/pCyAEP1)
+{{< expand "学霸肯定对了">}}B C{{< /expand >}}
+>案例分析例题
+[![pC6itXD.md.png](https://s1.ax1x.com/2023/07/06/pC6itXD.md.png)](https://imgse.com/i/pC6itXD)
+{{< expand "学霸肯定对了">}}
+问题1：用例模型的参与者有：仓库管理员、仓库经理、系统管理员、时间、温度、温度调节系统。
+
+问题2：用例名称、用例ID、角色、用例说明、前置条件、后置条件、基本事件流、其他事件流、异常事件流。
+
+问题3：用例之间的关系包括：包含关系、扩展关系、泛化关系。“出入库操作”与“登录”属于包含关系；“查询统计报表”与“生成统计报表”属于扩展关系；“用户注册”与“邮件注册”和“电话注册”属于典型的泛化关系。{{< /expand >}}
+
+#### 3) 状态图
 
 [![pC6PnII.md.png](https://s1.ax1x.com/2023/07/06/pC6PnII.md.png)](https://imgse.com/i/pC6PnII)
 
->案例分析例题
-[![pC6Plz8.md.png](https://s1.ax1x.com/2023/07/06/pC6Plz8.md.png)](https://imgse.com/i/pC6Plz8)
-{{< expand "学霸肯定对了">}}
-[![pC6P3QS.md.png](https://s1.ax1x.com/2023/07/06/pC6P3QS.md.png)](https://imgse.com/i/pC6P3QS)
-{{< /expand >}}
-
-- 活动图
+#### 4) 活动图
 
 &emsp;&emsp;活动图和状态图有点像，可以根据节点里面的内容是状态还是活动来进行区分。
 
@@ -204,13 +174,40 @@ E-R图：实体关系图，（数据建模）
 
 &emsp;&emsp;活动图中的两个粗线之间的活动是可以并行执行的。
 
+&emsp;&emsp;活动图描述的是对象活动的顺序关系所遵循的规则，它着重表现系统的行为，而非处理过程;而流程图着重描述处理过程。
+
 [![pC6Ptds.md.png](https://s1.ax1x.com/2023/07/06/pC6Ptds.md.png)](https://imgse.com/i/pC6Ptds)
 
 - 泳道活动图
 
-[![pC6PNon.md.png](https://s1.ax1x.com/2023/07/06/pC6PNon.md.png)](https://imgse.com/i/pC6PNon)
+&emsp;&emsp;在活动图的基础上，增加区分各个活动发生在哪些角色中。
 
-- 定时图(计时图)
+[![pC6PNon.md.png](https://s1.ax1x.com/2023/07/06/pC6PNon.md.png)](https://imgse.com/i/pC6PNon)
+>案例分析例题
+[![pC6Plz8.md.png](https://s1.ax1x.com/2023/07/06/pC6Plz8.md.png)](https://imgse.com/i/pC6Plz8)
+{{< expand "学霸肯定对了">}}
+[![pC6P3QS.md.png](https://s1.ax1x.com/2023/07/06/pC6P3QS.md.png)](https://imgse.com/i/pC6P3QS)
+{{< /expand >}}
+>案例分析例题
+[![pC6KH00.md.png](https://s1.ax1x.com/2023/07/06/pC6KH00.md.png)](https://imgse.com/i/pC6KH00)
+[![pC6MFAK.md.png](https://s1.ax1x.com/2023/07/06/pC6MFAK.md.png)](https://imgse.com/i/pC6MFAK)
+{{< expand "学霸肯定对了">}}
+[![pC6MMHP.md.png](https://s1.ax1x.com/2023/07/06/pC6MMHP.md.png)](https://imgse.com/i/pC6MMHP)
+{{< /expand >}}
+
+#### 5) 顺序图
+
+&emsp;&emsp;强调对象之间消息传递的顺序性。
+
+[![pC6PFxO.md.png](https://s1.ax1x.com/2023/07/06/pC6PFxO.md.png)](https://imgse.com/i/pC6PFxO)
+
+#### 6) 通信图(协作图)
+
+&emsp;&emsp;强调对象之间消息传递的关系，不关心时间。
+
+[![pC6PVqH.md.png](https://s1.ax1x.com/2023/07/06/pC6PVqH.md.png)](https://imgse.com/i/pC6PVqH)
+
+#### 7) 定时图(计时图)
 
 [![pC6iAf0.md.png](https://s1.ax1x.com/2023/07/06/pC6iAf0.md.png)](https://imgse.com/i/pC6iAf0)
 
@@ -220,17 +217,30 @@ E-R图：实体关系图，（数据建模）
 
 &emsp;&emsp;第一空分析：交互过程建模，说明要选择动态图。第二空分析：执行流程，说明要选择动态图。{{< /expand >}}
 
-- 构建图与包图
+#### 8) 构建图与包图
 
 &emsp;&emsp;构建图是对外提供的一个接口和功能，包图是为了管理方便，将相关的东西放在一个文件夹中。
 
 [![pC6ie6U.md.png](https://s1.ax1x.com/2023/07/06/pC6ie6U.md.png)](https://imgse.com/i/pC6ie6U)
 
-- 部署图
+#### 9) 部署图
 
 &emsp;&emsp;描述的是硬件节点和软件构建之间的关系。
 
 [![pC6ium4.md.png](https://s1.ax1x.com/2023/07/06/pC6ium4.md.png)](https://imgse.com/i/pC6ium4)
+
+#### 10) UML4+1视图
+
+&emsp;&emsp;同架构的4+1视图可以一一对应
+
+[![p9H0R3D.md.png](https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png)](https://imgse.com/i/p9H0R3D)
+
+&emsp;&emsp;一般UML分析阶段建模主要是建立**用例模型**(用例图)和**分析模型**(类图)
+
+[![p9H05DA.md.png](https://s1.ax1x.com/2023/05/25/p9H05DA.md.png)](https://imgse.com/i/p9H05DA)
+
+
+
 
 ## 4 需求定义
 

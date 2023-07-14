@@ -22,12 +22,12 @@ E-R图：实体关系图，（数据建模）
 用例图、对象图、通信图、顺序图和活动图都是面向对象的图，都是UML里面的图
 4.3.2 面向对象需求分析OOA # 面向对象的相关概念。
 类的考察方法：
-实体类：永久保存某些数据。
-边界类：人机交互界面、系统交互接口之类的。
-控制类：非实体类和边界类就是控制类，如业务逻辑(订单结算等)。
-案例分析例题 学霸肯定对了 ↕ 1）UML # UML全称Unified Modeling Language，统一建模语言，UML由构造块、规则和公共机制；构造块中最重要的是事物和图；事物中包含结构事物是静态部分、行为事物是动态部分。
-UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：类图、用例图、顺序图、通信图、状态图、活动图)。
-用例图 细化用例描述，第一列包含9种用例规约。">
+实体类：用于永久保存数据信息。
+边界类：用于人机交互界面、系统交互接口。
+控制类：非实体类和非边界类就是控制类，如业务逻辑(订单结算等)。
+1）UML # UML全称Unified Modeling Language，统一建模语言，UML由构造块、规则和公共机制；构造块中最重要的是事物和图；事物中包含结构事物是静态部分、行为事物是动态部分。
+UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，该部分在案例分析里面需要掌握的图有：类图、用例图、顺序图、通信图、状态图、活动图)。
+1) 类图 # 类图的关系 依赖关系好辨识：a调用b的函数，称为a依赖b。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -39,7 +39,7 @@ UML图同事物一样，也分为静态部分和动态部分，静态图称为�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.29fefc54b9d8bbf9abca3721cd90e24e93102728cd16e39d83a129064a8bb80c.js" integrity="sha256-Kf78VLnYu/mryjchzZDiTpMQJyjNFuOdg6EpBkqLuAw=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.1b4aeff3c54c412b66f066db0a9c5316c38215cd28ccaecc7ff9524ea2a2243b.js" integrity="sha256-G0rv88VMQStm8GbbCpxTFsOCFc0ozK7Mf/lSTqKiJDs=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/4-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1047,13 +1047,34 @@ https://github.com/alex-shpak/hugo-book
 <p>  面向对象的相关概念。</p>
 <p><a href="https://imgse.com/i/p9Hk9bV"><img src="https://s1.ax1x.com/2023/05/25/p9Hk9bV.md.png" alt="p9Hk9bV.md.png" /></a></p>
 <p>类的考察方法：</p>
-<p>  实体类：永久保存某些数据。</p>
-<p>  边界类：人机交互界面、系统交互接口之类的。</p>
-<p>  控制类：非实体类和边界类就是控制类，如业务逻辑(订单结算等)。</p>
+<p>  实体类：用于永久保存数据信息。</p>
+<p>  边界类：用于人机交互界面、系统交互接口。</p>
+<p>  控制类：非实体类和非边界类就是控制类，如业务逻辑(订单结算等)。</p>
+<h4 id="1uml">
+  1）UML
+  <a class="anchor" href="#1uml">#</a>
+</h4>
+<p>  UML全称Unified Modeling Language，统一建模语言，UML由<strong>构造块</strong>、规则和公共机制；构造块中最重要的是<strong>事物</strong>和<strong>图</strong>；事物中包含结构事物是静态部分、行为事物是动态部分。</p>
+<p><a href="https://imgse.com/i/p9H0rH1"><img src="https://s1.ax1x.com/2023/05/25/p9H0rH1.md.png" alt="p9H0rH1.md.png" /></a></p>
+<p>  UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，该部分在案例分析里面需要掌握的图有：<strong>类图</strong>、<strong>用例图</strong>、顺序图、通信图、<strong>状态图</strong>、<strong>活动图</strong>)。</p>
+<p><a href="https://imgse.com/i/p9H06N6"><img src="https://s1.ax1x.com/2023/05/25/p9H06N6.md.png" alt="p9H06N6.md.png" /></a></p>
+<h4 id="1-类图">
+  1) 类图
+  <a class="anchor" href="#1-%e7%b1%bb%e5%9b%be">#</a>
+</h4>
+<p><a href="https://imgse.com/i/pCyA6zV"><img src="https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png" alt="pCyA6zV.md.png" /></a></p>
+<ul>
+<li>类图的关系</li>
+</ul>
+<p>  依赖关系好辨识：a调用b的函数，称为a依赖b。</p>
+<p>  泛化关系：父子关系，父：一般；子：特殊。</p>
+<p>  聚合关系：汽车和轮胎，汽车坏了，其零件还能用。</p>
+<p>  组合关系：公司和部门，公司没了，部门自然也就没了。</p>
+<p>  实现关系：接口和类</p>
+<p><a href="https://imgse.com/i/pC6CUgO"><img src="https://s1.ax1x.com/2023/07/06/pC6CUgO.md.png" alt="pC6CUgO.md.png" /></a></p>
 <blockquote>
-<p>案例分析例题
-<a href="https://imgse.com/i/pC6KH00"><img src="https://s1.ax1x.com/2023/07/06/pC6KH00.md.png" alt="pC6KH00.md.png" /></a>
-<a href="https://imgse.com/i/pC6MFAK"><img src="https://s1.ax1x.com/2023/07/06/pC6MFAK.md.png" alt="pC6MFAK.md.png" /></a>
+<p>例题
+<a href="https://imgse.com/i/pC6PpI1"><img src="https://s1.ax1x.com/2023/07/06/pC6PpI1.md.png" alt="pC6PpI1.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1063,34 +1084,28 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      <a href="https://imgse.com/i/pC6MMHP"><img src="https://s1.ax1x.com/2023/07/06/pC6MMHP.md.png" alt="pC6MMHP.md.png" /></a>
+      D C
     </div>
   </label>
 </div>
 </p>
 </blockquote>
-<h4 id="1uml">
-  1）UML
-  <a class="anchor" href="#1uml">#</a>
+<h4 id="2-用例图">
+  2) 用例图
+  <a class="anchor" href="#2-%e7%94%a8%e4%be%8b%e5%9b%be">#</a>
 </h4>
-<p>  UML全称Unified Modeling Language，统一建模语言，UML由<strong>构造块</strong>、规则和公共机制；构造块中最重要的是<strong>事物</strong>和<strong>图</strong>；事物中包含结构事物是静态部分、行为事物是动态部分。</p>
-<p><a href="https://imgse.com/i/p9H0rH1"><img src="https://s1.ax1x.com/2023/05/25/p9H0rH1.md.png" alt="p9H0rH1.md.png" /></a></p>
-<p>  UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，案例分析里面需要掌握的图有：<strong>类图</strong>、<strong>用例图</strong>、顺序图、通信图、<strong>状态图</strong>、<strong>活动图</strong>)。</p>
-<p><a href="https://imgse.com/i/p9H06N6"><img src="https://s1.ax1x.com/2023/05/25/p9H06N6.md.png" alt="p9H06N6.md.png" /></a></p>
-<ul>
-<li>用例图</li>
-</ul>
 <p><a href="https://imgse.com/i/pCykUE9"><img src="https://s1.ax1x.com/2023/07/05/pCykUE9.md.png" alt="pCykUE9.md.png" /></a></p>
-<p>  细化用例描述，第一列包含9种用例规约。</p>
-<p><a href="https://imgse.com/i/pC6id7d"><img src="https://s1.ax1x.com/2023/07/06/pC6id7d.md.png" alt="pC6id7d.md.png" /></a></p>
 <ul>
 <li>用例的关系</li>
 </ul>
-<p>  包含关系如上图的用户登录。如何区分包含关系和扩展关系：前者是必须的，后者非必须。</p>
-<p>  扩展关系如上图的查询书籍信息和修改书籍信息，只有查询书籍信息且信息不对时才会修改书籍信息，修改书籍信息是非必须执行的。</p>
-<p>  明显的父子的继承关系，注意却别包含关系··。</p>
-<p><a href="https://imgse.com/i/pCykyuD"><img src="https://s1.ax1x.com/2023/07/05/pCykyuD.md.png" alt="pCykyuD.md.png" /></a>
-<a href="https://imgse.com/i/pCyA9rF"><img src="https://s1.ax1x.com/2023/07/05/pCyA9rF.md.png" alt="pCyA9rF.md.png" /></a></p>
+<p>  包含关系(include直接理解为&quot;必须要先&quot;)：如上图的用户登录(查询外借信息和登记外借信息必须先登录，也就是说查询外借信息和登记外借信息包含了用户登录)。如何区分包含关系和扩展关系：前者是必须的，后者非必须。</p>
+<p>  扩展关系(extend：执行基本功能时<strong>可选</strong>执行扩展功能)：如上图的查询书籍信息和修改书籍信息，只有查询书籍信息且信息不对时才会修改书籍信息，修改书籍信息是非必须执行的(也就是说：修改书籍信息是查询书籍信息的扩展)。</p>
+<p>  泛化关系(generalize)：明显的父子的继承关系(比如说注册可通过手机号注册，也可通过邮箱注册；手机号注册和邮箱注册都继承于注册)，注意却别包含关系。</p>
+<p><a href="https://imgse.com/i/pCyA9rF"><img src="https://s1.ax1x.com/2023/07/05/pCyA9rF.md.png" alt="pCyA9rF.md.png" /></a></p>
+<ul>
+<li>细化用例描述，第一列包含9种用例规约：用例名称ID说明；前置后置条件；基本异常其他事件流；角色。</li>
+</ul>
+<p><a href="https://imgse.com/i/pC6id7d"><img src="https://s1.ax1x.com/2023/07/06/pC6id7d.md.png" alt="pC6id7d.md.png" /></a></p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/pCyAEP1"><img src="https://s1.ax1x.com/2023/07/05/pCyAEP1.md.png" alt="pCyAEP1.md.png" /></a>
@@ -1128,53 +1143,25 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
-<p>  UML4+1视图，同架构的4+1视图可以一一对应</p>
-<p><a href="https://imgse.com/i/p9H0R3D"><img src="https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png" alt="p9H0R3D.md.png" /></a></p>
-<p>  一般UML分析阶段建模主要是建立<strong>用例模型</strong>(用例图)和<strong>分析模型</strong>(类图)</p>
-<p><a href="https://imgse.com/i/p9H05DA"><img src="https://s1.ax1x.com/2023/05/25/p9H05DA.md.png" alt="p9H05DA.md.png" /></a></p>
-<ul>
-<li>类图</li>
-</ul>
-<p><a href="https://imgse.com/i/pCyA6zV"><img src="https://s1.ax1x.com/2023/07/05/pCyA6zV.md.png" alt="pCyA6zV.md.png" /></a></p>
-<ul>
-<li>类图的关系</li>
-</ul>
-<p>  依赖关系好辨识：a调用b的函数，称为a依赖b。</p>
-<p>  泛化关系：父子关系，父：一般；子：特殊。</p>
-<p>  聚合关系：汽车和轮胎，汽车坏了，其零件还能用。</p>
-<p>  组合关系：公司和部门，公司没了，部门自然也就没了。</p>
-<p>  实现关系：接口和类</p>
-<p><a href="https://imgse.com/i/pC6CUgO"><img src="https://s1.ax1x.com/2023/07/06/pC6CUgO.md.png" alt="pC6CUgO.md.png" /></a></p>
-<blockquote>
-<p>例题
-<a href="https://imgse.com/i/pC6PpI1"><img src="https://s1.ax1x.com/2023/07/06/pC6PpI1.md.png" alt="pC6PpI1.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      D C
-    </div>
-  </label>
-</div>
-</p>
-</blockquote>
-<ul>
-<li>顺序图</li>
-</ul>
-<p><a href="https://imgse.com/i/pC6PFxO"><img src="https://s1.ax1x.com/2023/07/06/pC6PFxO.md.png" alt="pC6PFxO.md.png" /></a></p>
-<ul>
-<li>通信图(协作图)</li>
-</ul>
-<p><a href="https://imgse.com/i/pC6PVqH"><img src="https://s1.ax1x.com/2023/07/06/pC6PVqH.md.png" alt="pC6PVqH.md.png" /></a></p>
-<ul>
-<li>状态图</li>
-</ul>
+<h4 id="3-状态图">
+  3) 状态图
+  <a class="anchor" href="#3-%e7%8a%b6%e6%80%81%e5%9b%be">#</a>
+</h4>
 <p><a href="https://imgse.com/i/pC6PnII"><img src="https://s1.ax1x.com/2023/07/06/pC6PnII.md.png" alt="pC6PnII.md.png" /></a></p>
+<h4 id="4-活动图">
+  4) 活动图
+  <a class="anchor" href="#4-%e6%b4%bb%e5%8a%a8%e5%9b%be">#</a>
+</h4>
+<p>  活动图和状态图有点像，可以根据节点里面的内容是状态还是活动来进行区分。</p>
+<p>  活动图对标的是流程图，流程图是结构化时代的，而活动图是面向对象的图。</p>
+<p>  活动图中的两个粗线之间的活动是可以并行执行的。</p>
+<p>  活动图描述的是对象活动的顺序关系所遵循的规则，它着重表现系统的行为，而非处理过程;而流程图着重描述处理过程。</p>
+<p><a href="https://imgse.com/i/pC6Ptds"><img src="https://s1.ax1x.com/2023/07/06/pC6Ptds.md.png" alt="pC6Ptds.md.png" /></a></p>
+<ul>
+<li>泳道活动图</li>
+</ul>
+<p>  在活动图的基础上，增加区分各个活动发生在哪些角色中。</p>
+<p><a href="https://imgse.com/i/pC6PNon"><img src="https://s1.ax1x.com/2023/07/06/pC6PNon.md.png" alt="pC6PNon.md.png" /></a></p>
 <blockquote>
 <p>案例分析例题
 <a href="https://imgse.com/i/pC6Plz8"><img src="https://s1.ax1x.com/2023/07/06/pC6Plz8.md.png" alt="pC6Plz8.md.png" /></a>
@@ -1191,22 +1178,41 @@ https://github.com/alex-shpak/hugo-book
     </div>
   </label>
 </div>
+
+案例分析例题
+<a href="https://imgse.com/i/pC6KH00"><img src="https://s1.ax1x.com/2023/07/06/pC6KH00.md.png" alt="pC6KH00.md.png" /></a>
+<a href="https://imgse.com/i/pC6MFAK"><img src="https://s1.ax1x.com/2023/07/06/pC6MFAK.md.png" alt="pC6MFAK.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <a href="https://imgse.com/i/pC6MMHP"><img src="https://s1.ax1x.com/2023/07/06/pC6MMHP.md.png" alt="pC6MMHP.md.png" /></a>
+    </div>
+  </label>
+</div>
 </p>
 </blockquote>
-<ul>
-<li>活动图</li>
-</ul>
-<p>  活动图和状态图有点像，可以根据节点里面的内容是状态还是活动来进行区分。</p>
-<p>  活动图对标的是流程图，流程图是结构化时代的，而活动图是面向对象的图。</p>
-<p>  活动图中的两个粗线之间的活动是可以并行执行的。</p>
-<p><a href="https://imgse.com/i/pC6Ptds"><img src="https://s1.ax1x.com/2023/07/06/pC6Ptds.md.png" alt="pC6Ptds.md.png" /></a></p>
-<ul>
-<li>泳道活动图</li>
-</ul>
-<p><a href="https://imgse.com/i/pC6PNon"><img src="https://s1.ax1x.com/2023/07/06/pC6PNon.md.png" alt="pC6PNon.md.png" /></a></p>
-<ul>
-<li>定时图(计时图)</li>
-</ul>
+<h4 id="5-顺序图">
+  5) 顺序图
+  <a class="anchor" href="#5-%e9%a1%ba%e5%ba%8f%e5%9b%be">#</a>
+</h4>
+<p>  强调对象之间消息传递的顺序性。</p>
+<p><a href="https://imgse.com/i/pC6PFxO"><img src="https://s1.ax1x.com/2023/07/06/pC6PFxO.md.png" alt="pC6PFxO.md.png" /></a></p>
+<h4 id="6-通信图协作图">
+  6) 通信图(协作图)
+  <a class="anchor" href="#6-%e9%80%9a%e4%bf%a1%e5%9b%be%e5%8d%8f%e4%bd%9c%e5%9b%be">#</a>
+</h4>
+<p>  强调对象之间消息传递的关系，不关心时间。</p>
+<p><a href="https://imgse.com/i/pC6PVqH"><img src="https://s1.ax1x.com/2023/07/06/pC6PVqH.md.png" alt="pC6PVqH.md.png" /></a></p>
+<h4 id="7-定时图计时图">
+  7) 定时图(计时图)
+  <a class="anchor" href="#7-%e5%ae%9a%e6%97%b6%e5%9b%be%e8%ae%a1%e6%97%b6%e5%9b%be">#</a>
+</h4>
 <p><a href="https://imgse.com/i/pC6iAf0"><img src="https://s1.ax1x.com/2023/07/06/pC6iAf0.md.png" alt="pC6iAf0.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -1228,16 +1234,26 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
-<ul>
-<li>构建图与包图</li>
-</ul>
+<h4 id="8-构建图与包图">
+  8) 构建图与包图
+  <a class="anchor" href="#8-%e6%9e%84%e5%bb%ba%e5%9b%be%e4%b8%8e%e5%8c%85%e5%9b%be">#</a>
+</h4>
 <p>  构建图是对外提供的一个接口和功能，包图是为了管理方便，将相关的东西放在一个文件夹中。</p>
 <p><a href="https://imgse.com/i/pC6ie6U"><img src="https://s1.ax1x.com/2023/07/06/pC6ie6U.md.png" alt="pC6ie6U.md.png" /></a></p>
-<ul>
-<li>部署图</li>
-</ul>
+<h4 id="9-部署图">
+  9) 部署图
+  <a class="anchor" href="#9-%e9%83%a8%e7%bd%b2%e5%9b%be">#</a>
+</h4>
 <p>  描述的是硬件节点和软件构建之间的关系。</p>
 <p><a href="https://imgse.com/i/pC6ium4"><img src="https://s1.ax1x.com/2023/07/06/pC6ium4.md.png" alt="pC6ium4.md.png" /></a></p>
+<h4 id="10-uml41视图">
+  10) UML4+1视图
+  <a class="anchor" href="#10-uml41%e8%a7%86%e5%9b%be">#</a>
+</h4>
+<p>  同架构的4+1视图可以一一对应</p>
+<p><a href="https://imgse.com/i/p9H0R3D"><img src="https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png" alt="p9H0R3D.md.png" /></a></p>
+<p>  一般UML分析阶段建模主要是建立<strong>用例模型</strong>(用例图)和<strong>分析模型</strong>(类图)</p>
+<p><a href="https://imgse.com/i/p9H05DA"><img src="https://s1.ax1x.com/2023/05/25/p9H05DA.md.png" alt="p9H05DA.md.png" /></a></p>
 <h2 id="4-需求定义">
   4 需求定义
   <a class="anchor" href="#4-%e9%9c%80%e6%b1%82%e5%ae%9a%e4%b9%89">#</a>
