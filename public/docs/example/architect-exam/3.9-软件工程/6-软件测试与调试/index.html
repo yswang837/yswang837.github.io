@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 软件测试与调试 # 1 软件测试方法 # 测试的原则 尽早、不断的进行测试 程序员避免测试自己设计的程序 既要选择有效、合理的数据，也要选择无效、不合理的数据 修改后应进行回归测试 尚未发现的错误数量与该程序已发现错误数成正比 1.1 测试类型的划分 # 动态测试 等价类划分：各个阶段的测试用例各选一个，如1-1000分为普卡用户，1001-3000为金卡用户，大于等于3001为砖石卡。
+<meta name="description" content=" 软件测试与调试 # 1 软件测试方法 # 测试的原则 尽早、不断的进行测试 程序员避免测试自己设计的程序 既要选择有效、合理的数据，也要选择无效、不合理的数据 修改后应进行回归测试 尚未发现的错误数量与该程序已发现错误数成正比 1.1 测试类型的划分 # 动态测试 等价类划分：各个阶段的测试用例各选一个，如1-1000分为普卡用户，1001-3000为金卡用户，大于等于3001为砖石卡。无效等价类也需要给测试用例。
+边界值分析通过选择等价类边界作为测试用例，不仅重视输入条件边界，而且也必须考虑输出域边界。
+因果图方法是从用自然语言书写的程序规格说明的摧述中找出因 (输入条件)和果 (输出或程序状态的改变)，可以通过因果图转换为判定表。
+正交试验设计法，就是使用已经造好了的正交表格来安排试验并进行数据分析的一种方法，目的是用最少的测试用例达到最高的测试覆盖率。
 白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确。
 例题 学霸肯定对了 ↕ A C 1.2 结构化测试阶段 # 集成测试 程序模块单元测试通过后进行的集成测试，主要测试各模块之间的接口是否正常起作用。
 系统测试 对计算机进行负载测试就是运行某种诊断程序，加大负载，检查哪个设备会发生故障。
@@ -21,7 +24,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.2b868374f02450b09bc194be77811177928f63e7933ab9ff7d54fe7e2c2538a6.js" integrity="sha256-K4aDdPAkULCbwZS&#43;d4ERd5KPY&#43;eTOrn/fVT&#43;fiwlOKY=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.577fa1e519651543cf1589446f422eaaf1951ecede10ec12d3ec3f0281386fc7.js" integrity="sha256-V3&#43;h5RllFUPPFYlEb0IuqvGVHs7eEOwS0&#43;w/AoE4b8c=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -925,7 +928,10 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>动态测试</li>
 </ul>
-<p>  等价类划分：各个阶段的测试用例各选一个，如1-1000分为普卡用户，1001-3000为金卡用户，大于等于3001为砖石卡。</p>
+<p>  等价类划分：各个阶段的测试用例各选一个，如1-1000分为普卡用户，1001-3000为金卡用户，大于等于3001为砖石卡。无效等价类也需要给测试用例。</p>
+<p>  边界值分析通过选择等价类边界作为测试用例，不仅重视输入条件边界，而且也必须考虑输出域边界。</p>
+<p>  因果图方法是从用自然语言书写的程序规格说明的摧述中找出因 (输入条件)和果 (输出或程序状态的改变)，可以通过因果图转换为判定表。</p>
+<p>  正交试验设计法，就是使用已经造好了的正交表格来安排试验并进行数据分析的一种方法，目的是用最少的测试用例达到最高的测试覆盖率。</p>
 <p>  白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确。</p>
 <p><a href="https://imgse.com/i/pCaJpLT"><img src="https://s1.ax1x.com/2023/06/27/pCaJpLT.md.png" alt="pCaJpLT.md.png" /></a></p>
 <blockquote>

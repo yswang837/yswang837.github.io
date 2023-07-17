@@ -15,9 +15,13 @@
 8 构建组装模型 # 优点：快，成本低、可靠高。
 缺点：构建库的建立需要慢慢积累。放到个人来说就是，代码库的建立需要慢慢积累。
 软件系统通过构件组装分为三个不同的层次:定制(customization)、集成(integration)和扩展 (extension)。
+基于构建的开发模型：需求分析和定义-&gt;软件架构设计-&gt;构件库的建立-&gt;应用软件构建-&gt;测试和发布。
+为了被广泛的使用，接口同构建一样也有规范；接口标准化是对接口中的消息模式、格式和协议的标准化。
+J2EE应用系统支持5种不同类型的构建模型，分别是：Applet、Servlet、JSP、EJB、Application Client。
+CORBA服务端构建模型中，伺服对象(Servant)是CORBA对象的真正实现，负责完成客户端请求。
 9 快速应用开发模型RAD # 快速应用开发=瀑布模型(SDLC) &#43; 构建组装模型(CBSD)，可认为它综合了二者的优点；当系统模块化程度较高时可采用该开发模型。
 10 统一过程模型UP/RUP # 三大特点：用例驱动、以架构为中心、迭代和增量。
-四个阶段： 初始：确定项目范围和边界 细化：设计并确定架构体系、指定工作计划及资源要求。 构建：开发剩余的构建、构建组装与测试 交付：制作发布版本 例题 学霸肯定对了 ↕ B A 11 敏捷开发模型 # 小步快跑的模式，适合小型项目。">
+四个阶段：采用迭代和增量的方式来开发软件，每完成一次循环则会产生一代软件，这样做的好处是：在软件开发初期就可以对关键的影响大的风险进行处理。 初始：确定项目范围和边界 细化：设计并确定架构体系、指定工作计划及资源要求。 构建：开发剩余的构建、构建组装与测试 交付：制作发布版本 RUP的9个工作流：商业建模、需求、分析和设计、实现、测试、部署、配置和变更管理、项目管理、环境。注意成本不属于其中。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -29,7 +33,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.2b868374f02450b09bc194be77811177928f63e7933ab9ff7d54fe7e2c2538a6.js" integrity="sha256-K4aDdPAkULCbwZS&#43;d4ERd5KPY&#43;eTOrn/fVT&#43;fiwlOKY=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.577fa1e519651543cf1589446f422eaaf1951ecede10ec12d3ec3f0281386fc7.js" integrity="sha256-V3&#43;h5RllFUPPFYlEb0IuqvGVHs7eEOwS0&#43;w/AoE4b8c=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -983,6 +987,10 @@ https://github.com/alex-shpak/hugo-book
 <p>  优点：快，成本低、可靠高。</p>
 <p>  缺点：构建库的建立需要慢慢积累。放到个人来说就是，代码库的建立需要慢慢积累。</p>
 <p>  软件系统通过构件组装分为三个不同的层次:定制(customization)、集成(integration)和扩展 (extension)。</p>
+<p>  基于构建的开发模型：需求分析和定义-&gt;软件架构设计-&gt;构件库的建立-&gt;应用软件构建-&gt;测试和发布。</p>
+<p>  为了被广泛的使用，接口同构建一样也有规范；接口标准化是对接口中的消息模式、格式和协议的标准化。</p>
+<p>  J2EE应用系统支持5种不同类型的构建模型，分别是：Applet、Servlet、JSP、EJB、Application Client。</p>
+<p>  CORBA服务端构建模型中，伺服对象(Servant)是CORBA对象的真正实现，负责完成客户端请求。</p>
 <p><a href="https://imgse.com/i/p97u5SU"><img src="https://s1.ax1x.com/2023/05/24/p97u5SU.md.png" alt="p97u5SU.md.png" /></a></p>
 <h2 id="9-快速应用开发模型rad">
   9 快速应用开发模型RAD
@@ -998,7 +1006,7 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <p>  三大特点：用例驱动、以架构为中心、迭代和增量。</p>
 <ul>
-<li>四个阶段：
+<li>四个阶段：采用迭代和增量的方式来开发软件，每完成一次循环则会产生一代软件，这样做的好处是：在软件开发初期就可以对关键的影响大的风险进行处理。
 <ul>
 <li>初始：确定项目范围和边界</li>
 <li>细化：设计并确定架构体系、指定工作计划及资源要求。</li>
@@ -1007,6 +1015,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
+<p>  RUP的9个工作流：商业建模、需求、分析和设计、实现、测试、部署、配置和变更管理、项目管理、环境。注意成本不属于其中。</p>
 <p><a href="https://imgse.com/i/p97uTOJ"><img src="https://s1.ax1x.com/2023/05/24/p97uTOJ.md.png" alt="p97uTOJ.md.png" /></a></p>
 <blockquote>
 <p>例题
