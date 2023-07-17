@@ -8,7 +8,13 @@
 因果图方法是从用自然语言书写的程序规格说明的摧述中找出因 (输入条件)和果 (输出或程序状态的改变)，可以通过因果图转换为判定表。
 正交试验设计法，就是使用已经造好了的正交表格来安排试验并进行数据分析的一种方法，目的是用最少的测试用例达到最高的测试覆盖率。
 白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确。
-例题 学霸肯定对了 ↕ A C 1.2 结构化测试阶段 # 集成测试 程序模块单元测试通过后进行的集成测试，主要测试各模块之间的接口是否正常起作用。
+语句覆盖要求设计足够多的测试用例，使程序中每多语句至少被执行一次。
+判定/条件覆盖准则的缺点是未考虑条件的组合情况。
+与判定覆盖相比，条件覆盖增加对符合判定情况的测试，增加了测试路径。
+例题 学霸肯定对了 ↕ A C 1.2 结构化测试阶段 # 单元测试 驱动模块用来调用被测模块，自顶向下的单元测试中不需要另外编写驱动模块。
+桩模块用来模拟被测模块所调用的子模块，自顶向下的单元测试中需要另外编写桩模块。
+驱动模块用来模拟被测模块所调用的子模块，自底向上的单元测试中需要另外编写驱动模块。
+集成测试 程序模块单元测试通过后进行的集成测试，主要测试各模块之间的接口是否正常起作用。
 系统测试 对计算机进行负载测试就是运行某种诊断程序，加大负载，检查哪个设备会发生故障。
 例题 学霸肯定对了 ↕ A 学霸肯定对了 ↕ A D 1.3 面向对象测试 # 和结构化测试基本上一一对应，但它只需要了解每个层大概有什么测试方法就行，不用掌握每一种方法。
 2 软件调试 # 2.1 软件调试方法 # 原因排除法：正向找错，回溯法：反向找错。
@@ -24,7 +30,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.577fa1e519651543cf1589446f422eaaf1951ecede10ec12d3ec3f0281386fc7.js" integrity="sha256-V3&#43;h5RllFUPPFYlEb0IuqvGVHs7eEOwS0&#43;w/AoE4b8c=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.f349482eddb8edd1befc2503a7fc2616e48787b3258f67e98ad48dc4abee804d.js" integrity="sha256-80lILt247dG&#43;/CUDp/wmFuSHh7Mlj2fpitSNxKvugE0=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -933,6 +939,9 @@ https://github.com/alex-shpak/hugo-book
 <p>  因果图方法是从用自然语言书写的程序规格说明的摧述中找出因 (输入条件)和果 (输出或程序状态的改变)，可以通过因果图转换为判定表。</p>
 <p>  正交试验设计法，就是使用已经造好了的正交表格来安排试验并进行数据分析的一种方法，目的是用最少的测试用例达到最高的测试覆盖率。</p>
 <p>  白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确。</p>
+<p>  语句覆盖要求设计足够多的测试用例，使程序中每多语句至少被执行一次。</p>
+<p>  判定/条件覆盖准则的缺点是未考虑条件的组合情况。</p>
+<p>  与判定覆盖相比，条件覆盖增加对符合判定情况的测试，增加了测试路径。</p>
 <p><a href="https://imgse.com/i/pCaJpLT"><img src="https://s1.ax1x.com/2023/06/27/pCaJpLT.md.png" alt="pCaJpLT.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -957,6 +966,12 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#12-%e7%bb%93%e6%9e%84%e5%8c%96%e6%b5%8b%e8%af%95%e9%98%b6%e6%ae%b5">#</a>
 </h3>
 <p><a href="https://imgse.com/i/pCaJt6P"><img src="https://s1.ax1x.com/2023/06/27/pCaJt6P.md.png" alt="pCaJt6P.md.png" /></a></p>
+<ul>
+<li>单元测试</li>
+</ul>
+<p>  驱动模块用来调用被测模块，自顶向下的单元测试中不需要另外编写驱动模块。</p>
+<p>  桩模块用来模拟被测模块所调用的子模块，自顶向下的单元测试中需要另外编写桩模块。</p>
+<p>  驱动模块用来模拟被测模块所调用的子模块，自底向上的单元测试中需要另外编写驱动模块。</p>
 <ul>
 <li>集成测试</li>
 </ul>

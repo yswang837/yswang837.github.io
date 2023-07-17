@@ -7,13 +7,18 @@
 需求工程包括两个维度：需求开发维度(技术维度)和需求管理维度(管理维度)。
 需求定义的产出是：需求规格说明书SRS。
 对需求规格说明书SRS进行需要验证得到需求基线，需求管理的对象就是需求基线。
+在需求管理中，要求维持对用户原始需求和所有产品构件需求的双向跟踪。
 例题 学霸肯定对了 ↕ D 2 需求获取 # 从技术维度可将需求分为： 1、业务需求(整体全局)
 2、用户需求(用户视角)
 3、系统需求(计算机化，系统需求分为：功能需求、性能需求、设计约束需求(既不是功能需求、又不是性能需求的就属于设计约束需求，比如年龄0到100岁，性别只能是男女等))。
 从管理维度可将需求分为： 1、基本需求(需求基线中明确要求要做的)
 2、期望需求(比较难把握，客户觉得你应该做的)
 3、兴奋需求(客户不要求你做的，但你做完了，这其实会加大系统开发的风险)
-3 需求分析 # 需求获取完以后，需要对需求进行整理和分析，需求分析包含两个方面： 1、结构化需求分析SA；
+联合需求计划JRP(联合讨论会) 1、在JRP实施之前，应制定详细的议程，并严格遵照议程进行。
+2、在讨论期间尽量避免使用专业术语。
+3、JRP是一种相对来说成本较高但十分有效的需求获取方法。
+3 需求分析 # 安全攸关系统在软件需求分析阶段，应提出安全性需求。软件安全性需求是指通过约束软件的行为，使其不会出现不可接受的违反系统安全的行为。软件安全需求的获取是根据己知的系统信息，如软件危害条件等以及其他一些类似的系统数据和通用惯例，完成通用软件安全性需求的裁剪和特定软件安全性需求的获取工作。
+需求获取完以后，需要对需求进行整理和分析，需求分析包含两个方面： 1、结构化需求分析SA；
 2、面向对象需求分析OOA。
 4.3.1 结构化需求分析SA # SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图)，其中数据字典起到解释的作用，比如学生关系包含学号、名字、年龄等。
 DFD：Data Flow Diagram，反映的是系统跟外界实体之间的交互，以及数据加工和交换的方式。 DFD的平衡原则：用于DFD里面填空(类似于完形填空)，如上图的“注册请求”、“课程安排”等在父图和子图中应该是一致的。 DFD答题技巧 STD：State Transform Diagram，（状态建模）
@@ -25,9 +30,7 @@ E-R图：实体关系图，（数据建模）
 实体类：用于永久保存数据信息。
 边界类：用于人机交互界面、系统交互接口。
 控制类：非实体类和非边界类就是控制类，如业务逻辑(订单结算等)。
-1）UML # UML全称Unified Modeling Language，统一建模语言，UML由构造块、规则和公共机制；构造块中最重要的是事物和图；事物中包含结构事物是静态部分、行为事物是动态部分。
-UML2.0中一共定义了14种图。其中结构图 (静态图)包括:类图、对象图、构件图、部署图、制品图、 包图、组合结构图;行为图 (动态图)包括:用例图、顺序图、通信图 (协作图)、定时图、交互概览图、活动图、状态图。
-UML图同事物一样，也分为静态部分和动态部分，静态图称为结构图，动态图为行为图(交互图)。得知道每种图大致是什么意思(标红的为重点，该部分在案例分析里面需要掌握的图有：类图、用例图、顺序图、通信图、状态图、活动图)。">
+1）UML # UML全称Unified Modeling Language，统一建模语言，UML由构造块、规则和公共机制；构造块中最重要的是事物和图；事物中包含结构事物是静态部分、行为事物是动态部分。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -39,7 +42,7 @@ UML图同事物一样，也分为静态部分和动态部分，静态图称为�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.577fa1e519651543cf1589446f422eaaf1951ecede10ec12d3ec3f0281386fc7.js" integrity="sha256-V3&#43;h5RllFUPPFYlEb0IuqvGVHs7eEOwS0&#43;w/AoE4b8c=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.f349482eddb8edd1befc2503a7fc2616e48787b3258f67e98ad48dc4abee804d.js" integrity="sha256-80lILt247dG&#43;/CUDp/wmFuSHh7Mlj2fpitSNxKvugE0=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/3-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -929,6 +932,7 @@ https://github.com/alex-shpak/hugo-book
 <p>  需求工程包括两个维度：需求开发维度(技术维度)和需求管理维度(管理维度)。</p>
 <p>  需求定义的产出是：需求规格说明书SRS。</p>
 <p>  对需求规格说明书SRS进行需要验证得到需求基线，需求管理的对象就是需求基线。</p>
+<p>  在需求管理中，要求维持对用户原始需求和所有产品构件需求的双向跟踪。</p>
 <p><a href="https://imgse.com/i/p9HF9te"><img src="https://s1.ax1x.com/2023/05/25/p9HF9te.md.png" alt="p9HF9te.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -966,11 +970,18 @@ https://github.com/alex-shpak/hugo-book
 <p>  2、期望需求(比较难把握，客户觉得你应该做的)</p>
 <p>  3、兴奋需求(客户不要求你做的，但你做完了，这其实会加大系统开发的风险)</p>
 <p><a href="https://imgse.com/i/p9HFsnx"><img src="https://s1.ax1x.com/2023/05/25/p9HFsnx.md.png" alt="p9HFsnx.md.png" /></a></p>
+<ul>
+<li>联合需求计划JRP(联合讨论会)</li>
+</ul>
+<p>1、在JRP实施之前，应制定详细的议程，并严格遵照议程进行。</p>
+<p>2、在讨论期间尽量避免使用专业术语。</p>
+<p>3、JRP是一种相对来说成本较高但十分有效的需求获取方法。</p>
 <h2 id="3-需求分析">
   3 需求分析
   <a class="anchor" href="#3-%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90">#</a>
 </h2>
 <hr>
+<p>  安全攸关系统在软件需求分析阶段，应提出安全性需求。软件安全性需求是指通过约束软件的行为，使其不会出现<strong>不可接受的违反系统安全的行为</strong>。软件安全需求的获取是根据己知的<strong>系统信息</strong>，如软件危害条件等以及其他一些类似的系统数据和通用惯例，完成通用软件安全性需求的裁剪和特定软件安全性需求的获取工作。</p>
 <ul>
 <li>需求获取完以后，需要对需求进行整理和分析，需求分析包含两个方面：</li>
 </ul>
@@ -1282,7 +1293,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#6-%e9%9c%80%e6%b1%82%e5%8f%98%e6%9b%b4%e6%8e%a7%e5%88%b6">#</a>
 </h2>
 <hr>
-<p>  需求变更是每个项目中客观存在的。无法杜绝的。我们要做的是管理和控制好需求的变更。</p>
+<p>  需求变更是每个项目中客观存在的。无法杜绝的。我们要做的是管理和控制好需求的变更。这样的管理软件应当具有记录每一个状态变更的日期及变更者的功能。</p>
 <p><a href="https://imgse.com/i/pCUFZ11"><img src="https://s1.ax1x.com/2023/06/26/pCUFZ11.md.png" alt="pCUFZ11.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -1314,7 +1325,13 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <p>  需求工程的目标是获取用户最真实的需求，可往往在开发测试过程中会出现遗漏，这时候需要及时跟踪需求，以发现纰漏。</p>
 <p>  用户的需求称为原始需求，软件需求可以认为是用例(功能)，UC-n没有打钩，表示这个功能多余了，用户其实不需要这个功能；FR-m没有打钩，表示这个功能漏做了。</p>
+<p>  需求跟踪是将单个需求和其他系统元素之间的依赖关系和逻辑联系建立跟踪，这些元素包括各种类型的需求、业务规则、系统架构和构件、源代码、测试用例，以及帮助文件等。</p>
 <p><a href="https://imgse.com/i/pCUiz60"><img src="https://s1.ax1x.com/2023/06/26/pCUiz60.md.png" alt="pCUiz60.md.png" /></a></p>
+<ul>
+<li>需求跟踪能力链(traceability link)</li>
+</ul>
+<p>  下图中1是客户需求，2是软件需求。</p>
+<p><a href="https://imgse.com/i/pCotbCV"><img src="https://s1.ax1x.com/2023/07/17/pCotbCV.md.png" alt="pCotbCV.md.png" /></a></p>
 <h2 id="9-需求状态管理">
   9 需求状态管理
   <a class="anchor" href="#9-%e9%9c%80%e6%b1%82%e7%8a%b6%e6%80%81%e7%ae%a1%e7%90%86">#</a>
