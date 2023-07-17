@@ -132,15 +132,17 @@ title: 3.13 项目管理
 
 ### 6.1 软件工具
 
+&emsp;&emsp;按描述需求定义的方法可将需求分析工具分为基于自然语言或图形描述的工具和基于形式化需求定义语言的工具。
+
+&emsp;&emsp;项目管理工具用来辅助软件项目管理活动(其中，“指导软件设计人员按软件生存周期各个阶段的适用技术进行设计工作“不是它的活动)。通常项目管理活动包括项目的计划、调度、通信、成本估算、资源分配及质量控制等。
+
 [![pCsaYCt.md.png](https://s1.ax1x.com/2023/07/04/pCsaYCt.md.png)](https://imgse.com/i/pCsaYCt)
 
 >例题
 [![pCsalHH.md.png](https://s1.ax1x.com/2023/07/04/pCsalHH.md.png)](https://imgse.com/i/pCsalHH)
 {{< expand "学霸肯定对了">}}C{{< /expand >}}
 
-### 6.2 版本控制
 
-[![pCsarUs.md.png](https://s1.ax1x.com/2023/07/04/pCsarUs.md.png)](https://imgse.com/i/pCsarUs)
 
 ## 课后习题
 
