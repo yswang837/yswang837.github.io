@@ -30,7 +30,7 @@
 
 ---
 
-&emsp;&emsp;螺旋模型 = 原型 + 瀑布模型，首次引入**风险分析**，适合大型项目。
+&emsp;&emsp;螺旋模型 = 原型 + 瀑布模型，首次引入**风险分析**，适合大型项目，螺旋模型是在快速模型的基础上扩展而成的。
 
 &emsp;&emsp;螺旋模型将整个软件开发过程分为多个阶段，每个阶段都由目标设定、风险分析、开发和有效性验证以及评审4个部分组成。
 
@@ -70,13 +70,15 @@
 
 &emsp;&emsp;缺点：构建库的建立需要慢慢积累。放到个人来说就是，代码库的建立需要慢慢积累。
 
+&emsp;&emsp;软件系统通过构件组装分为三个不同的层次:定制(customization)、集成(integration)和扩展 (extension)。
+
 [![p97u5SU.md.png](https://s1.ax1x.com/2023/05/24/p97u5SU.md.png)](https://imgse.com/i/p97u5SU)
 
 ## 9 快速应用开发模型RAD
 
 ---
 
-&emsp;&emsp;快速应用开发=瀑布模型(SDLC) + 构建组装模型(CBSD)，可认为它综合了二者的优点。
+&emsp;&emsp;快速应用开发=瀑布模型(SDLC) + 构建组装模型(CBSD)，可认为它综合了二者的优点；当系统模块化程度较高时可采用该开发模型。
 
 [![p97KtcF.md.png](https://s1.ax1x.com/2023/05/24/p97KtcF.md.png)](https://imgse.com/i/p97KtcF)
 

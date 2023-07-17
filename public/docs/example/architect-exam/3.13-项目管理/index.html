@@ -24,7 +24,7 @@ ES和EF是正向推导过程。关键路径需要反推才能得到。总时差=
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.a24214023e38d0138bbd7cea796f117f8c4c5ef927e83e08252ee7f9a81b6ad1.js" integrity="sha256-okIUAj440BOLvXzqeW8Rf4xMXvkn6D4IJS7n&#43;agbatE=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.2b868374f02450b09bc194be77811177928f63e7933ab9ff7d54fe7e2c2538a6.js" integrity="sha256-K4aDdPAkULCbwZS&#43;d4ERd5KPY&#43;eTOrn/fVT&#43;fiwlOKY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.13-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1162,8 +1162,13 @@ https://github.com/alex-shpak/hugo-book
   6.1 软件工具
   <a class="anchor" href="#61-%e8%bd%af%e4%bb%b6%e5%b7%a5%e5%85%b7">#</a>
 </h3>
-<p>  按描述需求定义的方法可将需求分析工具分为基于自然语言或图形描述的工具和基于形式化需求定义语言的工具。</p>
-<p>  项目管理工具用来辅助软件项目管理活动(其中，“指导软件设计人员按软件生存周期各个阶段的适用技术进行设计工作“不是它的活动)。通常项目管理活动包括项目的计划、调度、通信、成本估算、资源分配及质量控制等。</p>
+<p>  按描述需求定义的方法可将需求分析工具分为<strong>基于自然语言或图形描述的工具</strong>和<strong>基于形式化需求定义语言的工具</strong>。</p>
+<p>  项目管理工具用来辅助软件项目管理活动(其中，“指导软件设计人员按软件生存周期各个阶段的适用技术进行设计工作“不是它的活动)。通常项目管理活动包括项目的计划、调度、通信、<strong>成本估算</strong>、资源分配及质量控制等。</p>
+<p>  软件系统工具的种类繁多，通常可以按照软件过程活动将软件工具分为软件开发工具、软件维护工具、软件管理和软件支持工具。</p>
+<p>  软件开发工具是指用干辅助软件开发过程活动的各种软件。其中，<strong>软件建模工具</strong>是辅助建立软件系统的抽象模型的。常见的软件建模工具包括Rational Rose、Together、WinA&amp;D、OuickUML、EclipseUML等。</p>
+<p>  <strong>版本控制工具</strong>属于<strong>软件维护工具</strong>，<strong>软件评价工具</strong>属于<strong>软件管理与软件支持工具</strong>。</p>
+<p>  软件测试工具根据工作原理不同可分为静态测试工具和动态测试工具。其中静态测试工具是对代码进行语法扫描，找到不符合编码规范的地方，根据某种质量模型评价代码的质量，生成系统的调用关系图等。它直接对代码进行分析，不需要运行代码，也不需要对代码编译链接和生成可执行文件，静态测试工具可用于<strong>对软件需求、结构设计、详细设计和代码进行评审、走审和审查，也可用于对软件的复杂度分析、数据流分析、控制流分析和接口分析提供支持</strong>，动态测试工具与静态测试工具不同，它需要运行被测试系统，并设置探针，向代码生成的可执行文件中插入检测代码，<strong>可用于软件的覆盖分析和性能分析，也可用于软件的模拟、建模、仿真测试和变异测试等</strong>。</p>
+<p>  源代码控制系统 (SCCS)是UNIX系统上的开发项目中使用的源代码和文档文件所做的更改控制的工具。</p>
 <p><a href="https://imgse.com/i/pCsaYCt"><img src="https://s1.ax1x.com/2023/07/04/pCsaYCt.md.png" alt="pCsaYCt.md.png" /></a></p>
 <blockquote>
 <p>例题
