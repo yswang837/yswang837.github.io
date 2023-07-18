@@ -12,13 +12,13 @@
 例题 学霸肯定对了 ↕ B 5 原型模型 # 适合需求不明确的系统。若题目中指明“需求不明确”，选原型而不选螺旋模型。
 6 喷泉模型 # 早期著名的面向对象模型。它的特点是各个阶段之间没有明显的界限（区别于瀑布模型），各个阶段可以并发；但它非常不利于项目管理。
 7 V模型 # 测试提前做，测试贯穿于始终。
-8 构建组装模型 # 优点：快，成本低、可靠高。
+8 构建组装模型 # 优点：快，成本低、可靠高、构件是一个独立可交付的单元，构件外部通过接口访问构件提供的服务。
 缺点：构建库的建立需要慢慢积累。放到个人来说就是，代码库的建立需要慢慢积累。
 软件系统通过构件组装分为三个不同的层次:定制(customization)、集成(integration)和扩展 (extension)。
 基于构建的开发模型：需求分析和定义-&gt;软件架构设计-&gt;构件库的建立-&gt;应用软件构建-&gt;测试和发布。
 为了被广泛的使用，接口同构建一样也有规范；接口标准化是对接口中的消息模式、格式和协议的标准化。
-J2EE应用系统支持5种不同类型的构建模型，分别是：Applet、Servlet、JSP、EJB、Application Client。
-CORBA服务端构建模型中，伺服对象(Servant)是CORBA对象的真正实现，负责完成客户端请求。
+J2EE应用系统支持5种不同类型的构建模型，分别是：Applet、Servlet、JSP、EJB、Application Client。其中EJB是企业级Java构件，用于开发和部署多层结构的、分布式的、面向对象的Java应用系统。其中，会话型构件负责完成服务端与客户端的交互;实体型构件用于数据持久化来简化数据库开发工作;消息驱动构件主要用来处理并发和异步访问操作。
+CORBA标准中，OMG接口定义语言IDL文件包含了六种不同的元素，包括模块定义、类型定义、常量定义、异常、接口描述和值类型，其中，接口描述是一个IDL文件最核心的内容，模块定义将被映射为Java语言中的包和C&#43;&#43;语言中的命名空间。CORBA服务端构建模型中，伺服对象(Servant)是CORBA对象的真正实现，负责完成客户端请求，可移植对象适配器POA的作用是在底层传输平台与接收调用并返回结果的对象实现之间进行协调。
 9 快速应用开发模型RAD # 快速应用开发=瀑布模型(SDLC) &#43; 构建组装模型(CBSD)，可认为它综合了二者的优点；当系统模块化程度较高时可采用该开发模型。
 10 统一过程模型UP/RUP # 三大特点：用例驱动、以架构为中心、迭代和增量。
 四个阶段：采用迭代和增量的方式来开发软件，每完成一次循环则会产生一代软件，这样做的好处是：在软件开发初期就可以对关键的影响大的风险进行处理。 初始：确定项目范围和边界 细化：设计并确定架构体系、指定工作计划及资源要求。 构建：开发剩余的构建、构建组装与测试 交付：制作发布版本 RUP的9个工作流：商业建模、需求、分析和设计、实现、测试、部署、配置和变更管理、项目管理、环境。注意成本不属于其中。">
@@ -33,7 +33,7 @@ CORBA服务端构建模型中，伺服对象(Servant)是CORBA对象的真正实�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.f903cc1d55368db207a4c78643bdda21c4003c116891e2377640a0d2706786b6.js" integrity="sha256-&#43;QPMHVU2jbIHpMeGQ73aIcQAPBFokeI3dkCg0nBnhrY=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.938538695150cc4803539a4b801bbee18907ceb6d384d10e7ef03dc7b43bd1ec.js" integrity="sha256-k4U4aVFQzEgDU5pLgBu&#43;4YkHzrbThNEOfvA9x7Q70ew=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -984,13 +984,13 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#8-%e6%9e%84%e5%bb%ba%e7%bb%84%e8%a3%85%e6%a8%a1%e5%9e%8b">#</a>
 </h2>
 <hr>
-<p>  优点：快，成本低、可靠高。</p>
+<p>  优点：快，成本低、可靠高、构件是一个独立可交付的单元，构件外部通过接口访问构件提供的服务。</p>
 <p>  缺点：构建库的建立需要慢慢积累。放到个人来说就是，代码库的建立需要慢慢积累。</p>
 <p>  软件系统通过构件组装分为三个不同的层次:定制(customization)、集成(integration)和扩展 (extension)。</p>
 <p>  基于构建的开发模型：需求分析和定义-&gt;软件架构设计-&gt;构件库的建立-&gt;应用软件构建-&gt;测试和发布。</p>
 <p>  为了被广泛的使用，接口同构建一样也有规范；接口标准化是对接口中的消息模式、格式和协议的标准化。</p>
-<p>  J2EE应用系统支持5种不同类型的构建模型，分别是：Applet、Servlet、JSP、EJB、Application Client。</p>
-<p>  CORBA服务端构建模型中，伺服对象(Servant)是CORBA对象的真正实现，负责完成客户端请求。</p>
+<p>  J2EE应用系统支持5种不同类型的构建模型，分别是：Applet、Servlet、JSP、<strong>EJB</strong>、Application Client。其中EJB是企业级Java构件，用于开发和部署多层结构的、分布式的、面向对象的Java应用系统。其中，<strong>会话型构件</strong>负责完成服务端与客户端的交互;<strong>实体型构件</strong>用于数据持久化来简化数据库开发工作;<strong>消息驱动构件</strong>主要用来处理并发和异步访问操作。</p>
+<p>  CORBA标准中，OMG接口定义语言IDL文件包含了六种不同的元素，包括模块定义、类型定义、常量定义、异常、接口描述和值类型，其中，<strong>接口描述是一个IDL文件最核心的内容</strong>，<strong>模块定义</strong>将被映射为Java语言中的<strong>包</strong>和C++语言中的<strong>命名空间</strong>。CORBA服务端构建模型中，<strong>伺服对象(Servant)<strong>是CORBA对象的</strong>真正实现</strong>，负责完成客户端请求，<strong>可移植对象适配器POA</strong>的作用是<strong>在底层传输平台与接收调用并返回结果的对象实现之间进行协调</strong>。</p>
 <p><a href="https://imgse.com/i/p97u5SU"><img src="https://s1.ax1x.com/2023/05/24/p97u5SU.md.png" alt="p97u5SU.md.png" /></a></p>
 <h2 id="9-快速应用开发模型rad">
   9 快速应用开发模型RAD
