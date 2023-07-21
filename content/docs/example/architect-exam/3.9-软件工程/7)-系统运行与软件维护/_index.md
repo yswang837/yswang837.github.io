@@ -4,6 +4,8 @@
 
 ---
 
+&emsp;&emsp;基于JavaEE平台的基础功能服务构建应用系统时，JCA、JMS和Java IDL可用来集成遗产系统，注意JDBC是用来连接数据库的。
+
 [![pCaYluV.md.png](https://s1.ax1x.com/2023/06/27/pCaYluV.md.png)](https://imgse.com/i/pCaYluV)
 
 >例题

@@ -9,7 +9,7 @@
 边界值分析通过选择等价类边界作为测试用例，不仅重视输入条件边界，而且也必须考虑输出域边界。
 因果图方法是从用自然语言书写的程序规格说明的摧述中找出因 (输入条件)和果 (输出或程序状态的改变)，可以通过因果图转换为判定表。
 正交试验设计法，就是使用已经造好了的正交表格来安排试验并进行数据分析的一种方法，目的是用最少的测试用例达到最高的测试覆盖率。
-白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确。
+白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确，在白盒测试中测试强度最高的是路径覆盖。
 语句覆盖要求设计足够多的测试用例，使程序中每多语句至少被执行一次。
 判定/条件覆盖准则的缺点是未考虑条件的组合情况。
 与判定覆盖相比，条件覆盖增加对符合判定情况的测试，增加了测试路径。
@@ -43,7 +43,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.795d0c95b211a9be3915cac7295ffe68eb26080659fa0ea561ce08f6a26bfb68.js" integrity="sha256-eV0MlbIRqb45FcrHKV/&#43;aOsmCAZZ&#43;g6lYc4I9qJr&#43;2g=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.f3fecd38530758ba9445678bfd5d4dcbd95951f34f96db32e48c73bb87e71d41.js" integrity="sha256-8/7NOFMHWLqURWeL/V1Ny9lZUfNPltsy5Ixzu4fnHUE=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -954,7 +954,7 @@ https://github.com/alex-shpak/hugo-book
 <p>  边界值分析通过选择等价类边界作为测试用例，不仅重视输入条件边界，而且也必须考虑输出域边界。</p>
 <p>  因果图方法是从用自然语言书写的程序规格说明的摧述中找出因 (输入条件)和果 (输出或程序状态的改变)，可以通过因果图转换为判定表。</p>
 <p>  正交试验设计法，就是使用已经造好了的正交表格来安排试验并进行数据分析的一种方法，目的是用最少的测试用例达到最高的测试覆盖率。</p>
-<p>  白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确。</p>
+<p>  白盒测试就是根据程序内部结构和内部逻辑，测试其功能是否正确，在白盒测试中测试强度最高的是路径覆盖。</p>
 <p>  语句覆盖要求设计足够多的测试用例，使程序中每多语句至少被执行一次。</p>
 <p>  判定/条件覆盖准则的缺点是未考虑条件的组合情况。</p>
 <p>  与判定覆盖相比，条件覆盖增加对符合判定情况的测试，增加了测试路径。</p>
@@ -1085,6 +1085,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#13-%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e6%b5%8b%e8%af%95">#</a>
 </h3>
 <p>  和结构化测试基本上一一对应，但它只需要了解每个层大概有什么测试方法就行，不用掌握每一种方法。</p>
+<p>  与传统的结构化系统相比，面向对象系统具有三个明显特征，即封装性、继承性与多态性。封装性决定了面向对象系统的测试必须考虑到信息隐蔽原则对测试的影响，以及对象状态与类的测试序列，因此在测试一个类时，仅对该类的每个方法进行测试是不够的，继承性决定了面向对象系统的测试必须考虑到继承对测试充分性的影响，以及误用引起的错误，多态性决定了面向对象系统的测试必须考虑到动态绑定对测试充分性的影响、抽象类的测试以及误用对测试的影响。</p>
 <p><a href="https://imgse.com/i/pCaYp9A"><img src="https://s1.ax1x.com/2023/06/27/pCaYp9A.md.png" alt="pCaYp9A.md.png" /></a></p>
 <h3 id="14-自动化测试">
   1.4 自动化测试
