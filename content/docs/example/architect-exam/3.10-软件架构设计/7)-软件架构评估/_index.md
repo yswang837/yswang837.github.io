@@ -48,7 +48,7 @@ title: "7) 软件架构评估"
 
 [![p9vUta9.md.png](https://s1.ax1x.com/2023/05/31/p9vUta9.md.png)](https://imgse.com/i/p9vUta9)
 
-- ATAM：在SAAM的基础上发展起来的，主要针对性能、实用性、安全性和可修改性，在系统开发之前，对这些**质量属性进行评价和折中**。
+- ATAM：在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性，在系统开发之前，对这些**质量属性进行评价和折中**。
 
 [![p9vUN5R.md.png](https://s1.ax1x.com/2023/05/31/p9vUN5R.md.png)](https://imgse.com/i/p9vUN5R)
 

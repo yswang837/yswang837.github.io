@@ -32,7 +32,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.f3fecd38530758ba9445678bfd5d4dcbd95951f34f96db32e48c73bb87e71d41.js" integrity="sha256-8/7NOFMHWLqURWeL/V1Ny9lZUfNPltsy5Ixzu4fnHUE=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.73531156bc7f88b1ee7e31754cf127b6bef4579fb2537f7b87d9a3caf15136e4.js" integrity="sha256-c1MRVrx/iLHufjF1TPEntr70V5&#43;yU397h9mjyvFRNuQ=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/4-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1072,78 +1072,79 @@ https://github.com/alex-shpak/hugo-book
 <li>结构型模式：用于处理类或对象的组合，对类如何设计以形成更大的结构提供指南。</li>
 <li>行为型模式：用于描述类或对象的交互以及职责的分配，对类之间交互以及分配责任的方式提供指南。</li>
 </ul>
-<p>  类模式（类似于类的静态方法，不用初始化对象，直接通过类名来调用）</p>
+<p>  也可分为：类模式（类似于类的静态方法，不用初始化对象，直接通过类名来调用）和对象模式。</p>
 <p><a href="https://imgse.com/i/pCUGMtA"><img src="https://s1.ax1x.com/2023/06/26/pCUGMtA.md.png" alt="pCUGMtA.md.png" /></a></p>
 <h3 id="33-创建型模式">
   3.3 创建型模式
   <a class="anchor" href="#33-%e5%88%9b%e5%bb%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f">#</a>
 </h3>
 <p><a href="https://imgse.com/i/pCUJ9u8"><img src="https://s1.ax1x.com/2023/06/26/pCUJ9u8.md.png" alt="pCUJ9u8.md.png" /></a></p>
-<h4 id="1-工厂方法模式">
-  1) 工厂方法模式
-  <a class="anchor" href="#1-%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="1-工厂方法模式factory-method">
+  1) 工厂方法模式(Factory Method)
+  <a class="anchor" href="#1-%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8ffactory-method">#</a>
 </h4>
 <p><a href="https://imgse.com/i/pCaZIM9"><img src="https://s1.ax1x.com/2023/06/27/pCaZIM9.md.png" alt="pCaZIM9.md.png" /></a></p>
-<h4 id="2-抽象工厂模式">
-  2) 抽象工厂模式
-  <a class="anchor" href="#2-%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="2-抽象工厂模式abstract-factory">
+  2) 抽象工厂模式(Abstract Factory)
+  <a class="anchor" href="#2-%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8fabstract-factory">#</a>
 </h4>
 <p><a href="https://imgse.com/i/pCaZorR"><img src="https://s1.ax1x.com/2023/06/27/pCaZorR.md.png" alt="pCaZorR.md.png" /></a></p>
-<h4 id="3-构建器模式">
-  3) 构建器模式
-  <a class="anchor" href="#3-%e6%9e%84%e5%bb%ba%e5%99%a8%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="3-构建器模式builder">
+  3) 构建器模式(Builder)
+  <a class="anchor" href="#3-%e6%9e%84%e5%bb%ba%e5%99%a8%e6%a8%a1%e5%bc%8fbuilder">#</a>
 </h4>
+<p>  创建复杂对象。</p>
 <p><a href="https://imgse.com/i/pCaZOPO"><img src="https://s1.ax1x.com/2023/06/27/pCaZOPO.md.png" alt="pCaZOPO.md.png" /></a></p>
-<h4 id="4-原型模式">
-  4) 原型模式
-  <a class="anchor" href="#4-%e5%8e%9f%e5%9e%8b%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="4-原型模式prototype">
+  4) 原型模式(Prototype)
+  <a class="anchor" href="#4-%e5%8e%9f%e5%9e%8b%e6%a8%a1%e5%bc%8fprototype">#</a>
 </h4>
-<p>  对象的直接克隆。</p>
-<h4 id="5-单例模式">
-  5) 单例模式
-  <a class="anchor" href="#5-%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f">#</a>
+<p>  允许对象在不了解要创建对象的确切类以及如何创建等细节的情况下创建自定义对象。如对象的直接克隆。</p>
+<h4 id="5-单例模式singleton">
+  5) 单例模式(Singleton)
+  <a class="anchor" href="#5-%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8fsingleton">#</a>
 </h4>
-<p>  例如数据库的连接。</p>
+<p>  确保一个类只有一个实例。例如数据库的连接。</p>
 <h3 id="34-结构型模式">
   3.4 结构型模式
   <a class="anchor" href="#34-%e7%bb%93%e6%9e%84%e5%9e%8b%e6%a8%a1%e5%bc%8f">#</a>
 </h3>
 <p><a href="https://imgse.com/i/pCaeVzQ"><img src="https://s1.ax1x.com/2023/06/27/pCaeVzQ.md.png" alt="pCaeVzQ.md.png" /></a></p>
-<h4 id="6-适配器模式">
-  6) 适配器模式
-  <a class="anchor" href="#6-%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="6-适配器模式adapter">
+  6) 适配器模式(Adapter)
+  <a class="anchor" href="#6-%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8fadapter">#</a>
 </h4>
 <p><a href="https://imgse.com/i/pCaeeMj"><img src="https://s1.ax1x.com/2023/06/27/pCaeeMj.md.png" alt="pCaeeMj.md.png" /></a></p>
-<h4 id="7-桥接模式">
-  7) 桥接模式
-  <a class="anchor" href="#7-%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="7-桥接模式bridge">
+  7) 桥接模式(Bridge)
+  <a class="anchor" href="#7-%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8fbridge">#</a>
 </h4>
-<p>  跟docker网络的桥接模式不一样。</p>
+<p>  将类的抽象部分和它的实现部分分离开来，使它们可以独立变化。跟docker网络的桥接模式不一样。</p>
 <p><a href="https://imgse.com/i/pCaenLn"><img src="https://s1.ax1x.com/2023/06/27/pCaenLn.md.png" alt="pCaenLn.md.png" /></a></p>
-<h4 id="8-组合模式">
-  8) 组合模式
-  <a class="anchor" href="#8-%e7%bb%84%e5%90%88%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="8-组合模式composite">
+  8) 组合模式(Composite)
+  <a class="anchor" href="#8-%e7%bb%84%e5%90%88%e6%a8%a1%e5%bc%8fcomposite">#</a>
 </h4>
 <p><a href="https://imgse.com/i/pCaeQoV"><img src="https://s1.ax1x.com/2023/06/27/pCaeQoV.md.png" alt="pCaeQoV.md.png" /></a></p>
-<h4 id="9-代理模式">
-  9) 代理模式
-  <a class="anchor" href="#9-%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="9-代理模式proxy">
+  9) 代理模式(Proxy)
+  <a class="anchor" href="#9-%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8fproxy">#</a>
 </h4>
 <p>  应用程序的快捷方式。房东房子很多，需要卖房的时候，他把房子全权代理给房屋代理机构，让该机构负责。注意跟中介模式、适配器模式区分。</p>
 <p><a href="https://imgse.com/i/pCaety9"><img src="https://s1.ax1x.com/2023/06/27/pCaety9.md.png" alt="pCaety9.md.png" /></a></p>
-<h4 id="10-装饰模式">
-  10) 装饰模式
-  <a class="anchor" href="#10-%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="10-装饰模式decorator">
+  10) 装饰模式(Decorator)
+  <a class="anchor" href="#10-%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8fdecorator">#</a>
 </h4>
 <p>  动态的附加一些简单的职能。原始的咖啡加糖，加冰等等。</p>
-<h4 id="11-外观模式">
-  11) 外观模式
-  <a class="anchor" href="#11-%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="11-外观模式facade">
+  11) 外观模式(Facade)
+  <a class="anchor" href="#11-%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8ffacade">#</a>
 </h4>
-<p>  子系统的一组接口对外提供一个统一的接口。比如说：一键开会(拉下幕布，打开投影仪，灯光降低，关闭窗帘)。</p>
-<h4 id="12-享元模式">
-  12) 享元模式
-  <a class="anchor" href="#12-%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f">#</a>
+<p>  子系统的一组接口对外提供一个统一的接口。比如说：一键开会(拉下幕布，打开投影仪，灯光降低，关闭窗帘)，一键开会这个接口使得子系统更易使用。</p>
+<h4 id="12-享元模式flyweight">
+  12) 享元模式(Flyweight)
+  <a class="anchor" href="#12-%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8fflyweight">#</a>
 </h4>
 <p>  汉字编码。常用汉字也就几千字，如果在word中有几十万字，那么大多数都是重复的常用汉字，那么这些常用汉字可以共享空间。</p>
 <h3 id="35-行为型模式">
@@ -1152,62 +1153,62 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p><a href="https://imgse.com/i/pCamC6J"><img src="https://s1.ax1x.com/2023/06/27/pCamC6J.md.png" alt="pCamC6J.md.png" /></a>
 <a href="https://imgse.com/i/pCanZbn"><img src="https://s1.ax1x.com/2023/06/27/pCanZbn.md.png" alt="pCanZbn.md.png" /></a></p>
-<h4 id="13-中介模式">
-  13) 中介模式
-  <a class="anchor" href="#13-%e4%b8%ad%e4%bb%8b%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="13-中介模式mediator">
+  13) 中介模式(Mediator)
+  <a class="anchor" href="#13-%e4%b8%ad%e4%bb%8b%e6%a8%a1%e5%bc%8fmediator">#</a>
 </h4>
 <p>  解决买房和卖房信息不对称的矛盾，两个对象之间的两两交互过于麻烦，简化流程。比如银联、央行。</p>
 <p><a href="https://imgse.com/i/pCamU1g"><img src="https://s1.ax1x.com/2023/06/27/pCamU1g.md.png" alt="pCamU1g.md.png" /></a></p>
-<h4 id="14-职责链模式">
-  14) 职责链模式
-  <a class="anchor" href="#14-%e8%81%8c%e8%b4%a3%e9%93%be%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="14-职责链模式chain-of-responsibility">
+  14) 职责链模式(Chain of Responsibility)
+  <a class="anchor" href="#14-%e8%81%8c%e8%b4%a3%e9%93%be%e6%a8%a1%e5%bc%8fchain-of-responsibility">#</a>
 </h4>
 <p>  提交的请假如果本层解决不了，则层层网上传递，这就形成一个职责链。跟某些部门踢皮球一样。😅</p>
 <p><a href="https://imgse.com/i/pCamg9U"><img src="https://s1.ax1x.com/2023/06/27/pCamg9U.md.png" alt="pCamg9U.md.png" /></a></p>
-<h4 id="15-命令模式">
-  15) 命令模式
-  <a class="anchor" href="#15-%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="15-命令模式command">
+  15) 命令模式(Command)
+  <a class="anchor" href="#15-%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8fcommand">#</a>
 </h4>
-<p>  日志记录，可撤销。将命令封装在对象里面，如word的各种撤销(及时性的东西)等等。</p>
-<h4 id="16-解释器模式">
-  16) 解释器模式
-  <a class="anchor" href="#16-%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8f">#</a>
+<p>  日志记录，<strong>可撤销</strong>。将命令封装在对象里面，如word的各种撤销(及时性的东西)等等。</p>
+<h4 id="16-解释器模式interpreter">
+  16) 解释器模式(Interpreter)
+  <a class="anchor" href="#16-%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8finterpreter">#</a>
 </h4>
 <p>  如架构风格里面的虚拟机风格。可为特定的、自定义的场景做出解释，如迷宫。</p>
-<h4 id="17-迭代器模式">
-  17) 迭代器模式
-  <a class="anchor" href="#17-%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="17-迭代器模式iterator">
+  17) 迭代器模式(Iterator)
+  <a class="anchor" href="#17-%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8fiterator">#</a>
 </h4>
 <p>  若高级语言里面的可迭代对象。数据的某些迭代操作。</p>
-<h4 id="18-备忘录模式">
-  18) 备忘录模式
-  <a class="anchor" href="#18-%e5%a4%87%e5%bf%98%e5%bd%95%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="18-备忘录模式memento">
+  18) 备忘录模式(Memento)
+  <a class="anchor" href="#18-%e5%a4%87%e5%bf%98%e5%bd%95%e6%a8%a1%e5%bc%8fmemento">#</a>
 </h4>
 <p>  快照。可以在不向外界公开具体细节的时候恢复到最初的状态，游戏存档，git版本存档。命令模式是撤销一些及时性的东西。</p>
-<h4 id="19-观察者模式">
-  19) 观察者模式
-  <a class="anchor" href="#19-%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="19-观察者模式observer">
+  19) 观察者模式(Observer)
+  <a class="anchor" href="#19-%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8fobserver">#</a>
 </h4>
 <p>  订阅、广播、联动。在Execl中，A1=10,A2=20,A3=A1+A2，当A1或A2变化时A3也会随之变化。</p>
-<h4 id="20-状态模式">
-  20) 状态模式
-  <a class="anchor" href="#20-%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="20-状态模式state">
+  20) 状态模式(State)
+  <a class="anchor" href="#20-%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8fstate">#</a>
 </h4>
 <p>  将状态变成类，可以很好地管理状态之间的变迁。不同的状态对应不同的行为和属性。订酒店：房间有空闲状态，入住状态，待清洁状态等等。会员的升级等。</p>
-<h4 id="21-策略模式">
-  21) 策略模式
-  <a class="anchor" href="#21-%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="21-策略模式strategy">
+  21) 策略模式(Strategy)
+  <a class="anchor" href="#21-%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8fstrategy">#</a>
 </h4>
 <p>  多方案、多策略的切换。如商场打折。</p>
 <p><a href="https://imgse.com/i/pCanw8O"><img src="https://s1.ax1x.com/2023/06/27/pCanw8O.md.png" alt="pCanw8O.md.png" /></a></p>
-<h4 id="22-模板方法模式">
-  22) 模板方法模式
-  <a class="anchor" href="#22-%e6%a8%a1%e6%9d%bf%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="22-模板方法模式template-method">
+  22) 模板方法模式(Template Method)
+  <a class="anchor" href="#22-%e6%a8%a1%e6%9d%bf%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8ftemplate-method">#</a>
 </h4>
 <p>  PPT模板、简历模板等。如软件开发里面的框架。</p>
-<h4 id="23-访问者模式">
-  23) 访问者模式
-  <a class="anchor" href="#23-%e8%ae%bf%e9%97%ae%e8%80%85%e6%a8%a1%e5%bc%8f">#</a>
+<h4 id="23-访问者模式visitor">
+  23) 访问者模式(Visitor)
+  <a class="anchor" href="#23-%e8%ae%bf%e9%97%ae%e8%80%85%e6%a8%a1%e5%bc%8fvisitor">#</a>
 </h4>
 <p>  数据与操作分离。因为操作老是会变，而数据基本不变。将变的和不变的分离开来。</p>
 <blockquote>

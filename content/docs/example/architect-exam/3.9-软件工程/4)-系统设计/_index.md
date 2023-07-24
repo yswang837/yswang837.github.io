@@ -101,7 +101,7 @@
 - 结构型模式：用于处理类或对象的组合，对类如何设计以形成更大的结构提供指南。
 - 行为型模式：用于描述类或对象的交互以及职责的分配，对类之间交互以及分配责任的方式提供指南。
   
-&emsp;&emsp;类模式（类似于类的静态方法，不用初始化对象，直接通过类名来调用）
+&emsp;&emsp;也可分为：类模式（类似于类的静态方法，不用初始化对象，直接通过类名来调用）和对象模式。
 
 [![pCUGMtA.md.png](https://s1.ax1x.com/2023/06/26/pCUGMtA.md.png)](https://imgse.com/i/pCUGMtA)
 
@@ -109,59 +109,61 @@
 
 [![pCUJ9u8.md.png](https://s1.ax1x.com/2023/06/26/pCUJ9u8.md.png)](https://imgse.com/i/pCUJ9u8)
 
-#### 1) 工厂方法模式
+#### 1) 工厂方法模式(Factory Method)
 
 [![pCaZIM9.md.png](https://s1.ax1x.com/2023/06/27/pCaZIM9.md.png)](https://imgse.com/i/pCaZIM9)
 
-#### 2) 抽象工厂模式
+#### 2) 抽象工厂模式(Abstract Factory)
 
 [![pCaZorR.md.png](https://s1.ax1x.com/2023/06/27/pCaZorR.md.png)](https://imgse.com/i/pCaZorR)
 
-#### 3) 构建器模式
+#### 3) 构建器模式(Builder)
+
+&emsp;&emsp;创建复杂对象。
 
 [![pCaZOPO.md.png](https://s1.ax1x.com/2023/06/27/pCaZOPO.md.png)](https://imgse.com/i/pCaZOPO)
 
-#### 4) 原型模式
+#### 4) 原型模式(Prototype)
 
-&emsp;&emsp;对象的直接克隆。
+&emsp;&emsp;允许对象在不了解要创建对象的确切类以及如何创建等细节的情况下创建自定义对象。如对象的直接克隆。
 
-#### 5) 单例模式
+#### 5) 单例模式(Singleton)
 
-&emsp;&emsp;例如数据库的连接。
+&emsp;&emsp;确保一个类只有一个实例。例如数据库的连接。
 
 ### 3.4 结构型模式
 
 [![pCaeVzQ.md.png](https://s1.ax1x.com/2023/06/27/pCaeVzQ.md.png)](https://imgse.com/i/pCaeVzQ)
 
-#### 6) 适配器模式
+#### 6) 适配器模式(Adapter)
 
 [![pCaeeMj.md.png](https://s1.ax1x.com/2023/06/27/pCaeeMj.md.png)](https://imgse.com/i/pCaeeMj)
 
-#### 7) 桥接模式
+#### 7) 桥接模式(Bridge)
 
-&emsp;&emsp;跟docker网络的桥接模式不一样。
+&emsp;&emsp;将类的抽象部分和它的实现部分分离开来，使它们可以独立变化。跟docker网络的桥接模式不一样。
 
 [![pCaenLn.md.png](https://s1.ax1x.com/2023/06/27/pCaenLn.md.png)](https://imgse.com/i/pCaenLn)
 
-#### 8) 组合模式
+#### 8) 组合模式(Composite)
 
 [![pCaeQoV.md.png](https://s1.ax1x.com/2023/06/27/pCaeQoV.md.png)](https://imgse.com/i/pCaeQoV)
 
-#### 9) 代理模式
+#### 9) 代理模式(Proxy)
 
 &emsp;&emsp;应用程序的快捷方式。房东房子很多，需要卖房的时候，他把房子全权代理给房屋代理机构，让该机构负责。注意跟中介模式、适配器模式区分。
 
 [![pCaety9.md.png](https://s1.ax1x.com/2023/06/27/pCaety9.md.png)](https://imgse.com/i/pCaety9)
 
-#### 10) 装饰模式
+#### 10) 装饰模式(Decorator)
 
 &emsp;&emsp;动态的附加一些简单的职能。原始的咖啡加糖，加冰等等。
 
-#### 11) 外观模式
+#### 11) 外观模式(Facade)
 
-&emsp;&emsp;子系统的一组接口对外提供一个统一的接口。比如说：一键开会(拉下幕布，打开投影仪，灯光降低，关闭窗帘)。
+&emsp;&emsp;子系统的一组接口对外提供一个统一的接口。比如说：一键开会(拉下幕布，打开投影仪，灯光降低，关闭窗帘)，一键开会这个接口使得子系统更易使用。
 
-#### 12) 享元模式
+#### 12) 享元模式(Flyweight)
 
 &emsp;&emsp;汉字编码。常用汉字也就几千字，如果在word中有几十万字，那么大多数都是重复的常用汉字，那么这些常用汉字可以共享空间。
 
@@ -170,53 +172,53 @@
 [![pCamC6J.md.png](https://s1.ax1x.com/2023/06/27/pCamC6J.md.png)](https://imgse.com/i/pCamC6J)
 [![pCanZbn.md.png](https://s1.ax1x.com/2023/06/27/pCanZbn.md.png)](https://imgse.com/i/pCanZbn)
 
-#### 13) 中介模式
+#### 13) 中介模式(Mediator)
 
 &emsp;&emsp;解决买房和卖房信息不对称的矛盾，两个对象之间的两两交互过于麻烦，简化流程。比如银联、央行。
 
 [![pCamU1g.md.png](https://s1.ax1x.com/2023/06/27/pCamU1g.md.png)](https://imgse.com/i/pCamU1g)
 
-#### 14) 职责链模式
+#### 14) 职责链模式(Chain of Responsibility)
 
 &emsp;&emsp;提交的请假如果本层解决不了，则层层网上传递，这就形成一个职责链。跟某些部门踢皮球一样。😅
 
 [![pCamg9U.md.png](https://s1.ax1x.com/2023/06/27/pCamg9U.md.png)](https://imgse.com/i/pCamg9U)
 
-#### 15) 命令模式
+#### 15) 命令模式(Command)
 
-&emsp;&emsp;日志记录，可撤销。将命令封装在对象里面，如word的各种撤销(及时性的东西)等等。
+&emsp;&emsp;日志记录，**可撤销**。将命令封装在对象里面，如word的各种撤销(及时性的东西)等等。
 
-#### 16) 解释器模式
+#### 16) 解释器模式(Interpreter)
 
 &emsp;&emsp;如架构风格里面的虚拟机风格。可为特定的、自定义的场景做出解释，如迷宫。
 
-#### 17) 迭代器模式
+#### 17) 迭代器模式(Iterator)
 
 &emsp;&emsp;若高级语言里面的可迭代对象。数据的某些迭代操作。
 
-#### 18) 备忘录模式
+#### 18) 备忘录模式(Memento)
 
 &emsp;&emsp;快照。可以在不向外界公开具体细节的时候恢复到最初的状态，游戏存档，git版本存档。命令模式是撤销一些及时性的东西。
 
-#### 19) 观察者模式
+#### 19) 观察者模式(Observer)
 
 &emsp;&emsp;订阅、广播、联动。在Execl中，A1=10,A2=20,A3=A1+A2，当A1或A2变化时A3也会随之变化。
 
-#### 20) 状态模式
+#### 20) 状态模式(State)
 
 &emsp;&emsp;将状态变成类，可以很好地管理状态之间的变迁。不同的状态对应不同的行为和属性。订酒店：房间有空闲状态，入住状态，待清洁状态等等。会员的升级等。
 
-#### 21) 策略模式
+#### 21) 策略模式(Strategy)
 
 &emsp;&emsp;多方案、多策略的切换。如商场打折。
 
 [![pCanw8O.md.png](https://s1.ax1x.com/2023/06/27/pCanw8O.md.png)](https://imgse.com/i/pCanw8O)
 
-#### 22) 模板方法模式
+#### 22) 模板方法模式(Template Method)
 
 &emsp;&emsp;PPT模板、简历模板等。如软件开发里面的框架。
 
-#### 23) 访问者模式
+#### 23) 访问者模式(Visitor)
 
 &emsp;&emsp;数据与操作分离。因为操作老是会变，而数据基本不变。将变的和不变的分离开来。
 
