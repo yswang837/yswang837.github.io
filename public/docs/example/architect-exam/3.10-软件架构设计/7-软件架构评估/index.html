@@ -11,9 +11,10 @@
 权衡点：是影响多个质量属性的特性，是多个质量属性的敏感点。
 风险点：是指架构设计中潜在的、存在问题的架构决策所带来的隐患。
 非风险点：是指不会带来隐患，一般以“xxx要求是可以实现 (或接受)的”方式表达。
-2、架构评估方法 # 架构评估方法包含3种方式：基于问卷调查的方式、基于度量的方式、基于场景的方式。 2.1 基于场景的评估方法 # 什么是场景 基于场景的评估方法包含3种：软件架构分析法(SAAM)、架构权衡分析法(ATAM)、成本效益分析法(CBAM)。
-SAAM：最初用于分析架构可修改性，后扩展到其他质量属性。 问题描述、需求说明和架构描述作为SAAM的输入。
-ATAM：在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性，在系统开发之前，对这些质量属性进行评价和折中。 例题 学霸肯定对了 ↕ D B 学霸肯定对了 ↕ D 学霸肯定对了 ↕ C C 2.2 质量效用数 # M:middle,L:low,H:high">
+2、架构评估方法 # 架构评估方法包含3种方式：基于问卷调查的方式、基于度量的方式、基于场景的方式。 2.1 基于场景的评估方法 # 什么是场景 场景(scenarios):在进行体系结构评估时，一般首先要精确地得出具体的质量目标，并以之作为判定该体系结构优劣的标准。为得出这些目标而采用的机制叫做场景。场景是从风险承担者的角度对与系统的交互的简短描述。在体系结构评估中，一般采用刺激(stimulus)、环境(environment)和响应(response)三方面来对场景进行描述。
+基于场景的评估方法包含3种：软件架构分析法(SAAM)、架构权衡分析法(ATAM)、成本效益分析法(CBAM)。
+SAAM：最初用于分析架构可修改性，后扩展到其他质量属性。 SAAM的主要输入是问题描述、需求说明和架构描述，其分析过程主要包括场景开发、架构描述、单个场景评估、场景交互和总体评估。
+ATAM：在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性(需要对软件质量属性进行优先级排序)，在系统开发之前，对这些质量属性进行评价和折中。整个评估过程强调以属性为核心。 例题 学霸肯定对了 ↕ D B 学霸肯定对了 ↕ D 学霸肯定对了 ↕ C C 2.2 质量效用数 # M:middle,L:low,H:high；在识别出质量属性描述后，通常采用效用树对质量属性的描述进行刻画与排序。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="7) 软件架构评估" />
 <meta property="og:description" content="" />
@@ -25,7 +26,7 @@ ATAM：在SAAM的基础上发展起来的，主要针对性能、可用性、安
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.221474617a0cc6f34d8b9e2a2819b5cc141c5c40f993e2791a7e8405d9438b2f.js" integrity="sha256-IhR0YXoMxvNNi54qKBm1zBQcXED5k&#43;J5Gn6EBdlDiy8=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.2e82c391837655218f668e71e96d9a42affea7b27c9c8483fa022e3f95bf7143.js" integrity="sha256-LoLDkYN2VSGPZo5x6W2aQq/&#43;p7J8nISD&#43;gIuP5W/cUM=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -927,15 +928,16 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>什么是场景</li>
 </ul>
+<p>  场景(scenarios):在进行体系结构评估时，一般首先要精确地得出具体的质量目标，并以之作为判定该体系结构优劣的标准。为得出这些目标而采用的机制叫做场景。场景是从风险承担者的角度对与系统的交互的简短描述。在体系结构评估中，一般采用刺激(stimulus)、环境(environment)和响应(response)三方面来对场景进行描述。</p>
 <p><a href="https://imgse.com/i/pCwY7Pe"><img src="https://s1.ax1x.com/2023/06/29/pCwY7Pe.md.png" alt="pCwY7Pe.md.png" /></a></p>
 <p>  基于场景的评估方法包含3种：<strong>软件架构分析法</strong>(SAAM)、<strong>架构权衡分析法</strong>(ATAM)、成本效益分析法(CBAM)。</p>
 <ul>
 <li>SAAM：最初用于分析架构<strong>可修改性</strong>，后扩展到其他质量属性。</li>
 </ul>
-<p>  问题描述、需求说明和架构描述作为SAAM的输入。</p>
+<p>  SAAM的主要输入是问题描述、<strong>需求说明</strong>和架构描述，其分析过程主要包括场景开发、架构描述、单个场景评估、场景交互和总体评估。</p>
 <p><a href="https://imgse.com/i/p9vUta9"><img src="https://s1.ax1x.com/2023/05/31/p9vUta9.md.png" alt="p9vUta9.md.png" /></a></p>
 <ul>
-<li>ATAM：在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性，在系统开发之前，对这些<strong>质量属性进行评价和折中</strong>。</li>
+<li>ATAM：在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性(需要对软件质量属性进行优先级排序)，在系统开发之前，对这些<strong>质量属性进行评价和折中</strong>。整个评估过程强调以<strong>属性</strong>为核心。</li>
 </ul>
 <p><a href="https://imgse.com/i/p9vUN5R"><img src="https://s1.ax1x.com/2023/05/31/p9vUN5R.md.png" alt="p9vUN5R.md.png" /></a></p>
 <blockquote>
@@ -990,7 +992,7 @@ https://github.com/alex-shpak/hugo-book
   2.2 质量效用数
   <a class="anchor" href="#22-%e8%b4%a8%e9%87%8f%e6%95%88%e7%94%a8%e6%95%b0">#</a>
 </h3>
-<p>  M:middle,L:low,H:high</p>
+<p>  M:middle,L:low,H:high；在识别出质量属性描述后，通常采用效用树对质量属性的描述进行刻画与排序。</p>
 <p><a href="https://imgse.com/i/p9vU0xK"><img src="https://s1.ax1x.com/2023/05/31/p9vU0xK.md.png" alt="p9vU0xK.md.png" /></a></p>
 </article>
  
