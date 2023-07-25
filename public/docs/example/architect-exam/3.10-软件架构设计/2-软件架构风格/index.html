@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2.软件架构风格 # 架构风格反映了领域中众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。以下是常见风格的特点或应用：
+<meta name="description" content="2.软件架构风格 # 架构风格反映了领域中众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则，强调对架构设计的重用。以下是常见风格的特点或应用：
 批处理&mdash;&gt;传统编译器。
 管道过滤器&mdash;&gt;支持分阶段数据处理。
 层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。
@@ -28,11 +28,12 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 2、事件驱动系统（隐式调用）
 2.4 虚拟机风格 # 虚拟机风格包含2个子风格：
 1、解释器风格，做题关键字：需要自定义规则的场景
-2、规则系统，做题关键字：在解释器的基础上增加经验规则
+2、规则系统，做题关键字：在解释器的基础上增加经验规则；基于规则的系统包括规则集、规则解释器、规则/数据选择器及工作内存；它的特点是将业务逻辑中频繁变化的部分定义为规则。
 2.5 仓库风格 # 仓库风格包含2个子风格：
 1、数据库系统
 2、黑板系统
-2.6 闭环控制风格(过程风格) # 2.7 C2架构风格 # C2属于层次架构风格。
+2.6 闭环控制风格(过程风格) # 不适合于特别复杂的系统。
+2.7 C2架构风格 # C2属于层次架构风格。
 例题 学霸肯定对了 ↕ 1.虚拟机 2.数据流 3.隐式调用 4.解释器 5.过程控制 学霸肯定对了 ↕ 1.黑板 2.解释器 3.事件驱动风格 学霸肯定对了 ↕ 1.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="2) 软件架构风格" />
@@ -45,7 +46,7 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.2e82c391837655218f668e71e96d9a42affea7b27c9c8483fa022e3f95bf7143.js" integrity="sha256-LoLDkYN2VSGPZo5x6W2aQq/&#43;p7J8nISD&#43;gIuP5W/cUM=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.aee1e9b3aacd913c5203410c2762fc80a46011c61905fca66fca2b4bf4b1c40b.js" integrity="sha256-ruHps6rNkTxSA0EMJ2L8gKRgEcYZBfymb8orS/SxxAs=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -931,7 +932,7 @@ https://github.com/alex-shpak/hugo-book
   2.软件架构风格
   <a class="anchor" href="#2%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
 </h1>
-<p>  架构风格反映了领域中众多系统所共有的<strong>结构</strong>和<strong>语义</strong>特性，并指导如何将各个<strong>构件</strong>有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则。以下是常见风格的特点或应用：</p>
+<p>  架构风格反映了领域中众多系统所共有的<strong>结构</strong>和<strong>语义</strong>特性，并指导如何将各个<strong>构件</strong>有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则，强调对架构设计的重用。以下是常见风格的特点或应用：</p>
 <p>  批处理&mdash;&gt;传统编译器。</p>
 <p>  管道过滤器&mdash;&gt;支持分阶段数据处理。</p>
 <p>  层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。</p>
@@ -984,7 +985,7 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <p>  虚拟机风格包含2个子风格：</p>
 <p>  1、解释器风格，做题关键字：需要自定义规则的场景</p>
-<p>  2、规则系统，做题关键字：在解释器的基础上增加经验规则</p>
+<p>  2、规则系统，做题关键字：在解释器的基础上增加经验规则；基于规则的系统包括规则集、规则解释器、规则/数据选择器及工作内存；它的特点是将业务逻辑中频繁变化的部分定义为规则。</p>
 <p><a href="https://imgse.com/i/p9rILm8"><img src="https://s1.ax1x.com/2023/05/11/p9rILm8.md.png" alt="p9rILm8.md.png" /></a>
 <a href="https://imgse.com/i/p9rIO0S"><img src="https://s1.ax1x.com/2023/05/11/p9rIO0S.md.png" alt="p9rIO0S.md.png" /></a></p>
 <h2 id="25-仓库风格">
@@ -1003,6 +1004,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#26-%e9%97%ad%e7%8e%af%e6%8e%a7%e5%88%b6%e9%a3%8e%e6%a0%bc%e8%bf%87%e7%a8%8b%e9%a3%8e%e6%a0%bc">#</a>
 </h2>
 <hr>
+<p>  不适合于特别复杂的系统。</p>
 <p><a href="https://imgse.com/i/p9ro9lq"><img src="https://s1.ax1x.com/2023/05/11/p9ro9lq.md.png" alt="p9ro9lq.md.png" /></a></p>
 <h2 id="27-c2架构风格">
   2.7 C2架构风格
@@ -1081,7 +1083,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#28-%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc%e5%85%b7%e4%bd%93%e5%ae%9e%e4%be%8b">#</a>
 </h2>
 <hr>
-<p>  没有最好的架构，只有更适合具体业务场景的架构。</p>
+<p>  没有最好的架构，只有更适合具体业务场景的架构。分层架构的脆弱性在于：底层发生错误会导致整个系统无法正常运行、层与层之间引入通信机制势必造成性能下降。</p>
 <h3 id="281-从-cs---bs---混合架构">
   2.8.1 从 C/S -&gt; B/S -&gt; 混合架构
   <a class="anchor" href="#281-%e4%bb%8e-cs---bs---%e6%b7%b7%e5%90%88%e6%9e%b6%e6%9e%84">#</a>

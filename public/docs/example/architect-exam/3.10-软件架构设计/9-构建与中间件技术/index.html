@@ -19,7 +19,13 @@
 3. 构件的复用 # 复用的发展史 构建的复用流程 例题 学霸肯定对了 ↕ B
 水平：通用，普遍
 垂直：专用，特定用途
-学霸肯定对了 ↕ C 4. 构件标准 # 4.1 COBRA # 例题 学霸肯定对了 ↕ A ">
+学霸肯定对了 ↕ C 3.1 软件的复用 # 软件复用过程包含:创建、复用、支持、管理4个过程。整体说来就是：构造/获取可复用的软件资产、管理可复用资产和使用可复用资产
+1、创建过程:界定和提供可复用资产，以满足复用者的需要;
+2、复用过程:利用可复用资产来生产应用软件产品;
+3、支持过程:全面支持可复用资产的获取、管理和维护工作;
+4、管理过程:执行计划、启动、资源、跟踪，并协调其他各个过程;
+在软件架构复用中，计划复用是指在开发之前，就要进行规划，以决定哪些需要复用。资产复用(是指将已有的软件资产(如框架、组件、类库等)运用到新的软件系统中以提高软件开发效率和质量)是指开发过程中，只要发现有可复用的资产，就对其进行复用；系统复用是指将已有的个或多个系统的某一部分或全部内容，用于构建新的系统。
+4. 构件标准 # 4.1 COBRA # 例题 学霸肯定对了 ↕ A ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="9) 构建与中间件技术" />
 <meta property="og:description" content="" />
@@ -31,7 +37,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.2e82c391837655218f668e71e96d9a42affea7b27c9c8483fa022e3f95bf7143.js" integrity="sha256-LoLDkYN2VSGPZo5x6W2aQq/&#43;p7J8nISD&#43;gIuP5W/cUM=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.aee1e9b3aacd913c5203410c2762fc80a46011c61905fca66fca2b4bf4b1c40b.js" integrity="sha256-ruHps6rNkTxSA0EMJ2L8gKRgEcYZBfymb8orS/SxxAs=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-%E6%9E%84%E5%BB%BA%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -885,6 +891,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#1-构件的定义">1. 构件的定义</a></li>
     <li><a href="#2-中间件">2. 中间件</a></li>
     <li><a href="#3-构件的复用">3. 构件的复用</a></li>
+    <li><a href="#31-软件的复用">3.1 软件的复用</a></li>
     <li><a href="#4-构件标准">4. 构件标准</a>
       <ul>
         <li><a href="#41-cobra">4.1 COBRA</a></li>
@@ -997,6 +1004,16 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
+<h2 id="31-软件的复用">
+  3.1 软件的复用
+  <a class="anchor" href="#31-%e8%bd%af%e4%bb%b6%e7%9a%84%e5%a4%8d%e7%94%a8">#</a>
+</h2>
+<p>  软件复用过程包含:创建、复用、支持、管理4个过程。整体说来就是：构造/获取可复用的软件资产、管理可复用资产和使用可复用资产</p>
+<p>  1、创建过程:界定和提供可复用资产，以满足复用者的需要;</p>
+<p>  2、复用过程:利用可复用资产来生产应用软件产品;</p>
+<p>  3、支持过程:全面支持可复用资产的获取、管理和维护工作;</p>
+<p>  4、管理过程:执行计划、启动、资源、跟踪，并协调其他各个过程;</p>
+<p>  在软件架构复用中，计划复用是指在开发之前，就要进行规划，以决定哪些需要复用。资产复用(是指将已有的软件资产(如框架、组件、类库等)运用到新的软件系统中以提高软件开发效率和质量)是指开发过程中，只要发现有可复用的资产，就对其进行复用；系统复用是指将已有的个或多个系统的某一部分或全部内容，用于构建新的系统。</p>
 <h2 id="4-构件标准">
   4. 构件标准
   <a class="anchor" href="#4-%e6%9e%84%e4%bb%b6%e6%a0%87%e5%87%86">#</a>
@@ -1073,6 +1090,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#1-构件的定义">1. 构件的定义</a></li>
     <li><a href="#2-中间件">2. 中间件</a></li>
     <li><a href="#3-构件的复用">3. 构件的复用</a></li>
+    <li><a href="#31-软件的复用">3.1 软件的复用</a></li>
     <li><a href="#4-构件标准">4. 构件标准</a>
       <ul>
         <li><a href="#41-cobra">4.1 COBRA</a></li>

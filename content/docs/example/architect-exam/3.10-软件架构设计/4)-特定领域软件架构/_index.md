@@ -5,7 +5,7 @@ title: "4) 特定领域软件架构"
 
 # 特定领域软件架构 DSSA
 
-&emsp;&emsp;DSSA全称为Domain Specific Software Architecture，在软件公司里面的很多项目都有很多共性。(比如说教育相关的项目)。特定领域：比如说教育领域。
+&emsp;&emsp;DSSA全称为Domain Specific Software Architecture，在软件公司里面的很多项目都有很多共性。(比如说教育相关的项目)。特定领域：比如说教育领域。DSSA以一个特定问题领域为对象，形成由领域参考模型、参考需求、参考架构等组成的开发基础架构，其目标是支持一个特定领域中多个应用的生成。
 
 - 基本活动
 
