@@ -3,25 +3,43 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="关于博客 # 这个博客是我个人开设的第二个博客，主要用于记录作者在计算机行业摸爬滚打10余年的经历、各类资料干货以及学习心得等，持续更新中&hellip;&hellip;
-本项目的所有的免费资源均挂载在github，地址为：https://github.com/yswang837/yswang837.github.io，同时欢迎热爱开源的朋友fork下来，提交给我你的代码，让我们一起完善这个项目吧；如果你认为本博客帮助了你，欢迎star。
-请你在阅读本站内容时，时刻持有一种质疑的态度，这样不仅能够帮助自己思考，也能发现我文章的不足之处；文章中难免引用到来自网络的各类资料，如果你觉得侵犯了你的版权，请联系我，我将立即删除；如果文章中有什么错漏的地方请大家见谅，也欢迎大家随时加我微信wys837帮我指正，希望与大家一起进步。感谢！
-关于作者 # 笔名：小钻风
-微信：wys837
-github: https://github.com/yswang837">
+<meta name="description" content=" 构件与中间件技术 # 1. 构件的定义 # 软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。
+构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。
+构件是一个独立发布的功能部分，可以通过其接口访问它的服务。
+特性 构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。
+构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。
+概念框架的互操作设计包括系统体系结构连接的所有框架间的互操作的规则。
+构件是一组通常需要同时部署的原子构件。构件和原子构件之间的区别在于，大多数原子构件永远都不会被单独部署，尽管它们可以被单独部署。
+一个原子构件是一个模块和一组资源。
+模块是一组类和可能的非面向对象的结构体，比如过程或者函数。
+资源是一个类型化的项的固定集合。
+资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。
+构件的接口是一种服务提供者对消费者的承诺，即契约(contract)，用契约确保一组构件之间的行为组合。
+2. 中间件 # 中间件是一类构件、中间件是一类系统软件。ESB
+中间件技术的优点：
+3. 构件的复用 # 复用的发展史 构建的复用流程 例题 学霸肯定对了 ↕ B
+水平：通用，普遍
+垂直：专用，特定用途
+学霸肯定对了 ↕ C 3.1 软件的复用 # 软件复用过程包含:创建、复用、支持、管理4个过程。整体说来就是：构造/获取可复用的软件资产、管理可复用资产和使用可复用资产
+1、创建过程:界定和提供可复用资产，以满足复用者的需要;
+2、复用过程:利用可复用资产来生产应用软件产品;
+3、支持过程:全面支持可复用资产的获取、管理和维护工作;
+4、管理过程:执行计划、启动、资源、跟踪，并协调其他各个过程;
+在软件架构复用中，计划复用是指在开发之前，就要进行规划，以决定哪些需要复用。资产复用(是指将已有的软件资产(如框架、组件、类库等)运用到新的软件系统中以提高软件开发效率和质量)是指开发过程中，只要发现有可复用的资产，就对其进行复用；系统复用是指将已有的个或多个系统的某一部分或全部内容，用于构建新的系统。
+4. 构件标准 # 4.1 COBRA # 例题 学霸肯定对了 ↕ A ">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="介绍" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="9) 构建与中间件技术" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://yswang837.github.io/docs/example/" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-%E6%9E%84%E4%BB%B6%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/" />
 
-<title>介绍 | 小钻风</title>
+<title>9) 构建与中间件技术 | 小钻风</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/zh.search.min.74c1abdff04cc9a26d0d4b012dcd22aa383446a97884297cca7b9923be2fbd29.js" integrity="sha256-dMGr3/BMyaJtDUsBLc0iqjg0Rql4hCl8ynuZI74vvSk=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/index.xml" title="小钻风" />
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-%E6%9E%84%E4%BB%B6%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -73,7 +91,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/" class="active">介绍</a>
+    <a href="/docs/example/" class="">介绍</a>
   
 
           
@@ -128,7 +146,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-6c4eae7067e5dfff5c2e4406248debee" class="toggle"  />
+    <input type="checkbox" id="section-6c4eae7067e5dfff5c2e4406248debee" class="toggle" checked />
     <label for="section-6c4eae7067e5dfff5c2e4406248debee" class="flex justify-between">
       <a href="/docs/example/architect-exam/" class="">3. 高级软考 - 系统架构师</a>
     </label>
@@ -589,7 +607,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-%E6%9E%84%E4%BB%B6%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/" class="">9) 构建与中间件技术</a>
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-%E6%9E%84%E4%BB%B6%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/" class="active">9) 构建与中间件技术</a>
   
 
           
@@ -855,7 +873,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>介绍</strong>
+  <strong>9) 构建与中间件技术</strong>
 
   <label for="toc-control">
     
@@ -871,10 +889,13 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-构件的定义">1. 构件的定义</a></li>
+    <li><a href="#2-中间件">2. 中间件</a></li>
+    <li><a href="#3-构件的复用">3. 构件的复用</a></li>
+    <li><a href="#31-软件的复用">3.1 软件的复用</a></li>
+    <li><a href="#4-构件标准">4. 构件标准</a>
       <ul>
-        <li><a href="#关于博客">关于博客</a></li>
-        <li><a href="#关于作者">关于作者</a></li>
+        <li><a href="#41-cobra">4.1 COBRA</a></li>
       </ul>
     </li>
   </ul>
@@ -889,22 +910,144 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h3 id="关于博客">
-  关于博客
-  <a class="anchor" href="#%e5%85%b3%e4%ba%8e%e5%8d%9a%e5%ae%a2">#</a>
-</h3>
-<p>  这个博客是我个人开设的第二个博客，主要用于记录作者在计算机行业摸爬滚打10余年的经历、各类资料干货以及学习心得等，持续更新中&hellip;&hellip;</p>
-<p>  本项目的所有的免费资源均挂载在github，地址为：https://github.com/yswang837/yswang837.github.io，同时欢迎热爱开源的朋友fork下来，提交给我你的代码，让我们一起完善这个项目吧；如果你认为本博客帮助了你，欢迎star。</p>
-<p>  请你在阅读本站内容时，时刻持有一种质疑的态度，这样不仅能够帮助自己思考，也能发现我文章的不足之处；文章中难免引用到来自网络的各类资料，如果你觉得侵犯了你的版权，请联系我，我将立即删除；如果文章中有什么错漏的地方请大家见谅，也欢迎大家随时加我微信<strong>wys837</strong>帮我指正，希望与大家一起进步。感谢！</p>
+  <article class="markdown"><h1 id="构件与中间件技术">
+  构件与中间件技术
+  <a class="anchor" href="#%e6%9e%84%e4%bb%b6%e4%b8%8e%e4%b8%ad%e9%97%b4%e4%bb%b6%e6%8a%80%e6%9c%af">#</a>
+</h1>
+<h2 id="1-构件的定义">
+  1. 构件的定义
+  <a class="anchor" href="#1-%e6%9e%84%e4%bb%b6%e7%9a%84%e5%ae%9a%e4%b9%89">#</a>
+</h2>
 <hr>
-<h3 id="关于作者">
-  关于作者
-  <a class="anchor" href="#%e5%85%b3%e4%ba%8e%e4%bd%9c%e8%80%85">#</a>
-</h3>
-<p>  笔名：小钻风</p>
-<p>  微信：wys837</p>
-<p>  github: <a href="https://github.com/yswang837">https://github.com/yswang837</a></p>
+<ul>
+<li>
+<p>软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。</p>
+</li>
+<li>
+<p>构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。</p>
+</li>
+<li>
+<p>构件是一个独立发布的功能部分，可以通过其接口访问它的服务。</p>
+</li>
+</ul>
+<p><a href="https://imgse.com/i/p9vU7ZQ"><img src="https://s1.ax1x.com/2023/05/31/p9vU7ZQ.md.png" alt="p9vU7ZQ.md.png" /></a></p>
+<ul>
+<li>特性</li>
+</ul>
+<p>  构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。</p>
+<p>  构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。</p>
+<p>  概念框架的互操作设计包括系统体系结构连接的所有框架间的互操作的规则。</p>
+<p>  构件是一组通常需要同时部署的原子构件。构件和原子构件之间的区别在于，大多数原子构件永远都不会被单独部署，尽管它们可以被单独部署。</p>
+<p>  一个原子构件是一个模块和一组资源。</p>
+<p>  模块是一组类和可能的非面向对象的结构体，比如过程或者函数。</p>
+<p>  资源是一个类型化的项的固定集合。</p>
+<p>  资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。</p>
+<p>  构件的接口是一种服务提供者对消费者的承诺，即契约(contract)，用契约确保一组构件之间的行为组合。</p>
+<h2 id="2-中间件">
+  2. 中间件
+  <a class="anchor" href="#2-%e4%b8%ad%e9%97%b4%e4%bb%b6">#</a>
+</h2>
 <hr>
+<p>  中间件是一类构件、中间件是一类系统软件。ESB</p>
+<p><a href="https://imgse.com/i/p9vUbIs"><img src="https://s1.ax1x.com/2023/05/31/p9vUbIs.md.png" alt="p9vUbIs.md.png" /></a></p>
+<p>  中间件技术的优点：</p>
+<p><a href="https://imgse.com/i/p9vUOGq"><img src="https://s1.ax1x.com/2023/05/31/p9vUOGq.md.png" alt="p9vUOGq.md.png" /></a></p>
+<h2 id="3-构件的复用">
+  3. 构件的复用
+  <a class="anchor" href="#3-%e6%9e%84%e4%bb%b6%e7%9a%84%e5%a4%8d%e7%94%a8">#</a>
+</h2>
+<hr>
+<ul>
+<li>
+<p>复用的发展史
+<a href="https://imgse.com/i/p9vg0zQ"><img src="https://s1.ax1x.com/2023/05/31/p9vg0zQ.md.png" alt="p9vg0zQ.md.png" /></a></p>
+</li>
+<li>
+<p>构建的复用流程
+<a href="https://imgse.com/i/p9vgsLn"><img src="https://s1.ax1x.com/2023/05/31/p9vgsLn.md.png" alt="p9vgsLn.md.png" /></a>
+<a href="https://imgse.com/i/p9vgcd0"><img src="https://s1.ax1x.com/2023/05/31/p9vgcd0.md.png" alt="p9vgcd0.md.png" /></a>
+<a href="https://imgse.com/i/p9vggoV"><img src="https://s1.ax1x.com/2023/05/31/p9vggoV.md.png" alt="p9vggoV.md.png" /></a>
+<a href="https://imgse.com/i/p9vgWJU"><img src="https://s1.ax1x.com/2023/05/31/p9vgWJU.md.png" alt="p9vgWJU.md.png" /></a></p>
+</li>
+</ul>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9vOP78"><img src="https://s1.ax1x.com/2023/05/31/p9vOP78.md.png" alt="p9vOP78.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>B</p>
+<p>水平：通用，普遍</p>
+<p>垂直：专用，特定用途</p>
+
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/p9vOVpj"><img src="https://s1.ax1x.com/2023/05/31/p9vOVpj.md.png" alt="p9vOVpj.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="31-软件的复用">
+  3.1 软件的复用
+  <a class="anchor" href="#31-%e8%bd%af%e4%bb%b6%e7%9a%84%e5%a4%8d%e7%94%a8">#</a>
+</h2>
+<p>  软件复用过程包含:创建、复用、支持、管理4个过程。整体说来就是：构造/获取可复用的软件资产、管理可复用资产和使用可复用资产</p>
+<p>  1、创建过程:界定和提供可复用资产，以满足复用者的需要;</p>
+<p>  2、复用过程:利用可复用资产来生产应用软件产品;</p>
+<p>  3、支持过程:全面支持可复用资产的获取、管理和维护工作;</p>
+<p>  4、管理过程:执行计划、启动、资源、跟踪，并协调其他各个过程;</p>
+<p>  在软件架构复用中，计划复用是指在开发之前，就要进行规划，以决定哪些需要复用。资产复用(是指将已有的软件资产(如框架、组件、类库等)运用到新的软件系统中以提高软件开发效率和质量)是指开发过程中，只要发现有可复用的资产，就对其进行复用；系统复用是指将已有的个或多个系统的某一部分或全部内容，用于构建新的系统。</p>
+<h2 id="4-构件标准">
+  4. 构件标准
+  <a class="anchor" href="#4-%e6%9e%84%e4%bb%b6%e6%a0%87%e5%87%86">#</a>
+</h2>
+<hr>
+<p><a href="https://imgse.com/i/pCwRUBT"><img src="https://s1.ax1x.com/2023/06/29/pCwRUBT.md.png" alt="pCwRUBT.md.png" /></a></p>
+<h3 id="41-cobra">
+  4.1 COBRA
+  <a class="anchor" href="#41-cobra">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCwRgu6"><img src="https://s1.ax1x.com/2023/06/29/pCwRgu6.md.png" alt="pCwRgu6.md.png" /></a>
+<a href="https://imgse.com/i/pCwR7vt"><img src="https://s1.ax1x.com/2023/06/29/pCwR7vt.md.png" alt="pCwR7vt.md.png" /></a>
+<a href="https://imgse.com/i/pCwRbKP"><img src="https://s1.ax1x.com/2023/06/29/pCwRbKP.md.png" alt="pCwRbKP.md.png" /></a>
+<a href="https://imgse.com/i/pCwRv5Q"><img src="https://s1.ax1x.com/2023/06/29/pCwRv5Q.md.png" alt="pCwRv5Q.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCwRzCj"><img src="https://s1.ax1x.com/2023/06/29/pCwRzCj.md.png" alt="pCwRzCj.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 </article>
  
       
@@ -946,10 +1089,13 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-构件的定义">1. 构件的定义</a></li>
+    <li><a href="#2-中间件">2. 中间件</a></li>
+    <li><a href="#3-构件的复用">3. 构件的复用</a></li>
+    <li><a href="#31-软件的复用">3.1 软件的复用</a></li>
+    <li><a href="#4-构件标准">4. 构件标准</a>
       <ul>
-        <li><a href="#关于博客">关于博客</a></li>
-        <li><a href="#关于作者">关于作者</a></li>
+        <li><a href="#41-cobra">4.1 COBRA</a></li>
       </ul>
     </li>
   </ul>
