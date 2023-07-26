@@ -19,7 +19,7 @@
 2、在讨论期间尽量避免使用专业术语。
 3、JRP是一种相对来说成本较高但十分有效的需求获取方法。
 3 需求分析 # 安全攸关系统在软件需求分析阶段，应提出安全性需求。软件安全性需求是指通过约束软件的行为，使其不会出现不可接受的违反系统安全的行为。软件安全需求的获取是根据己知的系统信息，如软件危害条件等以及其他一些类似的系统数据和通用惯例，完成通用软件安全性需求的裁剪和特定软件安全性需求的获取工作。
-需求获取完以后，需要对需求进行整理和分析，需求分析包含两个方面： 1、结构化需求分析SA；
+需求获取完以后，需要对需求进行整理和分析(期间有两个目标：如何根据需求模型构建软件架构模型，如何保证模型转换的可追踪性)，需求分析包含两个方面： 1、结构化需求分析SA；
 2、面向对象需求分析OOA。
 4.3.1 结构化需求分析SA # SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图：从数据的角度对现实世界进行建模)，其中数据字典起到解释的作用，比如学生关系包含学号、名字、年龄等。
 DFD：Data Flow Diagram，反映的是系统跟外界实体之间的交互，以及数据加工和交换的方式。 DFD的平衡原则：用于DFD里面填空(类似于完形填空)，如上图的“注册请求”、“课程安排”等在父图和子图中应该是一致的。 DFD答题技巧 STD：State Transform Diagram，（状态建模）
@@ -43,7 +43,7 @@ E-R图：实体关系图，（数据建模）
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.74c1abdff04cc9a26d0d4b012dcd22aa383446a97884297cca7b9923be2fbd29.js" integrity="sha256-dMGr3/BMyaJtDUsBLc0iqjg0Rql4hCl8ynuZI74vvSk=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.e6719a095ff4e6cc86468cb2c429dd627860be98246a73b850cf908336eadf91.js" integrity="sha256-5nGaCV/05syGRoyyxCndYnhgvpgkanO4UM&#43;Qgzbq35E=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/3-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -985,7 +985,7 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <p>  安全攸关系统在软件需求分析阶段，应提出安全性需求。软件安全性需求是指通过约束软件的行为，使其不会出现<strong>不可接受的违反系统安全的行为</strong>。软件安全需求的获取是根据己知的<strong>系统信息</strong>，如软件危害条件等以及其他一些类似的系统数据和通用惯例，完成通用软件安全性需求的裁剪和特定软件安全性需求的获取工作。</p>
 <ul>
-<li>需求获取完以后，需要对需求进行整理和分析，需求分析包含两个方面：</li>
+<li>需求获取完以后，需要对需求进行整理和分析(期间有两个目标：如何根据需求模型构建软件架构模型，如何保证模型转换的可追踪性)，需求分析包含两个方面：</li>
 </ul>
 <p>  1、结构化需求分析SA；</p>
 <p>  2、面向对象需求分析OOA。</p>
@@ -1149,6 +1149,7 @@ https://github.com/alex-shpak/hugo-book
   3) 状态图
   <a class="anchor" href="#3-%e7%8a%b6%e6%80%81%e5%9b%be">#</a>
 </h4>
+<p>  状态图可用于定义对象内部的行为。</p>
 <p><a href="https://imgse.com/i/pC6PnII"><img src="https://s1.ax1x.com/2023/07/06/pC6PnII.md.png" alt="pC6PnII.md.png" /></a></p>
 <h4 id="4-活动图">
   4) 活动图

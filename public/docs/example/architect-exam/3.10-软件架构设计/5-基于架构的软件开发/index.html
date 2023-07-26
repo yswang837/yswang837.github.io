@@ -8,8 +8,12 @@
 1、ABSD方法是架构驱动，即强调由业务、质量和功能需求的组合驱动架构设计。
 2、ABSD方法有三个基础。第一个基础是功能的分解。在功能分解中，ABSD方法使用已有的基于模块的内聚和耦合技术，第二个基础是通过选择架构风格来实现质量和业务需求，第三个基础是软件模板的使用。
 3、视角与视图来描述架构、用例用来描述功能需求、特定场景(质量场景)用来描述非功能需求(质量需求)。
+ANSI/IEEE1471-2000是对软件密集型系统的架构进行描达的标准。在该标准中，视图这一概念主要用于描述软件架构模型。在此基础上，通常采用 视角描述某个利益相关人(Stakeholder)所关注架构模型的某一方面。架构则是对所有利益相关人关注点的响应和回答
 使用ABSD方法，设计活动可以从项目总体功能框架明确就开始；ABSD方法是一个自顶向下，递归细化的过程，直到能产生软件构件、模块或类。
-1 开发过程 # 1.1 架构需求 # 1.2 架构设计 # 1.3 架构文档化 # 1.4 架构复审 # 架构复审是基于架构开发中一个重要的环节。架构设计文档化和复审是一个迭代的过程；架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误；在一个主版本的软件架构分析之后，要安排一次由外部人员(用户代表和领域专家)参加的复审；架构复审过程中，通常会对一个可运行的最小化系统进行架构评估和测试。
+在考虑体系结构时，可以从不同的视角来检查，这促使软件设计师考虑体系结构的不同属性。例如，展示功能组织的静态视角能判断质量特性，展示并发行为的动态视角能判断系统行为特性。选择的特定视角或视图也就是逻辑视图、进程视图、实现视图和配置视图。
+1 开发过程 # 1.1 架构需求 # 1.2 架构设计 # 架构设计主要关注软件组件的结构、属性和交互作用，并通过多种视图全面描述特定系统的架构。
+1.3 架构文档化 # 软件架构文档是对软件架构的一种描述，帮助程序员使用特定的程序设计语言实现软件架构。软件架构文档的写作应该遵循一定的原则，这些原则包括:文档要从使用者的角度进行编写;必须分发给所有与系统有关的开发人员;应该保持架构文档的即时更新，但更新不要过于频繁，架构文档中描述应该尽量避免不必要的重复，每次架构文档修改都应该记录进行修改的原则。
+1.4 架构复审 # 架构复审是基于架构开发中一个重要的环节。架构设计文档化和复审是一个迭代的过程；架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误；在一个主版本的软件架构分析之后，要安排一次由外部人员(用户代表和领域专家)参加的复审；架构复审过程中，通常会对一个可运行的最小化系统进行架构评估和测试。
 1.5 架构实现 # 1.6 架构演化 # 例题 学霸肯定对了 ↕ B C C 学霸肯定对了 ↕ A A C ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="5) 基于架构的软件开发" />
@@ -22,7 +26,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.74c1abdff04cc9a26d0d4b012dcd22aa383446a97884297cca7b9923be2fbd29.js" integrity="sha256-dMGr3/BMyaJtDUsBLc0iqjg0Rql4hCl8ynuZI74vvSk=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.e6719a095ff4e6cc86468cb2c429dd627860be98246a73b850cf908336eadf91.js" integrity="sha256-5nGaCV/05syGRoyyxCndYnhgvpgkanO4UM&#43;Qgzbq35E=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/5-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -904,7 +908,9 @@ https://github.com/alex-shpak/hugo-book
 <p>  1、ABSD方法是<strong>架构驱动</strong>，即强调由<strong>业务</strong>、<strong>质量</strong>和<strong>功能需求</strong>的组合驱动架构设计。</p>
 <p>  2、ABSD方法有三个基础。第一个基础是<strong>功能的分解</strong>。在功能分解中，ABSD方法使用已有的基于模块的内聚和耦合技术，第二个基础是<strong>通过选择架构风格来实现质量</strong>和<strong>业务需求</strong>，第三个基础是<strong>软件模板的使用</strong>。</p>
 <p>  3、<strong>视角与视图来描述架构、用例用来描述功能需求、特定场景(质量场景)用来描述非功能需求(质量需求)</strong>。</p>
+<p>ANSI/IEEE1471-2000是对软件密集型系统的架构进行描达的标准。在该标准中，<strong>视图</strong>这一概念主要用于描述软件架构模型。在此基础上，通常采用 <strong>视角</strong>描述某个利益相关人(Stakeholder)所关注架构模型的某一方面。<strong>架构</strong>则是对所有利益相关人关注点的响应和回答</p>
 <p>  使用ABSD方法，设计活动可以从项目总体功能框架明确就开始；ABSD方法是一个自顶向下，递归细化的过程，直到能产生软件构件、模块或类。</p>
+<p>  在考虑体系结构时，可以从不同的视角来检查，这促使软件设计师考虑体系结构的不同属性。例如，<strong>展示功能组织的静态视角能判断质量特性，展示并发行为的动态视角能判断系统行为特性</strong>。选择的特定视角或视图也就是<strong>逻辑视图、进程视图、实现视图和配置视图</strong>。</p>
 <h2 id="1-开发过程">
   1 开发过程
   <a class="anchor" href="#1-%e5%bc%80%e5%8f%91%e8%bf%87%e7%a8%8b">#</a>
@@ -919,11 +925,13 @@ https://github.com/alex-shpak/hugo-book
   1.2 架构设计
   <a class="anchor" href="#12-%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1">#</a>
 </h3>
+<p>  架构设计主要关注<strong>软件组件的结构、属性和交互作用</strong>，并通过多种<strong>视图</strong>全面描述特定系统的架构。</p>
 <p><a href="https://imgse.com/i/p9RTl7R"><img src="https://s1.ax1x.com/2023/05/17/p9RTl7R.png" alt="p9RTl7R.png" /></a></p>
 <h3 id="13-架构文档化">
   1.3 架构文档化
   <a class="anchor" href="#13-%e6%9e%b6%e6%9e%84%e6%96%87%e6%a1%a3%e5%8c%96">#</a>
 </h3>
+<p>  软件架构文档是对软件架构的一种描述，帮助程序员使用特定的程序设计语言实现软件架构。软件架构文档的写作应该遵循一定的原则，这些原则包括:文档要从使用者的角度进行编写;必须分发给所有与系统有关的开发人员;应该保持架构文档的即时更新，但更新不要过于频繁，架构文档中描述应该尽量避免不必要的重复，每次架构文档修改都应该记录进行修改的原则。</p>
 <p><a href="https://imgse.com/i/p9RTwBd"><img src="https://s1.ax1x.com/2023/05/17/p9RTwBd.md.png" alt="p9RTwBd.md.png" /></a></p>
 <h3 id="14-架构复审">
   1.4 架构复审

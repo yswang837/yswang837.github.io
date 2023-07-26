@@ -8,7 +8,7 @@
 管道过滤器&mdash;&gt;支持分阶段数据处理。
 层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。
 过程控制&mdash;&gt;控制系统，其特点是不断采集系统当前状态，与系统中的设定状态进行对比，并通过将当前状态与设定状态进行对比从而进行控制。
-隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。
+隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。注意把隐式调用转为显示调用并不能提高系统性能。
 事件驱动系统&mdash;&gt;注册事件处理的是回调函数，当某个界面事件发生时（例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件。
 解析器&mdash;&gt;运行时的系统行为定义与改变的能力，采用解释器架构风格的系统，可以通过部分解释代码预先编译的方式提高系统性能。
 黑板风格&mdash;&gt;信号处理领域，语音识别系统是一个十分典型的专家系统，其特点是求解的正确结果不止一个，求解过程比较复杂，需要通过专家知识和反馈逐步得到正确结果。
@@ -17,11 +17,12 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 数据仓库&mdash;&gt;现代集成开发环境（现代编译器）。
 下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。 2.1 数据流风格 # 数据流风格以数据驱动的方式推进项目，其的典型应用有传统编译器、网络报文处理，它包含2个子风格：
 1、批处理。做题要点：大量整体数据、无需用户交互
-2、管道过滤器。做题要点：流式数据、弱用户交互
+2、管道过滤器。做题要点：流式数据、弱用户交互，对于采用管道-过滤器架构风格的系统，可以通过引入过滤器的数据并发处理提高系统性能。
 具体如下图：
+一个软件的架构设计是随着技术的不断进步而不断变化的。以编译器为例，其主流架构经历了管道-过滤器到数据共享为中心的转变过程。早期的编译器采用管道-过滤器架构风格，以文本形式输入的代码被逐步转化为各种形式，最终生成可执行代码。早期的编译器采用管道-过滤器架构风格，并且大多数编译器在词法分析时创造独立的符号表，在其后的阶段会不断修改符号表，因此符号表并不是程序数据的一部分。现代的编译器采用以数据共享为中心的架构风格，主要关心编译过程中程序的中间表示。现代的编译器采用以数据共享为中心的架构风格，分析树是在语法分析阶段结束后才产生作为语义分析的输入，分析树是数据中心中重要的共享数据，为后续的语义分析提供了帮助。
 2.2 调用/返回风格 # 调用/返回风格包含3个子风格：
 1、主程序/子程序风格
-2、面向对象风格
+2、面向对象风格，可以通过减少功能调用层次提高系统性能，注意对象管理层并不能提高系统性能。
 3、分层风格，将在“2.8 架构风格具体实例”中详细说明
 2.3 独立构建风格 # 独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：
 1、进程通信
@@ -32,9 +33,10 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 2.5 仓库风格 # 仓库风格包含2个子风格：
 1、数据库系统
 2、黑板系统
+在仓库风格中有两种不同的构件:中央数据结构说明当前状态，独立构件在中央数据存储上执行。
 2.6 闭环控制风格(过程风格) # 不适合于特别复杂的系统。
 2.7 C2架构风格 # C2属于层次架构风格。
-例题 学霸肯定对了 ↕ 1.虚拟机 2.数据流 3.隐式调用 4.解释器 5.过程控制 学霸肯定对了 ↕ 1.黑板 2.解释器 3.事件驱动风格 学霸肯定对了 ↕ 1.">
+例题 学霸肯定对了 ↕ 1.虚拟机 2.数据流 3.隐式调用 4.解释器 5.过程控制 学霸肯定对了 ↕ 1.黑板 2.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="2) 软件架构风格" />
 <meta property="og:description" content="" />
@@ -46,7 +48,7 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.74c1abdff04cc9a26d0d4b012dcd22aa383446a97884297cca7b9923be2fbd29.js" integrity="sha256-dMGr3/BMyaJtDUsBLc0iqjg0Rql4hCl8ynuZI74vvSk=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.e6719a095ff4e6cc86468cb2c429dd627860be98246a73b850cf908336eadf91.js" integrity="sha256-5nGaCV/05syGRoyyxCndYnhgvpgkanO4UM&#43;Qgzbq35E=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -937,7 +939,7 @@ https://github.com/alex-shpak/hugo-book
 <p>  管道过滤器&mdash;&gt;支持分阶段数据处理。</p>
 <p>  层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。</p>
 <p>  过程控制&mdash;&gt;控制系统，其特点是不断采集系统当前状态，与系统中的设定状态进行对比，并通过将当前状态与设定状态进行对比从而进行控制。</p>
-<p>  隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。</p>
+<p>  隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。注意把隐式调用转为显示调用并不能提高系统性能。</p>
 <p>  事件驱动系统&mdash;&gt;注册事件处理的是回调函数，当某个界面事件发生时（例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件。</p>
 <p>  解析器&mdash;&gt;运行时的系统行为定义与改变的能力，采用解释器架构风格的系统，可以通过部分解释代码预先编译的方式提高系统性能。</p>
 <p>  黑板风格&mdash;&gt;信号处理领域，语音识别系统是一个十分典型的专家系统，其特点是求解的正确结果不止一个，求解过程比较复杂，需要通过专家知识和反馈逐步得到正确结果。</p>
@@ -953,10 +955,11 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <p>  数据流风格以数据驱动的方式推进项目，其的典型应用有<strong>传统编译器</strong>、<strong>网络报文处理</strong>，它包含2个子风格：</p>
 <p>  1、批处理。做题要点：<strong>大量整体数据</strong>、<strong>无需用户交互</strong></p>
-<p>  2、管道过滤器。做题要点：<strong>流式数据</strong>、<strong>弱用户交互</strong></p>
+<p>  2、管道过滤器。做题要点：<strong>流式数据</strong>、<strong>弱用户交互</strong>，对于采用管道-过滤器架构风格的系统，可以通过引入过滤器的数据并发处理提高系统性能。</p>
 <p>具体如下图：</p>
 <p><a href="https://imgse.com/i/p9rIyS1"><img src="https://s1.ax1x.com/2023/05/11/p9rIyS1.md.png" alt="p9rIyS1.md.png" /></a>
 <a href="https://imgse.com/i/p9rI6Qx"><img src="https://s1.ax1x.com/2023/05/11/p9rI6Qx.md.png" alt="p9rI6Qx.md.png" /></a></p>
+<p>  一个软件的架构设计是随着技术的不断进步而不断变化的。以编译器为例，其主流架构经历了管道-过滤器到数据共享为中心的转变过程。早期的编译器采用管道-过滤器架构风格，以文本形式输入的代码被逐步转化为各种形式，最终生成可执行代码。早期的编译器采用管道-过滤器架构风格，并且大多数编译器在词法分析时创造独立的符号表，在其后的阶段会不断修改符号表，因此符号表并不是程序数据的一部分。现代的编译器采用以数据共享为中心的架构风格，主要关心编译过程中程序的中间表示。现代的编译器采用以数据共享为中心的架构风格，分析树是在语法分析阶段结束后才产生作为语义分析的输入，分析树是数据中心中重要的共享数据，为后续的语义分析提供了帮助。</p>
 <h2 id="22-调用返回风格">
   2.2 调用/返回风格
   <a class="anchor" href="#22-%e8%b0%83%e7%94%a8%e8%bf%94%e5%9b%9e%e9%a3%8e%e6%a0%bc">#</a>
@@ -964,7 +967,7 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <p>  调用/返回风格包含3个子风格：</p>
 <p>  1、主程序/子程序风格</p>
-<p>  2、面向对象风格</p>
+<p>  2、面向对象风格，可以通过减少功能调用层次提高系统性能，注意对象管理层并不能提高系统性能。</p>
 <p>  3、分层风格，将在“2.8 架构风格具体实例”中详细说明</p>
 <p><a href="https://imgse.com/i/p9rIfTe"><img src="https://s1.ax1x.com/2023/05/11/p9rIfTe.md.png" alt="p9rIfTe.md.png" /></a>
 <a href="https://imgse.com/i/p9rI5Yd"><img src="https://s1.ax1x.com/2023/05/11/p9rI5Yd.md.png" alt="p9rI5Yd.md.png" /></a></p>
@@ -996,6 +999,7 @@ https://github.com/alex-shpak/hugo-book
 <p>  仓库风格包含2个子风格：</p>
 <p>  1、数据库系统</p>
 <p>  2、黑板系统</p>
+<p>  在仓库风格中有两种不同的构件:<strong>中央数据结构说明当前状态，独立构件在中央数据存储上执行</strong>。</p>
 <p><a href="https://imgse.com/i/p9r7PdU"><img src="https://s1.ax1x.com/2023/05/11/p9r7PdU.md.png" alt="p9r7PdU.md.png" /></a>
 <a href="https://imgse.com/i/p9rIzfs"><img src="https://s1.ax1x.com/2023/05/11/p9rIzfs.md.png" alt="p9rIzfs.md.png" /></a>
 <a href="https://imgse.com/i/p9roppn"><img src="https://s1.ax1x.com/2023/05/11/p9roppn.md.png" alt="p9roppn.md.png" /></a></p>
@@ -1083,12 +1087,12 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#28-%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc%e5%85%b7%e4%bd%93%e5%ae%9e%e4%be%8b">#</a>
 </h2>
 <hr>
-<p>  没有最好的架构，只有更适合具体业务场景的架构。分层架构的脆弱性在于：底层发生错误会导致整个系统无法正常运行、层与层之间引入通信机制势必造成性能下降。</p>
+<p>  没有最好的架构，只有更适合具体业务场景的架构。分层架构的脆弱性在于：底层发生错误会导致整个系统无法正常运行、层与层之间引入通信机制势必造成性能下降，层分的越多，性能越差。</p>
 <h3 id="281-从-cs---bs---混合架构">
   2.8.1 从 C/S -&gt; B/S -&gt; 混合架构
   <a class="anchor" href="#281-%e4%bb%8e-cs---bs---%e6%b7%b7%e5%90%88%e6%9e%b6%e6%9e%84">#</a>
 </h3>
-<p>  属于层次架构风格的实例。</p>
+<p>  属于层次架构风格的实例。C/S系统开发时可以采用不同的分布式架构:分布式表示架构是将表示层和表示逻辑层迁移到客户机，应用逻辑层、数据处理层和数据层仍保留在服务器上;分布式数据架构是将数据层和数据处理层放置于服务器，应用逻辑层、表示逻辑层和表示层放置于客户机，分布式数据和应用架构是将数据层和数据处理层放置在数据服务器上，应用逻辑层放置在应用服务器上，表示逻辑层和表示层放置在客户机上。</p>
 <ul>
 <li>双层C/S架构</li>
 </ul>
@@ -1121,7 +1125,7 @@ https://github.com/alex-shpak/hugo-book
 据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
 <p>  MVC分为主动MVC和被动MVC(具体不用了解)，MVC架构的缺点在于MV之间没有解耦，不是严格的分层架构(严格的分层架构：当前层之和上下层之间有联系)</p>
 <p><a href="https://imgse.com/i/p9ym5FK"><img src="https://s1.ax1x.com/2023/05/12/p9ym5FK.md.png" alt="p9ym5FK.md.png" /></a></p>
-<p>  在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是EJB(Entity Bean/Session Bean)，View是JSP，Controller是Servlet。</p>
+<p>  在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是EJB(Entity Bean/Session Bean)，View界面是JSP；Controller是Servlet，用于分发客户请求、有效组织其他构建为客户端提供服务，其核心业务逻辑由Session Bean构建实现。</p>
 <h3 id="283-mvp架构风格">
   2.8.3 MVP架构风格
   <a class="anchor" href="#283-mvp%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
@@ -1154,9 +1158,9 @@ https://github.com/alex-shpak/hugo-book
 <p>  3、服务构件的实现与语言无关，传统构件绑定某种特定语言。</p>
 <p>  4、服务构件可以通过构件容器提供OoS的服务，传统构件完全由程序代码直接控制。</p>
 <p><a href="https://imgse.com/i/p9gsw36"><img src="https://s1.ax1x.com/2023/05/15/p9gsw36.md.png" alt="p9gsw36.md.png" /></a></p>
-<p>  SOA的实现方式1：WebService；WSDL就是WebService接口对应的WSDL文件，该文件通过xml格式说明如何调用可以看作WebService的接口文档 (使用说明书)。</p>
+<p>  SOA的实现方式1：Web Service；基于Web Services实现的面向服务系统中，服务提供者、服务使用者和服务注册器之间的远程交互通过SOAP(简单对象访问协议)消息实现，服务内容描述通过WSDL(Web服务描述语言，可以看作服务使用说明书)标准实现，服务注册信息通过UDDI(服务统一描述、发现和集成)框架实现，通过BPEL/BPEL4WS (业务过程执行语言)将分散的、功能单一的Web服务组织成一个复杂的有机应用。</p>
 <p><a href="https://imgse.com/i/p9gssDe"><img src="https://s1.ax1x.com/2023/05/15/p9gssDe.md.png" alt="p9gssDe.md.png" /></a></p>
-<p>  SOA的实现方式2：ESB 企业服务总线。</p>
+<p>  SOA的实现方式2：ESB 企业服务总线。消除了服务请求者与服务提供者之间的直接连接。</p>
 <h3 id="287-微服务">
   2.8.7 微服务
   <a class="anchor" href="#287-%e5%be%ae%e6%9c%8d%e5%8a%a1">#</a>

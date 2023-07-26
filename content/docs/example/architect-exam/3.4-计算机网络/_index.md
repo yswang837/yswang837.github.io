@@ -240,6 +240,8 @@ A项窗口大小不是固定的，B项前项纠错一般自行纠错，后项纠
 
 ### 7.1 物联网
 
+&emsp;&emsp;物联网属于层次型架构风格。
+
 [![pCKQI9P.md.png](https://s1.ax1x.com/2023/06/15/pCKQI9P.md.png)](https://imgse.com/i/pCKQI9P)
 [![pCKQgne.md.png](https://s1.ax1x.com/2023/06/15/pCKQgne.md.png)](https://imgse.com/i/pCKQgne)
 
