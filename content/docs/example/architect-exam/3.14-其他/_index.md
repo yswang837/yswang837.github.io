@@ -1,6 +1,6 @@
 ---
-weight: 15
-title: 3.15 其他
+weight: 14
+title: 3.14 其他
 ---
 
 ## 课程内容提要

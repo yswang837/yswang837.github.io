@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="课程内容提要 # 安全基础技术 对称与非对称加密 ✅✅✅ 数字签名 ✅✅✅ 信息摘要 ✅✅✅ 数字证书 网络安全 网络各层次的安全保障 ✅✅✅ 网络攻击 ✅✅ 等级保护标准 ✅✅ 安全防范体系的层次 信息安全体系结构 可靠性相关基本概念 ✅✅ 系统可靠性分析 ✅✅✅✅ 软件可靠性设计 ✅✅✅✅ 1 安全基础基础 # 1.1 对称与非对称加密 # 一般用对称加密原文，已到达高速、节省空间的目的，一般用非对称加密保证数据的安全性。
+对称加密：公钥和秘钥一样，或者说公钥可以推导出秘钥。 非对称加密：公钥和秘钥不一样，或者说公钥不能推导出秘钥。 非对称加密：加密解密规则，用接收方的公钥加密。
+pa加密sa可解密，sa加密pa可解密。
+1.2 数字签名 # 数字签名是采用非对称加密技术，具体用发送方A的私钥Sa加密信息后，接收方如果用发送方的公钥Pa能解密，那么这个信息就一定是A发送的。
+1.3 信息摘要 # 相当于做md5，原文发生一小点变化，那摘要信息将完全不一样(雪崩效应)，下载安装包的时候，也会有个校验md5，就是指的这个。
+例题 学霸肯定对了 ↕ 对称加密压缩信息，非对称加密传递对称秘钥，数字签名发送者不可抵赖，信息摘要防止信息被篡改。 学霸肯定对了 ↕ A 学霸肯定对了 ↕ C B 1.4 数字证书CA # PKI公钥体系 2 网络安全 # 2.1 网络各层次的安全保障 # 需要知道各个层用什么协议来保障安全。
+PGP (Pretty Good Privacy):优良保密协议。">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="3.11 系统安全和可靠性的分析与设计" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" />
+
+<title>3.11 系统安全和可靠性的分析与设计 | 小钻风</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/zh.search.min.e5b8da6149626f982db4faa6cbd15094d78be0f24bc03b0fbb817f50a957c495.js" integrity="sha256-5bjaYUlib5gttPqmy9FQlNeL4PJLwDsPu4F/UKlXxJU=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/index.xml" title="小钻风" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>小钻风</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">介绍</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0172079bf31c2e1230a2ba418e74787a" class="toggle"  />
+    <label for="section-0172079bf31c2e1230a2ba418e74787a" class="flex justify-between">
+      <a href="/docs/example/golang/" class="">1. golang - 从入门到入土</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-777a1736a727cd6e825002af5c691cae" class="toggle"  />
+    <label for="section-777a1736a727cd6e825002af5c691cae" class="flex justify-between">
+      <a href="/docs/example/gin/" class="">2. gin杂谈</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6c4eae7067e5dfff5c2e4406248debee" class="toggle" checked />
+    <label for="section-6c4eae7067e5dfff5c2e4406248debee" class="flex justify-between">
+      <a href="/docs/example/architect-exam/" class="">3. 高级软考 - 系统架构师</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="">3.1 计算机组成与体系结构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="">3.2 操作系统</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" class="">3.3 数据库系统</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="">3.4 计算机网络</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.5-%E6%95%B0%E5%AD%97%E4%B8%8E%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/" class="">3.5 数字与经济管理</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.6-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/" class="">3.6 系统配置与性能评价</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.7-%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/" class="">3.7 知识产权与标准化</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.8-%E4%BC%81%E4%B8%9A%E4%BF%A1%E6%81%AF%E5%8C%96%E6%88%98%E7%95%A5%E4%B8%8E%E5%AE%9E%E6%96%BD/" class="">3.8 企业信息化战略与实施</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="">3.9 软件工程</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/1-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" class="">1) 软件开发方法</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/" class="">2) 软件开发模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/3-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" class="">3) 需求工程</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/4-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="">4) 系统设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/5-%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%BB%BA%E6%A8%A1/" class="">5) 软件系统建模</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/" class="">6) 软件测试与调试</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/7-%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4/" class="">7) 系统运行与软件维护</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">3.10 软件架构设计</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/1-%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E8%BF%B0/" class="">1) 软件架构的概述</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/" class="">2) 软件架构风格</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E6%9E%B6%E6%9E%84%E6%8F%8F%E8%BF%B0%E8%AF%AD%E8%A8%80/" class="">3) 架构描述语言</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/4-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="">4) 特定领域软件架构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/5-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="">5) 基于架构的软件开发</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/6-%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7/" class="">6) 软件质量属性</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">7) 软件架构评估</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/8-%E8%BD%AF%E4%BB%B6%E4%BA%A7%E5%93%81%E7%BA%BF/" class="">8) 软件产品线</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-%E6%9E%84%E4%BB%B6%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/" class="">9) 构建与中间件技术</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/10-web%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">10) web架构设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/" class="active">3.11 系统安全和可靠性的分析与设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="">3.13 项目管理</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.13-%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/" class="">3.13 专业英语</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.14-%E5%85%B6%E4%BB%96/" class="">3.14 其他</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.15-%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%93%E6%A0%8F/" class="">3.15 案例分析专栏</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.16-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/" class="">3.17 论文写作专栏</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c5af2a1cf2778ff160886bf03e434863" class="toggle"  />
+    <label for="section-c5af2a1cf2778ff160886bf03e434863" class="flex justify-between">
+      <a href="/docs/example/algorthem/" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-931d8f340adf73346e40d4b227426621" class="toggle"  />
+    <label for="section-931d8f340adf73346e40d4b227426621" class="flex justify-between">
+      <a href="/docs/example/leetcode/" class="">5. leetcode</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/leetcode/1-hot100/" class="">1) Hot100</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>3.11 系统安全和可靠性的分析与设计</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#课程内容提要">课程内容提要</a></li>
+    <li><a href="#1-安全基础基础">1 安全基础基础</a>
+      <ul>
+        <li><a href="#11-对称与非对称加密">1.1 对称与非对称加密</a></li>
+        <li><a href="#12-数字签名">1.2 数字签名</a></li>
+        <li><a href="#13-信息摘要">1.3 信息摘要</a></li>
+        <li><a href="#14-数字证书ca">1.4 数字证书CA</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-网络安全">2 网络安全</a>
+      <ul>
+        <li><a href="#21-网络各层次的安全保障">2.1 网络各层次的安全保障</a></li>
+        <li><a href="#22-网络攻击">2.2 网络攻击</a></li>
+        <li><a href="#23-等级保护标准">2.3 等级保护标准</a></li>
+        <li><a href="#24-安全防范体系的层次">2.4 安全防范体系的层次</a></li>
+        <li><a href="#25-信息安全体系结构">2.5 信息安全体系结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-可靠性相关基本概念">3 可靠性相关基本概念</a></li>
+    <li><a href="#4-系统可靠性分析">4 系统可靠性分析</a>
+      <ul>
+        <li><a href="#41-可靠性指标">4.1 可靠性指标</a></li>
+        <li><a href="#42-串并联系统可靠性计算">4.2 串并联系统可靠性计算</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-软件可靠性设计">5 软件可靠性设计</a>
+      <ul>
+        <li><a href="#51-影响软件可靠性的因素">5.1 影响软件可靠性的因素</a></li>
+        <li><a href="#52-高可靠软件设计采用的设计方案">5.2 高可靠软件设计采用的设计方案</a></li>
+      </ul>
+    </li>
+    <li><a href="#课后习题">课后习题</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="课程内容提要">
+  课程内容提要
+  <a class="anchor" href="#%e8%af%be%e7%a8%8b%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81">#</a>
+</h2>
+<ul>
+<li>
+<ol>
+<li>安全基础技术</li>
+</ol>
+<ul>
+<li>对称与非对称加密 ✅✅✅</li>
+<li>数字签名     ✅✅✅</li>
+<li>信息摘要     ✅✅✅</li>
+<li>数字证书</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>网络安全</li>
+</ol>
+<ul>
+<li>网络各层次的安全保障  ✅✅✅</li>
+<li>网络攻击     ✅✅</li>
+<li>等级保护标准   ✅✅</li>
+<li>安全防范体系的层次</li>
+<li>信息安全体系结构</li>
+</ul>
+</li>
+<li>
+<ol start="3">
+<li>可靠性相关基本概念 ✅✅</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>系统可靠性分析   ✅✅✅✅</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>软件可靠性设计   ✅✅✅✅</li>
+</ol>
+</li>
+</ul>
+<h2 id="1-安全基础基础">
+  1 安全基础基础
+  <a class="anchor" href="#1-%e5%ae%89%e5%85%a8%e5%9f%ba%e7%a1%80%e5%9f%ba%e7%a1%80">#</a>
+</h2>
+<hr>
+<h3 id="11-对称与非对称加密">
+  1.1 对称与非对称加密
+  <a class="anchor" href="#11-%e5%af%b9%e7%a7%b0%e4%b8%8e%e9%9d%9e%e5%af%b9%e7%a7%b0%e5%8a%a0%e5%af%86">#</a>
+</h3>
+<p>一般用对称加密原文，已到达高速、节省空间的目的，一般用非对称加密保证数据的安全性。</p>
+<ul>
+<li>对称加密：公钥和秘钥一样，或者说公钥可以推导出秘钥。</li>
+</ul>
+<p><a href="https://imgse.com/i/pCwWn2R"><img src="https://s1.ax1x.com/2023/06/29/pCwWn2R.md.png" alt="pCwWn2R.md.png" /></a></p>
+<ul>
+<li>非对称加密：公钥和秘钥不一样，或者说公钥不能推导出秘钥。</li>
+</ul>
+<p><a href="https://imgse.com/i/pCwWMKx"><img src="https://s1.ax1x.com/2023/06/29/pCwWMKx.md.png" alt="pCwWMKx.md.png" /></a></p>
+<p>  非对称加密：加密解密规则，用接收方的公钥加密。</p>
+<p>  pa加密sa可解密，sa加密pa可解密。</p>
+<p><a href="https://imgse.com/i/pCwWUxI"><img src="https://s1.ax1x.com/2023/06/29/pCwWUxI.md.png" alt="pCwWUxI.md.png" /></a></p>
+<h3 id="12-数字签名">
+  1.2 数字签名
+  <a class="anchor" href="#12-%e6%95%b0%e5%ad%97%e7%ad%be%e5%90%8d">#</a>
+</h3>
+<p>  数字签名是采用非对称加密技术，具体用发送方A的私钥Sa加密信息后，接收方如果用发送方的公钥Pa能解密，那么这个信息就一定是A发送的。</p>
+<p><a href="https://imgse.com/i/pCwWhLV"><img src="https://s1.ax1x.com/2023/06/29/pCwWhLV.md.png" alt="pCwWhLV.md.png" /></a></p>
+<h3 id="13-信息摘要">
+  1.3 信息摘要
+  <a class="anchor" href="#13-%e4%bf%a1%e6%81%af%e6%91%98%e8%a6%81">#</a>
+</h3>
+<p>  相当于做md5，原文发生一小点变化，那摘要信息将完全不一样(雪崩效应)，下载安装包的时候，也会有个校验md5，就是指的这个。</p>
+<p><a href="https://imgse.com/i/pCwWrdS"><img src="https://s1.ax1x.com/2023/06/29/pCwWrdS.md.png" alt="pCwWrdS.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCwfEOP"><img src="https://s1.ax1x.com/2023/06/29/pCwfEOP.md.png" alt="pCwfEOP.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      对称加密压缩信息，非对称加密传递对称秘钥，数字签名发送者不可抵赖，信息摘要防止信息被篡改。
+<a href="https://imgse.com/i/pC0wZWT"><img src="https://s1.ax1x.com/2023/06/30/pC0wZWT.md.png" alt="pC0wZWT.md.png" /></a>
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pC0wKOJ"><img src="https://s1.ax1x.com/2023/06/30/pC0wKOJ.md.png" alt="pC0wKOJ.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pC0wJfK"><img src="https://s1.ax1x.com/2023/06/30/pC0wJfK.md.png" alt="pC0wJfK.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h3 id="14-数字证书ca">
+  1.4 数字证书CA
+  <a class="anchor" href="#14-%e6%95%b0%e5%ad%97%e8%af%81%e4%b9%a6ca">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC0wcp8"><img src="https://s1.ax1x.com/2023/06/30/pC0wcp8.md.png" alt="pC0wcp8.md.png" /></a></p>
+<ul>
+<li>PKI公钥体系</li>
+</ul>
+<p><a href="https://imgse.com/i/pC0w47n"><img src="https://s1.ax1x.com/2023/06/30/pC0w47n.md.png" alt="pC0w47n.md.png" /></a>
+<a href="https://imgse.com/i/pC0wIkq"><img src="https://s1.ax1x.com/2023/06/30/pC0wIkq.md.png" alt="pC0wIkq.md.png" /></a></p>
+<h2 id="2-网络安全">
+  2 网络安全
+  <a class="anchor" href="#2-%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8">#</a>
+</h2>
+<hr>
+<h3 id="21-网络各层次的安全保障">
+  2.1 网络各层次的安全保障
+  <a class="anchor" href="#21-%e7%bd%91%e7%bb%9c%e5%90%84%e5%b1%82%e6%ac%a1%e7%9a%84%e5%ae%89%e5%85%a8%e4%bf%9d%e9%9a%9c">#</a>
+</h3>
+<p>  需要知道各个层用什么协议来保障安全。</p>
+<p>  PGP (Pretty Good Privacy):优良保密协议。</p>
+<p>  SSL (Secure Sockets Layer):安全套接字协议。</p>
+<p>  TLS (Transport Layer Security):传输层安全协议。</p>
+<p>  SET(Secure Electronic Transaction):安全电子交易协议。</p>
+<p>  IPSEC(Internet Protocol Security):互联网安全协议。</p>
+<p><a href="https://imgse.com/i/pC0wHpT"><img src="https://s1.ax1x.com/2023/06/30/pC0wHpT.md.png" alt="pC0wHpT.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC00ph6"><img src="https://s1.ax1x.com/2023/06/30/pC00ph6.md.png" alt="pC00ph6.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pC00C9K"><img src="https://s1.ax1x.com/2023/06/30/pC00C9K.md.png" alt="pC00C9K.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h3 id="22-网络攻击">
+  2.2 网络攻击
+  <a class="anchor" href="#22-%e7%bd%91%e7%bb%9c%e6%94%bb%e5%87%bb">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC00icD"><img src="https://s1.ax1x.com/2023/06/30/pC00icD.md.png" alt="pC00icD.md.png" /></a>
+<a href="https://imgse.com/i/pC00AnH"><img src="https://s1.ax1x.com/2023/06/30/pC00AnH.md.png" alt="pC00AnH.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC00EBd"><img src="https://s1.ax1x.com/2023/06/30/pC00EBd.md.png" alt="pC00EBd.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h3 id="23-等级保护标准">
+  2.3 等级保护标准
+  <a class="anchor" href="#23-%e7%ad%89%e7%ba%a7%e4%bf%9d%e6%8a%a4%e6%a0%87%e5%87%86">#</a>
+</h3>
+<p>  等级最低：用户自主。等级最高：访问验证。</p>
+<p>  银行：安全标记。广播电台：结构化保护</p>
+<p><a href="https://imgse.com/i/pC00n4P"><img src="https://s1.ax1x.com/2023/06/30/pC00n4P.md.png" alt="pC00n4P.md.png" /></a>
+<a href="https://imgse.com/i/pC00ljg"><img src="https://s1.ax1x.com/2023/06/30/pC00ljg.md.png" alt="pC00ljg.md.png" /></a></p>
+<h3 id="24-安全防范体系的层次">
+  2.4 安全防范体系的层次
+  <a class="anchor" href="#24-%e5%ae%89%e5%85%a8%e9%98%b2%e8%8c%83%e4%bd%93%e7%b3%bb%e7%9a%84%e5%b1%82%e6%ac%a1">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC0BSbj"><img src="https://s1.ax1x.com/2023/06/30/pC0BSbj.md.png" alt="pC0BSbj.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC05KPS"><img src="https://s1.ax1x.com/2023/06/30/pC05KPS.md.png" alt="pC05KPS.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C D
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h3 id="25-信息安全体系结构">
+  2.5 信息安全体系结构
+  <a class="anchor" href="#25-%e4%bf%a1%e6%81%af%e5%ae%89%e5%85%a8%e4%bd%93%e7%b3%bb%e7%bb%93%e6%9e%84">#</a>
+</h3>
+<p>  自主访问控制：主体是用户，给用户赋予用些权限。访问控制列表：主体是资源，给资源的权限赋予给用户。强制访问控制：资源和用户都分级，高级的用户可以访问低级的资源。</p>
+<p><a href="https://imgse.com/i/pC05Q2Q"><img src="https://s1.ax1x.com/2023/06/30/pC05Q2Q.md.png" alt="pC05Q2Q.md.png" /></a>
+<a href="https://imgse.com/i/pC058rn"><img src="https://s1.ax1x.com/2023/06/30/pC058rn.md.png" alt="pC058rn.md.png" /></a></p>
+<blockquote>
+<p>案例分析例题
+<a href="https://imgse.com/i/pC2bQEV"><img src="https://s1.ax1x.com/2023/07/10/pC2bQEV.md.png" alt="pC2bQEV.md.png" /></a>
+<a href="https://imgse.com/i/pC2bRbt"><img src="https://s1.ax1x.com/2023/07/10/pC2bRbt.md.png" alt="pC2bRbt.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <a href="https://imgse.com/i/pC2Hv1H"><img src="https://s1.ax1x.com/2023/07/10/pC2Hv1H.md.png" alt="pC2Hv1H.md.png" /></a>
+<a href="https://imgse.com/i/pC2bIPS"><img src="https://s1.ax1x.com/2023/07/10/pC2bIPS.md.png" alt="pC2bIPS.md.png" /></a>
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="3-可靠性相关基本概念">
+  3 可靠性相关基本概念
+  <a class="anchor" href="#3-%e5%8f%af%e9%9d%a0%e6%80%a7%e7%9b%b8%e5%85%b3%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5">#</a>
+</h2>
+<hr>
+<p><a href="https://imgse.com/i/pC05dGF"><img src="https://s1.ax1x.com/2023/06/30/pC05dGF.md.png" alt="pC05dGF.md.png" /></a></p>
+<h2 id="4-系统可靠性分析">
+  4 系统可靠性分析
+  <a class="anchor" href="#4-%e7%b3%bb%e7%bb%9f%e5%8f%af%e9%9d%a0%e6%80%a7%e5%88%86%e6%9e%90">#</a>
+</h2>
+<hr>
+<h3 id="41-可靠性指标">
+  4.1 可靠性指标
+  <a class="anchor" href="#41-%e5%8f%af%e9%9d%a0%e6%80%a7%e6%8c%87%e6%a0%87">#</a>
+</h3>
+<p>  MTTF：平均失效等待时间，也叫平均无故障时间。</p>
+<p>  MTBF：平均失效间隔时间，也叫平均故障间隔时间。</p>
+<p><a href="https://imgse.com/i/pC05jzQ"><img src="https://s1.ax1x.com/2023/06/30/pC05jzQ.md.png" alt="pC05jzQ.md.png" /></a></p>
+<h3 id="42-串并联系统可靠性计算">
+  4.2 串并联系统可靠性计算
+  <a class="anchor" href="#42-%e4%b8%b2%e5%b9%b6%e8%81%94%e7%b3%bb%e7%bb%9f%e5%8f%af%e9%9d%a0%e6%80%a7%e8%ae%a1%e7%ae%97">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC05zss"><img src="https://s1.ax1x.com/2023/06/30/pC05zss.md.png" alt="pC05zss.md.png" /></a>
+<a href="https://imgse.com/i/pC0ISLn"><img src="https://s1.ax1x.com/2023/06/30/pC0ISLn.md.png" alt="pC0ISLn.md.png" /></a></p>
+<h2 id="5-软件可靠性设计">
+  5 软件可靠性设计
+  <a class="anchor" href="#5-%e8%bd%af%e4%bb%b6%e5%8f%af%e9%9d%a0%e6%80%a7%e8%ae%be%e8%ae%a1">#</a>
+</h2>
+<hr>
+<h3 id="51-影响软件可靠性的因素">
+  5.1 影响软件可靠性的因素
+  <a class="anchor" href="#51-%e5%bd%b1%e5%93%8d%e8%bd%af%e4%bb%b6%e5%8f%af%e9%9d%a0%e6%80%a7%e7%9a%84%e5%9b%a0%e7%b4%a0">#</a>
+</h3>
+<p>  分为5个方面。</p>
+<p><a href="https://imgse.com/i/pC0IAWF"><img src="https://s1.ax1x.com/2023/06/30/pC0IAWF.md.png" alt="pC0IAWF.md.png" /></a></p>
+<h3 id="52-高可靠软件设计采用的设计方案">
+  5.2 高可靠软件设计采用的设计方案
+  <a class="anchor" href="#52-%e9%ab%98%e5%8f%af%e9%9d%a0%e8%bd%af%e4%bb%b6%e8%ae%be%e8%ae%a1%e9%87%87%e7%94%a8%e7%9a%84%e8%ae%be%e8%ae%a1%e6%96%b9%e6%a1%88">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC0IEz4"><img src="https://s1.ax1x.com/2023/06/30/pC0IEz4.md.png" alt="pC0IEz4.md.png" /></a></p>
+<ul>
+<li>N版本程序设计</li>
+</ul>
+<p><a href="https://imgse.com/i/pC0Iue1"><img src="https://s1.ax1x.com/2023/06/30/pC0Iue1.md.png" alt="pC0Iue1.md.png" /></a></p>
+<ul>
+<li>恢复块设计(动态冗余)</li>
+</ul>
+<p><a href="https://imgse.com/i/pC0IYyd"><img src="https://s1.ax1x.com/2023/06/30/pC0IYyd.md.png" alt="pC0IYyd.md.png" /></a></p>
+<ul>
+<li>防卫式程序设计</li>
+</ul>
+<p>  对于程序中存在的错误和不一致性，通过在程序中包含错误检查代码和错误恢复代码，使得一旦错误发生，程序能撤销错误状态，恢复到一个已知的正确状态中去。</p>
+<p>  实现策略:错误检测、破坏估计、错误恢复。</p>
+<ul>
+<li>双机容错</li>
+</ul>
+<p><a href="https://imgse.com/i/pC0IsSg"><img src="https://s1.ax1x.com/2023/06/30/pC0IsSg.md.png" alt="pC0IsSg.md.png" /></a></p>
+<blockquote>
+<p>案例分析例题
+<a href="https://imgse.com/i/pC2qlqI"><img src="https://s1.ax1x.com/2023/07/10/pC2qlqI.md.png" alt="pC2qlqI.md.png" /></a>
+<a href="https://imgse.com/i/pC2bT2Q"><img src="https://s1.ax1x.com/2023/07/10/pC2bT2Q.md.png" alt="pC2bT2Q.md.png" /></a>
+<a href="https://imgse.com/i/pCRvawj"><img src="https://s1.ax1x.com/2023/07/11/pCRvawj.md.png" alt="pCRvawj.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <a href="https://imgse.com/i/pC2bbKs"><img src="https://s1.ax1x.com/2023/07/10/pC2bbKs.md.png" alt="pC2bbKs.md.png" /></a>
+<a href="https://imgse.com/i/pCRvdTs"><img src="https://s1.ax1x.com/2023/07/11/pCRvdTs.md.png" alt="pCRvdTs.md.png" /></a>
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="课后习题">
+  课后习题
+  <a class="anchor" href="#%e8%af%be%e5%90%8e%e4%b9%a0%e9%a2%98">#</a>
+</h2>
+<hr>
+<p>todo 习题</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#课程内容提要">课程内容提要</a></li>
+    <li><a href="#1-安全基础基础">1 安全基础基础</a>
+      <ul>
+        <li><a href="#11-对称与非对称加密">1.1 对称与非对称加密</a></li>
+        <li><a href="#12-数字签名">1.2 数字签名</a></li>
+        <li><a href="#13-信息摘要">1.3 信息摘要</a></li>
+        <li><a href="#14-数字证书ca">1.4 数字证书CA</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-网络安全">2 网络安全</a>
+      <ul>
+        <li><a href="#21-网络各层次的安全保障">2.1 网络各层次的安全保障</a></li>
+        <li><a href="#22-网络攻击">2.2 网络攻击</a></li>
+        <li><a href="#23-等级保护标准">2.3 等级保护标准</a></li>
+        <li><a href="#24-安全防范体系的层次">2.4 安全防范体系的层次</a></li>
+        <li><a href="#25-信息安全体系结构">2.5 信息安全体系结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-可靠性相关基本概念">3 可靠性相关基本概念</a></li>
+    <li><a href="#4-系统可靠性分析">4 系统可靠性分析</a>
+      <ul>
+        <li><a href="#41-可靠性指标">4.1 可靠性指标</a></li>
+        <li><a href="#42-串并联系统可靠性计算">4.2 串并联系统可靠性计算</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-软件可靠性设计">5 软件可靠性设计</a>
+      <ul>
+        <li><a href="#51-影响软件可靠性的因素">5.1 影响软件可靠性的因素</a></li>
+        <li><a href="#52-高可靠软件设计采用的设计方案">5.2 高可靠软件设计采用的设计方案</a></li>
+      </ul>
+    </li>
+    <li><a href="#课后习题">课后习题</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

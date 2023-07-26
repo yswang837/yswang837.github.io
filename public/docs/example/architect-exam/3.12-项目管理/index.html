@@ -3,27 +3,32 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 ✌ # 图论 最小生成树 ✅ 最短路径 ✅ 网络与最大流量 ✅ 运筹方法 线性规划 ✅ 动态规划 ✅✅✅ 预测与决策 ✅ 数学建模 ✅✅ 面积体积估算法 1 图论 # 1.1 最小生成树 # 学霸肯定对了 ↕ 23
-解题思路：按边看，依次找最小的变长将所有节点连接起来，不能有回路，及3-6，3-7，1-2，2-6，4-7，2-5，所以长度至少为2&#43;3&#43;3&#43;4&#43;5&#43;6=23
-1.2 最短路径 # 学霸肯定对了 ↕ 81
-21&#43;20&#43;20&#43;8&#43;12=81，其他路径都比81大
-1.3 网络与最大流量 # 学霸肯定对了 ↕ 23
-10&#43;6&#43;5&#43;1&#43;1=23
-2 运筹方法 # 2.1 线性规划 # 学霸肯定对了 ↕ 设产品1为X，产品2位Y，立不等式，画图，最优解在顶点处，将顶点都带入目标式子，得到最值 2.2 动态规划 # 学霸肯定对了 ↕ B 2.3 预测与决策 # 学霸肯定对了 ↕ C
-解析：第一个月A=0.5，B=0.5，所以用(0.5,0.5) * 转移矩阵P，得到(0.6,0.4)，第二个月：(0.6,0.4) * 转移矩阵P=(0.">
+<meta name="description" content="课程内容提要 # 立项管理 ✅ 范围管理 ✅✅ 时间管理 ✅✅✅✅ 成本管理 ✅ 软件质量管理 ✅✅ 软件配置管理 ✅✅ 1 立项管理 # 1.1 盈亏平衡分析 # 2 范围管理 # 范围定义的输入包括：项目章程、项目范围管理计划、组织过程资产、批准的变更申请。
+例题 学霸肯定对了 ↕ C 3 时间管理 # 项目时间管理中的过程包括活动定义、活动排序、活动的资源估算、活动历时估算、制定进度计划以及进度控制。
+例题 学霸肯定对了 ↕ B 3.1 单代号网络图 # 关键路径是最早完成时间下的最长的路径。关键路径可以有多条，关键路径的条数越少越好。
+ES和EF是正向推导过程。关键路径需要反推才能得到。总时差=LS-ES，总时差为0的节点连接起来就是关键路径。
+自由时差小于等于总时差。当前节点的自由时差=紧后活动的ES-当前活动的EF。自由时差会影响紧后活动（压缩了别人的自由）
+3.2 双代号网络图 # 虚线不能去掉，2-&gt;3的距离为0，但不能删掉，因为A和B都是E的紧前活动，也不能合并。
+3.3 甘特图 # 细线表示计划，粗线表示当前进度。
+例题 学霸肯定对了 ↕ C
+也就是求D的总时差
+学霸肯定对了 ↕ A A
+正常进度=直接费用&#43;间接费用=55&#43;12*5=115天，赶工进度：压缩D两天，压缩A两天，B和D同时压1天，也就是：55&#43;4&#43;8&#43;4&#43;35=106，需要7天。
+4 成本管理 # 项目的成本管理中，成本预算将总的成本估算分配到各项活动和工作包上，来建立一个成本的基线。
+4.1 挣值分析 # 例题 学霸肯定对了 ↕ C 案例分析例题 学霸肯定对了 ↕ 说明：活动E不是关键路径上的活动，不应该加班。">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="3.5 数字与经济管理" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="3.13 项目管理" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.5-%E6%95%B0%E5%AD%97%E4%B8%8E%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" />
 
-<title>3.5 数字与经济管理 | 小钻风</title>
+<title>3.13 项目管理 | 小钻风</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/zh.search.min.e5b8da6149626f982db4faa6cbd15094d78be0f24bc03b0fbb817f50a957c495.js" integrity="sha256-5bjaYUlib5gttPqmy9FQlNeL4PJLwDsPu4F/UKlXxJU=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.5-%E6%95%B0%E5%AD%97%E4%B8%8E%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/index.xml" title="小钻风" />
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -218,7 +223,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.5-%E6%95%B0%E5%AD%97%E4%B8%8E%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/" class="active">3.5 数字与经济管理</a>
+    <a href="/docs/example/architect-exam/3.5-%E6%95%B0%E5%AD%97%E4%B8%8E%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/" class="">3.5 数字与经济管理</a>
   
 
           
@@ -650,7 +655,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="">3.13 项目管理</a>
+    <a href="/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="active">3.13 项目管理</a>
   
 
           
@@ -839,7 +844,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>3.5 数字与经济管理</strong>
+  <strong>3.13 项目管理</strong>
 
   <label for="toc-control">
     
@@ -855,24 +860,33 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#课程内容提要-">课程内容提要 ✌</a></li>
-    <li><a href="#1-图论">1 图论</a>
+    <li><a href="#课程内容提要">课程内容提要</a></li>
+    <li><a href="#1-立项管理">1 立项管理</a>
       <ul>
-        <li><a href="#11-最小生成树">1.1 最小生成树</a></li>
-        <li><a href="#12-最短路径">1.2 最短路径</a></li>
-        <li><a href="#13-网络与最大流量">1.3 网络与最大流量</a></li>
+        <li><a href="#11-盈亏平衡分析">1.1 盈亏平衡分析</a></li>
       </ul>
     </li>
-    <li><a href="#2-运筹方法">2 运筹方法</a>
+    <li><a href="#2-范围管理">2 范围管理</a></li>
+    <li><a href="#3-时间管理">3 时间管理</a>
       <ul>
-        <li><a href="#21-线性规划">2.1 线性规划</a></li>
-        <li><a href="#22-动态规划">2.2 动态规划</a></li>
-        <li><a href="#23-预测与决策">2.3 预测与决策</a></li>
+        <li><a href="#31-单代号网络图">3.1 单代号网络图</a></li>
+        <li><a href="#32-双代号网络图">3.2 双代号网络图</a></li>
+        <li><a href="#33-甘特图">3.3 甘特图</a></li>
       </ul>
     </li>
-    <li><a href="#3-数学建模">3 数学建模</a>
+    <li><a href="#4-成本管理">4 成本管理</a>
       <ul>
-        <li><a href="#31-面积体积估算法">3.1 面积体积估算法</a></li>
+        <li><a href="#41-挣值分析">4.1 挣值分析</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-软件质量管理">5 软件质量管理</a>
+      <ul>
+        <li><a href="#51-质量保证方式cmmi">5.1 质量保证方式CMMI</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-软件配置管理">6 软件配置管理</a>
+      <ul>
+        <li><a href="#61-软件工具">6.1 软件工具</a></li>
       </ul>
     </li>
     <li><a href="#课后习题">课后习题</a></li>
@@ -888,50 +902,62 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="课程内容提要-">
-  课程内容提要 ✌
-  <a class="anchor" href="#%e8%af%be%e7%a8%8b%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81-">#</a>
+  <article class="markdown"><h2 id="课程内容提要">
+  课程内容提要
+  <a class="anchor" href="#%e8%af%be%e7%a8%8b%e5%86%85%e5%ae%b9%e6%8f%90%e8%a6%81">#</a>
 </h2>
 <ul>
 <li>
 <ol>
-<li>图论</li>
+<li>立项管理   ✅</li>
 </ol>
-<ul>
-<li>最小生成树   ✅</li>
-<li>最短路径    ✅</li>
-<li>网络与最大流量 ✅</li>
-</ul>
 </li>
 <li>
 <ol start="2">
-<li>运筹方法</li>
+<li>范围管理   ✅✅</li>
 </ol>
-<ul>
-<li>线性规划    ✅</li>
-<li>动态规划    ✅✅✅</li>
-<li>预测与决策   ✅</li>
-</ul>
 </li>
 <li>
 <ol start="3">
-<li>数学建模    ✅✅</li>
+<li>时间管理   ✅✅✅✅</li>
 </ol>
-<ul>
-<li>面积体积估算法</li>
-</ul>
+</li>
+<li>
+<ol start="4">
+<li>成本管理   ✅</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>软件质量管理 ✅✅</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>软件配置管理 ✅✅</li>
+</ol>
 </li>
 </ul>
-<h2 id="1-图论">
-  1 图论
-  <a class="anchor" href="#1-%e5%9b%be%e8%ae%ba">#</a>
+<h2 id="1-立项管理">
+  1 立项管理
+  <a class="anchor" href="#1-%e7%ab%8b%e9%a1%b9%e7%ae%a1%e7%90%86">#</a>
+</h2>
+<h3 id="11-盈亏平衡分析">
+  1.1 盈亏平衡分析
+  <a class="anchor" href="#11-%e7%9b%88%e4%ba%8f%e5%b9%b3%e8%a1%a1%e5%88%86%e6%9e%90">#</a>
+</h3>
+<hr>
+<p><a href="https://imgse.com/i/pC0IL01"><img src="https://s1.ax1x.com/2023/06/30/pC0IL01.md.png" alt="pC0IL01.md.png" /></a></p>
+<h2 id="2-范围管理">
+  2 范围管理
+  <a class="anchor" href="#2-%e8%8c%83%e5%9b%b4%e7%ae%a1%e7%90%86">#</a>
 </h2>
 <hr>
-<h3 id="11-最小生成树">
-  1.1 最小生成树
-  <a class="anchor" href="#11-%e6%9c%80%e5%b0%8f%e7%94%9f%e6%88%90%e6%a0%91">#</a>
-</h3>
-<p><a href="https://imgse.com/i/pCiRVK0"><img src="https://s1.ax1x.com/2023/06/07/pCiRVK0.md.png" alt="pCiRVK0.md.png" /></a>
+<p>  范围定义的输入包括：项目章程、项目范围管理计划、组织过程资产、批准的变更申请。</p>
+<p><a href="https://imgse.com/i/pC0op1e"><img src="https://s1.ax1x.com/2023/06/30/pC0op1e.md.png" alt="pC0op1e.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCrZdsS"><img src="https://s1.ax1x.com/2023/07/03/pCrZdsS.md.png" alt="pCrZdsS.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -941,86 +967,22 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      <p>23</p>
-<p>解题思路：按边看，依次找最小的变长将所有节点连接起来，不能有回路，及3-6，3-7，1-2，2-6，4-7，2-5，所以长度至少为2+3+3+4+5+6=23</p>
-
+      C
     </div>
   </label>
 </div>
 </p>
-<h3 id="12-最短路径">
-  1.2 最短路径
-  <a class="anchor" href="#12-%e6%9c%80%e7%9f%ad%e8%b7%af%e5%be%84">#</a>
-</h3>
-<p><a href="https://imgse.com/i/pCiRNVO"><img src="https://s1.ax1x.com/2023/06/07/pCiRNVO.md.png" alt="pCiRNVO.md.png" /></a></p>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>81</p>
-<p>21+20+20+8+12=81，其他路径都比81大</p>
-
-    </div>
-  </label>
-</div>
-
-<h3 id="13-网络与最大流量">
-  1.3 网络与最大流量
-  <a class="anchor" href="#13-%e7%bd%91%e7%bb%9c%e4%b8%8e%e6%9c%80%e5%a4%a7%e6%b5%81%e9%87%8f">#</a>
-</h3>
-<p><a href="https://imgse.com/i/pCiRysP"><img src="https://s1.ax1x.com/2023/06/07/pCiRysP.md.png" alt="pCiRysP.md.png" /></a>
-<a href="https://imgse.com/i/pCijwBF"><img src="https://s1.ax1x.com/2023/06/07/pCijwBF.md.png" alt="pCijwBF.md.png" /></a>
-<a href="https://imgse.com/i/pCFSJVU"><img src="https://s1.ax1x.com/2023/06/07/pCFSJVU.md.png" alt="pCFSJVU.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>23</p>
-<p>10+6+5+1+1=23</p>
-
-    </div>
-  </label>
-</div>
-</p>
-<h2 id="2-运筹方法">
-  2 运筹方法
-  <a class="anchor" href="#2-%e8%bf%90%e7%ad%b9%e6%96%b9%e6%b3%95">#</a>
+</blockquote>
+<h2 id="3-时间管理">
+  3 时间管理
+  <a class="anchor" href="#3-%e6%97%b6%e9%97%b4%e7%ae%a1%e7%90%86">#</a>
 </h2>
 <hr>
-<h3 id="21-线性规划">
-  2.1 线性规划
-  <a class="anchor" href="#21-%e7%ba%bf%e6%80%a7%e8%a7%84%e5%88%92">#</a>
-</h3>
-<p><a href="https://imgse.com/i/pCFSYaF"><img src="https://s1.ax1x.com/2023/06/07/pCFSYaF.md.png" alt="pCFSYaF.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      设产品1为X，产品2位Y，立不等式，画图，最优解在顶点处，将顶点都带入目标式子，得到最值
-    </div>
-  </label>
-</div>
-</p>
-<h3 id="22-动态规划">
-  2.2 动态规划
-  <a class="anchor" href="#22-%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92">#</a>
-</h3>
-<p><a href="https://imgse.com/i/pCFSUPJ"><img src="https://s1.ax1x.com/2023/06/07/pCFSUPJ.md.png" alt="pCFSUPJ.md.png" /></a>
+<p>  项目时间管理中的过程包括活动定义、活动排序、活动的资源估算、活动历时估算、制定进度计划以及进度控制。</p>
+<p><a href="https://imgse.com/i/pCrUNrQ"><img src="https://s1.ax1x.com/2023/07/03/pCrUNrQ.md.png" alt="pCrUNrQ.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCsed2t"><img src="https://s1.ax1x.com/2023/07/04/pCsed2t.md.png" alt="pCsed2t.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1035,11 +997,32 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 </p>
-<h3 id="23-预测与决策">
-  2.3 预测与决策
-  <a class="anchor" href="#23-%e9%a2%84%e6%b5%8b%e4%b8%8e%e5%86%b3%e7%ad%96">#</a>
+</blockquote>
+<p><a href="https://imgse.com/i/pCsmvfs"><img src="https://s1.ax1x.com/2023/07/04/pCsmvfs.md.png" alt="pCsmvfs.md.png" /></a></p>
+<h3 id="31-单代号网络图">
+  3.1 单代号网络图
+  <a class="anchor" href="#31-%e5%8d%95%e4%bb%a3%e5%8f%b7%e7%bd%91%e7%bb%9c%e5%9b%be">#</a>
 </h3>
-<p><a href="https://imgse.com/i/pCkAUyQ"><img src="https://s1.ax1x.com/2023/06/08/pCkAUyQ.md.png" alt="pCkAUyQ.md.png" /></a>
+<p>  关键路径是最早完成时间下的最长的路径。关键路径可以有多条，关键路径的条数越少越好。</p>
+<p>  ES和EF是正向推导过程。关键路径需要反推才能得到。总时差=LS-ES，总时差为0的节点连接起来就是关键路径。</p>
+<p>  自由时差小于等于总时差。当前节点的自由时差=紧后活动的ES-当前活动的EF。自由时差会影响紧后活动（压缩了别人的自由）</p>
+<p><a href="https://imgse.com/i/pCsefx0"><img src="https://s1.ax1x.com/2023/07/04/pCsefx0.md.png" alt="pCsefx0.md.png" /></a></p>
+<h3 id="32-双代号网络图">
+  3.2 双代号网络图
+  <a class="anchor" href="#32-%e5%8f%8c%e4%bb%a3%e5%8f%b7%e7%bd%91%e7%bb%9c%e5%9b%be">#</a>
+</h3>
+<p>  虚线不能去掉，2-&gt;3的距离为0，但不能删掉，因为A和B都是E的紧前活动，也不能合并。</p>
+<p><a href="https://imgse.com/i/pCsmNeU"><img src="https://s1.ax1x.com/2023/07/04/pCsmNeU.md.png" alt="pCsmNeU.md.png" /></a>
+<a href="https://imgse.com/i/pCsmq0S"><img src="https://s1.ax1x.com/2023/07/04/pCsmq0S.md.png" alt="pCsmq0S.md.png" /></a></p>
+<h3 id="33-甘特图">
+  3.3 甘特图
+  <a class="anchor" href="#33-%e7%94%98%e7%89%b9%e5%9b%be">#</a>
+</h3>
+<p>  细线表示计划，粗线表示当前进度。</p>
+<p><a href="https://imgse.com/i/pCsnhHU"><img src="https://s1.ax1x.com/2023/07/04/pCsnhHU.md.png" alt="pCsnhHU.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCsnjHO"><img src="https://s1.ax1x.com/2023/07/04/pCsnjHO.md.png" alt="pCsnjHO.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1050,13 +1033,14 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
       <p>C</p>
-<p>解析：第一个月A=0.5，B=0.5，所以用(0.5,0.5) * 转移矩阵P，得到(0.6,0.4)，第二个月：(0.6,0.4) * 转移矩阵P=(0.64,0.36)，所以选C</p>
+<p><a href="https://imgse.com/i/pCsukKP"><img src="https://s1.ax1x.com/2023/07/04/pCsukKP.md.png" alt="pCsukKP.md.png" /></a></p>
+<p>也就是求D的总时差</p>
 
     </div>
   </label>
 </div>
-</p>
-<p><a href="https://imgse.com/i/pCkAaLj"><img src="https://s1.ax1x.com/2023/06/08/pCkAaLj.md.png" alt="pCkAaLj.md.png" /></a>
+
+<a href="https://imgse.com/i/pCsuEb8"><img src="https://s1.ax1x.com/2023/07/04/pCsuEb8.md.png" alt="pCsuEb8.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1066,70 +1050,143 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      <p>C</p>
-<p>解析：设8点前有A人，来：x人/分钟，检票：y人/分钟，第二问开口最少为M，A+60x=60y * 8，A+40x=40y * 10，联立得到x=4y（来一波人开4个口），带入1式，得到A=240y，A+20x=20y*M，得到M=320y/20y=16</p>
+      <p>A A</p>
+<p>正常进度=直接费用+间接费用=55+12*5=115天，赶工进度：压缩D两天，压缩A两天，B和D同时压1天，也就是：55+4+8+4+35=106，需要7天。</p>
 
     </div>
   </label>
 </div>
 </p>
-<p><a href="https://imgse.com/i/pCn8kB4"><img src="https://s1.ax1x.com/2023/06/14/pCn8kB4.md.png" alt="pCn8kB4.md.png" /></a></p>
-<p><a href="https://imgse.com/i/pCn8VE9"><img src="https://s1.ax1x.com/2023/06/14/pCn8VE9.md.png" alt="pCn8VE9.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      甲乙都会选择降价策略
-    </div>
-  </label>
-</div>
-</p>
-<p><a href="https://imgse.com/i/pCkE3nJ"><img src="https://s1.ax1x.com/2023/06/08/pCkE3nJ.md.png" alt="pCkE3nJ.md.png" /></a></p>
-<p>总结：乐观-&gt;大中取大，悲观-&gt;小中取大，后悔值-&gt;大中取小
-<a href="https://imgse.com/i/pCkEa9K"><img src="https://s1.ax1x.com/2023/06/08/pCkEa9K.md.png" alt="pCkEa9K.md.png" /></a></p>
-<p>水路代价比较小</p>
-<p><a href="https://imgse.com/i/pCkEIBj"><img src="https://s1.ax1x.com/2023/06/08/pCkEIBj.md.png" alt="pCkEIBj.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>B</p>
-<p>加权平均值</p>
-
-    </div>
-  </label>
-</div>
-</p>
-<h2 id="3-数学建模">
-  3 数学建模
-  <a class="anchor" href="#3-%e6%95%b0%e5%ad%a6%e5%bb%ba%e6%a8%a1">#</a>
+</blockquote>
+<h2 id="4-成本管理">
+  4 成本管理
+  <a class="anchor" href="#4-%e6%88%90%e6%9c%ac%e7%ae%a1%e7%90%86">#</a>
 </h2>
 <hr>
-<p>  解决多数实际问题的关键是建立数学模型 (包括数学方程、数学公式、图形描述、符号表示等)。数学建模是对现实世界的一种近似的、简化的、易于求解的抽象描述。数学模型常需要忽略某些次要因素，以便易于近似求解过于简单的模型能准确性不足，为提高准确性，若建立过于复杂的模型，求解的难度就会增加。在简单性和准确性之间求得平衡是数学建模的一条原则。对同一问题可以建立多种数学模型。数学模型也常带有一些可变的参数。选用哪个模型，或选择什么样的参数，更能近似地解决实际问题，符合实际要求，这需要反复多次试验，根据求解失败的教训或用户的反馈意见逐步对模型进行修正或改进，逐步完善模型，并求得使用户满意，符合实际情况的结果。对一般的问题，并没有统一的、普适的模型评价标准，没有最好，只有更好，实践是检验真理的唯一标准。</p>
-<p>  在对实际应用问题建立数学模型并求得结果后，还需要根据建模的目的和要求，利用相关知识，结合研究对象的特点，进行模型分析。模型分析工作主要包括模型的合理性分析、模型的误差分析和参数的灵敏性分析等，一般不包括模型的先进性分析。</p>
-<p><a href="https://imgse.com/i/pCkVuVA"><img src="https://s1.ax1x.com/2023/06/08/pCkVuVA.md.png" alt="pCkVuVA.md.png" /></a>
-<a href="https://imgse.com/i/pCkVtbj"><img src="https://s1.ax1x.com/2023/06/08/pCkVtbj.md.png" alt="pCkVtbj.md.png" /></a></p>
-<h3 id="31-面积体积估算法">
-  3.1 面积体积估算法
-  <a class="anchor" href="#31-%e9%9d%a2%e7%a7%af%e4%bd%93%e7%a7%af%e4%bc%b0%e7%ae%97%e6%b3%95">#</a>
+<p>  项目的成本管理中，<strong>成本预算</strong>将总的成本估算分配到各项活动和工作包上，来建立一个成本的基线。</p>
+<p><a href="https://imgse.com/i/pCsNCGV"><img src="https://s1.ax1x.com/2023/07/04/pCsNCGV.md.png" alt="pCsNCGV.md.png" /></a></p>
+<h3 id="41-挣值分析">
+  4.1 挣值分析
+  <a class="anchor" href="#41-%e6%8c%a3%e5%80%bc%e5%88%86%e6%9e%90">#</a>
 </h3>
-<p>  利用计算机的随机数来估算不规则的面积、体积。</p>
+<p><a href="https://imgse.com/i/pCsU1f0"><img src="https://s1.ax1x.com/2023/07/04/pCsU1f0.md.png" alt="pCsU1f0.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCsU20H"><img src="https://s1.ax1x.com/2023/07/04/pCsU20H.md.png" alt="pCsU20H.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+
+案例分析例题
+<a href="https://imgse.com/i/pC2sOMQ"><img src="https://s1.ax1x.com/2023/07/10/pC2sOMQ.md.png" alt="pC2sOMQ.md.png" /></a>
+<a href="https://imgse.com/i/pC2sxZn"><img src="https://s1.ax1x.com/2023/07/10/pC2sxZn.md.png" alt="pC2sxZn.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>说明：活动E不是关键路径上的活动，不应该加班。</p>
+<p><a href="https://imgse.com/i/pC27GIU"><img src="https://s1.ax1x.com/2023/07/10/pC27GIU.md.png" alt="pC27GIU.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC27oo8"><img src="https://s1.ax1x.com/2023/07/10/pC27oo8.md.png" alt="pC27oo8.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC27Xyn"><img src="https://s1.ax1x.com/2023/07/10/pC27Xyn.md.png" alt="pC27Xyn.md.png" /></a></p>
+
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pC27jLq"><img src="https://s1.ax1x.com/2023/07/10/pC27jLq.md.png" alt="pC27jLq.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>松弛时间：总时差，关键路径上的总时差为0，反之亦然。</p>
+<p><a href="https://imgse.com/i/pC2Hkl9"><img src="https://s1.ax1x.com/2023/07/10/pC2Hkl9.md.png" alt="pC2Hkl9.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2HEO1"><img src="https://s1.ax1x.com/2023/07/10/pC2HEO1.md.png" alt="pC2HEO1.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2HCYF"><img src="https://s1.ax1x.com/2023/07/10/pC2HCYF.md.png" alt="pC2HCYF.md.png" /></a></p>
+
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="5-软件质量管理">
+  5 软件质量管理
+  <a class="anchor" href="#5-%e8%bd%af%e4%bb%b6%e8%b4%a8%e9%87%8f%e7%ae%a1%e7%90%86">#</a>
+</h2>
+<hr>
+<p><a href="https://imgse.com/i/pCsUfAA"><img src="https://s1.ax1x.com/2023/07/04/pCsUfAA.md.png" alt="pCsUfAA.md.png" /></a></p>
+<h3 id="51-质量保证方式cmmi">
+  5.1 质量保证方式CMMI
+  <a class="anchor" href="#51-%e8%b4%a8%e9%87%8f%e4%bf%9d%e8%af%81%e6%96%b9%e5%bc%8fcmmi">#</a>
+</h3>
+<p>  软件过程改进：CMMI</p>
+<p><a href="https://imgse.com/i/pCsa9jU"><img src="https://s1.ax1x.com/2023/07/04/pCsa9jU.md.png" alt="pCsa9jU.md.png" /></a></p>
+<h2 id="6-软件配置管理">
+  6 软件配置管理
+  <a class="anchor" href="#6-%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86">#</a>
+</h2>
+<hr>
+<p>  配置项的状态通常包括：草稿、正在修改、正式发布。</p>
+<p>  配置项主要有以下两大类：</p>
+<p>  1、属于产品组成部分的工作成果，如需求文档、设计文档、源代码和测试用例等。</p>
+<p>  属于项目管理和机构支撑过程城产生的文档，如工作计划、项目质量报、项目跟踪报告等。这些文档虽然不是产品的组成部分，但是值得保存。</p>
+<p>  软件文档是影响软件可维护性的决定因素。根据文档内容，软件文档又可分为<strong>用户文档</strong>和<strong>系统文档</strong>两类。其中用户文档主要描述<strong>系统功能</strong>和使用方法，并不关心这些功能是怎样实现的，它包括：功能描述文档，安装文档，使用手册，参考手册，操作指南文档。</p>
+<p><a href="https://imgse.com/i/pCsaENR"><img src="https://s1.ax1x.com/2023/07/04/pCsaENR.md.png" alt="pCsaENR.md.png" /></a></p>
+<h3 id="61-软件工具">
+  6.1 软件工具
+  <a class="anchor" href="#61-%e8%bd%af%e4%bb%b6%e5%b7%a5%e5%85%b7">#</a>
+</h3>
+<p>  按描述需求定义的方法可将需求分析工具分为<strong>基于自然语言或图形描述的工具</strong>和<strong>基于形式化需求定义语言的工具</strong>。</p>
+<p>  项目管理工具用来辅助软件项目管理活动(其中，“指导软件设计人员按软件生存周期各个阶段的适用技术进行设计工作“不是它的活动)。通常项目管理活动包括项目的计划、调度、通信、<strong>成本估算</strong>、资源分配及质量控制等。</p>
+<p>  软件系统工具的种类繁多，通常可以按照软件过程活动将软件工具分为软件开发工具、软件维护工具、软件管理和软件支持工具。</p>
+<p>  软件开发工具是指用干辅助软件开发过程活动的各种软件。其中，<strong>软件建模工具</strong>是辅助建立软件系统的抽象模型的。常见的软件建模工具包括Rational Rose、Together、WinA&amp;D、OuickUML、EclipseUML等。</p>
+<p>  <strong>版本控制工具</strong>属于<strong>软件维护工具</strong>，<strong>软件评价工具</strong>属于<strong>软件管理与软件支持工具</strong>。</p>
+<p>  软件测试工具根据工作原理不同可分为静态测试工具和动态测试工具。其中静态测试工具是对代码进行语法扫描，找到不符合编码规范的地方，根据某种质量模型评价代码的质量，生成系统的调用关系图等。它直接对代码进行分析，不需要运行代码，也不需要对代码编译链接和生成可执行文件，静态测试工具可用于<strong>对软件需求、结构设计、详细设计和代码进行评审、走审和审查，也可用于对软件的复杂度分析、数据流分析、控制流分析和接口分析提供支持</strong>，动态测试工具与静态测试工具不同，它需要运行被测试系统，并设置探针，向代码生成的可执行文件中插入检测代码，<strong>可用于软件的覆盖分析和性能分析，也可用于软件的模拟、建模、仿真测试和变异测试等</strong>。</p>
+<p>  源代码控制系统 (SCCS)是UNIX系统上的开发项目中使用的源代码和文档文件所做的更改控制的工具。</p>
+<p><a href="https://imgse.com/i/pCsaYCt"><img src="https://s1.ax1x.com/2023/07/04/pCsaYCt.md.png" alt="pCsaYCt.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCsalHH"><img src="https://s1.ax1x.com/2023/07/04/pCsalHH.md.png" alt="pCsalHH.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
 <h2 id="课后习题">
   课后习题
   <a class="anchor" href="#%e8%af%be%e5%90%8e%e4%b9%a0%e9%a2%98">#</a>
 </h2>
 <hr>
-<p>todo 数字与经济管理习题</p>
+<p>todo 习题</p>
 </article>
  
       
@@ -1171,24 +1228,33 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#课程内容提要-">课程内容提要 ✌</a></li>
-    <li><a href="#1-图论">1 图论</a>
+    <li><a href="#课程内容提要">课程内容提要</a></li>
+    <li><a href="#1-立项管理">1 立项管理</a>
       <ul>
-        <li><a href="#11-最小生成树">1.1 最小生成树</a></li>
-        <li><a href="#12-最短路径">1.2 最短路径</a></li>
-        <li><a href="#13-网络与最大流量">1.3 网络与最大流量</a></li>
+        <li><a href="#11-盈亏平衡分析">1.1 盈亏平衡分析</a></li>
       </ul>
     </li>
-    <li><a href="#2-运筹方法">2 运筹方法</a>
+    <li><a href="#2-范围管理">2 范围管理</a></li>
+    <li><a href="#3-时间管理">3 时间管理</a>
       <ul>
-        <li><a href="#21-线性规划">2.1 线性规划</a></li>
-        <li><a href="#22-动态规划">2.2 动态规划</a></li>
-        <li><a href="#23-预测与决策">2.3 预测与决策</a></li>
+        <li><a href="#31-单代号网络图">3.1 单代号网络图</a></li>
+        <li><a href="#32-双代号网络图">3.2 双代号网络图</a></li>
+        <li><a href="#33-甘特图">3.3 甘特图</a></li>
       </ul>
     </li>
-    <li><a href="#3-数学建模">3 数学建模</a>
+    <li><a href="#4-成本管理">4 成本管理</a>
       <ul>
-        <li><a href="#31-面积体积估算法">3.1 面积体积估算法</a></li>
+        <li><a href="#41-挣值分析">4.1 挣值分析</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-软件质量管理">5 软件质量管理</a>
+      <ul>
+        <li><a href="#51-质量保证方式cmmi">5.1 质量保证方式CMMI</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-软件配置管理">6 软件配置管理</a>
+      <ul>
+        <li><a href="#61-软件工具">6.1 软件工具</a></li>
       </ul>
     </li>
     <li><a href="#课后习题">课后习题</a></li>
