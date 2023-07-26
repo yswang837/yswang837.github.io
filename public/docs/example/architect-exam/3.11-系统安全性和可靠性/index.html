@@ -3,32 +3,26 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 # 立项管理 ✅ 范围管理 ✅✅ 时间管理 ✅✅✅✅ 成本管理 ✅ 软件质量管理 ✅✅ 软件配置管理 ✅✅ 1 立项管理 # 1.1 盈亏平衡分析 # 2 范围管理 # 范围定义的输入包括：项目章程、项目范围管理计划、组织过程资产、批准的变更申请。
-例题 学霸肯定对了 ↕ C 3 时间管理 # 项目时间管理中的过程包括活动定义、活动排序、活动的资源估算、活动历时估算、制定进度计划以及进度控制。
-例题 学霸肯定对了 ↕ B 3.1 单代号网络图 # 关键路径是最早完成时间下的最长的路径。关键路径可以有多条，关键路径的条数越少越好。
-ES和EF是正向推导过程。关键路径需要反推才能得到。总时差=LS-ES，总时差为0的节点连接起来就是关键路径。
-自由时差小于等于总时差。当前节点的自由时差=紧后活动的ES-当前活动的EF。自由时差会影响紧后活动（压缩了别人的自由）
-3.2 双代号网络图 # 虚线不能去掉，2-&gt;3的距离为0，但不能删掉，因为A和B都是E的紧前活动，也不能合并。
-3.3 甘特图 # 细线表示计划，粗线表示当前进度。
-例题 学霸肯定对了 ↕ C
-也就是求D的总时差
-学霸肯定对了 ↕ A A
-正常进度=直接费用&#43;间接费用=55&#43;12*5=115天，赶工进度：压缩D两天，压缩A两天，B和D同时压1天，也就是：55&#43;4&#43;8&#43;4&#43;35=106，需要7天。
-4 成本管理 # 项目的成本管理中，成本预算将总的成本估算分配到各项活动和工作包上，来建立一个成本的基线。
-4.1 挣值分析 # 例题 学霸肯定对了 ↕ C 案例分析例题 学霸肯定对了 ↕ 说明：活动E不是关键路径上的活动，不应该加班。">
+<meta name="description" content="课程内容提要 # 安全基础技术 对称与非对称加密 ✅✅✅ 数字签名 ✅✅✅ 信息摘要 ✅✅✅ 数字证书 网络安全 网络各层次的安全保障 ✅✅✅ 网络攻击 ✅✅ 等级保护标准 ✅✅ 安全防范体系的层次 信息安全体系结构 可靠性相关基本概念 ✅✅ 系统可靠性分析 ✅✅✅✅ 软件可靠性设计 ✅✅✅✅ 1 安全基础基础 # 1.1 对称与非对称加密 # 一般用对称加密原文，已到达高速、节省空间的目的，一般用非对称加密保证数据的安全性。
+对称加密：公钥和秘钥一样，或者说公钥可以推导出秘钥。 非对称加密：公钥和秘钥不一样，或者说公钥不能推导出秘钥。 非对称加密：加密解密规则，用接收方的公钥加密。
+pa加密sa可解密，sa加密pa可解密。
+1.2 数字签名 # 数字签名是采用非对称加密技术，具体用发送方A的私钥Sa加密信息后，接收方如果用发送方的公钥Pa能解密，那么这个信息就一定是A发送的。
+1.3 信息摘要 # 相当于做md5，原文发生一小点变化，那摘要信息将完全不一样(雪崩效应)，下载安装包的时候，也会有个校验md5，就是指的这个。
+例题 学霸肯定对了 ↕ 对称加密压缩信息，非对称加密传递对称秘钥，数字签名发送者不可抵赖，信息摘要防止信息被篡改。 学霸肯定对了 ↕ A 学霸肯定对了 ↕ C B 1.4 数字证书CA # PKI公钥体系 2 网络安全 # 2.1 网络各层次的安全保障 # 需要知道各个层用什么协议来保障安全。
+PGP (Pretty Good Privacy):优良保密协议。">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="3.13 项目管理" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="3.11 系统安全性和可靠性" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7/" />
 
-<title>3.13 项目管理 | 小钻风</title>
+<title>3.11 系统安全性和可靠性 | 小钻风</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/zh.search.min.20a7828516f957107de7bb8c975417b6ecada72f1fdbe5fa6284020ac7f2efaa.js" integrity="sha256-IKeChRb5VxB957uMl1QXtuytpy8f2&#43;X6YoQCCsfy76o=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/index.xml" title="小钻风" />
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -637,7 +631,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7/" class="">3.11 系统安全性和可靠性</a>
+    <a href="/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7/" class="active">3.11 系统安全性和可靠性</a>
   
 
           
@@ -655,7 +649,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="active">3.13 项目管理</a>
+    <a href="/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="">3.13 项目管理</a>
   
 
           
@@ -844,7 +838,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>3.13 项目管理</strong>
+  <strong>3.11 系统安全性和可靠性</strong>
 
   <label for="toc-control">
     
@@ -861,32 +855,34 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#课程内容提要">课程内容提要</a></li>
-    <li><a href="#1-立项管理">1 立项管理</a>
+    <li><a href="#1-安全基础基础">1 安全基础基础</a>
       <ul>
-        <li><a href="#11-盈亏平衡分析">1.1 盈亏平衡分析</a></li>
+        <li><a href="#11-对称与非对称加密">1.1 对称与非对称加密</a></li>
+        <li><a href="#12-数字签名">1.2 数字签名</a></li>
+        <li><a href="#13-信息摘要">1.3 信息摘要</a></li>
+        <li><a href="#14-数字证书ca">1.4 数字证书CA</a></li>
       </ul>
     </li>
-    <li><a href="#2-范围管理">2 范围管理</a></li>
-    <li><a href="#3-时间管理">3 时间管理</a>
+    <li><a href="#2-网络安全">2 网络安全</a>
       <ul>
-        <li><a href="#31-单代号网络图">3.1 单代号网络图</a></li>
-        <li><a href="#32-双代号网络图">3.2 双代号网络图</a></li>
-        <li><a href="#33-甘特图">3.3 甘特图</a></li>
+        <li><a href="#21-网络各层次的安全保障">2.1 网络各层次的安全保障</a></li>
+        <li><a href="#22-网络攻击">2.2 网络攻击</a></li>
+        <li><a href="#23-等级保护标准">2.3 等级保护标准</a></li>
+        <li><a href="#24-安全防范体系的层次">2.4 安全防范体系的层次</a></li>
+        <li><a href="#25-信息安全体系结构">2.5 信息安全体系结构</a></li>
       </ul>
     </li>
-    <li><a href="#4-成本管理">4 成本管理</a>
+    <li><a href="#3-可靠性相关基本概念">3 可靠性相关基本概念</a></li>
+    <li><a href="#4-系统可靠性分析">4 系统可靠性分析</a>
       <ul>
-        <li><a href="#41-挣值分析">4.1 挣值分析</a></li>
+        <li><a href="#41-可靠性指标">4.1 可靠性指标</a></li>
+        <li><a href="#42-串并联系统可靠性计算">4.2 串并联系统可靠性计算</a></li>
       </ul>
     </li>
-    <li><a href="#5-软件质量管理">5 软件质量管理</a>
+    <li><a href="#5-软件可靠性设计">5 软件可靠性设计</a>
       <ul>
-        <li><a href="#51-质量保证方式cmmi">5.1 质量保证方式CMMI</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-软件配置管理">6 软件配置管理</a>
-      <ul>
-        <li><a href="#61-软件工具">6.1 软件工具</a></li>
+        <li><a href="#51-影响软件可靠性的因素">5.1 影响软件可靠性的因素</a></li>
+        <li><a href="#52-高可靠软件设计采用的设计方案">5.2 高可靠软件设计采用的设计方案</a></li>
       </ul>
     </li>
     <li><a href="#课后习题">课后习题</a></li>
@@ -909,55 +905,169 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>
 <ol>
-<li>立项管理   ✅</li>
+<li>安全基础技术</li>
 </ol>
+<ul>
+<li>对称与非对称加密 ✅✅✅</li>
+<li>数字签名     ✅✅✅</li>
+<li>信息摘要     ✅✅✅</li>
+<li>数字证书</li>
+</ul>
 </li>
 <li>
 <ol start="2">
-<li>范围管理   ✅✅</li>
+<li>网络安全</li>
 </ol>
+<ul>
+<li>网络各层次的安全保障  ✅✅✅</li>
+<li>网络攻击     ✅✅</li>
+<li>等级保护标准   ✅✅</li>
+<li>安全防范体系的层次</li>
+<li>信息安全体系结构</li>
+</ul>
 </li>
 <li>
 <ol start="3">
-<li>时间管理   ✅✅✅✅</li>
+<li>可靠性相关基本概念 ✅✅</li>
 </ol>
 </li>
 <li>
 <ol start="4">
-<li>成本管理   ✅</li>
+<li>系统可靠性分析   ✅✅✅✅</li>
 </ol>
 </li>
 <li>
 <ol start="5">
-<li>软件质量管理 ✅✅</li>
-</ol>
-</li>
-<li>
-<ol start="6">
-<li>软件配置管理 ✅✅</li>
+<li>软件可靠性设计   ✅✅✅✅</li>
 </ol>
 </li>
 </ul>
-<h2 id="1-立项管理">
-  1 立项管理
-  <a class="anchor" href="#1-%e7%ab%8b%e9%a1%b9%e7%ae%a1%e7%90%86">#</a>
+<h2 id="1-安全基础基础">
+  1 安全基础基础
+  <a class="anchor" href="#1-%e5%ae%89%e5%85%a8%e5%9f%ba%e7%a1%80%e5%9f%ba%e7%a1%80">#</a>
 </h2>
-<h3 id="11-盈亏平衡分析">
-  1.1 盈亏平衡分析
-  <a class="anchor" href="#11-%e7%9b%88%e4%ba%8f%e5%b9%b3%e8%a1%a1%e5%88%86%e6%9e%90">#</a>
+<hr>
+<h3 id="11-对称与非对称加密">
+  1.1 对称与非对称加密
+  <a class="anchor" href="#11-%e5%af%b9%e7%a7%b0%e4%b8%8e%e9%9d%9e%e5%af%b9%e7%a7%b0%e5%8a%a0%e5%af%86">#</a>
 </h3>
-<hr>
-<p><a href="https://imgse.com/i/pC0IL01"><img src="https://s1.ax1x.com/2023/06/30/pC0IL01.md.png" alt="pC0IL01.md.png" /></a></p>
-<h2 id="2-范围管理">
-  2 范围管理
-  <a class="anchor" href="#2-%e8%8c%83%e5%9b%b4%e7%ae%a1%e7%90%86">#</a>
-</h2>
-<hr>
-<p>  范围定义的输入包括：项目章程、项目范围管理计划、组织过程资产、批准的变更申请。</p>
-<p><a href="https://imgse.com/i/pC0op1e"><img src="https://s1.ax1x.com/2023/06/30/pC0op1e.md.png" alt="pC0op1e.md.png" /></a></p>
+<p>一般用对称加密原文，已到达高速、节省空间的目的，一般用非对称加密保证数据的安全性。</p>
+<ul>
+<li>对称加密：公钥和秘钥一样，或者说公钥可以推导出秘钥。</li>
+</ul>
+<p><a href="https://imgse.com/i/pCwWn2R"><img src="https://s1.ax1x.com/2023/06/29/pCwWn2R.md.png" alt="pCwWn2R.md.png" /></a></p>
+<ul>
+<li>非对称加密：公钥和秘钥不一样，或者说公钥不能推导出秘钥。</li>
+</ul>
+<p><a href="https://imgse.com/i/pCwWMKx"><img src="https://s1.ax1x.com/2023/06/29/pCwWMKx.md.png" alt="pCwWMKx.md.png" /></a></p>
+<p>  非对称加密：加密解密规则，用接收方的公钥加密。</p>
+<p>  pa加密sa可解密，sa加密pa可解密。</p>
+<p><a href="https://imgse.com/i/pCwWUxI"><img src="https://s1.ax1x.com/2023/06/29/pCwWUxI.md.png" alt="pCwWUxI.md.png" /></a></p>
+<h3 id="12-数字签名">
+  1.2 数字签名
+  <a class="anchor" href="#12-%e6%95%b0%e5%ad%97%e7%ad%be%e5%90%8d">#</a>
+</h3>
+<p>  数字签名是采用非对称加密技术，具体用发送方A的私钥Sa加密信息后，接收方如果用发送方的公钥Pa能解密，那么这个信息就一定是A发送的。</p>
+<p><a href="https://imgse.com/i/pCwWhLV"><img src="https://s1.ax1x.com/2023/06/29/pCwWhLV.md.png" alt="pCwWhLV.md.png" /></a></p>
+<h3 id="13-信息摘要">
+  1.3 信息摘要
+  <a class="anchor" href="#13-%e4%bf%a1%e6%81%af%e6%91%98%e8%a6%81">#</a>
+</h3>
+<p>  相当于做md5，原文发生一小点变化，那摘要信息将完全不一样(雪崩效应)，下载安装包的时候，也会有个校验md5，就是指的这个。</p>
+<p><a href="https://imgse.com/i/pCwWrdS"><img src="https://s1.ax1x.com/2023/06/29/pCwWrdS.md.png" alt="pCwWrdS.md.png" /></a></p>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/pCrZdsS"><img src="https://s1.ax1x.com/2023/07/03/pCrZdsS.md.png" alt="pCrZdsS.md.png" /></a>
+<a href="https://imgse.com/i/pCwfEOP"><img src="https://s1.ax1x.com/2023/06/29/pCwfEOP.md.png" alt="pCwfEOP.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      对称加密压缩信息，非对称加密传递对称秘钥，数字签名发送者不可抵赖，信息摘要防止信息被篡改。
+<a href="https://imgse.com/i/pC0wZWT"><img src="https://s1.ax1x.com/2023/06/30/pC0wZWT.md.png" alt="pC0wZWT.md.png" /></a>
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pC0wKOJ"><img src="https://s1.ax1x.com/2023/06/30/pC0wKOJ.md.png" alt="pC0wKOJ.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pC0wJfK"><img src="https://s1.ax1x.com/2023/06/30/pC0wJfK.md.png" alt="pC0wJfK.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C B
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h3 id="14-数字证书ca">
+  1.4 数字证书CA
+  <a class="anchor" href="#14-%e6%95%b0%e5%ad%97%e8%af%81%e4%b9%a6ca">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC0wcp8"><img src="https://s1.ax1x.com/2023/06/30/pC0wcp8.md.png" alt="pC0wcp8.md.png" /></a></p>
+<ul>
+<li>PKI公钥体系</li>
+</ul>
+<p><a href="https://imgse.com/i/pC0w47n"><img src="https://s1.ax1x.com/2023/06/30/pC0w47n.md.png" alt="pC0w47n.md.png" /></a>
+<a href="https://imgse.com/i/pC0wIkq"><img src="https://s1.ax1x.com/2023/06/30/pC0wIkq.md.png" alt="pC0wIkq.md.png" /></a></p>
+<h2 id="2-网络安全">
+  2 网络安全
+  <a class="anchor" href="#2-%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8">#</a>
+</h2>
+<hr>
+<h3 id="21-网络各层次的安全保障">
+  2.1 网络各层次的安全保障
+  <a class="anchor" href="#21-%e7%bd%91%e7%bb%9c%e5%90%84%e5%b1%82%e6%ac%a1%e7%9a%84%e5%ae%89%e5%85%a8%e4%bf%9d%e9%9a%9c">#</a>
+</h3>
+<p>  需要知道各个层用什么协议来保障安全。</p>
+<p>  PGP (Pretty Good Privacy):优良保密协议。</p>
+<p>  SSL (Secure Sockets Layer):安全套接字协议。</p>
+<p>  TLS (Transport Layer Security):传输层安全协议。</p>
+<p>  SET(Secure Electronic Transaction):安全电子交易协议。</p>
+<p>  IPSEC(Internet Protocol Security):互联网安全协议。</p>
+<p><a href="https://imgse.com/i/pC0wHpT"><img src="https://s1.ax1x.com/2023/06/30/pC0wHpT.md.png" alt="pC0wHpT.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pC00ph6"><img src="https://s1.ax1x.com/2023/06/30/pC00ph6.md.png" alt="pC00ph6.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      D
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/pC00C9K"><img src="https://s1.ax1x.com/2023/06/30/pC00C9K.md.png" alt="pC00C9K.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -973,16 +1083,15 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
-<h2 id="3-时间管理">
-  3 时间管理
-  <a class="anchor" href="#3-%e6%97%b6%e9%97%b4%e7%ae%a1%e7%90%86">#</a>
-</h2>
-<hr>
-<p>  项目时间管理中的过程包括活动定义、活动排序、活动的资源估算、活动历时估算、制定进度计划以及进度控制。</p>
-<p><a href="https://imgse.com/i/pCrUNrQ"><img src="https://s1.ax1x.com/2023/07/03/pCrUNrQ.md.png" alt="pCrUNrQ.md.png" /></a></p>
+<h3 id="22-网络攻击">
+  2.2 网络攻击
+  <a class="anchor" href="#22-%e7%bd%91%e7%bb%9c%e6%94%bb%e5%87%bb">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC00icD"><img src="https://s1.ax1x.com/2023/06/30/pC00icD.md.png" alt="pC00icD.md.png" /></a>
+<a href="https://imgse.com/i/pC00AnH"><img src="https://s1.ax1x.com/2023/06/30/pC00AnH.md.png" alt="pC00AnH.md.png" /></a></p>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/pCsed2t"><img src="https://s1.ax1x.com/2023/07/04/pCsed2t.md.png" alt="pCsed2t.md.png" /></a>
+<a href="https://imgse.com/i/pC00EBd"><img src="https://s1.ax1x.com/2023/06/30/pC00EBd.md.png" alt="pC00EBd.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -992,37 +1101,28 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      B
+      A
     </div>
   </label>
 </div>
 </p>
 </blockquote>
-<p><a href="https://imgse.com/i/pCsmvfs"><img src="https://s1.ax1x.com/2023/07/04/pCsmvfs.md.png" alt="pCsmvfs.md.png" /></a></p>
-<h3 id="31-单代号网络图">
-  3.1 单代号网络图
-  <a class="anchor" href="#31-%e5%8d%95%e4%bb%a3%e5%8f%b7%e7%bd%91%e7%bb%9c%e5%9b%be">#</a>
+<h3 id="23-等级保护标准">
+  2.3 等级保护标准
+  <a class="anchor" href="#23-%e7%ad%89%e7%ba%a7%e4%bf%9d%e6%8a%a4%e6%a0%87%e5%87%86">#</a>
 </h3>
-<p>  关键路径是最早完成时间下的最长的路径。关键路径可以有多条，关键路径的条数越少越好。</p>
-<p>  ES和EF是正向推导过程。关键路径需要反推才能得到。总时差=LS-ES，总时差为0的节点连接起来就是关键路径。</p>
-<p>  自由时差小于等于总时差。当前节点的自由时差=紧后活动的ES-当前活动的EF。自由时差会影响紧后活动（压缩了别人的自由）</p>
-<p><a href="https://imgse.com/i/pCsefx0"><img src="https://s1.ax1x.com/2023/07/04/pCsefx0.md.png" alt="pCsefx0.md.png" /></a></p>
-<h3 id="32-双代号网络图">
-  3.2 双代号网络图
-  <a class="anchor" href="#32-%e5%8f%8c%e4%bb%a3%e5%8f%b7%e7%bd%91%e7%bb%9c%e5%9b%be">#</a>
+<p>  等级最低：用户自主。等级最高：访问验证。</p>
+<p>  银行：安全标记。广播电台：结构化保护</p>
+<p><a href="https://imgse.com/i/pC00n4P"><img src="https://s1.ax1x.com/2023/06/30/pC00n4P.md.png" alt="pC00n4P.md.png" /></a>
+<a href="https://imgse.com/i/pC00ljg"><img src="https://s1.ax1x.com/2023/06/30/pC00ljg.md.png" alt="pC00ljg.md.png" /></a></p>
+<h3 id="24-安全防范体系的层次">
+  2.4 安全防范体系的层次
+  <a class="anchor" href="#24-%e5%ae%89%e5%85%a8%e9%98%b2%e8%8c%83%e4%bd%93%e7%b3%bb%e7%9a%84%e5%b1%82%e6%ac%a1">#</a>
 </h3>
-<p>  虚线不能去掉，2-&gt;3的距离为0，但不能删掉，因为A和B都是E的紧前活动，也不能合并。</p>
-<p><a href="https://imgse.com/i/pCsmNeU"><img src="https://s1.ax1x.com/2023/07/04/pCsmNeU.md.png" alt="pCsmNeU.md.png" /></a>
-<a href="https://imgse.com/i/pCsmq0S"><img src="https://s1.ax1x.com/2023/07/04/pCsmq0S.md.png" alt="pCsmq0S.md.png" /></a></p>
-<h3 id="33-甘特图">
-  3.3 甘特图
-  <a class="anchor" href="#33-%e7%94%98%e7%89%b9%e5%9b%be">#</a>
-</h3>
-<p>  细线表示计划，粗线表示当前进度。</p>
-<p><a href="https://imgse.com/i/pCsnhHU"><img src="https://s1.ax1x.com/2023/07/04/pCsnhHU.md.png" alt="pCsnhHU.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC0BSbj"><img src="https://s1.ax1x.com/2023/06/30/pC0BSbj.md.png" alt="pC0BSbj.md.png" /></a></p>
 <blockquote>
 <p>例题
-<a href="https://imgse.com/i/pCsnjHO"><img src="https://s1.ax1x.com/2023/07/04/pCsnjHO.md.png" alt="pCsnjHO.md.png" /></a>
+<a href="https://imgse.com/i/pC05KPS"><img src="https://s1.ax1x.com/2023/06/30/pC05KPS.md.png" alt="pC05KPS.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1032,47 +1132,23 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      <p>C</p>
-<p><a href="https://imgse.com/i/pCsukKP"><img src="https://s1.ax1x.com/2023/07/04/pCsukKP.md.png" alt="pCsukKP.md.png" /></a></p>
-<p>也就是求D的总时差</p>
-
-    </div>
-  </label>
-</div>
-
-<a href="https://imgse.com/i/pCsuEb8"><img src="https://s1.ax1x.com/2023/07/04/pCsuEb8.md.png" alt="pCsuEb8.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>A A</p>
-<p>正常进度=直接费用+间接费用=55+12*5=115天，赶工进度：压缩D两天，压缩A两天，B和D同时压1天，也就是：55+4+8+4+35=106，需要7天。</p>
-
+      C D
     </div>
   </label>
 </div>
 </p>
 </blockquote>
-<h2 id="4-成本管理">
-  4 成本管理
-  <a class="anchor" href="#4-%e6%88%90%e6%9c%ac%e7%ae%a1%e7%90%86">#</a>
-</h2>
-<hr>
-<p>  项目的成本管理中，<strong>成本预算</strong>将总的成本估算分配到各项活动和工作包上，来建立一个成本的基线。</p>
-<p><a href="https://imgse.com/i/pCsNCGV"><img src="https://s1.ax1x.com/2023/07/04/pCsNCGV.md.png" alt="pCsNCGV.md.png" /></a></p>
-<h3 id="41-挣值分析">
-  4.1 挣值分析
-  <a class="anchor" href="#41-%e6%8c%a3%e5%80%bc%e5%88%86%e6%9e%90">#</a>
+<h3 id="25-信息安全体系结构">
+  2.5 信息安全体系结构
+  <a class="anchor" href="#25-%e4%bf%a1%e6%81%af%e5%ae%89%e5%85%a8%e4%bd%93%e7%b3%bb%e7%bb%93%e6%9e%84">#</a>
 </h3>
-<p><a href="https://imgse.com/i/pCsU1f0"><img src="https://s1.ax1x.com/2023/07/04/pCsU1f0.md.png" alt="pCsU1f0.md.png" /></a></p>
+<p>  自主访问控制：主体是用户，给用户赋予用些权限。访问控制列表：主体是资源，给资源的权限赋予给用户。强制访问控制：资源和用户都分级，高级的用户可以访问低级的资源。</p>
+<p><a href="https://imgse.com/i/pC05Q2Q"><img src="https://s1.ax1x.com/2023/06/30/pC05Q2Q.md.png" alt="pC05Q2Q.md.png" /></a>
+<a href="https://imgse.com/i/pC058rn"><img src="https://s1.ax1x.com/2023/06/30/pC058rn.md.png" alt="pC058rn.md.png" /></a></p>
 <blockquote>
-<p>例题
-<a href="https://imgse.com/i/pCsU20H"><img src="https://s1.ax1x.com/2023/07/04/pCsU20H.md.png" alt="pCsU20H.md.png" /></a>
+<p>案例分析例题
+<a href="https://imgse.com/i/pC2bQEV"><img src="https://s1.ax1x.com/2023/07/10/pC2bQEV.md.png" alt="pC2bQEV.md.png" /></a>
+<a href="https://imgse.com/i/pC2bRbt"><img src="https://s1.ax1x.com/2023/07/10/pC2bRbt.md.png" alt="pC2bRbt.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1082,90 +1158,75 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      C
-    </div>
-  </label>
-</div>
-
-案例分析例题
-<a href="https://imgse.com/i/pC2sOMQ"><img src="https://s1.ax1x.com/2023/07/10/pC2sOMQ.md.png" alt="pC2sOMQ.md.png" /></a>
-<a href="https://imgse.com/i/pC2sxZn"><img src="https://s1.ax1x.com/2023/07/10/pC2sxZn.md.png" alt="pC2sxZn.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>说明：活动E不是关键路径上的活动，不应该加班。</p>
-<p><a href="https://imgse.com/i/pC27GIU"><img src="https://s1.ax1x.com/2023/07/10/pC27GIU.md.png" alt="pC27GIU.md.png" /></a></p>
-<p><a href="https://imgse.com/i/pC27oo8"><img src="https://s1.ax1x.com/2023/07/10/pC27oo8.md.png" alt="pC27oo8.md.png" /></a></p>
-<p><a href="https://imgse.com/i/pC27Xyn"><img src="https://s1.ax1x.com/2023/07/10/pC27Xyn.md.png" alt="pC27Xyn.md.png" /></a></p>
-
-    </div>
-  </label>
-</div>
-
-<a href="https://imgse.com/i/pC27jLq"><img src="https://s1.ax1x.com/2023/07/10/pC27jLq.md.png" alt="pC27jLq.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>松弛时间：总时差，关键路径上的总时差为0，反之亦然。</p>
-<p><a href="https://imgse.com/i/pC2Hkl9"><img src="https://s1.ax1x.com/2023/07/10/pC2Hkl9.md.png" alt="pC2Hkl9.md.png" /></a></p>
-<p><a href="https://imgse.com/i/pC2HEO1"><img src="https://s1.ax1x.com/2023/07/10/pC2HEO1.md.png" alt="pC2HEO1.md.png" /></a></p>
-<p><a href="https://imgse.com/i/pC2HCYF"><img src="https://s1.ax1x.com/2023/07/10/pC2HCYF.md.png" alt="pC2HCYF.md.png" /></a></p>
-
+      <a href="https://imgse.com/i/pC2Hv1H"><img src="https://s1.ax1x.com/2023/07/10/pC2Hv1H.md.png" alt="pC2Hv1H.md.png" /></a>
+<a href="https://imgse.com/i/pC2bIPS"><img src="https://s1.ax1x.com/2023/07/10/pC2bIPS.md.png" alt="pC2bIPS.md.png" /></a>
     </div>
   </label>
 </div>
 </p>
 </blockquote>
-<h2 id="5-软件质量管理">
-  5 软件质量管理
-  <a class="anchor" href="#5-%e8%bd%af%e4%bb%b6%e8%b4%a8%e9%87%8f%e7%ae%a1%e7%90%86">#</a>
+<h2 id="3-可靠性相关基本概念">
+  3 可靠性相关基本概念
+  <a class="anchor" href="#3-%e5%8f%af%e9%9d%a0%e6%80%a7%e7%9b%b8%e5%85%b3%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5">#</a>
 </h2>
 <hr>
-<p><a href="https://imgse.com/i/pCsUfAA"><img src="https://s1.ax1x.com/2023/07/04/pCsUfAA.md.png" alt="pCsUfAA.md.png" /></a></p>
-<h3 id="51-质量保证方式cmmi">
-  5.1 质量保证方式CMMI
-  <a class="anchor" href="#51-%e8%b4%a8%e9%87%8f%e4%bf%9d%e8%af%81%e6%96%b9%e5%bc%8fcmmi">#</a>
-</h3>
-<p>  软件过程改进：CMMI</p>
-<p><a href="https://imgse.com/i/pCsa9jU"><img src="https://s1.ax1x.com/2023/07/04/pCsa9jU.md.png" alt="pCsa9jU.md.png" /></a></p>
-<h2 id="6-软件配置管理">
-  6 软件配置管理
-  <a class="anchor" href="#6-%e8%bd%af%e4%bb%b6%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86">#</a>
+<p><a href="https://imgse.com/i/pC05dGF"><img src="https://s1.ax1x.com/2023/06/30/pC05dGF.md.png" alt="pC05dGF.md.png" /></a></p>
+<h2 id="4-系统可靠性分析">
+  4 系统可靠性分析
+  <a class="anchor" href="#4-%e7%b3%bb%e7%bb%9f%e5%8f%af%e9%9d%a0%e6%80%a7%e5%88%86%e6%9e%90">#</a>
 </h2>
 <hr>
-<p>  配置项的状态通常包括：草稿、正在修改、正式发布。</p>
-<p>  配置项主要有以下两大类：</p>
-<p>  1、属于产品组成部分的工作成果，如需求文档、设计文档、源代码和测试用例等。</p>
-<p>  属于项目管理和机构支撑过程城产生的文档，如工作计划、项目质量报、项目跟踪报告等。这些文档虽然不是产品的组成部分，但是值得保存。</p>
-<p>  软件文档是影响软件可维护性的决定因素。根据文档内容，软件文档又可分为<strong>用户文档</strong>和<strong>系统文档</strong>两类。其中用户文档主要描述<strong>系统功能</strong>和使用方法，并不关心这些功能是怎样实现的，它包括：功能描述文档，安装文档，使用手册，参考手册，操作指南文档。</p>
-<p><a href="https://imgse.com/i/pCsaENR"><img src="https://s1.ax1x.com/2023/07/04/pCsaENR.md.png" alt="pCsaENR.md.png" /></a></p>
-<h3 id="61-软件工具">
-  6.1 软件工具
-  <a class="anchor" href="#61-%e8%bd%af%e4%bb%b6%e5%b7%a5%e5%85%b7">#</a>
+<h3 id="41-可靠性指标">
+  4.1 可靠性指标
+  <a class="anchor" href="#41-%e5%8f%af%e9%9d%a0%e6%80%a7%e6%8c%87%e6%a0%87">#</a>
 </h3>
-<p>  按描述需求定义的方法可将需求分析工具分为<strong>基于自然语言或图形描述的工具</strong>和<strong>基于形式化需求定义语言的工具</strong>。</p>
-<p>  项目管理工具用来辅助软件项目管理活动(其中，“指导软件设计人员按软件生存周期各个阶段的适用技术进行设计工作“不是它的活动)。通常项目管理活动包括项目的计划、调度、通信、<strong>成本估算</strong>、资源分配及质量控制等。</p>
-<p>  软件系统工具的种类繁多，通常可以按照软件过程活动将软件工具分为软件开发工具、软件维护工具、软件管理和软件支持工具。</p>
-<p>  软件开发工具是指用干辅助软件开发过程活动的各种软件。其中，<strong>软件建模工具</strong>是辅助建立软件系统的抽象模型的。常见的软件建模工具包括Rational Rose、Together、WinA&amp;D、OuickUML、EclipseUML等。</p>
-<p>  <strong>版本控制工具</strong>属于<strong>软件维护工具</strong>，<strong>软件评价工具</strong>属于<strong>软件管理与软件支持工具</strong>。</p>
-<p>  软件测试工具根据工作原理不同可分为静态测试工具和动态测试工具。其中静态测试工具是对代码进行语法扫描，找到不符合编码规范的地方，根据某种质量模型评价代码的质量，生成系统的调用关系图等。它直接对代码进行分析，不需要运行代码，也不需要对代码编译链接和生成可执行文件，静态测试工具可用于<strong>对软件需求、结构设计、详细设计和代码进行评审、走审和审查，也可用于对软件的复杂度分析、数据流分析、控制流分析和接口分析提供支持</strong>，动态测试工具与静态测试工具不同，它需要运行被测试系统，并设置探针，向代码生成的可执行文件中插入检测代码，<strong>可用于软件的覆盖分析和性能分析，也可用于软件的模拟、建模、仿真测试和变异测试等</strong>。</p>
-<p>  源代码控制系统 (SCCS)是UNIX系统上的开发项目中使用的源代码和文档文件所做的更改控制的工具。</p>
-<p><a href="https://imgse.com/i/pCsaYCt"><img src="https://s1.ax1x.com/2023/07/04/pCsaYCt.md.png" alt="pCsaYCt.md.png" /></a></p>
+<p>  MTTF：平均失效等待时间，也叫平均无故障时间。</p>
+<p>  MTBF：平均失效间隔时间，也叫平均故障间隔时间。</p>
+<p><a href="https://imgse.com/i/pC05jzQ"><img src="https://s1.ax1x.com/2023/06/30/pC05jzQ.md.png" alt="pC05jzQ.md.png" /></a></p>
+<h3 id="42-串并联系统可靠性计算">
+  4.2 串并联系统可靠性计算
+  <a class="anchor" href="#42-%e4%b8%b2%e5%b9%b6%e8%81%94%e7%b3%bb%e7%bb%9f%e5%8f%af%e9%9d%a0%e6%80%a7%e8%ae%a1%e7%ae%97">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC05zss"><img src="https://s1.ax1x.com/2023/06/30/pC05zss.md.png" alt="pC05zss.md.png" /></a>
+<a href="https://imgse.com/i/pC0ISLn"><img src="https://s1.ax1x.com/2023/06/30/pC0ISLn.md.png" alt="pC0ISLn.md.png" /></a></p>
+<h2 id="5-软件可靠性设计">
+  5 软件可靠性设计
+  <a class="anchor" href="#5-%e8%bd%af%e4%bb%b6%e5%8f%af%e9%9d%a0%e6%80%a7%e8%ae%be%e8%ae%a1">#</a>
+</h2>
+<hr>
+<h3 id="51-影响软件可靠性的因素">
+  5.1 影响软件可靠性的因素
+  <a class="anchor" href="#51-%e5%bd%b1%e5%93%8d%e8%bd%af%e4%bb%b6%e5%8f%af%e9%9d%a0%e6%80%a7%e7%9a%84%e5%9b%a0%e7%b4%a0">#</a>
+</h3>
+<p>  分为5个方面。</p>
+<p><a href="https://imgse.com/i/pC0IAWF"><img src="https://s1.ax1x.com/2023/06/30/pC0IAWF.md.png" alt="pC0IAWF.md.png" /></a></p>
+<h3 id="52-高可靠软件设计采用的设计方案">
+  5.2 高可靠软件设计采用的设计方案
+  <a class="anchor" href="#52-%e9%ab%98%e5%8f%af%e9%9d%a0%e8%bd%af%e4%bb%b6%e8%ae%be%e8%ae%a1%e9%87%87%e7%94%a8%e7%9a%84%e8%ae%be%e8%ae%a1%e6%96%b9%e6%a1%88">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC0IEz4"><img src="https://s1.ax1x.com/2023/06/30/pC0IEz4.md.png" alt="pC0IEz4.md.png" /></a></p>
+<ul>
+<li>N版本程序设计</li>
+</ul>
+<p><a href="https://imgse.com/i/pC0Iue1"><img src="https://s1.ax1x.com/2023/06/30/pC0Iue1.md.png" alt="pC0Iue1.md.png" /></a></p>
+<ul>
+<li>恢复块设计(动态冗余)</li>
+</ul>
+<p><a href="https://imgse.com/i/pC0IYyd"><img src="https://s1.ax1x.com/2023/06/30/pC0IYyd.md.png" alt="pC0IYyd.md.png" /></a></p>
+<ul>
+<li>防卫式程序设计</li>
+</ul>
+<p>  对于程序中存在的错误和不一致性，通过在程序中包含错误检查代码和错误恢复代码，使得一旦错误发生，程序能撤销错误状态，恢复到一个已知的正确状态中去。</p>
+<p>  实现策略:错误检测、破坏估计、错误恢复。</p>
+<ul>
+<li>双机容错</li>
+</ul>
+<p><a href="https://imgse.com/i/pC0IsSg"><img src="https://s1.ax1x.com/2023/06/30/pC0IsSg.md.png" alt="pC0IsSg.md.png" /></a></p>
 <blockquote>
-<p>例题
-<a href="https://imgse.com/i/pCsalHH"><img src="https://s1.ax1x.com/2023/07/04/pCsalHH.md.png" alt="pCsalHH.md.png" /></a>
+<p>案例分析例题
+<a href="https://imgse.com/i/pC2qlqI"><img src="https://s1.ax1x.com/2023/07/10/pC2qlqI.md.png" alt="pC2qlqI.md.png" /></a>
+<a href="https://imgse.com/i/pC2bT2Q"><img src="https://s1.ax1x.com/2023/07/10/pC2bT2Q.md.png" alt="pC2bT2Q.md.png" /></a>
+<a href="https://imgse.com/i/pCRvawj"><img src="https://s1.ax1x.com/2023/07/11/pCRvawj.md.png" alt="pCRvawj.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1175,7 +1236,8 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      C
+      <a href="https://imgse.com/i/pC2bbKs"><img src="https://s1.ax1x.com/2023/07/10/pC2bbKs.md.png" alt="pC2bbKs.md.png" /></a>
+<a href="https://imgse.com/i/pCRvdTs"><img src="https://s1.ax1x.com/2023/07/11/pCRvdTs.md.png" alt="pCRvdTs.md.png" /></a>
     </div>
   </label>
 </div>
@@ -1229,32 +1291,34 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#课程内容提要">课程内容提要</a></li>
-    <li><a href="#1-立项管理">1 立项管理</a>
+    <li><a href="#1-安全基础基础">1 安全基础基础</a>
       <ul>
-        <li><a href="#11-盈亏平衡分析">1.1 盈亏平衡分析</a></li>
+        <li><a href="#11-对称与非对称加密">1.1 对称与非对称加密</a></li>
+        <li><a href="#12-数字签名">1.2 数字签名</a></li>
+        <li><a href="#13-信息摘要">1.3 信息摘要</a></li>
+        <li><a href="#14-数字证书ca">1.4 数字证书CA</a></li>
       </ul>
     </li>
-    <li><a href="#2-范围管理">2 范围管理</a></li>
-    <li><a href="#3-时间管理">3 时间管理</a>
+    <li><a href="#2-网络安全">2 网络安全</a>
       <ul>
-        <li><a href="#31-单代号网络图">3.1 单代号网络图</a></li>
-        <li><a href="#32-双代号网络图">3.2 双代号网络图</a></li>
-        <li><a href="#33-甘特图">3.3 甘特图</a></li>
+        <li><a href="#21-网络各层次的安全保障">2.1 网络各层次的安全保障</a></li>
+        <li><a href="#22-网络攻击">2.2 网络攻击</a></li>
+        <li><a href="#23-等级保护标准">2.3 等级保护标准</a></li>
+        <li><a href="#24-安全防范体系的层次">2.4 安全防范体系的层次</a></li>
+        <li><a href="#25-信息安全体系结构">2.5 信息安全体系结构</a></li>
       </ul>
     </li>
-    <li><a href="#4-成本管理">4 成本管理</a>
+    <li><a href="#3-可靠性相关基本概念">3 可靠性相关基本概念</a></li>
+    <li><a href="#4-系统可靠性分析">4 系统可靠性分析</a>
       <ul>
-        <li><a href="#41-挣值分析">4.1 挣值分析</a></li>
+        <li><a href="#41-可靠性指标">4.1 可靠性指标</a></li>
+        <li><a href="#42-串并联系统可靠性计算">4.2 串并联系统可靠性计算</a></li>
       </ul>
     </li>
-    <li><a href="#5-软件质量管理">5 软件质量管理</a>
+    <li><a href="#5-软件可靠性设计">5 软件可靠性设计</a>
       <ul>
-        <li><a href="#51-质量保证方式cmmi">5.1 质量保证方式CMMI</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-软件配置管理">6 软件配置管理</a>
-      <ul>
-        <li><a href="#61-软件工具">6.1 软件工具</a></li>
+        <li><a href="#51-影响软件可靠性的因素">5.1 影响软件可靠性的因素</a></li>
+        <li><a href="#52-高可靠软件设计采用的设计方案">5.2 高可靠软件设计采用的设计方案</a></li>
       </ul>
     </li>
     <li><a href="#课后习题">课后习题</a></li>
