@@ -14,7 +14,7 @@
 视图表:由基表或其他视图表导出的表，本身不独立存储，数据库只存放它的定义，常称为虚表。
 2 关系数据库管理系统 RDBMS # 数据分割和数据复制是数据分布的两种重要方式。数据分割有垂直分割和水平分割两种模式，前者是将表中不同字段的数据存储到不同的服务器上，后者是将表中不同行的数据存储到不同的服务器上。数据复制是为了提升数据访问效率而采用的一种增加数据冗余的方法，它将数据的多个副本存储到不同的服务器上，由RDBMS负责维护数据的一致性。
 3 基于网络的数据库管理系统 NDB # 基于网络的数据库系统(Netware Database SystemNDB)是基于4G/5G的移动通信之上，在逻辑上可以把嵌入式设备看作远程服务器的一个客户端。NDB主要由客户端、通信协议和远程服务器等三部分组成。NDB的客户端主要负责提供接口给嵌入式程序，通信协议负责规范客户端与远程服务器之间的通信，远程服务器负责维护服务器上的数据库数据。NDB是以文件方式存储数据库数据。即数据按照定格式储存在磁盘中，使用时由应用程序通过相应的驱动程序甚至直接对数据文件进行读写。NDB一般是嵌入式设备，裁剪性是嵌入式设备的特征。
-4 分布式数据库 # 分布式数据对应于集中式数据库而言的，平时所用到的SQL Server等都是集中式数据库，分布式会考虑物理上把数据放在不同的物理节点上，其逻辑上依然是一个整体。">
+4 分布式数据库 # 分布式数据对应于集中式数据库而言的，平时所用到的SQL Server等都是集中式数据库，分布式会考虑物理上把数据放在不同的物理节点上，其逻辑上依然是一个整体。数据库容灾属于网络安全和应用安全考虑范畴。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.3 数据库系统" />
 <meta property="og:description" content="" />
@@ -26,7 +26,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.109c869d44891e422b5c427aaf838d0b36532a73ae5c768a1d650c0167a23706.js" integrity="sha256-EJyGnUSJHkIrXEJ6r4ONCzZTKnOuXHaKHWUMAWeiNwY=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.ac64324cdfd4f6eb93ce4e3443f08d7ed28539cc36ec4af519c070b80a5b68fe.js" integrity="sha256-rGQyTN/U9uuTzk40Q/CNftKFOcw27Er1GcBwuApbaP4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1088,7 +1088,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#4-%e5%88%86%e5%b8%83%e5%bc%8f%e6%95%b0%e6%8d%ae%e5%ba%93">#</a>
 </h2>
 <hr>
-<p>  分布式数据对应于集中式数据库而言的，平时所用到的SQL Server等都是集中式数据库，分布式会考虑物理上把数据放在不同的物理节点上，其逻辑上依然是一个整体。</p>
+<p>  分布式数据对应于集中式数据库而言的，平时所用到的SQL Server等都是集中式数据库，分布式会考虑物理上把数据放在不同的物理节点上，其逻辑上依然是一个整体。数据库容灾属于网络安全和应用安全考虑范畴。</p>
 <h3 id="41-分布式数据库的特点">
   4.1 分布式数据库的特点
   <a class="anchor" href="#41-%e5%88%86%e5%b8%83%e5%bc%8f%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e7%89%b9%e7%82%b9">#</a>
