@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="课程内容提要 ✌ # 计算机结构 ✅ 存储系统 ✅✅✅✅ 数据传输控制方式 ✅ 总线 ✅✅ CISC与RISC ✅ 流水线 ✅✅ 校验码 ✅ 1 计算机结构 # 计算机的硬件包含5大组成：控制器、运算器、存储器、输入设备和输出设备。CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。程序员是可以通过汇编语言直接操作CPU中的寄存器的，CPU访问内存通常是同步方式，CPU与I/0接口交换信息通常是同步方式，CPU与PCI总线交换信息通常是同步方式，I/O接口与打印机交换信息则通常采用基于缓存池的异步方式(PCI (Peripheral ComponentInt Interconnect)总线标准是种局部并行总线标准，常用来表示个人计算机中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽。GUI (Graphical User Interface)常用来表示采用图形方式显示的计算机操作用户界面。API(Application Programming Interface，应用程序编程接口)是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，开发人员无须访问源码(或理解内部工作机制的细节))。
-它们之间的交互如下图（别的部件会在后面的章节详细讲解，这里只说运算器和控制器）： 冯诺依曼结构 一般用于pc处理器，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令。
+<meta name="description" content="课程内容提要 ✌ # 计算机结构 ✅ 存储系统 ✅✅✅✅ 数据传输控制方式 ✅ 总线 ✅✅ CISC与RISC ✅ 流水线 ✅✅ 校验码 ✅ 1 计算机结构 # 计算机的硬件包含5大组成：运算器、控制器、存储器、输入和输出设备。CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。
+它们之间的交互如下图（别的部件会在后面的章节详细讲解，本节会说到运算器和控制器）： 程序员是可以通过汇编语言直接操作CPU中的寄存器的，如AX、BX等；也可以直接操作内存、外存；然而cache对于程序员来说是透明的。
+CPU与别的部件交换信息通常是同步方式；如：CPU访问内存通常是同步方式，CPU与PCI总线交换信息通常是同步方式，CPU与I/0接口交换信息通常是同步方式，I/O接口与打印机交换信息则通常采用基于缓存池的异步方式。
+总线标准是种局部并行总线标准，常用来表示个人计算机中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽。图形用户界面GUI常用来表示采用图形方式显示的计算机操作用户界面。应用程序接口API是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，开发人员无须访问源码或理解内部工作机制的细节。
+冯诺依曼结构 现代pc计算机一般采用的结构，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令。
 哈佛结构 一般用于嵌入式系统处理器DSP(数字信号处理器)，指令和数据可并行分开存储与传输。
-1.1 运算器 # 算术逻辑单元ALU：实现对数据的算术和逻辑运算。
-累加寄存器AC：通用寄存器、运算结果或源操作数的存放区。
-数据缓冲寄存器DR：暂时存放内存的指令或数据。
-状态条件寄存器PSW：保存指令运行结果的条件码内容，如溢出标志、进位等。
-1.2 控制器 # 程序计数器PC：存储下一条要执行指令的地址。
-指令寄存器IR：存储即将执行的指令。
-指令译码器ID：对指令中的操作码字段进行分析解释。
+1.1 运算器 # 算术逻辑单元(Arithmetic and Logic Unit, ALU)：实现对数据的算术和逻辑运算。
+累加寄存器(Accumulator register, AC)：通用寄存器、运算结果或源操作数的存放区。
+数据缓冲寄存器(Data Register, DR)：暂时存放内存的指令或数据。
+程序状态寄存器(Program Status Word, PSW)：保存指令运行结果的条件码内容，如溢出标志、进位等。
+1.2 控制器 # 程序计数器(Program Count, PC)：存储下一条要执行指令的地址。
+指令寄存器(Instruction Register, IR)：存储即将执行的指令内容。
+指令译码器(Instruction Decoder, ID)：对指令中的操作码字段进行分析解释。
 时序部件：提供时序控制信号。
 例题 学霸肯定对了 ↕ 答案：A
 计算机执行程序时，在一个指令周期的过程中，为了能够从内存中读指令操作码，首先是将程序计数器(PC)的内容送到地址总线上，PC-&gt;IR。
-学霸肯定对了 ↕ 答案：B 2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。虚拟存储器（是一个容量非常大的逻辑存储模型，可认为是内存&#43;外存，当虚拟存储器发生页面失效时，需要进行外部地址变换，即实现虚地址到辅存物理地址的变换。）、cache内存外存成为三级存储结构.如下图：
-2.1 Cache # 高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于程序员来说是透明的。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。
-地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。
-Cache的功能 1.提高CPU数据输入输出的速率，突破冯·诺依曼瓶颈，即突破CPU与存储系统间数据传送带宽限制。
-2.在计算机的存储系统体系中(除cpu中的寄存器外)，Cache是访问速度最快的层次。
-3.Cache对程序员来说是透明的。">
+学霸肯定对了 ↕ 答案：B 2 存储系统 # 整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。cache内存外存成为三级存储结构.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.1 计算机组成与体系结构" />
 <meta property="og:description" content="" />
@@ -33,7 +31,7 @@ Cache的功能 1.提高CPU数据输入输出的速率，突破冯·诺依曼瓶�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.85e9c76f9dbcf4aaca2dd4eb9da7fabcc27f2a1efdb1548200eafd1dd59da8d6.js" integrity="sha256-henHb5289KrKLdTrnaf6vMJ/Kh79sVSCAOr9HdWdqNY=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.cb52b4ec2c3471bf707a597b12d683918a79fc10c577963aa8720f3f742334f5.js" integrity="sha256-y1K07Cw0cb9well7EtaDkYp5/BDFd5Y6qHIPP3QjNPU=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -957,32 +955,35 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#1-%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bb%93%e6%9e%84">#</a>
 </h2>
 <hr>
-<p>  计算机的硬件包含5大组成：<strong>控制器</strong>、<strong>运算器</strong>、<strong>存储器</strong>、<strong>输入设备</strong>和<strong>输出设备</strong>。CPU依据指令周期的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。程序员是可以通过汇编语言直接操作CPU中的寄存器的，CPU访问内存通常是同步方式，CPU与I/0接口交换信息通常是同步方式，CPU与PCI总线交换信息通常是同步方式，I/O接口与打印机交换信息则通常采用基于缓存池的异步方式(PCI (Peripheral ComponentInt Interconnect)总线标准是种局部并行总线标准，常用来表示个人计算机中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽。GUI (Graphical User Interface)常用来表示采用图形方式显示的计算机操作用户界面。API(Application Programming Interface，应用程序编程接口)是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，开发人员无须访问源码(或理解内部工作机制的细节))。</p>
-<p>  它们之间的交互如下图（别的部件会在后面的章节详细讲解，这里只说运算器和控制器）：
+<p>  计算机的硬件包含5大组成：<strong>运算器</strong>、<strong>控制器</strong>、<strong>存储器</strong>、<strong>输入和输出设备</strong>。CPU依据<strong>指令周期</strong>的不同阶段来区分二进制的指令和数据，因为在指令周期的不同阶段指令会命令CPU分别去取指令或者数据。</p>
+<p>  它们之间的交互如下图（别的部件会在后面的章节详细讲解，本节会说到运算器和控制器）：
 <a href="https://imgse.com/i/p9DeARs"><img src="https://s1.ax1x.com/2023/05/10/p9DeARs.md.png" alt="p9DeARs.md.png" /></a></p>
+<p>  程序员是可以通过汇编语言<strong>直接操作CPU中的寄存器</strong>的，如AX、BX等；也可以直接操作内存、外存；然而<strong>cache对于程序员来说是透明的</strong>。</p>
+<p>  <strong>CPU与别的部件交换信息通常是同步方式</strong>；如：CPU访问内存通常是同步方式，CPU与PCI总线交换信息通常是同步方式，CPU与I/0接口交换信息通常是同步方式，<strong>I/O接口与打印机交换信息则通常采用基于缓存池的异步方式</strong>。</p>
+<p>  总线标准是种局部并行总线标准，常用来表示个人计算机中使用最为广泛的接口，几乎所有的主板产品上都带有这种插槽。<strong>图形用户界面GUI常用来表示采用图形方式显示的计算机操作用户界面。应用程序接口API是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，开发人员无须访问源码或理解内部工作机制的细节</strong>。</p>
 <ul>
 <li>冯诺依曼结构</li>
 </ul>
-<p>  一般用于pc处理器，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令。</p>
+<p>  <strong>现代pc计算机一般采用的结构，指令和数据存储在一起、指令和数据都是通过相同的数据总线传输，通过不同的周期来区分数据和指令</strong>。</p>
 <ul>
 <li>哈佛结构</li>
 </ul>
-<p>  一般用于嵌入式系统处理器DSP(数字信号处理器)，指令和数据可并行分开存储与传输。</p>
+<p>  <strong>一般用于嵌入式系统处理器DSP(数字信号处理器)，指令和数据可并行分开存储与传输</strong>。</p>
 <h3 id="11-运算器">
   1.1 运算器
   <a class="anchor" href="#11-%e8%bf%90%e7%ae%97%e5%99%a8">#</a>
 </h3>
-<p>  算术逻辑单元ALU：实现对数据的算术和逻辑运算。</p>
-<p>  累加寄存器AC：通用寄存器、运算结果或源操作数的存放区。</p>
-<p>  数据缓冲寄存器DR：暂时存放内存的指令或数据。</p>
-<p>  状态条件寄存器PSW：保存指令运行结果的条件码内容，如溢出标志、进位等。</p>
+<p>  算术逻辑单元(Arithmetic and Logic Unit, ALU)：实现对数据的算术和逻辑运算。</p>
+<p>  累加寄存器(Accumulator register, AC)：通用寄存器、运算结果或源操作数的存放区。</p>
+<p>  数据缓冲寄存器(Data Register, DR)：暂时存放内存的指令或数据。</p>
+<p>  程序状态寄存器(Program Status Word, PSW)：保存指令运行结果的条件码内容，如溢出标志、进位等。</p>
 <h3 id="12-控制器">
   1.2 控制器
   <a class="anchor" href="#12-%e6%8e%a7%e5%88%b6%e5%99%a8">#</a>
 </h3>
-<p>  <strong>程序计数器PC</strong>：存储下一条要执行指令的地址。</p>
-<p>  指令寄存器IR：存储即将执行的指令。</p>
-<p>  指令译码器ID：对指令中的操作码字段进行分析解释。</p>
+<p>  <strong>程序计数器(Program Count, PC)</strong>：存储下一条要执行指令的地址。</p>
+<p>  指令寄存器(Instruction Register, IR)：存储即将执行的指令内容。</p>
+<p>  指令译码器(Instruction Decoder, ID)：对指令中的操作码字段进行分析解释。</p>
 <p>  时序部件：提供时序控制信号。</p>
 <blockquote>
 <p>例题
@@ -1024,26 +1025,25 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#2-%e5%ad%98%e5%82%a8%e7%b3%bb%e7%bb%9f">#</a>
 </h2>
 <hr>
-<p>  整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾。虚拟存储器（是一个容量非常大的逻辑存储模型，可认为是内存+外存，当虚拟存储器发生页面失效时，需要进行外部地址变换，即实现虚地址到辅存物理地址的变换。）、cache内存外存成为三级存储结构.如下图：</p>
-<p><a href="https://imgse.com/i/pCkau6g"><img src="https://s1.ax1x.com/2023/06/08/pCkau6g.md.png" alt="pCkau6g.md.png" /></a></p>
+<p>  <strong>整体采用分层的思想，主要是解决速度、容量和成本之间的矛盾</strong>。cache内存外存成为三级存储结构.如下图：
+<a href="https://imgse.com/i/pCkau6g"><img src="https://s1.ax1x.com/2023/06/08/pCkau6g.md.png" alt="pCkau6g.md.png" /></a></p>
+<p>  虚拟存储器可以认为是一个由“内存”+“外存”配合而成的容量非常大的逻辑存储模型(页面置换算法决定了其容量比内存加外存都大)，当虚拟存储器发生页面失效时(其实就是页面失效)，需要进行外部地址变换，即<strong>实现虚地址到辅存物理地址的变换</strong>。</p>
 <h3 id="21-cache">
   2.1 Cache
   <a class="anchor" href="#21-cache">#</a>
 </h3>
-<p>  高速缓存Cache用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于<strong>程序员来说是透明的</strong>。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则命中不在则依据一定的算法从主存中替换。</p>
-<p>  地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射。</p>
+<p>  高速缓存Cache在物理上是集成在CPU上的 (linux系统可通过lscpu命令查看)，它用来存储当前最活跃的程序和数据，直接与CPU交互，位于CPU和主存之间,容量小，速度为内存的5-10倍，其内容是主存(内存)的拷贝，对于<strong>程序员来说是透明的</strong>。Cache由控制部分和存储器组成，存储器存储数据，控制部分判断CPU要访问的数据是否在Cache中，在则称为命中，不在则依据一定的算法从主存中获取数据，主存中没有则通过页面置换算法从外存中调取。</p>
+<p>  地址映射：在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读/写信息。这就需要<strong>将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，由硬件自动完成映射</strong>。</p>
+<ul>
+<li>Cache的命中率</li>
+</ul>
+<p>  当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache(90%一般由cache的算法决定)，则CPU读取一次的平均时间为(90% * 1 + 10% * 1000)ns。</p>
 <ul>
 <li>Cache的功能</li>
 </ul>
 <p>  1.提高CPU数据输入输出的速率，突破冯·诺依曼瓶颈，即突破CPU与存储系统间数据传送带宽限制。</p>
 <p>  2.在计算机的存储系统体系中(除cpu中的寄存器外)，Cache是访问速度最快的层次。</p>
-<p>  3.Cache对程序员来说是透明的。</p>
-<p>  4.使用Cache改善系统性能的依据是程序的局部性原理(总的来说，在CPU运行时，所访问的数据会趋向于一个较小的局部时空内。包括下面两个方面:
-<strong>时间局部性</strong>原理:如果一个数据项正在被访问，那么在近期它很可能会被再次访问(代码里面的循环)，即在相邻的时间里会访问同一个数据项。<strong>空间局部性</strong>原理:在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问(数组))</p>
-<ul>
-<li>Cache的命中率</li>
-</ul>
-<p>  当CPU所访问的数据在Cache中时，命中，直接丛Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在Cache中，则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache(90%一般由cache的算法决定)，则CPU读取一次的平均时间为(90% * 1 + 10% * 1000)ns。</p>
+<p>  3.使用Cache能改善系统性能的依据在于：程序的局部性原理。总的来说，在CPU运行时，所访问的数据会趋向于一个较小的局部时空内。包括下面两个方面:<strong>时间局部性</strong>原理：如果一个数据项正在被访问，那么在近期它很可能会被再次访问(代码里面的循环)，即在相邻的时间里会访问同一个数据项。<strong>空间局部性</strong>原理：在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即相邻的空间地址会被连续访问(数组)。</p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9D4n8x"><img src="https://s1.ax1x.com/2023/05/10/p9D4n8x.md.png" alt="p9D4n8x.md.png" /></a>
@@ -1096,7 +1096,7 @@ https://github.com/alex-shpak/hugo-book
   2.2 主存(内存)编址计算
   <a class="anchor" href="#22-%e4%b8%bb%e5%ad%98%e5%86%85%e5%ad%98%e7%bc%96%e5%9d%80%e8%ae%a1%e7%ae%97">#</a>
 </h3>
-<p>  主存如图所示，可以看图试着回答红色框线里面的问题，图中一个存储单元存放了4个bit位，每个存储单元的地址就是我们熟悉的指针，看完应该知道32位机器和64位机器大概是啥意思了。
+<p>  主存如图所示，可以看图试着回答红色框线里面的问题，图中一个<strong>存储单元</strong>存放了4个bit位，每个存储单元的地址就是我们熟悉的指针，看完应该要知道字长为32位机器和64位机器大概是啥意思了。
 <a href="https://imgse.com/i/p9D5gTH"><img src="https://s1.ax1x.com/2023/05/10/p9D5gTH.md.png" alt="p9D5gTH.md.png" /></a></p>
 <p><strong>特别提醒</strong>：不要硬算，要化简为二进制或者十进制来算。</p>
 <p><strong>存储单元个数</strong>=最大地址-最小地址+1</p>
@@ -1104,7 +1104,7 @@ https://github.com/alex-shpak/hugo-book
 <li>编址方式
 <ul>
 <li>按字编址：一个存储单元存储的是一个字，最小寻址单位是一个字。</li>
-<li>按字节编址：一个存储单元存储的是一个字节，最小寻址单位是一个字节。</li>
+<li>按字节编址：一个存储单元存储的是一个字节(Byte)，最小寻址单位是一个字节。</li>
 </ul>
 </li>
 </ul>
@@ -1123,7 +1123,7 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
       <p>答案：B C</p>
-<p>总容量=BFFFFH+1-80000H=40000H，转换为十进制为：4 * 16^4=262144，因为按字节编址，所以总容量为262144字节，即262144/1024=256KB，16k * 4bit = 8k * 8bit(1字节=8bit)，所以用这种芯片存这些数据，所需的芯片数量为：256/8=32片</p>
+<p>总存储单元个数=BFFFFH+1-80000H=40000H，转换为十进制为：4 * 16^4=262144(个)，因为按字节编址，所以总容量为262144字节，即262144/1024=256KB，16k * 4bit = 8k * 8bit(1字节=8bit)，所以用这种芯片存这些数据，所需的芯片数量为：256/8=32片</p>
 
     </div>
   </label>
@@ -1134,12 +1134,12 @@ https://github.com/alex-shpak/hugo-book
   2.3 磁盘管理
   <a class="anchor" href="#23-%e7%a3%81%e7%9b%98%e7%ae%a1%e7%90%86">#</a>
 </h3>
-<p>  磁盘有正反两个盘面，每个盘面有多个同心圆，每个同心圆是一个磁道，每个同心圆又cd被划分为多个扇区，数据就被存放在一个个扇区中。</p>
+<p>  磁盘有正反两个盘面，每个盘面有多个同心圆，每个同心圆是一个磁道，不同盘面上的多个磁道叫做柱面(柱面简单理解为磁道也是可以的)，每个同心圆又被划分为多个扇区，数据就被存放在一个个扇区中。如下图所示：</p>
 <p><a href="https://imgse.com/i/pCkwesg"><img src="https://s1.ax1x.com/2023/06/08/pCkwesg.md.png" alt="pCkwesg.md.png" /></a></p>
-<p>  磁头首先要寻找到对应的磁道，然后等待磁盘进行周期旋转，旋转到指定的扇区，才能读取到对应的数据，因此，会产生寻道时间和等待时间和存取数据的时间。其<strong>公式</strong>为：存取时间=寻道时间+等待时间+存取数据时间(在考试时，有这个时间就算上，没有就忽略)</p>
+<p>  磁盘在运行过程中，磁头首先要寻找到对应的磁道，然后等待磁盘进行周期旋转，旋转到指定的扇区，才能读取到对应的数据，因此，会产生寻道时间、等待时间和存取数据的时间。其<strong>公式</strong>为：存取时间=寻道时间+等待时间+存取数据时间(在考试时，有这个时间就算上，没有就忽略)</p>
 <ul>
 <li>
-<p>磁盘调度算法(磁盘旋转是同方向匀速旋转，只会在寻道的时候产生优化算法)</p>
+<p>磁盘调度算法(磁盘旋转是同方向匀速旋转，只会在寻道的时候产生优化算法，所以磁盘调度算法都是指的是寻道调度算法)</p>
 <ul>
 <li>
 <p>先来先服务FCFS：根据进程请求访问磁盘的先后顺序进行调度。</p>
@@ -1189,6 +1189,30 @@ https://github.com/alex-shpak/hugo-book
     </div>
   </label>
 </div>
+</p>
+</blockquote>
+<ul>
+<li>磁盘单缓冲区与双缓冲区的读取问题：单缓冲区表示的是同一时间智能有一个任务读或者写缓冲区，也就是串行。双缓冲区表示的是同一时间可以有两个任务访问两个不同的缓冲区，也就是并行。</li>
+</ul>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCk0XuD"><img src="https://s1.ax1x.com/2023/06/08/pCk0XuD.md.png" alt="pCk0XuD.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>答案：D C</p>
+<p>也可用流水线的公式计算，详见流水线例题
+<a href="https://imgse.com/i/pCkBYVJ"><img src="https://s1.ax1x.com/2023/06/08/pCkBYVJ.md.png" alt="pCkBYVJ.md.png" /></a></p>
+
+    </div>
+  </label>
+</div>
 
 <a href="https://imgse.com/i/p9xx6hT"><img src="https://s1.ax1x.com/2023/06/01/p9xx6hT.md.png" alt="p9xx6hT.md.png" /></a>
 
@@ -1208,27 +1232,6 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
-<ul>
-<li>磁盘单缓冲区与双缓冲区的读取问题</li>
-</ul>
-<p><a href="https://imgse.com/i/pCk0XuD"><img src="https://s1.ax1x.com/2023/06/08/pCk0XuD.md.png" alt="pCk0XuD.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>答案：D C</p>
-<p>也可用流水线的公式计算，详见流水线例题
-<a href="https://imgse.com/i/pCkBYVJ"><img src="https://s1.ax1x.com/2023/06/08/pCkBYVJ.md.png" alt="pCkBYVJ.md.png" /></a></p>
-
-    </div>
-  </label>
-</div>
-</p>
 <h2 id="3-数据传输控制方式">
   3 数据传输控制方式
   <a class="anchor" href="#3-%e6%95%b0%e6%8d%ae%e4%bc%a0%e8%be%93%e6%8e%a7%e5%88%b6%e6%96%b9%e5%bc%8f">#</a>
@@ -1288,7 +1291,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#4-%e6%80%bb%e7%ba%bf">#</a>
 </h2>
 <hr>
-<p>  总线(Bus)，是指计算机设备和设备之间传输信息的公共数据通道，它是一组能为多个部件分时共享的公共信息传输羡慕。总线是连接计算机硬件系统内多种设备的通信线路，它的一个重要特征是由总线上的所有设备共享，因此可以将计算机系统内的多种设备连接到总线上。一条总线同一时刻仅允许一个设备发送，但允许多个设备接收，所以总线是半双工模式(单工：只能单向传输，全双工：可以双向传输)。总线有串行总线和并行总线，串行总线适合长距离传输(串行总线是按位 (bit) 传输数据的，其数据的正确性依赖于校验码纠正。)，并行总线适合于短距离传输。</p>
+<p>  总线(Bus)，是指计算机硬件设备和硬件设备之间传输信息的公共数据通道，它是一组能为多个部件分时共享的公共信息传输线路；即一条总线同一时刻仅允许一个设备发送，但允许多个设备接收，所以总线是半双工模式(单工：只能单向传输，全双工：可以双向传输)。总线有串行总线和并行总线之分，串行总线适合长距离传输(串行总线是按位(bit)传输数据的，其数据的正确性依赖于校验码纠正)，并行总线适合于短距离传输。</p>
 <p>  总线具体分为数据总线(并行数据传输位数)、地址总线(系统可管理的内存空间的大小) 、控制总线(传送控制命令)。</p>
 <blockquote>
 <p>例题
@@ -1446,9 +1449,9 @@ https://github.com/alex-shpak/hugo-book
   7.3 海明码
   <a class="anchor" href="#73-%e6%b5%b7%e6%98%8e%e7%a0%81">#</a>
 </h3>
-<p>  特点：可检错，也可纠错</p>
-<p><a href="https://imgse.com/i/p9hg8un"><img src="https://s1.ax1x.com/2023/05/19/p9hg8un.md.png" alt="p9hg8un.md.png" /></a>
-<a href="https://imgse.com/i/p9hgGBq"><img src="https://s1.ax1x.com/2023/05/19/p9hgGBq.md.png" alt="p9hgGBq.md.png" /></a></p>
+<p>  特点：可检错，也可纠错，知道添加多少位，以及某一位用哪些校验位校验就行。</p>
+<p>  添加的位数：2^k-k &gt;= n+1就行，n是数据的位数。</p>
+<p>  某一位由哪些位校验参考例题。</p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/p9hgU4U"><img src="https://s1.ax1x.com/2023/05/19/p9hgU4U.md.png" alt="p9hgU4U.md.png" /></a>
@@ -1462,26 +1465,8 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
       <p>答案：D B</p>
-<p>  解析：32 16 8 4 2 1 需要6位。读题目可知D5是第10位，用8+2校验，故选B</p>
+<p>  解析：带入公式2^k-k &gt;= n + 1，可得k&gt;=6就行，所以需要6位。读题目可知D5是第10位，用8+2校验，故选B</p>
 
-    </div>
-  </label>
-</div>
-</p>
-</blockquote>
-<blockquote>
-<p>例题
-<a href="https://imgse.com/i/p9Ten76"><img src="https://s1.ax1x.com/2023/05/23/p9Ten76.md.png" alt="p9Ten76.md.png" /></a>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>学霸肯定对了</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      A
     </div>
   </label>
 </div>

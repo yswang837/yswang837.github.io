@@ -369,6 +369,8 @@ title: 3.2 操作系统
 {{< expand "学霸肯定对了">}}D{{< /expand >}}
 [![pCEghhF.md.png](https://s1.ax1x.com/2023/06/10/pCEghhF.md.png)](https://imgse.com/i/pCEghhF)
 {{< expand "学霸肯定对了">}}B{{< /expand >}}
+[![p9Ten76.md.png](https://s1.ax1x.com/2023/05/23/p9Ten76.md.png)](https://imgse.com/i/p9Ten76)
+{{< expand "学霸肯定对了">}}A{{< /expand >}}
 
 ## 7 实时操作系统
 
