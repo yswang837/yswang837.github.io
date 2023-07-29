@@ -7,27 +7,7 @@ title: 3.2 操作系统
 
 ---
 
-- 1. 操作系统概述
-  - 操作系统的组成及作用&emsp;✅✅✅
-  - 操作系统的特性&emsp;&emsp;&emsp;&emsp;✅✅✅
-- 2. 操作系统的分类&emsp;&emsp;&emsp;&emsp;✅✅✅
-  - 
-- 3. 进程管理
-  - 进程的状态&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
-  - 前趋图&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅✅
-  - 信号量与P/V操作 &emsp;&emsp;&emsp;✅✅✅✅
-  - 死锁及银行家算法&emsp;&emsp;&emsp;✅
-- 4. 存储管理
-  - 页式存储&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
-  - 段式存储&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
-  - 页面置换算法&emsp;&emsp;&emsp;&emsp;&emsp;✅
-- 5. 设备管理&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅
-- 6. 文件管理
-  - 绝对路径与相对路径&emsp;&emsp;✅
-  - 索引文件&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅✅✅
-  - 位示图&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;✅
-
-## 1. 操作系统概述 ✅✅✅
+## 1 操作系统概述 ✅✅✅
 
 ---
 
@@ -198,7 +178,7 @@ title: 3.2 操作系统
 
 &emsp;&emsp;三态图之间的状态转换就是PV操作来控制的。系统中资源一般分为：
 
-1、CPU资源： &emsp;有   无   无
+1、CPU资源： &emsp;有   无   无 (分别对应于运行、就绪和阻塞状态)
 
 2、非CPU资源： 有   有   无
 
