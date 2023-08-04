@@ -18,19 +18,14 @@
 例题 学霸肯定对了 ↕ C 学霸肯定对了 ↕ C 2.1 需求分析 ✅✅ # 根据当前和未来应用的数据要求、数据处理要求来进行需求分析，此阶段的产物有：数据流图、数据字典、需求说明书。注意：数据流图本身是很重要的，在结构化需求分析SA中会详细讲到。
 2.2 概念结构设计 ✅✅ # 概念结构设计也就是通过需求分析的结果来获得ER图的过程。下图是示例的ER图：
 ER图就是实体联系图，两个不同的实体集之间有三种联系，分别是1:1,1:m,m:n。上图是m:n的多对多关系(联系的类型需要会判断)。
-E-R图具体的建立过程 合并的方法：多个局部E-R图一次集成。逐步集成，用累加的方式一次集成两个局部E-R。
-合并产生的冲突及解决办法：属性冲突:包括属性域冲突和属性取值冲突；命名冲突:包括同名异义和异名同义；结构冲突:包括同一对象在不同应用中具有不同的抽象，以及同一实体在不同局部E-R图中所包含的属性个数和属性排列次序不完全相同。
-2.3 逻辑结构设计 ✅✅✅✅ # 逻辑结构设计的产物是关系模式，ER图&#43;转换规则和规范化理论=关系模式(关系模型)。数据模型三要素：数据结构、数据操作、数据的约束条件。数据模型包括层次模型、网状模型、面向对象模型、关系模型。
-以下的几种形式都是关系模型。
-关系模型的相关概念 以学生、选课关系为例，说明关系模型中的相关概念。其中：学生(学号，姓名，年龄，班级编号)和选课(学号，课程号，课程名)。
+E-R图具体的建立过程 合并的方法：一次集成：多个局部E-R图一次集成；逐步集成：用累加的方式一次集成两个局部E-R。
+合并时冲突的分类：属性冲突：属性域冲突或属性取值冲突；命名冲突：同名异义和异名同义；结构冲突：同一对象在不同应用中具有不同的抽象，以及同一实体在不同局部E-R图中所包含的属性个数不完全相同。
+2.3 逻辑结构设计 ✅✅✅✅ # 逻辑结构设计的产物是关系模式，关系模式(关系模型) = ER图 &#43; 转换规则和规范化理论。
+数据模型三要素：数据结构、数据操作、数据的约束条件。数据模型包括层次模型、网状模型、面向对象模型、关系模型。
+关系模型的相关概念 以下的几种表达形式都表示了同一个关系模型。 以学生、选课关系为例，说明关系模型中的相关概念。其中：学生(学号，姓名，年龄，班级编号)和选课(学号，课程号，课程名)。
 1、学生关系是一个4目关系；选课关系是一个3目关系。
 2、学生关系的候选码只有一个，是学号；选课关系的候选码也只有一个，是(学号，课程号)。
-3、学生关系的主键是学号；选课关系的主键是(学号，课程号)。
-4、学生关系的主属性有学号，非主属性有姓名，年龄，班级编号；选课关系的主属性有学号和课程号，非主属性有课程名。
-5、学生关系没有外键；选课关系的外键是学号，学号是学生关系的主键。
-6、学生关系没有全码，选课关系也没有全码。全码(全部属性都是候选码，即选课关系去掉课程名之后，剩下的就是全码)
-完整性约束
-实体完整性：规定基本关系的主属性不能取空值。跟主键相关">
+3、学生关系的主键是学号；选课关系的主键是(学号，课程号)。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="3.3 数据库系统" />
 <meta property="og:description" content="" />
@@ -42,7 +37,7 @@ E-R图具体的建立过程 合并的方法：多个局部E-R图一次集成。�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.70c2dbce2b3d3181a81acc44bdde4ec9673877f44201d415e7a8efc987e540b1.js" integrity="sha256-cMLbzis9MYGoGsxEvd5OyWc4d/RCAdQV56jvyYflQLE=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.4684e0d906f5d2e5fa91ac1137cd0b902cf2146373a81271bd576398829ad323.js" integrity="sha256-RoTg2Qb10uX6kawRN80LkCzyFGNzqBJxvVdjmIKa0yM=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1043,18 +1038,19 @@ https://github.com/alex-shpak/hugo-book
 <li>E-R图具体的建立过程</li>
 </ul>
 <p><a href="https://imgse.com/i/pCVdR10"><img src="https://s1.ax1x.com/2023/06/11/pCVdR10.md.png" alt="pCVdR10.md.png" /></a></p>
-<p><strong>合并的方法</strong>：多个局部E-R图一次集成。逐步集成，用累加的方式一次集成两个局部E-R。</p>
-<p><strong>合并产生的冲突及解决办法</strong>：属性冲突:包括属性域冲突和属性取值冲突；命名冲突:包括同名异义和异名同义；结构冲突:包括同一对象在不同应用中具有不同的抽象，以及同一实体在不同局部E-R图中所包含的属性个数和属性排列次序不完全相同。</p>
+<p><strong>合并的方法</strong>：一次集成：多个局部E-R图一次集成；逐步集成：用累加的方式一次集成两个局部E-R。</p>
+<p><strong>合并时冲突的分类</strong>：属性冲突：属性域冲突或属性取值冲突；命名冲突：同名异义和异名同义；结构冲突：同一对象在不同应用中具有不同的抽象，以及同一实体在不同局部E-R图中所包含的属性个数不完全相同。</p>
 <h3 id="23-逻辑结构设计-">
   2.3 逻辑结构设计 ✅✅✅✅
   <a class="anchor" href="#23-%e9%80%bb%e8%be%91%e7%bb%93%e6%9e%84%e8%ae%be%e8%ae%a1-">#</a>
 </h3>
-<p>  逻辑结构设计的产物是关系模式，ER图+转换规则和规范化理论=关系模式(关系模型)。数据模型三要素：数据结构、数据操作、数据的约束条件。数据模型包括层次模型、网状模型、面向对象模型、关系模型。</p>
-<p>  以下的几种形式都是关系模型。</p>
-<p><a href="https://imgse.com/i/pCVdHhR"><img src="https://s1.ax1x.com/2023/06/11/pCVdHhR.md.png" alt="pCVdHhR.md.png" /></a></p>
+<p>  逻辑结构设计的产物是关系模式，关系模式(关系模型) = ER图 + 转换规则和规范化理论。</p>
+<p>  数据模型三要素：数据结构、数据操作、数据的约束条件。数据模型包括层次模型、网状模型、面向对象模型、关系模型。</p>
 <ul>
 <li>关系模型的相关概念</li>
 </ul>
+<p>  以下的几种表达形式都表示了同一个关系模型。
+<a href="https://imgse.com/i/pCVdHhR"><img src="https://s1.ax1x.com/2023/06/11/pCVdHhR.md.png" alt="pCVdHhR.md.png" /></a></p>
 <p>  以学生、选课关系为例，说明关系模型中的相关概念。其中：学生(学号，姓名，年龄，班级编号)和选课(学号，课程号，课程名)。</p>
 <p>  1、学生关系是一个4目关系；选课关系是一个3目关系。</p>
 <p>  2、学生关系的候选码只有一个，是学号；选课关系的候选码也只有一个，是(学号，课程号)。</p>
@@ -1062,7 +1058,8 @@ https://github.com/alex-shpak/hugo-book
 <p>  4、学生关系的主属性有学号，非主属性有姓名，年龄，班级编号；选课关系的主属性有学号和课程号，非主属性有课程名。</p>
 <p>  5、学生关系没有外键；选课关系的外键是学号，学号是学生关系的主键。</p>
 <p>  6、学生关系没有全码，选课关系也没有全码。全码(全部属性都是候选码，即选课关系去掉课程名之后，剩下的就是全码)</p>
-<p><a href="https://imgse.com/i/pCVdL1x"><img src="https://s1.ax1x.com/2023/06/11/pCVdL1x.md.png" alt="pCVdL1x.md.png" /></a></p>
+<p>  官方描述如图：
+<a href="https://imgse.com/i/pCVdL1x"><img src="https://s1.ax1x.com/2023/06/11/pCVdL1x.md.png" alt="pCVdL1x.md.png" /></a></p>
 <ul>
 <li>
 <p>完整性约束</p>
@@ -1104,19 +1101,9 @@ https://github.com/alex-shpak/hugo-book
 <li>关系模式的具体的建立过程</li>
 </ul>
 <p><a href="https://imgse.com/i/pCVwK4s"><img src="https://s1.ax1x.com/2023/06/11/pCVwK4s.md.png" alt="pCVwK4s.md.png" /></a></p>
-<p>  1、ER图向关系模式转换：实体向关系模式转换；联系向关系模式转换。</p>
-<p>  2、关系模式的规范化。</p>
-<p>  3、确定完整性约束(保证数据的正确性)。</p>
-<p>  4、用户视图的确定(提高数据的安全性和独立性)：根据数据流图确定处理过程使用的视图；根据用户类别确定不用用户使用的使用。</p>
-<p>  5、应用程序设计。</p>
 <ul>
-<li>
-<ol>
-<li>ER图向关系模式转换</li>
-</ol>
-</li>
+<li>建立过程：1. ER图向关系模式转换：需要将ER图中的实体和联系转换为关系模式。</li>
 </ul>
-<p>  其余的放在后续章节介绍。</p>
 <p><a href="https://imgse.com/i/pCV0mM6"><img src="https://s1.ax1x.com/2023/06/11/pCV0mM6.md.png" alt="pCV0mM6.md.png" /></a>
 <a href="https://imgse.com/i/pCV08JA"><img src="https://s1.ax1x.com/2023/06/11/pCV08JA.md.png" alt="pCV08JA.md.png" /></a></p>
 <blockquote>
@@ -1152,6 +1139,10 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
+<p>  2、关系模式的规范化<a href="http://127.0.0.1:1313/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/#4-%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA-">传送门</a>。</p>
+<p>  3、确定完整性约束(保证数据的正确性)。</p>
+<p>  4、用户视图的确定(提高数据的安全性和独立性)：根据数据流图确定处理过程使用的视图；根据用户类别确定不用用户使用的使用。</p>
+<p>  5、应用程序设计。</p>
 <h3 id="24-物理设计-">
   2.4 物理设计 ✅
   <a class="anchor" href="#24-%e7%89%a9%e7%90%86%e8%ae%be%e8%ae%a1-">#</a>
