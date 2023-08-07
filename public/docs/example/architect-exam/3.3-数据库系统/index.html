@@ -37,7 +37,7 @@ E-R图具体的建立过程 合并的方法：一次集成：多个局部E-R图�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.4684e0d906f5d2e5fa91ac1137cd0b902cf2146373a81271bd576398829ad323.js" integrity="sha256-RoTg2Qb10uX6kawRN80LkCzyFGNzqBJxvVdjmIKa0yM=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.692d76ad1a3b96df20de00273912f47aeb13b1b995c8d2ea46609a051b29553f.js" integrity="sha256-aS12rRo7lt8g3gAnORL0eusTsbmVyNLqRmCaBRspVT8=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -885,7 +885,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#41-函数依赖-">4.1 函数依赖 ✅✅✅✅✅</a></li>
         <li><a href="#42-求候选键-">4.2 求候选键 ✅✅✅✅✅</a></li>
-        <li><a href="#43-armstrong公理-">4.3 Armstrong公理 ✅✅✅</a></li>
+        <li><a href="#43-armstrong公理-">4.3 Armstrong公理 ✅✅</a></li>
         <li><a href="#44-范式判断-">4.4 范式判断 ✅✅✅✅✅</a></li>
         <li><a href="#45-模式分解-">4.5 模式分解 ✅✅✅✅✅</a></li>
         <li><a href="#46-闭包-">4.6 闭包 ✅✅✅</a></li>
@@ -1140,9 +1140,7 @@ https://github.com/alex-shpak/hugo-book
 </p>
 </blockquote>
 <p>  2、关系模式的规范化<a href="http://127.0.0.1:1313/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/#4-%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA-">传送门</a>。</p>
-<p>  3、确定完整性约束(保证数据的正确性)。</p>
-<p>  4、用户视图的确定(提高数据的安全性和独立性)：根据数据流图确定处理过程使用的视图；根据用户类别确定不用用户使用的使用。</p>
-<p>  5、应用程序设计。</p>
+<p>  3、确定完整性约束(保证数据的正确性；实体完整性、参照完整性、用户自定义完整性)。</p>
 <h3 id="24-物理设计-">
   2.4 物理设计 ✅
   <a class="anchor" href="#24-%e7%89%a9%e7%90%86%e8%ae%be%e8%ae%a1-">#</a>
@@ -1203,9 +1201,11 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p>  非规范化的关系模式可能存在的问题包括：数据冗余、更新异常(修改操作一致性问题)、插入异常、删除异常。</p>
 <p><a href="https://imgse.com/i/pCVrGW9"><img src="https://s1.ax1x.com/2023/06/11/pCVrGW9.md.png" alt="pCVrGW9.md.png" /></a></p>
-<p>经常考察的点：</p>
-<p>1、给你一个关系模式，让你看看有啥问题，做法：先看该关系模式达到第几范式，再说出对应范式的问题就行；</p>
-<p>2、让你修改关系模式来消除这些问题。一般来说没达到第三范式都有问题。</p>
+<ul>
+<li>经常考察的点：</li>
+</ul>
+<p>  1、给你一个关系模式，让你看看有啥问题(异常)，做法：先看该关系模式达到第几范式，再说出对应范式的问题就行；</p>
+<p>  2、让你修改关系模式来消除这些问题。一般来说没达到第三范式都有问题。</p>
 <h3 id="41-函数依赖-">
   4.1 函数依赖 ✅✅✅✅✅
   <a class="anchor" href="#41-%e5%87%bd%e6%95%b0%e4%be%9d%e8%b5%96-">#</a>
@@ -1215,7 +1215,7 @@ https://github.com/alex-shpak/hugo-book
 <li>
 <p>特殊的函数依赖关系</p>
 <ul>
-<li>部分函数依赖
+<li>部分函数依赖：C依赖于A，所以C部分依赖于AB
 <a href="https://imgse.com/i/pCVcU9e"><img src="https://s1.ax1x.com/2023/06/11/pCVcU9e.md.png" alt="pCVcU9e.md.png" /></a></li>
 <li>传递函数依赖
 <a href="https://imgse.com/i/pCVca1H"><img src="https://s1.ax1x.com/2023/06/11/pCVca1H.md.png" alt="pCVca1H.md.png" /></a></li>
@@ -1226,9 +1226,9 @@ https://github.com/alex-shpak/hugo-book
   4.2 求候选键 ✅✅✅✅✅
   <a class="anchor" href="#42-%e6%b1%82%e5%80%99%e9%80%89%e9%94%ae-">#</a>
 </h3>
-<p>  候选键可以有多个，每个候选键可以由多个属性构成。知道候选键了以后，其余的情况都知道了，现在介绍如何求取候选键。</p>
+<p>  候选键可以有多个，每个候选键可以由多个属性构成。知道候选键了以后，其余的情况都能一目了然，现在介绍如何求取候选键。</p>
 <p>  1、在关系模式中，一般用R(U,F)表示，U是属性，表示节点；F是函数依赖，表示边；所以将关系模式转换为一个有向图（可选）。</p>
-<p>  2、(入度出度都为0的属性一定是在候选码中)，找入度为0的属性(只在箭头左边出现过的属性就是入度为0的属性；箭头指入为入度，箭头指出为出度)，并以该属性集合为起点，尝试遍历有向图，若能正常遍历图中所有结点，则该属性集即为关系模式的候选键。</p>
+<p>  2、(入度出度都为0的属性一定是在候选码中)，找入度为0的属性(<strong>只在箭头左边出现过的属性</strong>就是入度为0的属性；箭头指入为入度，箭头指出为出度)，并以该属性集合为起点，尝试遍历有向图，若能正常遍历图中所有结点，则该属性集即为关系模式的候选键。</p>
 <p>  3、若入度为0的属性集不能遍历图中所有结点，则需要尝试性的将一些中间结点(既有入度，也有出度的结点)并入入度为0的属性集中，直至该集合能遍历所有结点，集合为候选键。</p>
 <blockquote>
 <p>例题
@@ -1249,7 +1249,7 @@ https://github.com/alex-shpak/hugo-book
 </p>
 </blockquote>
 <h3 id="43-armstrong公理-">
-  4.3 Armstrong公理 ✅✅✅
+  4.3 Armstrong公理 ✅✅
   <a class="anchor" href="#43-armstrong%e5%85%ac%e7%90%86-">#</a>
 </h3>
 <p>  函数依赖在题目中一般都给的不全，但是我们可以通过题目给的函数依赖推导出所有的属性，期间推导的依据就是Armstrong公理。</p>
@@ -1839,7 +1839,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#41-函数依赖-">4.1 函数依赖 ✅✅✅✅✅</a></li>
         <li><a href="#42-求候选键-">4.2 求候选键 ✅✅✅✅✅</a></li>
-        <li><a href="#43-armstrong公理-">4.3 Armstrong公理 ✅✅✅</a></li>
+        <li><a href="#43-armstrong公理-">4.3 Armstrong公理 ✅✅</a></li>
         <li><a href="#44-范式判断-">4.4 范式判断 ✅✅✅✅✅</a></li>
         <li><a href="#45-模式分解-">4.5 模式分解 ✅✅✅✅✅</a></li>
         <li><a href="#46-闭包-">4.6 闭包 ✅✅✅</a></li>
