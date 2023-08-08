@@ -37,7 +37,7 @@ E-R图具体的建立过程 合并的方法：一次集成：多个局部E-R图�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.692d76ad1a3b96df20de00273912f47aeb13b1b995c8d2ea46609a051b29553f.js" integrity="sha256-aS12rRo7lt8g3gAnORL0eusTsbmVyNLqRmCaBRspVT8=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.e55bd77c01fa3418d73b8146562366755e11f74ed1640b9a6cd894d3520e1323.js" integrity="sha256-5VvXfAH6NBjXO4FGViNmdV4R907RZAuabNiU01IOEyM=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -1253,6 +1253,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#43-armstrong%e5%85%ac%e7%90%86-">#</a>
 </h3>
 <p>  函数依赖在题目中一般都给的不全，但是我们可以通过题目给的函数依赖推导出所有的属性，期间推导的依据就是Armstrong公理。</p>
+<p>  增广率有两种形式：1、若x-&gt;y,则x-&gt;xy    2、若x-&gt;y,则xz-&gt;yz</p>
 <p><a href="https://imgse.com/i/pCVczHx"><img src="https://s1.ax1x.com/2023/06/11/pCVczHx.md.png" alt="pCVczHx.md.png" /></a>
 <a href="https://imgse.com/i/pCVgZDI"><img src="https://s1.ax1x.com/2023/06/11/pCVgZDI.md.png" alt="pCVgZDI.md.png" /></a></p>
 <blockquote>
@@ -1267,7 +1268,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      C
+      <p>C</p>
+<p>解析：A选项是传递律，B选项是自反律，D选项是分解规则</p>
+
     </div>
   </label>
 </div>
@@ -1287,7 +1290,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>第二范式</li>
 </ul>
-<p>  该例子是一个普通的二维表，所以该关系模式至少达到了第一范式，但该关系模式存在非主属性对候选码的部分函数依赖(学分部分依赖候选码学号和课程号)，所以改关系模型未能达到第二范式，目前只是第一范式。存在部分函数依赖的前提是候选码至少由两个及以上的属性构成。若消除了非主属性对候选码的部分函数依赖，则该关系模式可以达到第二范式；如何消除？将该关系模式(学号，课程号，成绩，学分)拆成两个关系模式(课程号，学分)和(学号，课程号，成绩)。</p>
+<p>  该例子是一个普通的二维表，所以该关系模式至少达到了第一范式，但该关系模式存在非主属性对候选码的部分函数依赖(学分部分依赖候选码学号和课程号)，所以该关系模型未能达到第二范式，目前只是第一范式。存在部分函数依赖的前提是候选码至少由两个及以上的属性构成。若消除了非主属性对候选码的部分函数依赖，则该关系模式可以达到第二范式；如何消除？将该关系模式(学号，课程号，成绩，学分)拆成两个关系模式(课程号，学分)和(学号，课程号，成绩)。</p>
 <p><a href="https://imgse.com/i/pCVq4K0"><img src="https://s1.ax1x.com/2023/06/11/pCVq4K0.md.png" alt="pCVq4K0.md.png" /></a></p>
 <ul>
 <li>第三范式</li>
@@ -1325,7 +1328,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>保持函数依赖分解</li>
 </ul>
-<p>  关系模式分解前必然存在一个函数依赖集合F，关系模式分解后假设得到了两个关系模式，那么这两个关系模式也必定有自己的函数依赖集合F1，F2；若F1并F2等价于F，则称这种模式分解保持了函数依赖。在F中可能存在冗余函数依赖，它其实是可以通过公理推导出来的，所以在判断是否保持函数依赖时不用考虑冗余函数依赖。</p>
+<p>  关系模式分解前必然存在一个函数依赖集合F，关系模式分解后假设得到了两个关系模式，那么这两个关系模式也必定有自己的函数依赖集合F1，F2；若F1并F2等价于F，则称这种模式分解保持了函数依赖。在F中可能存在冗余函数依赖，它其实是可以通过公理推导出来的，所以在判断是否保持函数依赖时不用考虑冗余函数依赖(当它没有)。</p>
 <blockquote>
 <p>例题
 <a href="https://imgse.com/i/pCZ090O"><img src="https://s1.ax1x.com/2023/06/12/pCZ090O.md.png" alt="pCZ090O.md.png" /></a>
@@ -1392,18 +1395,17 @@ https://github.com/alex-shpak/hugo-book
       <p>无损分解</p>
 <p>解析：分解前为1NF，分解后满足BCNF。模式分解后保持了函数依赖。现在判断是否无损分解。</p>
 <p>用表格法比较清晰：</p>
-<p>1、构造初始表，列名是源属性集，行是分解后的关系模式，有值的给✅；</p>
+<p>1、构造初始表，列名是源属性集，行是分解后的关系模式，有值的打钩；</p>
 <p>2、找出表中的同名属性列，看它在原本函数依赖F中能决定出什么，如果有的话说明该函数依赖在分解后被保留下来了，就可以在各表的同名属性列决定的属性处打钩，如果没有就跳过；</p>
 <p>3、新决定出来的列可重新按上述规则重新判断下一个，以此类推，知道出现任意一行全部为钩则无损分解，若表格的所有属性都遍历完了也没有一行全为钩的，就是有损分解。</p>
-<p>具体为：初始表如下；同名属性列学号在原有函数依赖中决定了姓名，所以在学号为✅的行给姓名打✅；同名属性列姓名在源有函数依赖中没有决定任何属性，所以跳过；同名属性列课程号在原有函数依赖中决定了课程名，所以在课程号为✅的行给课程名打✅；此时满足任意一行(成绩)全为✅；所以它是无损分解。</p>
+<p>具体为：初始表如下；同名属性列学号在原有函数依赖中决定了姓名，所以在学号为钩的行给姓名打钩；同名属性列姓名在源有函数依赖中没有决定任何属性，所以跳过；同名属性列课程号在原有函数依赖中决定了课程名，所以在课程号为钩的行给课程名打钩；此时满足任意一行(成绩表)全为钩；所以它是无损分解。</p>
 <p><a href="https://imgse.com/i/pCZ5ECt"><img src="https://s1.ax1x.com/2023/06/12/pCZ5ECt.md.png" alt="pCZ5ECt.md.png" /></a></p>
 
     </div>
   </label>
 </div>
-</p>
-</blockquote>
-<p><a href="https://imgse.com/i/pCZ5lUs"><img src="https://s1.ax1x.com/2023/06/12/pCZ5lUs.md.png" alt="pCZ5lUs.md.png" /></a>
+
+<a href="https://imgse.com/i/pCZ5lUs"><img src="https://s1.ax1x.com/2023/06/12/pCZ5lUs.md.png" alt="pCZ5lUs.md.png" /></a>
 
 <div class="book-expand">
   <label>
@@ -1437,11 +1439,13 @@ https://github.com/alex-shpak/hugo-book
   </label>
 </div>
 </p>
+</blockquote>
 <h3 id="46-闭包-">
   4.6 闭包 ✅✅✅
   <a class="anchor" href="#46-%e9%97%ad%e5%8c%85-">#</a>
 </h3>
-<p><a href="https://imgse.com/i/pCmDSFU"><img src="https://s1.ax1x.com/2023/06/13/pCmDSFU.md.png" alt="pCmDSFU.md.png" /></a>
+<p>  x(1) = x(0) U CD
+<a href="https://imgse.com/i/pCmDSFU"><img src="https://s1.ax1x.com/2023/06/13/pCmDSFU.md.png" alt="pCmDSFU.md.png" /></a>
 <a href="https://imgse.com/i/pCmDPSJ"><img src="https://s1.ax1x.com/2023/06/13/pCmDPSJ.md.png" alt="pCmDPSJ.md.png" /></a></p>
 <h3 id="47-反规范化理论-">
   4.7 反规范化理论 ✅✅✅✅
@@ -1481,20 +1485,19 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>原子性(Atomicity)</li>
 </ul>
-<p>  是指事务包含的所有操作要么全部成功，要么全部失败回滚。这些操作是一个整体，不能部分地完成，跟操作系统的原语一样(PV操作)。</p>
+<p>  是指事务包含的所有操作要么全部成功，要么全部失败回滚。这些操作是一个整体，不能部分地完成，跟操作系统的原语一样(PV操作)。影子拷贝是保证事务原子性的一种方法；影子拷贝：假设在某一个时刻只有一个活动的事务，为了保证事务的原子性，对于要执行写操作的数据项，数据库系统在磁盘上维护数据库的一个副本，所有的写操作都在数据库副本上执行，而保持原始数据库不变，如果在任一时刻操作不得不中止，系统仅需要删除副本，原数据库没有受到任何影响。这种设计策略称为<strong>影子拷贝</strong>。</p>
 <ul>
 <li>一致性(Consistency)</li>
 </ul>
-<p>  是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。比如说转账。</p>
+<p>  是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。比如说转账。数据库系统通常采用<strong>完整性约束检查</strong>机制保证单个事务的一致性。</p>
 <ul>
 <li>隔离性(Isolation)</li>
 </ul>
-<p>  是指一个事务的执行不能被其他事务干扰，即一个事务内部的操作及使用的数据对并发的其他事务是隔离的。也就是执行的效果应该和串行一样互不影响。</p>
+<p>  是指一个事务的执行不能被其他事务干扰，即一个事务内部的操作及使用的数据对并发的其他事务是隔离的。也就是执行的效果应该和串行一样互不影响。事务的隔离性保证操作并发执行后的系统状态与这些操作以某种次序<strong>串行化执行后的状态是等价的</strong>。<strong>两阶段锁协议是实现隔离性的常见方案，该协议能够保证事务的可串行化执行，但它可能发生死锁</strong>。</p>
 <ul>
 <li>持久性(Durability)</li>
 </ul>
-<p>  是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，无论发送何种故障，都不应对其有任何影响。</p>
-<p>  假设在某一个时刻只有一个活动的事务，为了保证事务的原子性，对于要执行写操作的数据项，数据库系统在磁盘上维护数据库的一个副本，所有的写操作都在数据库副本上执行，而保持原始数据库不变，如果在任一时刻操作不得不中止，系统仅需要删除副本，原数据库没有受到任何影响。这种设计策略称为 (影子拷贝)。事务的一致性要求在没有其他事务并发执行的情况下，事务的执行应该保证数据库的一致性。数据库系统通常采用(完整性约束检查)机制保证单个事务的一致性。事务的隔离性保证操作并发执行后的系统状态与这些操作以某种次序顺序执行 (即可串行化执行)后的状态是等价的。两阶段锁协议是实现隔离性的常见方案，该协议(能够保证事务的可串行化执行，可能发生死锁。)持久性保证一旦事务完成，该事务对数据库所做的所有更新都是永久的，如果事务完成后系统出现故障，则需要通过恢复机制保证事务的持久性。假设在日志中记录所有对数据库的修改操作，将一个事务的所有写操作延迟到事务提交后才执行，则在日志中(无需记录数据项被事务修改前的原始值)，当系统发生故障时，如果某个事务已经开始，但没有提交，则该事务应该 (什么也不用做)。</p>
+<p>  是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，无论发送何种故障，都不应对其有任何影响。假设在日志中记录所有对数据库的修改操作，将一个事务的所有写操作延迟到事务提交后才执行，则在日志中<strong>无需记录数据项被事务修改前的原始值</strong>，当系统发生故障时，如果某个事务已经开始，但没有提交，则该事务应该<strong>什么也不用做</strong>。</p>
 <h3 id="52-并发可能产生的问题-">
   5.2 并发可能产生的问题 ✅
   <a class="anchor" href="#52-%e5%b9%b6%e5%8f%91%e5%8f%af%e8%83%bd%e4%ba%a7%e7%94%9f%e7%9a%84%e9%97%ae%e9%a2%98-">#</a>
