@@ -37,7 +37,7 @@ E-R图具体的建立过程 合并的方法：一次集成：多个局部E-R图�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.e55bd77c01fa3418d73b8146562366755e11f74ed1640b9a6cd894d3520e1323.js" integrity="sha256-5VvXfAH6NBjXO4FGViNmdV4R907RZAuabNiU01IOEyM=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.37596a25e6cf88974cd093b57ec9f4bceb0026a2debb4e60221ecedb09fd7102.js" integrity="sha256-N1lqJebPiJdM0JO1fsn0vOsAJqLeu05gIh7O2wn9cQI=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -912,6 +912,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#11-数据库的分库分表分区-">11 数据库的分库分表分区 ✅✅</a>
       <ul>
         <li><a href="#111-常见的分区方式-">11.1 常见的分区方式 ✅✅</a></li>
+        <li><a href="#112-分库分表-">11.2 分库分表 ✅✅</a></li>
       </ul>
     </li>
     <li><a href="#12-nosql-">12 NoSQL ✅✅</a>
@@ -1502,7 +1503,7 @@ https://github.com/alex-shpak/hugo-book
   5.2 并发可能产生的问题 ✅
   <a class="anchor" href="#52-%e5%b9%b6%e5%8f%91%e5%8f%af%e8%83%bd%e4%ba%a7%e7%94%9f%e7%9a%84%e9%97%ae%e9%a2%98-">#</a>
 </h3>
-<p>  并发可能会产生以下问题：1、丢失更新；2、不可重复读问题；3、脏数据的读出。</p>
+<p>  并发可能会产生以下问题：1、丢失更新；2、读脏数据；3、不可重复读问题。</p>
 <p><a href="https://imgse.com/i/pCeo5Q0"><img src="https://s1.ax1x.com/2023/06/13/pCeo5Q0.md.png" alt="pCeo5Q0.md.png" /></a></p>
 <h3 id="53-封锁协议-">
   5.3 封锁协议 ✅
@@ -1510,8 +1511,14 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p>  封锁协议是用来解决并发可能会产生的那三个问题。</p>
 <p><a href="https://imgse.com/i/pCeo7eU"><img src="https://s1.ax1x.com/2023/06/13/pCeo7eU.md.png" alt="pCeo7eU.md.png" /></a></p>
-<p>  S封锁是读锁/共享锁(一个事务对操作对象上了读锁，另一个事务也可对该操作对象上读锁，这两个事务共享该操作对象)，X锁是写锁/排它锁(一个事务对操作对象上了写锁，那么其他任何事务都没法对该操作对象上任何锁，X锁具有排它性)。一级封锁协议可防止丢失更新；二级封锁协议可防止丢失更新和读脏数据；三级封锁协议可防止丢失更新、读脏数据和不可重复读问题。</p>
+<ul>
+<li>S封锁是读锁/共享锁：一个事务对操作对象上了读锁，另一个事务也可对该操作对象上读锁，这两个事务共享该操作对象。</li>
+<li>X锁是写锁/排它锁：一个事务对操作对象上了写锁，那么其他任何事务都没法对该操作对象上任何锁，X锁具有排它性：</li>
+</ul>
 <p><a href="https://imgse.com/i/pCeoxQx"><img src="https://s1.ax1x.com/2023/06/13/pCeoxQx.md.png" alt="pCeoxQx.md.png" /></a></p>
+<ul>
+<li>两段锁协议，分为加锁和解锁两个阶段，任何读之间都加S锁，任何写之前都加X锁，加锁就像操作系统的P操作一样，解锁就是V操作，可能会导致死锁。</li>
+</ul>
 <h2 id="6-数据库的安全性-">
   6 数据库的安全性 ✅✅
   <a class="anchor" href="#6-%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%ae%89%e5%85%a8%e6%80%a7-">#</a>
@@ -1531,7 +1538,7 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
       <p>C</p>
-<p>索引和视图是无法更新的、存储过程是可以被第三方开发人员调用的，而触发器不行</p>
+<p>索引和视图是无法更新的、存储过程是可以被第三方开发人员调用的，而触发器不行。</p>
 
     </div>
   </label>
@@ -1584,15 +1591,14 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#9-%e6%95%b0%e6%8d%ae%e5%ba%93%e7%b4%a2%e5%bc%95-">#</a>
 </h2>
 <hr>
-<p>  索引表是实际存在的表。假设要查询学号为417的这条记录，顺序查找的思想是一个一个对比，查询6次才能查到，效率非常低；可能会很自然想到二分查找，但二分查找需要排序的前提。建立索引表本身采用的是B树或者B+树；为了方便解释，这里以二分查找建立索引为例。</p>
-<p><a href="https://imgse.com/i/pC6zeKJ"><img src="https://s1.ax1x.com/2023/07/07/pC6zeKJ.md.png" alt="pC6zeKJ.md.png" /></a>
-<a href="https://imgse.com/i/pC6zKV1"><img src="https://s1.ax1x.com/2023/07/07/pC6zKV1.md.png" alt="pC6zKV1.md.png" /></a></p>
+<p>  索引表是实际存在的表。假设要查询学号为417的这条记录，顺序查找的思想是一个一个对比，查询6次才能查到，效率非常低；可能会很自然想到二分查找，但二分查找需要排序的前提。建立索引表本身采用的是B树或者B+树；为了方便解释，这里以二分查找建立索引为例，只需要查2次。</p>
+<p><a href="https://imgse.com/i/pC6zeKJ"><img src="https://s1.ax1x.com/2023/07/07/pC6zeKJ.md.png" alt="pC6zeKJ.md.png" /></a></p>
 <h2 id="10-数据库视图-">
   10 数据库视图 ✅✅✅
   <a class="anchor" href="#10-%e6%95%b0%e6%8d%ae%e5%ba%93%e8%a7%86%e5%9b%be-">#</a>
 </h2>
 <hr>
-<p><strong>数据库视图</strong>:它一个虚拟表 (逻辑上的表)，其内容由查询定义(仅保存SOL查询语句，所以效率可能有点低，可以使用物化视图提高效率)同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并没有真正存储这些数据，而是通过查询原始表动态生成所需要的数据，可以理解为视图是一个指针，可以指向单个表、多个表的联合查询结果，底层的表的数据变了，视图的结果自然也会变。</p>
+<p><strong>数据库视图</strong>：它一个虚拟表 (逻辑上的表)，其内容由查询定义(仅保存SOL查询语句，所以效率可能有点低，可以使用物化视图提高效率)同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并没有真正存储这些数据，而是通过查询原始表动态生成所需要的数据，可以理解为视图是一个指针，可以指向单个表、多个表的联合查询结果，底层的表的数据变了，视图的结果自然也会变(跟golang里面的切片和数组挺像的)。</p>
 <p><a href="https://imgse.com/i/pC6zvi6"><img src="https://s1.ax1x.com/2023/07/07/pC6zvi6.md.png" alt="pC6zvi6.md.png" /></a></p>
 <p><strong>视图的优点</strong>:</p>
 <p>  1、视图能简化用户操作</p>
@@ -1624,7 +1630,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#11-%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%88%86%e5%ba%93%e5%88%86%e8%a1%a8%e5%88%86%e5%8c%ba-">#</a>
 </h2>
 <hr>
-<p>  分区是数据库自带的，比如说按天分区。</p>
+<p>  分区是数据库自带的，比如说属于列表分区的有：按天分区，按操作系统类型分区，按日志名字分区等等，逻辑上还是一张表。分区一般针对hive，分区可以增加数据查询的速度。</p>
 <p><a href="https://imgse.com/i/pCceWXq"><img src="https://s1.ax1x.com/2023/07/07/pCceWXq.md.png" alt="pCceWXq.md.png" /></a>
 <a href="https://imgse.com/i/pCce7h4"><img src="https://s1.ax1x.com/2023/07/07/pCce7h4.md.png" alt="pCce7h4.md.png" /></a></p>
 <h3 id="111-常见的分区方式-">
@@ -1636,6 +1642,12 @@ https://github.com/alex-shpak/hugo-book
 <p><a href="https://imgse.com/i/pCceOj1"><img src="https://s1.ax1x.com/2023/07/07/pCceOj1.md.png" alt="pCceOj1.md.png" /></a>
 <a href="https://imgse.com/i/pCcejnx"><img src="https://s1.ax1x.com/2023/07/07/pCcejnx.md.png" alt="pCcejnx.md.png" /></a>
 <a href="https://imgse.com/i/pCcmP9H"><img src="https://s1.ax1x.com/2023/07/07/pCcmP9H.md.png" alt="pCcmP9H.md.png" /></a></p>
+<h3 id="112-分库分表-">
+  11.2 分库分表 ✅✅
+  <a class="anchor" href="#112-%e5%88%86%e5%ba%93%e5%88%86%e8%a1%a8-">#</a>
+</h3>
+<p>  分库分表通常是针对mysql；当数据库的QPS过高、数据库的连接数不足的时候就需要分库；当单表数据量过大，严重影响读写性能时就需要分表。分表有水平分表和垂直分表；水平分表：将数据记录存放在不同的表中；垂直分表：将不同的字段放在不同的表中。</p>
+<p>  分库分表同样可采用、范围、列表和哈希，通常采用哈希算法。</p>
 <h2 id="12-nosql-">
   12 NoSQL ✅✅
   <a class="anchor" href="#12-nosql-">#</a>
@@ -1869,6 +1881,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#11-数据库的分库分表分区-">11 数据库的分库分表分区 ✅✅</a>
       <ul>
         <li><a href="#111-常见的分区方式-">11.1 常见的分区方式 ✅✅</a></li>
+        <li><a href="#112-分库分表-">11.2 分库分表 ✅✅</a></li>
       </ul>
     </li>
     <li><a href="#12-nosql-">12 NoSQL ✅✅</a>
