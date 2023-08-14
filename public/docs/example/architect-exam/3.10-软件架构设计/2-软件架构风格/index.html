@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2.软件架构风格 # 架构风格反映了领域中众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则，强调对架构设计的重用。以下是常见风格的特点或应用：
+<meta name="description" content="2.软件架构风格 ✅✅✅✅✅ # 架构风格反映了领域中众多系统所共有的结构和语义特性，并指导如何将各个构件有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则，强调对架构设计的重用。以下是常见风格的特点或应用：
 批处理&mdash;&gt;传统编译器。
 管道过滤器&mdash;&gt;支持分阶段数据处理。
 层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。
@@ -15,28 +15,28 @@
 虚拟机风格&mdash;&gt;通过虚拟机架构屏蔽不同的硬件环境。
 C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规则运作的并行构件网络。
 数据仓库&mdash;&gt;现代集成开发环境（现代编译器）。
-下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。 2.1 数据流风格 # 数据流风格以数据驱动的方式推进项目，其的典型应用有传统编译器、网络报文处理，它包含2个子风格：
+下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。 2.1 数据流风格 ✅✅✅✅✅ # 数据流风格以数据驱动的方式推进项目，其的典型应用有传统编译器、网络报文处理，它包含2个子风格：
 1、批处理。做题要点：大量整体数据、无需用户交互
 2、管道过滤器。做题要点：流式数据、弱用户交互，对于采用管道-过滤器架构风格的系统，可以通过引入过滤器的数据并发处理提高系统性能。
 具体如下图：
 一个软件的架构设计是随着技术的不断进步而不断变化的。以编译器为例，其主流架构经历了管道-过滤器到数据共享为中心的转变过程。早期的编译器采用管道-过滤器架构风格，以文本形式输入的代码被逐步转化为各种形式，最终生成可执行代码。早期的编译器采用管道-过滤器架构风格，并且大多数编译器在词法分析时创造独立的符号表，在其后的阶段会不断修改符号表，因此符号表并不是程序数据的一部分。现代的编译器采用以数据共享为中心的架构风格，主要关心编译过程中程序的中间表示。现代的编译器采用以数据共享为中心的架构风格，分析树是在语法分析阶段结束后才产生作为语义分析的输入，分析树是数据中心中重要的共享数据，为后续的语义分析提供了帮助。
-2.2 调用/返回风格 # 调用/返回风格包含3个子风格：
+2.2 调用/返回风格 ✅✅✅✅✅ # 调用/返回风格包含3个子风格：
 1、主程序/子程序风格
 2、面向对象风格，可以通过减少功能调用层次提高系统性能，注意对象管理层并不能提高系统性能。
 3、分层风格，将在“2.8 架构风格具体实例”中详细说明
-2.3 独立构建风格 # 独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：
+2.3 独立构建风格 ✅✅✅✅✅ # 独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：
 1、进程通信
 2、事件驱动系统（隐式调用）
-2.4 虚拟机风格 # 虚拟机风格包含2个子风格：
+2.4 虚拟机风格 ✅✅✅✅✅ # 虚拟机风格包含2个子风格：
 1、解释器风格，做题关键字：需要自定义规则的场景
 2、规则系统，做题关键字：在解释器的基础上增加经验规则；基于规则的系统包括规则集、规则解释器、规则/数据选择器及工作内存；它的特点是将业务逻辑中频繁变化的部分定义为规则。
-2.5 仓库风格 # 仓库风格包含2个子风格：
+2.5 仓库风格 ✅✅✅✅✅ # 仓库风格包含2个子风格：
 1、数据库系统
 2、黑板系统
 在仓库风格中有两种不同的构件:中央数据结构说明当前状态，独立构件在中央数据存储上执行。
-2.6 闭环控制风格(过程风格) # 不适合于特别复杂的系统。
-2.7 C2架构风格 # C2属于层次架构风格。
-例题 学霸肯定对了 ↕ 1.虚拟机 2.数据流 3.隐式调用 4.解释器 5.过程控制 学霸肯定对了 ↕ 1.黑板 2.">
+2.6 闭环控制风格(过程风格) ✅✅✅✅✅ # 不适合于特别复杂的系统。
+2.7 C2架构风格 ✅✅✅✅✅ # C2属于层次架构风格。
+例题 学霸肯定对了 ↕ 1.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="2) 软件架构风格" />
 <meta property="og:description" content="" />
@@ -48,7 +48,7 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.62b0a6b5c23a7b3cd6447fd2c179956742ab39f41a7d35cd83c5cc45ec1b7127.js" integrity="sha256-YrCmtcI6ezzWRH/SwXmVZ0KrOfQafTXNg8XMRewbcSc=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.5ac2f9d56f6f6c9e061836744d17caa78f103adc693f4bb0b9f7ff627754f95c.js" integrity="sha256-WsL51W9vbJ4GGDZ0TRfKp48QOtxpP0uwuff/YndU&#43;Vw=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -881,23 +881,23 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#21-数据流风格">2.1 数据流风格</a></li>
-    <li><a href="#22-调用返回风格">2.2 调用/返回风格</a></li>
-    <li><a href="#23-独立构建风格">2.3 独立构建风格</a></li>
-    <li><a href="#24-虚拟机风格">2.4 虚拟机风格</a></li>
-    <li><a href="#25-仓库风格">2.5 仓库风格</a></li>
-    <li><a href="#26-闭环控制风格过程风格">2.6 闭环控制风格(过程风格)</a></li>
-    <li><a href="#27-c2架构风格">2.7 C2架构风格</a></li>
-    <li><a href="#28-架构风格具体实例">2.8 架构风格具体实例</a>
+    <li><a href="#21-数据流风格-">2.1 数据流风格 ✅✅✅✅✅</a></li>
+    <li><a href="#22-调用返回风格-">2.2 调用/返回风格 ✅✅✅✅✅</a></li>
+    <li><a href="#23-独立构建风格-">2.3 独立构建风格 ✅✅✅✅✅</a></li>
+    <li><a href="#24-虚拟机风格-">2.4 虚拟机风格 ✅✅✅✅✅</a></li>
+    <li><a href="#25-仓库风格-">2.5 仓库风格 ✅✅✅✅✅</a></li>
+    <li><a href="#26-闭环控制风格过程风格-">2.6 闭环控制风格(过程风格) ✅✅✅✅✅</a></li>
+    <li><a href="#27-c2架构风格-">2.7 C2架构风格 ✅✅✅✅✅</a></li>
+    <li><a href="#28-架构风格具体实例-">2.8 架构风格具体实例 ✅✅✅✅✅</a>
       <ul>
-        <li><a href="#281-从-cs---bs---混合架构">2.8.1 从 C/S -&gt; B/S -&gt; 混合架构</a></li>
-        <li><a href="#282-mvc架构风格">2.8.2 MVC架构风格</a></li>
-        <li><a href="#283-mvp架构风格">2.8.3 MVP架构风格</a></li>
-        <li><a href="#284-mvvm架构风格">2.8.4 MVVM架构风格</a></li>
-        <li><a href="#285-ria架构风格">2.8.5 RIA架构风格</a></li>
-        <li><a href="#286-基于服务的架构soa">2.8.6 基于服务的架构(SOA)</a></li>
-        <li><a href="#287-微服务">2.8.7 微服务</a></li>
-        <li><a href="#288-mda">2.8.8 MDA</a></li>
+        <li><a href="#281-从-cs---混合架构-">2.8.1 从 C/S -&gt; 混合架构 ✅✅✅✅</a></li>
+        <li><a href="#282-mvc架构风格-">2.8.2 MVC架构风格 ✅✅✅</a></li>
+        <li><a href="#283-mvp架构风格-">2.8.3 MVP架构风格 ✅✅</a></li>
+        <li><a href="#284-mvvm架构风格-">2.8.4 MVVM架构风格 ✅✅</a></li>
+        <li><a href="#285-ria架构风格-">2.8.5 RIA架构风格 ✅✅</a></li>
+        <li><a href="#286-基于服务的架构-">2.8.6 基于服务的架构 ✅✅✅✅✅</a></li>
+        <li><a href="#287-微服务-">2.8.7 微服务 ✅✅✅✅</a></li>
+        <li><a href="#288-mda-">2.8.8 MDA ✅✅</a></li>
       </ul>
     </li>
   </ul>
@@ -912,9 +912,9 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="2软件架构风格">
-  2.软件架构风格
-  <a class="anchor" href="#2%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
+  <article class="markdown"><h1 id="2软件架构风格-">
+  2.软件架构风格 ✅✅✅✅✅
+  <a class="anchor" href="#2%e8%bd%af%e4%bb%b6%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc-">#</a>
 </h1>
 <p>  架构风格反映了领域中众多系统所共有的<strong>结构</strong>和<strong>语义</strong>特性，并指导如何将各个<strong>构件</strong>有效地组织成一个完整的系统。架构风格定义了用于描述系统的术语表和一组指导构建系统的规则，强调对架构设计的重用。以下是常见风格的特点或应用：</p>
 <p>  批处理&mdash;&gt;传统编译器。</p>
@@ -930,9 +930,9 @@ https://github.com/alex-shpak/hugo-book
 <p>  数据仓库&mdash;&gt;现代集成开发环境（现代编译器）。</p>
 <p>下图是架构师考试中常见的架构风格及其子风格，接下来会详细介绍每一种风格。
 <a href="https://imgse.com/i/p9rTTqf"><img src="https://s1.ax1x.com/2023/05/11/p9rTTqf.md.png" alt="p9rTTqf.md.png" /></a></p>
-<h2 id="21-数据流风格">
-  2.1 数据流风格
-  <a class="anchor" href="#21-%e6%95%b0%e6%8d%ae%e6%b5%81%e9%a3%8e%e6%a0%bc">#</a>
+<h2 id="21-数据流风格-">
+  2.1 数据流风格 ✅✅✅✅✅
+  <a class="anchor" href="#21-%e6%95%b0%e6%8d%ae%e6%b5%81%e9%a3%8e%e6%a0%bc-">#</a>
 </h2>
 <hr>
 <p>  数据流风格以数据驱动的方式推进项目，其的典型应用有<strong>传统编译器</strong>、<strong>网络报文处理</strong>，它包含2个子风格：</p>
@@ -942,9 +942,9 @@ https://github.com/alex-shpak/hugo-book
 <p><a href="https://imgse.com/i/p9rIyS1"><img src="https://s1.ax1x.com/2023/05/11/p9rIyS1.md.png" alt="p9rIyS1.md.png" /></a>
 <a href="https://imgse.com/i/p9rI6Qx"><img src="https://s1.ax1x.com/2023/05/11/p9rI6Qx.md.png" alt="p9rI6Qx.md.png" /></a></p>
 <p>  一个软件的架构设计是随着技术的不断进步而不断变化的。以编译器为例，其主流架构经历了管道-过滤器到数据共享为中心的转变过程。早期的编译器采用管道-过滤器架构风格，以文本形式输入的代码被逐步转化为各种形式，最终生成可执行代码。早期的编译器采用管道-过滤器架构风格，并且大多数编译器在词法分析时创造独立的符号表，在其后的阶段会不断修改符号表，因此符号表并不是程序数据的一部分。现代的编译器采用以数据共享为中心的架构风格，主要关心编译过程中程序的中间表示。现代的编译器采用以数据共享为中心的架构风格，分析树是在语法分析阶段结束后才产生作为语义分析的输入，分析树是数据中心中重要的共享数据，为后续的语义分析提供了帮助。</p>
-<h2 id="22-调用返回风格">
-  2.2 调用/返回风格
-  <a class="anchor" href="#22-%e8%b0%83%e7%94%a8%e8%bf%94%e5%9b%9e%e9%a3%8e%e6%a0%bc">#</a>
+<h2 id="22-调用返回风格-">
+  2.2 调用/返回风格 ✅✅✅✅✅
+  <a class="anchor" href="#22-%e8%b0%83%e7%94%a8%e8%bf%94%e5%9b%9e%e9%a3%8e%e6%a0%bc-">#</a>
 </h2>
 <hr>
 <p>  调用/返回风格包含3个子风格：</p>
@@ -953,9 +953,9 @@ https://github.com/alex-shpak/hugo-book
 <p>  3、分层风格，将在“2.8 架构风格具体实例”中详细说明</p>
 <p><a href="https://imgse.com/i/p9rIfTe"><img src="https://s1.ax1x.com/2023/05/11/p9rIfTe.md.png" alt="p9rIfTe.md.png" /></a>
 <a href="https://imgse.com/i/p9rI5Yd"><img src="https://s1.ax1x.com/2023/05/11/p9rI5Yd.md.png" alt="p9rI5Yd.md.png" /></a></p>
-<h2 id="23-独立构建风格">
-  2.3 独立构建风格
-  <a class="anchor" href="#23-%e7%8b%ac%e7%ab%8b%e6%9e%84%e5%bb%ba%e9%a3%8e%e6%a0%bc">#</a>
+<h2 id="23-独立构建风格-">
+  2.3 独立构建风格 ✅✅✅✅✅
+  <a class="anchor" href="#23-%e7%8b%ac%e7%ab%8b%e6%9e%84%e5%bb%ba%e9%a3%8e%e6%a0%bc-">#</a>
 </h2>
 <hr>
 <p>  独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：</p>
@@ -963,9 +963,9 @@ https://github.com/alex-shpak/hugo-book
 <p>  2、事件驱动系统（隐式调用）</p>
 <p><a href="https://imgse.com/i/p9rIIfA"><img src="https://s1.ax1x.com/2023/05/11/p9rIIfA.md.png" alt="p9rIIfA.md.png" /></a>
 <a href="https://imgse.com/i/p9rIH6P"><img src="https://s1.ax1x.com/2023/05/11/p9rIH6P.md.png" alt="p9rIH6P.md.png" /></a></p>
-<h2 id="24-虚拟机风格">
-  2.4 虚拟机风格
-  <a class="anchor" href="#24-%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%a3%8e%e6%a0%bc">#</a>
+<h2 id="24-虚拟机风格-">
+  2.4 虚拟机风格 ✅✅✅✅✅
+  <a class="anchor" href="#24-%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%a3%8e%e6%a0%bc-">#</a>
 </h2>
 <hr>
 <p>  虚拟机风格包含2个子风格：</p>
@@ -973,9 +973,9 @@ https://github.com/alex-shpak/hugo-book
 <p>  2、规则系统，做题关键字：在解释器的基础上增加经验规则；基于规则的系统包括规则集、规则解释器、规则/数据选择器及工作内存；它的特点是将业务逻辑中频繁变化的部分定义为规则。</p>
 <p><a href="https://imgse.com/i/p9rILm8"><img src="https://s1.ax1x.com/2023/05/11/p9rILm8.md.png" alt="p9rILm8.md.png" /></a>
 <a href="https://imgse.com/i/p9rIO0S"><img src="https://s1.ax1x.com/2023/05/11/p9rIO0S.md.png" alt="p9rIO0S.md.png" /></a></p>
-<h2 id="25-仓库风格">
-  2.5 仓库风格
-  <a class="anchor" href="#25-%e4%bb%93%e5%ba%93%e9%a3%8e%e6%a0%bc">#</a>
+<h2 id="25-仓库风格-">
+  2.5 仓库风格 ✅✅✅✅✅
+  <a class="anchor" href="#25-%e4%bb%93%e5%ba%93%e9%a3%8e%e6%a0%bc-">#</a>
 </h2>
 <hr>
 <p>  仓库风格包含2个子风格：</p>
@@ -985,16 +985,16 @@ https://github.com/alex-shpak/hugo-book
 <p><a href="https://imgse.com/i/p9r7PdU"><img src="https://s1.ax1x.com/2023/05/11/p9r7PdU.md.png" alt="p9r7PdU.md.png" /></a>
 <a href="https://imgse.com/i/p9rIzfs"><img src="https://s1.ax1x.com/2023/05/11/p9rIzfs.md.png" alt="p9rIzfs.md.png" /></a>
 <a href="https://imgse.com/i/p9roppn"><img src="https://s1.ax1x.com/2023/05/11/p9roppn.md.png" alt="p9roppn.md.png" /></a></p>
-<h2 id="26-闭环控制风格过程风格">
-  2.6 闭环控制风格(过程风格)
-  <a class="anchor" href="#26-%e9%97%ad%e7%8e%af%e6%8e%a7%e5%88%b6%e9%a3%8e%e6%a0%bc%e8%bf%87%e7%a8%8b%e9%a3%8e%e6%a0%bc">#</a>
+<h2 id="26-闭环控制风格过程风格-">
+  2.6 闭环控制风格(过程风格) ✅✅✅✅✅
+  <a class="anchor" href="#26-%e9%97%ad%e7%8e%af%e6%8e%a7%e5%88%b6%e9%a3%8e%e6%a0%bc%e8%bf%87%e7%a8%8b%e9%a3%8e%e6%a0%bc-">#</a>
 </h2>
 <hr>
 <p>  不适合于特别复杂的系统。</p>
 <p><a href="https://imgse.com/i/p9ro9lq"><img src="https://s1.ax1x.com/2023/05/11/p9ro9lq.md.png" alt="p9ro9lq.md.png" /></a></p>
-<h2 id="27-c2架构风格">
-  2.7 C2架构风格
-  <a class="anchor" href="#27-c2%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
+<h2 id="27-c2架构风格-">
+  2.7 C2架构风格 ✅✅✅✅✅
+  <a class="anchor" href="#27-c2%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc-">#</a>
 </h2>
 <hr>
 <p>  C2属于层次架构风格。</p>
@@ -1064,15 +1064,15 @@ https://github.com/alex-shpak/hugo-book
 </div>
 </p>
 </blockquote>
-<h2 id="28-架构风格具体实例">
-  2.8 架构风格具体实例
-  <a class="anchor" href="#28-%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc%e5%85%b7%e4%bd%93%e5%ae%9e%e4%be%8b">#</a>
+<h2 id="28-架构风格具体实例-">
+  2.8 架构风格具体实例 ✅✅✅✅✅
+  <a class="anchor" href="#28-%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc%e5%85%b7%e4%bd%93%e5%ae%9e%e4%be%8b-">#</a>
 </h2>
 <hr>
 <p>  没有最好的架构，只有更适合具体业务场景的架构。分层架构的脆弱性在于：底层发生错误会导致整个系统无法正常运行、层与层之间引入通信机制势必造成性能下降，层分的越多，性能越差。</p>
-<h3 id="281-从-cs---bs---混合架构">
-  2.8.1 从 C/S -&gt; B/S -&gt; 混合架构
-  <a class="anchor" href="#281-%e4%bb%8e-cs---bs---%e6%b7%b7%e5%90%88%e6%9e%b6%e6%9e%84">#</a>
+<h3 id="281-从-cs---混合架构-">
+  2.8.1 从 C/S -&gt; 混合架构 ✅✅✅✅
+  <a class="anchor" href="#281-%e4%bb%8e-cs---%e6%b7%b7%e5%90%88%e6%9e%b6%e6%9e%84-">#</a>
 </h3>
 <p>  属于层次架构风格的实例。C/S系统开发时可以采用不同的分布式架构:分布式表示架构是将表示层和表示逻辑层迁移到客户机，应用逻辑层、数据处理层和数据层仍保留在服务器上;分布式数据架构是将数据层和数据处理层放置于服务器，应用逻辑层、表示逻辑层和表示层放置于客户机，分布式数据和应用架构是将数据层和数据处理层放置在数据服务器上，应用逻辑层放置在应用服务器上，表示逻辑层和表示层放置在客户机上。</p>
 <ul>
@@ -1098,9 +1098,9 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p>  结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。</p>
 <p><a href="https://imgse.com/i/p9sxzJP"><img src="https://s1.ax1x.com/2023/05/12/p9sxzJP.md.png" alt="p9sxzJP.md.png" /></a></p>
-<h3 id="282-mvc架构风格">
-  2.8.2 MVC架构风格
-  <a class="anchor" href="#282-mvc%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
+<h3 id="282-mvc架构风格-">
+  2.8.2 MVC架构风格 ✅✅✅
+  <a class="anchor" href="#282-mvc%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc-">#</a>
 </h3>
 <p>  属于层次架构风格的实例。</p>
 <p>  MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数
@@ -1108,29 +1108,29 @@ https://github.com/alex-shpak/hugo-book
 <p>  MVC分为主动MVC和被动MVC(具体不用了解)，MVC架构的缺点在于MV之间没有解耦，不是严格的分层架构(严格的分层架构：当前层之和上下层之间有联系)</p>
 <p><a href="https://imgse.com/i/p9ym5FK"><img src="https://s1.ax1x.com/2023/05/12/p9ym5FK.md.png" alt="p9ym5FK.md.png" /></a></p>
 <p>  在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是EJB(Entity Bean/Session Bean)，View界面是JSP；Controller是Servlet，用于分发客户请求、有效组织其他构建为客户端提供服务，其核心业务逻辑由Session Bean构建实现。</p>
-<h3 id="283-mvp架构风格">
-  2.8.3 MVP架构风格
-  <a class="anchor" href="#283-mvp%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
+<h3 id="283-mvp架构风格-">
+  2.8.3 MVP架构风格 ✅✅
+  <a class="anchor" href="#283-mvp%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc-">#</a>
 </h3>
 <p>  属于层次架构风格的实例。</p>
 <p>  MVP(Model-View-Presenter)，<del>注意：它不是LOL中的MVP</del>，它是MVC的变种，它实现了MV之间的解耦。</p>
 <p><a href="https://imgse.com/i/p9ynxBR"><img src="https://s1.ax1x.com/2023/05/12/p9ynxBR.md.png" alt="p9ynxBR.md.png" /></a></p>
-<h3 id="284-mvvm架构风格">
-  2.8.4 MVVM架构风格
-  <a class="anchor" href="#284-mvvm%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
+<h3 id="284-mvvm架构风格-">
+  2.8.4 MVVM架构风格 ✅✅
+  <a class="anchor" href="#284-mvvm%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc-">#</a>
 </h3>
 <p>  属于层次架构风格的实例。</p>
 <p>  MVVM(Model-ViewModel-View),类似于vue中的双向数据绑定，View改变则ViewModel也改变，反之亦然。</p>
 <p><a href="https://imgse.com/i/p9ynzH1"><img src="https://s1.ax1x.com/2023/05/12/p9ynzH1.md.png" alt="p9ynzH1.md.png" /></a></p>
-<h3 id="285-ria架构风格">
-  2.8.5 RIA架构风格
-  <a class="anchor" href="#285-ria%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc">#</a>
+<h3 id="285-ria架构风格-">
+  2.8.5 RIA架构风格 ✅✅
+  <a class="anchor" href="#285-ria%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc-">#</a>
 </h3>
 <p>  属于层次架构风格的实例。</p>
 <p>  RIA(富互联网架构)类似于综合了C/S和B/S架构的优点(C/S反应快，交互强，B/S易传播，B/S交互能力不那么强，一般以文字和图片为主)，它在首次加载初期比较慢，一旦加载完成使用就快多了。典型的例子就是在线网游、小程序。</p>
-<h3 id="286-基于服务的架构soa">
-  2.8.6 基于服务的架构(SOA)
-  <a class="anchor" href="#286-%e5%9f%ba%e4%ba%8e%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%9e%b6%e6%9e%84soa">#</a>
+<h3 id="286-基于服务的架构-">
+  2.8.6 基于服务的架构 ✅✅✅✅✅
+  <a class="anchor" href="#286-%e5%9f%ba%e4%ba%8e%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%9e%b6%e6%9e%84-">#</a>
 </h3>
 <p>  服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。经典场景：对历史遗留系统进行集成。如下图：</p>
 <p><a href="https://imgse.com/i/pCddrGD"><img src="https://s1.ax1x.com/2023/06/28/pCddrGD.md.png" alt="pCddrGD.md.png" /></a></p>
@@ -1143,9 +1143,9 @@ https://github.com/alex-shpak/hugo-book
 <p>  SOA的实现方式1：Web Service；基于Web Services实现的面向服务系统中，服务提供者、服务使用者和服务注册器之间的远程交互通过SOAP(简单对象访问协议)消息实现，服务内容描述通过WSDL(Web服务描述语言，可以看作服务使用说明书)标准实现，服务注册信息通过UDDI(服务统一描述、发现和集成)框架实现，通过BPEL/BPEL4WS (业务过程执行语言)将分散的、功能单一的Web服务组织成一个复杂的有机应用。</p>
 <p><a href="https://imgse.com/i/p9gssDe"><img src="https://s1.ax1x.com/2023/05/15/p9gssDe.md.png" alt="p9gssDe.md.png" /></a></p>
 <p>  SOA的实现方式2：ESB 企业服务总线。消除了服务请求者与服务提供者之间的直接连接。</p>
-<h3 id="287-微服务">
-  2.8.7 微服务
-  <a class="anchor" href="#287-%e5%be%ae%e6%9c%8d%e5%8a%a1">#</a>
+<h3 id="287-微服务-">
+  2.8.7 微服务 ✅✅✅✅
+  <a class="anchor" href="#287-%e5%be%ae%e6%9c%8d%e5%8a%a1-">#</a>
 </h3>
 <p>  微服务顾名思义，就是很小的服务，所以它属于面向服务架构SOA的一种。</p>
 <p>  微服务架构是一种架构模式，它提倡将单一应用程序划分成一组小的服务，服务之间互相协调、互相配合，为用户提供最终价值。每个服务运行在其独立的进程中，服务与服务间采用轻量级的通信机制互相沟通 (通常是基于HTTP协议的RESTfulAPI)。每个服务都围绕着具体业务进行构建，并且能够被独立的部署到生产环境、类生产环境等。另外，应当尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建。</p>
@@ -1170,9 +1170,9 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p><a href="https://imgse.com/i/p9gyVxK"><img src="https://s1.ax1x.com/2023/05/15/p9gyVxK.md.png" alt="p9gyVxK.md.png" /></a>
 <a href="https://imgse.com/i/p9gyMad"><img src="https://s1.ax1x.com/2023/05/15/p9gyMad.md.png" alt="p9gyMad.md.png" /></a></p>
-<h3 id="288-mda">
-  2.8.8 MDA
-  <a class="anchor" href="#288-mda">#</a>
+<h3 id="288-mda-">
+  2.8.8 MDA ✅✅
+  <a class="anchor" href="#288-mda-">#</a>
 </h3>
 <p>  模型驱动架构。是形式化方法下的产物。</p>
 <p>  <strong>平台无关模型</strong>通过变换工具转为<strong>平台相关模型</strong>，再通过变换工具转为<strong>代码code</strong></p>
@@ -1219,23 +1219,23 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#21-数据流风格">2.1 数据流风格</a></li>
-    <li><a href="#22-调用返回风格">2.2 调用/返回风格</a></li>
-    <li><a href="#23-独立构建风格">2.3 独立构建风格</a></li>
-    <li><a href="#24-虚拟机风格">2.4 虚拟机风格</a></li>
-    <li><a href="#25-仓库风格">2.5 仓库风格</a></li>
-    <li><a href="#26-闭环控制风格过程风格">2.6 闭环控制风格(过程风格)</a></li>
-    <li><a href="#27-c2架构风格">2.7 C2架构风格</a></li>
-    <li><a href="#28-架构风格具体实例">2.8 架构风格具体实例</a>
+    <li><a href="#21-数据流风格-">2.1 数据流风格 ✅✅✅✅✅</a></li>
+    <li><a href="#22-调用返回风格-">2.2 调用/返回风格 ✅✅✅✅✅</a></li>
+    <li><a href="#23-独立构建风格-">2.3 独立构建风格 ✅✅✅✅✅</a></li>
+    <li><a href="#24-虚拟机风格-">2.4 虚拟机风格 ✅✅✅✅✅</a></li>
+    <li><a href="#25-仓库风格-">2.5 仓库风格 ✅✅✅✅✅</a></li>
+    <li><a href="#26-闭环控制风格过程风格-">2.6 闭环控制风格(过程风格) ✅✅✅✅✅</a></li>
+    <li><a href="#27-c2架构风格-">2.7 C2架构风格 ✅✅✅✅✅</a></li>
+    <li><a href="#28-架构风格具体实例-">2.8 架构风格具体实例 ✅✅✅✅✅</a>
       <ul>
-        <li><a href="#281-从-cs---bs---混合架构">2.8.1 从 C/S -&gt; B/S -&gt; 混合架构</a></li>
-        <li><a href="#282-mvc架构风格">2.8.2 MVC架构风格</a></li>
-        <li><a href="#283-mvp架构风格">2.8.3 MVP架构风格</a></li>
-        <li><a href="#284-mvvm架构风格">2.8.4 MVVM架构风格</a></li>
-        <li><a href="#285-ria架构风格">2.8.5 RIA架构风格</a></li>
-        <li><a href="#286-基于服务的架构soa">2.8.6 基于服务的架构(SOA)</a></li>
-        <li><a href="#287-微服务">2.8.7 微服务</a></li>
-        <li><a href="#288-mda">2.8.8 MDA</a></li>
+        <li><a href="#281-从-cs---混合架构-">2.8.1 从 C/S -&gt; 混合架构 ✅✅✅✅</a></li>
+        <li><a href="#282-mvc架构风格-">2.8.2 MVC架构风格 ✅✅✅</a></li>
+        <li><a href="#283-mvp架构风格-">2.8.3 MVP架构风格 ✅✅</a></li>
+        <li><a href="#284-mvvm架构风格-">2.8.4 MVVM架构风格 ✅✅</a></li>
+        <li><a href="#285-ria架构风格-">2.8.5 RIA架构风格 ✅✅</a></li>
+        <li><a href="#286-基于服务的架构-">2.8.6 基于服务的架构 ✅✅✅✅✅</a></li>
+        <li><a href="#287-微服务-">2.8.7 微服务 ✅✅✅✅</a></li>
+        <li><a href="#288-mda-">2.8.8 MDA ✅✅</a></li>
       </ul>
     </li>
   </ul>

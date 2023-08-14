@@ -21,13 +21,13 @@ title: 3.4 计算机网络
 
 &emsp;&emsp;S/MIME在安全方面的功能又进行了扩展，它可以把MIME实体 (比如数字签名和加密信息等) 封装成安全对象。RFC2634定义了增强的安全服务，**例如具有接收方确认签收的功能，这样就可以确保接收者不能否认已经收到过的邮件**。
 
-&emsp;&emsp;**PGP是安全的电子邮件协议**。它是一套用于消息加密、验证的应用程序，采用IDEA的散列算法作为加密与验证之用。PGP加密由一系列散列、数据压缩、对称密钥加密，以及公钥加密的算法组合而成。每个公钥均绑定唯一的用户名或者E-mail地址。
+&emsp;&emsp;**PGP是安全的电子邮件协议**。它是一套用于消息加密、验证的应用程序，采用IDEA的散列算法作为加密与验证之用。每个公钥均绑定唯一的用户名或者E-mail地址。
 
-&emsp;&emsp;IPSec是IETF制定的IP层加密协议，PKI技术为其提供了加密和认证过程的密钥管理功能。IPSec主要用于开发新一代的VPN。
+&emsp;&emsp;**IPSec对IP数据包进行分组加密，IPSec主要用于开发新一代的VPN**。
 
-&emsp;&emsp;L2TP是一种二层协议主要是对传统拨号协议PPP的扩展通过定义多协议跨越第二层点对点链接的一个封装机制来整合多协议拨号服务至现有的因特网服务提供商点，保证分散的远程客户端通过隧道方式经由Internet等网络访问企业内部网络。
+&emsp;&emsp;**L2TP是创建VPN是需要用到的一个协议，主要是对传统拨号协议PPP的扩展，经常和IPSec协议连用**。
 
-&emsp;&emsp;PAP协议是二层协议PPP协议的一种握手协议，以保证PPP链接安全性。
+&emsp;&emsp;**PAP协议是PPP协议的一种握手协议，以保证PPP链接安全性**。
 
 [![pCebHj1.md.png](https://s1.ax1x.com/2023/06/13/pCebHj1.md.png)](https://imgse.com/i/pCebHj1)
 [![pCebqnx.md.png](https://s1.ax1x.com/2023/06/13/pCebqnx.md.png)](https://imgse.com/i/pCebqnx)
