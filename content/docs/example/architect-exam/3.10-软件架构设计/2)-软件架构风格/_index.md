@@ -229,7 +229,7 @@ title: "2) 软件架构风格"
 
 [![p9gsw36.md.png](https://s1.ax1x.com/2023/05/15/p9gsw36.md.png)](https://imgse.com/i/p9gsw36)
 
-&emsp;&emsp;SOA的实现方式1：Web Service；基于Web Services实现的面向服务系统中，服务提供者、服务使用者和服务注册器之间的远程交互通过SOAP(简单对象访问协议)消息实现，服务内容描述通过WSDL(Web服务描述语言，可以看作服务使用说明书)标准实现，服务注册信息通过UDDI(服务统一描述、发现和集成)框架实现，通过BPEL/BPEL4WS (业务过程执行语言)将分散的、功能单一的Web服务组织成一个复杂的有机应用。
+&emsp;&emsp;SOA的实现方式1：Web Service；基于Web Services实现的面向服务系统中，服务提供者、服务请求者和服务注册器之间的远程交互通过SOAP(简单对象访问协议)消息实现，服务内容描述通过WSDL(Web服务描述语言，可以看作服务使用说明书)标准实现，服务注册信息通过UDDI(服务统一描述、发现和集成)框架实现，通过BPEL/BPEL4WS (业务过程执行语言)将分散的、功能单一的Web服务组织成一个复杂的有机应用。
 
 [![p9gssDe.md.png](https://s1.ax1x.com/2023/05/15/p9gssDe.md.png)](https://imgse.com/i/p9gssDe)
 

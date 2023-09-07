@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" 构件与中间件技术 # 1 构件的定义 # 软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。
+构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。
+构件是一个独立发布的功能部分，可以通过其接口访问它的服务。
+特性 构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。
+构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。
+概念框架的互操作设计包括系统体系结构连接的所有框架间的互操作的规则。
+构件是一组通常需要同时部署的原子构件。构件和原子构件之间的区别在于，大多数原子构件永远都不会被单独部署，尽管它们可以被单独部署。
+一个原子构件是一个模块和一组资源。
+模块是一组类和可能的非面向对象的结构体，比如过程或者函数。
+资源是一个类型化的项的固定集合。
+资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。
+构件的接口是一种服务提供者对消费者的承诺，即契约(contract)，用契约确保一组构件之间的行为组合。
+2 中间件 # 中间件是一类构件、中间件是一类系统软件。ESB
+中间件技术的优点：
+中间件通过标准接口实现与应用程序的关联，提供特定功能的服务；使用中间件可以提高应用软件可移植性；使用中间件有助于提高开发效率。
+中间件是独立的系统级软件，连接操作系统层和应用程序层，将不同操作系统提供应用的接口标准化，协议统一化，屏蔽具体操作的细节，中间件一般提供如下功能：1、通信支持。中间件为其所支持的应用软件提供平台化的运行环境，该环境屏蔽底层通信之间的接口差异，实现互操作，所以通信支持是中间件一个最基本的功能。2、应用支持。中间件的目的就是服务上层应用，提供应用层不同服务之间的互操作机制。3、公共服务。公共服务是对应用软件中共性功能或约束的提取。将这些共性的功能或者约束分类实现，并支持复用，作为公共服务，提供给应用程序使用。
+中间件提供平台和应用之间的通用服务，这些服务具有标准的程序接口和协议。中间件的基本功能包括:为客户端和服务器之间提供连接和通信；提供交易管理机制保证交易的一致性；提供应用的负载均衡和高可用性等。
+2.1 消息中间件 # 1、消息中间件是消息传输过程中保存消息的一种容器；
+2、消息中间件具有两个基本特点:采用异步处理模式应用程序和应用程序调用关系为松耦合关系；
+3、消息中间件使得不同系统、不同进程之间能够通信，注意不是对象。
+4、消息中间件的消息传递服务模型有点对点模型和发布-订阅模型之分。
+3 构件的复用 # 复用的发展史 构建的复用流程 例题 学霸肯定对了 ↕ B
+水平：通用，普遍
+垂直：专用，特定用途
+学霸肯定对了 ↕ C 3.1 软件的复用 # 软件复用过程包含:创建、复用、支持、管理4个过程。整体说来就是：构造/获取可复用的软件资产、管理可复用资产和使用可复用资产
+1、创建过程:界定和提供可复用资产，以满足复用者的需要;
+2、复用过程:利用可复用资产来生产应用软件产品;
+3、支持过程:全面支持可复用资产的获取、管理和维护工作;
+4、管理过程:执行计划、启动、资源、跟踪，并协调其他各个过程;
+在软件架构复用中，计划复用是指在开发之前，就要进行规划，以决定哪些需要复用。资产复用(是指将已有的软件资产(如框架、组件、类库等)运用到新的软件系统中以提高软件开发效率和质量)是指开发过程中，只要发现有可复用的资产，就对其进行复用；系统复用是指将已有的个或多个系统的某一部分或全部内容，用于构建新的系统。
+4 构件标准 # 4.1 COBRA # 例题 学霸肯定对了 ↕ A ">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="8) 构建与中间件技术" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/8-%E6%9E%84%E4%BB%B6%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/" />
+
+<title>8) 构建与中间件技术 | 小钻风</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/zh.search.min.ecaa896d00c9933d39ad0a03461bee87bebdd18cfa813f4d4fdb54ffb76b7364.js" integrity="sha256-7KqJbQDJkz05rQoDRhvuh7690Yz6gT9NT9tU/7drc2Q=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/8-%E6%9E%84%E4%BB%B6%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/index.xml" title="小钻风" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>小钻风</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">介绍</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0172079bf31c2e1230a2ba418e74787a" class="toggle"  />
+    <label for="section-0172079bf31c2e1230a2ba418e74787a" class="flex justify-between">
+      <a href="/docs/example/golang/" class="">1. golang - 从入门到入土</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-777a1736a727cd6e825002af5c691cae" class="toggle"  />
+    <label for="section-777a1736a727cd6e825002af5c691cae" class="flex justify-between">
+      <a href="/docs/example/gin/" class="">2. gin杂谈</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6c4eae7067e5dfff5c2e4406248debee" class="toggle" checked />
+    <label for="section-6c4eae7067e5dfff5c2e4406248debee" class="flex justify-between">
+      <a href="/docs/example/architect-exam/" class="">3. 高级软考 - 系统架构师</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="">3.1 计算机组成与体系结构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="">3.2 操作系统</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" class="">3.3 数据库系统</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="">3.4 计算机网络</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.5-%E6%95%B0%E5%AD%97%E4%B8%8E%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/" class="">3.5 数字与经济管理</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.6-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/" class="">3.6 系统配置与性能评价</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.7-%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/" class="">3.7 知识产权与标准化</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.8-%E4%BC%81%E4%B8%9A%E4%BF%A1%E6%81%AF%E5%8C%96%E6%88%98%E7%95%A5%E4%B8%8E%E5%AE%9E%E6%96%BD/" class="">3.8 企业信息化战略与实施</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="">3.9 软件工程</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/1-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" class="">1) 软件开发方法</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/" class="">2) 软件开发模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/3-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" class="">3) 需求工程</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/4-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="">4) 系统设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/5-%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%BB%BA%E6%A8%A1/" class="">5) 软件系统建模</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/" class="">6) 软件测试与调试</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/7-%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4/" class="">7) 系统运行与软件维护</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">3.10 软件架构设计</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/1-%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E8%BF%B0/" class="">1) 软件架构的概述</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/" class="">2) 软件架构风格</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="">3) 特定领域软件架构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/4-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="">4) 基于架构的软件开发</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/5-%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7/" class="">5) 软件质量属性</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/6-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">6) 软件架构评估</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E4%BA%A7%E5%93%81%E7%BA%BF/" class="">7) 软件产品线</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/8-%E6%9E%84%E4%BB%B6%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/" class="active">8) 构建与中间件技术</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-web%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">9) web架构设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7/" class="">3.11 系统安全性和可靠性</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="">3.12 项目管理</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.13-%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/" class="">3.13 专业英语</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.14-%E5%85%B6%E4%BB%96/" class="">3.14 其他</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.15-%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%93%E6%A0%8F/" class="">3.15 案例分析专栏</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.16-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/" class="">3.16 论文写作专栏</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c5af2a1cf2778ff160886bf03e434863" class="toggle"  />
+    <label for="section-c5af2a1cf2778ff160886bf03e434863" class="flex justify-between">
+      <a href="/docs/example/algorthem/" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-931d8f340adf73346e40d4b227426621" class="toggle"  />
+    <label for="section-931d8f340adf73346e40d4b227426621" class="flex justify-between">
+      <a href="/docs/example/leetcode/" class="">5. leetcode</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/leetcode/1-hot100/" class="">1) Hot100</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>8) 构建与中间件技术</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-构件的定义">1 构件的定义</a></li>
+    <li><a href="#2-中间件">2 中间件</a>
+      <ul>
+        <li><a href="#21-消息中间件">2.1 消息中间件</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-构件的复用">3 构件的复用</a></li>
+    <li><a href="#31-软件的复用">3.1 软件的复用</a></li>
+    <li><a href="#4-构件标准">4 构件标准</a>
+      <ul>
+        <li><a href="#41-cobra">4.1 COBRA</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="构件与中间件技术">
+  构件与中间件技术
+  <a class="anchor" href="#%e6%9e%84%e4%bb%b6%e4%b8%8e%e4%b8%ad%e9%97%b4%e4%bb%b6%e6%8a%80%e6%9c%af">#</a>
+</h1>
+<h2 id="1-构件的定义">
+  1 构件的定义
+  <a class="anchor" href="#1-%e6%9e%84%e4%bb%b6%e7%9a%84%e5%ae%9a%e4%b9%89">#</a>
+</h2>
+<hr>
+<ul>
+<li>
+<p>软件构件是一种组装单元，它具有规范的接口规约和显式的语境依赖。软件构件可以被独立地部署并由第三方任意地组装。</p>
+</li>
+<li>
+<p>构件是某系统中有价值的、几乎独立的并可替换的一个部分，它在良好定义的体系结构语境内满足某清晰的功能。</p>
+</li>
+<li>
+<p>构件是一个独立发布的功能部分，可以通过其接口访问它的服务。</p>
+</li>
+</ul>
+<p><a href="https://imgse.com/i/p9vU7ZQ"><img src="https://s1.ax1x.com/2023/05/31/p9vU7ZQ.md.png" alt="p9vU7ZQ.md.png" /></a></p>
+<ul>
+<li>特性</li>
+</ul>
+<p>  构件系统体系结构由一组平台决策、一组构件框架和构件框架之间的互操作设计组成。</p>
+<p>  构件框架是一种专用的体系结构 (通常围绕一些关键的机制)，同时，也是一组固定地作用于构件层次机制的策略。</p>
+<p>  概念框架的互操作设计包括系统体系结构连接的所有框架间的互操作的规则。</p>
+<p>  构件是一组通常需要同时部署的原子构件。构件和原子构件之间的区别在于，大多数原子构件永远都不会被单独部署，尽管它们可以被单独部署。</p>
+<p>  一个原子构件是一个模块和一组资源。</p>
+<p>  模块是一组类和可能的非面向对象的结构体，比如过程或者函数。</p>
+<p>  资源是一个类型化的项的固定集合。</p>
+<p>  资源这个概念可以包含代码资源，进而包含模块。问题在干除了编译器编译一个模块或包生成的资源外，还可能存在其他的资源。在“纯对象”的方法中，资源是外部化的不可改变的对象一一不可改变是因为构件没有持久化的标志，而目复制不能被区分。</p>
+<p>  构件的接口是一种服务提供者对消费者的承诺，即契约(contract)，用契约确保一组构件之间的行为组合。</p>
+<h2 id="2-中间件">
+  2 中间件
+  <a class="anchor" href="#2-%e4%b8%ad%e9%97%b4%e4%bb%b6">#</a>
+</h2>
+<hr>
+<p>  中间件是一类构件、中间件是一类系统软件。ESB</p>
+<p><a href="https://imgse.com/i/p9vUbIs"><img src="https://s1.ax1x.com/2023/05/31/p9vUbIs.md.png" alt="p9vUbIs.md.png" /></a></p>
+<p>  中间件技术的优点：</p>
+<p>  中间件通过标准接口实现与应用程序的关联，提供特定功能的服务；使用中间件可以提高应用软件可移植性；使用中间件有助于提高开发效率。</p>
+<p>  中间件是独立的系统级软件，连接操作系统层和应用程序层，将不同操作系统提供应用的接口标准化，协议统一化，屏蔽具体操作的细节，中间件一般提供如下功能：1、通信支持。中间件为其所支持的应用软件提供平台化的运行环境，该环境屏蔽底层通信之间的接口差异，实现互操作，所以通信支持是中间件一个最基本的功能。2、应用支持。中间件的目的就是服务上层应用，提供应用层不同服务之间的互操作机制。3、公共服务。公共服务是对应用软件中共性功能或约束的提取。将这些共性的功能或者约束分类实现，并支持复用，作为公共服务，提供给应用程序使用。</p>
+<p>  中间件提供平台和应用之间的通用服务，这些服务具有标准的程序接口和协议。中间件的基本功能包括:为客户端和服务器之间提供连接和通信；提供交易管理机制保证交易的一致性；提供应用的负载均衡和高可用性等。</p>
+<p><a href="https://imgse.com/i/p9vUOGq"><img src="https://s1.ax1x.com/2023/05/31/p9vUOGq.md.png" alt="p9vUOGq.md.png" /></a></p>
+<h3 id="21-消息中间件">
+  2.1 消息中间件
+  <a class="anchor" href="#21-%e6%b6%88%e6%81%af%e4%b8%ad%e9%97%b4%e4%bb%b6">#</a>
+</h3>
+<p>  1、消息中间件是消息传输过程中保存消息的一种容器；</p>
+<p>  2、消息中间件具有两个基本特点:采用异步处理模式应用程序和应用程序调用关系为松耦合关系；</p>
+<p>  3、消息中间件使得不同系统、不同进程之间能够通信，注意不是对象。</p>
+<p>  4、消息中间件的消息传递服务模型有点对点模型和发布-订阅模型之分。</p>
+<h2 id="3-构件的复用">
+  3 构件的复用
+  <a class="anchor" href="#3-%e6%9e%84%e4%bb%b6%e7%9a%84%e5%a4%8d%e7%94%a8">#</a>
+</h2>
+<hr>
+<ul>
+<li>
+<p>复用的发展史
+<a href="https://imgse.com/i/p9vg0zQ"><img src="https://s1.ax1x.com/2023/05/31/p9vg0zQ.md.png" alt="p9vg0zQ.md.png" /></a></p>
+</li>
+<li>
+<p>构建的复用流程
+<a href="https://imgse.com/i/p9vgsLn"><img src="https://s1.ax1x.com/2023/05/31/p9vgsLn.md.png" alt="p9vgsLn.md.png" /></a>
+<a href="https://imgse.com/i/p9vgcd0"><img src="https://s1.ax1x.com/2023/05/31/p9vgcd0.md.png" alt="p9vgcd0.md.png" /></a>
+<a href="https://imgse.com/i/p9vggoV"><img src="https://s1.ax1x.com/2023/05/31/p9vggoV.md.png" alt="p9vggoV.md.png" /></a>
+<a href="https://imgse.com/i/p9vgWJU"><img src="https://s1.ax1x.com/2023/05/31/p9vgWJU.md.png" alt="p9vgWJU.md.png" /></a></p>
+</li>
+</ul>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/p9vOP78"><img src="https://s1.ax1x.com/2023/05/31/p9vOP78.md.png" alt="p9vOP78.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>B</p>
+<p>水平：通用，普遍</p>
+<p>垂直：专用，特定用途</p>
+
+    </div>
+  </label>
+</div>
+
+<a href="https://imgse.com/i/p9vOVpj"><img src="https://s1.ax1x.com/2023/05/31/p9vOVpj.md.png" alt="p9vOVpj.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      C
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+<h2 id="31-软件的复用">
+  3.1 软件的复用
+  <a class="anchor" href="#31-%e8%bd%af%e4%bb%b6%e7%9a%84%e5%a4%8d%e7%94%a8">#</a>
+</h2>
+<p>  软件复用过程包含:创建、复用、支持、管理4个过程。整体说来就是：构造/获取可复用的软件资产、管理可复用资产和使用可复用资产</p>
+<p>  1、创建过程:界定和提供可复用资产，以满足复用者的需要;</p>
+<p>  2、复用过程:利用可复用资产来生产应用软件产品;</p>
+<p>  3、支持过程:全面支持可复用资产的获取、管理和维护工作;</p>
+<p>  4、管理过程:执行计划、启动、资源、跟踪，并协调其他各个过程;</p>
+<p>  在软件架构复用中，计划复用是指在开发之前，就要进行规划，以决定哪些需要复用。资产复用(是指将已有的软件资产(如框架、组件、类库等)运用到新的软件系统中以提高软件开发效率和质量)是指开发过程中，只要发现有可复用的资产，就对其进行复用；系统复用是指将已有的个或多个系统的某一部分或全部内容，用于构建新的系统。</p>
+<h2 id="4-构件标准">
+  4 构件标准
+  <a class="anchor" href="#4-%e6%9e%84%e4%bb%b6%e6%a0%87%e5%87%86">#</a>
+</h2>
+<hr>
+<p><a href="https://imgse.com/i/pCwRUBT"><img src="https://s1.ax1x.com/2023/06/29/pCwRUBT.md.png" alt="pCwRUBT.md.png" /></a></p>
+<h3 id="41-cobra">
+  4.1 COBRA
+  <a class="anchor" href="#41-cobra">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pCwRgu6"><img src="https://s1.ax1x.com/2023/06/29/pCwRgu6.md.png" alt="pCwRgu6.md.png" /></a>
+<a href="https://imgse.com/i/pCwR7vt"><img src="https://s1.ax1x.com/2023/06/29/pCwR7vt.md.png" alt="pCwR7vt.md.png" /></a>
+<a href="https://imgse.com/i/pCwRbKP"><img src="https://s1.ax1x.com/2023/06/29/pCwRbKP.md.png" alt="pCwRbKP.md.png" /></a>
+<a href="https://imgse.com/i/pCwRv5Q"><img src="https://s1.ax1x.com/2023/06/29/pCwRv5Q.md.png" alt="pCwRv5Q.md.png" /></a></p>
+<blockquote>
+<p>例题
+<a href="https://imgse.com/i/pCwRzCj"><img src="https://s1.ax1x.com/2023/06/29/pCwRzCj.md.png" alt="pCwRzCj.md.png" /></a>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>学霸肯定对了</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      A
+    </div>
+  </label>
+</div>
+</p>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-构件的定义">1 构件的定义</a></li>
+    <li><a href="#2-中间件">2 中间件</a>
+      <ul>
+        <li><a href="#21-消息中间件">2.1 消息中间件</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-构件的复用">3 构件的复用</a></li>
+    <li><a href="#31-软件的复用">3.1 软件的复用</a></li>
+    <li><a href="#4-构件标准">4 构件标准</a>
+      <ul>
+        <li><a href="#41-cobra">4.1 COBRA</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

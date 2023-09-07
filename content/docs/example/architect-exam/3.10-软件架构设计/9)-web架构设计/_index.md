@@ -1,6 +1,6 @@
 ---
-weight: 10
-title: "10) web架构设计"
+weight: 9
+title: "9) web架构设计"
 ---
 
 ## 1 web架构设计

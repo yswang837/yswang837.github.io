@@ -1,6 +1,6 @@
 ---
-weight: 6
-title: "6) 软件质量属性"
+weight: 5
+title: "5) 软件质量属性"
 ---
 
 

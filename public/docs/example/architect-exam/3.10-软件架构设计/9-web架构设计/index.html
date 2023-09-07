@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1 web架构设计 # 主要围绕高性能、高可用、可维护等性能展开。
+1.1 单机到数据库-web应用服务器分离 # 1.2 应用服务器集群 # 此时需要做负载均衡和Session一致性问题。
+1.3 负载均衡 # 随着业务的增长，信息系统的访问量和数据流量快速增加，采用负载均衡(Load Balance)方法可避免由此导致的系统性能下降甚至崩溃。
+1、负载均衡通常由服务器端安装的附加软件来实现；
+2、负载均衡可在不同地理位置、不同网络结构的服务器群之间进行；
+3、负载均衡可使用户只通过一个IP地址或域名就能访问相应的服务器；
+4、负载均衡能增加系统的吞吐量。
+在OSI七层模型中，有两个层次可以用作做负载均衡，分别是：应用层、传输层。一般来说传输层的负载均衡效率更高。
+HTTP重定向：类似于在浏览器中打开某个网页的时候，发生跳转，跳转到另一台应用服务器上进行处理。
+VPN是正向代理的代表，它是从客户端-&gt;服务器。反向代理服务器：从服务器-&gt;客户端，请求来了首先访问代理服务器，将请求分发给具体的应用服务器，由应用服务器来处理并相应。
+DNS域名解析负载均衡：将一个域名绑定成多个IP，每次轮询到不同的IP即可实现分流；
+将一个外部IP绑定为内部的多个IP，在网关的位置，通过硬件来动态地转换为内部可用IP，一般4层就采用了这个技术。
+负载均衡算法 1.4 有状态和无状态问题 # 购物车就是有状态的。
+Session一致性是为了解决有状态请求 (1) 有状态 (2)无状态 (3)无状态 (4)有状态 (5)无状态
+1.5 持久化技术ORM # 1.6 数据库读写分离 # 1.7 缓存技术 # 由于redis比较重要，下面小结接着讲。
+1.8 redis # redis 集群切片场景方式 redis 分布式存储方案 redis 数据类型 redis 数据淘汰机制 redis 持久化技术 redis 存在的问题 1.9 CND 内容分发网络 # 镜像站，就近访问原则，为了提高网络访问，如京东物流。
+1.10 XML与Json # 1.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="9) web架构设计" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-web%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" />
+
+<title>9) web架构设计 | 小钻风</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/zh.search.min.ecaa896d00c9933d39ad0a03461bee87bebdd18cfa813f4d4fdb54ffb76b7364.js" integrity="sha256-7KqJbQDJkz05rQoDRhvuh7690Yz6gT9NT9tU/7drc2Q=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-web%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/index.xml" title="小钻风" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>小钻风</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/example/" class="">介绍</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0172079bf31c2e1230a2ba418e74787a" class="toggle"  />
+    <label for="section-0172079bf31c2e1230a2ba418e74787a" class="flex justify-between">
+      <a href="/docs/example/golang/" class="">1. golang - 从入门到入土</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-777a1736a727cd6e825002af5c691cae" class="toggle"  />
+    <label for="section-777a1736a727cd6e825002af5c691cae" class="flex justify-between">
+      <a href="/docs/example/gin/" class="">2. gin杂谈</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6c4eae7067e5dfff5c2e4406248debee" class="toggle" checked />
+    <label for="section-6c4eae7067e5dfff5c2e4406248debee" class="flex justify-between">
+      <a href="/docs/example/architect-exam/" class="">3. 高级软考 - 系统架构师</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="">3.1 计算机组成与体系结构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.2-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="">3.2 操作系统</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" class="">3.3 数据库系统</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="">3.4 计算机网络</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.5-%E6%95%B0%E5%AD%97%E4%B8%8E%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/" class="">3.5 数字与经济管理</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.6-%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7/" class="">3.6 系统配置与性能评价</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.7-%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/" class="">3.7 知识产权与标准化</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.8-%E4%BC%81%E4%B8%9A%E4%BF%A1%E6%81%AF%E5%8C%96%E6%88%98%E7%95%A5%E4%B8%8E%E5%AE%9E%E6%96%BD/" class="">3.8 企业信息化战略与实施</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="">3.9 软件工程</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/1-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" class="">1) 软件开发方法</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/" class="">2) 软件开发模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/3-%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/" class="">3) 需求工程</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/4-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="">4) 系统设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/5-%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%BB%BA%E6%A8%A1/" class="">5) 软件系统建模</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/" class="">6) 软件测试与调试</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.9-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/7-%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E4%B8%8E%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4/" class="">7) 系统运行与软件维护</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="">3.10 软件架构设计</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/1-%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E8%BF%B0/" class="">1) 软件架构的概述</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/" class="">2) 软件架构风格</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/3-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="">3) 特定领域软件架构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/4-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="">4) 基于架构的软件开发</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/5-%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7/" class="">5) 软件质量属性</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/6-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" class="">6) 软件架构评估</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/7-%E8%BD%AF%E4%BB%B6%E4%BA%A7%E5%93%81%E7%BA%BF/" class="">7) 软件产品线</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/8-%E6%9E%84%E4%BB%B6%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8A%80%E6%9C%AF/" class="">8) 构建与中间件技术</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/9-web%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="active">9) web架构设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.11-%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E5%8F%AF%E9%9D%A0%E6%80%A7/" class="">3.11 系统安全性和可靠性</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.12-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="">3.12 项目管理</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.13-%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/" class="">3.13 专业英语</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.14-%E5%85%B6%E4%BB%96/" class="">3.14 其他</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.15-%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%93%E6%A0%8F/" class="">3.15 案例分析专栏</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.16-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/" class="">3.16 论文写作专栏</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c5af2a1cf2778ff160886bf03e434863" class="toggle"  />
+    <label for="section-c5af2a1cf2778ff160886bf03e434863" class="flex justify-between">
+      <a href="/docs/example/algorthem/" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-931d8f340adf73346e40d4b227426621" class="toggle"  />
+    <label for="section-931d8f340adf73346e40d4b227426621" class="flex justify-between">
+      <a href="/docs/example/leetcode/" class="">5. leetcode</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/leetcode/1-hot100/" class="">1) Hot100</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>9) web架构设计</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-web架构设计">1 web架构设计</a>
+      <ul>
+        <li><a href="#11-单机到数据库-web应用服务器分离">1.1 单机到数据库-web应用服务器分离</a></li>
+        <li><a href="#12-应用服务器集群">1.2 应用服务器集群</a></li>
+        <li><a href="#13-负载均衡">1.3 负载均衡</a></li>
+        <li><a href="#14-有状态和无状态问题">1.4 有状态和无状态问题</a></li>
+        <li><a href="#15-持久化技术orm">1.5 持久化技术ORM</a></li>
+        <li><a href="#16-数据库读写分离">1.6 数据库读写分离</a></li>
+        <li><a href="#17-缓存技术">1.7 缓存技术</a></li>
+        <li><a href="#18-redis">1.8 redis</a></li>
+        <li><a href="#19-cnd-内容分发网络">1.9 CND 内容分发网络</a></li>
+        <li><a href="#110-xml与json">1.10 XML与Json</a></li>
+        <li><a href="#111-web应用服务器">1.11 web应用服务器</a></li>
+        <li><a href="#112-rest">1.12 REST</a></li>
+        <li><a href="#113-响应式web设计">1.13 响应式web设计</a></li>
+        <li><a href="#114-中台">1.14 中台</a></li>
+        <li><a href="#115-web系统分层">1.15 web系统分层</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="1-web架构设计">
+  1 web架构设计
+  <a class="anchor" href="#1-web%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1">#</a>
+</h2>
+<hr>
+<p>  主要围绕<strong>高性能</strong>、高可用、可维护等性能展开。</p>
+<p><a href="https://imgse.com/i/pC2SX0H"><img src="https://s1.ax1x.com/2023/07/09/pC2SX0H.md.png" alt="pC2SX0H.md.png" /></a></p>
+<h3 id="11-单机到数据库-web应用服务器分离">
+  1.1 单机到数据库-web应用服务器分离
+  <a class="anchor" href="#11-%e5%8d%95%e6%9c%ba%e5%88%b0%e6%95%b0%e6%8d%ae%e5%ba%93-web%e5%ba%94%e7%94%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%88%86%e7%a6%bb">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2pSht"><img src="https://s1.ax1x.com/2023/07/09/pC2pSht.md.png" alt="pC2pSht.md.png" /></a></p>
+<h3 id="12-应用服务器集群">
+  1.2 应用服务器集群
+  <a class="anchor" href="#12-%e5%ba%94%e7%94%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%9b%86%e7%be%a4">#</a>
+</h3>
+<p>  此时需要做负载均衡和Session一致性问题。</p>
+<p><a href="https://imgse.com/i/pC2pijS"><img src="https://s1.ax1x.com/2023/07/09/pC2pijS.md.png" alt="pC2pijS.md.png" /></a></p>
+<h3 id="13-负载均衡">
+  1.3 负载均衡
+  <a class="anchor" href="#13-%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1">#</a>
+</h3>
+<p>  随着业务的增长，信息系统的访问量和数据流量快速增加，采用负载均衡(Load Balance)方法可避免由此导致的系统性能下降甚至崩溃。</p>
+<p>  1、负载均衡通常由服务器端安装的附加软件来实现；</p>
+<p>  2、负载均衡可在不同地理位置、不同网络结构的服务器群之间进行；</p>
+<p>  3、负载均衡可使用户只通过一个IP地址或域名就能访问相应的服务器；</p>
+<p>  4、负载均衡能增加系统的吞吐量。</p>
+<p><a href="https://imgse.com/i/pC2pMcT"><img src="https://s1.ax1x.com/2023/07/09/pC2pMcT.md.png" alt="pC2pMcT.md.png" /></a></p>
+<p>  在OSI七层模型中，有两个层次可以用作做负载均衡，分别是：应用层、传输层。一般来说传输层的负载均衡效率更高。</p>
+<p><a href="https://imgse.com/i/pC2pL80"><img src="https://s1.ax1x.com/2023/07/09/pC2pL80.md.png" alt="pC2pL80.md.png" /></a></p>
+<p>  HTTP重定向：类似于在浏览器中打开某个网页的时候，发生跳转，跳转到另一台应用服务器上进行处理。</p>
+<p>  VPN是正向代理的代表，它是从客户端-&gt;服务器。反向代理服务器：从服务器-&gt;客户端，请求来了首先访问代理服务器，将请求分发给具体的应用服务器，由应用服务器来处理并相应。</p>
+<p><a href="https://imgse.com/i/pC29C5R"><img src="https://s1.ax1x.com/2023/07/09/pC29C5R.md.png" alt="pC29C5R.md.png" /></a></p>
+<p>  DNS域名解析负载均衡：将一个域名绑定成多个IP，每次轮询到不同的IP即可实现分流；</p>
+<p>  将一个外部IP绑定为内部的多个IP，在网关的位置，通过硬件来动态地转换为内部可用IP，一般4层就采用了这个技术。</p>
+<p><a href="https://imgse.com/i/pC29QPI"><img src="https://s1.ax1x.com/2023/07/09/pC29QPI.md.png" alt="pC29QPI.md.png" /></a></p>
+<ul>
+<li>负载均衡算法</li>
+</ul>
+<p><a href="https://imgse.com/i/pC29win"><img src="https://s1.ax1x.com/2023/07/09/pC29win.md.png" alt="pC29win.md.png" /></a></p>
+<h3 id="14-有状态和无状态问题">
+  1.4 有状态和无状态问题
+  <a class="anchor" href="#14-%e6%9c%89%e7%8a%b6%e6%80%81%e5%92%8c%e6%97%a0%e7%8a%b6%e6%80%81%e9%97%ae%e9%a2%98">#</a>
+</h3>
+<p>  购物车就是有状态的。</p>
+<p><a href="https://imgse.com/i/pC29Ro9"><img src="https://s1.ax1x.com/2023/07/09/pC29Ro9.md.png" alt="pC29Ro9.md.png" /></a></p>
+<ul>
+<li>Session一致性是为了解决有状态请求</li>
+</ul>
+<p>  (1) 有状态 (2)无状态 (3)无状态 (4)有状态 (5)无状态</p>
+<p><a href="https://imgse.com/i/pC29gZ4"><img src="https://s1.ax1x.com/2023/07/09/pC29gZ4.md.png" alt="pC29gZ4.md.png" /></a></p>
+<h3 id="15-持久化技术orm">
+  1.5 持久化技术ORM
+  <a class="anchor" href="#15-%e6%8c%81%e4%b9%85%e5%8c%96%e6%8a%80%e6%9c%aform">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2CsfI"><img src="https://s1.ax1x.com/2023/07/09/pC2CsfI.md.png" alt="pC2CsfI.md.png" /></a></p>
+<h3 id="16-数据库读写分离">
+  1.6 数据库读写分离
+  <a class="anchor" href="#16-%e6%95%b0%e6%8d%ae%e5%ba%93%e8%af%bb%e5%86%99%e5%88%86%e7%a6%bb">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2Cf0g"><img src="https://s1.ax1x.com/2023/07/09/pC2Cf0g.md.png" alt="pC2Cf0g.md.png" /></a></p>
+<h3 id="17-缓存技术">
+  1.7 缓存技术
+  <a class="anchor" href="#17-%e7%bc%93%e5%ad%98%e6%8a%80%e6%9c%af">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2PijK"><img src="https://s1.ax1x.com/2023/07/09/pC2PijK.md.png" alt="pC2PijK.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2PQjf"><img src="https://s1.ax1x.com/2023/07/09/pC2PQjf.md.png" alt="pC2PQjf.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2P1u8"><img src="https://s1.ax1x.com/2023/07/09/pC2P1u8.md.png" alt="pC2P1u8.md.png" /></a></p>
+<p>  由于redis比较重要，下面小结接着讲。</p>
+<h3 id="18-redis">
+  1.8 redis
+  <a class="anchor" href="#18-redis">#</a>
+</h3>
+<ul>
+<li>redis 集群切片场景方式</li>
+</ul>
+<p><a href="https://imgse.com/i/pC2ertO"><img src="https://s1.ax1x.com/2023/07/09/pC2ertO.md.png" alt="pC2ertO.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2wDsI"><img src="https://s1.ax1x.com/2023/07/10/pC2wDsI.md.png" alt="pC2wDsI.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2wyeP"><img src="https://s1.ax1x.com/2023/07/10/pC2wyeP.md.png" alt="pC2wyeP.md.png" /></a></p>
+<ul>
+<li>redis 分布式存储方案</li>
+</ul>
+<p><a href="https://imgse.com/i/pC2w6df"><img src="https://s1.ax1x.com/2023/07/10/pC2w6df.md.png" alt="pC2w6df.md.png" /></a></p>
+<ul>
+<li>redis 数据类型</li>
+</ul>
+<p><a href="https://imgse.com/i/pC2wco8"><img src="https://s1.ax1x.com/2023/07/10/pC2wco8.md.png" alt="pC2wco8.md.png" /></a></p>
+<ul>
+<li>redis 数据淘汰机制</li>
+</ul>
+<p><a href="https://imgse.com/i/pC2wRJg"><img src="https://s1.ax1x.com/2023/07/10/pC2wRJg.md.png" alt="pC2wRJg.md.png" /></a></p>
+<ul>
+<li>redis 持久化技术</li>
+</ul>
+<p><a href="https://imgse.com/i/pC2wWWQ"><img src="https://s1.ax1x.com/2023/07/10/pC2wWWQ.md.png" alt="pC2wWWQ.md.png" /></a></p>
+<ul>
+<li>redis 存在的问题</li>
+</ul>
+<p><a href="https://imgse.com/i/pC2BMuR"><img src="https://s1.ax1x.com/2023/07/10/pC2BMuR.md.png" alt="pC2BMuR.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2BlHx"><img src="https://s1.ax1x.com/2023/07/10/pC2BlHx.md.png" alt="pC2BlHx.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2BG4O"><img src="https://s1.ax1x.com/2023/07/10/pC2BG4O.md.png" alt="pC2BG4O.md.png" /></a></p>
+<h3 id="19-cnd-内容分发网络">
+  1.9 CND 内容分发网络
+  <a class="anchor" href="#19-cnd-%e5%86%85%e5%ae%b9%e5%88%86%e5%8f%91%e7%bd%91%e7%bb%9c">#</a>
+</h3>
+<p>  镜像站，就近访问原则，为了提高网络访问，如京东物流。</p>
+<p><a href="https://imgse.com/i/pC2BrUf"><img src="https://s1.ax1x.com/2023/07/10/pC2BrUf.md.png" alt="pC2BrUf.md.png" /></a></p>
+<h3 id="110-xml与json">
+  1.10 XML与Json
+  <a class="anchor" href="#110-xml%e4%b8%8ejson">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2B2vj"><img src="https://s1.ax1x.com/2023/07/10/pC2B2vj.md.png" alt="pC2B2vj.md.png" /></a></p>
+<h3 id="111-web应用服务器">
+  1.11 web应用服务器
+  <a class="anchor" href="#111-web%e5%ba%94%e7%94%a8%e6%9c%8d%e5%8a%a1%e5%99%a8">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2BxVx"><img src="https://s1.ax1x.com/2023/07/10/pC2BxVx.md.png" alt="pC2BxVx.md.png" /></a></p>
+<h3 id="112-rest">
+  1.12 REST
+  <a class="anchor" href="#112-rest">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2DPRe"><img src="https://s1.ax1x.com/2023/07/10/pC2DPRe.md.png" alt="pC2DPRe.md.png" /></a></p>
+<h3 id="113-响应式web设计">
+  1.13 响应式web设计
+  <a class="anchor" href="#113-%e5%93%8d%e5%ba%94%e5%bc%8fweb%e8%ae%be%e8%ae%a1">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2rBh8"><img src="https://s1.ax1x.com/2023/07/10/pC2rBh8.md.png" alt="pC2rBh8.md.png" /></a></p>
+<h3 id="114-中台">
+  1.14 中台
+  <a class="anchor" href="#114-%e4%b8%ad%e5%8f%b0">#</a>
+</h3>
+<p>  中台是一套结合互联网技术和行业特性，将企业核心能力以共享服务形式沉淀，形成“大中台、小前台”的组织和业务机制，供企业快速低成本的进行业务创新的企业架构。中台又可以进一步细分，比如业务中台，数据中台，XX中台。本质上，都是对企业通用能力在不同层面的沉淀，并对外能力开放。中台的践行者：Supercell: 芬兰移动游戏巨头，2015年世界游戏前10占5席，员工仅200多人，因使用中台具有小团队快速开发能力，后被腾讯86亿美金收购；阿里:2015年参观Supercell，而后推行中台。</p>
+<p><a href="https://imgse.com/i/pC2rbu9"><img src="https://s1.ax1x.com/2023/07/10/pC2rbu9.md.png" alt="pC2rbu9.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2rjN6"><img src="https://s1.ax1x.com/2023/07/10/pC2rjN6.md.png" alt="pC2rjN6.md.png" /></a></p>
+<p><a href="https://imgse.com/i/pC2s8U0"><img src="https://s1.ax1x.com/2023/07/10/pC2s8U0.md.png" alt="pC2s8U0.md.png" /></a></p>
+<h3 id="115-web系统分层">
+  1.15 web系统分层
+  <a class="anchor" href="#115-web%e7%b3%bb%e7%bb%9f%e5%88%86%e5%b1%82">#</a>
+</h3>
+<p><a href="https://imgse.com/i/pC2sfrd"><img src="https://s1.ax1x.com/2023/07/10/pC2sfrd.md.png" alt="pC2sfrd.md.png" /></a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-web架构设计">1 web架构设计</a>
+      <ul>
+        <li><a href="#11-单机到数据库-web应用服务器分离">1.1 单机到数据库-web应用服务器分离</a></li>
+        <li><a href="#12-应用服务器集群">1.2 应用服务器集群</a></li>
+        <li><a href="#13-负载均衡">1.3 负载均衡</a></li>
+        <li><a href="#14-有状态和无状态问题">1.4 有状态和无状态问题</a></li>
+        <li><a href="#15-持久化技术orm">1.5 持久化技术ORM</a></li>
+        <li><a href="#16-数据库读写分离">1.6 数据库读写分离</a></li>
+        <li><a href="#17-缓存技术">1.7 缓存技术</a></li>
+        <li><a href="#18-redis">1.8 redis</a></li>
+        <li><a href="#19-cnd-内容分发网络">1.9 CND 内容分发网络</a></li>
+        <li><a href="#110-xml与json">1.10 XML与Json</a></li>
+        <li><a href="#111-web应用服务器">1.11 web应用服务器</a></li>
+        <li><a href="#112-rest">1.12 REST</a></li>
+        <li><a href="#113-响应式web设计">1.13 响应式web设计</a></li>
+        <li><a href="#114-中台">1.14 中台</a></li>
+        <li><a href="#115-web系统分层">1.15 web系统分层</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
