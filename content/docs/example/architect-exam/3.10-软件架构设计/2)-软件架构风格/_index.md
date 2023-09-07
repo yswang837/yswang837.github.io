@@ -174,7 +174,7 @@ title: "2) 软件架构风格"
 
 - 混合架构
 
-&emsp;&emsp;结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。
+&emsp;&emsp;结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。总之，C/S更适合内部做修改，B/S更适合外部做查询。
 
 [![p9sxzJP.md.png](https://s1.ax1x.com/2023/05/12/p9sxzJP.md.png)](https://imgse.com/i/p9sxzJP)
 
@@ -182,14 +182,13 @@ title: "2) 软件架构风格"
 
 &emsp;&emsp;属于层次架构风格的实例。
 
-&emsp;&emsp;MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数
-据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。
+&emsp;&emsp;MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。
 
 &emsp;&emsp;MVC分为主动MVC和被动MVC(具体不用了解)，MVC架构的缺点在于MV之间没有解耦，不是严格的分层架构(严格的分层架构：当前层之和上下层之间有联系)
 
 [![p9ym5FK.md.png](https://s1.ax1x.com/2023/05/12/p9ym5FK.md.png)](https://imgse.com/i/p9ym5FK)
 
-&emsp;&emsp;在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是EJB(Entity Bean/Session Bean)，View界面是JSP；Controller是Servlet，用于分发客户请求、有效组织其他构建为客户端提供服务，其核心业务逻辑由Session Bean构建实现。
+&emsp;&emsp;在J2EE中(java相关的框架在考试中经常被拿来举例子，因此会java的很有优势)，Model是EJB(Enterprise JavaBeans)，View界面是JSP(Java Server Pages)；Controller是Servlet，用于分发客户请求、有效组织其他构建为客户端提供服务，其核心业务逻辑由Session Bean构建实现。
 
 ### 2.8.3 MVP架构风格 ✅✅
 
@@ -213,21 +212,20 @@ title: "2) 软件架构风格"
 
 &emsp;&emsp;RIA(富互联网架构)类似于综合了C/S和B/S架构的优点(C/S反应快，交互强，B/S易传播，B/S交互能力不那么强，一般以文字和图片为主)，它在首次加载初期比较慢，一旦加载完成使用就快多了。典型的例子就是在线网游、小程序。
 
-### 2.8.6 基于服务的架构 ✅✅✅✅✅
+### 2.8.6 基于服务的架构SOA ✅✅✅✅✅
 
-&emsp;&emsp;服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。经典场景：对历史遗留系统进行集成。如下图：
+&emsp;&emsp;SOA(Service-Oriented Architecture)，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。经典场景：对历史遗留系统进行集成。如下图：
 
 [![pCddrGD.md.png](https://s1.ax1x.com/2023/06/28/pCddrGD.md.png)](https://imgse.com/i/pCddrGD)
-
 [![p9glNbF.md.png](https://s1.ax1x.com/2023/05/15/p9glNbF.md.png)](https://imgse.com/i/p9glNbF)
 
 &emsp;&emsp;1、服务构件粗粒度，传统构件细粒度居多。
 
-&emsp;&emsp;2、服务构件的接口是标准的，主要是WSDL接口，传统构件常以具体API形式出现。
+&emsp;&emsp;2、服务构件的接口是标准的，主要是WSDL(Web Service Describe Language)接口，传统构件常以具体API(Application Program Interface)形式出现。
 
 &emsp;&emsp;3、服务构件的实现与语言无关，传统构件绑定某种特定语言。
 
-&emsp;&emsp;4、服务构件可以通过构件容器提供OoS的服务，传统构件完全由程序代码直接控制。
+&emsp;&emsp;4、服务构件可以通过构件容器提供QOS的服务(即服务质量。在有限的带宽资源下，QoS为各种业务分配带宽，为业务提供端到端的服务质量保证。例如，语音、视频和重要的数据应用在网络设备中可以通过配置QoS优先得到服务)，传统构件完全由程序代码直接控制。
 
 [![p9gsw36.md.png](https://s1.ax1x.com/2023/05/15/p9gsw36.md.png)](https://imgse.com/i/p9gsw36)
 

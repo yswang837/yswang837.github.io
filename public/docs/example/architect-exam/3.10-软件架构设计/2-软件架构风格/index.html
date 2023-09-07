@@ -48,7 +48,7 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.053ef208e24beb0d9f93ae55676a1673592e2cd43735f382976275a160704534.js" integrity="sha256-BT7yCOJL6w2fk65VZ2oWc1kuLNQ3NfOCl2J1oWBwRTQ=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.cd118680adbbb0bedb9dcdc104587df0135ef529b9412fcd3d830d78b54c2a48.js" integrity="sha256-zRGGgK27sL7bnc3BBFh98BNe9Sm5QS/NPYMNeLVMKkg=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -895,7 +895,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#283-mvp架构风格-">2.8.3 MVP架构风格 ✅✅</a></li>
         <li><a href="#284-mvvm架构风格-">2.8.4 MVVM架构风格 ✅✅</a></li>
         <li><a href="#285-ria架构风格-">2.8.5 RIA架构风格 ✅✅</a></li>
-        <li><a href="#286-基于服务的架构-">2.8.6 基于服务的架构 ✅✅✅✅✅</a></li>
+        <li><a href="#286-基于服务的架构soa-">2.8.6 基于服务的架构SOA ✅✅✅✅✅</a></li>
         <li><a href="#287-微服务-">2.8.7 微服务 ✅✅✅✅</a></li>
         <li><a href="#288-mda-">2.8.8 MDA ✅✅</a></li>
       </ul>
@@ -1098,18 +1098,17 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>混合架构</li>
 </ul>
-<p>  结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。</p>
+<p>  结合了C/S和B/S的优势，左图适用于企业内部的软件，对系统的维护有优势；右图适用于主流互联网公司的架构，查询用B/S、修改用C/S架构。总之，C/S更适合内部做修改，B/S更适合外部做查询。</p>
 <p><a href="https://imgse.com/i/p9sxzJP"><img src="https://s1.ax1x.com/2023/05/12/p9sxzJP.md.png" alt="p9sxzJP.md.png" /></a></p>
 <h3 id="282-mvc架构风格-">
   2.8.2 MVC架构风格 ✅✅✅
   <a class="anchor" href="#282-mvc%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc-">#</a>
 </h3>
 <p>  属于层次架构风格的实例。</p>
-<p>  MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数
-据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
+<p>  MVC(Model-View-Controller)，Model(模型) 是应用程序中用于处理应用程序数据逻辑的部分，通常模型对象负责在数据库中存取数据。View(视图) 是应用程序中处理数据显示的部分，通常视图是依据模型数据创建的。Controller(控制器)是应用程序中处理用户交互的部分，通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
 <p>  MVC分为主动MVC和被动MVC(具体不用了解)，MVC架构的缺点在于MV之间没有解耦，不是严格的分层架构(严格的分层架构：当前层之和上下层之间有联系)</p>
 <p><a href="https://imgse.com/i/p9ym5FK"><img src="https://s1.ax1x.com/2023/05/12/p9ym5FK.md.png" alt="p9ym5FK.md.png" /></a></p>
-<p>  在J2EE中（java相关的框架在考试中经常被拿来举例子，因此会java的很有优势），Model是EJB(Entity Bean/Session Bean)，View界面是JSP；Controller是Servlet，用于分发客户请求、有效组织其他构建为客户端提供服务，其核心业务逻辑由Session Bean构建实现。</p>
+<p>  在J2EE中(java相关的框架在考试中经常被拿来举例子，因此会java的很有优势)，Model是EJB(Enterprise JavaBeans)，View界面是JSP(Java Server Pages)；Controller是Servlet，用于分发客户请求、有效组织其他构建为客户端提供服务，其核心业务逻辑由Session Bean构建实现。</p>
 <h3 id="283-mvp架构风格-">
   2.8.3 MVP架构风格 ✅✅
   <a class="anchor" href="#283-mvp%e6%9e%b6%e6%9e%84%e9%a3%8e%e6%a0%bc-">#</a>
@@ -1130,17 +1129,17 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p>  属于层次架构风格的实例。</p>
 <p>  RIA(富互联网架构)类似于综合了C/S和B/S架构的优点(C/S反应快，交互强，B/S易传播，B/S交互能力不那么强，一般以文字和图片为主)，它在首次加载初期比较慢，一旦加载完成使用就快多了。典型的例子就是在线网游、小程序。</p>
-<h3 id="286-基于服务的架构-">
-  2.8.6 基于服务的架构 ✅✅✅✅✅
-  <a class="anchor" href="#286-%e5%9f%ba%e4%ba%8e%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%9e%b6%e6%9e%84-">#</a>
+<h3 id="286-基于服务的架构soa-">
+  2.8.6 基于服务的架构SOA ✅✅✅✅✅
+  <a class="anchor" href="#286-%e5%9f%ba%e4%ba%8e%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%9e%b6%e6%9e%84soa-">#</a>
 </h3>
-<p>  服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。经典场景：对历史遗留系统进行集成。如下图：</p>
-<p><a href="https://imgse.com/i/pCddrGD"><img src="https://s1.ax1x.com/2023/06/28/pCddrGD.md.png" alt="pCddrGD.md.png" /></a></p>
-<p><a href="https://imgse.com/i/p9glNbF"><img src="https://s1.ax1x.com/2023/05/15/p9glNbF.md.png" alt="p9glNbF.md.png" /></a></p>
+<p>  SOA(Service-Oriented Architecture)，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。经典场景：对历史遗留系统进行集成。如下图：</p>
+<p><a href="https://imgse.com/i/pCddrGD"><img src="https://s1.ax1x.com/2023/06/28/pCddrGD.md.png" alt="pCddrGD.md.png" /></a>
+<a href="https://imgse.com/i/p9glNbF"><img src="https://s1.ax1x.com/2023/05/15/p9glNbF.md.png" alt="p9glNbF.md.png" /></a></p>
 <p>  1、服务构件粗粒度，传统构件细粒度居多。</p>
-<p>  2、服务构件的接口是标准的，主要是WSDL接口，传统构件常以具体API形式出现。</p>
+<p>  2、服务构件的接口是标准的，主要是WSDL(Web Service Describe Language)接口，传统构件常以具体API(Application Program Interface)形式出现。</p>
 <p>  3、服务构件的实现与语言无关，传统构件绑定某种特定语言。</p>
-<p>  4、服务构件可以通过构件容器提供OoS的服务，传统构件完全由程序代码直接控制。</p>
+<p>  4、服务构件可以通过构件容器提供QOS的服务(即服务质量。在有限的带宽资源下，QoS为各种业务分配带宽，为业务提供端到端的服务质量保证。例如，语音、视频和重要的数据应用在网络设备中可以通过配置QoS优先得到服务)，传统构件完全由程序代码直接控制。</p>
 <p><a href="https://imgse.com/i/p9gsw36"><img src="https://s1.ax1x.com/2023/05/15/p9gsw36.md.png" alt="p9gsw36.md.png" /></a></p>
 <p>  SOA的实现方式1：Web Service；基于Web Services实现的面向服务系统中，服务提供者、服务使用者和服务注册器之间的远程交互通过SOAP(简单对象访问协议)消息实现，服务内容描述通过WSDL(Web服务描述语言，可以看作服务使用说明书)标准实现，服务注册信息通过UDDI(服务统一描述、发现和集成)框架实现，通过BPEL/BPEL4WS (业务过程执行语言)将分散的、功能单一的Web服务组织成一个复杂的有机应用。</p>
 <p><a href="https://imgse.com/i/p9gssDe"><img src="https://s1.ax1x.com/2023/05/15/p9gssDe.md.png" alt="p9gssDe.md.png" /></a></p>
@@ -1235,7 +1234,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#283-mvp架构风格-">2.8.3 MVP架构风格 ✅✅</a></li>
         <li><a href="#284-mvvm架构风格-">2.8.4 MVVM架构风格 ✅✅</a></li>
         <li><a href="#285-ria架构风格-">2.8.5 RIA架构风格 ✅✅</a></li>
-        <li><a href="#286-基于服务的架构-">2.8.6 基于服务的架构 ✅✅✅✅✅</a></li>
+        <li><a href="#286-基于服务的架构soa-">2.8.6 基于服务的架构SOA ✅✅✅✅✅</a></li>
         <li><a href="#287-微服务-">2.8.7 微服务 ✅✅✅✅</a></li>
         <li><a href="#288-mda-">2.8.8 MDA ✅✅</a></li>
       </ul>
