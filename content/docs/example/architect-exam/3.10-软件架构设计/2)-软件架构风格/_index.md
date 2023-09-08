@@ -214,9 +214,7 @@ title: "2) 软件架构风格"
 
 ### 2.8.6 基于服务的架构SOA ✅✅✅✅✅
 
-&emsp;&emsp;SOA(Service-Oriented Architecture)，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。经典场景：对历史遗留系统进行集成。如下图：
-
-[![pCddrGD.md.png](https://s1.ax1x.com/2023/06/28/pCddrGD.md.png)](https://imgse.com/i/pCddrGD)
+&emsp;&emsp;SOA(Service-Oriented Architecture)，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。服务可认为是标准化程度很高的一种构件。经典场景：对历史遗留系统进行集成。
 [![p9glNbF.md.png](https://s1.ax1x.com/2023/05/15/p9glNbF.md.png)](https://imgse.com/i/p9glNbF)
 
 &emsp;&emsp;1、服务构件粗粒度，传统构件细粒度居多。
@@ -227,13 +225,15 @@ title: "2) 软件架构风格"
 
 &emsp;&emsp;4、服务构件可以通过构件容器提供QOS的服务(即服务质量。在有限的带宽资源下，QoS为各种业务分配带宽，为业务提供端到端的服务质量保证。例如，语音、视频和重要的数据应用在网络设备中可以通过配置QoS优先得到服务)，传统构件完全由程序代码直接控制。
 
+[![pCddrGD.md.png](https://s1.ax1x.com/2023/06/28/pCddrGD.md.png)](https://imgse.com/i/pCddrGD)
+
+&emsp;&emsp;SOA的实现方式1：ESB企业服务总线。ESB提供了位置透明性的消息路由和寻址服务，ESB支持多种的消息传递范型，ESB支持多种数据格式及其相互转换。
+
 [![p9gsw36.md.png](https://s1.ax1x.com/2023/05/15/p9gsw36.md.png)](https://imgse.com/i/p9gsw36)
 
-&emsp;&emsp;SOA的实现方式1：Web Service；基于Web Services实现的面向服务系统中，服务提供者、服务请求者和服务注册器之间的远程交互通过SOAP(简单对象访问协议)消息实现，服务内容描述通过WSDL(Web服务描述语言，可以看作服务使用说明书)标准实现，服务注册信息通过UDDI(服务统一描述、发现和集成)框架实现，通过BPEL/BPEL4WS (业务过程执行语言)将分散的、功能单一的Web服务组织成一个复杂的有机应用。
+&emsp;&emsp;SOA的实现方式2：Web Service；服务请求者可以通过域名或者IP直接访问服务提供者，但当服务过多、关系过于复杂、或者忘记了域名或者IP时，使得访问变得困难，此时服务注册中心就排上了用场，所有服务提供者需要将服务描述提供给注册中心，服务请求者只需要访问注册中心即可。基于Web Services实现的面向服务系统中，服务提供者、服务请求者和服务注册器之间的远程交互通过SOAP(简单对象访问协议)消息实现，服务内容描述通过WSDL(Web服务描述语言，可以看作服务使用说明书)标准实现，服务注册信息通过UDDI(服务统一描述、发现和集成)框架实现，通过BPEL/BPEL4WS (业务过程执行语言)将分散的、功能单一的Web服务组织成一个复杂的有机应用。
 
-[![p9gssDe.md.png](https://s1.ax1x.com/2023/05/15/p9gssDe.md.png)](https://imgse.com/i/p9gssDe)
 
-&emsp;&emsp;SOA的实现方式2：ESB 企业服务总线。消除了服务请求者与服务提供者之间的直接连接。
 
 ### 2.8.7 微服务 ✅✅✅✅
 
