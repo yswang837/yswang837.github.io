@@ -73,13 +73,6 @@ title: "5) 软件质量属性"
 {{< expand "学霸肯定对了">}}A D A{{< /expand >}}
 [![p9RbMng.md.png](https://s1.ax1x.com/2023/05/17/p9RbMng.md.png)](https://imgse.com/i/p9RbMng)
 {{< expand "学霸肯定对了">}}B C A C C A{{< /expand >}}
->案例分析例题
-[![pCgWYHH.md.png](https://s1.ax1x.com/2023/07/09/pCgWYHH.md.png)](https://imgse.com/i/pCgWYHH)
-[![pCgWGuD.md.png](https://s1.ax1x.com/2023/07/09/pCgWGuD.md.png)](https://imgse.com/i/pCgWGuD)
-{{< expand "学霸肯定对了">}}
-[![pCgWsKS.md.png](https://s1.ax1x.com/2023/07/09/pCgWsKS.md.png)](https://imgse.com/i/pCgWsKS)
-[![pCgWyDg.md.png](https://s1.ax1x.com/2023/07/09/pCgWyDg.md.png)](https://imgse.com/i/pCgWyDg)
-{{< /expand >}}
 
 ## 基本不考的几个属性
 

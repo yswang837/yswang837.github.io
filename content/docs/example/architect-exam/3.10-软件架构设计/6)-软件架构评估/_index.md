@@ -5,25 +5,31 @@ title: "6) 软件架构评估"
 
 # 软件架构评估
 
-问题：
+- 问题：
 
-1、为什么要进行架构评估？
+&emsp;&emsp;1、为什么要进行架构评估？
 
-2、架构评估到底评什么？
+&emsp;&emsp;答：架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误。
 
-3、架构评估怎么评？
+&emsp;&emsp;2、架构评估到底评什么？
 
-## 1. 名词解释
+&emsp;&emsp;答：性能是否足够，可修改性是否好，可用性怎么样，安全性是否满足要求，开发成本如何等等问题。
+
+&emsp;&emsp;3、架构评估怎么评？
+
+&emsp;&emsp;答：见架构评估方法
+
+## 1. 点位
 
 ---
 
-**敏感点**：是一个或多个构件 (和/或构件之间的关系)的特性。
+- 敏感点：是一个或多个构件的特性。
 
-**权衡点**：是影响多个质量属性的特性，是多个质量属性的敏感点。
+- 权衡点：是影响多个质量属性的特性，是多个质量属性的敏感点。
 
-**风险点**：是指架构设计中潜在的、存在问题的架构决策所带来的隐患。
+- 风险点：是指架构设计中潜在的、存在问题的架构决策所带来的隐患。
 
-**非风险点**：是指不会带来隐患，一般以“xxx要求是可以实现 (或接受)的”方式表达。
+- 非风险点：是指不会带来隐患，一般以“xxx要求是可以实现 (或接受)的”方式表达。
 
 [![p9vUlvT.png](https://s1.ax1x.com/2023/05/31/p9vUlvT.png)](https://imgse.com/i/p9vUlvT)
 
@@ -69,3 +75,11 @@ title: "6) 软件架构评估"
 &emsp;&emsp;从树根到叶子结点分别是：根->质量属性->属性分类(细化)->场景。
 
 [![p9vU0xK.md.png](https://s1.ax1x.com/2023/05/31/p9vU0xK.md.png)](https://imgse.com/i/p9vU0xK)
+
+>案例分析例题
+[![pCgWYHH.md.png](https://s1.ax1x.com/2023/07/09/pCgWYHH.md.png)](https://imgse.com/i/pCgWYHH)
+[![pCgWGuD.md.png](https://s1.ax1x.com/2023/07/09/pCgWGuD.md.png)](https://imgse.com/i/pCgWGuD)
+{{< expand "学霸肯定对了">}}
+[![pCgWsKS.md.png](https://s1.ax1x.com/2023/07/09/pCgWsKS.md.png)](https://imgse.com/i/pCgWsKS)
+[![pCgWyDg.md.png](https://s1.ax1x.com/2023/07/09/pCgWyDg.md.png)](https://imgse.com/i/pCgWyDg)
+{{< /expand >}}
