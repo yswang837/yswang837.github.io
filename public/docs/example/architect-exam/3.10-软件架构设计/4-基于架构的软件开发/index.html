@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 基于架构的软件开发ABSD # 基于架构的软件开发ABSD(Architecture-Based Software Development)。它能很好地支持重用。
+<meta name="description" content=" 基于架构的软件开发ABSD # 基于架构的软件开发ABSD(Architecture-Based Software Development)。它能很好地支持重用(比如说有需求库，有构件库)。
 使用ABSD方法，设计活动可以从项目总体功能框架明确就开始；ABSD方法是一个自顶向下，递归细化的过程，直到能产生软件构件、模块或类。
 架构设计是一个迭代过程，在建立软件架构的初期，选择一个合适的架构风格是首要的，在此基础上，开发人员通过架构模型，可以获得关于软件架构属性的理解，为将来的架构实现与演化过程建立了目标。
 1、ABSD方法是架构驱动，即强调由业务、功能和质量需求的组合驱动架构设计。
@@ -13,7 +13,7 @@ ANSI/IEEE1471-2000是对软件密集型系统的架构进行描述的标准。�
 在考虑架构时，可以从不同的视角来检查，这促使软件设计师考虑架构的不同属性。例如，展示功能组织的静态视角能判断系统质量特性，展示并发行为的动态视角能判断系统行为特性。
 其开发过程如下 1 架构需求 ✅✅✅ # 2 架构设计 ✅✅✅✅ # 架构设计主要关注软件组件的结构、属性和交互作用，并通过多种视图全面描述特定系统的架构。
 3 架构文档化 ✅✅✅ # 架构文档是对软件架构的一种描述，帮助程序员使用特定的程序设计语言实现软件架构。软件架构文档的写作应该遵循一定的原则，这些原则包括：文档要从使用者的角度进行编写；必须分发给所有与系统有关的开发人员；应该保持架构文档的即时更新，但更新不要过于频繁，架构文档中描述应该尽量避免不必要的重复，每次架构文档的修改都应该有修改记录。
-4 架构复审 ✅✅✅✅ # 架构复审是基于架构开发中一个重要的环节。架构设计文档化和复审是一个迭代的过程；架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误；在一个主版本的软件架构分析之后，要安排一次由外部人员(用户代表和领域专家)参加的复审；架构复审过程中，通常会对一个可运行的最小化系统进行架构评估和测试。
+4 架构复审 ✅✅✅✅✅ # 架构复审是基于架构开发中一个重要的环节。架构设计文档化和复审是一个迭代的过程；架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误；在一个主版本的软件架构分析之后，要安排一次由外部人员(用户代表和领域专家)参加的复审；架构复审过程中，通常会对一个可运行的最小化系统进行架构评估和测试(对项目的骨架进行测试)。评估很重要，会在“软件架构评估”中单独讲。
 5 架构实现 ✅✅✅✅ # 6 架构演化 ✅✅✅✅ # 例题 学霸肯定对了 ↕ B C C 学霸肯定对了 ↕ A A C ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="4) 基于架构的软件开发" />
@@ -26,7 +26,7 @@ ANSI/IEEE1471-2000是对软件密集型系统的架构进行描述的标准。�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.ddde98c0329b0957c91fcdba49c7712a6bb6082ca1243f2ec5476627be3ddb36.js" integrity="sha256-3d6YwDKbCVfJH826ScdxKmu2CCyhJD8uxUdmJ7492zY=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.a83d149778f54272f5851c88b18529ae3c8303ba3a48ab0376d02b059ffc899b.js" integrity="sha256-qD0Ul3j1QnL1hRyIsYUprjyDA7o6SKsDdtArBZ/8iZs=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/4-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -844,7 +844,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#1-架构需求-">1 架构需求 ✅✅✅</a></li>
     <li><a href="#2-架构设计-">2 架构设计 ✅✅✅✅</a></li>
     <li><a href="#3-架构文档化-">3 架构文档化 ✅✅✅</a></li>
-    <li><a href="#4-架构复审-">4 架构复审 ✅✅✅✅</a></li>
+    <li><a href="#4-架构复审-">4 架构复审 ✅✅✅✅✅</a></li>
     <li><a href="#5-架构实现-">5 架构实现 ✅✅✅✅</a></li>
     <li><a href="#6-架构演化-">6 架构演化 ✅✅✅✅</a></li>
   </ul>
@@ -863,7 +863,7 @@ https://github.com/alex-shpak/hugo-book
   基于架构的软件开发ABSD
   <a class="anchor" href="#%e5%9f%ba%e4%ba%8e%e6%9e%b6%e6%9e%84%e7%9a%84%e8%bd%af%e4%bb%b6%e5%bc%80%e5%8f%91absd">#</a>
 </h1>
-<p>  基于架构的软件开发ABSD(Architecture-Based Software Development)。它能很好地支持重用。</p>
+<p>  基于架构的软件开发ABSD(Architecture-Based Software Development)。它能很好地支持重用(比如说有需求库，有构件库)。</p>
 <p>  使用ABSD方法，设计活动可以从项目总体功能框架明确就开始；ABSD方法是一个自顶向下，递归细化的过程，直到能产生软件构件、模块或类。</p>
 <p>  架构设计是一个迭代过程，在建立软件架构的初期，选择一个合适的架构风格是首要的，在此基础上，开发人员通过架构模型，可以获得关于软件架构属性的理解，为将来的架构实现与演化过程建立了目标。</p>
 <p>  1、ABSD方法是架构驱动，即强调由业务、功能和质量需求的组合驱动架构设计。</p>
@@ -896,11 +896,11 @@ https://github.com/alex-shpak/hugo-book
 <p>  架构文档是对软件架构的一种描述，帮助程序员使用特定的程序设计语言实现软件架构。软件架构文档的写作应该遵循一定的原则，这些原则包括：文档要从使用者的角度进行编写；必须分发给所有与系统有关的开发人员；应该保持架构文档的即时更新，但更新不要过于频繁，架构文档中描述应该尽量避免不必要的重复，每次架构文档的修改都应该有修改记录。</p>
 <p><a href="https://imgse.com/i/p9RTwBd"><img src="https://s1.ax1x.com/2023/05/17/p9RTwBd.md.png" alt="p9RTwBd.md.png" /></a></p>
 <h2 id="4-架构复审-">
-  4 架构复审 ✅✅✅✅
+  4 架构复审 ✅✅✅✅✅
   <a class="anchor" href="#4-%e6%9e%b6%e6%9e%84%e5%a4%8d%e5%ae%a1-">#</a>
 </h2>
 <hr>
-<p>  架构复审是基于架构开发中一个重要的环节。架构设计文档化和复审是一个迭代的过程；架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误；在一个主版本的软件架构分析之后，要安排一次由外部人员(用户代表和领域专家)参加的复审；架构复审过程中，通常会对一个可运行的最小化系统进行架构评估和测试。</p>
+<p>  架构复审是基于架构开发中一个重要的环节。架构设计文档化和复审是一个迭代的过程；架构复审的目的是标识潜在的风险，及早发现架构设计中的缺陷和错误；在一个主版本的软件架构分析之后，要安排一次由外部人员(用户代表和领域专家)参加的复审；架构复审过程中，通常会对一个可运行的最小化系统进行架构评估和测试(对项目的骨架进行测试)。评估很重要，会在“软件架构评估”中单独讲。</p>
 <h2 id="5-架构实现-">
   5 架构实现 ✅✅✅✅
   <a class="anchor" href="#5-%e6%9e%b6%e6%9e%84%e5%ae%9e%e7%8e%b0-">#</a>
@@ -990,7 +990,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#1-架构需求-">1 架构需求 ✅✅✅</a></li>
     <li><a href="#2-架构设计-">2 架构设计 ✅✅✅✅</a></li>
     <li><a href="#3-架构文档化-">3 架构文档化 ✅✅✅</a></li>
-    <li><a href="#4-架构复审-">4 架构复审 ✅✅✅✅</a></li>
+    <li><a href="#4-架构复审-">4 架构复审 ✅✅✅✅✅</a></li>
     <li><a href="#5-架构实现-">5 架构实现 ✅✅✅✅</a></li>
     <li><a href="#6-架构演化-">6 架构演化 ✅✅✅✅</a></li>
   </ul>

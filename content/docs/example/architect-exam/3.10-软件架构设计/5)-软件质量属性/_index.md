@@ -6,7 +6,7 @@ title: "5) 软件质量属性"
 
 # 软件质量属性
 
-&emsp;&emsp;最常见的质量属性分别是:可用性(Availability)、可修改性(Modifiability)、性能(Performance)、安全性(Security)、可测试性(Testability)、易用性(Usability)。刻画质量属性的手段由六部分组成:刺激源、刺激、环境、制品、响应、响应度量;
+&emsp;&emsp;最常见的质量属性分别是：性能(Performance)、可用性(Availability)、可修改性(Modifiability)、安全性(Security)、可测试性(Testability)、易用性(Usability)等。
 
 [![pCw8H8s.md.png](https://s1.ax1x.com/2023/06/29/pCw8H8s.md.png)](https://imgse.com/i/pCw8H8s)
 
@@ -14,7 +14,7 @@ title: "5) 软件质量属性"
 
 ---
 
-&emsp;&emsp;性能 (performance) 是指**系统的响应能力**，即要经过多长时间才能对某个事件做出响应，或者在某段时间内系统所能处理的事件的个数。例如：
+&emsp;&emsp;性能 (performance) 是指系统的响应能力，即要经过多长时间才能对某个事件做出响应，或者在某段时间内系统所能处理的事件的个数。例如：
 
 &emsp;&emsp;1、同时支持1000并发；
 
@@ -46,7 +46,7 @@ title: "5) 软件质量属性"
 
 &emsp;&emsp;2、对计算机的操作都有完整记录；
 
-&emsp;&emsp;3、用户信息数据库**授权**必须保证99.9%可用。
+&emsp;&emsp;3、用户信息数据库授权必须保证99.9%可用。
 
 &emsp;&emsp;安全性还有个战术：限制访问。
 
@@ -56,7 +56,7 @@ title: "5) 软件质量属性"
 
 ---
 
-&emsp;&emsp;可修改性(modifiability)是指能够快速地以较高的性能价格比对系统进行变更的能力。通常以某些具体的变更为基准，通过考察这些变更的代价衡量可修改性。例如：
+&emsp;&emsp;可修改性(modifiability)是指能够快速地以较高的性价比对系统进行变更的能力。通常以某些具体的变更为基准，通过考察这些变更的代价衡量可修改性。例如：
 
 &emsp;&emsp;1、更改系统报表模块，2人在两周内必须完成；
 
@@ -64,7 +64,7 @@ title: "5) 软件质量属性"
 
 &emsp;&emsp;可修改性还有个战术：接口实现分离。
 
-&emsp;&emsp;可修改性是指能够快速地以较高的性能价格比对系统进行变更的能力。包括可维护性、可扩展性、结构重组、可移植性4个方面，可变性不是它要考虑的范围。
+&emsp;&emsp;可修改性是指能够快速地以较高的性能价格比对系统进行变更的能力。包括可维护性、可扩展性、结构重组、可移植性4个方面。注意可变性不是它要考虑的范围。
 
 [![p9RHhYq.md.png](https://s1.ax1x.com/2023/05/17/p9RHhYq.md.png)](https://imgse.com/i/p9RHhYq)
 
@@ -73,6 +73,7 @@ title: "5) 软件质量属性"
 {{< expand "学霸肯定对了">}}A D A{{< /expand >}}
 [![p9RbMng.md.png](https://s1.ax1x.com/2023/05/17/p9RbMng.md.png)](https://imgse.com/i/p9RbMng)
 {{< expand "学霸肯定对了">}}B C A C C A{{< /expand >}}
+>案例分析例题
 [![pCgWYHH.md.png](https://s1.ax1x.com/2023/07/09/pCgWYHH.md.png)](https://imgse.com/i/pCgWYHH)
 [![pCgWGuD.md.png](https://s1.ax1x.com/2023/07/09/pCgWGuD.md.png)](https://imgse.com/i/pCgWGuD)
 {{< expand "学霸肯定对了">}}
