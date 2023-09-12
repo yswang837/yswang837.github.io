@@ -10,7 +10,7 @@ title: "5) 软件质量属性"
 
 [![pCw8H8s.md.png](https://s1.ax1x.com/2023/06/29/pCw8H8s.md.png)](https://imgse.com/i/pCw8H8s)
 
-## 1 性能
+## 1 性能 ✅✅✅
 
 ---
 
@@ -24,7 +24,7 @@ title: "5) 软件质量属性"
 
 [![p9R7JVs.md.png](https://s1.ax1x.com/2023/05/17/p9R7JVs.md.png)](https://imgse.com/i/p9R7JVs)
 
-## 2 可用性
+## 2 可用性 ✅✅✅
 
 ---
 
@@ -38,7 +38,7 @@ title: "5) 软件质量属性"
 
 [![p9R7rqJ.md.png](https://s1.ax1x.com/2023/05/17/p9R7rqJ.md.png)](https://imgse.com/i/p9R7rqJ)
 
-## 3 安全性
+## 3 安全性 ✅✅✅
 
 &emsp;&emsp;安全性(security)是指系统在向合法用户提供服务的同时能够阻止非授权用户使用的企图或拒绝服务的能力。安全性又可划分为机密性、完整性、不可否认性及可控性等特性。例如：
 
@@ -52,7 +52,7 @@ title: "5) 软件质量属性"
 
 [![p9R7vQS.md.png](https://s1.ax1x.com/2023/05/17/p9R7vQS.md.png)](https://imgse.com/i/p9R7vQS)
 
-## 4 可修改性
+## 4 可修改性 ✅✅✅
 
 ---
 
@@ -74,7 +74,7 @@ title: "5) 软件质量属性"
 [![p9RbMng.md.png](https://s1.ax1x.com/2023/05/17/p9RbMng.md.png)](https://imgse.com/i/p9RbMng)
 {{< expand "学霸肯定对了">}}B C A C C A{{< /expand >}}
 
-## 基本不考的几个属性
+## 5 基本不考的几个属性 ✅
 
 ---
 
