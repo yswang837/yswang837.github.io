@@ -23,7 +23,7 @@ title: "6) 软件架构评估"
 
 ---
 
-- 敏感点：是一个或多个构件的特性。
+- 敏感点：为了实现某种特定的质量属性，是一个或多个构件的特性。
 
 - 权衡点：是影响多个质量属性的特性，是多个质量属性的敏感点。
 
@@ -61,29 +61,37 @@ title: "6) 软件架构评估"
 
 - 质量效用树
 
-&emsp;&emsp;M:middle,L:low,H:high；在识别出质量属性描述后，通常采用效用树对质量属性的描述进行刻画与排序。
+&emsp;&emsp;M：middle
 
-&emsp;&emsp;从树根到叶子结点分别是：根->质量属性->属性分类(细化)->场景。
+&emsp;&emsp;L：low
+
+&emsp;&emsp;H：high
+
+&emsp;&emsp;在识别出质量属性描述后，通常采用效用树对质量属性的描述进行刻画与排序。从树根到叶子结点分别是：根->质量属性->属性分类(细化)->具体场景。
 
 [![p9vU0xK.md.png](https://s1.ax1x.com/2023/05/31/p9vU0xK.md.png)](https://imgse.com/i/p9vU0xK)
 
 ### 3.2 ATAM ✅✅✅✅
 
-&emsp;&emsp;在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性(需要对软件质量属性进行优先级排序)，在系统开发之前，对这些质量属性进行评价和折中。整个评估过程强调以属性为核心。
+&emsp;&emsp;在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性(用质量效用树对场景进行分类和确定优先级)，在系统开发之前，对这些质量属性进行评价和折中。整个评估过程强调以属性为核心。第二、三阶段容易记错。
 
 [![p9vUN5R.md.png](https://s1.ax1x.com/2023/05/31/p9vUN5R.md.png)](https://imgse.com/i/p9vUN5R)
 
 >例题
 [![p9vUaP1.md.png](https://s1.ax1x.com/2023/05/31/p9vUaP1.md.png)](https://imgse.com/i/p9vUaP1)
-{{< expand "学霸肯定对了">}}D B{{< /expand >}}
+{{< expand "学霸肯定对了">}}D B
+
+提到影响两个及以上属性时，基本上都是权衡点。{{< /expand >}}
 [![p9vUd8x.md.png](https://s1.ax1x.com/2023/05/31/p9vUd8x.md.png)](https://imgse.com/i/p9vUd8x)
-{{< expand "学霸肯定对了">}}D{{< /expand >}}
+{{< expand "学霸肯定对了">}}D
+
+基于度量的架构评估方法才是最精确的，它是一种代码评估方法，需要对软件系统进行测试，ATAM不是一种精确的评估工具，ATAM本身不是精确评估，所以不太需要单独评估需求是否准确，需求是否准确是需求工程要干的活儿{{< /expand >}}
 [![p9vUw26.md.png](https://s1.ax1x.com/2023/05/31/p9vUw26.md.png)](https://imgse.com/i/p9vUw26)
 {{< expand "学霸肯定对了">}}C C{{< /expand >}}
 >案例分析例题
 [![pCgWYHH.md.png](https://s1.ax1x.com/2023/07/09/pCgWYHH.md.png)](https://imgse.com/i/pCgWYHH)
 [![pCgWGuD.md.png](https://s1.ax1x.com/2023/07/09/pCgWGuD.md.png)](https://imgse.com/i/pCgWGuD)
 {{< expand "学霸肯定对了">}}
-[![pCgWsKS.md.png](https://s1.ax1x.com/2023/07/09/pCgWsKS.md.png)](https://imgse.com/i/pCgWsKS)
 [![pCgWyDg.md.png](https://s1.ax1x.com/2023/07/09/pCgWyDg.md.png)](https://imgse.com/i/pCgWyDg)
+[![pCgWsKS.md.png](https://s1.ax1x.com/2023/07/09/pCgWsKS.md.png)](https://imgse.com/i/pCgWsKS)
 {{< /expand >}}

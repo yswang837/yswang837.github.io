@@ -9,7 +9,7 @@
 答：性能是否足够，可修改性是否好，可用性怎么样，安全性是否满足要求，开发成本如何等等问题。
 3、架构评估怎么评？
 答：见架构评估方法
-1 点位 ✅✅✅ # 敏感点：是一个或多个构件的特性。
+1 点位 ✅✅✅ # 敏感点：为了实现某种特定的质量属性，是一个或多个构件的特性。
 权衡点：是影响多个质量属性的特性，是多个质量属性的敏感点。
 风险点：是指架构设计中潜在的、存在问题的架构决策所带来的隐患。
 非风险点：是指不会带来隐患，一般以“xxx要求是可以实现 (或接受)的”方式表达。
@@ -17,10 +17,16 @@
 3 基于场景的评估方法 ✅✅✅✅ # 什么是场景 场景(scene)：在进行架构评估时，一般首先要精确地得出具体的质量目标(如性能上，在10ms内返回结果等)，并以之作为判定该架构优劣的标准。为得出这些目标而采用的机制叫做场景。场景是从风险承担者的角度对与系统交互的简短描述。在架构评估中，一般采用刺激(stimulus)、环境(environment)和响应(response)三方面来对场景进行描述；刻画质量属性的手段由六部分组成：刺激源、刺激、制品、环境、响应、响应度量。
 基于场景的评估方法包含3种：软件架构分析法(SAAM, Software Architecture Analysis Method)、架构权衡分析法(ATAM, Architecture Tradeoff Analysis Method)、成本效益分析法(CBAM)。
 3.1 SAAM ✅✅✅✅ # SAAM最初用于分析架构可修改性，后扩展到其他质量属性。SAAM的输入是问题描述、需求说明和架构描述；其分析过程包括场景开发(用质量效用树对场景进行分类和确定优先级)、架构描述、单个场景评估、场景交互和总体评估。
-质量效用树 M:middle,L:low,H:high；在识别出质量属性描述后，通常采用效用树对质量属性的描述进行刻画与排序。
-从树根到叶子结点分别是：根-&gt;质量属性-&gt;属性分类(细化)-&gt;场景。
-3.2 ATAM ✅✅✅✅ # 在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性(需要对软件质量属性进行优先级排序)，在系统开发之前，对这些质量属性进行评价和折中。整个评估过程强调以属性为核心。
-例题 学霸肯定对了 ↕ D B 学霸肯定对了 ↕ D 学霸肯定对了 ↕ C C 案例分析例题 学霸肯定对了 ↕ ">
+质量效用树 M：middle
+L：low
+H：high
+在识别出质量属性描述后，通常采用效用树对质量属性的描述进行刻画与排序。从树根到叶子结点分别是：根-&gt;质量属性-&gt;属性分类(细化)-&gt;具体场景。
+3.2 ATAM ✅✅✅✅ # 在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性(用质量效用树对场景进行分类和确定优先级)，在系统开发之前，对这些质量属性进行评价和折中。整个评估过程强调以属性为核心。第二、三阶段容易记错。
+例题 学霸肯定对了 ↕ D B
+提到影响两个及以上属性时，基本上都是权衡点。
+学霸肯定对了 ↕ D
+基于度量的架构评估方法才是最精确的，它是一种代码评估方法，需要对软件系统进行测试，ATAM不是一种精确的评估工具，ATAM本身不是精确评估，所以不太需要单独评估需求是否准确，需求是否准确是需求工程要干的活儿
+学霸肯定对了 ↕ C C 案例分析例题 学霸肯定对了 ↕ ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="6) 软件架构评估" />
 <meta property="og:description" content="" />
@@ -32,7 +38,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.534299be9a69f8e70c747f2152669ba6b05160f73ee4e6a55dfdb4a6ff6cae24.js" integrity="sha256-U0KZvppp&#43;OcMdH8hUmabprBRYPc&#43;5OalXf20pv9sriQ=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.84693f868d47e3d4fdfd08c2c07d23498716aeaa5bd91ca04cb578b74e9fb4dd.js" integrity="sha256-hGk/ho1H49T9/QjCwH0jSYcWrqpb2RygTLV4t06ftN0=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/6-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/index.xml" title="小钻风" />
 <!--
 Made with Book Theme
@@ -887,7 +893,7 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <ul>
 <li>
-<p>敏感点：是一个或多个构件的特性。</p>
+<p>敏感点：为了实现某种特定的质量属性，是一个或多个构件的特性。</p>
 </li>
 <li>
 <p>权衡点：是影响多个质量属性的特性，是多个质量属性的敏感点。</p>
@@ -927,14 +933,16 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>质量效用树</li>
 </ul>
-<p>  M:middle,L:low,H:high；在识别出质量属性描述后，通常采用效用树对质量属性的描述进行刻画与排序。</p>
-<p>  从树根到叶子结点分别是：根-&gt;质量属性-&gt;属性分类(细化)-&gt;场景。</p>
+<p>  M：middle</p>
+<p>  L：low</p>
+<p>  H：high</p>
+<p>  在识别出质量属性描述后，通常采用效用树对质量属性的描述进行刻画与排序。从树根到叶子结点分别是：根-&gt;质量属性-&gt;属性分类(细化)-&gt;具体场景。</p>
 <p><a href="https://imgse.com/i/p9vU0xK"><img src="https://s1.ax1x.com/2023/05/31/p9vU0xK.md.png" alt="p9vU0xK.md.png" /></a></p>
 <h3 id="32-atam-">
   3.2 ATAM ✅✅✅✅
   <a class="anchor" href="#32-atam-">#</a>
 </h3>
-<p>  在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性(需要对软件质量属性进行优先级排序)，在系统开发之前，对这些质量属性进行评价和折中。整个评估过程强调以属性为核心。</p>
+<p>  在SAAM的基础上发展起来的，主要针对性能、可用性、安全性和可修改性(用质量效用树对场景进行分类和确定优先级)，在系统开发之前，对这些质量属性进行评价和折中。整个评估过程强调以属性为核心。第二、三阶段容易记错。</p>
 <p><a href="https://imgse.com/i/p9vUN5R"><img src="https://s1.ax1x.com/2023/05/31/p9vUN5R.md.png" alt="p9vUN5R.md.png" /></a></p>
 <blockquote>
 <p>例题
@@ -948,7 +956,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      D B
+      <p>D B</p>
+<p>提到影响两个及以上属性时，基本上都是权衡点。</p>
+
     </div>
   </label>
 </div>
@@ -963,7 +973,9 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      D
+      <p>D</p>
+<p>基于度量的架构评估方法才是最精确的，它是一种代码评估方法，需要对软件系统进行测试，ATAM不是一种精确的评估工具，ATAM本身不是精确评估，所以不太需要单独评估需求是否准确，需求是否准确是需求工程要干的活儿</p>
+
     </div>
   </label>
 </div>
@@ -995,8 +1007,8 @@ https://github.com/alex-shpak/hugo-book
     </div>
     <input type="checkbox" class="hidden" />
     <div class="book-expand-content markdown-inner">
-      <a href="https://imgse.com/i/pCgWsKS"><img src="https://s1.ax1x.com/2023/07/09/pCgWsKS.md.png" alt="pCgWsKS.md.png" /></a>
-<a href="https://imgse.com/i/pCgWyDg"><img src="https://s1.ax1x.com/2023/07/09/pCgWyDg.md.png" alt="pCgWyDg.md.png" /></a>
+      <a href="https://imgse.com/i/pCgWyDg"><img src="https://s1.ax1x.com/2023/07/09/pCgWyDg.md.png" alt="pCgWyDg.md.png" /></a>
+<a href="https://imgse.com/i/pCgWsKS"><img src="https://s1.ax1x.com/2023/07/09/pCgWsKS.md.png" alt="pCgWsKS.md.png" /></a>
     </div>
   </label>
 </div>
