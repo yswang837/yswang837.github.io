@@ -3,7 +3,7 @@ weight: 9
 title: "9) web架构设计"
 ---
 
-## 1 web架构设计
+## 1 web架构设计 ✅✅✅✅
 
 ---
 
@@ -11,17 +11,17 @@ title: "9) web架构设计"
 
 [![pC2SX0H.md.png](https://s1.ax1x.com/2023/07/09/pC2SX0H.md.png)](https://imgse.com/i/pC2SX0H)
 
-### 1.1 单机到数据库-web应用服务器分离
+### 1.1 单机到分层架构 ✅✅✅✅
 
 [![pC2pSht.md.png](https://s1.ax1x.com/2023/07/09/pC2pSht.md.png)](https://imgse.com/i/pC2pSht)
 
-### 1.2 应用服务器集群
+### 1.2 应用服务器集群 ✅✅
 
 &emsp;&emsp;此时需要做负载均衡和Session一致性问题。
 
 [![pC2pijS.md.png](https://s1.ax1x.com/2023/07/09/pC2pijS.md.png)](https://imgse.com/i/pC2pijS)
 
-### 1.3 负载均衡
+### 1.3 负载均衡 ✅✅✅✅
 
 &emsp;&emsp;随着业务的增长，信息系统的访问量和数据流量快速增加，采用负载均衡(Load Balance)方法可避免由此导致的系统性能下降甚至崩溃。
 
@@ -55,7 +55,7 @@ title: "9) web架构设计"
 
 [![pC29win.md.png](https://s1.ax1x.com/2023/07/09/pC29win.md.png)](https://imgse.com/i/pC29win)
 
-### 1.4 有状态和无状态问题
+### 1.4 有状态和无状态问题 ✅✅✅
 
 &emsp;&emsp;购物车就是有状态的。
 
@@ -67,15 +67,15 @@ title: "9) web架构设计"
 
 [![pC29gZ4.md.png](https://s1.ax1x.com/2023/07/09/pC29gZ4.md.png)](https://imgse.com/i/pC29gZ4)
 
-### 1.5 持久化技术ORM
+### 1.5 持久化技术ORM ✅✅✅
 
 [![pC2CsfI.md.png](https://s1.ax1x.com/2023/07/09/pC2CsfI.md.png)](https://imgse.com/i/pC2CsfI)
 
-### 1.6 数据库读写分离
+### 1.6 数据库读写分离 ✅✅✅
 
 [![pC2Cf0g.md.png](https://s1.ax1x.com/2023/07/09/pC2Cf0g.md.png)](https://imgse.com/i/pC2Cf0g)
 
-### 1.7 缓存技术
+### 1.7 缓存技术 ✅✅✅✅
 
 [![pC2PijK.md.png](https://s1.ax1x.com/2023/07/09/pC2PijK.md.png)](https://imgse.com/i/pC2PijK)
 
@@ -85,7 +85,7 @@ title: "9) web架构设计"
 
 &emsp;&emsp;由于redis比较重要，下面小结接着讲。
 
-### 1.8 redis
+### 1.8 redis ✅✅✅✅
 
 - redis 集群切片场景方式
 
@@ -119,29 +119,29 @@ title: "9) web架构设计"
 
 [![pC2BG4O.md.png](https://s1.ax1x.com/2023/07/10/pC2BG4O.md.png)](https://imgse.com/i/pC2BG4O)
 
-### 1.9 CND 内容分发网络
+### 1.9 CND 内容分发网络 ✅✅✅
 
 &emsp;&emsp;镜像站，就近访问原则，为了提高网络访问，如京东物流。
 
 [![pC2BrUf.md.png](https://s1.ax1x.com/2023/07/10/pC2BrUf.md.png)](https://imgse.com/i/pC2BrUf)
 
-### 1.10 XML与Json
+### 1.10 XML与Json ✅✅
 
 [![pC2B2vj.md.png](https://s1.ax1x.com/2023/07/10/pC2B2vj.md.png)](https://imgse.com/i/pC2B2vj)
 
-### 1.11 web应用服务器
+### 1.11 web应用服务器 ✅✅✅
 
 [![pC2BxVx.md.png](https://s1.ax1x.com/2023/07/10/pC2BxVx.md.png)](https://imgse.com/i/pC2BxVx)
 
-### 1.12 REST
+### 1.12 REST ✅✅
 
 [![pC2DPRe.md.png](https://s1.ax1x.com/2023/07/10/pC2DPRe.md.png)](https://imgse.com/i/pC2DPRe)
 
-### 1.13 响应式web设计
+### 1.13 响应式web设计 ✅✅
 
 [![pC2rBh8.md.png](https://s1.ax1x.com/2023/07/10/pC2rBh8.md.png)](https://imgse.com/i/pC2rBh8)
 
-### 1.14 中台
+### 1.14 中台 ✅✅
 
 &emsp;&emsp;中台是一套结合互联网技术和行业特性，将企业核心能力以共享服务形式沉淀，形成“大中台、小前台”的组织和业务机制，供企业快速低成本的进行业务创新的企业架构。中台又可以进一步细分，比如业务中台，数据中台，XX中台。本质上，都是对企业通用能力在不同层面的沉淀，并对外能力开放。中台的践行者：Supercell: 芬兰移动游戏巨头，2015年世界游戏前10占5席，员工仅200多人，因使用中台具有小团队快速开发能力，后被腾讯86亿美金收购；阿里:2015年参观Supercell，而后推行中台。
 
@@ -151,6 +151,6 @@ title: "9) web架构设计"
 
 [![pC2s8U0.md.png](https://s1.ax1x.com/2023/07/10/pC2s8U0.md.png)](https://imgse.com/i/pC2s8U0)
 
-### 1.15 web系统分层
+### 1.15 web系统分层 ✅✅
 
 [![pC2sfrd.md.png](https://s1.ax1x.com/2023/07/10/pC2sfrd.md.png)](https://imgse.com/i/pC2sfrd)
