@@ -17,7 +17,7 @@ title: 3.2 操作系统
 
 [![pCAH6MT.md.png](https://s1.ax1x.com/2023/06/09/pCAH6MT.md.png)](https://imgse.com/i/pCAH6MT)
 
-&emsp;&emsp;操作系统为用户提供了两类接口：操作一级的接口和程序控制一级的接口。其中，操作一级的接口包括**操作控制命令**、和**窗口**等，程序控制一级的接口包括**系统调用**。
+&emsp;&emsp;操作系统为用户提供了两类接口：操作一级的接口和程序控制一级的接口。其中，操作一级的接口包括**操作控制命令**、**菜单**，程序控制一级的接口包括**系统调用**。
 
 >例题
 [![pCAHvFA.md.png](https://s1.ax1x.com/2023/06/09/pCAHvFA.md.png)](https://imgse.com/i/pCAHvFA)
