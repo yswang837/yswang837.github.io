@@ -1,6 +1,6 @@
 # 需求工程 ✌
 
-## 1 概述
+## 1 概述 ✅✅✅✅
 
 ---
 
@@ -22,7 +22,7 @@
 [![p9HFah4.md.png](https://s1.ax1x.com/2023/05/25/p9HFah4.md.png)](https://imgse.com/i/p9HFah4)
 {{< expand "学霸肯定对了">}}D{{< /expand >}}
 
-## 2 需求获取
+## 2 需求获取 ✅✅✅
 
 ---
 
@@ -52,7 +52,7 @@
 
 3、JRP是一种相对来说成本较高但十分有效的需求获取方法。
 
-## 3 需求分析
+## 3 需求分析 ✅✅✅✅✅
 
 ---
 
@@ -64,7 +64,7 @@
 
 &emsp;&emsp;2、面向对象需求分析OOA。
 
-### 4.3.1 结构化需求分析SA
+### 4.3.1 结构化需求分析SA ✅✅✅✅✅
 
 &emsp;&emsp;SA要求完成功能模型(数据流图DFD，也叫分层数据流图)、行为模型(状态转换图STD)、数据模型(ER图：从数据的角度对现实世界进行建模)，其中数据字典起到解释的作用，比如学生关系包含学号、名字、年龄等。
 
@@ -88,7 +88,6 @@
 [![pCyFHt1.md.png](https://s1.ax1x.com/2023/07/05/pCyFHt1.md.png)](https://imgse.com/i/pCyFHt1)
 [![pCyFX6O.md.png](https://s1.ax1x.com/2023/07/05/pCyFX6O.md.png)](https://imgse.com/i/pCyFX6O)
 
-
 STD：State Transform Diagram，（状态建模）
 
 [![p9HF4gA.md.png](https://s1.ax1x.com/2023/05/25/p9HF4gA.md.png)](https://imgse.com/i/p9HF4gA)
@@ -102,9 +101,9 @@ E-R图：实体关系图，（数据建模）
 
 用例图、对象图、通信图、顺序图和活动图都是面向对象的图，都是UML里面的图{{< /expand >}}
 
-### 4.3.2 面向对象需求分析OOA
+### 4.3.2 面向对象需求分析 ✅✅✅✅✅
 
-&emsp;&emsp;面向对象的相关概念。
+&emsp;&emsp;面向对象需求分析简称OOA，相关概念如下。
 
 [![p9Hk9bV.md.png](https://s1.ax1x.com/2023/05/25/p9Hk9bV.md.png)](https://imgse.com/i/p9Hk9bV)
 
@@ -269,7 +268,7 @@ E-R图：实体关系图，（数据建模）
 
 [![p9H0R3D.md.png](https://s1.ax1x.com/2023/05/25/p9H0R3D.md.png)](https://imgse.com/i/p9H0R3D)
 
-## 4 需求定义
+## 4 需求定义 ✅✅
 
 ---
 
@@ -285,7 +284,7 @@ E-R图：实体关系图，（数据建模）
 [![p9H0L8S.md.png](https://s1.ax1x.com/2023/05/25/p9H0L8S.md.png)](https://imgse.com/i/p9H0L8S)
 {{< expand "学霸肯定对了">}}C{{< /expand >}}
 
-## 5 需求验证
+## 5 需求验证 ✅✅
 
 ---
 
@@ -293,7 +292,7 @@ E-R图：实体关系图，（数据建模）
 
 [![p9Hj0HJ.md.png](https://s1.ax1x.com/2023/05/25/p9Hj0HJ.md.png)](https://imgse.com/i/p9Hj0HJ)
 
-## 6 需求变更控制
+## 6 需求变更控制 ✅✅
 
 ---
 
@@ -305,11 +304,11 @@ E-R图：实体关系图，（数据建模）
 [![pCUFmX6.md.png](https://s1.ax1x.com/2023/06/26/pCUFmX6.md.png)](https://imgse.com/i/pCUFmX6)
 {{< expand "学霸肯定对了">}}D B{{< /expand >}}
 
-## 7 需求版本控制
+## 7 需求版本控制 ✅✅
 
 [![pCsarUs.md.png](https://s1.ax1x.com/2023/07/04/pCsarUs.md.png)](https://imgse.com/i/pCsarUs)
 
-## 8 需求跟踪
+## 8 需求跟踪 ✅✅
 
 ---
 
@@ -327,7 +326,7 @@ E-R图：实体关系图，（数据建模）
 
 [![pCotbCV.md.png](https://s1.ax1x.com/2023/07/17/pCotbCV.md.png)](https://imgse.com/i/pCotbCV)
 
-## 9 需求状态管理
+## 9 需求状态管理 ✅✅
 
 ---
 
