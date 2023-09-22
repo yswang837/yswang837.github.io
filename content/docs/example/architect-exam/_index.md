@@ -8,29 +8,41 @@ title: 3. 高级软考 - 系统架构师
 
 ## 1、考试介绍
 
+---
+
 &emsp;&emsp;系统架构师考试包含：3个科目，满分均为75分，45分为过线，需三科同时过线才算考过。
 [![p9BxotK.md.png](https://s1.ax1x.com/2023/05/10/p9BxotK.md.png)](https://imgse.com/i/p9BxotK)
 
 ## 2、考试时间
+
+---
 
 &emsp;&emsp;每年具体那天考试不太确定，大概都是11月份。科目一全为选择题、科目二为案例分析题(第1道必答，后4道题选答2道，总共做3个题)、科目三论文写作(四选一，不排除之后会变成二选一)
 [![p9wRLQJ.md.png](https://s1.ax1x.com/2023/05/08/p9wRLQJ.md.png)](https://imgse.com/i/p9wRLQJ)
 
 ## 3、报名地址
 
+---
+
 &emsp;&emsp;需要格外注意的是：每个科目、每个省份的报名时间是不一样的，大概会在每年的4月和9月左右。系统架构师大概会在每年的9月左右。官方网站 [软考](https://www.ruankao.org.cn/)
 
 ## 4、考试内容
+
+---
 
 &emsp;&emsp;架构师考试内容太宽泛了，如果你和我一样是工作了才准备考的话，建议复习重点(如：软件工程、软件架构设计、操作系统和数据库系统等)，45分和75分没啥区别。
 [![p9BzIDs.md.png](https://s1.ax1x.com/2023/05/10/p9BzIDs.md.png)](https://imgse.com/i/p9BzIDs)
 
 ## 5、笔者过没过
 
+---
+
 &emsp;&emsp;算是比较幸运，我是一把过。希望学弟学妹们都能一把过。
 [![p9wfUHI.md.png](https://s1.ax1x.com/2023/05/08/p9wfUHI.md.png)](https://imgse.com/i/p9wfUHI)
 
 ## 6、备考资料
+
+---
 
 &emsp;&emsp;笔者的资料是从机构高价买的，现低价有偿分享给大家，所有资料打包 **30元** 即可获取，微信号：**wys837**。
 
