@@ -16,7 +16,7 @@ title: "介绍"
 
 ### 关于作者
 
-&emsp;&emsp;笔名：小钻风
+&emsp;&emsp;笔名：hello 小代
 
 &emsp;&emsp;微信：wys837
 

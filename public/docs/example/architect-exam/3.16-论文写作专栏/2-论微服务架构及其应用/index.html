@@ -17,7 +17,8 @@
 技术异构性。指的是不同的微服务可以使用不同的技术栈来实现，这样做的好处在于，它能够充分发挥各种技术的原生优势，使开发团队能够根据不同的业务场景，更加灵活地选择适合自己的工具和框架。
 易于开发和部署。服务拆分带来了模块化开发，使得开发团队成员能够更加专注于自己负责的模块，减少开发的复杂度和模块间的依赖关系，同时每个服务可以被独立部署，这意味着当某个服务需要进行更新或者修复时，只需对该服务进行部署，减少部署的风险和影响范围。
 可扩展性。就像木桶效应一样，一个应用程序的性能瓶颈通常集中在某个服务上，此时对于出现性能短板的服务，只需要对其进行单独的扩容，就可以以最低的软硬件成本达到最好的效果。
-微服务架构如何实际应用于该项目之上。
+考虑到实际项目需要快速迭代、单个服务需要方便扩缩容、需要采用不同的技术栈来发挥业务的最大价值、需要高效地处理日活约2.6亿的移动设备指纹、以及峰值QPS达7万的高并发场景下保持系统的高可用性，我决定采用微服务框架来作为项目的底层架构支持，从本项目服务的各职能部门的角度进行分类，将系统抽象成与各个职能部门对应的服务，以保证最大化微服务架构的技术优势。
+如：273项设备指纹上行服务，设备指纹落库落表落日志服务，与华为、小米、OPPO、VIVO等手机厂商合作的负一屏XX服务，与阿里巴巴、京东等合作的设备ID转换服务，商业化广告服务，真假设备试金石服务、监控报警服务等。
 经历了一年半的开发，该项目于2022年10月成功上线，并且在过去的一年多时间里，系统架构稳定运行，实现了既定目标，赢得了过亿用户一致好评。虽然我们取得了这些成就，但也意识到了一些不足之处，特别是在自动化运维方面。这些挑战带给我们宝贵的经验和教训，为未来的工作提供了重要的参考，这正是我最大的收获。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="论微服务架构及其应用" />
@@ -25,13 +26,13 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yswang837.github.io/docs/example/architect-exam/3.16-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/2-%E8%AE%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/" />
 
-<title>论微服务架构及其应用 | 小钻风</title>
+<title>论微服务架构及其应用 | hello 小代</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.750484708b19d496b9f804444175f694b6932e42e0e7bc4ca6fa86120a18919d.js" integrity="sha256-dQSEcIsZ1Ja5&#43;AREQXX2lLaTLkLg57xMpvqGEgoYkZ0=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.16-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/2-%E8%AE%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/index.xml" title="小钻风" />
+  <script defer src="/zh.search.min.0b3cc2713de311736eac52b32ffc549bfb75884b3e0b9505e90869bfe7844cb9.js" integrity="sha256-CzzCcT3jEXNurFKzL/xUm/t1iEs&#43;C5UF6Qhpv&#43;eETLk=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.16-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/2-%E8%AE%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -47,7 +48,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>小钻风</span>
+  <a class="flex align-center" href="/"><span>hello 小代</span>
   </a>
 </h2>
 
@@ -754,6 +755,24 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/architect-exam/3.16-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E4%B8%93%E6%A0%8F/3-%E8%AE%BA%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7%E8%AE%BE%E8%AE%A1/" class="">论软件的可靠性设计</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -923,7 +942,9 @@ https://github.com/alex-shpak/hugo-book
 <p>  技术异构性。指的是不同的微服务可以使用不同的技术栈来实现，这样做的好处在于，它能够充分发挥各种技术的原生优势，使开发团队能够根据不同的业务场景，更加灵活地选择适合自己的工具和框架。</p>
 <p>  易于开发和部署。服务拆分带来了模块化开发，使得开发团队成员能够更加专注于自己负责的模块，减少开发的复杂度和模块间的依赖关系，同时每个服务可以被独立部署，这意味着当某个服务需要进行更新或者修复时，只需对该服务进行部署，减少部署的风险和影响范围。</p>
 <p>  可扩展性。就像木桶效应一样，一个应用程序的性能瓶颈通常集中在某个服务上，此时对于出现性能短板的服务，只需要对其进行单独的扩容，就可以以最低的软硬件成本达到最好的效果。</p>
-<p>  微服务架构如何实际应用于该项目之上。</p>
+<p>  考虑到实际项目需要快速迭代、单个服务需要方便扩缩容、需要采用不同的技术栈来发挥业务的最大价值、需要高效地处理日活约2.6亿的移动设备指纹、以及峰值QPS达7万的高并发场景下保持系统的高可用性，我决定采用微服务框架来作为项目的底层架构支持，从本项目服务的各职能部门的角度进行分类，将系统抽象成与各个职能部门对应的服务，以保证最大化微服务架构的技术优势。</p>
+<p>  </p>
+<p>  如：273项设备指纹上行服务，设备指纹落库落表落日志服务，与华为、小米、OPPO、VIVO等手机厂商合作的负一屏XX服务，与阿里巴巴、京东等合作的设备ID转换服务，商业化广告服务，真假设备试金石服务、监控报警服务等。</p>
 <p>  经历了一年半的开发，该项目于2022年10月成功上线，并且在过去的一年多时间里，系统架构稳定运行，实现了既定目标，赢得了过亿用户一致好评。虽然我们取得了这些成就，但也意识到了一些不足之处，特别是在自动化运维方面。这些挑战带给我们宝贵的经验和教训，为未来的工作提供了重要的参考，这正是我最大的收获。</p>
 </article>
  

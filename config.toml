@@ -1,6 +1,6 @@
 baseURL = 'https://yswang837.github.io/'
 languageCode = 'en-us'
-title = '小钻风'
+title = 'hello 小代'
 BookSection = 'docs'
 theme = 'hugo-book'
 defaultContentLanguage = "zh"
