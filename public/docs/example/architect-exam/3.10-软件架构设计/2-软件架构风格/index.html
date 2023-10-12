@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="2.软件架构风格 ✅✅✅✅✅ # 软件架构风格是指描述特定软件系统的组织方式和惯用模式。组织方式描述了系统的组成构件和这些构件之间的拓扑关系，惯用模式则反映众多系统共有的结构和语义。以下是常见风格的特点或应用：
 批处理&mdash;&gt;无用户交互，传统编译器(优先认为是批处理)，网络报文处理(优先认为是批处理)。
-管道过滤器&mdash;&gt;流式数据，若用户交互，传统编译器，网络报文处理。
+管道过滤器&mdash;&gt;流式数据，弱用户交互，传统编译器，网络报文处理。
 层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。
 过程控制&mdash;&gt;控制系统，其特点是不断采集系统当前状态，与系统中的设定状态进行对比，并通过将当前状态与设定状态进行对比从而进行控制。
 隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。注意把隐式调用转为显示调用并不能提高系统性能。
-事件驱动系统&mdash;&gt;注册事件处理的是回调函数，当某个界面事件发生时(例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件，windows系统。
+事件驱动系统&mdash;&gt;注册事件处理的是回调函数，当某个事件发生时(例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件，windows系统。
 解释器&mdash;&gt;运行时的系统自定义行为与改变的能力，采用解释器架构风格的系统，可以通过部分解释代码预先编译的方式提高系统性能。
 规则系统&mdash;&gt;在解释器的基础上增加经验规则，适用于专家系统。
 黑板风格&mdash;&gt;信号处理领域，语音识别系统是一个十分典型的专家系统，其特点是求解的正确结果不止一个，求解过程比较复杂，需要通过专家知识和反馈逐步得到正确结果。
@@ -48,7 +48,7 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.f24555009efb1c50fa16369424e4b078f78bb488a7001260bfdbae095b2cdf6c.js" integrity="sha256-8kVVAJ77HFD6FjaUJOSwePeLtIinABJgv9uuCVss32w=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.b64aa57335167c24dc9333accf2813d9e9c63c958a89981a2be789a71e6c52c4.js" integrity="sha256-tkqlczUWfCTckzOszygT2enGPJWKiZgaK&#43;eJpx5sUsQ=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -990,11 +990,11 @@ https://github.com/alex-shpak/hugo-book
 </h1>
 <p>  软件架构风格是指描述特定软件系统的组织方式和惯用模式。组织方式描述了系统的组成构件和这些构件之间的拓扑关系，惯用模式则反映众多系统共有的结构和语义。以下是常见风格的特点或应用：</p>
 <p>  批处理&mdash;&gt;无用户交互，传统编译器(优先认为是批处理)，网络报文处理(优先认为是批处理)。</p>
-<p>  管道过滤器&mdash;&gt;流式数据，若用户交互，传统编译器，网络报文处理。</p>
+<p>  管道过滤器&mdash;&gt;流式数据，弱用户交互，传统编译器，网络报文处理。</p>
 <p>  层次架构&mdash;&gt;采用层次化架构风格的系统，划分的层次越多，系统性能越差。</p>
 <p>  过程控制&mdash;&gt;控制系统，其特点是不断采集系统当前状态，与系统中的设定状态进行对比，并通过将当前状态与设定状态进行对比从而进行控制。</p>
 <p>  隐式调用&mdash;&gt;回调机制，采用隐式调用架构风格的系统，可以通过处理函数的并发调用提高系统处理性能。注意把隐式调用转为显示调用并不能提高系统性能。</p>
-<p>  事件驱动系统&mdash;&gt;注册事件处理的是回调函数，当某个界面事件发生时(例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件，windows系统。</p>
+<p>  事件驱动系统&mdash;&gt;注册事件处理的是回调函数，当某个事件发生时(例如键盘敲击、鼠标移动等)，系统会查找并选择合适的回调函数处理该事件，windows系统。</p>
 <p>  解释器&mdash;&gt;运行时的系统自定义行为与改变的能力，采用解释器架构风格的系统，可以通过部分解释代码预先编译的方式提高系统性能。</p>
 <p>  规则系统&mdash;&gt;在解释器的基础上增加经验规则，适用于专家系统。</p>
 <p>  黑板风格&mdash;&gt;信号处理领域，语音识别系统是一个十分典型的专家系统，其特点是求解的正确结果不止一个，求解过程比较复杂，需要通过专家知识和反馈逐步得到正确结果。</p>
