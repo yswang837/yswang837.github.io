@@ -22,7 +22,7 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 具体如下图：
 一个软件的架构设计是随着技术的不断进步而不断变化的。以编译器为例，其主流架构经历了批处理(或管道-过滤器)到数据共享为中心(数据仓库)的转变过程。早期的编译器采用批处理(或管道-过滤器)架构风格，以文本形式输入的代码被逐步转化为各种形式，最终生成可执行代码。现代的编译器采用以数据共享为中心的架构风格，主要关心编译过程中程序的中间表示。分析树是在语法分析阶段结束后才产生作为语义分析的输入，分析树是数据中心中重要的共享数据，为后续的语义分析提供了帮助。
 2.2 调用/返回风格 ✅✅✅✅✅ # 调用/返回风格包含3个子风格：
-1、主程序/子程序风格
+1、主程序/子程序风格：是结构化程序设计的一种典型风格，它从功能的角度来设计系统，通过逐步分解和细化形成整个系统的架构。
 2、面向对象风格，可以通过减少功能调用层次提高系统性能，注意对象管理层并不能提高系统性能，反而会降低性能(层次越多性能越差)。
 3、分层风格，将在“2.8 架构风格具体实例”中详细说明
 2.3 独立构建风格 ✅✅✅✅✅ # 独立构建区别于返回/调用风格的点在于，相对松耦合，且放弃了对子程序的控制，它包含2个子风格：
@@ -48,7 +48,7 @@ C2体系结构风格&mdash;&gt;通过连接件绑定在一起的按照一组规�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.2c68366894daedde590f018e8e9c05a776afa1fe6b7218a604bfbee55923c6b5.js" integrity="sha256-LGg2aJTa7d5ZDwGOjpwFp3avof5rchimBL&#43;&#43;5VkjxrU=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.6541721060add8149956f4471f52f7b034684e330d89a66e2c1bf657f004a625.js" integrity="sha256-ZUFyEGCt2BSZVvRHH1L3sDRoTjMNiaZuLBv2V/AEpiU=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.10-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/2-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1011,7 +1011,7 @@ https://github.com/alex-shpak/hugo-book
 <p>  数据流风格以数据驱动的方式推进项目，其的典型应用有传统编译器、网络报文处理，它包含2个子风格：</p>
 <p>  1、批处理。做题要点：大量整体数据、无需用户交互</p>
 <p>  2、管道过滤器。做题要点：流式数据、弱用户交互，对于采用管道-过滤器架构风格的系统，可以通过引入过滤器的数据并发处理提高系统性能。</p>
-<p>具体如下图：</p>
+<p>  具体如下图：</p>
 <p><a href="https://imgse.com/i/p9rIyS1"><img src="https://s1.ax1x.com/2023/05/11/p9rIyS1.md.png" alt="p9rIyS1.md.png" /></a>
 <a href="https://imgse.com/i/p9rI6Qx"><img src="https://s1.ax1x.com/2023/05/11/p9rI6Qx.md.png" alt="p9rI6Qx.md.png" /></a></p>
 <p>  一个软件的架构设计是随着技术的不断进步而不断变化的。以编译器为例，其主流架构经历了批处理(或管道-过滤器)到数据共享为中心(数据仓库)的转变过程。早期的编译器采用批处理(或管道-过滤器)架构风格，以文本形式输入的代码被逐步转化为各种形式，最终生成可执行代码。现代的编译器采用以数据共享为中心的架构风格，主要关心编译过程中程序的中间表示。分析树是在语法分析阶段结束后才产生作为语义分析的输入，分析树是数据中心中重要的共享数据，为后续的语义分析提供了帮助。</p>
@@ -1021,7 +1021,7 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <hr>
 <p>  调用/返回风格包含3个子风格：</p>
-<p>  1、主程序/子程序风格</p>
+<p>  1、主程序/子程序风格：是结构化程序设计的一种典型风格，它从功能的角度来设计系统，通过逐步分解和细化形成整个系统的架构。</p>
 <p>  2、面向对象风格，可以通过减少功能调用层次提高系统性能，注意对象管理层并不能提高系统性能，反而会降低性能(层次越多性能越差)。</p>
 <p>  3、分层风格，将在“2.8 架构风格具体实例”中详细说明</p>
 <p><a href="https://imgse.com/i/p9rIfTe"><img src="https://s1.ax1x.com/2023/05/11/p9rIfTe.md.png" alt="p9rIfTe.md.png" /></a>
