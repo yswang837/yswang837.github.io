@@ -37,7 +37,7 @@ E-R图具体的建立过程 合并的方法：一次集成：多个局部E-R图�
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.718fa48c8af0dd460f8d062cd7503851e56e05707c46c8044dac9ac135fdc662.js" integrity="sha256-cY&#43;kjIrw3UYPjQYs11A4UeVuBXB8RsgETayawTX9xmI=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.f2c37b126b17794e233c792ff0afa8e4473af8c6a518706abdf77d5db0cc8a25.js" integrity="sha256-8sN7EmsXeU4jPHkv8K&#43;o5Ec6&#43;MalGHBqvfd9XbDMiiU=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/architect-exam/3.3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1786,26 +1786,26 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#125-%e5%88%86%e5%b8%83%e5%bc%8f%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e7%89%b9%e7%82%b9-">#</a>
 </h3>
 <ul>
-<li>1 数据独立性</li>
+<li>数据独立性</li>
 </ul>
 <p>  具体为：分布独立性(分布透明性)、物理独立性、逻辑独立性。</p>
 <ul>
-<li>2 集中与自治共享结合的控制结构</li>
+<li>集中与自治共享结合的控制结构</li>
 </ul>
 <p>  各局部的DBMS可以独立地管理局部数据库，具有自治的功能。同时，系统又设有集中控制机制，协调各局部DBMS的工作，执行全局应用。</p>
 <ul>
-<li>3 适当数据冗余</li>
+<li>适当数据冗余</li>
 </ul>
 <p>  在不同的场地存储同一数据的多个副本可以提高系统的可靠性和可用性，同时也能提高系统性能。提高系统的<strong>可用性</strong>，即当系统中某个节点发生故障时，因为数据有其他副本在非故障场地上，对其他所有场地来说，数据仍然是可用的，从而保证数据的完备性(反规范化理论的应用)。</p>
 <ul>
-<li>4 全局的一致性、可串行性和可恢复性，也就是事务</li>
+<li>全局的一致性、可串行性和可恢复性，也就是事务</li>
 </ul>
 <p>  该点和集中式数据库的特点一致。</p>
 <h3 id="126-联邦数据库-">
   12.6 联邦数据库 ✅
   <a class="anchor" href="#126-%e8%81%94%e9%82%a6%e6%95%b0%e6%8d%ae%e5%ba%93-">#</a>
 </h3>
-<p>  分布式数据库和联邦数据库很相似，分布式数据库是同构的，而联邦数据库是异构的。它们都是对外提供的数据的统一接口。</p>
+<p>  联邦数据库和分布式数据库很相似，分布式数据库是同构的，而联邦数据库是异构的。它们都是对外提供的数据的统一接口。</p>
 <p><a href="https://imgse.com/i/pCcuefg"><img src="https://s1.ax1x.com/2023/07/07/pCcuefg.md.png" alt="pCcuefg.md.png" /></a></p>
 <blockquote>
 <p>例题
