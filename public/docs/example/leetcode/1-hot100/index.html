@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="hot100 # 项目代码：https://github.com/yswang837/golang-leetcode">
+<meta name="description" content=" hot100 # 用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行。项目代码：https://github.com/yswang837/golang-leetcode
+哈希 # 1.两数之和 # 地址：传送门 思路1：双重循环暴力破解，时间复杂度为O(n^2) 思路2：一次遍历，把num作为map的key，index作为map的value，可以O(n)时间复杂度解题，map是典型的用空间换取时间的数据结构。本题代码用思路2。 func twoSum(nums []int, target int) []int { ret := []int{-1, -1} if len(nums) == 0 { return ret } m := map[int]int{} for i, val := range nums { tmp := target - val if i2, ok := m[tmp]; ok { return []int{i, i2} } m[val] = i } return ret } 双指针 # 滑动窗口 # 子串 # 普通数组 # 矩阵 # 链表 # 二叉树 # 图论 # 回溯 # 二分查找 # 栈 # 堆 # 贪心算法 # 动态规划 # 多维动态规划 # 技巧 # ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -15,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.528d7c426ca9a4ce8170f4fc3ada5b0f0e948cbe086e1bcb5eddb0c15a578a81.js" integrity="sha256-Uo18QmyppM6BcPT8OtpbDw6UjL4IbhvLXt2wwVpXioE=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.f4f5b3c68bd329a47b0b72140405be443370e742697d7a4a8961651d9ab9b37f.js" integrity="sha256-9PWzxovTKaR7C3IUBAW&#43;RDNw50JpfXpKiWFlHZq5s38=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -89,6 +90,24 @@ https://github.com/alex-shpak/hugo-book
 
           
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/example/golang/1-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="">1 golang并发编程</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
     
   </ul>
 
@@ -936,7 +955,31 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#哈希">哈希</a>
+      <ul>
+        <li><a href="#1两数之和">1.两数之和</a></li>
+      </ul>
+    </li>
+    <li><a href="#双指针">双指针</a></li>
+    <li><a href="#滑动窗口">滑动窗口</a></li>
+    <li><a href="#子串">子串</a></li>
+    <li><a href="#普通数组">普通数组</a></li>
+    <li><a href="#矩阵">矩阵</a></li>
+    <li><a href="#链表">链表</a></li>
+    <li><a href="#二叉树">二叉树</a></li>
+    <li><a href="#图论">图论</a></li>
+    <li><a href="#回溯">回溯</a></li>
+    <li><a href="#二分查找">二分查找</a></li>
+    <li><a href="#栈">栈</a></li>
+    <li><a href="#堆">堆</a></li>
+    <li><a href="#贪心算法">贪心算法</a></li>
+    <li><a href="#动态规划">动态规划</a></li>
+    <li><a href="#多维动态规划">多维动态规划</a></li>
+    <li><a href="#技巧">技巧</a></li>
+  </ul>
+</nav>
 
 
 
@@ -951,7 +994,99 @@ https://github.com/alex-shpak/hugo-book
   hot100
   <a class="anchor" href="#hot100">#</a>
 </h1>
-<p>项目代码：https://github.com/yswang837/golang-leetcode</p>
+<p>  用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行。项目代码：https://github.com/yswang837/golang-leetcode</p>
+<h2 id="哈希">
+  哈希
+  <a class="anchor" href="#%e5%93%88%e5%b8%8c">#</a>
+</h2>
+<h3 id="1两数之和">
+  1.两数之和
+  <a class="anchor" href="#1%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c">#</a>
+</h3>
+<ul>
+<li>地址：<a href="https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
+<li>思路1：双重循环暴力破解，时间复杂度为O(n^2)</li>
+<li>思路2：一次遍历，把num作为map的key，index作为map的value，可以O(n)时间复杂度解题，map是典型的用空间换取时间的数据结构。本题代码用思路2。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">twoSum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ret</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tmp</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">val</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i2</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">tmp</span>]; <span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">i2</span>}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">val</span>] = <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="双指针">
+  双指针
+  <a class="anchor" href="#%e5%8f%8c%e6%8c%87%e9%92%88">#</a>
+</h2>
+<h2 id="滑动窗口">
+  滑动窗口
+  <a class="anchor" href="#%e6%bb%91%e5%8a%a8%e7%aa%97%e5%8f%a3">#</a>
+</h2>
+<h2 id="子串">
+  子串
+  <a class="anchor" href="#%e5%ad%90%e4%b8%b2">#</a>
+</h2>
+<h2 id="普通数组">
+  普通数组
+  <a class="anchor" href="#%e6%99%ae%e9%80%9a%e6%95%b0%e7%bb%84">#</a>
+</h2>
+<h2 id="矩阵">
+  矩阵
+  <a class="anchor" href="#%e7%9f%a9%e9%98%b5">#</a>
+</h2>
+<h2 id="链表">
+  链表
+  <a class="anchor" href="#%e9%93%be%e8%a1%a8">#</a>
+</h2>
+<h2 id="二叉树">
+  二叉树
+  <a class="anchor" href="#%e4%ba%8c%e5%8f%89%e6%a0%91">#</a>
+</h2>
+<h2 id="图论">
+  图论
+  <a class="anchor" href="#%e5%9b%be%e8%ae%ba">#</a>
+</h2>
+<h2 id="回溯">
+  回溯
+  <a class="anchor" href="#%e5%9b%9e%e6%ba%af">#</a>
+</h2>
+<h2 id="二分查找">
+  二分查找
+  <a class="anchor" href="#%e4%ba%8c%e5%88%86%e6%9f%a5%e6%89%be">#</a>
+</h2>
+<h2 id="栈">
+  栈
+  <a class="anchor" href="#%e6%a0%88">#</a>
+</h2>
+<h2 id="堆">
+  堆
+  <a class="anchor" href="#%e5%a0%86">#</a>
+</h2>
+<h2 id="贪心算法">
+  贪心算法
+  <a class="anchor" href="#%e8%b4%aa%e5%bf%83%e7%ae%97%e6%b3%95">#</a>
+</h2>
+<h2 id="动态规划">
+  动态规划
+  <a class="anchor" href="#%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92">#</a>
+</h2>
+<h2 id="多维动态规划">
+  多维动态规划
+  <a class="anchor" href="#%e5%a4%9a%e7%bb%b4%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92">#</a>
+</h2>
+<h2 id="技巧">
+  技巧
+  <a class="anchor" href="#%e6%8a%80%e5%b7%a7">#</a>
+</h2>
 </article>
  
       
@@ -991,7 +1126,31 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#哈希">哈希</a>
+      <ul>
+        <li><a href="#1两数之和">1.两数之和</a></li>
+      </ul>
+    </li>
+    <li><a href="#双指针">双指针</a></li>
+    <li><a href="#滑动窗口">滑动窗口</a></li>
+    <li><a href="#子串">子串</a></li>
+    <li><a href="#普通数组">普通数组</a></li>
+    <li><a href="#矩阵">矩阵</a></li>
+    <li><a href="#链表">链表</a></li>
+    <li><a href="#二叉树">二叉树</a></li>
+    <li><a href="#图论">图论</a></li>
+    <li><a href="#回溯">回溯</a></li>
+    <li><a href="#二分查找">二分查找</a></li>
+    <li><a href="#栈">栈</a></li>
+    <li><a href="#堆">堆</a></li>
+    <li><a href="#贪心算法">贪心算法</a></li>
+    <li><a href="#动态规划">动态规划</a></li>
+    <li><a href="#多维动态规划">多维动态规划</a></li>
+    <li><a href="#技巧">技巧</a></li>
+  </ul>
+</nav>
 
 
  
