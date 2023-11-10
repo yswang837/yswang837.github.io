@@ -52,7 +52,7 @@ func groupAnagrams(strs []string) [][]string {
 			return b[i] < b[j]
 		})
 		key := string(b)
-		m[key] = append(m[key], str)
+		m[key] = append(m[key], str) // m[key]在不在都是将新的str append到对应的切片上。
 
 	}
 	for _, val := range m {
@@ -61,6 +61,12 @@ func groupAnagrams(strs []string) [][]string {
 	return ret
 }
 ```
+
+### 128.最长连续序列
+
+- 地址：[传送门](https://leetcode.cn/problems/longest-consecutive-sequence/?envType=study-plan-v2&envId=top-100-liked)
+- 思路：首先将nums装入map[int]bool中(方便取到的值能直接当做bool用)，找到map中，每个连续段key的起始值，向后循环，求出每段的长度，和当前长度就max，循环结束，当前的max就是最大的max。
+- 例子：m[1:true,2:true,3:true,4:true,100:true,200:true],
 
 ## 双指针
 

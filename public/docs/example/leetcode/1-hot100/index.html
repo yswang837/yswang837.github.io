@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.d88878f90400d1f243a917000a0cb4a5047db4f6123bef20ef09d3752674891f.js" integrity="sha256-2Ih4&#43;QQA0fJDqRcACgy0pQR9tPYSO&#43;8g7wnTdSZ0iR8=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.4594965d6eb20c08c28b51d5b8c4f7957b384ec2a02a7e49fcfff8d946707d0d.js" integrity="sha256-RZSWXW6yDAjCi1HVuMT3lXs4TsKgKn5J/P/42UZwfQ0=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -962,6 +962,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#1两数之和">1.两数之和</a></li>
         <li><a href="#49字母异位词分组">49.字母异位词分组</a></li>
+        <li><a href="#128最长连续序列">128.最长连续序列</a></li>
       </ul>
     </li>
     <li><a href="#双指针">双指针</a></li>
@@ -1051,15 +1052,24 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">j</span>]
 </span></span><span style="display:flex;"><span>		})
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">key</span> <span style="color:#f92672">:=</span> string(<span style="color:#a6e22e">b</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span>] = append(<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span>], <span style="color:#a6e22e">str</span>)
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span>] = append(<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span>], <span style="color:#a6e22e">str</span>) <span style="color:#75715e">// m[key]在不在都是将新的str append到对应的切片上。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">m</span> {
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">val</span>)
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="双指针">
+</span></span></code></pre></div><h3 id="128最长连续序列">
+  128.最长连续序列
+  <a class="anchor" href="#128%e6%9c%80%e9%95%bf%e8%bf%9e%e7%bb%ad%e5%ba%8f%e5%88%97">#</a>
+</h3>
+<ul>
+<li>地址：<a href="https://leetcode.cn/problems/longest-consecutive-sequence/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
+<li>思路：首先将nums装入map[int]bool中(方便取到的值能直接当做bool用)，找到map中，每个连续段key的起始值，向后循环，求出每段的长度，和当前长度就max，循环结束，当前的max就是最大的max。</li>
+<li>例子：m[1:true,2:true,3:true,4:true,100:true,200:true],</li>
+</ul>
+<h2 id="双指针">
   双指针
   <a class="anchor" href="#%e5%8f%8c%e6%8c%87%e9%92%88">#</a>
 </h2>
@@ -1168,6 +1178,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#1两数之和">1.两数之和</a></li>
         <li><a href="#49字母异位词分组">49.字母异位词分组</a></li>
+        <li><a href="#128最长连续序列">128.最长连续序列</a></li>
       </ul>
     </li>
     <li><a href="#双指针">双指针</a></li>
