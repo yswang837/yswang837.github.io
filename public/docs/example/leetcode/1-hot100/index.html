@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" hot100 # 用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行。项目代码：https://github.com/yswang837/golang-leetcode
-哈希 # 1.两数之和 # 地址：传送门 思路1：双重循环暴力破解，时间复杂度为O(n^2) 思路2：一次遍历，把num作为map的key，index作为map的value，可以O(n)时间复杂度解题，map是典型的用空间换取时间的数据结构。本题代码用思路2。 func twoSum(nums []int, target int) []int { ret := []int{-1, -1} if len(nums) == 0 { return ret } m := map[int]int{} for i, val := range nums { tmp := target - val if i2, ok := m[tmp]; ok { return []int{i, i2} } m[val] = i } return ret } 双指针 # 滑动窗口 # 子串 # 普通数组 # 矩阵 # 链表 # 二叉树 # 图论 # 回溯 # 二分查找 # 栈 # 堆 # 贪心算法 # 动态规划 # 多维动态规划 # 技巧 # ">
+<meta name="description" content="hot100 # 用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行，题目编号沿用leetcode的编号。项目代码：https://github.com/yswang837/golang-leetcode
+哈希 # map是典型的用空间换取时间的数据结构。
+1.两数之和 # 地址：传送门 思路1：双重循环暴力破解，时间复杂度为O(n^2) 思路2：一次遍历，一边遍历，一边维护map，把num作为map的key，index作为map的value，可以O(n)时间复杂度解题。本题代码用思路2。 func twoSum(nums []int, target int) []int { ret := []int{-1, -1} if len(nums) == 0 { return ret } m := map[int]int{} for i, val := range nums { tmp := target - val if i2, ok := m[tmp]; ok { return []int{i, i2} } m[val] = i } return ret } 49.字母异位词分组 # 地址：传送门 思路：对strs的每个元素str进行排序，将排序的结果记录到map里面，其中，map的key为排序后的str，map的value为字母异位词的str的切片，最后返还一个由value为元素的二维切片就行。 func groupAnagrams(strs []string) [][]string { var ret [][]string if len(strs) == 0 { return ret } if len(strs) == 1 { ret = append(ret, strs) return ret } m := map[string][]string{} var b []byte for _, str := range strs { b = []byte(str) sort.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -16,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.f4f5b3c68bd329a47b0b72140405be443370e742697d7a4a8961651d9ab9b37f.js" integrity="sha256-9PWzxovTKaR7C3IUBAW&#43;RDNw50JpfXpKiWFlHZq5s38=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.d88878f90400d1f243a917000a0cb4a5047db4f6123bef20ef09d3752674891f.js" integrity="sha256-2Ih4&#43;QQA0fJDqRcACgy0pQR9tPYSO&#43;8g7wnTdSZ0iR8=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -960,6 +961,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#哈希">哈希</a>
       <ul>
         <li><a href="#1两数之和">1.两数之和</a></li>
+        <li><a href="#49字母异位词分组">49.字母异位词分组</a></li>
       </ul>
     </li>
     <li><a href="#双指针">双指针</a></li>
@@ -994,11 +996,12 @@ https://github.com/alex-shpak/hugo-book
   hot100
   <a class="anchor" href="#hot100">#</a>
 </h1>
-<p>  用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行。项目代码：https://github.com/yswang837/golang-leetcode</p>
+<p>  用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行，题目编号沿用leetcode的编号。项目代码：https://github.com/yswang837/golang-leetcode</p>
 <h2 id="哈希">
   哈希
   <a class="anchor" href="#%e5%93%88%e5%b8%8c">#</a>
 </h2>
+<p>  map是典型的用空间换取时间的数据结构。</p>
 <h3 id="1两数之和">
   1.两数之和
   <a class="anchor" href="#1%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c">#</a>
@@ -1006,7 +1009,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>思路1：双重循环暴力破解，时间复杂度为O(n^2)</li>
-<li>思路2：一次遍历，把num作为map的key，index作为map的value，可以O(n)时间复杂度解题，map是典型的用空间换取时间的数据结构。本题代码用思路2。</li>
+<li>思路2：一次遍历，一边遍历，一边维护map，把num作为map的key，index作为map的value，可以O(n)时间复杂度解题。本题代码用思路2。</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">twoSum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ret</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}
@@ -1020,6 +1023,39 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">i2</span>}
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">val</span>] = <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="49字母异位词分组">
+  49.字母异位词分组
+  <a class="anchor" href="#49%e5%ad%97%e6%af%8d%e5%bc%82%e4%bd%8d%e8%af%8d%e5%88%86%e7%bb%84">#</a>
+</h3>
+<ul>
+<li>地址：<a href="https://leetcode.cn/problems/group-anagrams/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
+<li>思路：对strs的每个元素str进行排序，将排序的结果记录到map里面，其中，map的key为排序后的str，map的value为字母异位词的str的切片，最后返还一个由value为元素的二维切片就行。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">groupAnagrams</span>(<span style="color:#a6e22e">strs</span> []<span style="color:#66d9ef">string</span>) [][]<span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> [][]<span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">strs</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">strs</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">strs</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>][]<span style="color:#66d9ef">string</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> []<span style="color:#66d9ef">byte</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">str</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">strs</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">b</span> = []byte(<span style="color:#a6e22e">str</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">b</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">j</span>]
+</span></span><span style="display:flex;"><span>		})
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">key</span> <span style="color:#f92672">:=</span> string(<span style="color:#a6e22e">b</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span>] = append(<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span>], <span style="color:#a6e22e">str</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">m</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">val</span>)
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
 </span></span><span style="display:flex;"><span>}
@@ -1131,6 +1167,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#哈希">哈希</a>
       <ul>
         <li><a href="#1两数之和">1.两数之和</a></li>
+        <li><a href="#49字母异位词分组">49.字母异位词分组</a></li>
       </ul>
     </li>
     <li><a href="#双指针">双指针</a></li>
