@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="hot100 # 用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行，题目编号沿用leetcode的编号。项目代码：https://github.com/yswang837/golang-leetcode
 哈希 # map是典型的用空间换取时间的数据结构。
-1.两数之和 # 地址：传送门 思路1：双重循环暴力破解，时间复杂度为O(n^2) 思路2：一次遍历，一边遍历，一边维护map，把num作为map的key，index作为map的value，可以O(n)时间复杂度解题。本题代码用思路2。 func twoSum(nums []int, target int) []int { ret := []int{-1, -1} if len(nums) == 0 { return ret } m := map[int]int{} for i, val := range nums { tmp := target - val if i2, ok := m[tmp]; ok { return []int{i, i2} } m[val] = i } return ret } 49.字母异位词分组 # 地址：传送门 思路：对strs的每个元素str进行排序，将排序的结果记录到map里面，其中，map的key为排序后的str，map的value为字母异位词的str的切片，最后返还一个由value为元素的二维切片就行。 func groupAnagrams(strs []string) [][]string { var ret [][]string if len(strs) == 0 { return ret } if len(strs) == 1 { ret = append(ret, strs) return ret } m := map[string][]string{} var b []byte for _, str := range strs { b = []byte(str) sort.">
+1.两数之和 # 地址：传送门 要求：O(N)时间复杂度 思路1：双重循环暴力破解，时间复杂度为O(n^2) 思路2：一次遍历，一边遍历，一边维护map，把num作为map的key，index作为map的value，可以O(N)时间复杂度解题。本题代码用思路2。 func twoSum(nums []int, target int) []int { ret := []int{-1, -1} if len(nums) == 0 { return ret } m := map[int]int{} for i, val := range nums { tmp := target - val if i2, ok := m[tmp]; ok { return []int{i, i2} } m[val] = i } return ret } 49.字母异位词分组 # 地址：传送门 思路：对strs的每个元素str进行排序，将排序的结果记录到map里面，其中，map的key为排序后的str，map的value为字母异位词的str的切片，最后返还一个由value为元素的二维切片就行。 func groupAnagrams(strs []string) [][]string { var ret [][]string if len(strs) == 0 { return ret } if len(strs) == 1 { ret = append(ret, strs) return ret } m := map[string][]string{} var b []byte for _, str := range strs { b = []byte(str) sort.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.4594965d6eb20c08c28b51d5b8c4f7957b384ec2a02a7e49fcfff8d946707d0d.js" integrity="sha256-RZSWXW6yDAjCi1HVuMT3lXs4TsKgKn5J/P/42UZwfQ0=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.4295f48d2552bdd9cc701cc419299a3bba2177da0508162b0fab1a6c8849df65.js" integrity="sha256-QpX0jSVSvdnMcBzEGSmaO7ohd9oFCBYrD6sabIhJ32U=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -965,7 +965,11 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#128最长连续序列">128.最长连续序列</a></li>
       </ul>
     </li>
-    <li><a href="#双指针">双指针</a></li>
+    <li><a href="#双指针">双指针</a>
+      <ul>
+        <li><a href="#283移动零">283.移动零</a></li>
+      </ul>
+    </li>
     <li><a href="#滑动窗口">滑动窗口</a></li>
     <li><a href="#子串">子串</a></li>
     <li><a href="#普通数组">普通数组</a></li>
@@ -1009,8 +1013,9 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
+<li>要求：O(N)时间复杂度</li>
 <li>思路1：双重循环暴力破解，时间复杂度为O(n^2)</li>
-<li>思路2：一次遍历，一边遍历，一边维护map，把num作为map的key，index作为map的value，可以O(n)时间复杂度解题。本题代码用思路2。</li>
+<li>思路2：一次遍历，一边遍历，一边维护map，把num作为map的key，index作为map的value，可以O(N)时间复杂度解题。本题代码用思路2。</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">twoSum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ret</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}
@@ -1066,14 +1071,70 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/longest-consecutive-sequence/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
-<li>思路：首先将nums装入map[int]bool中(方便取到的值能直接当做bool用)，找到map中，每个连续段key的起始值，向后循环，求出每段的长度，和当前长度就max，循环结束，当前的max就是最大的max。</li>
-<li>例子：m[1:true,2:true,3:true,4:true,100:true,200:true],</li>
+<li>要求：O(N)时间复杂度</li>
+<li>思路：首先将nums装入map[int]bool中(方便取到的值能直接当做bool用)，找到map中，每个连续段key的起始值，向后循环，求出每段的长度，和当前长度就max，循环结束，当前的max就是最大的max。这是O(N)时间复杂度，注意n个O(1)也是O(1),所以即使是嵌套循环，也不是O(N^2)</li>
+<li>例子：m[1:true,2:true,3:true,4:true,100:true,200:true]，每段的长度是4,1,1,两两求max就是4</li>
 </ul>
-<h2 id="双指针">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">longestConsecutive</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">bool</span>{}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>,<span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">val</span>] = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ret</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">m</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]; <span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">currentLength</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">flag</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">key</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">flag</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];<span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">flag</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>					<span style="color:#a6e22e">currentLength</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>				}<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>					<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">ret</span> = <span style="color:#a6e22e">maxInt</span>(<span style="color:#a6e22e">currentLength</span>,<span style="color:#a6e22e">ret</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxInt</span>(<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span>&gt;<span style="color:#a6e22e">j</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">j</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="双指针">
   双指针
   <a class="anchor" href="#%e5%8f%8c%e6%8c%87%e9%92%88">#</a>
 </h2>
-<h2 id="滑动窗口">
+<h3 id="283移动零">
+  283.移动零
+  <a class="anchor" href="#283%e7%a7%bb%e5%8a%a8%e9%9b%b6">#</a>
+</h3>
+<ul>
+<li>地址：<a href="https://leetcode.cn/problems/move-zeroes/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
+<li>要求：原位操作，且尽量减少操作次数</li>
+<li>思路：原位操作意味着只能通过交换元素来实现，初始的快慢指针都是0，当快指针小于len时循环，很巧妙，操作次数也很少</li>
+<li>例子：[0,1,0,3,12], [1,0,0,3,12], [1,3,0,0,12], [1,3,12,0,0]</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">moveZeroes</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">slow</span>, <span style="color:#a6e22e">fast</span>, <span style="color:#a6e22e">length</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">fast</span> &lt; <span style="color:#a6e22e">length</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">fast</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">slow</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">fast</span>] = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">fast</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">slow</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">slow</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fast</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="滑动窗口">
   滑动窗口
   <a class="anchor" href="#%e6%bb%91%e5%8a%a8%e7%aa%97%e5%8f%a3">#</a>
 </h2>
@@ -1181,7 +1242,11 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#128最长连续序列">128.最长连续序列</a></li>
       </ul>
     </li>
-    <li><a href="#双指针">双指针</a></li>
+    <li><a href="#双指针">双指针</a>
+      <ul>
+        <li><a href="#283移动零">283.移动零</a></li>
+      </ul>
+    </li>
     <li><a href="#滑动窗口">滑动窗口</a></li>
     <li><a href="#子串">子串</a></li>
     <li><a href="#普通数组">普通数组</a></li>
