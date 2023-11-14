@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.9a2955a771432d1052e65fa38cde3171820e62e792344161b4dcf22d4a962e14.js" integrity="sha256-milVp3FDLRBS5l&#43;jjN4xcYIOYueSNEFhtNzyLUqWLhQ=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.8bed747b3394496ed9edda26b36d865e17e9fa7ba57302fe68f5ba3a0a3cfb40.js" integrity="sha256-i&#43;10ezOUSW7Z7doms22GXhfp&#43;nulcwL&#43;aPW6Ogo8&#43;0A=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -969,6 +969,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#283移动零">283.移动零</a></li>
         <li><a href="#11盛最多水的容器">11.盛最多水的容器</a></li>
+        <li><a href="#15三数之和">15.三数之和</a></li>
       </ul>
     </li>
     <li><a href="#滑动窗口">滑动窗口</a></li>
@@ -979,7 +980,11 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#二叉树">二叉树</a></li>
     <li><a href="#图论">图论</a></li>
     <li><a href="#回溯">回溯</a></li>
-    <li><a href="#二分查找">二分查找</a></li>
+    <li><a href="#二分查找">二分查找</a>
+      <ul>
+        <li><a href="#33搜索旋转排序数组">33.搜索旋转排序数组</a></li>
+      </ul>
+    </li>
     <li><a href="#栈">栈</a></li>
     <li><a href="#堆">堆</a></li>
     <li><a href="#贪心算法">贪心算法</a></li>
@@ -1177,7 +1182,16 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">j</span>, <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="滑动窗口">
+</span></span></code></pre></div><h3 id="15三数之和">
+  15.三数之和
+  <a class="anchor" href="#15%e4%b8%89%e6%95%b0%e4%b9%8b%e5%92%8c">#</a>
+</h3>
+<ul>
+<li>地址：<a href="https://leetcode.cn/problems/3sum/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
+<li>要求：答案中不可以包含重复的三元组。</li>
+<li>思路：双指针，一个在左，一个在右，两两求面积最大的矩形即可。</li>
+</ul>
+<h2 id="滑动窗口">
   滑动窗口
   <a class="anchor" href="#%e6%bb%91%e5%8a%a8%e7%aa%97%e5%8f%a3">#</a>
 </h2>
@@ -1213,7 +1227,47 @@ https://github.com/alex-shpak/hugo-book
   二分查找
   <a class="anchor" href="#%e4%ba%8c%e5%88%86%e6%9f%a5%e6%89%be">#</a>
 </h2>
-<h2 id="栈">
+<h3 id="33搜索旋转排序数组">
+  33.搜索旋转排序数组
+  <a class="anchor" href="#33%e6%90%9c%e7%b4%a2%e6%97%8b%e8%bd%ac%e6%8e%92%e5%ba%8f%e6%95%b0%e7%bb%84">#</a>
+</h3>
+<ul>
+<li>地址：<a href="https://leetcode.cn/problems/search-in-rotated-sorted-array/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
+<li>要求：请设计一个时间复杂度为O(logN)的算法解决此问题。</li>
+<li>思路：将数组一分为二，其中一定有一个是有序的，另一个可能是有序，也能是部分有序。此时有序部分用二分法查找。无序部分再一分为二，其中一个一定有序，另一个可能有序，可能无序。就这样循环。判断target在不在有序数组里，只需要比较最小值和最大值即可，如果target不在顺序区间，那么便去乱序区间，在其中再分割出有序区间。如果有序区间中有target那便好说，直接二分便可获得答案</li>
+<li>例子：// [4, 5, 6, 7, 8, 9, 1, 2, 3], 3  第一次循环左边有序     // [7, 8, 9, 1, 2, 3, 4, 5, 6], 3  第一次循环右边有序</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">search</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">middle</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">middle</span> = (<span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">right</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">middle</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">middle</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 判断哪边有序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">middle</span>] {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 左边有序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">target</span> &lt; <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">middle</span>] {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 目标值在这个有序区间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">right</span> = <span style="color:#a6e22e">middle</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 目标值在这个无序区间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">left</span> = <span style="color:#a6e22e">middle</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 右边有序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">middle</span>] &lt; <span style="color:#a6e22e">target</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">right</span>] {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 目标值在这个有序区间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">left</span> = <span style="color:#a6e22e">middle</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 目标值在这个无序区间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#a6e22e">right</span> = <span style="color:#a6e22e">middle</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="栈">
   栈
   <a class="anchor" href="#%e6%a0%88">#</a>
 </h2>
@@ -1289,6 +1343,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#283移动零">283.移动零</a></li>
         <li><a href="#11盛最多水的容器">11.盛最多水的容器</a></li>
+        <li><a href="#15三数之和">15.三数之和</a></li>
       </ul>
     </li>
     <li><a href="#滑动窗口">滑动窗口</a></li>
@@ -1299,7 +1354,11 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#二叉树">二叉树</a></li>
     <li><a href="#图论">图论</a></li>
     <li><a href="#回溯">回溯</a></li>
-    <li><a href="#二分查找">二分查找</a></li>
+    <li><a href="#二分查找">二分查找</a>
+      <ul>
+        <li><a href="#33搜索旋转排序数组">33.搜索旋转排序数组</a></li>
+      </ul>
+    </li>
     <li><a href="#栈">栈</a></li>
     <li><a href="#堆">堆</a></li>
     <li><a href="#贪心算法">贪心算法</a></li>
