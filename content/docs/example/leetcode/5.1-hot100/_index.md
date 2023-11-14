@@ -1,4 +1,7 @@
-# hot100
+---
+weight: 1
+title: 5.1 hot100
+---
 
 &emsp;&emsp;用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行，题目编号沿用leetcode的编号。项目代码：https://github.com/yswang837/golang-leetcode
 
