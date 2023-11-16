@@ -179,9 +179,22 @@ func subabs(i,j int) (int,bool) {
 
 - 地址：[传送门](https://leetcode.cn/problems/3sum/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：答案中不可以包含重复的三元组。
-- 思路：双指针，一个在左，一个在右，两两求面积最大的矩形即可。
+- 思路：
+
+### 42.接雨水
+
+- 地址：[传送门](https://leetcode.cn/problems/trapping-rain-water/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
 
 ## 滑动窗口
+
+### 3.无重复字符的最长子串
+
+- 地址：[传送门](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 
 ## 子串
 
@@ -190,6 +203,29 @@ func subabs(i,j int) (int,bool) {
 ## 矩阵
 
 ## 链表
+
+### 206.反转链表
+
+- 地址：[传送门](https://leetcode.cn/problems/reverse-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：在遍历链表时，将当前节点的next指针改为指向前一个节点。由于节点没有引用其前一个节点，因此必须事先存储其前一个节点。在更改引用之前，还需要存储后一个节点。最后返回新的头引用。
+
+```go
+func reverseList(head *ListNode) *ListNode {
+    if head == nil {
+        return nil
+    }
+    var pre *ListNode
+    cur := head
+    for cur != nil {
+        next := cur.Next
+        cur.Next = pre
+        pre = cur
+        cur = next
+    }
+    return pre
+}
+```
 
 ## 二叉树
 
