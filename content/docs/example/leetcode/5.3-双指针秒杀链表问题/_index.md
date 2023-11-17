@@ -49,3 +49,26 @@ func middleNode(head *ListNode) *ListNode {
     return slow
 }
 ```
+
+### 140.训练计划II(剑指Offer)
+
+[传送门](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/description/)
+
+```go
+func trainingPlan(head *ListNode, cnt int) *ListNode {
+    if head == nil {
+        return nil
+    }
+    slow, fast := head, head
+    for i:=0; i<cnt; i++ {
+        fast = fast.Next
+    }
+    for fast != nil {
+        fast = fast.Next
+        slow = slow.Next
+    }
+    return slow
+}
+```
+
+
