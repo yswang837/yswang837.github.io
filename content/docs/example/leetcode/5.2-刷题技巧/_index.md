@@ -150,6 +150,23 @@ func moveZeroes(nums []int) {
 
 &emsp;&emsp;反转数组一个意思。
 
+[传送门](https://leetcode.cn/problems/reverse-string/)
+
+```go
+func reverseString(s []byte)  {
+    if len(s) == 0 {
+        return
+    }
+    left, right := 0, len(s) - 1
+    for left <= right {
+        s[left], s[right] = s[right], s[left]
+        left++
+        right--
+    }
+    return
+}
+```
+
 ### 例：回文串判断
 
 ### 5.最长回文子串

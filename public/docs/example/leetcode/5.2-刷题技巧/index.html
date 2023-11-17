@@ -20,7 +20,7 @@ func binarySearch(nums []int, target int) int { if len(nums) == 0 { return -1 } 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.e2316da9d5d3a19e005006c8f2fd7da1c3b2a4f66a981562d7fc34d7138f5ee7.js" integrity="sha256-4jFtqdXToZ4AUAbI8v19ocOypPZqmBVi1/w01xOPXuc=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.2902da5f090f4e6fb31dbbe97980b1e45a5883c38fda2f356aaf563747a2ee91.js" integrity="sha256-KQLaXwkPTm&#43;zHbvpeYCx5FpYg8OP2i81aq9WN0ei7pE=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.2-%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1160,7 +1160,20 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#344%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6%e4%b8%b2">#</a>
 </h3>
 <p>  反转数组一个意思。</p>
-<h3 id="例回文串判断">
+<p><a href="https://leetcode.cn/problems/reverse-string/">传送门</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseString</span>(<span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">byte</span>)  {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">s</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">left</span>], <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">right</span>] = <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">right</span>], <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">left</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">right</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="例回文串判断">
   例：回文串判断
   <a class="anchor" href="#%e4%be%8b%e5%9b%9e%e6%96%87%e4%b8%b2%e5%88%a4%e6%96%ad">#</a>
 </h3>
