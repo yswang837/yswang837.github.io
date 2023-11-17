@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>5.2 刷题技巧 on hello 小代</title>
+    <title>5.2 双指针秒杀数组问题 on hello 小代</title>
     <link>https://yswang837.github.io/docs/example/leetcode/5.2-%E5%8F%8C%E6%8C%87%E9%92%88%E7%A7%92%E6%9D%80%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/</link>
-    <description>Recent content in 5.2 刷题技巧 on hello 小代</description>
+    <description>Recent content in 5.2 双指针秒杀数组问题 on hello 小代</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://yswang837.github.io/docs/example/leetcode/5.2-%E5%8F%8C%E6%8C%87%E9%92%88%E7%A7%92%E6%9D%80%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
   </channel>

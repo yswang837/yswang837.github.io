@@ -10,17 +10,17 @@
 例：二分查找 # 二分查找是典型的左右指针，针对的场景是一切有序数组，时间复杂度为O(logN)。
 func binarySearch(nums []int, target int) int { if len(nums) == 0 { return -1 } left, middle, right := 0, 0, len(nums)-1 for left &lt;= right { middle = (left &#43; right) / 2 if nums[middle] == target { return middle } else if nums[middle] &gt; target { right = middle - 1 } else { left = middle &#43; 1 } } return -2 } 26.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="5.2 刷题技巧" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="5.2 双指针秒杀数组问题" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yswang837.github.io/docs/example/leetcode/5.2-%E5%8F%8C%E6%8C%87%E9%92%88%E7%A7%92%E6%9D%80%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/" />
 
-<title>5.2 刷题技巧 | hello 小代</title>
+<title>5.2 双指针秒杀数组问题 | hello 小代</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.ada7e7d561dea58b84580e26033fe44aefd1971c5df42e4592c95a8307860332.js" integrity="sha256-rafn1WHepYuEWA4mAz/kSu/Rlxxd9C5FkslagweGAzI=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.d3fdd907a58dc7678dd69a8441bc5c3f0dba33903506540ee09f4d9c85075c08.js" integrity="sha256-0/3ZB6WNx2eN1pqEQbxcPw26M5A1BlQO4J9NnIUHXAg=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.2-%E5%8F%8C%E6%8C%87%E9%92%88%E7%A7%92%E6%9D%80%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -924,7 +924,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/leetcode/5.2-%E5%8F%8C%E6%8C%87%E9%92%88%E7%A7%92%E6%9D%80%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/" class="active">5.2 刷题技巧</a>
+    <a href="/docs/example/leetcode/5.2-%E5%8F%8C%E6%8C%87%E9%92%88%E7%A7%92%E6%9D%80%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/" class="active">5.2 双指针秒杀数组问题</a>
   
 
           
@@ -942,7 +942,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <span>5.3 双指针秒杀链表问题</span>
+    <a href="/docs/example/leetcode/5.3-%E5%8F%8C%E6%8C%87%E9%92%88%E7%A7%92%E6%9D%80%E9%93%BE%E8%A1%A8%E9%97%AE%E9%A2%98/" class="">5.3 双指针秒杀链表问题</a>
   
 
           
@@ -999,7 +999,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>5.2 刷题技巧</strong>
+  <strong>5.2 双指针秒杀数组问题</strong>
 
   <label for="toc-control">
     
@@ -1024,11 +1024,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#283移动零">283.移动零</a></li>
         <li><a href="#344反转字符串">344.反转字符串</a></li>
         <li><a href="#5最长回文子串">5.最长回文子串</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-双指针秒杀链表问题">2. 双指针秒杀链表问题</a>
-      <ul>
-        <li><a href="#83删除排序链表中的重复元素">83.删除排序链表中的重复元素</a></li>
       </ul>
     </li>
   </ul>
@@ -1194,15 +1189,9 @@ https://github.com/alex-shpak/hugo-book
   5.最长回文子串
   <a class="anchor" href="#5%e6%9c%80%e9%95%bf%e5%9b%9e%e6%96%87%e5%ad%90%e4%b8%b2">#</a>
 </h3>
-<h2 id="2-双指针秒杀链表问题">
-  2. 双指针秒杀链表问题
-  <a class="anchor" href="#2-%e5%8f%8c%e6%8c%87%e9%92%88%e7%a7%92%e6%9d%80%e9%93%be%e8%a1%a8%e9%97%ae%e9%a2%98">#</a>
-</h2>
-<h3 id="83删除排序链表中的重复元素">
-  83.删除排序链表中的重复元素
-  <a class="anchor" href="#83%e5%88%a0%e9%99%a4%e6%8e%92%e5%ba%8f%e9%93%be%e8%a1%a8%e4%b8%ad%e7%9a%84%e9%87%8d%e5%a4%8d%e5%85%83%e7%b4%a0">#</a>
-</h3>
-</article>
+<p>  首先明确一下，回文串就是正着读和反着读都一样的字符串，判断回文串很简单，用左右指针相向而行就行了，而且不需要考虑是奇数还是偶数。但寻找最长回文子串，需要考虑奇数还是偶数，同样采取左右指针，但这个左右指针是相背而行，从中间向两端搜索。</p>
+<p><a href="https://leetcode.cn/problems/longest-palindromic-substring/description/">传送门</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div></article>
  
       
 
@@ -1252,11 +1241,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#283移动零">283.移动零</a></li>
         <li><a href="#344反转字符串">344.反转字符串</a></li>
         <li><a href="#5最长回文子串">5.最长回文子串</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-双指针秒杀链表问题">2. 双指针秒杀链表问题</a>
-      <ul>
-        <li><a href="#83删除排序链表中的重复元素">83.删除排序链表中的重复元素</a></li>
       </ul>
     </li>
   </ul>
