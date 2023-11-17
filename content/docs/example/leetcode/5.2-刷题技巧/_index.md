@@ -39,9 +39,62 @@ func binarySearch(nums []int, target int) int {
 
 ### 26.删除有序数组中的重复项
 
+[传送门](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
+
+```go
+func removeDuplicates(nums []int) int {
+    if len(nums) == 0 {
+        return 0
+    }
+    slow, fast := 0, 0
+    for fast < len(nums) {
+        if nums[slow] == nums[fast] {
+            fast++
+        }else {
+            slow++
+            nums[slow] = nums[fast]
+        }
+    }
+    return slow+1
+}
+//                    f
+// [0,0,1,1,1,2,2,3,3,4]
+//          s
+// [0,1,1,1,1,2,2,3,3,4]
+// [0,1,2,1,1,2,2,3,3,4]
+// [0,1,2,3,1,2,2,3,3,4]
+// [0,1,2,3,4,2,2,3,3,4]
+```
+
 ### 167.两数之和 II - 输入有序数组
 
 ### 27.移除元素
+
+[传送门](https://leetcode.com/problems/remove-element/)
+
+```go
+func removeElement(nums []int, val int) int {
+    if len(nums) == 0 {
+        return -1
+    }
+    slow, fast := 0, 0
+    for fast < len(nums) {
+        if nums[fast] != var {
+            nums[slow] = nums[fast]
+            slow++
+        }
+        fast++
+    }
+}
+//            f
+//        s
+// [0,1,2,2,3,0,4,2] 2
+
+// [0,1,2,2,3,0,4,2] 2
+// [0,1,3,2,3,0,4,2] 2
+// [0,1,3,0,3,0,4,2] 2
+
+```
 
 ### 283.移动零
 
