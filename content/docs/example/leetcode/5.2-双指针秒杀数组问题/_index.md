@@ -3,7 +3,7 @@ weight: 1
 title: 5.2 双指针秒杀数组问题
 ---
 
-## 1. 双指针秒杀数组问题
+## 双指针秒杀数组问题
 
 &emsp;&emsp;在数组中，下标就可以认为是指针。双指针主要分为：左右指针，快慢指针。
 
@@ -205,4 +205,56 @@ func maxLenOfString(s1, s2 string) string{
     return s2
 }
 
+```
+
+### 179.查找总价格为目标值的两个商品(剑指Offer)
+
+[传送门](https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/description/)
+
+```go
+func twoSum(price []int, target int) []int {
+    if len(price) == 0 {
+        return nil
+    }
+    left, right := 0, len(price) - 1
+    sum := 0
+    leftVal,rightVal := 0, 0
+    for left <= right {
+        leftVal,rightVal = price[left], price[right]
+        sum = leftVal + rightVal
+        if sum == target {
+            return []int{leftVal,rightVal}
+        }else if sum > target {
+            right--
+        }else {
+            left++
+        }
+    }
+    return nil
+}
+```
+
+### 6. 两数之和II-输入有序数组(剑指Offer)
+
+[传送门](https://leetcode.cn/problems/kLl5u1/description/)
+
+```go
+func twoSum(numbers []int, target int) []int {
+    if len(numbers) == 0 {
+        return nil
+    }
+    left, right := 0, len(numbers) - 1
+    sum := 0
+    for left <= right {
+        sum = numbers[left] + numbers[right]
+        if sum == target {
+            return []int{left,right}
+        }else if sum > target {
+            right--
+        }else {
+            left++
+        }
+    }
+    return nil
+}
 ```
