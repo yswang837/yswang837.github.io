@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+<meta name="description" content="1. 双指针秒杀数组问题 # 在数组中，下标就可以认为是指针。双指针主要分为：左右指针，快慢指针。
+左右指针：从数组的两个端点向中间移动，比如说二分查找及其相关的变种题；从字符串中间向两边移动，如最长回文子串。
+快慢指针：都从数组的起点开始，快指针负责探路，慢指针跟快指针配合完成题目要求，比如说去掉有序数组的重复元素，并返回新数组长度。
+没有序号的，不是leetcode题目，例题如下：
+例：二分查找 # 二分查找是典型的左右指针，针对的场景是一切有序数组，时间复杂度为O(logN)。
+func binarySearch(nums []int, target int) int { if len(nums) == 0 { return -1 } left, middle, right := 0, 0, len(nums)-1 for left &lt;= right { middle = (left &#43; right) / 2 if nums[middle] == target { return middle } else if nums[middle] &gt; target { right = middle - 1 } else { left = middle &#43; 1 } } return -2 } 26.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="5.2 刷题技巧" />
 <meta property="og:description" content="" />
@@ -15,7 +20,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.a3858f9243eee493d06e0cbce7cd5187a0c91f10bbcf212ee450c7fc1c926cc1.js" integrity="sha256-o4WPkkPu5JPQbgy8581Rh6DJHxC7zyEu5FDH/BySbME=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.377f32e020f930d24d95047bd06161b801833f817fce22ad9aa0c8194cec0e9d.js" integrity="sha256-N38y4CD5MNJNlQR70GFhuAGDP4F/ziKtmqDIGUzsDp0=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.2-%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -919,7 +924,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <span>5.2 刷题技巧</span>
+    <a href="/docs/example/leetcode/5.2-%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/" class="active">5.2 刷题技巧</a>
   
 
           
@@ -990,7 +995,27 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-双指针秒杀数组问题">1. 双指针秒杀数组问题</a>
+      <ul>
+        <li><a href="#例二分查找">例：二分查找</a></li>
+        <li><a href="#26删除有序数组中的重复项">26.删除有序数组中的重复项</a></li>
+        <li><a href="#167两数之和-ii---输入有序数组">167.两数之和 II - 输入有序数组</a></li>
+        <li><a href="#27移除元素">27.移除元素</a></li>
+        <li><a href="#283移动零">283.移动零</a></li>
+        <li><a href="#344反转字符串">344.反转字符串</a></li>
+        <li><a href="#例回文串判断">例：回文串判断</a></li>
+        <li><a href="#5最长回文子串">5.最长回文子串</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-双指针秒杀链表问题">2. 双指针秒杀链表问题</a>
+      <ul>
+        <li><a href="#83删除排序链表中的重复元素">83.删除排序链表中的重复元素</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -1001,7 +1026,74 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"></article>
+  <article class="markdown"><h2 id="1-双指针秒杀数组问题">
+  1. 双指针秒杀数组问题
+  <a class="anchor" href="#1-%e5%8f%8c%e6%8c%87%e9%92%88%e7%a7%92%e6%9d%80%e6%95%b0%e7%bb%84%e9%97%ae%e9%a2%98">#</a>
+</h2>
+<p>  在数组中，下标就可以认为是指针。双指针主要分为：左右指针，快慢指针。</p>
+<p>  左右指针：从数组的两个端点向中间移动，比如说二分查找及其相关的变种题；从字符串中间向两边移动，如最长回文子串。</p>
+<p>  快慢指针：都从数组的起点开始，快指针负责探路，慢指针跟快指针配合完成题目要求，比如说去掉有序数组的重复元素，并返回新数组长度。</p>
+<p>  没有序号的，不是leetcode题目，例题如下：</p>
+<h3 id="例二分查找">
+  例：二分查找
+  <a class="anchor" href="#%e4%be%8b%e4%ba%8c%e5%88%86%e6%9f%a5%e6%89%be">#</a>
+</h3>
+<p>  二分查找是典型的左右指针，针对的场景是一切有序数组，时间复杂度为O(logN)。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">binarySearch</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">middle</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">middle</span> = (<span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">right</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">middle</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">middle</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">middle</span>] &gt; <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">right</span> = <span style="color:#a6e22e">middle</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">left</span> = <span style="color:#a6e22e">middle</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="26删除有序数组中的重复项">
+  26.删除有序数组中的重复项
+  <a class="anchor" href="#26%e5%88%a0%e9%99%a4%e6%9c%89%e5%ba%8f%e6%95%b0%e7%bb%84%e4%b8%ad%e7%9a%84%e9%87%8d%e5%a4%8d%e9%a1%b9">#</a>
+</h3>
+<h3 id="167两数之和-ii---输入有序数组">
+  167.两数之和 II - 输入有序数组
+  <a class="anchor" href="#167%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c-ii---%e8%be%93%e5%85%a5%e6%9c%89%e5%ba%8f%e6%95%b0%e7%bb%84">#</a>
+</h3>
+<h3 id="27移除元素">
+  27.移除元素
+  <a class="anchor" href="#27%e7%a7%bb%e9%99%a4%e5%85%83%e7%b4%a0">#</a>
+</h3>
+<h3 id="283移动零">
+  283.移动零
+  <a class="anchor" href="#283%e7%a7%bb%e5%8a%a8%e9%9b%b6">#</a>
+</h3>
+<h3 id="344反转字符串">
+  344.反转字符串
+  <a class="anchor" href="#344%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6%e4%b8%b2">#</a>
+</h3>
+<p>  反转数组一个意思。</p>
+<h3 id="例回文串判断">
+  例：回文串判断
+  <a class="anchor" href="#%e4%be%8b%e5%9b%9e%e6%96%87%e4%b8%b2%e5%88%a4%e6%96%ad">#</a>
+</h3>
+<h3 id="5最长回文子串">
+  5.最长回文子串
+  <a class="anchor" href="#5%e6%9c%80%e9%95%bf%e5%9b%9e%e6%96%87%e5%ad%90%e4%b8%b2">#</a>
+</h3>
+<h2 id="2-双指针秒杀链表问题">
+  2. 双指针秒杀链表问题
+  <a class="anchor" href="#2-%e5%8f%8c%e6%8c%87%e9%92%88%e7%a7%92%e6%9d%80%e9%93%be%e8%a1%a8%e9%97%ae%e9%a2%98">#</a>
+</h2>
+<h3 id="83删除排序链表中的重复元素">
+  83.删除排序链表中的重复元素
+  <a class="anchor" href="#83%e5%88%a0%e9%99%a4%e6%8e%92%e5%ba%8f%e9%93%be%e8%a1%a8%e4%b8%ad%e7%9a%84%e9%87%8d%e5%a4%8d%e5%85%83%e7%b4%a0">#</a>
+</h3>
+</article>
  
       
 
@@ -1026,6 +1118,10 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -1036,7 +1132,27 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-双指针秒杀数组问题">1. 双指针秒杀数组问题</a>
+      <ul>
+        <li><a href="#例二分查找">例：二分查找</a></li>
+        <li><a href="#26删除有序数组中的重复项">26.删除有序数组中的重复项</a></li>
+        <li><a href="#167两数之和-ii---输入有序数组">167.两数之和 II - 输入有序数组</a></li>
+        <li><a href="#27移除元素">27.移除元素</a></li>
+        <li><a href="#283移动零">283.移动零</a></li>
+        <li><a href="#344反转字符串">344.反转字符串</a></li>
+        <li><a href="#例回文串判断">例：回文串判断</a></li>
+        <li><a href="#5最长回文子串">5.最长回文子串</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-双指针秒杀链表问题">2. 双指针秒杀链表问题</a>
+      <ul>
+        <li><a href="#83删除排序链表中的重复元素">83.删除排序链表中的重复元素</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  
