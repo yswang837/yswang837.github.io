@@ -3,7 +3,9 @@ weight: 1
 title: 5.3 双指针秒杀链表问题
 ---
 
-&emsp;&emsp;
+## 双指针秒杀链表问题
+
+&emsp;&emsp;相比于双指针秒杀数组问题来说，双指针秒杀链表问题更有技巧性。比如说，经常会定义虚拟头结点dummy，因为可能会涉及到删除head节点这类题目。
 
 ### 83.删除排序链表中的重复元素
 
@@ -104,4 +106,38 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 //        f
 //    s
 // [a,1,2], n = 1
+```
+
+### 21.合并两个有序链表
+
+[传送门](https://leetcode.cn/problems/merge-two-sorted-lists/)
+
+```go
+func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+    if list1 == nil {
+        return list2
+    }
+    if list2 == nil {
+        return list1
+    }
+    dummy := &ListNode{-1,nil}
+    cur := dummy
+    for list1 != nil && list2 != nil {
+        if list1.Val > list2.Val {
+            cur.Next = list2
+            list2 = list2.Next
+        }else {
+            cur.Next = list1
+            list1 = list1.Next
+        }
+        cur = cur.Next
+    }
+    if list1 != nil {
+        cur.Next = list1
+    }
+    if list2 != nil {
+        cur.Next = list2
+    }
+    return dummy.Next
+}
 ```
