@@ -68,6 +68,29 @@ func removeDuplicates(nums []int) int {
 
 ### 167.两数之和 II - 输入有序数组
 
+[传送门](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
+
+```go
+func twoSum(numbers []int, target int) []int {
+    if len(numbers) == 0 {
+        return numbers
+    }
+    left, right := 0, len(numbers) - 1
+    sum := 0
+    for left <= right {
+        sum = numbers[left] + numbers[right]
+        if sum == target {
+            return []int{left+1,right+1}
+        }else if sum > target {
+            right--
+        }else {
+            left++
+        }
+    }
+    return []int{-1,-1}
+}
+```
+
 ### 27.移除元素
 
 [传送门](https://leetcode.com/problems/remove-element/)
@@ -97,6 +120,31 @@ func removeElement(nums []int, val int) int {
 ```
 
 ### 283.移动零
+
+[传送门](https://leetcode.cn/problems/move-zeroes/description/)
+
+```go
+func moveZeroes(nums []int) {
+    if len(nums) == 0 {
+        return
+    }
+    slow, fast := 0, 0
+    for fast < len(nums) {
+        if nums[fast] != 0 {
+            nums[slow], nums[fast] = nums[fast], nums[slow]
+            slow++
+        }
+        fast++
+    }
+}
+//          f
+//        s
+// [0,1,0,3,12]
+// [1,0,0,3,12]
+// [1,3,0,0,12]
+// [1,3,12,0,0]
+
+```
 
 ### 344.反转字符串
 

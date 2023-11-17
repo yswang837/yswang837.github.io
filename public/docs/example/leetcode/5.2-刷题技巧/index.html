@@ -20,7 +20,7 @@ func binarySearch(nums []int, target int) int { if len(nums) == 0 { return -1 } 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.8d675a4110803404067a06a54b47a14393206e03f4c1b90bed03900f875a07be.js" integrity="sha256-jWdaQRCANAQGegalS0ehQ5MgbgP0wbkL7QOQD4daB74=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.e2316da9d5d3a19e005006c8f2fd7da1c3b2a4f66a981562d7fc34d7138f5ee7.js" integrity="sha256-4jFtqdXToZ4AUAbI8v19ocOypPZqmBVi1/w01xOPXuc=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.2-%E5%88%B7%E9%A2%98%E6%8A%80%E5%B7%A7/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1087,7 +1087,26 @@ https://github.com/alex-shpak/hugo-book
   167.两数之和 II - 输入有序数组
   <a class="anchor" href="#167%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c-ii---%e8%be%93%e5%85%a5%e6%9c%89%e5%ba%8f%e6%95%b0%e7%bb%84">#</a>
 </h3>
-<h3 id="27移除元素">
+<p><a href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/">传送门</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">twoSum</span>(<span style="color:#a6e22e">numbers</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">numbers</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">numbers</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">numbers</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">sum</span> = <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">left</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">right</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">left</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">right</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>}
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> &gt; <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">right</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="27移除元素">
   27.移除元素
   <a class="anchor" href="#27%e7%a7%bb%e9%99%a4%e5%85%83%e7%b4%a0">#</a>
 </h3>
@@ -1116,7 +1135,27 @@ https://github.com/alex-shpak/hugo-book
   283.移动零
   <a class="anchor" href="#283%e7%a7%bb%e5%8a%a8%e9%9b%b6">#</a>
 </h3>
-<h3 id="344反转字符串">
+<p><a href="https://leetcode.cn/problems/move-zeroes/description/">传送门</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">moveZeroes</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">slow</span>, <span style="color:#a6e22e">fast</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">fast</span> &lt; len(<span style="color:#a6e22e">nums</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">fast</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">slow</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">fast</span>] = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">fast</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">slow</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">slow</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fast</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//          f
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//        s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [0,1,0,3,12]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [1,0,0,3,12]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [1,3,0,0,12]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [1,3,12,0,0]
+</span></span></span></code></pre></div><h3 id="344反转字符串">
   344.反转字符串
   <a class="anchor" href="#344%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6%e4%b8%b2">#</a>
 </h3>
