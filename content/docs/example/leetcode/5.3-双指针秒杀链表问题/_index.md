@@ -140,4 +140,21 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
     }
     return dummy.Next
 }
+// dummy,cur
+// l1: 1->2->4
+// l2: 1->3->4
+//             cur
+// l1: dummy -> 1 -> 2 -> 4
+                    cur
+// l2: dummy -> 1 -> 1 -> 3 -> 4
+                         cur
+// l1: dummy -> 1 -> 1 -> 2 -> 4
+                              cur
+// l2: dummy -> 1 -> 1 -> 2 -> 3 -> 4
+                                   cur
+// l1: dummy -> 1 -> 1 -> 2 -> 3 -> 4 // 循环终止
+                                   cur
+// l2: dummy -> 1 -> 1 -> 2 -> 3 -> 4 -> 4
+
+
 ```
