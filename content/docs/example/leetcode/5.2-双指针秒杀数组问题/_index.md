@@ -174,5 +174,35 @@ func reverseString(s []byte)  {
 [传送门](https://leetcode.cn/problems/longest-palindromic-substring/description/)
 
 ```go
+func longestPalindrome(s string) string {
+    res := ""
+    for i := 0; i < len(s); i++ {
+        // 以 s[i] 为中心的最长回文子串
+        s1 := palindrome(s, i, i)
+        // 以 s[i] 和 s[i+1] 为中心的最长回文子串
+        s2 := palindrome(s, i, i + 1)
+        res = maxLenOfString(res,s1)
+        res = maxLenOfString(res,s2)
+    }
+    return res
+}
+
+func palindrome(s string, l, r int) string {
+		if l > r {
+			return ""
+		}
+		for l >= 0 && r < len(s) && s[l] == s[r] {
+			l--
+			r++
+		}
+		return s[l+1 : r] // 本来r也要减减，但由于是左闭右开的区间，所以刚好不用
+}
+
+func maxLenOfString(s1, s2 string) string{
+    if len(s1) >= len(s2) {
+        return s1
+    }
+    return s2
+}
 
 ```
