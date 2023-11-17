@@ -31,3 +31,21 @@ func deleteDuplicates(head *ListNode) *ListNode {
 // 1 2 2 3 3
 // 1 2 3 3 3
 ```
+
+### 876.链表的中间结点
+
+[传送门](https://leetcode.cn/problems/middle-of-the-linked-list/description/)
+
+```go
+func middleNode(head *ListNode) *ListNode {
+    if head == nil {
+        return nil
+    }
+    slow, fast := head, head
+    for fast != nil && fast.Next != nil {
+        fast = fast.Next.Next
+        slow = slow.Next
+    }
+    return slow
+}
+```
