@@ -304,3 +304,29 @@ func detectCycle(head *ListNode) *ListNode {
     return slow
 }
 ```
+
+### 160.相交链表
+
+[传送门](https://leetcode.cn/problems/intersection-of-two-linked-lists/description/)
+
+```go
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+    if headA == nil || headB == nil {
+        return nil
+    }
+    curA, curB := headA, headB
+    for curA != curB {
+        if curA == nil {
+            curA = headB
+        }else {
+            curA = curA.Next
+        }
+        if curB == nil {
+            curB = headA
+        }else {
+            curB = curB.Next
+        }
+    }
+    return curA
+}
+```
