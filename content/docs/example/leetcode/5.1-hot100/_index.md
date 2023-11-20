@@ -195,7 +195,6 @@ func subabs(i,j int) (int,bool) {
 - 要求：
 - 思路：
 
-
 ## 子串
 
 ## 普通数组
