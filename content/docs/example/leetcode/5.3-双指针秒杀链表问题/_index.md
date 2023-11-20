@@ -155,6 +155,44 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 // l1: dummy -> 1 -> 1 -> 2 -> 3 -> 4 // 循环终止
                                    cur
 // l2: dummy -> 1 -> 1 -> 2 -> 3 -> 4 -> 4
+```
 
+### 86.分隔链表
 
+[传送门](https://leetcode.cn/problems/partition-list/description/)
+
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func partition(head *ListNode, x int) *ListNode {
+    if head == nil {
+        return nil
+    }
+    dummy1 := &ListNode{-1,nil}
+    dummy2 := &ListNode{-1,nil}
+    cur1 := dummy1
+    cur2 := dummy2
+
+    for head != nil {
+        if head.Val < x {
+            cur1.Next = head
+            cur1 = cur1.Next            
+        }else {
+            cur2.Next = head
+            cur2 = cur2.Next
+        }
+        // head = head.Next // 这样写最后链表可能成环。5 - > 2，当前head在5，head往下挪后，还有指针指向了2，最后将两个链表连接成一个链表时，可能会形成环。所以需要将next指针置空，下面3行，可简写为一行 // head, head.Next = head.Next, nil
+        tmp := head.Next
+        head.Next = nil
+        head = tmp
+    }
+
+    cur1.Next = dummy2.Next
+    return dummy1.Next
+}
 ```
