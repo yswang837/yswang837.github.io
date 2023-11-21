@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+<meta name="description" content=" 104.二叉树的最大深度 # 传送门
+func maxDepth(root *TreeNode) int { if root == nil { return 0 } left := maxDepth(root.Left) right := maxDepth(root.Right) if left &gt;= right { return left &#43; 1 }else { return right &#43; 1 } } ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="5.5 二叉树" />
 <meta property="og:description" content="" />
@@ -15,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.c550dcde808d2f71feda437437eb035e77ba6d9aec20ab31c2957427a4ac201d.js" integrity="sha256-xVDc3oCNL3H&#43;2kN0N&#43;sDXne6bZrsIKsxwpV0J6SsIB0=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.e6d1cff85251de5b890adf5b2561af58bfe1c10d610a1c842752748d5a9438f9.js" integrity="sha256-5tHP&#43;FJR3luJCt9bJWGvWL/hwQ1hChyEJ1J0jVqUOPk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -955,7 +956,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <span>5.4 滑动窗口</span>
+    <a href="/docs/example/leetcode/5.4-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="">5.4 滑动窗口</a>
   
 
           
@@ -973,7 +974,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <span>5.5 二叉树</span>
+    <a href="/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/" class="active">5.5 二叉树</a>
   
 
           
@@ -1044,7 +1045,15 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#104二叉树的最大深度">104.二叉树的最大深度</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -1055,7 +1064,24 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"></article>
+  <article class="markdown"><h3 id="104二叉树的最大深度">
+  104.二叉树的最大深度
+  <a class="anchor" href="#104%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%9c%80%e5%a4%a7%e6%b7%b1%e5%ba%a6">#</a>
+</h3>
+<p><a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/">传送门</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxDepth</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">left</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">maxDepth</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">maxDepth</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></article>
  
       
 
@@ -1080,6 +1106,10 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -1090,7 +1120,15 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#104二叉树的最大深度">104.二叉树的最大深度</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  
