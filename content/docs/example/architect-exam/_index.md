@@ -37,14 +37,14 @@ title: 3. 高级软考 - 系统架构师
 
 ---
 
-&emsp;&emsp;算是比较幸运，我是一把过。希望学弟学妹们都能一把过。
+&emsp;&emsp;还未揭晓。
 [![p9wfUHI.md.png](https://s1.ax1x.com/2023/05/08/p9wfUHI.md.png)](https://imgse.com/i/p9wfUHI)
 
 ## 6、备考资料
 
 ---
 
-&emsp;&emsp;笔者的资料是从机构高价买的，现低价有偿分享给大家，所有资料打包 **30元** 即可获取，微信号：**wys837**。
+&emsp;&emsp;笔者的资料是从机构高价买的，现分享给大家，微信号：**wys837**。
 
 &emsp;&emsp;资料主要有：
 
