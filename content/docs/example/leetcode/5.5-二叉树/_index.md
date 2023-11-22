@@ -8,7 +8,7 @@ title: 5.5 二叉树
 [传送门](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)
 
 ```go
-// 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想
+// 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想，未借助额外的遍历函数，不需要返回额外的遍历值，充分利用函数maxDepth本身返回的值。
 // 定义：给我一棵树，我就能返回这棵树的最大深度
 func maxDepth(root *TreeNode) int {
     if root == nil {
@@ -25,7 +25,7 @@ func maxDepth(root *TreeNode) int {
 ```
 
 ```go
-// 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想
+// 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想，借助了traverse函数，记录了额外的遍历值，如res和depth
 // 定义这个结构体就是为了避免将res和depth定义为全局遍历(全局变量会让两个测试用例的结果相互影响)
 type record struct {
 	res   int
@@ -58,3 +58,7 @@ func maxA(i, j int) int {
 	return j
 }
 ```
+
+### 104.二叉树的最大深度
+
+[传送门](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)

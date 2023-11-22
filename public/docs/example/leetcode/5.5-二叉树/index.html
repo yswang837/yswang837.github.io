@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="104.二叉树的最大深度 # 传送门
-// 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想 // 定义：给我一棵树，我就能返回这棵树的最大深度 func maxDepth(root *TreeNode) int { if root == nil { return 0 } left := maxDepth(root.Left) right := maxDepth(root.Right) if left &gt;= right { return left &#43; 1 }else { return right &#43; 1 } } // 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想 // 定义这个结构体就是为了避免将res和depth定义为全局遍历(全局变量会让两个测试用例的结果相互影响) type record struct { res int depth int } func maxDepth(root *TreeNode) int { r := &amp;record{} traverse(root, r) return r.res } func traverse(root *TreeNode, r *record) { if root == nil { return } r.">
+// 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想，未借助额外的遍历函数，不需要返回额外的遍历值，充分利用函数maxDepth本身返回的值。 // 定义：给我一棵树，我就能返回这棵树的最大深度 func maxDepth(root *TreeNode) int { if root == nil { return 0 } left := maxDepth(root.Left) right := maxDepth(root.Right) if left &gt;= right { return left &#43; 1 }else { return right &#43; 1 } } // 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想，借助了traverse函数，记录了额外的遍历值，如res和depth // 定义这个结构体就是为了避免将res和depth定义为全局遍历(全局变量会让两个测试用例的结果相互影响) type record struct { res int depth int } func maxDepth(root *TreeNode) int { r := &amp;record{} traverse(root, r) return r.res } func traverse(root *TreeNode, r *record) { if root == nil { return } r.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="5.5 二叉树" />
 <meta property="og:description" content="" />
@@ -16,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.b175b7821e14f42b6c05a0ba7f57104f3b1e2bedb2cc145eb401e2910975ef1e.js" integrity="sha256-sXW3gh4U9CtsBaC6f1cQTzseK&#43;2yzBRetAHikQl17x4=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.2f36b2fb8112cdbb4a61ffbd9c7dc6bcc726d1be57ba815b372f61953110c062.js" integrity="sha256-Lzay&#43;4ESzbtKYf&#43;9nH3GvMcm0b5XuoFbNy9hlTEQwGI=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1050,6 +1050,7 @@ https://github.com/alex-shpak/hugo-book
     <li>
       <ul>
         <li><a href="#104二叉树的最大深度">104.二叉树的最大深度</a></li>
+        <li><a href="#104二叉树的最大深度-1">104.二叉树的最大深度</a></li>
       </ul>
     </li>
   </ul>
@@ -1069,7 +1070,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#104%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%9c%80%e5%a4%a7%e6%b7%b1%e5%ba%a6">#</a>
 </h3>
 <p><a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/">传送门</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想，未借助额外的遍历函数，不需要返回额外的遍历值，充分利用函数maxDepth本身返回的值。
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 定义：给我一棵树，我就能返回这棵树的最大深度
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxDepth</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
@@ -1083,7 +1084,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想，借助了traverse函数，记录了额外的遍历值，如res和depth
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 定义这个结构体就是为了避免将res和depth定义为全局遍历(全局变量会让两个测试用例的结果相互影响)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">record</span> <span style="color:#66d9ef">struct</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">res</span>   <span style="color:#66d9ef">int</span>
@@ -1115,7 +1116,12 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">j</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></article>
+</span></span></code></pre></div><h3 id="104二叉树的最大深度-1">
+  104.二叉树的最大深度
+  <a class="anchor" href="#104%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%9c%80%e5%a4%a7%e6%b7%b1%e5%ba%a6-1">#</a>
+</h3>
+<p><a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/">传送门</a></p>
+</article>
  
       
 
@@ -1159,6 +1165,7 @@ https://github.com/alex-shpak/hugo-book
     <li>
       <ul>
         <li><a href="#104二叉树的最大深度">104.二叉树的最大深度</a></li>
+        <li><a href="#104二叉树的最大深度-1">104.二叉树的最大深度</a></li>
       </ul>
     </li>
   </ul>
