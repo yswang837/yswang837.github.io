@@ -3,23 +3,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="This page is hidden in menu # Quondam non pater est dignior ille Eurotas # Latent te facies # Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
-Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor Cum honorum Latona # O fallor in sustinui iussorum equidem.">
+<meta name="description" content="前缀和技巧适用于快速、频繁地计算一个索引区间内的元素之和。
+303.区域和检索 - 数组不可变 # 传送门">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="This page is hidden in menu # Quondam non pater est dignior ille Eurotas # Latent te facies # Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
-Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor Cum honorum Latona # O fallor in sustinui iussorum equidem." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yswang837.github.io/docs/example/hidden/" /><meta property="article:section" content="docs" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="5.3 前缀和数组" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yswang837.github.io/docs/example/leetcode/5.3-%E5%89%8D%E7%BC%80%E5%92%8C%E6%95%B0%E7%BB%84/" />
 
-
-
-<title>Hidden | hello 小代</title>
+<title>5.3 前缀和数组 | hello 小代</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
   <script defer src="/zh.search.min.3c62aa0d34daa316924528d9c046fce9285354938ffebca436de66a7010b9a0e.js" integrity="sha256-PGKqDTTaoxaSRSjZwEb86ShTVJOP/rykNt5mpwELmg4=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.3-%E5%89%8D%E7%BC%80%E5%92%8C%E6%95%B0%E7%BB%84/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -888,7 +886,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-931d8f340adf73346e40d4b227426621" class="toggle"  />
+    <input type="checkbox" id="section-931d8f340adf73346e40d4b227426621" class="toggle" checked />
     <label for="section-931d8f340adf73346e40d4b227426621" class="flex justify-between">
       <a href="/docs/example/leetcode/" class="">5. leetcode</a>
     </label>
@@ -940,7 +938,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/leetcode/5.3-%E5%89%8D%E7%BC%80%E5%92%8C%E6%95%B0%E7%BB%84/" class="">5.3 前缀和数组</a>
+    <a href="/docs/example/leetcode/5.3-%E5%89%8D%E7%BC%80%E5%92%8C%E6%95%B0%E7%BB%84/" class="active">5.3 前缀和数组</a>
   
 
           
@@ -1051,7 +1049,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Hidden</strong>
+  <strong>5.3 前缀和数组</strong>
 
   <label for="toc-control">
     
@@ -1067,9 +1065,11 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#latent-te-facies">Latent te facies</a></li>
-    <li><a href="#cum-honorum-latona">Cum honorum Latona</a></li>
-    <li><a href="#fronde-cetera-dextrae-sequens-pennis-voce-muneris">Fronde cetera dextrae sequens pennis voce muneris</a></li>
+    <li>
+      <ul>
+        <li><a href="#303区域和检索---数组不可变">303.区域和检索 - 数组不可变</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1082,63 +1082,13 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="this-page-is-hidden-in-menu">
-  This page is hidden in menu
-  <a class="anchor" href="#this-page-is-hidden-in-menu">#</a>
-</h1>
-<h1 id="quondam-non-pater-est-dignior-ille-eurotas">
-  Quondam non pater est dignior ille Eurotas
-  <a class="anchor" href="#quondam-non-pater-est-dignior-ille-eurotas">#</a>
-</h1>
-<h2 id="latent-te-facies">
-  Latent te facies
-  <a class="anchor" href="#latent-te-facies">#</a>
-</h2>
-<p>Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus,
-frementes, qui in vel. Hippotades Peleus <a href="http://gratia.net/tot-qua.php">pennas
-conscia</a> cuiquam Caeneus quas.</p>
-<ul>
-<li>Pater demittere evincitque reddunt</li>
-<li>Maxime adhuc pressit huc Danaas quid freta</li>
-<li>Soror ego</li>
-<li>Luctus linguam saxa ultroque prior Tatiumque inquit</li>
-<li>Saepe liquitur subita superata dederat Anius sudor</li>
-</ul>
-<h2 id="cum-honorum-latona">
-  Cum honorum Latona
-  <a class="anchor" href="#cum-honorum-latona">#</a>
-</h2>
-<p>O fallor <a href="http://www.spectataharundine.org/aquas-relinquit.html">in sustinui
-iussorum</a> equidem.
-Nymphae operi oris alii fronde parens dumque, in auro ait mox ingenti proxima
-iamdudum maius?</p>
-<pre><code>reality(burnDocking(apache_nanometer),
-        pad.property_data_programming.sectorBrowserPpga(dataMask, 37,
-        recycleRup));
-intellectualVaporwareUser += -5 * 4;
-traceroute_key_upnp /= lag_optical(android.smb(thyristorTftp));
-surge_host_golden = mca_compact_device(dual_dpi_opengl, 33,
-        commerce_add_ppc);
-if (lun_ipv) {
-    verticalExtranet(1, thumbnail_ttl, 3);
-    bar_graphics_jpeg(chipset - sector_xmp_beta);
-}
-</code></pre>
-<h2 id="fronde-cetera-dextrae-sequens-pennis-voce-muneris">
-  Fronde cetera dextrae sequens pennis voce muneris
-  <a class="anchor" href="#fronde-cetera-dextrae-sequens-pennis-voce-muneris">#</a>
-</h2>
-<p>Acta cretus diem restet utque; move integer, oscula non inspirat, noctisque
-scelus! Nantemque in suas vobis quamvis, et labori!</p>
-<pre><code>var runtimeDiskCompiler = home - array_ad_software;
-if (internic &gt; disk) {
-    emoticonLockCron += 37 + bps - 4;
-    wan_ansi_honeypot.cardGigaflops = artificialStorageCgi;
-    simplex -= downloadAccess;
-}
-var volumeHardeningAndroid = pixel + tftp + onProcessorUnmount;
-sector(memory(firewire + interlaced, wired));</code></pre>
-</article>
+  <article class="markdown"><p>  前缀和技巧适用于快速、频繁地计算一个索引区间内的元素之和。</p>
+<h3 id="303区域和检索---数组不可变">
+  303.区域和检索 - 数组不可变
+  <a class="anchor" href="#303%e5%8c%ba%e5%9f%9f%e5%92%8c%e6%a3%80%e7%b4%a2---%e6%95%b0%e7%bb%84%e4%b8%8d%e5%8f%af%e5%8f%98">#</a>
+</h3>
+<p><a href="https://leetcode.cn/problems/range-sum-query-immutable/description/">传送门</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div></article>
  
       
 
@@ -1179,9 +1129,11 @@ sector(memory(firewire + interlaced, wired));</code></pre>
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#latent-te-facies">Latent te facies</a></li>
-    <li><a href="#cum-honorum-latona">Cum honorum Latona</a></li>
-    <li><a href="#fronde-cetera-dextrae-sequens-pennis-voce-muneris">Fronde cetera dextrae sequens pennis voce muneris</a></li>
+    <li>
+      <ul>
+        <li><a href="#303区域和检索---数组不可变">303.区域和检索 - 数组不可变</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
