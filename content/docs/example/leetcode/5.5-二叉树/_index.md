@@ -102,3 +102,57 @@ func preorderTraversal(root *TreeNode) []int {
     return append(append(ret, left...), right...)
 }
 ```
+
+### 175.计算二叉树的深度(剑指Offer)
+
+[传送门](https://leetcode.cn/problems/er-cha-shu-de-shen-du-lcof/description/)
+
+```go
+ // 动态规划，问题分解，输入一棵树，返回这棵树的深度
+func calculateDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    left := calculateDepth(root.Left)
+    right := calculateDepth(root.Right)
+    if left >= right {
+        return left + 1
+    }else {
+        return right + 1
+    }
+}
+```
+
+### 226.翻转二叉树
+
+[传送门](https://leetcode.cn/problems/invert-binary-tree/description/)
+
+```go
+func invertTree(root *TreeNode) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    left := invertTree(root.Left)
+    right := invertTree(root.Right)
+    root.Left = right
+    root.Right = left
+    return root
+}
+```
+
+### 144.翻转二叉树(剑指Offer)
+
+[传送门](https://leetcode.cn/problems/er-cha-shu-de-jing-xiang-lcof/description/)
+
+```go
+func mirrorTree(root *TreeNode) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    left := mirrorTree(root.Left)
+    right := mirrorTree(root.Right)
+    root.Left = right
+    root.Right = left
+    return root
+}
+```
