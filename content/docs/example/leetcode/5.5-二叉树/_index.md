@@ -128,6 +128,7 @@ func calculateDepth(root *TreeNode) int {
 [传送门](https://leetcode.cn/problems/invert-binary-tree/description/)
 
 ```go
+// 动态规划，充分利用遍历函数invertTree的返回值
 func invertTree(root *TreeNode) *TreeNode {
     if root == nil {
         return nil
@@ -145,14 +146,23 @@ func invertTree(root *TreeNode) *TreeNode {
 [传送门](https://leetcode.cn/problems/er-cha-shu-de-jing-xiang-lcof/description/)
 
 ```go
+// 回溯算法，定义无返回值的traverse
 func mirrorTree(root *TreeNode) *TreeNode {
     if root == nil {
         return nil
     }
-    left := mirrorTree(root.Left)
-    right := mirrorTree(root.Right)
-    root.Left = right
-    root.Right = left
+    traverse(root)
     return root
 }
+func traverse(root *TreeNode) {
+    if root == nil {
+        return 
+    }
+    root.Left, root.Right = root.Right, root.Left
+    traverse(root.Left)
+    traverse(root.Right)
+
+    return 
+}
 ```
+
