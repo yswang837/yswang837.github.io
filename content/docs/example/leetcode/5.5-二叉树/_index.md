@@ -166,3 +166,10 @@ func traverse(root *TreeNode) {
 }
 ```
 
+### 114.二叉树展开为链表
+
+[传送门](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)
+
+```go
+
+```
