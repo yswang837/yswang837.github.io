@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>1 golang并发编程 on hello 小代</title>
+    <title>1 并发 on hello 小代</title>
     <link>https://yswang837.github.io/docs/example/golang/1-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</link>
-    <description>Recent content in 1 golang并发编程 on hello 小代</description>
+    <description>Recent content in 1 并发 on hello 小代</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://yswang837.github.io/docs/example/golang/1-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
   </channel>

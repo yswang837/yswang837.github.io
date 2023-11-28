@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" 目录 ✌ # 并发错误的一般排查思路：可通过加锁来排查。
-多线程程序在一个核的cpu上运行，就是并发。多线程程序在多个核的cpu上运行，就是并行。
-go主张通过通讯来共享内存，但也支持通过共享内存来通讯；前者的数据结构主要是channel&#43;goroutine，后者是互斥锁，读写锁&#43;goroutine
-# ">
+<meta name="description" content="目录 ✌ # 通道用例大全 # 参考链接
+希望这篇文章能够说服你接受下面的观点：
+1、使用通道进行异步和并发编程是简单和惬意的；
+2、通道技术比很多其它语言采用的其它并发方案有着更多的应用场景和更多的使用变种。
+1、将通道用做future/promise # 1.1 返回单向接收通道作为函数返回值 # package main import ( &#34;fmt&#34; &#34;math/rand&#34; &#34;time&#34; ) func main() { start := time.Now() a, b := longTask(), longTask() fmt.Println(sumOfSquare(&lt;-a, &lt;-b)) fmt.Println(time.Since(start)) } func longTask() &lt;-chan int { ret := make(chan int, 1) go func() { // 开启协程，执行时间将从6s减少为3s time.Sleep(3 * time.Second) // 模拟一个长任务 ret &lt;- rand.Intn(100) }() return ret } func sumOfSquare(i, j int) int { return i*i &#43; j*j } 1.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="1 golang并发编程" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="1 并发" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yswang837.github.io/docs/example/golang/1-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" />
 
-<title>1 golang并发编程 | hello 小代</title>
+<title>1 并发 | hello 小代</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.c64dcf203dbb5330c277adb865384c64229567a947f3c76368e91ba4cfb99d1b.js" integrity="sha256-xk3PID27UzDCd624ZThMZCKVZ6lH88djaOkbpM&#43;5nRs=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.1fa7c8a2d24cb068541680ffeba3c65a4874f3f91d8b5b68057b21962079202c.js" integrity="sha256-H6fIotJMsGhUFoD/66PGWkh08/kdi1toBXshliB5ICw=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/golang/1-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -100,7 +101,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/example/golang/1-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="active">1 golang并发编程</a>
+    <a href="/docs/example/golang/1-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="active">1 并发</a>
   
 
           
@@ -1090,7 +1091,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>1 golang并发编程</strong>
+  <strong>1 并发</strong>
 
   <label for="toc-control">
     
@@ -1107,7 +1108,21 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#目录-">目录 ✌</a></li>
-    <li><a href="#heading"></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1将通道用做futurepromise">1、将通道用做future/promise</a>
+      <ul>
+        <li><a href="#11-返回单向接收通道作为函数返回值">1.1 返回单向接收通道作为函数返回值</a></li>
+        <li><a href="#12-将单向发送通道类型用做函数实参">1.2 将单向发送通道类型用做函数实参</a></li>
+        <li><a href="#13-响应最快的协程">1.3 响应最快的协程</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-使用通道实现通知">2 使用通道实现通知</a>
+      <ul>
+        <li><a href="#21-发送一个值给通道实现单对单通知">2.1 发送一个值给通道实现单对单通知</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1125,14 +1140,147 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%e7%9b%ae%e5%bd%95-">#</a>
 </h2>
 <hr>
-<p>  并发错误的一般排查思路：可通过加锁来排查。</p>
-<p>  多线程程序在一个核的cpu上运行，就是并发。多线程程序在多个核的cpu上运行，就是并行。</p>
-<p>  go主张通过通讯来共享内存，但也支持通过共享内存来通讯；前者的数据结构主要是channel+goroutine，后者是互斥锁，读写锁+goroutine</p>
-<h2 id="heading">
-  
-  <a class="anchor" href="#heading">#</a>
+<h1 id="通道用例大全">
+  通道用例大全
+  <a class="anchor" href="#%e9%80%9a%e9%81%93%e7%94%a8%e4%be%8b%e5%a4%a7%e5%85%a8">#</a>
+</h1>
+<p>  <a href="https://www.bookstack.cn/books/golang101-1.21.a">参考链接</a></p>
+<p>  希望这篇文章能够说服你接受下面的观点：</p>
+<p>  1、使用通道进行异步和并发编程是简单和惬意的；</p>
+<p>  2、通道技术比很多其它语言采用的其它并发方案有着更多的应用场景和更多的使用变种。</p>
+<h2 id="1将通道用做futurepromise">
+  1、将通道用做future/promise
+  <a class="anchor" href="#1%e5%b0%86%e9%80%9a%e9%81%93%e7%94%a8%e5%81%9afuturepromise">#</a>
 </h2>
-</article>
+<h3 id="11-返回单向接收通道作为函数返回值">
+  1.1 返回单向接收通道作为函数返回值
+  <a class="anchor" href="#11-%e8%bf%94%e5%9b%9e%e5%8d%95%e5%90%91%e6%8e%a5%e6%94%b6%e9%80%9a%e9%81%93%e4%bd%9c%e4%b8%ba%e5%87%bd%e6%95%b0%e8%bf%94%e5%9b%9e%e5%80%bc">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math/rand&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;time&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">longTask</span>(), <span style="color:#a6e22e">longTask</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">sumOfSquare</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">a</span>, <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">b</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Since</span>(<span style="color:#a6e22e">start</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">longTask</span>() <span style="color:#f92672">&lt;-</span><span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ret</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() { <span style="color:#75715e">// 开启协程，执行时间将从6s减少为3s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>) <span style="color:#75715e">// 模拟一个长任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">ret</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>	}()
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOfSquare</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span><span style="color:#f92672">*</span><span style="color:#a6e22e">j</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="12-将单向发送通道类型用做函数实参">
+  1.2 将单向发送通道类型用做函数实参
+  <a class="anchor" href="#12-%e5%b0%86%e5%8d%95%e5%90%91%e5%8f%91%e9%80%81%e9%80%9a%e9%81%93%e7%b1%bb%e5%9e%8b%e7%94%a8%e5%81%9a%e5%87%bd%e6%95%b0%e5%ae%9e%e5%8f%82">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math/rand&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;time&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">a</span><span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">longTask</span>(<span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">longTask</span>(<span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">sumOfSquare</span>(<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">a</span>, <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">a</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Since</span>(<span style="color:#a6e22e">start</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">longTask</span>(<span style="color:#a6e22e">task</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() { <span style="color:#75715e">// 开启协程，执行时间将从6s减少为3s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>) <span style="color:#75715e">// 模拟一个长任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">task</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>	}()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumOfSquare</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span><span style="color:#f92672">*</span><span style="color:#a6e22e">j</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="13-响应最快的协程">
+  1.3 响应最快的协程
+  <a class="anchor" href="#13-%e5%93%8d%e5%ba%94%e6%9c%80%e5%bf%ab%e7%9a%84%e5%8d%8f%e7%a8%8b">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math/rand&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;time&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">source</span>(<span style="color:#a6e22e">c</span> <span style="color:#66d9ef">chan</span><span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">int32</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ra</span>, <span style="color:#a6e22e">rb</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Int31</span>(), <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#ae81ff">3</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Duration</span>(<span style="color:#a6e22e">rb</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>) <span style="color:#75715e">// 模拟不同的生产者的耗时睡眠1秒/2秒/3秒
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">c</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ra</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">startTime</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int32</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// 必须用一个缓冲通道
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; cap(<span style="color:#a6e22e">c</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">source</span>(<span style="color:#a6e22e">c</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">rnd</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c</span> <span style="color:#75715e">// 只响应了第一个协程的执行结果
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Since</span>(<span style="color:#a6e22e">startTime</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">rnd</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="2-使用通道实现通知">
+  2 使用通道实现通知
+  <a class="anchor" href="#2-%e4%bd%bf%e7%94%a8%e9%80%9a%e9%81%93%e5%ae%9e%e7%8e%b0%e9%80%9a%e7%9f%a5">#</a>
+</h2>
+<p>  通知只关心是否发生，并不关心通知的值，所以通常用不占空间的空struct。</p>
+<h3 id="21-发送一个值给通道实现单对单通知">
+  2.1 发送一个值给通道实现单对单通知
+  <a class="anchor" href="#21-%e5%8f%91%e9%80%81%e4%b8%80%e4%b8%aa%e5%80%bc%e7%bb%99%e9%80%9a%e9%81%93%e5%ae%9e%e7%8e%b0%e5%8d%95%e5%af%b9%e5%8d%95%e9%80%9a%e7%9f%a5">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math/rand&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;sort&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">values</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">32</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1024</span>) <span style="color:#75715e">// 32MB
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">values</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>())
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Exit</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;排序前....&#34;</span>, <span style="color:#a6e22e">values</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">values</span>[len(<span style="color:#a6e22e">values</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">done</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">struct</span>{}) <span style="color:#75715e">// 缓冲或者非缓冲通道都行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">values</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">j</span>]
+</span></span><span style="display:flex;"><span>		})
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">done</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">struct</span>{}{}
+</span></span><span style="display:flex;"><span>	}()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 并发做一下别的事情
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 排序完成
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">done</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;排序后....&#34;</span>, <span style="color:#a6e22e">values</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">values</span>[len(<span style="color:#a6e22e">values</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></article>
  
       
 
@@ -1174,7 +1322,21 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#目录-">目录 ✌</a></li>
-    <li><a href="#heading"></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1将通道用做futurepromise">1、将通道用做future/promise</a>
+      <ul>
+        <li><a href="#11-返回单向接收通道作为函数返回值">1.1 返回单向接收通道作为函数返回值</a></li>
+        <li><a href="#12-将单向发送通道类型用做函数实参">1.2 将单向发送通道类型用做函数实参</a></li>
+        <li><a href="#13-响应最快的协程">1.3 响应最快的协程</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-使用通道实现通知">2 使用通道实现通知</a>
+      <ul>
+        <li><a href="#21-发送一个值给通道实现单对单通知">2.1 发送一个值给通道实现单对单通知</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

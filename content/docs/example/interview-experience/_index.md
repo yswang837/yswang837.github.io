@@ -18,67 +18,55 @@ import (
 	"time"
 )
 
-type RunnerResult struct {
-	ID      int
-	Elapsed time.Duration
+type resultItem struct {
+	Id    int
+	Score time.Duration
 }
 
-type ByElapsed []RunnerResult
+type sortResult []resultItem
 
-func (a ByElapsed) Len() int           { return len(a) }
-func (a ByElapsed) Less(i, j int) bool { return a[i].Elapsed < a[j].Elapsed }
-func (a ByElapsed) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (s sortResult) Len() int {
+	return len(s)
+}
 
-func raceRunner(id int, signal chan struct{}, wg *sync.WaitGroup, results chan RunnerResult) {
-	startTime := time.Now()
-	<-signal // 等待裁判的信号
-	finishTime := time.Now()
+func (s sortResult) Less(i, j int) bool {
+	return s[i].Score < s[j].Score
+}
 
-	// 计算耗时
-	elapsed := finishTime.Sub(startTime)
-
-	// 通知比赛结果
-	result := RunnerResult{
-		ID:      id,
-		Elapsed: elapsed,
-	}
-	results <- result
-
-	wg.Done()
+func (s sortResult) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
 }
 
 func main() {
-	const runners = 10
-	signal := make(chan struct{})
-	results := make(chan RunnerResult, runners)
-	var wg sync.WaitGroup
-
-	// 启动运动员
-	for i := 1; i <= runners; i++ {
+	const runner = 10
+	wg := &sync.WaitGroup{}
+	result := make(chan resultItem, runner)
+	judge := make(chan struct{}, 1)
+	judge <- struct{}{}
+	time.Sleep(time.Second)
+	<-judge
+	for i := 0; i < runner; i++ {
 		wg.Add(1)
-		go raceRunner(i, signal, &wg, results)
+		go run(i, wg, result)
 	}
-
-	// 等待一段时间模拟裁判准备就绪
-	close(signal) // 裁判发出开始比赛的信号
-
-	// 等待所有运动员完成比赛
 	wg.Wait()
-	close(results)
-
-	var raceResults []RunnerResult
-	for res := range results {
-		raceResults = append(raceResults, res)
+	close(judge)
+	close(result)
+	var raceResult []resultItem
+	for r := range result {
+		raceResult = append(raceResult, r)
 	}
-
-	// 对结果按耗时进行排序（升序）
-	sort.Sort(ByElapsed(raceResults))
-
-	// 输出按耗时升序排列的结果
-	fmt.Println("比赛结果及耗时情况（按耗时升序）：")
-	for i, res := range raceResults {
-		fmt.Printf("第%d名是运动员%d 耗时：%v\n", i+1, res.ID, res.Elapsed)
+	sort.Sort(sortResult(raceResult))
+	for i, val := range raceResult {
+		fmt.Printf("第%d名，编号是%d,耗时%+v\n", i+1, val.Id, val.Score)
 	}
 }
+
+func run(i int, wg *sync.WaitGroup, result chan resultItem) {
+	start := time.Now()
+	result <- resultItem{i, time.Since(start)}
+	wg.Done()
+}
+
 
 ```
