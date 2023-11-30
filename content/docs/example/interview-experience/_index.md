@@ -71,8 +71,12 @@ func run(i int, wg *sync.WaitGroup, result chan resultItem) {
 
 ## 2、设计一个LRU算法(baidu)
 
-&emsp;这是leetcode的原题，[传送门](https://leetcode.cn/problems/lru-cache/description/)
+&emsp;&emsp;这是leetcode的原题，[传送门](https://leetcode.cn/problems/lru-cache/description/)
 
 ## 3、求二叉树的最大深度(baidu)
 
-&emsp;这是leetcode的原题，见[传送门](http://localhost:1313/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/)的104和175两种解法
+&emsp;&emsp;这是leetcode的原题，见[传送门](http://localhost:1313/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/)的104和175两种解法
+
+## 4、旋转搜索数组
+
+&emsp;&emsp;这是leetcode的原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#33%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84)

@@ -226,6 +226,16 @@ func reverseList(head *ListNode) *ListNode {
 }
 ```
 
+### 146.LRU缓存
+
+- 地址：[传送门](https://leetcode.cn/problems/lru-cache/)
+- 要求：get和put操作必须以O(1)的时间复杂度
+- 思路：假设缓存容量是5，则ABCADEF最终会存成FACBD，get操作需要O(1)时间复杂度，所以用map来查，put操作需要O(1)时间复杂度，并且要在头部插入，尾部删除，所以用双向链表来存
+
+```go
+
+```
+
 ## 二叉树
 
 ## 图论
