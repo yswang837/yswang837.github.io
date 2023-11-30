@@ -73,10 +73,6 @@ func run(i int, wg *sync.WaitGroup, result chan resultItem) {
 
 &emsp;这是leetcode的原题，[传送门](https://leetcode.cn/problems/lru-cache/description/)
 
-```go
-
-```
-
 ## 3、求二叉树的最大深度(baidu)
 
 &emsp;这是leetcode的原题，见[传送门](http://localhost:1313/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/)的104和175两种解法
