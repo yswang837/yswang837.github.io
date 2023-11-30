@@ -634,13 +634,204 @@ func search(nums []int, target int) int {
 
 ## 栈
 
+### 20. 有效的括号
+
+- 地址：[传送门](https://leetcode.cn/problems/valid-parentheses/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 155. 最小栈
+
+- 地址：[传送门](https://leetcode.cn/problems/min-stack/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 394. 字符串解码
+
+- 地址：[传送门](https://leetcode.cn/problems/decode-string/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 739. 每日温度
+
+- 地址：[传送门](https://leetcode.cn/problems/daily-temperatures/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 84. 柱状图中最大的矩形
+
+- 地址：[传送门](https://leetcode.cn/problems/largest-rectangle-in-histogram/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 ## 堆
+
+### 215. 数组中的第K个最大元素
+
+- 地址：[传送门](https://leetcode.cn/problems/kth-largest-element-in-an-array/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 347. 前 K 个高频元素
+
+- 地址：[传送门](https://leetcode.cn/problems/top-k-frequent-elements/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 295. 数据流的中位数
+
+- 地址：[传送门](https://leetcode.cn/problems/find-median-from-data-stream/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
 
 ## 贪心算法
 
+### 121. 买卖股票的最佳时机
+
+- 地址：[传送门](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 55. 跳跃游戏
+
+- 地址：[传送门](https://leetcode.cn/problems/jump-game/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 45. 跳跃游戏 II
+
+- 地址：[传送门](https://leetcode.cn/problems/jump-game-ii/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 763. 划分字母区间
+
+- 地址：[传送门](https://leetcode.cn/problems/partition-labels/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 ## 动态规划
+
+### 70. 爬楼梯
+
+- 地址：[传送门](https://leetcode.cn/problems/climbing-stairs/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 118. 杨辉三角
+
+- 地址：[传送门](https://leetcode.cn/problems/pascals-triangle/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 198. 打家劫舍
+
+- 地址：[传送门](https://leetcode.cn/problems/house-robber/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 279. 完全平方数
+
+- 地址：[传送门](https://leetcode.cn/problems/perfect-squares/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 322. 零钱兑换
+
+- 地址：[传送门](https://leetcode.cn/problems/coin-change/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 139. 单词拆分
+
+- 地址：[传送门](https://leetcode.cn/problems/word-break/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 300. 最长递增子序列
+
+- 地址：[传送门](https://leetcode.cn/problems/longest-increasing-subsequence/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 152. 乘积最大子数组
+
+- 地址：[传送门](https://leetcode.cn/problems/maximum-product-subarray/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 416. 分割等和子集
+
+- 地址：[传送门](https://leetcode.cn/problems/partition-equal-subset-sum/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 32. 最长有效括号
+
+- 地址：[传送门](https://leetcode.cn/problems/longest-valid-parentheses/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
 
 ## 多维动态规划
 
+### 62. 不同路径
+
+- 地址：[传送门](https://leetcode.cn/problems/unique-paths/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 64. 最小路径和
+
+- 地址：[传送门](https://leetcode.cn/problems/minimum-path-sum/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 5. 最长回文子串
+
+- 地址：[传送门](https://leetcode.cn/problems/longest-palindromic-substring/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 1143. 最长公共子序列
+
+- 地址：[传送门](https://leetcode.cn/problems/longest-common-subsequence/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 72. 编辑距离
+
+- 地址：[传送门](https://leetcode.cn/problems/edit-distance/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 ## 技巧
 
+### 136. 只出现一次的数字
+
+- 地址：[传送门](https://leetcode.cn/problems/single-number/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 169. 多数元素
+
+- 地址：[传送门](https://leetcode.cn/problems/majority-element/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 75. 颜色分类
+
+- 地址：[传送门](https://leetcode.cn/problems/sort-colors/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 31. 下一个排列
+
+- 地址：[传送门](https://leetcode.cn/problems/next-permutation/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 287. 寻找重复数
+
+- 地址：[传送门](https://leetcode.cn/problems/find-the-duplicate-number/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
