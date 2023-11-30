@@ -195,11 +195,89 @@ func subabs(i,j int) (int,bool) {
 - 要求：
 - 思路：
 
+### 438.找到字符串中所有字母异位词
+
+- 地址：[传送门](https://leetcode.cn/problems/find-all-anagrams-in-a-string/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 ## 子串
+
+### 560.和为K的子数组
+
+- 地址：[传送门](https://leetcode.cn/problems/subarray-sum-equals-k/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 239.滑动窗口最大值
+
+- 地址：[传送门](https://leetcode.cn/problems/sliding-window-maximum/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 76.最小覆盖子串
+
+- 地址：[传送门](https://leetcode.cn/problems/minimum-window-substring/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
 
 ## 普通数组
 
+### 53.最大子数组和
+
+- 地址：[传送门](https://leetcode.cn/problems/maximum-subarray/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 56.合并区间
+
+- 地址：[传送门](https://leetcode.cn/problems/merge-intervals/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 189.轮转数组
+
+- 地址：[传送门](https://leetcode.cn/problems/rotate-array/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 238.除自身以外数组的乘积
+
+- 地址：[传送门](https://leetcode.cn/problems/product-of-array-except-self/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 41.缺失的第一个正数
+
+- 地址：[传送门](https://leetcode.cn/problems/first-missing-positive/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 ## 矩阵
+
+### 73.矩阵置零
+
+- 地址：[传送门](https://leetcode.cn/problems/set-matrix-zeroes/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 54.螺旋矩阵
+
+- 地址：[传送门](https://leetcode.cn/problems/spiral-matrix/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 48.旋转图像
+
+- 地址：[传送门](https://leetcode.cn/problems/rotate-image/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 240.搜索二维矩阵II
+
+- 地址：[传送门](https://leetcode.cn/problems/search-a-2d-matrix-ii/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
 
 ## 链表
 
