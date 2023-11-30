@@ -790,7 +790,41 @@ func search(nums []int, target int) int {
 
 - 地址：[传送门](https://leetcode.cn/problems/longest-palindromic-substring/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：
+- 思路：首先明确一下，回文串就是正着读和反着读都一样的字符串，判断回文串很简单，用左右指针相向而行就行了，而且不需要考虑是奇数还是偶数。但寻找最长回文子串，需要考虑奇数还是偶数，同样采取左右指针，但这个左右指针是相背而行，从中间向两端搜索。
+
+```go
+func longestPalindrome(s string) string {
+    res := ""
+    for i := 0; i < len(s); i++ {
+        // 以 s[i] 为中心的最长回文子串
+        s1 := palindrome(s, i, i)
+        // 以 s[i] 和 s[i+1] 为中心的最长回文子串
+        s2 := palindrome(s, i, i + 1)
+        res = maxLenOfString(res,s1)
+        res = maxLenOfString(res,s2)
+    }
+    return res
+}
+
+func palindrome(s string, l, r int) string {
+		if l > r {
+			return ""
+		}
+		for l >= 0 && r < len(s) && s[l] == s[r] {
+			l--
+			r++
+		}
+		return s[l+1 : r] // 本来r也要减减，但由于是左闭右开的区间，所以刚好不用
+}
+
+func maxLenOfString(s1, s2 string) string{
+    if len(s1) >= len(s2) {
+        return s1
+    }
+    return s2
+}
+
+```
 
 ### 1143. 最长公共子序列
 

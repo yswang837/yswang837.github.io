@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.884264306af78516b9517dad48ae29379f50c175794c91dd7ae9d6d14e6bf6ca.js" integrity="sha256-iEJkMGr3hRa5UX2tSK4pN59QwXV5TJHdeunW0U5r9so=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.528f0fe51d4f6957f34c4e3499e5daa998c2808195c0cc1e8a4b69c7d5084c57.js" integrity="sha256-Uo8P5R1PaVfzTE40meXaqZjCgIGVwMweiktpx9UITFc=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -2379,9 +2379,39 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/longest-palindromic-substring/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：</li>
-<li>思路：</li>
+<li>思路：首先明确一下，回文串就是正着读和反着读都一样的字符串，判断回文串很简单，用左右指针相向而行就行了，而且不需要考虑是奇数还是偶数。但寻找最长回文子串，需要考虑奇数还是偶数，同样采取左右指针，但这个左右指针是相背而行，从中间向两端搜索。</li>
 </ul>
-<h3 id="1143-最长公共子序列">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">longestPalindrome</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">s</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 以 s[i] 为中心的最长回文子串
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">s1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">palindrome</span>(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 以 s[i] 和 s[i+1] 为中心的最长回文子串
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">s2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">palindrome</span>(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">res</span> = <span style="color:#a6e22e">maxLenOfString</span>(<span style="color:#a6e22e">res</span>,<span style="color:#a6e22e">s1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">res</span> = <span style="color:#a6e22e">maxLenOfString</span>(<span style="color:#a6e22e">res</span>,<span style="color:#a6e22e">s2</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">palindrome</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">r</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l</span> &gt; <span style="color:#a6e22e">r</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">r</span> &lt; len(<span style="color:#a6e22e">s</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">l</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">r</span>] {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">l</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">r</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">l</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> : <span style="color:#a6e22e">r</span>] <span style="color:#75715e">// 本来r也要减减，但由于是左闭右开的区间，所以刚好不用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maxLenOfString</span>(<span style="color:#a6e22e">s1</span>, <span style="color:#a6e22e">s2</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s1</span>) <span style="color:#f92672">&gt;=</span> len(<span style="color:#a6e22e">s2</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s1</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s2</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="1143-最长公共子序列">
   1143. 最长公共子序列
   <a class="anchor" href="#1143-%e6%9c%80%e9%95%bf%e5%85%ac%e5%85%b1%e5%ad%90%e5%ba%8f%e5%88%97">#</a>
 </h3>

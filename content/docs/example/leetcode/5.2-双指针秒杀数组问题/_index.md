@@ -121,36 +121,11 @@ func removeElement(nums []int, val int) int {
 
 ### 283.移动零
 
-[传送门](https://leetcode.cn/problems/move-zeroes/description/)
-
-```go
-func moveZeroes(nums []int) {
-    if len(nums) == 0 {
-        return
-    }
-    slow, fast := 0, 0
-    for fast < len(nums) {
-        if nums[fast] != 0 {
-            nums[slow], nums[fast] = nums[fast], nums[slow]
-            slow++
-        }
-        fast++
-    }
-}
-//          f
-//        s
-// [0,1,0,3,12]
-// [1,0,0,3,12]
-// [1,3,0,0,12]
-// [1,3,12,0,0]
-
-```
+[传送门](http://localhost:1313/docs/example/leetcode/5.1-hot100/#283%E7%A7%BB%E5%8A%A8%E9%9B%B6)
 
 ### 344.反转字符串
 
-&emsp;&emsp;反转数组一个意思。
-
-[传送门](https://leetcode.cn/problems/reverse-string/)
+&emsp;&emsp;反转数组一个意思。[传送门](https://leetcode.cn/problems/reverse-string/)
 
 ```go
 func reverseString(s []byte)  {
@@ -169,43 +144,7 @@ func reverseString(s []byte)  {
 
 ### 5.最长回文子串
 
-&emsp;&emsp;首先明确一下，回文串就是正着读和反着读都一样的字符串，判断回文串很简单，用左右指针相向而行就行了，而且不需要考虑是奇数还是偶数。但寻找最长回文子串，需要考虑奇数还是偶数，同样采取左右指针，但这个左右指针是相背而行，从中间向两端搜索。
-
-[传送门](https://leetcode.cn/problems/longest-palindromic-substring/description/)
-
-```go
-func longestPalindrome(s string) string {
-    res := ""
-    for i := 0; i < len(s); i++ {
-        // 以 s[i] 为中心的最长回文子串
-        s1 := palindrome(s, i, i)
-        // 以 s[i] 和 s[i+1] 为中心的最长回文子串
-        s2 := palindrome(s, i, i + 1)
-        res = maxLenOfString(res,s1)
-        res = maxLenOfString(res,s2)
-    }
-    return res
-}
-
-func palindrome(s string, l, r int) string {
-		if l > r {
-			return ""
-		}
-		for l >= 0 && r < len(s) && s[l] == s[r] {
-			l--
-			r++
-		}
-		return s[l+1 : r] // 本来r也要减减，但由于是左闭右开的区间，所以刚好不用
-}
-
-func maxLenOfString(s1, s2 string) string{
-    if len(s1) >= len(s2) {
-        return s1
-    }
-    return s2
-}
-
-```
+[传送门](http://localhost:1313/docs/example/leetcode/5.1-hot100/#5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2)
 
 ### 179.查找总价格为目标值的两个商品(剑指Offer)
 
@@ -259,4 +198,3 @@ func twoSum(numbers []int, target int) []int {
 }
 ```
 
-### LCR179.查找总价格为目标值的两个商品
