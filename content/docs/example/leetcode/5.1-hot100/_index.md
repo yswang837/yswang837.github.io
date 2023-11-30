@@ -486,9 +486,99 @@ func reverseList(head *ListNode) *ListNode {
 
 ## 图论
 
+### 200. 岛屿数量
+
+- 地址：[传送门](https://leetcode.cn/problems/number-of-islands/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 994. 腐烂的橘子
+
+- 地址：[传送门](https://leetcode.cn/problems/rotting-oranges/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 207. 课程表
+
+- 地址：[传送门](https://leetcode.cn/problems/course-schedule/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 208. 实现 Trie (前缀树)
+
+- 地址：[传送门](https://leetcode.cn/problems/implement-trie-prefix-tree/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 ## 回溯
 
+### 46. 全排列
+
+- 地址：[传送门](https://leetcode.cn/problems/permutations/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 78. 子集
+
+- 地址：[传送门](https://leetcode.cn/problems/subsets/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 17. 电话号码的字母组合
+
+- 地址：[传送门](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 39. 组合总和
+
+- 地址：[传送门](https://leetcode.cn/problems/combination-sum/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 22. 括号生成
+
+- 地址：[传送门](https://leetcode.cn/problems/generate-parentheses/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 79. 单词搜索
+
+- 地址：[传送门](https://leetcode.cn/problems/word-search/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 131. 分割回文串
+
+- 地址：[传送门](https://leetcode.cn/problems/palindrome-partitioning/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 51. N 皇后
+
+- 地址：[传送门](https://leetcode.cn/problems/n-queens/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 ## 二分查找
+
+### 35. 搜索插入位置
+
+- 地址：[传送门](https://leetcode.cn/problems/search-insert-position/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 74. 搜索二维矩阵
+
+- 地址：[传送门](https://leetcode.cn/problems/search-a-2d-matrix/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 34. 在排序数组中查找元素的第一个和最后一个位置
+
+- 地址：[传送门](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
 
 ### 33.搜索旋转排序数组
 
@@ -529,6 +619,18 @@ func search(nums []int, target int) int {
     return -1
 }
 ```
+
+### 153. 寻找旋转排序数组中的最小值
+
+- 地址：[传送门](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 4. 寻找两个正序数组的中位数
+
+- 地址：[传送门](https://leetcode.cn/problems/median-of-two-sorted-arrays/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
 
 ## 栈
 
