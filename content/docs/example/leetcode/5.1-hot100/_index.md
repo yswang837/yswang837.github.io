@@ -281,6 +281,12 @@ func subabs(i,j int) (int,bool) {
 
 ## 链表
 
+### 160. 相交链表
+
+- 地址：[传送门](https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 ### 206.反转链表
 
 - 地址：[传送门](https://leetcode.cn/problems/reverse-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
@@ -314,7 +320,169 @@ func reverseList(head *ListNode) *ListNode {
 
 ```
 
+### 160. 相交链表
+
+- 地址：[传送门](https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 234. 回文链表
+
+- 地址：[传送门](https://leetcode.cn/problems/palindrome-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 141. 环形链表
+
+- 地址：[传送门](https://leetcode.cn/problems/linked-list-cycle/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 142. 环形链表 II
+
+- 地址：[传送门](https://leetcode.cn/problems/linked-list-cycle-ii/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 21. 合并两个有序链表
+
+- 地址：[传送门](https://leetcode.cn/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 2. 两数相加
+
+- 地址：[传送门](https://leetcode.cn/problems/add-two-numbers/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 19. 删除链表的倒数第 N 个结点
+
+- 地址：[传送门](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 24. 两两交换链表中的节点
+
+- 地址：[传送门](https://leetcode.cn/problems/swap-nodes-in-pairs/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 25. K 个一组翻转链表
+
+- 地址：[传送门](https://leetcode.cn/problems/reverse-nodes-in-k-group/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 138. 随机链表的复制
+
+- 地址：[传送门](https://leetcode.cn/problems/copy-list-with-random-pointer/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 148. 排序链表
+
+- 地址：[传送门](https://leetcode.cn/problems/sort-list/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 23. 合并 K 个升序链表
+
+- 地址：[传送门](https://leetcode.cn/problems/merge-k-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
 ## 二叉树
+
+### 94. 二叉树的中序遍历
+
+- 地址：[传送门](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 104. 二叉树的最大深度
+
+- 地址：[传送门](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 226. 翻转二叉树
+
+- 地址：[传送门](https://leetcode.cn/problems/invert-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 101. 对称二叉树
+
+- 地址：[传送门](https://leetcode.cn/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 543. 二叉树的直径
+
+- 地址：[传送门](https://leetcode.cn/problems/diameter-of-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 102. 二叉树的层序遍历
+
+- 地址：[传送门](https://leetcode.cn/problems/binary-tree-level-order-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 108. 将有序数组转换为二叉搜索树
+
+- 地址：[传送门](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 98. 验证二叉搜索树
+
+- 地址：[传送门](https://leetcode.cn/problems/validate-binary-search-tree/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 230. 二叉搜索树中第K小的元素
+
+- 地址：[传送门](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 199. 二叉树的右视图
+
+- 地址：[传送门](https://leetcode.cn/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 114. 二叉树展开为链表
+
+- 地址：[传送门](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 105. 从前序与中序遍历序列构造二叉树
+
+- 地址：[传送门](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 437. 路径总和 III
+
+- 地址：[传送门](https://leetcode.cn/problems/path-sum-iii/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 236. 二叉树的最近公共祖先
+
+- 地址：[传送门](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
+
+### 124. 二叉树中的最大路径和
+
+- 地址：[传送门](https://leetcode.cn/problems/binary-tree-maximum-path-sum/description/?envType=study-plan-v2&envId=top-100-liked)
+- 要求：
+- 思路：
 
 ## 图论
 
