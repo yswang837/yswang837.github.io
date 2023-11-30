@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="1、运动员赛跑 # 10个运动员参加百米赛跑，裁判一声枪响后运动员出发，按成绩升序输出成绩、排名、运动员编号。考点是golang的并发
+<meta name="description" content="1、运动员赛跑(didi) # 10个运动员参加百米赛跑，裁判一声枪响后运动员出发，按成绩升序输出成绩、排名、运动员编号。考点是golang的并发
 package main import ( &#34;fmt&#34; &#34;sort&#34; &#34;sync&#34; &#34;time&#34; ) type resultItem struct { Id int Score time.Duration } type sortResult []resultItem func (s sortResult) Len() int { return len(s) } func (s sortResult) Less(i, j int) bool { return s[i].Score &lt; s[j].Score } func (s sortResult) Swap(i, j int) { s[i], s[j] = s[j], s[i] } func main() { const runner = 10 wg := &amp;sync.WaitGroup{} result := make(chan resultItem, runner) judge := make(chan struct{}, 1) judge &lt;- struct{}{} time.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="6. 面经" />
@@ -16,7 +16,7 @@ package main import ( &#34;fmt&#34; &#34;sort&#34; &#34;sync&#34; &#34;time&#34;
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.1fa7c8a2d24cb068541680ffeba3c65a4874f3f91d8b5b68057b21962079202c.js" integrity="sha256-H6fIotJMsGhUFoD/66PGWkh08/kdi1toBXshliB5ICw=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.ff4fd99f4063e987aa1219d6acdeb6a8707058d0e036fb0312ea5b5693b966fc.js" integrity="sha256-/0/Zn0Bj6YeqEhnWrN62qHBwWNDgNvsDEupbVpO5Zvw=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/interview-experience/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1104,7 +1104,9 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#1运动员赛跑">1、运动员赛跑</a></li>
+    <li><a href="#1运动员赛跑didi">1、运动员赛跑(didi)</a></li>
+    <li><a href="#2设计一个lru算法baidu">2、设计一个LRU算法(baidu)</a></li>
+    <li><a href="#3求二叉树的最大深度baidu">3、求二叉树的最大深度(baidu)</a></li>
   </ul>
 </nav>
 
@@ -1117,9 +1119,9 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="1运动员赛跑">
-  1、运动员赛跑
-  <a class="anchor" href="#1%e8%bf%90%e5%8a%a8%e5%91%98%e8%b5%9b%e8%b7%91">#</a>
+  <article class="markdown"><h2 id="1运动员赛跑didi">
+  1、运动员赛跑(didi)
+  <a class="anchor" href="#1%e8%bf%90%e5%8a%a8%e5%91%98%e8%b5%9b%e8%b7%91didi">#</a>
 </h2>
 <p>  10个运动员参加百米赛跑，裁判一声枪响后运动员出发，按成绩升序输出成绩、排名、运动员编号。考点是golang的并发</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -1180,7 +1182,17 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">result</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">resultItem</span>{<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Since</span>(<span style="color:#a6e22e">start</span>)}
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Done</span>()
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></article>
+</span></span></code></pre></div><h2 id="2设计一个lru算法baidu">
+  2、设计一个LRU算法(baidu)
+  <a class="anchor" href="#2%e8%ae%be%e8%ae%a1%e4%b8%80%e4%b8%aalru%e7%ae%97%e6%b3%95baidu">#</a>
+</h2>
+<p> 这是leetcode的原题，<a href="https://leetcode.cn/problems/lru-cache/description/">传送门</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h2 id="3求二叉树的最大深度baidu">
+  3、求二叉树的最大深度(baidu)
+  <a class="anchor" href="#3%e6%b1%82%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%9c%80%e5%a4%a7%e6%b7%b1%e5%ba%a6baidu">#</a>
+</h2>
+<p> 这是leetcode的原题，见<a href="http://localhost:1313/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/">传送门</a>的104和175两种解法</p>
+</article>
  
       
 
@@ -1221,7 +1233,9 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#1运动员赛跑">1、运动员赛跑</a></li>
+    <li><a href="#1运动员赛跑didi">1、运动员赛跑(didi)</a></li>
+    <li><a href="#2设计一个lru算法baidu">2、设计一个LRU算法(baidu)</a></li>
+    <li><a href="#3求二叉树的最大深度baidu">3、求二叉树的最大深度(baidu)</a></li>
   </ul>
 </nav>
 

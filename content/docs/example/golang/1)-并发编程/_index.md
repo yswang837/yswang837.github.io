@@ -115,7 +115,7 @@ func main() {
 
 ## 2 使用通道实现通知
 
-&emsp;&emsp;通知只关心是否发生，并不关心通知的值，所以通常用不占空间的空struct。
+&emsp;&emsp;通知只关心是否发生，并不关心通知的值，所以通常用不占空间的空struct。2.1和2.的这两种单对单通知方式其实并没有本质的区别。 它们都可以被概括为较快者等待较慢者发出通知。
 
 ### 2.1 发送一个值给通道实现单对单通知
 
@@ -152,3 +152,94 @@ func main() {
 }
 
 ```
+
+### 2.2 从通道接收一个值实现单对单通知
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	done := make(chan struct{})
+	go func() {
+		fmt.Printf("hello")
+		time.Sleep(time.Second) // 模拟一个工作负载
+		<-done
+	}()
+	done <- struct{}{}
+	fmt.Println(" world!")
+}
+```
+
+### 2.3 多对单和单对多通知
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func worker(id int, ready chan struct{}, done chan struct{}) {
+	<-ready
+	fmt.Printf("任务 %d 执行\n", id)
+	time.Sleep(time.Duration(id) * time.Second) //模拟一个工作负载
+	done <- struct{}{}
+}
+
+func main() {
+	ready, done := make(chan struct{}), make(chan struct{})
+	go worker(1, ready, done)
+	go worker(2, ready, done)
+	go worker(3, ready, done)
+	ready <- struct{}{}
+	ready <- struct{}{}
+	ready <- struct{}{}
+	<-done
+	<-done
+	<-done
+	fmt.Println("子协程都完成了")
+}
+
+```
+
+&emsp;&emsp;事实上，上例中展示的多对单和单对多通知实现方式在实践中用的并不多。 在实践中，我们多使用sync.WaitGroup来实现多对单通知，使用关闭一个通道的方式来实现单对多通知(生产者close这个通道，消费者们就知道生产者已经写入完毕了，消费完就算完)。
+
+### 2.4 定时通知
+
+&emsp;&emsp;当然time包内置的After更优雅。
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func timeSleep(d time.Duration) <-chan struct{} {
+	ch := make(chan struct{}, 1)
+	go func() {
+		time.Sleep(d)
+		ch <- struct{}{}
+	}()
+	return ch
+}
+
+func main() {
+	for {
+		select {
+		case <-timeSleep(time.Second):
+			fmt.Println("hello")
+		}
+	}
+}
+```
+
+## 3 将通道用作互斥锁
+

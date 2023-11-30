@@ -4,7 +4,7 @@ weight: 20
 title: 6. 面经
 ---
 
-## 1、运动员赛跑
+## 1、运动员赛跑(didi)
 
 &emsp;&emsp;10个运动员参加百米赛跑，裁判一声枪响后运动员出发，按成绩升序输出成绩、排名、运动员编号。考点是golang的并发
 
@@ -67,6 +67,16 @@ func run(i int, wg *sync.WaitGroup, result chan resultItem) {
 	result <- resultItem{i, time.Since(start)}
 	wg.Done()
 }
+```
 
+## 2、设计一个LRU算法(baidu)
+
+&emsp;这是leetcode的原题，[传送门](https://leetcode.cn/problems/lru-cache/description/)
+
+```go
 
 ```
+
+## 3、求二叉树的最大深度(baidu)
+
+&emsp;这是leetcode的原题，见[传送门](http://localhost:1313/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/)的104和175两种解法
