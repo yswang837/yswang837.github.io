@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行，题目编号沿用leetcode的编号。项目代码：https://github.com/yswang837/golang-leetcode
-哈希 # map是典型的用空间换取时间的数据结构。
+*哈希 # map是典型的用空间换取时间的数据结构。
 1.两数之和 # 地址：传送门 要求：O(N)时间复杂度 思路1：双重循环暴力破解，时间复杂度为O(n^2) 思路2：一次遍历，一边遍历，一边维护map，把num作为map的key，index作为map的value，可以O(N)时间复杂度解题。本题代码用思路2。 func twoSum(nums []int, target int) []int { ret := []int{-1, -1} if len(nums) == 0 { return ret } m := map[int]int{} for i, val := range nums { tmp := target - val if i2, ok := m[tmp]; ok { return []int{i, i2} } m[val] = i } return ret } 49.字母异位词分组 # 地址：传送门 思路：对strs的每个元素str进行排序，将排序的结果记录到map里面，其中，map的key为排序后的str，map的value为字母异位词的str的切片，最后返还一个由value为元素的二维切片就行。 func groupAnagrams(strs []string) [][]string { var ret [][]string if len(strs) == 0 { return ret } if len(strs) == 1 { ret = append(ret, strs) return ret } m := map[string][]string{} var b []byte for _, str := range strs { b = []byte(str) sort.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="5.1 hot100" />
@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.f232db433c4efcf4f3180cd128890c7eca80d18aee8991ba4416412010fb45e6.js" integrity="sha256-8jLbQzxO/PTzGAzRKIkMfsqA0YruiZG6RBZBIBD7ReY=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.884264306af78516b9517dad48ae29379f50c175794c91dd7ae9d6d14e6bf6ca.js" integrity="sha256-iEJkMGr3hRa5UX2tSK4pN59QwXV5TJHdeunW0U5r9so=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1123,14 +1123,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#哈希">哈希</a>
+    <li><a href="#哈希">*哈希</a>
       <ul>
         <li><a href="#1两数之和">1.两数之和</a></li>
         <li><a href="#49字母异位词分组">49.字母异位词分组</a></li>
         <li><a href="#128最长连续序列">128.最长连续序列</a></li>
       </ul>
     </li>
-    <li><a href="#双指针">双指针</a>
+    <li><a href="#双指针">*双指针</a>
       <ul>
         <li><a href="#283移动零">283.移动零</a></li>
         <li><a href="#11盛最多水的容器">11.盛最多水的容器</a></li>
@@ -1138,20 +1138,20 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#42接雨水">42.接雨水</a></li>
       </ul>
     </li>
-    <li><a href="#滑动窗口">滑动窗口</a>
+    <li><a href="#滑动窗口">*滑动窗口</a>
       <ul>
         <li><a href="#3无重复字符的最长子串">3.无重复字符的最长子串</a></li>
         <li><a href="#438找到字符串中所有字母异位词">438.找到字符串中所有字母异位词</a></li>
       </ul>
     </li>
-    <li><a href="#子串">子串</a>
+    <li><a href="#子串">*子串</a>
       <ul>
         <li><a href="#560和为k的子数组">560.和为K的子数组</a></li>
         <li><a href="#239滑动窗口最大值">239.滑动窗口最大值</a></li>
         <li><a href="#76最小覆盖子串">76.最小覆盖子串</a></li>
       </ul>
     </li>
-    <li><a href="#普通数组">普通数组</a>
+    <li><a href="#普通数组">*普通数组</a>
       <ul>
         <li><a href="#53最大子数组和">53.最大子数组和</a></li>
         <li><a href="#56合并区间">56.合并区间</a></li>
@@ -1160,7 +1160,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#41缺失的第一个正数">41.缺失的第一个正数</a></li>
       </ul>
     </li>
-    <li><a href="#矩阵">矩阵</a>
+    <li><a href="#矩阵">*矩阵</a>
       <ul>
         <li><a href="#73矩阵置零">73.矩阵置零</a></li>
         <li><a href="#54螺旋矩阵">54.螺旋矩阵</a></li>
@@ -1168,7 +1168,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#240搜索二维矩阵ii">240.搜索二维矩阵II</a></li>
       </ul>
     </li>
-    <li><a href="#链表">链表</a>
+    <li><a href="#链表">*链表</a>
       <ul>
         <li><a href="#160-相交链表">160. 相交链表</a></li>
         <li><a href="#206反转链表">206.反转链表</a></li>
@@ -1187,7 +1187,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#23-合并-k-个升序链表">23. 合并 K 个升序链表</a></li>
       </ul>
     </li>
-    <li><a href="#二叉树">二叉树</a>
+    <li><a href="#二叉树">*二叉树</a>
       <ul>
         <li><a href="#94-二叉树的中序遍历">94. 二叉树的中序遍历</a></li>
         <li><a href="#104-二叉树的最大深度">104. 二叉树的最大深度</a></li>
@@ -1206,7 +1206,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#124-二叉树中的最大路径和">124. 二叉树中的最大路径和</a></li>
       </ul>
     </li>
-    <li><a href="#图论">图论</a>
+    <li><a href="#图论">*图论</a>
       <ul>
         <li><a href="#200-岛屿数量">200. 岛屿数量</a></li>
         <li><a href="#994-腐烂的橘子">994. 腐烂的橘子</a></li>
@@ -1214,7 +1214,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#208-实现-trie-前缀树">208. 实现 Trie (前缀树)</a></li>
       </ul>
     </li>
-    <li><a href="#回溯">回溯</a>
+    <li><a href="#回溯">*回溯</a>
       <ul>
         <li><a href="#46-全排列">46. 全排列</a></li>
         <li><a href="#78-子集">78. 子集</a></li>
@@ -1226,7 +1226,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#51-n-皇后">51. N 皇后</a></li>
       </ul>
     </li>
-    <li><a href="#二分查找">二分查找</a>
+    <li><a href="#二分查找">*二分查找</a>
       <ul>
         <li><a href="#35-搜索插入位置">35. 搜索插入位置</a></li>
         <li><a href="#74-搜索二维矩阵">74. 搜索二维矩阵</a></li>
@@ -1236,7 +1236,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#4-寻找两个正序数组的中位数">4. 寻找两个正序数组的中位数</a></li>
       </ul>
     </li>
-    <li><a href="#栈">栈</a>
+    <li><a href="#栈">*栈</a>
       <ul>
         <li><a href="#20-有效的括号">20. 有效的括号</a></li>
         <li><a href="#155-最小栈">155. 最小栈</a></li>
@@ -1245,14 +1245,14 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#84-柱状图中最大的矩形">84. 柱状图中最大的矩形</a></li>
       </ul>
     </li>
-    <li><a href="#堆">堆</a>
+    <li><a href="#堆">*堆</a>
       <ul>
         <li><a href="#215-数组中的第k个最大元素">215. 数组中的第K个最大元素</a></li>
         <li><a href="#347-前-k-个高频元素">347. 前 K 个高频元素</a></li>
         <li><a href="#295-数据流的中位数">295. 数据流的中位数</a></li>
       </ul>
     </li>
-    <li><a href="#贪心算法">贪心算法</a>
+    <li><a href="#贪心算法">*贪心算法</a>
       <ul>
         <li><a href="#121-买卖股票的最佳时机">121. 买卖股票的最佳时机</a></li>
         <li><a href="#55-跳跃游戏">55. 跳跃游戏</a></li>
@@ -1260,7 +1260,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#763-划分字母区间">763. 划分字母区间</a></li>
       </ul>
     </li>
-    <li><a href="#动态规划">动态规划</a>
+    <li><a href="#动态规划">*动态规划</a>
       <ul>
         <li><a href="#70-爬楼梯">70. 爬楼梯</a></li>
         <li><a href="#118-杨辉三角">118. 杨辉三角</a></li>
@@ -1274,7 +1274,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#32-最长有效括号">32. 最长有效括号</a></li>
       </ul>
     </li>
-    <li><a href="#多维动态规划">多维动态规划</a>
+    <li><a href="#多维动态规划">*多维动态规划</a>
       <ul>
         <li><a href="#62-不同路径">62. 不同路径</a></li>
         <li><a href="#64-最小路径和">64. 最小路径和</a></li>
@@ -1283,7 +1283,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#72-编辑距离">72. 编辑距离</a></li>
       </ul>
     </li>
-    <li><a href="#技巧">技巧</a>
+    <li><a href="#技巧">*技巧</a>
       <ul>
         <li><a href="#136-只出现一次的数字">136. 只出现一次的数字</a></li>
         <li><a href="#169-多数元素">169. 多数元素</a></li>
@@ -1306,7 +1306,7 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown"><p>  用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行，题目编号沿用leetcode的编号。项目代码：https://github.com/yswang837/golang-leetcode</p>
 <h2 id="哈希">
-  哈希
+  *哈希
   <a class="anchor" href="#%e5%93%88%e5%b8%8c">#</a>
 </h2>
 <p>  map是典型的用空间换取时间的数据结构。</p>
@@ -1414,7 +1414,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">j</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="双指针">
-  双指针
+  *双指针
   <a class="anchor" href="#%e5%8f%8c%e6%8c%87%e9%92%88">#</a>
 </h2>
 <h3 id="283移动零">
@@ -1498,7 +1498,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="滑动窗口">
-  滑动窗口
+  *滑动窗口
   <a class="anchor" href="#%e6%bb%91%e5%8a%a8%e7%aa%97%e5%8f%a3">#</a>
 </h2>
 <h3 id="3无重复字符的最长子串">
@@ -1520,7 +1520,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="子串">
-  子串
+  *子串
   <a class="anchor" href="#%e5%ad%90%e4%b8%b2">#</a>
 </h2>
 <h3 id="560和为k的子数组">
@@ -1551,7 +1551,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="普通数组">
-  普通数组
+  *普通数组
   <a class="anchor" href="#%e6%99%ae%e9%80%9a%e6%95%b0%e7%bb%84">#</a>
 </h2>
 <h3 id="53最大子数组和">
@@ -1600,7 +1600,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="矩阵">
-  矩阵
+  *矩阵
   <a class="anchor" href="#%e7%9f%a9%e9%98%b5">#</a>
 </h2>
 <h3 id="73矩阵置零">
@@ -1640,7 +1640,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="链表">
-  链表
+  *链表
   <a class="anchor" href="#%e9%93%be%e8%a1%a8">#</a>
 </h2>
 <h3 id="160-相交链表">
@@ -1793,7 +1793,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="二叉树">
-  二叉树
+  *二叉树
   <a class="anchor" href="#%e4%ba%8c%e5%8f%89%e6%a0%91">#</a>
 </h2>
 <h3 id="94-二叉树的中序遍历">
@@ -1932,7 +1932,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="图论">
-  图论
+  *图论
   <a class="anchor" href="#%e5%9b%be%e8%ae%ba">#</a>
 </h2>
 <h3 id="200-岛屿数量">
@@ -1972,7 +1972,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="回溯">
-  回溯
+  *回溯
   <a class="anchor" href="#%e5%9b%9e%e6%ba%af">#</a>
 </h2>
 <h3 id="46-全排列">
@@ -2048,7 +2048,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="二分查找">
-  二分查找
+  *二分查找
   <a class="anchor" href="#%e4%ba%8c%e5%88%86%e6%9f%a5%e6%89%be">#</a>
 </h2>
 <h3 id="35-搜索插入位置">
@@ -2137,7 +2137,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="栈">
-  栈
+  *栈
   <a class="anchor" href="#%e6%a0%88">#</a>
 </h2>
 <h3 id="20-有效的括号">
@@ -2186,7 +2186,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="堆">
-  堆
+  *堆
   <a class="anchor" href="#%e5%a0%86">#</a>
 </h2>
 <h3 id="215-数组中的第k个最大元素">
@@ -2217,7 +2217,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="贪心算法">
-  贪心算法
+  *贪心算法
   <a class="anchor" href="#%e8%b4%aa%e5%bf%83%e7%ae%97%e6%b3%95">#</a>
 </h2>
 <h3 id="121-买卖股票的最佳时机">
@@ -2257,7 +2257,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="动态规划">
-  动态规划
+  *动态规划
   <a class="anchor" href="#%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92">#</a>
 </h2>
 <h3 id="70-爬楼梯">
@@ -2351,7 +2351,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="多维动态规划">
-  多维动态规划
+  *多维动态规划
   <a class="anchor" href="#%e5%a4%9a%e7%bb%b4%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92">#</a>
 </h2>
 <h3 id="62-不同路径">
@@ -2400,7 +2400,7 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：</li>
 </ul>
 <h2 id="技巧">
-  技巧
+  *技巧
   <a class="anchor" href="#%e6%8a%80%e5%b7%a7">#</a>
 </h2>
 <h3 id="136-只出现一次的数字">
@@ -2489,14 +2489,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#哈希">哈希</a>
+    <li><a href="#哈希">*哈希</a>
       <ul>
         <li><a href="#1两数之和">1.两数之和</a></li>
         <li><a href="#49字母异位词分组">49.字母异位词分组</a></li>
         <li><a href="#128最长连续序列">128.最长连续序列</a></li>
       </ul>
     </li>
-    <li><a href="#双指针">双指针</a>
+    <li><a href="#双指针">*双指针</a>
       <ul>
         <li><a href="#283移动零">283.移动零</a></li>
         <li><a href="#11盛最多水的容器">11.盛最多水的容器</a></li>
@@ -2504,20 +2504,20 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#42接雨水">42.接雨水</a></li>
       </ul>
     </li>
-    <li><a href="#滑动窗口">滑动窗口</a>
+    <li><a href="#滑动窗口">*滑动窗口</a>
       <ul>
         <li><a href="#3无重复字符的最长子串">3.无重复字符的最长子串</a></li>
         <li><a href="#438找到字符串中所有字母异位词">438.找到字符串中所有字母异位词</a></li>
       </ul>
     </li>
-    <li><a href="#子串">子串</a>
+    <li><a href="#子串">*子串</a>
       <ul>
         <li><a href="#560和为k的子数组">560.和为K的子数组</a></li>
         <li><a href="#239滑动窗口最大值">239.滑动窗口最大值</a></li>
         <li><a href="#76最小覆盖子串">76.最小覆盖子串</a></li>
       </ul>
     </li>
-    <li><a href="#普通数组">普通数组</a>
+    <li><a href="#普通数组">*普通数组</a>
       <ul>
         <li><a href="#53最大子数组和">53.最大子数组和</a></li>
         <li><a href="#56合并区间">56.合并区间</a></li>
@@ -2526,7 +2526,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#41缺失的第一个正数">41.缺失的第一个正数</a></li>
       </ul>
     </li>
-    <li><a href="#矩阵">矩阵</a>
+    <li><a href="#矩阵">*矩阵</a>
       <ul>
         <li><a href="#73矩阵置零">73.矩阵置零</a></li>
         <li><a href="#54螺旋矩阵">54.螺旋矩阵</a></li>
@@ -2534,7 +2534,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#240搜索二维矩阵ii">240.搜索二维矩阵II</a></li>
       </ul>
     </li>
-    <li><a href="#链表">链表</a>
+    <li><a href="#链表">*链表</a>
       <ul>
         <li><a href="#160-相交链表">160. 相交链表</a></li>
         <li><a href="#206反转链表">206.反转链表</a></li>
@@ -2553,7 +2553,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#23-合并-k-个升序链表">23. 合并 K 个升序链表</a></li>
       </ul>
     </li>
-    <li><a href="#二叉树">二叉树</a>
+    <li><a href="#二叉树">*二叉树</a>
       <ul>
         <li><a href="#94-二叉树的中序遍历">94. 二叉树的中序遍历</a></li>
         <li><a href="#104-二叉树的最大深度">104. 二叉树的最大深度</a></li>
@@ -2572,7 +2572,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#124-二叉树中的最大路径和">124. 二叉树中的最大路径和</a></li>
       </ul>
     </li>
-    <li><a href="#图论">图论</a>
+    <li><a href="#图论">*图论</a>
       <ul>
         <li><a href="#200-岛屿数量">200. 岛屿数量</a></li>
         <li><a href="#994-腐烂的橘子">994. 腐烂的橘子</a></li>
@@ -2580,7 +2580,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#208-实现-trie-前缀树">208. 实现 Trie (前缀树)</a></li>
       </ul>
     </li>
-    <li><a href="#回溯">回溯</a>
+    <li><a href="#回溯">*回溯</a>
       <ul>
         <li><a href="#46-全排列">46. 全排列</a></li>
         <li><a href="#78-子集">78. 子集</a></li>
@@ -2592,7 +2592,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#51-n-皇后">51. N 皇后</a></li>
       </ul>
     </li>
-    <li><a href="#二分查找">二分查找</a>
+    <li><a href="#二分查找">*二分查找</a>
       <ul>
         <li><a href="#35-搜索插入位置">35. 搜索插入位置</a></li>
         <li><a href="#74-搜索二维矩阵">74. 搜索二维矩阵</a></li>
@@ -2602,7 +2602,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#4-寻找两个正序数组的中位数">4. 寻找两个正序数组的中位数</a></li>
       </ul>
     </li>
-    <li><a href="#栈">栈</a>
+    <li><a href="#栈">*栈</a>
       <ul>
         <li><a href="#20-有效的括号">20. 有效的括号</a></li>
         <li><a href="#155-最小栈">155. 最小栈</a></li>
@@ -2611,14 +2611,14 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#84-柱状图中最大的矩形">84. 柱状图中最大的矩形</a></li>
       </ul>
     </li>
-    <li><a href="#堆">堆</a>
+    <li><a href="#堆">*堆</a>
       <ul>
         <li><a href="#215-数组中的第k个最大元素">215. 数组中的第K个最大元素</a></li>
         <li><a href="#347-前-k-个高频元素">347. 前 K 个高频元素</a></li>
         <li><a href="#295-数据流的中位数">295. 数据流的中位数</a></li>
       </ul>
     </li>
-    <li><a href="#贪心算法">贪心算法</a>
+    <li><a href="#贪心算法">*贪心算法</a>
       <ul>
         <li><a href="#121-买卖股票的最佳时机">121. 买卖股票的最佳时机</a></li>
         <li><a href="#55-跳跃游戏">55. 跳跃游戏</a></li>
@@ -2626,7 +2626,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#763-划分字母区间">763. 划分字母区间</a></li>
       </ul>
     </li>
-    <li><a href="#动态规划">动态规划</a>
+    <li><a href="#动态规划">*动态规划</a>
       <ul>
         <li><a href="#70-爬楼梯">70. 爬楼梯</a></li>
         <li><a href="#118-杨辉三角">118. 杨辉三角</a></li>
@@ -2640,7 +2640,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#32-最长有效括号">32. 最长有效括号</a></li>
       </ul>
     </li>
-    <li><a href="#多维动态规划">多维动态规划</a>
+    <li><a href="#多维动态规划">*多维动态规划</a>
       <ul>
         <li><a href="#62-不同路径">62. 不同路径</a></li>
         <li><a href="#64-最小路径和">64. 最小路径和</a></li>
@@ -2649,7 +2649,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#72-编辑距离">72. 编辑距离</a></li>
       </ul>
     </li>
-    <li><a href="#技巧">技巧</a>
+    <li><a href="#技巧">*技巧</a>
       <ul>
         <li><a href="#136-只出现一次的数字">136. 只出现一次的数字</a></li>
         <li><a href="#169-多数元素">169. 多数元素</a></li>

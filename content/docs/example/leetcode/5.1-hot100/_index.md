@@ -5,7 +5,7 @@ title: 5.1 hot100
 
 &emsp;&emsp;用golang1.19.4实现，将每题的函数粘贴到leetcode中即可一键运行，题目编号沿用leetcode的编号。项目代码：https://github.com/yswang837/golang-leetcode
 
-## 哈希
+## \*哈希
 
 &emsp;&emsp;map是典型的用空间换取时间的数据结构。
 
@@ -111,7 +111,7 @@ func maxInt(i,j int) int {
 }
 ```
 
-## 双指针
+## \*双指针
 
 ### 283.移动零
 
@@ -187,7 +187,7 @@ func subabs(i,j int) (int,bool) {
 - 要求：
 - 思路：
 
-## 滑动窗口
+## \*滑动窗口
 
 ### 3.无重复字符的最长子串
 
@@ -201,7 +201,7 @@ func subabs(i,j int) (int,bool) {
 - 要求：
 - 思路：
 
-## 子串
+## \*子串
 
 ### 560.和为K的子数组
 
@@ -221,7 +221,7 @@ func subabs(i,j int) (int,bool) {
 - 要求：
 - 思路：
 
-## 普通数组
+## \*普通数组
 
 ### 53.最大子数组和
 
@@ -253,7 +253,7 @@ func subabs(i,j int) (int,bool) {
 - 要求：
 - 思路：
 
-## 矩阵
+## \*矩阵
 
 ### 73.矩阵置零
 
@@ -279,7 +279,7 @@ func subabs(i,j int) (int,bool) {
 - 要求：
 - 思路：
 
-## 链表
+## \*链表
 
 ### 160. 相交链表
 
@@ -392,7 +392,7 @@ func reverseList(head *ListNode) *ListNode {
 - 要求：
 - 思路：
 
-## 二叉树
+## \*二叉树
 
 ### 94. 二叉树的中序遍历
 
@@ -484,7 +484,7 @@ func reverseList(head *ListNode) *ListNode {
 - 要求：
 - 思路：
 
-## 图论
+## \*图论
 
 ### 200. 岛屿数量
 
@@ -510,7 +510,7 @@ func reverseList(head *ListNode) *ListNode {
 - 要求：
 - 思路：
 
-## 回溯
+## \*回溯
 
 ### 46. 全排列
 
@@ -560,7 +560,7 @@ func reverseList(head *ListNode) *ListNode {
 - 要求：
 - 思路：
 
-## 二分查找
+## \*二分查找
 
 ### 35. 搜索插入位置
 
@@ -632,7 +632,7 @@ func search(nums []int, target int) int {
 - 要求：
 - 思路：
 
-## 栈
+## \*栈
 
 ### 20. 有效的括号
 
@@ -664,7 +664,7 @@ func search(nums []int, target int) int {
 - 要求：
 - 思路：
 
-## 堆
+## \*堆
 
 ### 215. 数组中的第K个最大元素
 
@@ -684,7 +684,7 @@ func search(nums []int, target int) int {
 - 要求：
 - 思路：
 
-## 贪心算法
+## \*贪心算法
 
 ### 121. 买卖股票的最佳时机
 
@@ -710,7 +710,7 @@ func search(nums []int, target int) int {
 - 要求：
 - 思路：
 
-## 动态规划
+## \*动态规划
 
 ### 70. 爬楼梯
 
@@ -772,7 +772,7 @@ func search(nums []int, target int) int {
 - 要求：
 - 思路：
 
-## 多维动态规划
+## \*多维动态规划
 
 ### 62. 不同路径
 
@@ -804,7 +804,7 @@ func search(nums []int, target int) int {
 - 要求：
 - 思路：
 
-## 技巧
+## \*技巧
 
 ### 136. 只出现一次的数字
 
