@@ -127,58 +127,11 @@ func partition(head *ListNode, x int) *ListNode {
 
 ### 141.环形链表
 
-[传送门](https://leetcode.cn/problems/linked-list-cycle/description/)
-
-```go
-func hasCycle(head *ListNode) bool {
-    if head == nil {
-        return false
-    }
-    slow, fast := head, head
-    for fast != nil && fast.Next != nil {
-        slow = slow.Next
-        fast = fast.Next.Next
-        if fast == slow {
-            return true
-        }
-    }
-    return false
-}
-```
+[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8)
 
 ### 142.环形链表II
 
-[传送门](https://leetcode.cn/problems/linked-list-cycle-ii/description/)
-
-- 思路：我们假设快慢指针相遇时，慢指针slow走了k步，那么快指针fast一定走了2k步，即fast一定比slow多走了k步，这多走的k步其实就是fast指针在环里转圈圈，所以k的值就是环长度的「整数倍」，假设相遇点距环的起点的距离为m，环的起点距头结点head的距离一定为k - m，也就是说如果从 head 前进 k - m 步就能到达环起点。巧的是，如果从相遇点继续前进 k - m 步，也恰好到达环起点。所以当它们以同样的速度再次相遇时，就是环的起点所在位置。
-
-```go
-func detectCycle(head *ListNode) *ListNode {
-    if head == nil {
-        return nil
-    }
-    slow, fast := head, head
-    for fast != nil && fast.Next != nil {
-        slow = slow.Next
-        fast = fast.Next.Next
-        if fast == slow {
-            break
-        }
-    }
-    // 执行到这里，可能是有环break了，可能没环退出循环了
-    if fast == nil || fast.Next == nil {
-        // 没环直接return
-        return nil
-    }
-    // 执行到这里，必定有环
-    slow = head
-    for slow != fast {
-        slow = slow.Next
-        fast = fast.Next
-    }
-    return slow
-}
-```
+[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-ii)
 
 ### 160.相交链表
 

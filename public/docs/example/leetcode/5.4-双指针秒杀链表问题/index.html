@@ -17,7 +17,7 @@ func deleteDuplicates(head *ListNode) *ListNode { if head == nil { return nil } 
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.71c9e5073c6f867b08419db0cb6cecdc3fb30ddb7ed0f0a97bbe047b44ae468f.js" integrity="sha256-ccnlBzxvhnsIQZ2wy2zs3D&#43;zDdt&#43;0PCpe74Ee0SuRo8=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.1371a0d363864075b5384ff8aead55799a0edad12391232d20891e98df6c9440.js" integrity="sha256-E3Gg02OGQHW1OE/4rq1VeZoO2tEjkSMtIIkemN9slEA=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.4-%E5%8F%8C%E6%8C%87%E9%92%88%E7%A7%92%E6%9D%80%E9%93%BE%E8%A1%A8%E9%97%AE%E9%A2%98/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1253,55 +1253,13 @@ https://github.com/alex-shpak/hugo-book
   141.环形链表
   <a class="anchor" href="#141%e7%8e%af%e5%bd%a2%e9%93%be%e8%a1%a8">#</a>
 </h3>
-<p><a href="https://leetcode.cn/problems/linked-list-cycle/description/">传送门</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">hasCycle</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#66d9ef">bool</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">slow</span>, <span style="color:#a6e22e">fast</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">head</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">slow</span> = <span style="color:#a6e22e">slow</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fast</span> = <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">slow</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="142环形链表ii">
+<p><a href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8">传送门</a></p>
+<h3 id="142环形链表ii">
   142.环形链表II
   <a class="anchor" href="#142%e7%8e%af%e5%bd%a2%e9%93%be%e8%a1%a8ii">#</a>
 </h3>
-<p><a href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">传送门</a></p>
-<ul>
-<li>思路：我们假设快慢指针相遇时，慢指针slow走了k步，那么快指针fast一定走了2k步，即fast一定比slow多走了k步，这多走的k步其实就是fast指针在环里转圈圈，所以k的值就是环长度的「整数倍」，假设相遇点距环的起点的距离为m，环的起点距头结点head的距离一定为k - m，也就是说如果从 head 前进 k - m 步就能到达环起点。巧的是，如果从相遇点继续前进 k - m 步，也恰好到达环起点。所以当它们以同样的速度再次相遇时，就是环的起点所在位置。</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">detectCycle</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">slow</span>, <span style="color:#a6e22e">fast</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">head</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">slow</span> = <span style="color:#a6e22e">slow</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fast</span> = <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">slow</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 执行到这里，可能是有环break了，可能没环退出循环了
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 没环直接return
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 执行到这里，必定有环
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">slow</span> = <span style="color:#a6e22e">head</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">slow</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">fast</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">slow</span> = <span style="color:#a6e22e">slow</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fast</span> = <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">slow</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="160相交链表">
+<p><a href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-ii">传送门</a></p>
+<h3 id="160相交链表">
   160.相交链表
   <a class="anchor" href="#160%e7%9b%b8%e4%ba%a4%e9%93%be%e8%a1%a8">#</a>
 </h3>
