@@ -667,8 +667,8 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 ### 94. 二叉树的中序遍历
 
 - 地址：[传送门](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：无
+- 思路：动态规划划分子问题，充分利用函数的返回值
 
 ```go
 func inorderTraversal(root *TreeNode) []int {
@@ -739,8 +739,42 @@ func maxInt(i, j int) int {
 ### 226. 翻转二叉树
 
 - 地址：[传送门](https://leetcode.cn/problems/invert-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：无
+- 思路1：动态规划划分子问题
+- 思路2：
+
+```go
+// 思路1：动态规划，充分利用遍历函数invertTree的返回值
+func invertTree(root *TreeNode) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    left := invertTree(root.Left)
+    right := invertTree(root.Right)
+    root.Left = right
+    root.Right = left
+    return root
+}
+
+// 思路2：回溯算法，定义无返回值的traverse
+func mirrorTree(root *TreeNode) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    traverse(root)
+    return root
+}
+func traverse(root *TreeNode) {
+    if root == nil {
+        return 
+    }
+    root.Left, root.Right = root.Right, root.Left
+    traverse(root.Left)
+    traverse(root.Right)
+
+    return 
+}
+```
 
 ### 101. 对称二叉树
 
