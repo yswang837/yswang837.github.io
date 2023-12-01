@@ -670,7 +670,7 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：无
-- 思路：动态规划划分子问题，递归函数有返回值，所以是动态规划，充分利用递归函数的返回值
+- 思路：动态规划划分子问题，递归函数有返回值且不需要额外传递指针，所以是动态规划，充分利用递归函数的返回值
 
 ```go
 func inorderTraversal(root *TreeNode) []int {
@@ -689,7 +689,7 @@ func inorderTraversal(root *TreeNode) []int {
 
 - 地址：[传送门](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：无
-- 思路1：动态规划划分子问题，从整体的角度来解题，它当然也能定义额外的遍历函数，这个遍历函数通常有返回值
+- 思路1：动态规划划分子问题，从整体的角度来解题，它当然也能定义额外的遍历函数，这个遍历函数通常有返回值且不需要额外的指针
 - 思路2：回溯算法，记录每次遍历到的数据，是从局部的角度来解决问题，通常需要额外的遍历函数，这个遍历函数通常没有返回值，一般通过参数传入指针的形式来解题
 
 ```go
@@ -710,7 +710,7 @@ func maxDepth(root *TreeNode) int {
 }
 
 // 思路2
-// 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想，借助了traverse函数，记录了额外的遍历值，如res和depth，不需要有返回值，给该函数传递指针就行
+// 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想，借助了traverse函数，记录了额外的遍历值，如res和depth，通常没有返回值，给该函数传递指针就行
 func maxDepth(root *TreeNode) int {
 	res, depth := 0, 0
 	traverse(root, &res, &depth)
@@ -758,7 +758,7 @@ func invertTree(root *TreeNode) *TreeNode {
     return root
 }
 
-// 思路2：回溯算法，定义无返回值的traverse
+// 思路2：回溯算法，定义无返回值的traverse。当然通常回溯算法需要传入额外的指针，回溯算法也能有返回值
 func mirrorTree(root *TreeNode) *TreeNode {
     if root == nil {
         return nil
@@ -781,7 +781,7 @@ func traverse(root *TreeNode) {
 
 - 地址：[传送门](https://leetcode.cn/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：用递归，和迭代的思想解题
-- 思路1：动态规划，定义有返回值的递归函数，需要同时满足同一个根节点，左右子树对称就是对称二叉树。同一个根节点可向递归函数传递两个root即可。时空复杂度都是O(n)，空间复杂度指的是系统栈的调用
+- 思路1：动态规划，定义有返回值的递归函数且不需要传入额外的指针，需要同时满足同一个根节点，左右子树对称就是对称二叉树。同一个根节点可向递归函数传递两个root即可。时空复杂度都是O(n)，空间复杂度指的是系统栈的调用
 - 思路2：迭代，同样需要同时满足同一个根节点，左右子树对称就是对称二叉树。将递归程序改成迭代程序通常会用到一个队列，初始化时我们把根节点入队两次。每次提取两个结点并比较它们的值（队列中每两个连续的结点应该是相等的，而且它们的子树互为镜像），然后将两个结点的左右子结点按相反的顺序插入队列中。当队列为空时，或者我们检测到树不对称（即从队列中取出两个不相等的连续结点）时，该算法结束。可以发现思路1更优雅。
 
 ```go
@@ -822,15 +822,39 @@ func isSymmetric(root *TreeNode) bool {
     }
     return true
 }
-
-
 ```
 
 ### 543. 二叉树的直径
 
 - 地址：[传送门](https://leetcode.cn/problems/diameter-of-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：
+- 思路：动态规划算法，需要通过maxDepth函数求出子树的最大深度，需要返回值。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。问题分解：一棵树的直径 = max(左子树的最大深度+右子树的最大深度)
+
+```go
+// 
+func diameterOfBinaryTree(root *TreeNode) int {
+    maxDiameter := 0 
+    maxDepth(root, &maxDiameter)
+    return maxDiameter
+}
+
+func maxDepth(root *TreeNode, maxDiameter *int) int {
+    if root == nil {
+        return 0
+    }
+    leftDepth := maxDepth(root.Left, maxDiameter)
+    rightDepth := maxDepth(root.Right, maxDiameter)
+    curDepth := leftDepth + rightDepth
+    if curDepth > *maxDiameter {
+        *maxDiameter = curDepth
+    }
+    if leftDepth >= rightDepth {
+        return leftDepth + 1
+    }else {
+        return rightDepth + 1
+    }
+}
+```
 
 ### 102. 二叉树的层序遍历
 
