@@ -664,11 +664,13 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 ## \*二叉树
 
+&emsp;&emsp;树的递归遍历，分为动态规划解法和回溯算法的解法。树当然还有迭代遍历/层序遍历。
+
 ### 94. 二叉树的中序遍历
 
 - 地址：[传送门](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：无
-- 思路：动态规划划分子问题，充分利用函数的返回值
+- 思路：动态规划划分子问题，递归函数有返回值，所以是动态规划，充分利用递归函数的返回值
 
 ```go
 func inorderTraversal(root *TreeNode) []int {
@@ -687,12 +689,12 @@ func inorderTraversal(root *TreeNode) []int {
 
 - 地址：[传送门](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：无
-- 思路1：动态规划划分子问题
-- 思路2：回溯算法，记录每次遍历到的数据
+- 思路1：动态规划划分子问题，从整体的角度来解题，它当然也能定义额外的遍历函数，这个遍历函数通常有返回值
+- 思路2：回溯算法，记录每次遍历到的数据，是从局部的角度来解决问题，通常需要额外的遍历函数，这个遍历函数通常没有返回值，一般通过参数传入指针的形式来解题
 
 ```go
 // 思路1
-// 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想，未借助额外的遍历函数，充分利用函数maxDepth本身返回的值。
+// 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想，未借助额外的遍历函数，充分利用遍历函数maxDepth的返回值。
 // 定义：给我一棵树，我就能返回这棵树的最大深度
 func maxDepth(root *TreeNode) int {
     if root == nil {
@@ -740,8 +742,8 @@ func maxInt(i, j int) int {
 
 - 地址：[传送门](https://leetcode.cn/problems/invert-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：无
-- 思路1：动态规划划分子问题
-- 思路2：
+- 思路1：动态规划划分子问题，递归函数invertTree有返回值
+- 思路2：回溯算法
 
 ```go
 // 思路1：动态规划，充分利用遍历函数invertTree的返回值
@@ -771,7 +773,6 @@ func traverse(root *TreeNode) {
     root.Left, root.Right = root.Right, root.Left
     traverse(root.Left)
     traverse(root.Right)
-
     return 
 }
 ```
@@ -779,8 +780,8 @@ func traverse(root *TreeNode) {
 ### 101. 对称二叉树
 
 - 地址：[传送门](https://leetcode.cn/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：用递归，和迭代的思想解题
+- 思路1：动态规划，定义了
 
 ### 543. 二叉树的直径
 

@@ -3,6 +3,8 @@ weight: 1
 title: 5.6 二叉树
 ---
 
+&emsp;&emsp;递归函数有返回值通常认为是动态规划；而回溯算法通常是递归函数没有返回值，通过传入指针的方式来处理。
+
 ### 104.二叉树的最大深度
 
 [传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6)
@@ -12,7 +14,7 @@ title: 5.6 二叉树
 [传送门](https://leetcode.cn/problems/diameter-of-binary-tree/description/)
 
 ```go
-// 动态规划算法，需要通过maxDepth函数求出子树的最大深度，需要返回值。遇到子树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。
+// 动态规划算法，需要通过maxDepth函数求出子树的最大深度，需要返回值。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。
 // 问题分解：一棵树的直径 = max(左子树的最大深度+右子树的最大深度)
 func diameterOfBinaryTree(root *TreeNode) int {
     maxDiameter := 0 

@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="104.二叉树的最大深度 # 传送门
+<meta name="description" content="递归函数有返回值通常认为是动态规划；而回溯算法通常是递归函数没有返回值，通过传入指针的方式来处理。
+104.二叉树的最大深度 # 传送门
 543.二叉树的直径 # 传送门
-// 动态规划算法，需要通过maxDepth函数求出子树的最大深度，需要返回值。遇到子树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。 // 问题分解：一棵树的直径 = max(左子树的最大深度&#43;右子树的最大深度) func diameterOfBinaryTree(root *TreeNode) int { maxDiameter := 0 maxDepth(root, &amp;maxDiameter) return maxDiameter } func maxDepth(root *TreeNode, maxDiameter *int) int { if root == nil { return 0 } leftDepth := maxDepth(root.Left, maxDiameter) rightDepth := maxDepth(root.Right, maxDiameter) curDepth := leftDepth &#43; rightDepth if curDepth &gt; *maxDiameter { *maxDiameter = curDepth } if leftDepth &gt;= rightDepth { return leftDepth &#43; 1 }else { return rightDepth &#43; 1 } } 144.">
+// 动态规划算法，需要通过maxDepth函数求出子树的最大深度，需要返回值。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。 // 问题分解：一棵树的直径 = max(左子树的最大深度&#43;右子树的最大深度) func diameterOfBinaryTree(root *TreeNode) int { maxDiameter := 0 maxDepth(root, &amp;maxDiameter) return maxDiameter } func maxDepth(root *TreeNode, maxDiameter *int) int { if root == nil { return 0 } leftDepth := maxDepth(root.Left, maxDiameter) rightDepth := maxDepth(root.Right, maxDiameter) curDepth := leftDepth &#43; rightDepth if curDepth &gt; *maxDiameter { *maxDiameter = curDepth } if leftDepth &gt;= rightDepth { return leftDepth &#43; 1 }else { return rightDepth &#43; 1 } } 144.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="5.6 二叉树" />
 <meta property="og:description" content="" />
@@ -17,7 +18,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.38876e8ef3f840905fc7afad3f69557b3f9c51c529be20b7ddfd16fa0b65fb61.js" integrity="sha256-OIdujvP4QJBfx6&#43;tP2lVez&#43;cUcUpviC33f0W&#43;gtl&#43;2E=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.1bf73ed8fd96011a58d4906125769180766e6f6c92282a84f1d85fb026656c7d.js" integrity="sha256-G/c&#43;2P2WARpY1JBhJXaRgHZub2ySKCqE8dhfsCZlbH0=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.6-%E4%BA%8C%E5%8F%89%E6%A0%91/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1127,7 +1128,8 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h3 id="104二叉树的最大深度">
+  <article class="markdown"><p>  递归函数有返回值通常认为是动态规划；而回溯算法通常是递归函数没有返回值，通过传入指针的方式来处理。</p>
+<h3 id="104二叉树的最大深度">
   104.二叉树的最大深度
   <a class="anchor" href="#104%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%9c%80%e5%a4%a7%e6%b7%b1%e5%ba%a6">#</a>
 </h3>
@@ -1137,7 +1139,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#543%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e7%9b%b4%e5%be%84">#</a>
 </h3>
 <p><a href="https://leetcode.cn/problems/diameter-of-binary-tree/description/">传送门</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 动态规划算法，需要通过maxDepth函数求出子树的最大深度，需要返回值。遇到子树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 动态规划算法，需要通过maxDepth函数求出子树的最大深度，需要返回值。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 问题分解：一棵树的直径 = max(左子树的最大深度+右子树的最大深度)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">diameterOfBinaryTree</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">maxDiameter</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> 
