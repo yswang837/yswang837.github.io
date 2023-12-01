@@ -781,7 +781,50 @@ func traverse(root *TreeNode) {
 
 - 地址：[传送门](https://leetcode.cn/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：用递归，和迭代的思想解题
-- 思路1：动态规划，定义了
+- 思路1：动态规划，定义有返回值的递归函数，需要同时满足同一个根节点，左右子树对称就是对称二叉树。同一个根节点可向递归函数传递两个root即可。时空复杂度都是O(n)，空间复杂度指的是系统栈的调用
+- 思路2：迭代，同样需要同时满足同一个根节点，左右子树对称就是对称二叉树。将递归程序改成迭代程序通常会用到一个队列，初始化时我们把根节点入队两次。每次提取两个结点并比较它们的值（队列中每两个连续的结点应该是相等的，而且它们的子树互为镜像），然后将两个结点的左右子结点按相反的顺序插入队列中。当队列为空时，或者我们检测到树不对称（即从队列中取出两个不相等的连续结点）时，该算法结束。可以发现思路1更优雅。
+
+```go
+// 思路1
+func isSymmetric(root *TreeNode) bool {
+    return traverse(root,root)
+}
+
+func traverse(root1, root2 *TreeNode) bool {
+    if root1 == nil && root2 == nil {
+        return true
+    }
+    if root1 == nil || root2 == nil {
+        return false
+    }
+    return root1.Val == root2.Val && traverse(root1.Left, root2.Right) && traverse(root1.Right, root2.Left)
+}
+
+// 思路2
+func isSymmetric(root *TreeNode) bool {
+    queue := []*TreeNode{} // 借助一个队列
+    p, q := root,root // 初始化两个节点，并将其放入队列
+    queue = append(append(queue, p), q)
+    for len(queue) > 0 {
+        p, q = queue[0], queue[1]
+        queue = queue[2:] // 出队两个元素
+        if p == nil && q == nil {
+            continue
+        }
+        if p == nil || q == nil {
+            return false
+        }
+        if p.Val != q.Val {
+            return false
+        }
+        queue = append(append(queue, p.Left), q.Right)
+        queue = append(append(queue, p.Right), q.Left)
+    }
+    return true
+}
+
+
+```
 
 ### 543. 二叉树的直径
 

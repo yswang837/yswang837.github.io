@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.1bf73ed8fd96011a58d4906125769180766e6f6c92282a84f1d85fb026656c7d.js" integrity="sha256-G/c&#43;2P2WARpY1JBhJXaRgHZub2ySKCqE8dhfsCZlbH0=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.b1a9a5e39208a42b45a5a31c3caef72d1f89a1e2e559cf87e40369a6e867fc40.js" integrity="sha256-saml45IIpCtFpaMcPK73LR&#43;JoeLlWc&#43;H5ANppuhn/EA=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -2141,9 +2141,47 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/symmetric-tree/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：用递归，和迭代的思想解题</li>
-<li>思路1：动态规划，定义了</li>
+<li>思路1：动态规划，定义有返回值的递归函数，需要同时满足同一个根节点，左右子树对称就是对称二叉树。同一个根节点可向递归函数传递两个root即可。时空复杂度都是O(n)，空间复杂度指的是系统栈的调用</li>
+<li>思路2：迭代，同样需要同时满足同一个根节点，左右子树对称就是对称二叉树。将递归程序改成迭代程序通常会用到一个队列，初始化时我们把根节点入队两次。每次提取两个结点并比较它们的值（队列中每两个连续的结点应该是相等的，而且它们的子树互为镜像），然后将两个结点的左右子结点按相反的顺序插入队列中。当队列为空时，或者我们检测到树不对称（即从队列中取出两个不相等的连续结点）时，该算法结束。可以发现思路1更优雅。</li>
 </ul>
-<h3 id="543-二叉树的直径">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 思路1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isSymmetric</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">traverse</span>(<span style="color:#a6e22e">root</span>,<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">traverse</span>(<span style="color:#a6e22e">root1</span>, <span style="color:#a6e22e">root2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root1</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">root2</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root1</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">root2</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">root1</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">root2</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">traverse</span>(<span style="color:#a6e22e">root1</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">root2</span>.<span style="color:#a6e22e">Right</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">traverse</span>(<span style="color:#a6e22e">root1</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">root2</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 思路2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isSymmetric</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>{} <span style="color:#75715e">// 借助一个队列
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>,<span style="color:#a6e22e">root</span> <span style="color:#75715e">// 初始化两个节点，并将其放入队列
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">queue</span> = append(append(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">p</span>), <span style="color:#a6e22e">q</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">queue</span>) &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">q</span> = <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">queue</span> = <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">2</span>:] <span style="color:#75715e">// 出队两个元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">q</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">q</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Val</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Val</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">queue</span> = append(append(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Left</span>), <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">queue</span> = append(append(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Right</span>), <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="543-二叉树的直径">
   543. 二叉树的直径
   <a class="anchor" href="#543-%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e7%9b%b4%e5%be%84">#</a>
 </h3>
