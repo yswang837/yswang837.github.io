@@ -11,34 +11,7 @@ title: 5.6 二叉树
 
 ### 543.二叉树的直径
 
-[传送门](https://leetcode.cn/problems/diameter-of-binary-tree/description/)
-
-```go
-// 动态规划算法，需要通过maxDepth函数求出子树的最大深度，需要返回值。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。
-// 问题分解：一棵树的直径 = max(左子树的最大深度+右子树的最大深度)
-func diameterOfBinaryTree(root *TreeNode) int {
-    maxDiameter := 0 
-    maxDepth(root, &maxDiameter)
-    return maxDiameter
-}
-
-func maxDepth(root *TreeNode, maxDiameter *int) int {
-    if root == nil {
-        return 0
-    }
-    leftDepth := maxDepth(root.Left, maxDiameter)
-    rightDepth := maxDepth(root.Right, maxDiameter)
-    curDepth := leftDepth + rightDepth
-    if curDepth > *maxDiameter {
-        *maxDiameter = curDepth
-    }
-    if leftDepth >= rightDepth {
-        return leftDepth + 1
-    }else {
-        return rightDepth + 1
-    }
-}
-```
+[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#543-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84)
 
 ### 144.二叉树的前序遍历
 

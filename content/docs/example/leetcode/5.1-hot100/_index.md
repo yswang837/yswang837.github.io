@@ -828,7 +828,7 @@ func isSymmetric(root *TreeNode) bool {
 
 - 地址：[传送门](https://leetcode.cn/problems/diameter-of-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：动态规划算法，需要通过maxDepth函数求出子树的最大深度，需要返回值。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。问题分解：一棵树的直径 = max(左子树的最大深度+右子树的最大深度)
+- 思路：回溯算法，需要通过maxDepth函数求出子树的最大深度，这个回溯需要返回值，需要传递额外的指针。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。这个问题貌似也能看做是动态规划的问题，问题分解：一棵树的直径 = max(左子树的最大深度+右子树的最大深度)
 
 ```go
 // 
