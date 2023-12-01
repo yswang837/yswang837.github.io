@@ -436,8 +436,53 @@ func insert(head, node *Node) {
 ### 21. 合并两个有序链表
 
 - 地址：[传送门](https://leetcode.cn/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：无
+- 思路：用一个虚拟节点dummy方便处理。
+
+```go
+func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+    if list1 == nil {
+        return list2
+    }
+    if list2 == nil {
+        return list1
+    }
+    dummy := &ListNode{-1,nil}
+    cur := dummy
+    for list1 != nil && list2 != nil {
+        if list1.Val > list2.Val {
+            cur.Next = list2
+            list2 = list2.Next
+        }else {
+            cur.Next = list1
+            list1 = list1.Next
+        }
+        cur = cur.Next
+    }
+    if list1 != nil {
+        cur.Next = list1
+    }
+    if list2 != nil {
+        cur.Next = list2
+    }
+    return dummy.Next
+}
+// dummy,cur
+// l1: 1->2->4
+// l2: 1->3->4
+//             cur
+// l1: dummy -> 1 -> 2 -> 4
+                    cur
+// l2: dummy -> 1 -> 1 -> 3 -> 4
+                         cur
+// l1: dummy -> 1 -> 1 -> 2 -> 4
+                              cur
+// l2: dummy -> 1 -> 1 -> 2 -> 3 -> 4
+                                   cur
+// l1: dummy -> 1 -> 1 -> 2 -> 3 -> 4 // 循环终止
+                                   cur
+// l2: dummy -> 1 -> 1 -> 2 -> 3 -> 4 -> 4
+```
 
 ### 2. 两数相加
 
@@ -510,7 +555,49 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/merge-k-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：
+- 思路1：我们已经实现了合并两个有序链表的函数，合并k个有序链表，也就扩展下就行了，但时间复杂度有点高，不过还是通过了，代码如下：
+- 思路2：使用优先级队列（二叉堆），这个代码后面再补充，https://labuladong.github.io/algo/di-ling-zh-bfe1b/shuang-zhi-0f7cc/
+
+```go
+func mergeKLists(lists []*ListNode) *ListNode {
+    if len(lists) == 0 {
+        return nil
+    }
+    var ret *ListNode
+    for _, node := range lists {
+        ret = mergeTwoLists(ret, node)
+    }
+    return ret
+}
+
+func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+    if list1 == nil {
+        return list2
+    }
+    if list2 == nil {
+        return list1
+    }
+    dummy := &ListNode{-1,nil}
+    cur := dummy
+    for list1 != nil && list2 != nil {
+        if list1.Val > list2.Val {
+            cur.Next = list2
+            list2 = list2.Next
+        }else {
+            cur.Next = list1
+            list1 = list1.Next
+        }
+        cur = cur.Next
+    }
+    if list1 != nil {
+        cur.Next = list1
+    }
+    if list2 != nil {
+        cur.Next = list2
+    }
+    return dummy.Next
+}
+```
 
 ## \*二叉树
 
