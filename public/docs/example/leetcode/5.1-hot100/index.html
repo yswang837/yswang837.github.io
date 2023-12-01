@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.4a070a63c3991ed5f0a558c629958b9095be899dfc48ae8724cb167468553dc5.js" integrity="sha256-SgcKY8OZHtXwpVjGKZWLkJW&#43;iZ38SK6HJMsWdGhVPcU=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.14c070f5a8cfcd59943b374e9a7055aca99dcdcb6a542e5eeb1eba30fb1296e6.js" integrity="sha256-FMBw9ajPzVmUOzdOmnBVrKmdzctqVC5e6x66MPsSluY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1631,10 +1631,29 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
-<li>要求：</li>
-<li>思路：</li>
+<li>要求：返回的依旧是个链表</li>
+<li>思路：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，那么两个链表的值第一次相等的时候，就是相交节点的位置。</li>
 </ul>
-<h3 id="206反转链表">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getIntersectionNode</span>(<span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">headA</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">headB</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">curA</span>, <span style="color:#a6e22e">curB</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">curA</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">curB</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">curA</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">curA</span> = <span style="color:#a6e22e">headB</span>
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">curA</span> = <span style="color:#a6e22e">curA</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">curB</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">curB</span> = <span style="color:#a6e22e">headA</span>
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">curB</span> = <span style="color:#a6e22e">curB</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">curA</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="206反转链表">
   206.反转链表
   <a class="anchor" href="#206%e5%8f%8d%e8%bd%ac%e9%93%be%e8%a1%a8">#</a>
 </h3>
@@ -1793,10 +1812,38 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
-<li>要求：</li>
-<li>思路：</li>
+<li>要求：一次遍历</li>
+<li>思路：快慢指针，fast先走N步，再和慢指针一起走，fast负责探路，slow负责处理。</li>
 </ul>
-<h3 id="24-两两交换链表中的节点">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">removeNthFromEnd</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dummy</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">head</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">slow</span>, <span style="color:#a6e22e">fast</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dummy</span>, <span style="color:#a6e22e">dummy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">:=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;=</span><span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> { <span style="color:#75715e">// 因为加了个虚拟节点dummy，所以需要等于，为什么要加dummy的原因在于：为了删除第一个节点的case
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">fast</span> = <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fast</span> = <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">slow</span> = <span style="color:#a6e22e">slow</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 执行到这里fast已经是nil了
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">slow</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">slow</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dummy</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//              f
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//        s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [a,1,2,3,4,5], n = 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//      f
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [a,1], n = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//        f
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//    s
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [a,1,2], n = 1
+</span></span></span></code></pre></div><h3 id="24-两两交换链表中的节点">
   24. 两两交换链表中的节点
   <a class="anchor" href="#24-%e4%b8%a4%e4%b8%a4%e4%ba%a4%e6%8d%a2%e9%93%be%e8%a1%a8%e4%b8%ad%e7%9a%84%e8%8a%82%e7%82%b9">#</a>
 </h3>

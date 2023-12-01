@@ -284,8 +284,30 @@ func subabs(i,j int) (int,bool) {
 ### 160. 相交链表
 
 - 地址：[传送门](https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：返回的依旧是个链表
+- 思路：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，那么两个链表的值第一次相等的时候，就是相交节点的位置。
+
+```go
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+    if headA == nil || headB == nil {
+        return nil
+    }
+    curA, curB := headA, headB
+    for curA != curB {
+        if curA == nil {
+            curA = headB
+        }else {
+            curA = curA.Next
+        }
+        if curB == nil {
+            curB = headA
+        }else {
+            curB = curB.Next
+        }
+    }
+    return curA
+}
+```
 
 ### 206.反转链表
 
@@ -426,8 +448,39 @@ func insert(head, node *Node) {
 ### 19. 删除链表的倒数第 N 个结点
 
 - 地址：[传送门](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：一次遍历
+- 思路：快慢指针，fast先走N步，再和慢指针一起走，fast负责探路，slow负责处理。
+
+```go
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+    if head == nil {
+        return nil
+    }
+    dummy := &ListNode{-1,head}
+    slow, fast := dummy, dummy
+    for i:=0; i<=n; i++ { // 因为加了个虚拟节点dummy，所以需要等于，为什么要加dummy的原因在于：为了删除第一个节点的case
+        fast = fast.Next
+    }
+    for fast != nil {
+        fast = fast.Next
+        slow = slow.Next
+    }
+    // 执行到这里fast已经是nil了
+    slow.Next = slow.Next.Next
+    return dummy.Next
+}
+//              f
+//        s
+// [a,1,2,3,4,5], n = 2
+
+//      f
+//  s
+// [a,1], n = 1
+
+//        f
+//    s
+// [a,1,2], n = 1
+```
 
 ### 24. 两两交换链表中的节点
 
