@@ -4,7 +4,7 @@ weight: 20
 title: 6. 面经
 ---
 
-## 1、运动员赛跑(didi)
+## 1、运动员赛跑(滴滴)
 
 &emsp;&emsp;10个运动员参加百米赛跑，裁判一声枪响后运动员出发，按成绩升序输出成绩、排名、运动员编号。考点是golang的并发
 
@@ -69,14 +69,18 @@ func run(i int, wg *sync.WaitGroup, result chan resultItem) {
 }
 ```
 
-## 2、设计一个LRU算法(baidu)
+## 2、设计一个LRU算法(百度)
 
-&emsp;&emsp;这是leetcode的原题，[传送门](https://leetcode.cn/problems/lru-cache/description/)
+&emsp;&emsp;这是leetcode的hot-100原题，[传送门](https://leetcode.cn/problems/lru-cache/description/)
 
-## 3、求二叉树的最大深度(baidu)
+## 3、求二叉树的最大深度(百度)
 
-&emsp;&emsp;这是leetcode的原题，见[传送门](http://localhost:1313/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/)的104和175两种解法
+&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](http://localhost:1313/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/)的104和175两种解法
 
-## 4、旋转搜索数组
+## 4、旋转搜索数组(字节)
 
-&emsp;&emsp;这是leetcode的原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#33%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84)
+&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#33%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84)
+
+## 5、有效的括号(美团)
+
+&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](http://localhost:1313/docs/example/leetcode/5.1-hot100/#20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7)
