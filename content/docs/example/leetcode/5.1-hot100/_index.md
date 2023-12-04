@@ -1121,7 +1121,27 @@ func flatten(root *TreeNode)  {
 
 - 地址：[传送门](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：
+- 思路：动态规划，找到前序的第一个节点在中序的位置，然后递归地根据根的位置调用buildTree
+
+```go
+func buildTree(preorder []int, inorder []int) *TreeNode {
+    if len(preorder) == 0 || len(inorder) == 0 {
+        return nil
+    }
+    var root int
+    for k, v := range inorder {
+        if v == preorder[0] {
+            root = k
+            break
+        }
+    }
+    return &TreeNode{
+        Val: preorder[0],
+        Left: buildTree(preorder[1: root+1], inorder[0:root]),
+        Right: buildTree(preorder[root+1:],inorder[root+1:]),
+    }
+}
+```
 
 ### 437. 路径总和 III
 

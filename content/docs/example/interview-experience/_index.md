@@ -71,11 +71,11 @@ func run(i int, wg *sync.WaitGroup, result chan resultItem) {
 
 ## 2、设计一个LRU算法(百度)
 
-&emsp;&emsp;这是leetcode的hot-100原题，[传送门](https://leetcode.cn/problems/lru-cache/description/)
+&emsp;&emsp;这是leetcode的hot-100原题，[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#146lru%E7%BC%93%E5%AD%98)
 
 ## 3、求二叉树的最大深度(百度)
 
-&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](http://localhost:1313/docs/example/leetcode/5.5-%E4%BA%8C%E5%8F%89%E6%A0%91/)的104和175两种解法
+&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6)
 
 ## 4、旋转搜索数组(字节)
 
@@ -83,4 +83,8 @@ func run(i int, wg *sync.WaitGroup, result chan resultItem) {
 
 ## 5、有效的括号(美团)
 
-&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](http://localhost:1313/docs/example/leetcode/5.1-hot100/#20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7)
+&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#20-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7)
+
+## 6、从前序与中序遍历序列构造二叉树(滴滴)
+
+&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#105-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91)，这个题与“从后序与中序遍历序列构造二叉树”如出一辙。
