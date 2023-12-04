@@ -723,6 +723,7 @@ func traverse(root *TreeNode, res, depth *int) {
 	}
 	*depth++
 	if root.Left == nil && root.Right == nil {
+        // 到叶节点了，更新最大深度
 		*res = maxInt(*res, *depth)
 	}
 	traverse(root.Left, res, depth)
@@ -802,6 +803,7 @@ func traverse(root1, root2 *TreeNode) bool {
 
 // 思路2
 func isSymmetric(root *TreeNode) bool {
+    // 这种写法包含了两个root都是空的情况
     queue := []*TreeNode{} // 借助一个队列
     p, q := root,root // 初始化两个节点，并将其放入队列
     queue = append(append(queue, p), q)
@@ -859,8 +861,38 @@ func maxDepth(root *TreeNode, maxDiameter *int) int {
 ### 102. 二叉树的层序遍历
 
 - 地址：[传送门](https://leetcode.cn/problems/binary-tree-level-order-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：无
+- 思路：这是一种迭代遍历的思路，通常递归问题转迭代问题时，都需要引入一个队列queue来处理。
+
+```go
+func levelOrder(root *TreeNode) [][]int {
+    if root == nil {
+        return nil
+    }
+    var ret [][]int
+    var queue []*TreeNode
+    queue = append(queue, root)
+    for len(queue) > 0 {
+        var level []int
+        length := len(queue) // queue的长度会变，需要用变量单独记录，不然level的结果不对
+        for i:=0; i<length; i++ {
+            node := queue[0]
+            queue = queue[1:]
+            level = append(level, node.Val)
+            if node.Left != nil {
+                queue = append(queue, node.Left)
+            }
+            if node.Right != nil {
+                queue = append(queue, node.Right)
+            }
+        }
+        if len(level) > 0 {
+            ret = append(ret, level)
+        }
+    }
+    return ret
+}
+```
 
 ### 108. 将有序数组转换为二叉搜索树
 

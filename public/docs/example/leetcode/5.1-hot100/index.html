@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.9ee2b0a25539e6c5da00d33426756cb73e27e28efccafd225bd6dea5011ce301.js" integrity="sha256-nuKwolU55sXaANM0JnVstz4n4o78yv0iW9bepQEc4wE=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.852a55e70eb55df150809d76d5ad2bf8ed4cf1fe94f8bbf75779892c61dda664.js" integrity="sha256-hSpV5w61XfFQgJ121a0r&#43;O1M8f6U&#43;Lv3V3mJLGHdpmQ=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -2082,7 +2082,8 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#f92672">*</span><span style="color:#a6e22e">depth</span><span style="color:#f92672">++</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">*</span><span style="color:#a6e22e">res</span> = <span style="color:#a6e22e">maxInt</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">res</span>, <span style="color:#f92672">*</span><span style="color:#a6e22e">depth</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 到叶节点了，更新最大深度
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#f92672">*</span><span style="color:#a6e22e">res</span> = <span style="color:#a6e22e">maxInt</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">res</span>, <span style="color:#f92672">*</span><span style="color:#a6e22e">depth</span>)
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">traverse</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">depth</span>)
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">traverse</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">depth</span>)
@@ -2161,7 +2162,8 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// 思路2
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isSymmetric</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">bool</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>{} <span style="color:#75715e">// 借助一个队列
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 这种写法包含了两个root都是空的情况
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">queue</span> <span style="color:#f92672">:=</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>{} <span style="color:#75715e">// 借助一个队列
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>,<span style="color:#a6e22e">root</span> <span style="color:#75715e">// 初始化两个节点，并将其放入队列
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">queue</span> = append(append(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">p</span>), <span style="color:#a6e22e">q</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">queue</span>) &gt; <span style="color:#ae81ff">0</span> {
@@ -2219,10 +2221,37 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
-<li>要求：</li>
-<li>思路：</li>
+<li>要求：无</li>
+<li>思路：这是一种迭代遍历的思路，通常递归问题转迭代问题时，都需要引入一个队列queue来处理。</li>
 </ul>
-<h3 id="108-将有序数组转换为二叉搜索树">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">levelOrder</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) [][]<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> [][]<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">queue</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">queue</span>) &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">level</span> []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">length</span> <span style="color:#f92672">:=</span> len(<span style="color:#a6e22e">queue</span>) <span style="color:#75715e">// queue的长度会变，需要用变量单独记录，不然level的结果不对
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">:=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span>&lt;<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">queue</span> = <span style="color:#a6e22e">queue</span>[<span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">level</span> = append(<span style="color:#a6e22e">level</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">queue</span> = append(<span style="color:#a6e22e">queue</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">level</span>) &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">level</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="108-将有序数组转换为二叉搜索树">
   108. 将有序数组转换为二叉搜索树
   <a class="anchor" href="#108-%e5%b0%86%e6%9c%89%e5%ba%8f%e6%95%b0%e7%bb%84%e8%bd%ac%e6%8d%a2%e4%b8%ba%e4%ba%8c%e5%8f%89%e6%90%9c%e7%b4%a2%e6%a0%91">#</a>
 </h3>
