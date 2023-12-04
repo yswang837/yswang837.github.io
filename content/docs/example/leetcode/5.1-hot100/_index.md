@@ -1065,13 +1065,57 @@ func kthSmallest(root *TreeNode, k int) int {
 
 - 地址：[传送门](https://leetcode.cn/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：
+- 思路：当前的深度大于结果的长度，才认为是需要添加到结果里面的，题目要求右视图，所以先递归右子树。
+
+```go
+func rightSideView(root *TreeNode) []int {
+    if root == nil {
+        return nil
+    }
+    var ret []int
+    var f func(node *TreeNode, depth int) 
+    f = func(node *TreeNode, depth int) {
+        if node == nil {
+            return
+        }
+        if depth > len(ret) {
+            ret = append(ret, node.Val)
+        }
+        f(node.Right, depth+1)
+        f(node.Left, depth+1)
+    }
+    f(root, 1)
+    return ret
+}
+```
 
 ### 114. 二叉树展开为链表
 
 - 地址：[传送门](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：链表的遍历结果应该与二叉树的前序遍历相同
+- 思路：动态规划，划分子问题，传递一棵树，返回一个链表。只需要考虑当前root节点应该怎么做，递归函数会自动遍历出所有节点。
+
+```go
+func flatten(root *TreeNode)  {
+    if root == nil {
+        return
+    }
+    flatten(root.Left)
+    flatten(root.Right)
+
+    left := root.Left
+    right := root.Right
+
+    root.Left = nil
+    root.Right = left
+    
+    node := root
+    for node.Right != nil {
+        node = node.Right
+    }
+    node.Right = right
+}
+```
 
 ### 105. 从前序与中序遍历序列构造二叉树
 

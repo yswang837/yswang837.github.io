@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.54f0d62884223289aa3c8dd04b3a111112299530c8aa9ce9f42d7aef160c0d32.js" integrity="sha256-VPDWKIQiMomqPI3QSzoRERIplTDIqpzp9C167xYMDTI=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.51da4e21d44dbb39eda865faf6066487a7b0b5ae13ada8c9d088a95974fadeaa.js" integrity="sha256-UdpOIdRNuzntqGX69gZkh6ewta4TrajJ0IipWXT63qo=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -2425,18 +2425,56 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：</li>
-<li>思路：</li>
+<li>思路：当前的深度大于结果的长度，才认为是需要添加到结果里面的，题目要求右视图，所以先递归右子树。</li>
 </ul>
-<h3 id="114-二叉树展开为链表">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">rightSideView</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">depth</span> <span style="color:#66d9ef">int</span>) 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">f</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">depth</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">depth</span> &gt; len(<span style="color:#a6e22e">ret</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">depth</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">depth</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="114-二叉树展开为链表">
   114. 二叉树展开为链表
   <a class="anchor" href="#114-%e4%ba%8c%e5%8f%89%e6%a0%91%e5%b1%95%e5%bc%80%e4%b8%ba%e9%93%be%e8%a1%a8">#</a>
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
-<li>要求：</li>
-<li>思路：</li>
+<li>要求：链表的遍历结果应该与二叉树的前序遍历相同</li>
+<li>思路：动态规划，划分子问题，传递一棵树，返回一个链表。只需要考虑当前root节点应该怎么做，递归函数会自动遍历出所有节点。</li>
 </ul>
-<h3 id="105-从前序与中序遍历序列构造二叉树">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)  {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">left</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span> = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span> = <span style="color:#a6e22e">left</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> = <span style="color:#a6e22e">right</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="105-从前序与中序遍历序列构造二叉树">
   105. 从前序与中序遍历序列构造二叉树
   <a class="anchor" href="#105-%e4%bb%8e%e5%89%8d%e5%ba%8f%e4%b8%8e%e4%b8%ad%e5%ba%8f%e9%81%8d%e5%8e%86%e5%ba%8f%e5%88%97%e6%9e%84%e9%80%a0%e4%ba%8c%e5%8f%89%e6%a0%91">#</a>
 </h3>
