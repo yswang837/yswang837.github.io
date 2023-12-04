@@ -670,9 +670,29 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：无
-- 思路：动态规划划分子问题，递归函数有返回值且不需要额外传递指针，所以是动态规划，充分利用递归函数的返回值
+- 思路：动态规划划分子问题。
 
 ```go
+// 写法1，采用闭包，闭包可以访问外部的变量，不需要传递额外的指针，感觉更好理解
+func inorderTraversal(root *TreeNode) []int {
+    if root == nil {
+        return nil
+    }
+    var ret []int
+    var f func(root *TreeNode)
+    f = func(root *TreeNode) {
+        if root == nil {
+            return
+        }
+        f(root.Left)
+        ret = append(ret, root.Val)
+        f(root.Right)
+    }
+    f(root)
+    return ret
+}
+
+// 写法2，充分利用递归函数的返回值，同样不需要传递额外的指针。
 func inorderTraversal(root *TreeNode) []int {
     if root == nil {
         return nil
@@ -693,7 +713,7 @@ func inorderTraversal(root *TreeNode) []int {
 - 思路2：回溯算法，记录每次遍历到的数据，是从局部的角度来解决问题，通常需要额外的遍历函数，这个遍历函数通常没有返回值，一般通过参数传入指针的形式来解题
 
 ```go
-// 思路1
+// 思路1-写法1
 // 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想，未借助额外的遍历函数，充分利用遍历函数maxDepth的返回值。
 // 定义：给我一棵树，我就能返回这棵树的最大深度
 func maxDepth(root *TreeNode) int {
@@ -709,7 +729,31 @@ func maxDepth(root *TreeNode) int {
     }
 }
 
-// 思路2
+// 思路1-写法2
+func maxDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    ret := 0
+    var f func(root *TreeNode) int
+    f = func(root *TreeNode) int {
+        if root == nil {
+            return 0
+        }
+        left := f(root.Left)
+        right := f(root.Right)
+        if left >= right {
+            ret = left + 1
+        }else {
+            ret = right + 1
+        }
+        return ret
+    }
+    
+    return f(root)
+}
+
+// 思路2-写法1
 // 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想，借助了traverse函数，记录了额外的遍历值，如res和depth，通常没有返回值，给该函数传递指针就行
 func maxDepth(root *TreeNode) int {
 	res, depth := 0, 0
@@ -736,6 +780,37 @@ func maxInt(i, j int) int {
 		return i
 	}
 	return j
+}
+
+// 思路2-写法2
+func maxDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    ret, depth := 0, 0
+    var f func(root1 *TreeNode)
+    f = func(root1 *TreeNode) {
+        if root1 == nil {
+            return
+        }
+        depth++
+        if root1.Left == nil && root1.Right == nil {
+            ret = maxInt(ret, depth)
+        }
+        f(root1.Left)
+        f(root1.Right)
+        depth--
+    }
+    f(root)
+    return ret
+}
+
+func maxInt(i, j int) int {
+    if i >= j {
+        return i
+    }
+    return j
+
 }
 ```
 
@@ -943,8 +1018,25 @@ func traverse(root *TreeNode, left, right int) bool {
 ### 230. 二叉搜索树中第K小的元素
 
 - 地址：[传送门](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：无
+- 思路：中序遍历就是有序数组，直接返回下标为k-1的那个值
+
+```go
+func kthSmallest(root *TreeNode, k int) int {
+    var f func(root *TreeNode)
+    var ss []int
+    f = func(root *TreeNode) {
+        if root == nil {
+            return
+        }
+        f(root.Left)
+        ss = append(ss, root.Val)
+        f(root.Right)
+    }
+    f(root)
+    return ss[k-1]
+}
+```
 
 ### 199. 二叉树的右视图
 
