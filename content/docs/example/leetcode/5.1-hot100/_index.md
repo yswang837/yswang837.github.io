@@ -897,14 +897,48 @@ func levelOrder(root *TreeNode) [][]int {
 ### 108. 将有序数组转换为二叉搜索树
 
 - 地址：[传送门](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：无
+- 思路：二叉搜索树的中序遍历是升序序列。动态规划，将问题划分为：中间节点+左右子树的问题，模仿二分查找的思路，二分地找数组的中间节点，递归地将该节点作为根节点，把左边给左边的树，右边给右边的树。
+
+```go
+func sortedArrayToBST(nums []int) *TreeNode {
+    if len(nums) == 0 {
+        return nil
+    }
+    return traverse(nums, 0, len(nums) - 1)
+}
+
+func traverse(nums []int, left int, right int) *TreeNode {
+    if left > right {
+        return nil
+    }
+    middle := (left + right) / 2
+    root := &TreeNode{Val:nums[middle]}
+    root.Left = traverse(nums, left, middle - 1)
+    root.Right = traverse(nums, middle + 1, right)
+    return root
+}
+```
 
 ### 98. 验证二叉搜索树
 
 - 地址：[传送门](https://leetcode.cn/problems/validate-binary-search-tree/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：无
+- 思路：动态规划，二叉搜索树的性质：根节点的值都大于左子树的值，并且根节点的值都小于右子树的值。
+
+```go
+func isValidBST(root *TreeNode) bool {
+    return traverse(root, math.MinInt, math.MaxInt)
+}
+
+func traverse(root *TreeNode, left, right int) bool {
+    if root == nil {
+        return true
+    }
+    x := root.Val
+    return x > left && x < right && traverse(root.Left, left, x) && traverse(root.Right, x, right)
+}
+```
 
 ### 230. 二叉搜索树中第K小的元素
 
