@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.e3cc92a76c5ce87522d320da720d28da43723362f757e41731e3d5125ff83f96.js" integrity="sha256-48ySp2xc6HUi0yDacg0o2kNyM2L3V&#43;QXMePVEl/4P5Y=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.54f0d62884223289aa3c8dd04b3a111112299530c8aa9ce9f42d7aef160c0d32.js" integrity="sha256-VPDWKIQiMomqPI3QSzoRERIplTDIqpzp9C167xYMDTI=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -2022,7 +2022,7 @@ https://github.com/alex-shpak/hugo-book
   *二叉树
   <a class="anchor" href="#%e4%ba%8c%e5%8f%89%e6%a0%91">#</a>
 </h2>
-<p>  树的递归遍历，分为动态规划解法和回溯算法的解法。树当然还有迭代遍历/层序遍历。</p>
+<p>  树的递归遍历，又称为深度优先DFS，分为动态规划解法和回溯算法的解法。树当然还有迭代遍历/层序遍历，也称为广度优先BFS。我会在下面的代码中尽可能提供多种解法，遇到树的问题，优先考虑动态规划，充分利用递归函数的返回值，如果涉及到向递归函数传参，那可优先将递归函数写成闭包，这样闭包内部也可只用外部的变量，不用传递指针，看起来可能会好理解点。</p>
 <h3 id="94-二叉树的中序遍历">
   94. 二叉树的中序遍历
   <a class="anchor" href="#94-%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e4%b8%ad%e5%ba%8f%e9%81%8d%e5%8e%86">#</a>
@@ -2032,7 +2032,19 @@ https://github.com/alex-shpak/hugo-book
 <li>要求：无</li>
 <li>思路：动态规划划分子问题。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 写法1，采用闭包，闭包可以访问外部的变量，不需要传递额外的指针，感觉更好理解
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 写法1，充分利用递归函数的返回值，同样不需要传递额外的指针。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inorderTraversal</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">inorderTraversal</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>)<span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">inorderTraversal</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>)<span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 写法2，采用闭包，闭包可以访问外部的变量，不需要传递额外的指针，感觉更好理解
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inorderTraversal</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) []<span style="color:#66d9ef">int</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
@@ -2048,18 +2060,6 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">root</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 写法2，充分利用递归函数的返回值，同样不需要传递额外的指针。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inorderTraversal</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) []<span style="color:#66d9ef">int</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ret</span> []<span style="color:#66d9ef">int</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">inorderTraversal</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>)<span style="color:#f92672">...</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Val</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ret</span> = append(<span style="color:#a6e22e">ret</span>, <span style="color:#a6e22e">inorderTraversal</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>)<span style="color:#f92672">...</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="104-二叉树的最大深度">
@@ -2108,7 +2108,6 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">root</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -2267,7 +2266,7 @@ https://github.com/alex-shpak/hugo-book
 <li>要求：</li>
 <li>思路：回溯算法，需要通过maxDepth函数求出子树的最大深度，这个回溯需要返回值，需要传递额外的指针。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。这个问题貌似也能看做是动态规划的问题，问题分解：一棵树的直径 = max(左子树的最大深度+右子树的最大深度)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 写法1
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">diameterOfBinaryTree</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">maxDiameter</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> 
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">maxDepth</span>(<span style="color:#a6e22e">root</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">maxDiameter</span>)
@@ -2289,6 +2288,30 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">rightDepth</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 写法2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">diameterOfBinaryTree</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">maxDiameter</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">maxDepth</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">maxDepth</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>) <span style="color:#66d9ef">int</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">leftDepth</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">maxDepth</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">rightDepth</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">maxDepth</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">curDepth</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">leftDepth</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">rightDepth</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">curDepth</span> &gt; <span style="color:#a6e22e">maxDiameter</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">maxDiameter</span> = <span style="color:#a6e22e">curDepth</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">leftDepth</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">rightDepth</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">leftDepth</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">rightDepth</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">maxDepth</span>(<span style="color:#a6e22e">root</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">maxDiameter</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="102-二叉树的层序遍历">
   102. 二叉树的层序遍历

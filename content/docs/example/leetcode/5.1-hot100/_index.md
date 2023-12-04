@@ -664,7 +664,7 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 ## \*二叉树
 
-&emsp;&emsp;树的递归遍历，分为动态规划解法和回溯算法的解法。树当然还有迭代遍历/层序遍历。
+&emsp;&emsp;树的递归遍历，又称为深度优先DFS，分为动态规划解法和回溯算法的解法。树当然还有迭代遍历/层序遍历，也称为广度优先BFS。我会在下面的代码中尽可能提供多种解法，遇到树的问题，优先考虑动态规划，充分利用递归函数的返回值，如果涉及到向递归函数传参，那可优先将递归函数写成闭包，这样闭包内部也可只用外部的变量，不用传递指针，看起来可能会好理解点。
 
 ### 94. 二叉树的中序遍历
 
@@ -673,7 +673,19 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 - 思路：动态规划划分子问题。
 
 ```go
-// 写法1，采用闭包，闭包可以访问外部的变量，不需要传递额外的指针，感觉更好理解
+// 写法1，充分利用递归函数的返回值，同样不需要传递额外的指针。
+func inorderTraversal(root *TreeNode) []int {
+    if root == nil {
+        return nil
+    }
+    var ret []int
+    ret = append(ret, inorderTraversal(root.Left)...)
+    ret = append(ret, root.Val)
+    ret = append(ret, inorderTraversal(root.Right)...)
+    return ret
+}
+
+// 写法2，采用闭包，闭包可以访问外部的变量，不需要传递额外的指针，感觉更好理解
 func inorderTraversal(root *TreeNode) []int {
     if root == nil {
         return nil
@@ -689,18 +701,6 @@ func inorderTraversal(root *TreeNode) []int {
         f(root.Right)
     }
     f(root)
-    return ret
-}
-
-// 写法2，充分利用递归函数的返回值，同样不需要传递额外的指针。
-func inorderTraversal(root *TreeNode) []int {
-    if root == nil {
-        return nil
-    }
-    var ret []int
-    ret = append(ret, inorderTraversal(root.Left)...)
-    ret = append(ret, root.Val)
-    ret = append(ret, inorderTraversal(root.Right)...)
     return ret
 }
 ```
@@ -749,7 +749,6 @@ func maxDepth(root *TreeNode) int {
         }
         return ret
     }
-    
     return f(root)
 }
 
@@ -908,7 +907,7 @@ func isSymmetric(root *TreeNode) bool {
 - 思路：回溯算法，需要通过maxDepth函数求出子树的最大深度，这个回溯需要返回值，需要传递额外的指针。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。这个问题貌似也能看做是动态规划的问题，问题分解：一棵树的直径 = max(左子树的最大深度+右子树的最大深度)
 
 ```go
-// 
+// 写法1
 func diameterOfBinaryTree(root *TreeNode) int {
     maxDiameter := 0 
     maxDepth(root, &maxDiameter)
@@ -930,6 +929,30 @@ func maxDepth(root *TreeNode, maxDiameter *int) int {
     }else {
         return rightDepth + 1
     }
+}
+
+// 写法2
+func diameterOfBinaryTree(root *TreeNode) int {
+    maxDiameter := 0
+    var maxDepth func(root *TreeNode) int
+    maxDepth = func(root *TreeNode) int{
+        if root == nil {
+            return 0
+        }
+        leftDepth := maxDepth(root.Left)
+        rightDepth := maxDepth(root.Right)
+        curDepth := leftDepth + rightDepth
+        if curDepth > maxDiameter {
+            maxDiameter = curDepth
+        }
+        if leftDepth >= rightDepth {
+            return leftDepth + 1
+        }else {
+            return rightDepth + 1
+        }
+    }
+    maxDepth(root)
+    return maxDiameter
 }
 ```
 
