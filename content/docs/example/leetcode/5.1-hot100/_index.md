@@ -1121,7 +1121,7 @@ func flatten(root *TreeNode)  {
 
 - 地址：[传送门](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：动态规划，找到前序的第一个节点在中序的位置，然后递归地根据根的位置调用buildTree
+- 思路：动态规划，找到前序的第一个节点在中序的位置，然后递归地根据根的位置调用buildTree，知道前后序没法确定出中序，因为中序给了左右子树的位置信息。
 
 ```go
 func buildTree(preorder []int, inorder []int) *TreeNode {
@@ -1147,7 +1147,29 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/path-sum-iii/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：
+- 思路：前缀和+哈希，这是数组技巧里面的考点。
+
+```go
+func pathSum(root *TreeNode, targetSum int) int {
+    presumCntMap := map[int]int{0:1}
+    var f func(n *TreeNode, curSum int) (ans int)
+    f = func(n *TreeNode, curSum int) (ans int) {
+        if n == nil {
+            return
+        }
+        curSum += n.Val
+        if cnt, ok := presumCntMap[curSum-targetSum];ok {
+            ans += cnt
+        }
+        presumCntMap[curSum]++
+        ans = ans + f(n.Left, curSum) + f(n.Right, curSum)
+        presumCntMap[curSum]--
+        return
+    }
+    return f(root, 0)
+}
+
+```
 
 ### 236. 二叉树的最近公共祖先
 
