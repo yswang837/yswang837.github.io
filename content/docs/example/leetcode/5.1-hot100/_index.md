@@ -1147,7 +1147,7 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/path-sum-iii/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：前缀和+哈希，这是数组技巧里面的考点。
+- 思路：前缀和+哈希，这是数组技巧里面的考点。这题得借鉴一下第一题，两数之和的思路。
 
 ```go
 func pathSum(root *TreeNode, targetSum int) int {

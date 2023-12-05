@@ -1,7 +1,6 @@
 ---
-bookCollapseSection: true
-weight: 20
-title: 6. 面经
+weight: 1
+title: 5.7 面经
 ---
 
 ## 1、运动员赛跑(滴滴)
@@ -88,3 +87,12 @@ func run(i int, wg *sync.WaitGroup, result chan resultItem) {
 ## 6、从前序与中序遍历序列构造二叉树(滴滴)
 
 &emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#105-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91)，这个题与“从后序与中序遍历序列构造二叉树”如出一辙。
+
+## 7、三数之和(滴滴)
+
+&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#15%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C)
+
+## 8、两数相加(滴滴)
+
+&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0)
+
