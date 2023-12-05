@@ -1146,25 +1146,25 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 ### 437. 路径总和 III
 
 - 地址：[传送门](https://leetcode.cn/problems/path-sum-iii/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
+- 要求：路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
 - 思路：前缀和+哈希，这是数组技巧里面的考点。这题得借鉴一下第一题，两数之和的思路。
 
 ```go
 func pathSum(root *TreeNode, targetSum int) int {
-    presumCntMap := map[int]int{0:1}
-    var f func(n *TreeNode, curSum int) (ans int)
-    f = func(n *TreeNode, curSum int) (ans int) {
-        if n == nil {
+    prefixSum := map[int]int{0:1} // 初始化，前缀和为0的路径有1条。
+    var f func(node *TreeNode, currentSum int) (ret int)
+    f = func(node *TreeNode, currentSum int) (ret int) {
+        if node == nil {
             return
         }
-        curSum += n.Val
-        if cnt, ok := presumCntMap[curSum-targetSum];ok {
-            ans += cnt
+        currentSum += node.Val
+        if cnt, ok := prefixSum[currentSum - targetSum]; ok {
+            ret += cnt
         }
-        presumCntMap[curSum]++
-        ans = ans + f(n.Left, curSum) + f(n.Right, curSum)
-        presumCntMap[curSum]--
-        return
+        prefixSum[currentSum]++
+        ret = ret + f(node.Left, currentSum) + f(node.Right, currentSum)
+        prefixSum[currentSum]--
+        return ret
     }
     return f(root, 0)
 }
@@ -1337,7 +1337,32 @@ func search(nums []int, target int) int {
 
 - 地址：[传送门](https://leetcode.cn/problems/valid-parentheses/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：
+- 思路：用一个栈，需要左括号入栈，遇到右括号就取栈顶元素，看是不是能匹配上，不能匹配则直接返回false，最后栈空则是有效的括号，否则不是。
+
+```go
+func isValid(s string) bool {
+    if len(s) == 0 || len(s)%2 == 1 {
+		return false
+	}
+	m := map[byte]byte{')': '(', ']': '[', '}': '{'}
+	stack := []byte{}
+	for _, value := range s {
+		if value == '(' || value == '[' || value == '{' {
+			stack = append(stack, byte(value))
+		} else {
+            if len(stack) == 0 { // 防止这种括号 }{
+                return false
+            }
+			top := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+			if m[byte(value)] != top {
+				return false
+			}
+		}
+	}
+	return len(stack) == 0
+}
+```
 
 ### 155. 最小栈
 

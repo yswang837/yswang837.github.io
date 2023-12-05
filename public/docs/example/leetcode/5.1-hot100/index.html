@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.dd277c6525009cc2dc82ce64853c00ca53692aa0af58a41487aedd4176962f94.js" integrity="sha256-3Sd8ZSUAnMLcgs5khTwAylNpKqCvWKQUh67dQXaWL5Q=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.76a5caee37cbbaf53fb5a1034f60edd6397985bcc42377c7df30a6ce30e209d2.js" integrity="sha256-dqXK7jfLuvU/taEDT2Dt1jl5hbzEI3fH3zCmzjDiCdI=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -2485,24 +2485,24 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/path-sum-iii/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
-<li>要求：</li>
+<li>要求：路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。</li>
 <li>思路：前缀和+哈希，这是数组技巧里面的考点。这题得借鉴一下第一题，两数之和的思路。</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">pathSum</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">targetSum</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">presumCntMap</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>}
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">curSum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">ans</span> <span style="color:#66d9ef">int</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">f</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">curSum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">ans</span> <span style="color:#66d9ef">int</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prefixSum</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>} <span style="color:#75715e">// 初始化，前缀和为0的路径有1条。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">currentSum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">ret</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">f</span> = <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>, <span style="color:#a6e22e">currentSum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">ret</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">curSum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">Val</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">presumCntMap</span>[<span style="color:#a6e22e">curSum</span><span style="color:#f92672">-</span><span style="color:#a6e22e">targetSum</span>];<span style="color:#a6e22e">ok</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ans</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">cnt</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">currentSum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Val</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">cnt</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">prefixSum</span>[<span style="color:#a6e22e">currentSum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">targetSum</span>]; <span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ret</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">cnt</span>
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">presumCntMap</span>[<span style="color:#a6e22e">curSum</span>]<span style="color:#f92672">++</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ans</span> = <span style="color:#a6e22e">ans</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">curSum</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">curSum</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">presumCntMap</span>[<span style="color:#a6e22e">curSum</span>]<span style="color:#f92672">--</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">prefixSum</span>[<span style="color:#a6e22e">currentSum</span>]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ret</span> = <span style="color:#a6e22e">ret</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Left</span>, <span style="color:#a6e22e">currentSum</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>, <span style="color:#a6e22e">currentSum</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">prefixSum</span>[<span style="color:#a6e22e">currentSum</span>]<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ret</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">root</span>, <span style="color:#ae81ff">0</span>)
 </span></span><span style="display:flex;"><span>}
@@ -2740,9 +2740,31 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/valid-parentheses/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：</li>
-<li>思路：</li>
+<li>思路：用一个栈，需要左括号入栈，遇到右括号就取栈顶元素，看是不是能匹配上，不能匹配则直接返回false，最后栈空则是有效的括号，否则不是。</li>
 </ul>
-<h3 id="155-最小栈">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValid</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">byte</span>{<span style="color:#e6db74">&#39;)&#39;</span>: <span style="color:#e6db74">&#39;(&#39;</span>, <span style="color:#e6db74">&#39;]&#39;</span>: <span style="color:#e6db74">&#39;[&#39;</span>, <span style="color:#e6db74">&#39;}&#39;</span>: <span style="color:#e6db74">&#39;{&#39;</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">byte</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;[&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;{&#39;</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, byte(<span style="color:#a6e22e">value</span>))
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 防止这种括号 }{
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">top</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">m</span>[byte(<span style="color:#a6e22e">value</span>)] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">top</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="155-最小栈">
   155. 最小栈
   <a class="anchor" href="#155-%e6%9c%80%e5%b0%8f%e6%a0%88">#</a>
 </h3>
