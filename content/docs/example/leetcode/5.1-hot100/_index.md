@@ -1175,7 +1175,24 @@ func pathSum(root *TreeNode, targetSum int) int {
 
 - 地址：[传送门](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：
+- 思路：动态规划
+
+```go
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+    if root == nil || root == p || root == q {
+        return root
+    }
+    left := lowestCommonAncestor(root.Left, p, q)
+    right := lowestCommonAncestor(root.Right, p, q)
+    if left != nil && right != nil {
+        return root
+    }
+    if left != nil {
+        return left
+    }
+    return right
+}
+```
 
 ### 124. 二叉树中的最大路径和
 
