@@ -68,7 +68,7 @@ func run(i int, wg *sync.WaitGroup, result chan resultItem) {
 }
 ```
 
-## 2、设计一个LRU算法(百度)
+## 2、设计一个LRU算法(百度, 阿里云)
 
 &emsp;&emsp;这是leetcode的hot-100原题，[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#146lru%E7%BC%93%E5%AD%98)
 
@@ -95,4 +95,3 @@ func run(i int, wg *sync.WaitGroup, result chan resultItem) {
 ## 8、两数相加(滴滴)
 
 &emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0)
-
