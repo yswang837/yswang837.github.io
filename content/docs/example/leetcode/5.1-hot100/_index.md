@@ -670,10 +670,11 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：无
-- 思路：动态规划划分子问题。
+- 思路1：动态规划划分子问题。
+- 思路2：回溯算法，写一个闭包作为遍历函数，闭包内可访问闭包外的ret
 
 ```go
-// 写法1，充分利用递归函数的返回值，同样不需要传递额外的指针。
+// 思路1，充分利用递归函数的返回值，不需要传递额外的指针。
 func inorderTraversal(root *TreeNode) []int {
     if root == nil {
         return nil
@@ -685,7 +686,7 @@ func inorderTraversal(root *TreeNode) []int {
     return ret
 }
 
-// 写法2，采用闭包，闭包可以访问外部的变量，不需要传递额外的指针，感觉更好理解
+// 思路2，采用闭包，闭包可以访问外部的变量，不需要传递额外的指针，感觉更好理解
 func inorderTraversal(root *TreeNode) []int {
     if root == nil {
         return nil
@@ -713,7 +714,7 @@ func inorderTraversal(root *TreeNode) []int {
 - 思路2：回溯算法，记录每次遍历到的数据，是从局部的角度来解决问题，通常需要额外的遍历函数，这个遍历函数通常没有返回值，一般通过参数传入指针的形式来解题
 
 ```go
-// 思路1-写法1
+// 思路1
 // 递归划分子问题的思想，采用了后续遍历，这是动态规划的思想，未借助额外的遍历函数，充分利用遍历函数maxDepth的返回值。
 // 定义：给我一棵树，我就能返回这棵树的最大深度
 func maxDepth(root *TreeNode) int {
@@ -729,59 +730,7 @@ func maxDepth(root *TreeNode) int {
     }
 }
 
-// 思路1-写法2
-func maxDepth(root *TreeNode) int {
-    if root == nil {
-        return 0
-    }
-    ret := 0
-    var f func(root *TreeNode) int
-    f = func(root *TreeNode) int {
-        if root == nil {
-            return 0
-        }
-        left := f(root.Left)
-        right := f(root.Right)
-        if left >= right {
-            ret = left + 1
-        }else {
-            ret = right + 1
-        }
-        return ret
-    }
-    return f(root)
-}
-
-// 思路2-写法1
-// 递归地遍历一遍树(并未划分子问题)，得到问题答案，这是回溯算法的思想，借助了traverse函数，记录了额外的遍历值，如res和depth，通常没有返回值，给该函数传递指针就行
-func maxDepth(root *TreeNode) int {
-	res, depth := 0, 0
-	traverse(root, &res, &depth)
-	return res
-}
-
-func traverse(root *TreeNode, res, depth *int) {
-	if root == nil {
-		return
-	}
-	*depth++
-	if root.Left == nil && root.Right == nil {
-        // 到叶节点了，更新最大深度
-		*res = maxInt(*res, *depth)
-	}
-	traverse(root.Left, res, depth)
-	traverse(root.Right, res, depth)
-	*depth--
-}
-
-func maxInt(i, j int) int {
-	if i >= j {
-		return i
-	}
-	return j
-}
-
-// 思路2-写法2
+// 思路2，用闭包，可以不用传参，闭包内部可以访问闭包外部的变量
 func maxDepth(root *TreeNode) int {
     if root == nil {
         return 0
@@ -794,6 +743,7 @@ func maxDepth(root *TreeNode) int {
         }
         depth++
         if root1.Left == nil && root1.Right == nil {
+            // 到叶节点了，更新最大深度
             ret = maxInt(ret, depth)
         }
         f(root1.Left)
