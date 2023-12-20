@@ -772,6 +772,7 @@ func maxInt(i, j int) int {
 
 ```go
 // 思路1：动态规划，充分利用遍历函数invertTree的返回值
+// 定义：给我一棵树，我就能返回这棵树的翻转二叉树
 func invertTree(root *TreeNode) *TreeNode {
     if root == nil {
         return nil
@@ -784,21 +785,21 @@ func invertTree(root *TreeNode) *TreeNode {
 }
 
 // 思路2：回溯算法，定义无返回值的traverse。当然通常回溯算法需要传入额外的指针，回溯算法也能有返回值
-func mirrorTree(root *TreeNode) *TreeNode {
+func invertTree(root *TreeNode) *TreeNode {
     if root == nil {
         return nil
     }
-    traverse(root)
-    return root
-}
-func traverse(root *TreeNode) {
-    if root == nil {
-        return 
+    var f func(node *TreeNode)
+    f = func(node *TreeNode) {
+        if node == nil {
+            return 
+        }
+        node.Left, node.Right = node.Right, node.Left
+        f(node.Left)
+        f(node.Right)
     }
-    root.Left, root.Right = root.Right, root.Left
-    traverse(root.Left)
-    traverse(root.Right)
-    return 
+    f(root)
+    return root
 }
 ```
 
