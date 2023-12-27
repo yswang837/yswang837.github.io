@@ -858,31 +858,6 @@ func isSymmetric(root *TreeNode) bool {
 - 思路：回溯算法，需要通过maxDepth函数求出子树的最大深度，这个回溯需要返回值，需要传递额外的指针。遇到树问题，首先想到的是给函数设置返回值，然后在后序位置做文章。这个问题貌似也能看做是动态规划的问题，问题分解：一棵树的直径 = max(左子树的最大深度+右子树的最大深度)
 
 ```go
-// 写法1
-func diameterOfBinaryTree(root *TreeNode) int {
-    maxDiameter := 0 
-    maxDepth(root, &maxDiameter)
-    return maxDiameter
-}
-
-func maxDepth(root *TreeNode, maxDiameter *int) int {
-    if root == nil {
-        return 0
-    }
-    leftDepth := maxDepth(root.Left, maxDiameter)
-    rightDepth := maxDepth(root.Right, maxDiameter)
-    curDepth := leftDepth + rightDepth
-    if curDepth > *maxDiameter {
-        *maxDiameter = curDepth
-    }
-    if leftDepth >= rightDepth {
-        return leftDepth + 1
-    }else {
-        return rightDepth + 1
-    }
-}
-
-// 写法2
 func diameterOfBinaryTree(root *TreeNode) int {
     maxDiameter := 0
     var maxDepth func(root *TreeNode) int
@@ -1016,7 +991,7 @@ func kthSmallest(root *TreeNode, k int) int {
 
 - 地址：[传送门](https://leetcode.cn/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：当前的深度大于结果的长度，才认为是需要添加到结果里面的，题目要求右视图，所以先递归右子树。
+- 思路：当前的深度大于结果的长度，才认为是需要添加到结果里面的，题目要求右视图，所以先递归右子树。当题目要求左视图，自然想到先递归左子树。
 
 ```go
 func rightSideView(root *TreeNode) []int {
@@ -1024,18 +999,21 @@ func rightSideView(root *TreeNode) []int {
         return nil
     }
     var ret []int
-    var f func(node *TreeNode, depth int) 
-    f = func(node *TreeNode, depth int) {
+    depth := 0
+    var f func(node *TreeNode)
+    f = func(node *TreeNode) {
         if node == nil {
             return
         }
+        depth++
         if depth > len(ret) {
             ret = append(ret, node.Val)
         }
-        f(node.Right, depth+1)
-        f(node.Left, depth+1)
+        f(node.Right)
+        f(node.Left)
+        depth--
     }
-    f(root, 1)
+    f(root)
     return ret
 }
 ```
