@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.5aedc0cd424dc128dd01d80cfb1ba895501417ddbef3a9d5de0464d932fd8a84.js" integrity="sha256-Wu3AzUJNwSjdAdgM&#43;xuolVAUF92&#43;86nV3gRk2TL9ioQ=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.11c20f40a04c7604af5e4beebbb5c89a41ba180bc43794e3ece0a07440203775.js" integrity="sha256-EcIPQKBMdgSvXkvuu7XImkG6GAvEN5Tj7OCgdEAgN3U=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -2360,27 +2360,31 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
-<li>要求：链表的遍历结果应该与二叉树的前序遍历相同</li>
+<li>要求：链表的遍历结果应该与二叉树的前序遍历相同，结果依旧用树的节点表示链表，其中right指针指向链表中的下一个节点，left指针始终指向nil。</li>
 <li>思路：动态规划，划分子问题，传递一棵树，返回一个链表。只需要考虑当前root节点应该怎么做，递归函数会自动遍历出所有节点。</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span>)  {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1、边界条件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 2、逻辑处理
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// 将左右子树展平为链表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">flatten</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>)
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">left</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span> = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 将左子树放在root的右子树上，并且把左子树置空
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Left</span> = <span style="color:#66d9ef">nil</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">Right</span> = <span style="color:#a6e22e">left</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 把右子树挪到末尾，并将原来的右子树接上去
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">root</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">node</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Right</span> = <span style="color:#a6e22e">right</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 3、返回
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="105-从前序与中序遍历序列构造二叉树">
   105. 从前序与中序遍历序列构造二叉树

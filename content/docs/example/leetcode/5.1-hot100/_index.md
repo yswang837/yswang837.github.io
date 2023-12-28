@@ -1021,28 +1021,32 @@ func rightSideView(root *TreeNode) []int {
 ### 114. 二叉树展开为链表
 
 - 地址：[传送门](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：链表的遍历结果应该与二叉树的前序遍历相同
+- 要求：链表的遍历结果应该与二叉树的前序遍历相同，结果依旧用树的节点表示链表，其中right指针指向链表中的下一个节点，left指针始终指向nil。
 - 思路：动态规划，划分子问题，传递一棵树，返回一个链表。只需要考虑当前root节点应该怎么做，递归函数会自动遍历出所有节点。
 
 ```go
 func flatten(root *TreeNode)  {
+    // 1、边界条件
     if root == nil {
         return
     }
+    // 2、逻辑处理
+    // 将左右子树展平为链表
     flatten(root.Left)
     flatten(root.Right)
-
     left := root.Left
     right := root.Right
-
+    // 将左子树放在root的右子树上，并且把左子树置空
     root.Left = nil
     root.Right = left
-    
+    // 把右子树挪到末尾，并将原来的右子树接上去
     node := root
     for node.Right != nil {
         node = node.Right
     }
     node.Right = right
+    // 3、返回
+    return
 }
 ```
 
