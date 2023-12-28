@@ -1054,7 +1054,7 @@ func flatten(root *TreeNode)  {
 
 - 地址：[传送门](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：动态规划，找到前序的第一个节点在中序的位置，然后递归地根据根的位置调用buildTree，知道前后序没法确定出中序，因为中序给了左右子树的位置信息。
+- 思路：动态规划，找到前序的第一个节点在中序的位置，然后递归地根据根的位置调用buildTree，其定义是给我两个切片，我就能返回一棵树，给我左边的两个切片，我就返回左子树，给我右边的两个切片，我就返回右子树。如果题目变成了知道前序中序遍历，求后序遍历，那么只需要在本题的基础上，后续遍历这棵树并返回一个切片即可。知道前后序没法确定出中序，因为中序给了左右子树的位置信息。
 
 ```go
 func buildTree(preorder []int, inorder []int) *TreeNode {

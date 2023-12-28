@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.11c20f40a04c7604af5e4beebbb5c89a41ba180bc43794e3ece0a07440203775.js" integrity="sha256-EcIPQKBMdgSvXkvuu7XImkG6GAvEN5Tj7OCgdEAgN3U=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.1084c7f2df24d349833657fdce18051aebd2cd076bd000cc6a75037a11e449b1.js" integrity="sha256-EITH8t8k00mDNlf9zhgFGuvSzQdr0ADManUDehHkSbE=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -2393,7 +2393,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：</li>
-<li>思路：动态规划，找到前序的第一个节点在中序的位置，然后递归地根据根的位置调用buildTree，知道前后序没法确定出中序，因为中序给了左右子树的位置信息。</li>
+<li>思路：动态规划，找到前序的第一个节点在中序的位置，然后递归地根据根的位置调用buildTree，其定义是给我两个切片，我就能返回一棵树，给我左边的两个切片，我就返回左子树，给我右边的两个切片，我就返回右子树。如果题目变成了知道前序中序遍历，求后序遍历，那么只需要在本题的基础上，后续遍历这棵树并返回一个切片即可。知道前后序没法确定出中序，因为中序给了左右子树的位置信息。</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">buildTree</span>(<span style="color:#a6e22e">preorder</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">inorder</span> []<span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">TreeNode</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">preorder</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> len(<span style="color:#a6e22e">inorder</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
