@@ -1080,7 +1080,7 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/path-sum-iii/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
-- 思路：前缀和+哈希，这是数组技巧里面的考点。这题得借鉴一下第一题，两数之和的思路。
+- 思路：前缀和+哈希，这是数组技巧里面的考点。这题得借鉴一下第一题，两数之和的思路，前缀和数组改用为前缀和map，key是前缀和，value是路径数目，也就是结果的一部分，采用回溯算法的思想。
 
 ```go
 func pathSum(root *TreeNode, targetSum int) int {
