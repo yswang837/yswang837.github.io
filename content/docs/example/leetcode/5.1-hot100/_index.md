@@ -1122,8 +1122,9 @@ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
     }
     if left != nil {
         return left
+    }else {
+        return right
     }
-    return right
 }
 ```
 
@@ -1343,8 +1344,66 @@ func isValid(s string) bool {
 ### 155. 最小栈
 
 - 地址：[传送门](https://leetcode.cn/problems/min-stack/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：在常数时间内检索到最小元素的栈。
+- 思路：主栈主要用于实现push,pop和pop函数，辅助栈主要用于记录每次的最小值，保证栈顶元素始终是最小值即可，两个栈的长度是一致的，同时操作即可，很简单
+
+```go
+type MinStack struct {
+    stack []int
+    minStack []int
+}
+
+
+func Constructor() MinStack {
+    return MinStack{
+        stack: []int{},
+        minStack: []int{},
+    }
+}
+
+
+func (this *MinStack) Push(val int)  {
+    this.stack = append(this.stack, val)
+    if len(this.minStack) == 0 {
+        this.minStack = append(this.minStack, val)
+    }else {
+        top := this.minStack[len(this.minStack)-1]  
+        this.minStack = append(this.minStack, minInt(top,val))
+    }
+    
+}
+
+func minInt(i,j int) int {
+    if i <= j {
+        return i
+    }
+    return j
+}
+
+
+func (this *MinStack) Pop() {
+    if len(this.stack) >= 1 {
+        this.stack = this.stack[:len(this.stack)-1]
+        this.minStack = this.minStack[:len(this.minStack)-1]
+    }
+    
+}
+
+func (this *MinStack) Top() int {
+    if len(this.stack) >= 1 {
+        return this.stack[len(this.stack)-1]
+    }
+    return math.MaxInt
+}
+
+
+func (this *MinStack) GetMin() int {
+    if len(this.minStack) >= 1 {
+        return this.minStack[len(this.minStack)-1]
+    }
+    return math.MaxInt
+}
+```
 
 ### 394. 字符串解码
 
