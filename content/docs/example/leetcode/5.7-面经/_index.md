@@ -74,7 +74,7 @@ func main() {
 	sort.Sort(sortResult(raceResult))
 	fmt.Printf("%d米跨栏比赛成绩如下:\n", r.total)
 	for i, val := range raceResult {
-		fmt.Printf("第%d名，编号是%d，耗时%.2fs\n", i+1, val.Id, val.Score)
+		fmt.Printf("第%d名，编号是%d，耗时%.2fs\n", i+1, val.Id+1, val.Score)
 	}
 }
 
