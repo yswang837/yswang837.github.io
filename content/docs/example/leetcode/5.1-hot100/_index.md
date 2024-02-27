@@ -340,71 +340,83 @@ func reverseList(head *ListNode) *ListNode {
 
 ```go
 type Node struct {
-	key, value int
-	prev, next *Node
+	key  int
+	val  int
+	prev *Node
+	next *Node
 }
 
+// 一个LRU缓存是由map和双向链表构成
 type LRUCache struct {
-	capacity   int
-	head, tail *Node
-	hashMap    map[int]*Node
+	capacity int
+	hashMap  map[int]*Node
+	head     *Node
+	tail     *Node
 }
 
 func Constructor(capacity int) LRUCache {
-	head, tail := &Node{}, &Node{}
+	// 初始化头尾相互指向的双链表，初始化容量为capacity的map
 	// head <-> tail
+	head, tail := &Node{}, &Node{}
 	head.next = tail
 	tail.prev = head
 	return LRUCache{
 		capacity: capacity,
+		hashMap:  map[int]*Node{},
 		head:     head,
 		tail:     tail,
-		hashMap:  map[int]*Node{},
 	}
 }
 
-func (l *LRUCache) Get(key int) int {
-	if node, ok := l.hashMap[key]; ok {
-		remove(node)
-		insert(l.head, node)
-		return node.value
+func (this *LRUCache) Get(key int) int {
+	// 从LRU中查数据，
+	// 1. 查不到直接返回-1
+	// 2. 查到了返回对应值，并将该节点从当前位置删除，并在头结点位置插入
+	node, ok := this.hashMap[key]
+	if !ok {
+		return -1
 	}
-	return -1
+	this.remove(node)
+	this.insert(node)
+	return node.val
 }
 
-func (l *LRUCache) Put(key int, value int) {
-	if node, ok := l.hashMap[key]; ok {
-		// 如果在map里面，属于更新
-		node.value = value
-		remove(node)
-		insert(l.head, node)
+func (this *LRUCache) Put(key int, value int) {
+	// 将key value加入或更新到LRU中
+	// 1. 如果在LRU中，则属于更新，更新不需要维护容量，将原有位置删除，并插入头部
+	// 2. 如果不在LRU中，则属于新增，将新节点插入头部，新增需要维护容量，如果当前容量大于capacity，则删除最后一个节点
+	node, ok := this.hashMap[key]
+	if ok {
+		this.remove(node)
+		node.val = value
+		this.insert(node)
 	} else {
-		newNode := &Node{key: key, value: value}
-		insert(l.head, newNode)
-		l.hashMap[key] = newNode
-		if len(l.hashMap) > l.capacity {
-			lastNode := l.tail.prev
-			remove(lastNode)
-			delete(l.hashMap, lastNode.key)
+		newNode := &Node{key: key, val: value}
+		this.insert(newNode)
+        this.hashMap[key] = newNode
+		if len(this.hashMap) > this.capacity {
+			lastNode := this.tail.prev
+			this.remove(lastNode)
+			delete(this.hashMap, lastNode.key)
 		}
 	}
-
 }
 
-func remove(node *Node) {
-	// prev <-> node <-> next
-	node.prev.next = node.next // prev -> next
-	node.next.prev = node.prev // prev <- next
+func (this *LRUCache) remove(node *Node) {
+	// xxx <-> node <-> xxx
+	node.prev.next = node.next
+	node.next.prev = node.prev
+	// xxx <-> xxx
 }
 
-func insert(head, node *Node) {
-	// head <-> next
-	// head <-> node <-> next
-	next := head.next
-	node.next = next // node -> next
-	next.prev = node // node <- next
-	head.next = node // head -> node
-	node.prev = head // head <- node
+func (this *LRUCache) insert(node *Node) {
+	// head <-> xxx
+	next := this.head.next
+	this.head.next = node // head -> node
+	node.prev = this.head // head <-> node
+	node.next = next      // head <-> node -> xxx
+	next.prev = node      // head <-> node <-> xxx
+	// head <-> node <-> xxx
 }
 
 ```
