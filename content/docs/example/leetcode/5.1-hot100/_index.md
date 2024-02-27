@@ -1450,6 +1450,10 @@ func decodeString(s string) string {
 - 要求：
 - 思路：题目和顺序有关，可以考虑单调栈，二分，堆，排序这些技巧，挨个想，总有一个是对的，本题我们采用单调栈的思想。
 
+```go
+
+```
+
 ### 84. 柱状图中最大的矩形
 
 - 地址：[传送门](https://leetcode.cn/problems/largest-rectangle-in-histogram/description/?envType=study-plan-v2&envId=top-100-liked)

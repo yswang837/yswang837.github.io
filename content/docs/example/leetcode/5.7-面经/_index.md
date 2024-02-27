@@ -5,13 +5,14 @@ title: 5.7 面经
 
 ## 1、运动员赛跑(滴滴)
 
-&emsp;&emsp;10个运动员参加百米赛跑，裁判一声枪响后运动员出发，按成绩升序输出成绩、排名、运动员编号。考点是golang的并发
+&emsp;&emsp;9个运动员参加110米跨栏比赛，裁判一声枪响后运动员出发，按成绩升序输出排名、运动员编号、成绩。考点是golang的并发
 
 ```go
 package main
 
 import (
 	"fmt"
+	"math/rand"
 	"sort"
 	"sync"
 	"time"
@@ -19,7 +20,7 @@ import (
 
 type resultItem struct {
 	Id    int
-	Score time.Duration
+	Score float32
 }
 
 type sortResult []resultItem
@@ -36,36 +37,53 @@ func (s sortResult) Swap(i, j int) {
 	s[i], s[j] = s[j], s[i]
 }
 
-func main() {
-	const runner = 10
-	wg := &sync.WaitGroup{}
-	result := make(chan resultItem, runner)
-	judge := make(chan struct{}, 1)
-	judge <- struct{}{}
-	time.Sleep(time.Second)
-	<-judge
-	for i := 0; i < runner; i++ {
-		wg.Add(1)
-		go run(i, wg, result)
-	}
-	wg.Wait()
-	close(judge)
-	close(result)
-	var raceResult []resultItem
-	for r := range result {
-		raceResult = append(raceResult, r)
-	}
-	sort.Sort(sortResult(raceResult))
-	for i, val := range raceResult {
-		fmt.Printf("第%d名，编号是%d,耗时%+v\n", i+1, val.Id, val.Score)
+type race struct {
+	total  int
+	runner int
+	wg     *sync.WaitGroup
+	judge  chan struct{}
+	result chan resultItem
+}
+
+func newRace(total, runner int) *race {
+	return &race{
+		total:  total,
+		runner: runner,
+		wg:     &sync.WaitGroup{},
+		judge:  make(chan struct{}, 1),
+		result: make(chan resultItem, runner),
 	}
 }
 
-func run(i int, wg *sync.WaitGroup, result chan resultItem) {
-	start := time.Now()
-	result <- resultItem{i, time.Since(start)}
-	wg.Done()
+func main() {
+	r := newRace(110, 9)
+	r.judge <- struct{}{}
+	time.Sleep(time.Second)
+	<-r.judge
+	for i := 0; i < r.runner; i++ {
+		r.wg.Add(1)
+		go r.run(i)
+	}
+	r.wg.Wait()
+	close(r.judge)
+	close(r.result)
+	var raceResult []resultItem
+	for ret := range r.result {
+		raceResult = append(raceResult, ret)
+	}
+	sort.Sort(sortResult(raceResult))
+	fmt.Printf("%d米跨栏比赛成绩如下:\n", r.total)
+	for i, val := range raceResult {
+		fmt.Printf("第%d名，编号是%d，耗时%.2fs\n", i+1, val.Id, val.Score)
+	}
 }
+
+func (r *race) run(i int) {
+	speed := 5 * (rand.Float32() + 2)
+	r.result <- resultItem{i, float32(r.total) / speed}
+	r.wg.Done()
+}
+
 ```
 
 ## 2、设计一个LRU算法(百度, 阿里云)
