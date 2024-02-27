@@ -1330,26 +1330,34 @@ func search(nums []int, target int) int {
 
 ```go
 func isValid(s string) bool {
-    if len(s) == 0 || len(s)%2 == 1 {
-		return false
-	}
-	m := map[byte]byte{')': '(', ']': '[', '}': '{'}
-	stack := []byte{}
-	for _, value := range s {
-		if value == '(' || value == '[' || value == '{' {
-			stack = append(stack, byte(value))
-		} else {
-            if len(stack) == 0 { // 防止这种括号 }{
+    if s == "" {
+        return false
+    }
+    m := map[rune]rune{
+        ')':'(',
+        ']':'[',
+        '}':'{',
+    }
+    var stack []rune
+    for _, val := range s {
+        mapVal, ok := m[val]
+        if ok {
+            // 当前的字符是右括号，取出栈顶元素和字典中对应的字符相比，不等则直接返回false，如果栈为空，则直接返回false
+            if len(stack) == 0 {
                 return false
             }
-			top := stack[len(stack)-1]
-			stack = stack[:len(stack)-1]
-			if m[byte(value)] != top {
-				return false
-			}
-		}
-	}
-	return len(stack) == 0
+            top := stack[0]
+            stack = stack[1:]
+            if mapVal != top {
+                return false
+            }
+        }else {
+            // 当前的字符是左括号，直接入栈
+            stack = append(stack, val)
+        }
+    }
+    // 循环完成，栈为空表示是有效的括号
+    return len(stack) == 0
 }
 ```
 
