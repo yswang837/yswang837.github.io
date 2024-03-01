@@ -113,3 +113,7 @@ func (r *race) run(i int) {
 ## 8、两数相加(滴滴)
 
 &emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0)
+
+## 9、反转链表(baidu)
+
+&emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#206%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8)
