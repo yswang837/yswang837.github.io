@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.f03c73d3fbaf2ff77bc11e20fb0c68f9bf4729399e6f98844a8e0469dbbf717f.js" integrity="sha256-8Dxz0/uvL/d7wR4g&#43;wxo&#43;b9HKTmeb5iESo4Eadu/cX8=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.02e37b4ce82f05dd211d3a2b87125b9360b9555f2d682807e7cbc4ba49c3cb4a.js" integrity="sha256-AuN7TOgvBd0hHTorhxJbk2C5VV8taCgH58vEuknDy0o=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1645,16 +1645,19 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pre</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">cur</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">pre</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pre</span> = <span style="color:#a6e22e">cur</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cur</span> = <span style="color:#a6e22e">next</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">pre</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pre</span> = <span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">head</span> = <span style="color:#a6e22e">next</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">pre</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="146lru缓存">
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//                     p
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//null  &lt;- 1 3 -&gt; 5 -&gt; 7
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//         h
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//           n
+</span></span></span></code></pre></div><h3 id="146lru缓存">
   146.LRU缓存
   <a class="anchor" href="#146lru%e7%bc%93%e5%ad%98">#</a>
 </h3>
@@ -1664,71 +1667,83 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：假设缓存容量是length=5，则ABCDBEFG最终会存成FGEBD，get操作需要O(1)时间复杂度，所以用map来查，put操作需要O(1)时间复杂度，并且要在头部插入，尾部删除，所以用双向链表来存，head &lt;-&gt; &hellip; node &hellip; &lt;-&gt; tail，PUT：元素要在头部插入，容量满了之后，在尾部删除。&mdash;-&gt; 双向链表，GET：在O(1)内查到元素，该元素从原位置删除，再插入头部 &mdash;-&gt; map(key,node)</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">value</span> <span style="color:#66d9ef">int</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">prev</span>, <span style="color:#a6e22e">next</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">key</span>  <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">val</span>  <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">prev</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">next</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">LRUCache</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">capacity</span>   <span style="color:#66d9ef">int</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">tail</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">hashMap</span>    <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 一个LRU缓存是由map和双向链表构成
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">LRUCache</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">capacity</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">hashMap</span>  <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span>     <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">tail</span>     <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Constructor</span>(<span style="color:#a6e22e">capacity</span> <span style="color:#66d9ef">int</span>) <span style="color:#a6e22e">LRUCache</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{}, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{}
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// head &lt;-&gt; tail
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">tail</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 初始化头尾相互指向的双链表，初始化容量为capacity的map
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// head &lt;-&gt; tail
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{}, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">tail</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">head</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">LRUCache</span>{
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">capacity</span>: <span style="color:#a6e22e">capacity</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">hashMap</span>:  <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>{},
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">head</span>:     <span style="color:#a6e22e">head</span>,
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">tail</span>:     <span style="color:#a6e22e">tail</span>,
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">hashMap</span>:  <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>{},
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LRUCache</span>) <span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>]; <span style="color:#a6e22e">ok</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">node</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">node</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">value</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LRUCache</span>) <span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 从LRU中查数据，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// 1. 查不到直接返回-1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// 2. 查到了返回对应值，并将该节点从当前位置删除，并在头结点位置插入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">node</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">node</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">val</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LRUCache</span>) <span style="color:#a6e22e">Put</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">value</span> <span style="color:#66d9ef">int</span>) {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>]; <span style="color:#a6e22e">ok</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 如果在map里面，属于更新
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">value</span> = <span style="color:#a6e22e">value</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">node</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">node</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LRUCache</span>) <span style="color:#a6e22e">Put</span>(<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">value</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 将key value加入或更新到LRU中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// 1. 如果在LRU中，则属于更新，更新不需要维护容量，将原有位置删除，并插入头部
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// 2. 如果不在LRU中，则属于新增，将新节点插入头部，新增需要维护容量，如果当前容量大于capacity，则删除最后一个节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">node</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">val</span> = <span style="color:#a6e22e">value</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">node</span>)
 </span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">newNode</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{<span style="color:#a6e22e">key</span>: <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">value</span>: <span style="color:#a6e22e">value</span>}
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">newNode</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>] = <span style="color:#a6e22e">newNode</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">hashMap</span>) &gt; <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">capacity</span> {
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">lastNode</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">prev</span>
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">lastNode</span>)
-</span></span><span style="display:flex;"><span>			delete(<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">hashMap</span>, <span style="color:#a6e22e">lastNode</span>.<span style="color:#a6e22e">key</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">newNode</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{<span style="color:#a6e22e">key</span>: <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">val</span>: <span style="color:#a6e22e">value</span>}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">newNode</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>] = <span style="color:#a6e22e">newNode</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>) &gt; <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">capacity</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">lastNode</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">prev</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">lastNode</span>)
+</span></span><span style="display:flex;"><span>			delete(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>, <span style="color:#a6e22e">lastNode</span>.<span style="color:#a6e22e">key</span>)
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) {
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// prev &lt;-&gt; node &lt;-&gt; next
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">next</span> <span style="color:#75715e">// prev -&gt; next
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">prev</span> <span style="color:#75715e">// prev &lt;- next
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LRUCache</span>) <span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// xxx &lt;-&gt; node &lt;-&gt; xxx
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">next</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">prev</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// xxx &lt;-&gt; xxx
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) {
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// head &lt;-&gt; next
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// head &lt;-&gt; node &lt;-&gt; next
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">next</span> <span style="color:#75715e">// node -&gt; next
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">node</span> <span style="color:#75715e">// node &lt;- next
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">node</span> <span style="color:#75715e">// head -&gt; node
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">head</span> <span style="color:#75715e">// head &lt;- node
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">this</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LRUCache</span>) <span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// head &lt;-&gt; xxx
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">node</span> <span style="color:#75715e">// head -&gt; node
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">head</span> <span style="color:#75715e">// head &lt;-&gt; node
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">next</span>      <span style="color:#75715e">// head &lt;-&gt; node -&gt; xxx
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">next</span>.<span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">node</span>      <span style="color:#75715e">// head &lt;-&gt; node &lt;-&gt; xxx
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// head &lt;-&gt; node &lt;-&gt; xxx
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><h3 id="234-回文链表">
   234. 回文链表
@@ -2714,26 +2729,34 @@ https://github.com/alex-shpak/hugo-book
 <li>思路：用一个栈，需要左括号入栈，遇到右括号就取栈顶元素，看是不是能匹配上，不能匹配则直接返回false，最后栈空则是有效的括号，否则不是。</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isValid</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">bool</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">s</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">byte</span>]<span style="color:#66d9ef">byte</span>{<span style="color:#e6db74">&#39;)&#39;</span>: <span style="color:#e6db74">&#39;(&#39;</span>, <span style="color:#e6db74">&#39;]&#39;</span>: <span style="color:#e6db74">&#39;[&#39;</span>, <span style="color:#e6db74">&#39;}&#39;</span>: <span style="color:#e6db74">&#39;{&#39;</span>}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">stack</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">byte</span>{}
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;[&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;{&#39;</span> {
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, byte(<span style="color:#a6e22e">value</span>))
-</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 防止这种括号 }{
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">rune</span>]<span style="color:#66d9ef">rune</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;)&#39;</span>:<span style="color:#e6db74">&#39;(&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;]&#39;</span>:<span style="color:#e6db74">&#39;[&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;}&#39;</span>:<span style="color:#e6db74">&#39;{&#39;</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stack</span> []<span style="color:#66d9ef">rune</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">mapVal</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">val</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ok</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 当前的字符是右括号，取出栈顶元素和字典中对应的字符相比，不等则直接返回false，如果栈为空，则直接返回false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
 </span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">top</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">stack</span>[len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[:len(<span style="color:#a6e22e">stack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">m</span>[byte(<span style="color:#a6e22e">value</span>)] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">top</span> {
-</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>			}
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">top</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">stack</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">stack</span> = <span style="color:#a6e22e">stack</span>[<span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">mapVal</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">top</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 当前的字符是左括号，直接入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">stack</span> = append(<span style="color:#a6e22e">stack</span>, <span style="color:#a6e22e">val</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 循环完成，栈为空表示是有效的括号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">stack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="155-最小栈">
   155. 最小栈
@@ -2847,7 +2870,7 @@ https://github.com/alex-shpak/hugo-book
 <li>要求：</li>
 <li>思路：题目和顺序有关，可以考虑单调栈，二分，堆，排序这些技巧，挨个想，总有一个是对的，本题我们采用单调栈的思想。</li>
 </ul>
-<h3 id="84-柱状图中最大的矩形">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h3 id="84-柱状图中最大的矩形">
   84. 柱状图中最大的矩形
   <a class="anchor" href="#84-%e6%9f%b1%e7%8a%b6%e5%9b%be%e4%b8%ad%e6%9c%80%e5%a4%a7%e7%9a%84%e7%9f%a9%e5%bd%a2">#</a>
 </h3>

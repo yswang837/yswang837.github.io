@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="1、运动员赛跑(滴滴) # 10个运动员参加百米赛跑，裁判一声枪响后运动员出发，按成绩升序输出成绩、排名、运动员编号。考点是golang的并发
-package main import ( &#34;fmt&#34; &#34;sort&#34; &#34;sync&#34; &#34;time&#34; ) type resultItem struct { Id int Score time.Duration } type sortResult []resultItem func (s sortResult) Len() int { return len(s) } func (s sortResult) Less(i, j int) bool { return s[i].Score &lt; s[j].Score } func (s sortResult) Swap(i, j int) { s[i], s[j] = s[j], s[i] } func main() { const runner = 10 wg := &amp;sync.WaitGroup{} result := make(chan resultItem, runner) judge := make(chan struct{}, 1) judge &lt;- struct{}{} time.">
+<meta name="description" content="1、运动员赛跑(滴滴) # 9个运动员参加110米跨栏比赛，裁判一声枪响后运动员出发，按成绩升序输出排名、运动员编号、成绩。考点是golang的并发
+package main import ( &#34;fmt&#34; &#34;math/rand&#34; &#34;sort&#34; &#34;sync&#34; &#34;time&#34; ) type resultItem struct { Id int Score float32 } type sortResult []resultItem func (s sortResult) Len() int { return len(s) } func (s sortResult) Less(i, j int) bool { return s[i].Score &lt; s[j].Score } func (s sortResult) Swap(i, j int) { s[i], s[j] = s[j], s[i] } type race struct { total int runner int wg *sync.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="5.7 面经" />
 <meta property="og:description" content="" />
@@ -16,7 +16,7 @@ package main import ( &#34;fmt&#34; &#34;sort&#34; &#34;sync&#34; &#34;time&#34;
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.f03c73d3fbaf2ff77bc11e20fb0c68f9bf4729399e6f98844a8e0469dbbf717f.js" integrity="sha256-8Dxz0/uvL/d7wR4g&#43;wxo&#43;b9HKTmeb5iESo4Eadu/cX8=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.02e37b4ce82f05dd211d3a2b87125b9360b9555f2d682807e7cbc4ba49c3cb4a.js" integrity="sha256-AuN7TOgvBd0hHTorhxJbk2C5VV8taCgH58vEuknDy0o=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.7-%E9%9D%A2%E7%BB%8F/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1091,6 +1091,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#6从前序与中序遍历序列构造二叉树滴滴">6、从前序与中序遍历序列构造二叉树(滴滴)</a></li>
     <li><a href="#7三数之和滴滴">7、三数之和(滴滴)</a></li>
     <li><a href="#8两数相加滴滴">8、两数相加(滴滴)</a></li>
+    <li><a href="#9反转链表百度">9、反转链表(百度)</a></li>
   </ul>
 </nav>
 
@@ -1107,11 +1108,12 @@ https://github.com/alex-shpak/hugo-book
   1、运动员赛跑(滴滴)
   <a class="anchor" href="#1%e8%bf%90%e5%8a%a8%e5%91%98%e8%b5%9b%e8%b7%91%e6%bb%b4%e6%bb%b4">#</a>
 </h2>
-<p>  10个运动员参加百米赛跑，裁判一声枪响后运动员出发，按成绩升序输出成绩、排名、运动员编号。考点是golang的并发</p>
+<p>  9个运动员参加110米跨栏比赛，裁判一声枪响后运动员出发，按成绩升序输出排名、运动员编号、成绩。考点是golang的并发</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math/rand&#34;</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;sort&#34;</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;sync&#34;</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;time&#34;</span>
@@ -1119,7 +1121,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">resultItem</span> <span style="color:#66d9ef">struct</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Id</span>    <span style="color:#66d9ef">int</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Score</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Duration</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Score</span> <span style="color:#66d9ef">float32</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">sortResult</span> []<span style="color:#a6e22e">resultItem</span>
@@ -1136,35 +1138,51 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>]
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">runner</span> = <span style="color:#ae81ff">10</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">wg</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">WaitGroup</span>{}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">result</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">resultItem</span>, <span style="color:#a6e22e">runner</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">judge</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">struct</span>{}, <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">judge</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">struct</span>{}{}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">judge</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">runner</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">wg</span>, <span style="color:#a6e22e">result</span>)
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Wait</span>()
-</span></span><span style="display:flex;"><span>	close(<span style="color:#a6e22e">judge</span>)
-</span></span><span style="display:flex;"><span>	close(<span style="color:#a6e22e">result</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">raceResult</span> []<span style="color:#a6e22e">resultItem</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">result</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">raceResult</span> = append(<span style="color:#a6e22e">raceResult</span>, <span style="color:#a6e22e">r</span>)
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Sort</span>(<span style="color:#a6e22e">sortResult</span>(<span style="color:#a6e22e">raceResult</span>))
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">raceResult</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;第%d名，编号是%d,耗时%+v\n&#34;</span>, <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">Id</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">Score</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">race</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">total</span>  <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">runner</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">wg</span>     <span style="color:#f92672">*</span><span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">WaitGroup</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">judge</span>  <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">struct</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">result</span> <span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">resultItem</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">newRace</span>(<span style="color:#a6e22e">total</span>, <span style="color:#a6e22e">runner</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">race</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">race</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">total</span>:  <span style="color:#a6e22e">total</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">runner</span>: <span style="color:#a6e22e">runner</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">wg</span>:     <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">WaitGroup</span>{},
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">judge</span>:  make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">struct</span>{}, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">result</span>: make(<span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">resultItem</span>, <span style="color:#a6e22e">runner</span>),
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">wg</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">WaitGroup</span>, <span style="color:#a6e22e">result</span> <span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">resultItem</span>) {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>()
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">result</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">resultItem</span>{<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Since</span>(<span style="color:#a6e22e">start</span>)}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Done</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">newRace</span>(<span style="color:#ae81ff">110</span>, <span style="color:#ae81ff">9</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">judge</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">struct</span>{}{}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">judge</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">runner</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Wait</span>()
+</span></span><span style="display:flex;"><span>	close(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">judge</span>)
+</span></span><span style="display:flex;"><span>	close(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">result</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">raceResult</span> []<span style="color:#a6e22e">resultItem</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">ret</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">result</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">raceResult</span> = append(<span style="color:#a6e22e">raceResult</span>, <span style="color:#a6e22e">ret</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Sort</span>(<span style="color:#a6e22e">sortResult</span>(<span style="color:#a6e22e">raceResult</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%d米跨栏比赛成绩如下:\n&#34;</span>, <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">total</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">raceResult</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;第%d名，编号是%d，耗时%.2fs\n&#34;</span>, <span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">Id</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">Score</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">race</span>) <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">speed</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">*</span> (<span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Float32</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">result</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">resultItem</span>{<span style="color:#a6e22e">i</span>, float32(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">total</span>) <span style="color:#f92672">/</span> <span style="color:#a6e22e">speed</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Done</span>()
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="2设计一个lru算法百度-阿里云">
   2、设计一个LRU算法(百度, 阿里云)
@@ -1201,6 +1219,11 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#8%e4%b8%a4%e6%95%b0%e7%9b%b8%e5%8a%a0%e6%bb%b4%e6%bb%b4">#</a>
 </h2>
 <p>  这是leetcode的hot-100原题，见<a href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0">传送门</a></p>
+<h2 id="9反转链表百度">
+  9、反转链表(百度)
+  <a class="anchor" href="#9%e5%8f%8d%e8%bd%ac%e9%93%be%e8%a1%a8%e7%99%be%e5%ba%a6">#</a>
+</h2>
+<p>  这是leetcode的hot-100原题，见<a href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#206%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8">传送门</a></p>
 </article>
  
       
@@ -1250,6 +1273,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#6从前序与中序遍历序列构造二叉树滴滴">6、从前序与中序遍历序列构造二叉树(滴滴)</a></li>
     <li><a href="#7三数之和滴滴">7、三数之和(滴滴)</a></li>
     <li><a href="#8两数相加滴滴">8、两数相加(滴滴)</a></li>
+    <li><a href="#9反转链表百度">9、反转链表(百度)</a></li>
   </ul>
 </nav>
 

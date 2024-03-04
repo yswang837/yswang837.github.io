@@ -321,15 +321,18 @@ func reverseList(head *ListNode) *ListNode {
         return nil
     }
     var pre *ListNode
-    cur := head
-    for cur != nil {
-        next := cur.Next
-        cur.Next = pre
-        pre = cur
-        cur = next
+    for head != nil {
+        next := head.Next
+        head.Next = pre
+        pre = head
+        head = next
     }
     return pre
 }
+//                     p
+//null  <- 1 3 -> 5 -> 7
+//         h
+//           n
 ```
 
 ### 146.LRU缓存
