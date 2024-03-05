@@ -117,3 +117,65 @@ func (r *race) run(i int) {
 ## 9、反转链表(百度)
 
 &emsp;&emsp;这是leetcode的hot-100原题，见[传送门](https://yswang837.github.io/docs/example/leetcode/5.1-hot100/#206%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8)
+
+## 10、go的两个协程交替打印奇数偶数(小米)
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+type printGames struct {
+	// 创建两个channel，用于控制奇数和偶数的打印
+	oddChan  chan bool
+	evenChan chan bool
+	wg       *sync.WaitGroup
+}
+
+func newPrintGames() *printGames {
+	return &printGames{
+		oddChan:  make(chan bool),
+		evenChan: make(chan bool),
+		wg:       &sync.WaitGroup{},
+	}
+}
+
+func main() {
+	p := newPrintGames()
+	p.wg.Add(2)
+	// 启动第一个goroutine打印奇数
+	go func() {
+		defer p.wg.Done()
+		for i := 1; i <= 100; i += 2 {
+			<-p.oddChan // 等待奇数信号
+			fmt.Printf("协程%d: %d\n", 1, i)
+			p.evenChan <- true // 发送偶数信号
+		}
+	}()
+
+	// 启动第二个goroutine打印偶数
+	go func() {
+		defer p.wg.Done()
+		for i := 2; i <= 100; i += 2 {
+			<-p.evenChan // 等待偶数信号
+			fmt.Printf("协程%d: %d\n", 2, i)
+			if i == 100 {
+				return
+			}
+			p.oddChan <- true // 发送奇数信号
+		}
+	}()
+
+	// 初始化第一个信号，让第一个goroutine开始打印
+	p.oddChan <- true
+
+	// 等待所有goroutine完成
+	p.wg.Wait()
+	close(p.oddChan)
+	close(p.evenChan)
+}
+
+```
