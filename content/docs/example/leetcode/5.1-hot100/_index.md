@@ -285,27 +285,48 @@ func subabs(i,j int) (int,bool) {
 
 - 地址：[传送门](https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：返回的依旧是个链表
-- 思路：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，那么两个链表的值第一次相等的时候，就是相交节点的位置。
+- 思路1：暴力法，链表A、B，用嵌套双重循环，固定A1然后遍历所有的B，相等即返回，不等则开始遍历A2，直到相等或者全部遍历完。效率非常低，时间复杂度O(n2)
+- 思路2：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，同时向后遍历，那么两个链表的值第一次相等的时候，就是相交节点的位置，如：a1,a2,c1,c2,c3,b1,b2,b3,c1,c2,c3 和 b1,b2,b3,c1,c2,c3,a1,a2,c1,c2,c3。
 
 ```go
+// 思路1
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
     if headA == nil || headB == nil {
         return nil
     }
-    curA, curB := headA, headB
-    for curA != curB {
-        if curA == nil {
-            curA = headB
-        }else {
-            curA = curA.Next
+    tmp := headB // 记录下头结点的位置，A移动到下一个节点时，重置头结点
+    for headA != nil {
+        for headB != nil {
+            if headA == headB {
+                return headA
+            }
+            headB = headB.Next
         }
-        if curB == nil {
-            curB = headA
+        headA = headA.Next
+        headB = tmp
+    }
+    return nil
+}
+
+// 思路2
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+    if headA == nil || headB == nil {
+        return nil
+    }
+    tempA, tempB := headA, headB
+    for headA != headB {
+        if headA == nil {
+            headA = tempB
         }else {
-            curB = curB.Next
+            headA = headA.Next
+        }
+        if headB == nil {
+            headB = tempA
+        }else {
+            headB = headB.Next
         }
     }
-    return curA
+    return headA
 }
 ```
 

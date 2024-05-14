@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.02e37b4ce82f05dd211d3a2b87125b9360b9555f2d682807e7cbc4ba49c3cb4a.js" integrity="sha256-AuN7TOgvBd0hHTorhxJbk2C5VV8taCgH58vEuknDy0o=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.a856bd10002005cc4f326d066bcc72b1ac1af3580fca68622a4e88b58d42d95e.js" integrity="sha256-qFa9EAAgBcxPMm0Ga8xysawa81gPymhiKk6ItY1C2V4=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1610,26 +1610,47 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：返回的依旧是个链表</li>
-<li>思路：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，那么两个链表的值第一次相等的时候，就是相交节点的位置。</li>
+<li>思路1：暴力法，链表A、B，用嵌套双重循环，固定A1然后遍历所有的B，相等即返回，不等则开始遍历A2，直到相等或者全部遍历完。效率非常低，时间复杂度O(n2)</li>
+<li>思路2：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，同时向后遍历，那么两个链表的值第一次相等的时候，就是相交节点的位置，如：a1,a2,c1,c2,c3,b1,b2,b3,c1,c2,c3 和 b1,b2,b3,c1,c2,c3,a1,a2,c1,c2,c3。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getIntersectionNode</span>(<span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 思路1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getIntersectionNode</span>(<span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">headA</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">headB</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">curA</span>, <span style="color:#a6e22e">curB</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">curA</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">curB</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">curA</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">curA</span> = <span style="color:#a6e22e">headB</span>
-</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">curA</span> = <span style="color:#a6e22e">curA</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tmp</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">headB</span> <span style="color:#75715e">// 记录下头结点的位置，A移动到下一个节点时，重置头结点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">headA</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">headB</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">headA</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">headB</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">headA</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headB</span> = <span style="color:#a6e22e">headB</span>.<span style="color:#a6e22e">Next</span>
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">curB</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">curB</span> = <span style="color:#a6e22e">headA</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">headA</span> = <span style="color:#a6e22e">headA</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">headB</span> = <span style="color:#a6e22e">tmp</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 思路2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getIntersectionNode</span>(<span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">headA</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">headB</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tempA</span>, <span style="color:#a6e22e">tempB</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">headA</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">headB</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">headA</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headA</span> = <span style="color:#a6e22e">tempB</span>
 </span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">curB</span> = <span style="color:#a6e22e">curB</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headA</span> = <span style="color:#a6e22e">headA</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">headB</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headB</span> = <span style="color:#a6e22e">tempA</span>
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headB</span> = <span style="color:#a6e22e">headB</span>.<span style="color:#a6e22e">Next</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">curA</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">headA</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="206反转链表">
   206.反转链表
