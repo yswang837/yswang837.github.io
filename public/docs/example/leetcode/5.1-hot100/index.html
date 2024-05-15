@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.a856bd10002005cc4f326d066bcc72b1ac1af3580fca68622a4e88b58d42d95e.js" integrity="sha256-qFa9EAAgBcxPMm0Ga8xysawa81gPymhiKk6ItY1C2V4=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.4b1401d6eaf776c19f4a56f830d3360e5317c48f754c1bf3d98e149f3b7366a9.js" integrity="sha256-SxQB1ur3dsGfSlb4MNM2DlMXxI91TBvz2Y4UnztzZqk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1659,7 +1659,8 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/reverse-linked-list/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：</li>
-<li>思路：在遍历链表时，将当前节点的next指针改为指向前一个节点。由于节点没有引用其前一个节点，因此必须事先存储其前一个节点。在更改引用之前，还需要存储后一个节点。最后返回新的头引用。</li>
+<li>思路1：遍历链表，将值存到栈中，遍历栈，顺序构建新的链表，直到栈空。</li>
+<li>思路2：在遍历链表时，先记录下当前节点的下一个节点的地址，记为next，将当前节点的next指针改为指向前一个节点。由于节点没有引用其前一个节点，因此必须事先存储其前一个节点。在更改引用之前，还需要存储后一个节点。最后返回新的头引用pre。</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reverseList</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
@@ -1674,7 +1675,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">pre</span>
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//                     p
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// p                   p
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">//null  &lt;- 1 3 -&gt; 5 -&gt; 7
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">//         h
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">//           n
@@ -1706,8 +1707,8 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 初始化头尾相互指向的双链表，初始化容量为capacity的map
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// head &lt;-&gt; tail
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">tail</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{}, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">tail</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">tail</span> <span style="color:#75715e">// head和tail是双向链表的保护节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">prev</span> = <span style="color:#a6e22e">head</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">LRUCache</span>{
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">capacity</span>: <span style="color:#a6e22e">capacity</span>,
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">hashMap</span>:  <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>{},
@@ -1735,13 +1736,14 @@ https://github.com/alex-shpak/hugo-book
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// 2. 如果不在LRU中，则属于新增，将新节点插入头部，新增需要维护容量，如果当前容量大于capacity，则删除最后一个节点
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">node</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>]
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">ok</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">node</span>)
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">val</span> = <span style="color:#a6e22e">value</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>] = <span style="color:#a6e22e">node</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">node</span>)
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">node</span>)
 </span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">newNode</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{<span style="color:#a6e22e">key</span>: <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">val</span>: <span style="color:#a6e22e">value</span>}
 </span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">insert</span>(<span style="color:#a6e22e">newNode</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>] = <span style="color:#a6e22e">newNode</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>[<span style="color:#a6e22e">key</span>] = <span style="color:#a6e22e">newNode</span>
 </span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">hashMap</span>) &gt; <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">capacity</span> {
 </span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">lastNode</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">prev</span>
 </span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">lastNode</span>)

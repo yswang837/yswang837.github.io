@@ -334,7 +334,8 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/reverse-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：在遍历链表时，将当前节点的next指针改为指向前一个节点。由于节点没有引用其前一个节点，因此必须事先存储其前一个节点。在更改引用之前，还需要存储后一个节点。最后返回新的头引用。
+- 思路1：遍历链表，将值存到栈中，遍历栈，顺序构建新的链表，直到栈空。
+- 思路2：在遍历链表时，先记录下当前节点的下一个节点的地址，记为next，将当前节点的next指针改为指向前一个节点。由于节点没有引用其前一个节点，因此必须事先存储其前一个节点。在更改引用之前，还需要存储后一个节点。最后返回新的头引用pre。
 
 ```go
 func reverseList(head *ListNode) *ListNode {
@@ -350,7 +351,7 @@ func reverseList(head *ListNode) *ListNode {
     }
     return pre
 }
-//                     p
+// p                   p
 //null  <- 1 3 -> 5 -> 7
 //         h
 //           n
@@ -382,7 +383,7 @@ func Constructor(capacity int) LRUCache {
 	// 初始化头尾相互指向的双链表，初始化容量为capacity的map
 	// head <-> tail
 	head, tail := &Node{}, &Node{}
-	head.next = tail
+	head.next = tail // head和tail是双向链表的保护节点
 	tail.prev = head
 	return LRUCache{
 		capacity: capacity,
@@ -411,13 +412,14 @@ func (this *LRUCache) Put(key int, value int) {
 	// 2. 如果不在LRU中，则属于新增，将新节点插入头部，新增需要维护容量，如果当前容量大于capacity，则删除最后一个节点
 	node, ok := this.hashMap[key]
 	if ok {
-		this.remove(node)
 		node.val = value
+		this.hashMap[key] = node
+        this.remove(node)
 		this.insert(node)
 	} else {
 		newNode := &Node{key: key, val: value}
 		this.insert(newNode)
-        this.hashMap[key] = newNode
+		this.hashMap[key] = newNode
 		if len(this.hashMap) > this.capacity {
 			lastNode := this.tail.prev
 			this.remove(lastNode)
@@ -442,7 +444,6 @@ func (this *LRUCache) insert(node *Node) {
 	next.prev = node      // head <-> node <-> xxx
 	// head <-> node <-> xxx
 }
-
 ```
 
 ### 234. 回文链表
