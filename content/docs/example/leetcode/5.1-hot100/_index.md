@@ -449,13 +449,16 @@ func (this *LRUCache) insert(node *Node) {
 ### 234. 回文链表
 
 - 地址：[传送门](https://leetcode.cn/problems/palindrome-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题
+- 要求：能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题，思路2符合该要求
 - 思路1：遍历一遍链表，将结果存到数组里面，双指针遍历该数组，都相等则是回文链表。
-- 思路2：快慢指针，慢指针走一步，快指针走两步，在慢指针的位置断开链表，并将前半部分链表反转一下，在遍历两个链表，都相等则是回文链表。
+- 思路2：快慢指针，慢指针走一步，快指针走两步，在慢指针的位置将链表一分为二，并将前半部分链表反转一下，再同时遍历两个链表，都相等则是回文链表，返回之前恢复一下链表的连接结构。
 
 ```go
 // 思路1
 func isPalindrome(head *ListNode) bool {
+    if head == nil || head.Next == nil {
+        return true
+    }
     var ret []int
     for head != nil {
         ret = append(ret, head.Val)
@@ -473,7 +476,43 @@ func isPalindrome(head *ListNode) bool {
 }
 
 // 思路2
-
+func isPalindrome(head *ListNode) bool {
+    // 有0个、1个节点都认为是回文链表
+    if head == nil || head.Next == nil {
+        return true
+    }
+    // 找到中间节点，同时反转中间节点之前的节点
+    fast, slow := head, head
+    var pre *ListNode
+    for fast.Next != nil && fast.Next.Next != nil {
+        fast = fast.Next.Next
+        next := slow.Next
+        slow.Next = pre
+        pre = slow
+        slow = next
+    }
+    // 定义左右指针，主要是处理链表的节点数是奇数还是偶数
+    var left, right *ListNode
+    if fast.Next == nil {
+        // 奇数
+        right = slow.Next
+        left = pre
+    }else {
+        // 偶数
+        right = slow.Next
+        slow.Next = pre
+        left = slow
+    }
+    // 比较是否相等
+    for left != nil && right != nil {
+        if left.Val != right.Val {
+            return false
+        }
+        left = left.Next
+        right = right.Next
+    }
+    return true
+}
 ```
 
 ### 141. 环形链表
