@@ -595,7 +595,7 @@ func detectCycle(head *ListNode) *ListNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：无
-- 思路：用一个虚拟节点dummy方便处理。
+- 思路：如果其中一个链表为空，直接返回另一个，定义dummy的保护节点，定义current指针，同时for 两个不会空的链表，将合适的数据追加到结果后面，当for循环执行完后，再判断如果其中一个为空，则将另一个追加到结果后面，最后返回dummy.Next。
 
 ```go
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
@@ -629,7 +629,7 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 // l1: 1->2->4
 // l2: 1->3->4
 //             cur
-// l1: dummy -> 1 -> 2 -> 4
+// l1: dummy -> 1 -> 2 -> 4 // dummy.Next=l1
                     cur
 // l2: dummy -> 1 -> 1 -> 3 -> 4
                          cur
@@ -639,7 +639,7 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
                                    cur
 // l1: dummy -> 1 -> 1 -> 2 -> 3 -> 4 // 循环终止
                                    cur
-// l2: dummy -> 1 -> 1 -> 2 -> 3 -> 4 -> 4
+// l2: dummy -> 1 -> 1 -> 2 -> 3 -> 4 -> 4 // 将另一个非空链表追加到结果的最后
 ```
 
 ### 2. 两数相加
