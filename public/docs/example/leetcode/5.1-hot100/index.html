@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.45c16526415ac90166239f9200e68c0baa9eddee3dec270cff57d655f53b124c.js" integrity="sha256-RcFlJkFayQFmI5&#43;SAOaMC6qe3e497CcM/1fWVfU7Ekw=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.c6ea7e378c1a1cdb640901da437cccdc0397616875da9ba27d6b6609d29f542a.js" integrity="sha256-xup&#43;N4waHNtkCQHaQ3zM3AOXYWh12puifWtmCdKfVCo=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1884,26 +1884,28 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/linked-list-cycle-ii/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：</li>
-<li>思路：我们假设快慢指针相遇时，慢指针slow走了k步，那么快指针fast一定走了2k步，即fast一定比slow多走了k步，这多走的k步其实就是fast指针在环里转圈圈，所以k的值就是环长度的「整数倍」，假设相遇点距环的起点的距离为m，环的起点距头结点head的距离一定为k - m，也就是说如果从 head 前进 k - m 步就能到达环起点。巧的是，如果从相遇点继续前进 k - m 步，也恰好到达环起点。所以当它们以同样的速度再次相遇时，就是环的起点所在位置。</li>
+<li>思路：这更像一个数学问题，我们假设快慢指针相遇时，慢指针slow走了k步，那么快指针fast一定走了2k步，假设相遇点距环的起点的距离为m，环的起点距头结点head的距离一定为k - m，也就是说如果从 head 前进 k - m 步就能到达环起点。设从相遇点再走x步到达环的起点，则2k=k-m+m+x+m（这个式子默认快指针多走1圈后相遇，完整的式子应该是：2k=k-m+m+n(x+m)，得到x=(k/n)-m，当n取1时，x=k-m），推出x=k-m，也就是如果从相遇点继续前进 k - m 步，也恰好到达环起点。所以当它们以同样的速度再次相遇(相等)时，就是环的起点所在位置。</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">detectCycle</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">slow</span>, <span style="color:#a6e22e">fast</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">head</span>, <span style="color:#a6e22e">head</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hasCycle</span> <span style="color:#66d9ef">bool</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">slow</span> = <span style="color:#a6e22e">slow</span>.<span style="color:#a6e22e">Next</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fast</span> = <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span>.<span style="color:#a6e22e">Next</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">slow</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">hasCycle</span> = <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 执行到这里，可能是有环break了，可能没环退出循环了
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">fast</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">hasCycle</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 没环直接return
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 执行到这里，必定有环
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 执行到这里，必定有环，这里，将快或者慢指针置为head都行
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">slow</span> = <span style="color:#a6e22e">head</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">slow</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">fast</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">slow</span> = <span style="color:#a6e22e">slow</span>.<span style="color:#a6e22e">Next</span>
