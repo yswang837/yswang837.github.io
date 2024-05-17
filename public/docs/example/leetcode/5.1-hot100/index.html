@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.a0ee6a1723b6703743556c79e15b83c9b0a5188b920b521e7799d2e069704f5e.js" integrity="sha256-oO5qFyO2cDdDVWx54VuDybClGIuSC1Ied5nS4GlwT14=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.47fa1676d4a34e54251d9583207271de73a0dc72835471684a08defe10e3ea11.js" integrity="sha256-R/oWdtSjTlQlHZWDIHJx3nOg3HKDVHFoSgje/hDj6hE=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -2053,10 +2053,11 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/merge-k-sorted-lists/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：</li>
-<li>思路1：我们已经实现了合并两个有序链表的函数，合并k个有序链表，也就扩展下就行了，但时间复杂度有点高，不过还是通过了，代码如下：</li>
-<li>思路2：使用优先级队列（二叉堆），这个代码后面再补充，https://labuladong.github.io/algo/di-ling-zh-bfe1b/shuang-zhi-0f7cc/</li>
+<li>思路1：我们已经实现了合并两个有序链表的函数，合并k个有序链表，也就扩展下就行了，但时间复杂度有点高，不过还是通过了。</li>
+<li>思路2：使用优先级队列。将所有头结点push到堆中，pop最小值并append到结果链表中，接着将头结点被pop的那个链表的第二个节点push到堆中，直到堆空。时间复杂度为O(nlogk),k是链表的条数，n是所有链表的总的节点个数之和。具体实现是另一个ListNode的slice，实现container/heap/heap.go下的Interface接口下的5个方法，那么就可以将该slice用head.Init初始化为一个最小堆，从该堆中pop数据就可以直接拿出最小值，接到dummy的后面，将下一个非空节点push到堆中，那么该堆会自动调整堆为最小堆，直到堆为空，返回dummy.Next即可。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mergeKLists</span>(<span style="color:#a6e22e">lists</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 思路1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mergeKLists</span>(<span style="color:#a6e22e">lists</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">lists</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
 </span></span><span style="display:flex;"><span>    }
@@ -2093,6 +2094,50 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">list2</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dummy</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 思路2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mergeKLists</span>(<span style="color:#a6e22e">lists</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">h</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">hp</span>{}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">head</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">lists</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">h</span> = append(<span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">head</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Init</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">h</span>) <span style="color:#75715e">// 堆化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dummy</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{} <span style="color:#75715e">// 哨兵节点，作为合并后链表头节点的前一个节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dummy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">h</span>) &gt; <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 循环直到堆为空
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Pop</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">h</span>).(<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#75715e">// 剩余节点中的最小节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> { <span style="color:#75715e">// 下一个节点不为空
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Push</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>) <span style="color:#75715e">// 下一个节点有可能是最小节点，入堆
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">node</span> <span style="color:#75715e">// 合并到新链表中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">cur</span> = <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> <span style="color:#75715e">// 准备合并下一个节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dummy</span>.<span style="color:#a6e22e">Next</span> <span style="color:#75715e">// 哨兵节点的下一个节点就是新链表的头节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">hp</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#a6e22e">hp</span>) <span style="color:#a6e22e">Len</span>() <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">h</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#a6e22e">hp</span>) <span style="color:#a6e22e">Less</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Val</span> &lt; <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Val</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#75715e">// 最小堆
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#a6e22e">hp</span>) <span style="color:#a6e22e">Swap</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">hp</span>) <span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">any</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">*</span><span style="color:#a6e22e">h</span> = append(<span style="color:#f92672">*</span><span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">v</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">hp</span>) <span style="color:#a6e22e">Pop</span>() <span style="color:#a6e22e">any</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">h</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">a</span>[len(<span style="color:#a6e22e">a</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">*</span><span style="color:#a6e22e">h</span> = <span style="color:#a6e22e">a</span>[:len(<span style="color:#a6e22e">a</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">v</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="二叉树">
   *二叉树
