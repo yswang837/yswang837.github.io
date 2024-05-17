@@ -713,10 +713,11 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
 - 地址：[传送门](https://leetcode.cn/problems/merge-k-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路1：我们已经实现了合并两个有序链表的函数，合并k个有序链表，也就扩展下就行了，但时间复杂度有点高，不过还是通过了，代码如下：
-- 思路2：使用优先级队列（二叉堆），这个代码后面再补充，https://labuladong.github.io/algo/di-ling-zh-bfe1b/shuang-zhi-0f7cc/
+- 思路1：我们已经实现了合并两个有序链表的函数，合并k个有序链表，也就扩展下就行了，但时间复杂度有点高，不过还是通过了。
+- 思路2：使用优先级队列。将所有头结点push到堆中，pop最小值并append到结果链表中，接着将头结点被pop的那个链表的第二个节点push到堆中，直到堆空。时间复杂度为O(nlogk),k是链表的条数，n是所有链表的总的节点个数之和。具体实现是另一个ListNode的slice，实现container/heap/heap.go下的Interface接口下的5个方法，那么就可以将该slice用head.Init初始化为一个最小堆，从该堆中pop数据就可以直接拿出最小值，接到dummy的后面，将下一个非空节点push到堆中，那么该堆会自动调整堆为最小堆，直到堆为空，返回dummy.Next即可。
 
 ```go
+// 思路1
 func mergeKLists(lists []*ListNode) *ListNode {
     if len(lists) == 0 {
         return nil
@@ -754,6 +755,50 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
         cur.Next = list2
     }
     return dummy.Next
+}
+
+// 思路2
+func mergeKLists(lists []*ListNode) *ListNode {
+    h := hp{}
+    for _, head := range lists {
+        if head != nil {
+            h = append(h, head)
+        }
+    }
+    heap.Init(&h) // 堆化
+
+    dummy := &ListNode{} // 哨兵节点，作为合并后链表头节点的前一个节点
+    cur := dummy
+    for len(h) > 0 { // 循环直到堆为空
+        node := heap.Pop(&h).(*ListNode) // 剩余节点中的最小节点
+        if node.Next != nil { // 下一个节点不为空
+            heap.Push(&h, node.Next) // 下一个节点有可能是最小节点，入堆
+        }
+        cur.Next = node // 合并到新链表中
+        cur = cur.Next // 准备合并下一个节点
+    }
+    return dummy.Next // 哨兵节点的下一个节点就是新链表的头节点
+}
+
+type hp []*ListNode
+
+func (h hp) Len() int {
+	return len(h)
+}
+func (h hp) Less(i, j int) bool {
+	return h[i].Val < h[j].Val
+} // 最小堆
+func (h hp) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+func (h *hp) Push(v any) {
+	*h = append(*h, v.(*ListNode))
+}
+func (h *hp) Pop() any {
+	a := *h
+	v := a[len(a)-1]
+	*h = a[:len(a)-1]
+	return v
 }
 ```
 
