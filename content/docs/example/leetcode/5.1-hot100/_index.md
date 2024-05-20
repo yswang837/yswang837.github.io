@@ -714,8 +714,53 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 ### 24. 两两交换链表中的节点
 
 - 地址：[传送门](https://leetcode.cn/problems/swap-nodes-in-pairs/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：无
+- 思路1：迭代，创建哑结点dummy->head，cur指向dummy，如果cur.Next和cur.Next.Next不为空，则两两交换(由：cur->node1->node2改为cur->node2->node1)，否则循环结束，返回dummy.Next。
+- 思路2：递归，如果链表中至少有两个及以上节点，那么将第二个节点指向第一个节点，并且返回第二个节点，供其他节点链接，链表中其余节点按次规律递归地进行交换，如果链表中只有一个节点或者没有节点，则递归终止。强烈建议画个图来理解。
+
+```go
+// 思路1
+func swapPairs(head *ListNode) *ListNode {
+    if head == nil || head.Next == nil {
+        return head
+    }
+    dummy := &ListNode{0, head}
+    cur := dummy
+    for cur.Next != nil && cur.Next.Next != nil {
+        node1 := cur.Next
+        node2 := cur.Next.Next
+        cur.Next = node2
+        node1.Next = node2.Next
+        node2.Next = node1
+        cur = cur.Next.Next
+    }
+
+    return dummy.Next
+}
+// dummy 
+//  cur    
+//       1   2   3   4   5
+//       2   1
+//          cur
+
+// 思路2
+func swapPairs(head *ListNode) *ListNode {
+    // 只有一个节点或者一个节点都没有，直接return
+    if head == nil || head.Next == nil {
+        return head
+    }
+    newHead := head.Next
+    head.Next = swapPairs(newHead.Next)
+    newHead.Next = head
+    return newHead
+}
+
+// h1 n1 h2 n2 h3
+// 1  2  3  4  5
+
+// 2  1  4  3  5
+// 1  2  3  4  5  6
+```
 
 ### 25. K 个一组翻转链表
 
@@ -723,17 +768,29 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 - 要求：
 - 思路：
 
+```go
+
+```
+
 ### 138. 随机链表的复制
 
 - 地址：[传送门](https://leetcode.cn/problems/copy-list-with-random-pointer/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
 - 思路：
 
+```go
+
+```
+
 ### 148. 排序链表
 
 - 地址：[传送门](https://leetcode.cn/problems/sort-list/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
 - 思路：
+
+```go
+
+```
 
 ### 23. 合并 K 个升序链表
 
