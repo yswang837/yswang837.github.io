@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.47fa1676d4a34e54251d9583207271de73a0dc72835471684a08defe10e3ea11.js" integrity="sha256-R/oWdtSjTlQlHZWDIHJx3nOg3HKDVHFoSgje/hDj6hE=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.2b2904d6ff2ecaf9c90fd4268e8f5cfd16f9167069aa59bf3ef5bbe8387b6596.js" integrity="sha256-KykE1v8uyvnJD9Qmjo9c/Rb5FnBpqlm/PvW76Dh7ZZY=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1610,8 +1610,8 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
 <li>要求：返回的依旧是个链表</li>
-<li>思路1：暴力法，链表A、B，用嵌套双重循环，固定A1然后遍历所有的B，相等即返回，不等则开始遍历A2，直到相等或者全部遍历完。效率非常低，时间复杂度O(n2)</li>
-<li>思路2：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，同时向后遍历，那么两个链表的值第一次相等的时候，就是相交节点的位置，如：a1,a2,c1,c2,c3,b1,b2,b3,c1,c2,c3 和 b1,b2,b3,c1,c2,c3,a1,a2,c1,c2,c3。</li>
+<li>思路1：暴力法，链表A、B，用嵌套双重循环，固定A1然后遍历所有的B，相等即返回，不等则开始遍历A2，直到相等或者全部遍历完。效率非常低，时间复杂度O(m*n)</li>
+<li>思路2：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，同时向后遍历，那么两个链表的值第一次相等的时候，就是相交节点的位置，如：a1,a2,c1,c2,c3,b1,b2,b3,c1,c2,c3 和 b1,b2,b3,c1,c2,c3,a1,a2,c1,c2,c3。时间复杂度是o(m+n)</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// 思路1
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getIntersectionNode</span>(<span style="color:#a6e22e">headA</span>, <span style="color:#a6e22e">headB</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
@@ -1954,26 +1954,60 @@ https://github.com/alex-shpak/hugo-book
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// l2: 1-&gt;3-&gt;4
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">//             cur
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// l1: dummy -&gt; 1 -&gt; 2 -&gt; 4 // dummy.Next=l1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">cur</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// l2: dummy -&gt; 1 -&gt; 1 -&gt; 3 -&gt; 4
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                         <span style="color:#a6e22e">cur</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// l1: dummy -&gt; 1 -&gt; 1 -&gt; 2 -&gt; 4
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                              <span style="color:#a6e22e">cur</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// l2: dummy -&gt; 1 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                                   <span style="color:#a6e22e">cur</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// l1: dummy -&gt; 1 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 // 循环终止
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                                   <span style="color:#a6e22e">cur</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// l2: dummy -&gt; 1 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 4 // 将另一个非空链表追加到结果的最后
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//                  cur
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// l2: dummy -&gt; 1 -&gt; 1 -&gt; 3 -&gt; 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//                       cur
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// l1: dummy -&gt; 1 -&gt; 1 -&gt; 2 -&gt; 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//                            cur
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// l2: dummy -&gt; 1 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//                                 cur
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// l1: dummy -&gt; 1 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 // 循环终止
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//                                 cur
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// l2: dummy -&gt; 1 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 4 // 将另一个非空链表追加到结果的最后
 </span></span></span></code></pre></div><h3 id="2-两数相加">
   2. 两数相加
   <a class="anchor" href="#2-%e4%b8%a4%e6%95%b0%e7%9b%b8%e5%8a%a0">#</a>
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/add-two-numbers/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
-<li>要求：</li>
-<li>思路：</li>
+<li>要求：无</li>
+<li>思路：初始进位为零，迭代的条件是：只要链表不为空 或者 有进位时就继续，则需要用新的node来存数据，数据位用 carry % 10，新的进位用 carry / 10。时间复杂度为：O(m+n)</li>
 </ul>
-<h3 id="19-删除链表的倒数第-n-个结点">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">addTwoNumbers</span>(<span style="color:#a6e22e">l1</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>, <span style="color:#a6e22e">l2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1、边界条件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l1</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">l2</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l2</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">l1</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 2、逻辑处理
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">dummy</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dummy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">carry</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 初始进位为0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l1</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">l2</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">carry</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 只要链表不为空 或者 有进位时就继续迭代
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l1</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">carry</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">l1</span>.<span style="color:#a6e22e">Val</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l2</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">carry</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">l2</span>.<span style="color:#a6e22e">Val</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{<span style="color:#a6e22e">Val</span>: <span style="color:#a6e22e">carry</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>} <span style="color:#75715e">// 数据位，只要链表不为空 或者 有进位时，那么就需要用一个新的node来存结果
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">carry</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 进位
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">cur</span> = <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l1</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">l1</span> = <span style="color:#a6e22e">l1</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l2</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">l2</span> = <span style="color:#a6e22e">l2</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dummy</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 3、返回
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dummy</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="19-删除链表的倒数第-n-个结点">
   19. 删除链表的倒数第 N 个结点
   <a class="anchor" href="#19-%e5%88%a0%e9%99%a4%e9%93%be%e8%a1%a8%e7%9a%84%e5%80%92%e6%95%b0%e7%ac%ac-n-%e4%b8%aa%e7%bb%93%e7%82%b9">#</a>
 </h3>
@@ -2098,6 +2132,9 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// 思路2
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">mergeKLists</span>(<span style="color:#a6e22e">lists</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">lists</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">h</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">hp</span>{}
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">head</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">lists</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
@@ -2109,9 +2146,9 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dummy</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{} <span style="color:#75715e">// 哨兵节点，作为合并后链表头节点的前一个节点
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dummy</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> len(<span style="color:#a6e22e">h</span>) &gt; <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 循环直到堆为空
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Pop</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">h</span>).(<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#75715e">// 剩余节点中的最小节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">node</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Pop</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">h</span>).(<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#75715e">// 剩余节点中的最小节点，注意这里别用h.pop()，因为主要是需要借助堆，这个数据结构
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> { <span style="color:#75715e">// 下一个节点不为空
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Push</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>) <span style="color:#75715e">// 下一个节点有可能是最小节点，入堆
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">heap</span>.<span style="color:#a6e22e">Push</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">Next</span>) <span style="color:#75715e">// 下一个节点有可能是最小节点，入堆，注意这里别用h.push()，因为主要是需要借助堆，这个数据结构
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#a6e22e">node</span> <span style="color:#75715e">// 合并到新链表中
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">cur</span> = <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> <span style="color:#75715e">// 准备合并下一个节点
@@ -2128,8 +2165,8 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">Val</span> &lt; <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">Val</span>
 </span></span><span style="display:flex;"><span>} <span style="color:#75715e">// 最小堆
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#a6e22e">hp</span>) <span style="color:#a6e22e">Swap</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">i</span>]
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">h</span>[<span style="color:#a6e22e">i</span>] <span style="color:#75715e">// 注意这里不是交换的value，是交换的节点！已经被坑过一次了
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">hp</span>) <span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">v</span> <span style="color:#a6e22e">any</span>) {
 </span></span><span style="display:flex;"><span>	<span style="color:#f92672">*</span><span style="color:#a6e22e">h</span> = append(<span style="color:#f92672">*</span><span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">v</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>))
 </span></span><span style="display:flex;"><span>}

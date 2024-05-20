@@ -285,8 +285,8 @@ func subabs(i,j int) (int,bool) {
 
 - 地址：[传送门](https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：返回的依旧是个链表
-- 思路1：暴力法，链表A、B，用嵌套双重循环，固定A1然后遍历所有的B，相等即返回，不等则开始遍历A2，直到相等或者全部遍历完。效率非常低，时间复杂度O(n2)
-- 思路2：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，同时向后遍历，那么两个链表的值第一次相等的时候，就是相交节点的位置，如：a1,a2,c1,c2,c3,b1,b2,b3,c1,c2,c3 和 b1,b2,b3,c1,c2,c3,a1,a2,c1,c2,c3。
+- 思路1：暴力法，链表A、B，用嵌套双重循环，固定A1然后遍历所有的B，相等即返回，不等则开始遍历A2，直到相等或者全部遍历完。效率非常低，时间复杂度O(m*n)
+- 思路2：难点在于两个链表的长度不一定相等，导致不知道什么时候会相交，链表A+链表B的长度肯定相等，同时向后遍历，那么两个链表的值第一次相等的时候，就是相交节点的位置，如：a1,a2,c1,c2,c3,b1,b2,b3,c1,c2,c3 和 b1,b2,b3,c1,c2,c3,a1,a2,c1,c2,c3。时间复杂度是o(m+n)
 
 ```go
 // 思路1
@@ -630,23 +630,60 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 // l2: 1->3->4
 //             cur
 // l1: dummy -> 1 -> 2 -> 4 // dummy.Next=l1
-                    cur
+//                  cur
 // l2: dummy -> 1 -> 1 -> 3 -> 4
-                         cur
+//                       cur
 // l1: dummy -> 1 -> 1 -> 2 -> 4
-                              cur
+//                            cur
 // l2: dummy -> 1 -> 1 -> 2 -> 3 -> 4
-                                   cur
+//                                 cur
 // l1: dummy -> 1 -> 1 -> 2 -> 3 -> 4 // 循环终止
-                                   cur
+//                                 cur
 // l2: dummy -> 1 -> 1 -> 2 -> 3 -> 4 -> 4 // 将另一个非空链表追加到结果的最后
 ```
 
 ### 2. 两数相加
 
 - 地址：[传送门](https://leetcode.cn/problems/add-two-numbers/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：无
+- 思路：初始进位为零，迭代的条件是：只要链表不为空 或者 有进位时就继续，则需要用新的node来存数据，数据位用 carry % 10，新的进位用 carry / 10。时间复杂度为：O(m+n)
+  
+```go
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+    // 1、边界条件
+    if l1 == nil {
+        return l2
+    }
+    if l2 == nil {
+        return l1
+    }
+    // 2、逻辑处理
+    dummy := &ListNode{}
+    cur := dummy
+    carry := 0 // 初始进位为0
+    for l1 != nil || l2 != nil || carry != 0 { // 只要链表不为空 或者 有进位时就继续迭代
+        if l1 != nil {
+            carry += l1.Val
+        }
+        if l2 != nil {
+            carry += l2.Val
+        }
+        cur.Next = &ListNode{Val: carry % 10} // 数据位，只要链表不为空 或者 有进位时，那么就需要用一个新的node来存结果
+        carry /= 10 // 进位
+        cur = cur.Next
+        if l1 != nil {
+            l1 = l1.Next
+        }
+        if l2 != nil {
+            l2 = l2.Next
+        }
+    }
+    return dummy.Next
+    
+    // 3、返回
+    return dummy.Next
+}
+```
 
 ### 19. 删除链表的倒数第 N 个结点
 
@@ -759,6 +796,9 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 
 // 思路2
 func mergeKLists(lists []*ListNode) *ListNode {
+    if len(lists) == 0 {
+        return nil
+    }
     h := hp{}
     for _, head := range lists {
         if head != nil {
@@ -770,9 +810,9 @@ func mergeKLists(lists []*ListNode) *ListNode {
     dummy := &ListNode{} // 哨兵节点，作为合并后链表头节点的前一个节点
     cur := dummy
     for len(h) > 0 { // 循环直到堆为空
-        node := heap.Pop(&h).(*ListNode) // 剩余节点中的最小节点
+        node := heap.Pop(&h).(*ListNode) // 剩余节点中的最小节点，注意这里别用h.pop()，因为主要是需要借助堆，这个数据结构
         if node.Next != nil { // 下一个节点不为空
-            heap.Push(&h, node.Next) // 下一个节点有可能是最小节点，入堆
+            heap.Push(&h, node.Next) // 下一个节点有可能是最小节点，入堆，注意这里别用h.push()，因为主要是需要借助堆，这个数据结构
         }
         cur.Next = node // 合并到新链表中
         cur = cur.Next // 准备合并下一个节点
@@ -789,7 +829,7 @@ func (h hp) Less(i, j int) bool {
 	return h[i].Val < h[j].Val
 } // 最小堆
 func (h hp) Swap(i, j int) {
-	h[i], h[j] = h[j], h[i]
+	h[i], h[j] = h[j], h[i] // 注意这里不是交换的value，是交换的节点！已经被坑过一次了
 }
 func (h *hp) Push(v any) {
 	*h = append(*h, v.(*ListNode))
