@@ -770,38 +770,81 @@ func swapPairs(head *ListNode) *ListNode {
 
 ```go
 func reverseKGroup(head *ListNode, k int) *ListNode {
-    hair := &ListNode{Next: head}
-    pre := hair
-
-    for head != nil {
-        tail := pre
-        for i := 0; i < k; i++ {
-            tail = tail.Next
-            if tail == nil {
-                return hair.Next
-            }
-        }
-        nex := tail.Next
-        head, tail = myReverse(head, tail)
-        pre.Next = head
-        tail.Next = nex
-        pre = tail
-        head = tail.Next
-    }
-    return hair.Next
+	if head == nil || k <= 0 {
+		return nil
+	}
+	dummy := &ListNode{-1, head}
+	cur := dummy
+	for head != nil {
+		tail := cur
+		for i := 0; i < k; i++ {
+			tail = tail.Next
+			if tail == nil {
+				return dummy.Next
+			}
+		}
+		next := tail.Next
+		head, tail = reverse(head, tail)
+		cur.Next = head
+		tail.Next = next
+		cur = tail
+		head = next
+	}
+	return dummy.Next
 }
 
-func myReverse(head, tail *ListNode) (*ListNode, *ListNode) {
-    prev := tail.Next
-    p := head
-    for prev != tail {
-        nex := p.Next
-        p.Next = prev
-        prev = p
-        p = nex
-    }
-    return tail, head
+func reverse(head, tail *ListNode) (*ListNode, *ListNode) {
+	if head == nil || tail == nil {
+		return nil, nil
+	}
+	tmpHead := head
+	tailNext := tail.Next
+	var prev *ListNode
+	var next *ListNode
+	for head != tailNext {
+		next = head.Next
+		head.Next = prev
+		prev = head
+		head = next
+	}
+	tmpHead.Next = next
+	return prev, tmpHead
 }
+// reverseKGroup()函数的过程
+//  dummy -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> null
+//   cur
+//           h
+//                    tail
+//                          n
+//
+//  dummy -> 3 -> 2 -> 1 -> 4 -> 5 -> 6 -> 7 -> null
+//                    cur
+//                          h
+//                    tail
+//                          n 
+//
+//  dummy -> 3 -> 2 -> 1 -> 6 -> 5 -> 4 -> 7 -> null
+//                                   cur
+//                                         h
+//                                   tail
+//                                         n    
+
+// reverse()函数的过程
+//    1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 
+//    h         
+//              t
+//    th
+//                   tn          
+//p
+//n
+
+//                         h         
+//                      t
+//           th
+//                         tn
+//                      p
+//                         n
+//         <- 1 <- 2 <- 3  4 -> 5 -> 6 -> 7 -> null  
 ```
 
 ### 138. 随机链表的复制
