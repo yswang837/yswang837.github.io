@@ -544,7 +544,7 @@ func hasCycle(head *ListNode) bool {
         return false
     }
     slow, fast := head, head
-    for fast != nil && fast.Next != nil {
+    for fast.Next != nil && fast.Next.Next != nil {
         slow = slow.Next
         fast = fast.Next.Next
         if fast == slow {
@@ -559,7 +559,7 @@ func hasCycle(head *ListNode) bool {
 
 - 地址：[传送门](https://leetcode.cn/problems/linked-list-cycle-ii/description/?envType=study-plan-v2&envId=top-100-liked)
 - 要求：
-- 思路：这更像一个数学问题，我们假设快慢指针相遇时，慢指针slow走了k步，那么快指针fast一定走了2k步，假设相遇点距环的起点的距离为m，环的起点距头结点head的距离一定为k - m，也就是说如果从 head 前进 k - m 步就能到达环起点。设从相遇点再走x步到达环的起点，则2k=k-m+m+x+m（这个式子默认快指针多走1圈后相遇，完整的式子应该是：2k=k-m+m+n(x+m)，得到x=(k/n)-m，当n取1时，x=k-m），推出x=k-m，也就是如果从相遇点继续前进 k - m 步，也恰好到达环起点。所以当它们以同样的速度再次相遇(相等)时，就是环的起点所在位置。
+- 思路：这更像一个数学问题，我们假设快慢指针相遇时，慢指针slow走了k步，那么快指针fast一定走了2k步，假设相遇点距环的起点的距离为m，环的起点距头结点head的距离一定为k - m，也就是说如果从 head 前进 k - m 步就能到达环起点。设从相遇点再走x步到达环的起点，则2k=k-m+m+x+m，推出x=k-m，也就是如果从相遇点继续前进 k - m 步，也恰好到达环起点。所以当它们以同样的速度再次相遇(相等)时，就是环的起点所在位置。
 
 ```go
 func detectCycle(head *ListNode) *ListNode {
@@ -568,7 +568,7 @@ func detectCycle(head *ListNode) *ListNode {
     }
     slow, fast := head, head
     var hasCycle bool
-    for fast != nil && fast.Next != nil {
+    for fast.Next != nil && fast.Next.Next != nil {
         slow = slow.Next
         fast = fast.Next.Next
         if fast == slow {
