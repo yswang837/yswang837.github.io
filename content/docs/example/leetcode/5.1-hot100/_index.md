@@ -514,13 +514,13 @@ func isPalindrome(head *ListNode) bool {
     return true
 }
 // 奇数
-// 	                    f
-//          	  s
-// 	     p    
-// 	          n
-// 	               r
-// 	     l          
-//  <- 1 <- 3    5 -> 3 -> 1
+//               s
+//                         f
+//           pre
+//               n
+//            l
+//                    r 
+//    <- 1 <- 2  3 -> 2 -> 1
 
 // 偶数
 //                         f
@@ -769,7 +769,39 @@ func swapPairs(head *ListNode) *ListNode {
 - 思路：
 
 ```go
+func reverseKGroup(head *ListNode, k int) *ListNode {
+    hair := &ListNode{Next: head}
+    pre := hair
 
+    for head != nil {
+        tail := pre
+        for i := 0; i < k; i++ {
+            tail = tail.Next
+            if tail == nil {
+                return hair.Next
+            }
+        }
+        nex := tail.Next
+        head, tail = myReverse(head, tail)
+        pre.Next = head
+        tail.Next = nex
+        pre = tail
+        head = tail.Next
+    }
+    return hair.Next
+}
+
+func myReverse(head, tail *ListNode) (*ListNode, *ListNode) {
+    prev := tail.Next
+    p := head
+    for prev != tail {
+        nex := p.Next
+        p.Next = prev
+        prev = p
+        p = nex
+    }
+    return tail, head
+}
 ```
 
 ### 138. 随机链表的复制
