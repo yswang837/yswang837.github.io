@@ -664,22 +664,16 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     for l1 != nil || l2 != nil || carry != 0 { // 只要链表不为空 或者 有进位时就继续迭代
         if l1 != nil {
             carry += l1.Val
+            l1 = l1.Next
         }
         if l2 != nil {
             carry += l2.Val
+            l2 = l2.Next
         }
         cur.Next = &ListNode{Val: carry % 10} // 数据位，只要链表不为空 或者 有进位时，那么就需要用一个新的node来存结果
         carry /= 10 // 进位
         cur = cur.Next
-        if l1 != nil {
-            l1 = l1.Next
-        }
-        if l2 != nil {
-            l2 = l2.Next
-        }
-    }
-    return dummy.Next
-    
+    }   
     // 3、返回
     return dummy.Next
 }
@@ -860,11 +854,29 @@ func reverse(head, tail *ListNode) (*ListNode, *ListNode) {
 ### 148. 排序链表
 
 - 地址：[传送门](https://leetcode.cn/problems/sort-list/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
-- 思路：
+- 要求：要求O(1)的空间复杂度，
+- 思路：遍历链表，将其存入slice，用内置的sort，然后再遍历该slice，创建新链表并返回，空间复杂度O(n)
 
 ```go
 
+func sortList(head *ListNode) *ListNode {
+    if head == nil {
+        return nil
+    }
+    ss := []int{}
+    for head != nil {
+        ss = append(ss, head.Val)
+        head = head.Next
+    }
+    sort.Ints(ss)
+    dummy := &ListNode{}
+    cur := dummy
+    for _, val := range ss {
+        cur.Next = &ListNode{Val: val}
+        cur = cur.Next
+    }
+    return dummy.Next 
+} 
 ```
 
 ### 23. 合并 K 个升序链表

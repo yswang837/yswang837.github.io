@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/zh.search.min.0b0346b6412e1276042c31e9c350153eb6ef07c86e335819fa692c620d10186c.js" integrity="sha256-CwNGtkEuEnYELDHpw1AVPrbvB8huM1gZ&#43;mksYg0QGGw=" crossorigin="anonymous"></script>
+  <script defer src="/zh.search.min.684034f5c58b8b088c7f8f1eafb77a3f3052be89df9dcdedfc6ba2e46e2f8b9f.js" integrity="sha256-aEA09cWLiwiMf48er7d6PzBSvonfnc3t/Gui5G4vi58=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://yswang837.github.io/docs/example/leetcode/5.1-hot100/index.xml" title="hello 小代" />
 <!--
 Made with Book Theme
@@ -1988,22 +1988,16 @@ https://github.com/alex-shpak/hugo-book
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l1</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">l2</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">carry</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> { <span style="color:#75715e">// 只要链表不为空 或者 有进位时就继续迭代
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l1</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">carry</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">l1</span>.<span style="color:#a6e22e">Val</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">l1</span> = <span style="color:#a6e22e">l1</span>.<span style="color:#a6e22e">Next</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l2</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
 </span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">carry</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">l2</span>.<span style="color:#a6e22e">Val</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">l2</span> = <span style="color:#a6e22e">l2</span>.<span style="color:#a6e22e">Next</span>
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{<span style="color:#a6e22e">Val</span>: <span style="color:#a6e22e">carry</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>} <span style="color:#75715e">// 数据位，只要链表不为空 或者 有进位时，那么就需要用一个新的node来存结果
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">carry</span> <span style="color:#f92672">/=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// 进位
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">cur</span> = <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l1</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">l1</span> = <span style="color:#a6e22e">l1</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">l2</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">l2</span> = <span style="color:#a6e22e">l2</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dummy</span>.<span style="color:#a6e22e">Next</span>
-</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    }   
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 3、返回
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dummy</span>.<span style="color:#a6e22e">Next</span>
 </span></span><span style="display:flex;"><span>}
@@ -2184,10 +2178,29 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <ul>
 <li>地址：<a href="https://leetcode.cn/problems/sort-list/description/?envType=study-plan-v2&amp;envId=top-100-liked">传送门</a></li>
-<li>要求：</li>
-<li>思路：</li>
+<li>要求：要求O(1)的空间复杂度，</li>
+<li>思路：遍历链表，将其存入slice，用内置的sort，然后再遍历该slice，创建新链表并返回，空间复杂度O(n)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"></code></pre></div><h3 id="23-合并-k-个升序链表">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sortList</span>(<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">ListNode</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ss</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ss</span> = append(<span style="color:#a6e22e">ss</span>, <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Val</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">head</span> = <span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Ints</span>(<span style="color:#a6e22e">ss</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dummy</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{}
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">dummy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">ss</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">ListNode</span>{<span style="color:#a6e22e">Val</span>: <span style="color:#a6e22e">val</span>}
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cur</span> = <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">Next</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dummy</span>.<span style="color:#a6e22e">Next</span> 
+</span></span><span style="display:flex;"><span>} 
+</span></span></code></pre></div><h3 id="23-合并-k-个升序链表">
   23. 合并 K 个升序链表
   <a class="anchor" href="#23-%e5%90%88%e5%b9%b6-k-%e4%b8%aa%e5%8d%87%e5%ba%8f%e9%93%be%e8%a1%a8">#</a>
 </h3>
