@@ -626,10 +626,10 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
     return dummy.Next
 }
 // dummy,cur
-// l1: 1->2->4
-// l2: 1->3->4
+// l1: 1 -> 2 -> 4
+// l2: 1 -> 3 -> 4
 //             cur
-// l1: dummy -> 1 -> 2 -> 4 // dummy.Next=l1
+// l1: dummy -> 1 -> 2 -> 4
 //                  cur
 // l2: dummy -> 1 -> 1 -> 3 -> 4
 //                       cur
@@ -749,11 +749,25 @@ func swapPairs(head *ListNode) *ListNode {
     return newHead
 }
 
-// h1 n1 h2 n2 h3
-// 1  2  3  4  5
+// h1
+//      n1
+//           h2
+//                n2
+//                    h3
 
-// 2  1  4  3  5
-// 1  2  3  4  5  6
+// 1 -> 2 -> 3 -> 4 -> 5
+
+// h2 -> h3
+// n2 -> h2
+// n2 -> h2 -> h3
+
+// h1 -> n2
+// n1 -> h1
+// n1 -> h1 -> n2
+
+// n1 -> h1 -> n2 -> h2 -> h3
+// 2  -> 1  -> 4  -> 3  -> 5
+
 ```
 
 ### 25. K 个一组翻转链表
@@ -844,7 +858,7 @@ func reverse(head, tail *ListNode) (*ListNode, *ListNode) {
 ### 138. 随机链表的复制
 
 - 地址：[传送门](https://leetcode.cn/problems/copy-list-with-random-pointer/description/?envType=study-plan-v2&envId=top-100-liked)
-- 要求：
+- 要求：无
 - 思路：
 
 ```go
